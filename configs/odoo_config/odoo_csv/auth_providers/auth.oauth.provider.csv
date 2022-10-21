@@ -1,0 +1,5 @@
+"id","sequence","name","client_id","enabled","auth_endpoint","validation_endpoint","scope","x_keycloak","body","data_endpoint"
+"auth_oauth.provider_facebook","10","Facebook Graph","","","https://www.facebook.com/dialog/oauth","https://graph.facebook.com/me","public_profile,email","","Log in with Facebook","https://graph.facebook.com/me?fields=id,name,email"
+"auth_oauth.provider_google","10","Google OAuth2","","","https://accounts.google.com/o/oauth2/auth","https://www.googleapis.com/oauth2/v1/tokeninfo","https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile","","Log in with Google","https://www.googleapis.com/oauth2/v1/userinfo"
+"auth_oauth.provider_keycloak","10","Keycloak","odoo","True","${KEYCLOAK_URL}/auth/realms/ozone/protocol/openid-connect/auth","${KEYCLOAK_URL}/auth/realms/ozone/protocol/openid-connect/userinfo","profile","True","Login With Keycloak",""
+"auth_oauth.provider_openerp","10","Odoo.com Accounts","630358be-0d41-11ec-92b8-0242c0a89003","","https://accounts.odoo.com/oauth2/auth","https://accounts.odoo.com/oauth2/tokeninfo","userinfo","","Log in with Odoo.com",""
