@@ -1,4 +1,0 @@
-databases:
-- database_name: Postgres
-  sqlalchemy_uri: postgresql://analytics:password@postgresql:5432/analytics
-  tables: []

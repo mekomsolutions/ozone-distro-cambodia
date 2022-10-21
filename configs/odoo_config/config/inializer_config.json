@@ -1,9 +1,0 @@
-{
-    "models" : [
-        {
-            "model_name": "auth.oauth.provider",
-            "folder": "auth_providers",
-            "field_rules": {}
-        }
-    ]
-}
