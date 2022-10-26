@@ -1,11 +1,15 @@
-# Ozone-Openmrs 3.0 Distribution (WIP)
+# Ozone Ditribution For Cambodia 🇰🇭
+
+Ozone - All in one system for healthcare facilities: https://www.ozone-his.com/
 
 -----
 
-This repository maintains the 'distro POM' for Ozone Demo  distribution.
-It downloads and brings in one place all artifacts needed by the distribution, simply run:
+Maven project for Ozone distribution for Cambodia. Downloads and brings in one place all artifacts needed by the distribution
+
+Simply run:
 ```
 mvn clean package
 ```
-### Target inventory:
+to assemble all required artifacts.
+
 
