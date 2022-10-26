@@ -1,0 +1,5 @@
+version: 1
+build:
+  bash_commands: "mvn clean install"
+deploy:
+  bash_commands: "mvn clean deploy -DskipTests -DaltDeploymentRepository=mks-nexus-private::default::https://nexus.mekomsolutions.net/repository/maven-private-snapshots"
