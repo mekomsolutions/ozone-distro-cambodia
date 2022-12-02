@@ -1,0 +1,4 @@
+#
+# Escaped regex pattern. Supports multiple lines.
+#
+\.\*openmrs_config.\*demo.\*csv

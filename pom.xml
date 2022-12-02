@@ -48,11 +48,28 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Copy configuration into the target folder -->
+      <plugin>
+        <artifactId>exec-maven-plugin</artifactId>
+        <groupId>org.codehaus.mojo</groupId>
+        <executions>
+          <execution>
+            <id>exclude-files</id>
+            <phase>package</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>${basedir}/scripts/exclude-files.sh</executable>
+              <commandlineArgs>${project.build.directory}/${project.artifactId}-${project.version}</commandlineArgs>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Override with local configuration into the target folder -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>3.3.0</version>
         <executions>
           <execution>
             <id>copy-resources</id>
@@ -65,14 +82,13 @@
               <resources>
                 <resource>
                   <directory>${project.basedir}/configs</directory>
-                  <filtering>true</filtering>
                 </resource>
               </resources>
             </configuration>
           </execution>
         </executions>
       </plugin>
-       <!-- Packaging the distro as a installable/deployable file -->
+      <!-- Packaging the distro as a installable/deployable file -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -86,7 +102,7 @@
             <configuration>
               <appendAssemblyId>false</appendAssemblyId>
               <descriptors>
-                <descriptor>src/main/assembly/assembly.xml</descriptor>
+                <descriptor>assembly.xml</descriptor>
               </descriptors>
             </configuration>
           </execution>

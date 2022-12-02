@@ -1,8 +1,0 @@
-<config>
-    <globalProperties>
-        <globalProperty>
-            <property>oauth2login.redirectUriAfterLogin</property>
-            <value>/spa/login/location</value>
-        </globalProperty>
-    </globalProperties>
-</config>git
