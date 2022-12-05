@@ -1,0 +1,60 @@
+{
+    "@openmrs/esm-patient-registration-app": {
+      "sections": ["demographics", "contact"],
+      "fieldDefinitions": [
+        {
+          "id": "telephoneField",
+          "type": "person attribute",
+          "uuid": "14d4f066-15f5-102d-96e4-000c29c2a5d7",
+          "placeholder": "placeholder"
+        },
+        {
+            "id": "occupationField",
+            "type": "person attribute",
+            "uuid": "7e142fa0-64ca-4220-ae90-a8f7f955458b",
+            "placeholder": "placeholder",
+            "answerConceptSetUuid": "2ef163b6-eec8-4678-abed-0dd261220168"
+          },
+          {
+            "id": "ethnicityField",
+            "type": "person attribute",
+            "uuid": "632d27a5-58c6-49f3-acb1-2a7b5855eaca",
+            "placeholder": "placeholder",
+            "answerConceptSetUuid": "c8b01687-086e-4f7e-ad0d-db77c423a2a7"
+          },
+          {
+              "id": "birthPlaceField",
+              "type": "person attribute",
+              "uuid": "4752b0ca-d8dd-4de9-b59a-7c77895b7657",
+              "placeholder": "placeholder"
+            },
+            {
+              "id": "socialStatusField",
+              "type": "person attribute",
+              "uuid": "157d3d3c-fdc7-443d-82be-71b7b3d92940",
+              "placeholder": "placeholder",
+              "answerConceptSetUuid": "4e7a07f2-345f-419c-8d30-b060d9b8681a"
+            }
+      ],
+      "sectionDefinitions": [
+        {
+          "id": "demographics",
+          "name": "Basic Info",
+          "fields": ["name", "gender", "dob", "id"]
+        },
+        { "id": "contact", "name": "Contact Details", "fields": ["address","telephoneField","occupationField","ethnicityField","birthPlaceField","socialStatusField"] },
+        { "id": "death", "name": "Death Info", "fields": [] },
+        { "id": "relationships", "name": "Relationships", "fields": [] }
+        
+      ],
+      "defaultPatientIdentifierTypes": ["a4949ae8-d858-444b-ac9f-33c1d8825442","177c01be-789a-4c47-9515-3e6b092d4322"]
+
+    },
+    "@openmrs/esm-login-app": {
+      "provider": {
+        "type": "oauth2",
+        "loginUrl": "/openmrs/oauth2login",
+        "logoutUrl": "/openmrs/oauth2logout"
+      }
+    }
+  }

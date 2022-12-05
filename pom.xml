@@ -48,8 +48,10 @@
           </execution>
         </executions>
       </plugin>
+      <!-- Exclude resource files as speficied in dependency-excludes.txt -->
       <plugin>
         <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
         <groupId>org.codehaus.mojo</groupId>
         <executions>
           <execution>
@@ -59,19 +61,19 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>${basedir}/scripts/exclude-files.sh</executable>
+              <executable>${basedir}/resources/exclude-files.sh</executable>
               <commandlineArgs>${project.build.directory}/${project.artifactId}-${project.version}</commandlineArgs>
             </configuration>
           </execution>
         </executions>
       </plugin>
-      <!-- Override with local configuration into the target folder -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.3.0</version>
         <executions>
           <execution>
+            <!-- Override with local configuration into the target folder -->
             <id>copy-resources</id>
             <phase>package</phase>
             <goals>
@@ -82,6 +84,23 @@
               <resources>
                 <resource>
                   <directory>${project.basedir}/configs</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- Substitue variables present in the resources/ folder -->
+            <id>substitute-variables</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/resources</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/resources</directory>
+                   <filtering>true</filtering>
                 </resource>
               </resources>
             </configuration>
@@ -114,9 +133,6 @@
     <repository>
       <id>mks-nexus-public</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
     </repository>
     <repository>
       <id>openmrs-repo</id>
