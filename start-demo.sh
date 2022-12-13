@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
+set -e
 
 repoUrl=https://nexus.mekomsolutions.net
-repoName=maven-private
+serverId=mks-repo-private
+repoName=maven-private-snapshots
 groupId=net.mekomsolutions
 artifactId=ozonepro-docker-compose
-outputFile=./target/${artifactId}.zip
-destinationFolder=./target/${artifactId}
+version=1.0.0-SNAPSHOT
+destinationFolder=./target/${artifactId}-${version}
 
 # Clean
 rm -rf ${destinationFolder}
@@ -20,13 +22,15 @@ fi
 # Build the distro
 mvn clean package
 
-# Download latest Ozone Pro Docker Compose
-curl -s -u ${NEXUS_USER}:${NEXUS_PASSWORD} -X GET "${repoUrl}/service/rest/v1/search/assets/download?repository=${repoName}&group=${groupId}&name=${artifactId}&sort=version&maven.extension=zip&sort=version" -L  -H "accept: application/json" --output ${outputFile} && unzip ${outputFile} -d ${destinationFolder}
+# Download Ozone Pro Docker Compose
+./mvnw org.apache.maven.plugins:maven-dependency-plugin:get -DremoteRepositories=${serverId}::::${repoUrl}/repository/${repoName} -Dartifact=${groupId}:${artifactId}:${version}:zip -Dtransitive=false
+./mvnw org.apache.maven.plugins:maven-dependency-plugin:unpack -Dproject.basedir=./target/ -Dartifact=${groupId}:${artifactId}:${version}:zip -DoutputDirectory=./target/${artifactId}-${version}
 
-# Concatenate the env files
-cat ${destinationFolder}/.env <(echo) target/resources/ozonepro-docker-compose.env > ${destinationFolder}/concatenated.env
+
+# Concatenate and clean up the env files
+sort -u -t '=' -k 1,1 target/resources/ozonepro-docker-compose.env ${destinationFolder}/.env | sed '/^#/d' > ${destinationFolder}/concatenated.env
 
 # Run
-docker compose -f "./target/${artifactId}/docker-compose.yml" --env-file "./target/${artifactId}/concatenated.env" -p ozone-distro-cambodia up -d openmrs proxy frontend keycloak
+docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up -d proxy keycloak
 
 exit 0

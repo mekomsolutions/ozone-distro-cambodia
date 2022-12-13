@@ -7,19 +7,26 @@ Ozone - All in one system for healthcare facilities: https://www.ozone-his.com/
 Maven project for Ozone distribution for Cambodia. Downloads and brings in one place all artifacts needed by the distribution
 
 
-## Try it!
+## Quick start!
 
 The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environement.
 
 ```
-./start-demo.sh
+$ git clone https://github.com/ozone-his/ozone-distro-cambodia
+$ cd ozone-distro-cambodia
+$ ./start-demo.sh
 ```
 
-Access OpenMRS 3 at http://localhost/openmrs/
+Then start browsing:
 
+| HIS Component     | URL                            | Username | Password |
+|-------------------|--------------------------------|----------|----------|
+| OpenMRS 3         | http://localhost/openmrs/spa  | jdoe    | password |
+| OpenMRS Legacy UI | http://localhost/openmrs      | jdoe    | password |
 
+---
 
-## Package the distro
+### Package the distro
 
 ```
 mvn clean package
