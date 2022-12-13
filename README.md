@@ -26,6 +26,17 @@ Then start browsing:
 
 ---
 
+#### Running on a Mac
+If running the project on a Mac, make sure to edit [resources/ozonepro-docker-compose.env](resources/ozonepro-docker-compose.env) and update the variables
+ - `HOST_URL`
+ - `KEYCLOAK_FRONTEND_URL`
+ - `OAUTH_ACCESS_TOKEN_URI`
+
+to replace `172.17.0.1` by `host.docker.internal` (and add `127.0.0.1 host.docker.internal` in your system `/etc/hosts` file).
+
+
+## Advanced
+
 ### Package the distro
 
 ```
