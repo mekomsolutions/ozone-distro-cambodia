@@ -13,12 +13,6 @@ destinationFolder=./target/${artifactId}-${version}
 rm -rf ${destinationFolder}
 rm -f ${outputFile}
 
-if [[ -z ${NEXUS_USER} || -z ${NEXUS_PASSWORD} ]]
-then
-	printf "Missing credentials to Nexus repository.\nPlease provide 'NEXUS_USER' and 'NEXUS_PASSWORD' as environment variables"
-	exit 1
-fi
-
 # Build the distro
 mvn clean package
 
