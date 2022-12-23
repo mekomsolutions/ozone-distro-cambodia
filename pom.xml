@@ -30,7 +30,7 @@
   </dependencies>
   <profiles>
     <profile>
-      <!-- Introducing confidentiality dependencies for production-like environments -->
+      <!-- Introducing confidentiality dependencies for production environments -->
       <id>prod</id>
       <activation>
         <activeByDefault>false</activeByDefault>
