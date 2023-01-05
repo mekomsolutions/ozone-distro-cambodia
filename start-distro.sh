@@ -4,7 +4,7 @@ set -e
 repoUrl=https://nexus.mekomsolutions.net
 serverId=mks-repo-private
 repoName=maven-private
-groupId=net.mekomsolutions
+groupId=com.ozonehis
 artifactId=ozonepro-docker-compose
 version=1.0.0-SNAPSHOT
 destinationFolder=./target/${artifactId}-${version}
