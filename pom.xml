@@ -101,7 +101,7 @@
         <executions>
           <execution>
             <id>unpack-ozone-pro-distro</id>
-            <phase>package</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>unpack-dependencies</goal>
             </goals>
@@ -140,8 +140,8 @@
         <executions>
           <execution>
             <!-- Override with local configuration into the target folder -->
-            <id>copy-resources</id>
-            <phase>package</phase>
+            <id>copy-local-resources</id>
+            <phase>prepare-package</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
