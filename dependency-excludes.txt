@@ -1,4 +1,12 @@
 #
 # Escaped regex pattern. Supports multiple lines.
 #
-\.\*openmrs_config.\*demo.\*csv
+\.\*openmrs_config.\*ampathforms.\*demo.\*json
+\.\*openmrs_config.\*appointment.\*
+\.\*openmrs_config.\*concepts.\*demo.\*csv
+\.\*openmrs_config.\*personattributetypes.\*demo.\*csv
+\.\*openmrs_config.\*privileges.\*demo.\*csv
+\.\*openmrs_config.\*program.\*
+\.\*openmrs_config.\*roles.\*demo.\*csv
+
+# \.\*openmrs_config.\*demo.\*csv

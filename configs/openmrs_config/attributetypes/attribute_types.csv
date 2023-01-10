@@ -1,0 +1,2 @@
+Uuid,Void/Retire,Entity name,Name,display:en,display:km,Description,Min occurs,Max occurs,Datatype classname,Datatype config,Preferred handler classname,Handler config,_order:1000
+af89d44d-5074-472f-b5bc-470feb567633,,Visit,Insurance Type,Insurance Type,ប្រភេទធានារ៉ាប់រង,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,8e807373-be15-4580-9a1c-0d681e04a2ed,,,

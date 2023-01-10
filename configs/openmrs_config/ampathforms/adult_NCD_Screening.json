@@ -1,0 +1,584 @@
+{
+    "name": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ  (Adult NCD Screening)",
+    "description": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Screening Form)",
+    "version": "1",
+    "published": true,
+    "retired": false,
+    "encounter": "Consultation",
+    "processor": "EncounterFormProcessor",
+    "uuid": "xxxx",
+    "referencedForms": [],
+    "pages": [
+        {
+            "label": "ទូទៅ (General)",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "ទូទៅ (General)",
+                    "questions": [
+                        {
+                            "id": "smoked",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
+                                "answers": [
+                                    {
+                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
+                                    },
+                                    {
+                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
+                                    },
+                                    {
+                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "exercise",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "drinkAlcohol",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "ប្រវត្តិជំងឺ (Past Medical History)",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "ប្រវត្តិជំងឺ (Past Medical History)",
+                    "questions": [
+                        {
+                            "id": "knownHypertensive",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f8fd0782-a9fc-4c02-b556-72740853bc18",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "knownHypertensivemedsUse",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c311aec0-dd3d-4c84-a4ab-601fab82ca37",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "knownDiabetic",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "b8edfbde-5f94-421e-8b25-e86afe35d0f7",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "antidiabeticmedsUse",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "3c803217-425c-4d7c-a2cb-fc2256ad7ca2",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "hxHeartDisease",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "7cf6d87c-4a23-467d-83c1-cd5efacd8cd1",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "hxDiabetesAndHeartDisease",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "157621ff-16ac-4dd4-bc96-6164d3248807",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "ការពិនិត្យវិភាគ (Investigations)",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "សញ្ញាជីវិត និងជីវមាត្រ (Vitals and Biometrics)",
+                    "questions": [
+                        {
+                            "id": "Ht",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "272",
+                                "min": "10",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "Wt",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "250",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "waistCircumference",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
+                                "max": "",
+                                "min": "",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "BMI",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "a89c60c0-1350-11df-a1f1-0026b9348838",
+                                "max": "",
+                                "min": "0",
+                                "showDate": "false",
+                                "calculate": {
+                                    "calculateExpression": "calcBMI(Ht,Wt)"
+                                  }
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "systole",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "250",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "diastole",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "150",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "pulse",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "230",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "temp",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "43",
+                                "min": "25",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "កម្រិតជាតិស្ករក្នុងឈាម (Blood sugar levels)",
+                    "questions": [
+                        {
+                            "id": "FBS",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
+                                "max": "600",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "RBS",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
+                                "max": "600",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "ការធ្វើតេស្តទឹកនោម (Urine Tests)",
+                    "questions": [
+                        {
+                            "id": "albumin",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "c423325e-be95-42e2-ae38-b940c2586327",
+                                "max": "90",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "ketones",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
+                                "max": "9",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "ជាតិខ្លាញ់ (Lipids)",
+                    "questions": [
+                        {
+                            "id": "cholestrol",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
+                                "max": "900",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "រោគសញ្ញាសង្ស័យជំងឺរបេង (Tuberculosis Symptoms)",
+                    "questions": [
+                        {
+                            "id": "TBsx",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e0fffb24-5973-40a9-af11-2e4033831747",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "ការវាយតម្លៃ (Assessment)",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "ការវាយតម្លៃ (Assessment)",
+                    "questions": [
+                        {
+                            "id": "CVDscore",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
+                                "max": "100",
+                                "min": "0",
+                                "showDate": "false",
+                                "calculate": {
+                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
+                                 }
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "hospitalReferral",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "41648b2c-9caf-4f2f-8ce2-ef7d94db48a5",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "ការគ្រប់គ្រង (Management)",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "ការគ្រប់គ្រង (Management)",
+                    "questions": [
+                        {
+                            "id": "CVDfollowUpScreening",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "7a67e555-1320-4197-a5df-54be3e68a1fe",
+                                "answers": [
+                                    {
+
+                                        "concept": "1dbd741d-b9d9-49d1-b021-90931a6bdd1a"
+                                    },
+                                    {
+                                        "concept": "a085b404-2596-48d6-a454-cd164d4a83fc"
+                                    },
+                                    {
+                                        "concept": "9b305de5-9df6-4db9-820d-9a24541418ab"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "followUpDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "tobaccoCessationCounselling",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "d7035879-6668-4cb0-87ab-a1311ccb774c",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "dietAndExerciseCounselling",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "dc833bb7-2d04-4be0-ab58-47b9fb2bf771",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "medicinePrescribed",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "medicineDetails",
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "62e5ac97-0fb6-478b-bd30-2157374b3cc0",
+								"answers": [
+{
+                                        "concept": "8b732fab-81d0-44d0-a1c0-b48f29abbcf7"},
+{
+                                        "concept": "3582affc-0292-4c6e-82e1-d947d2b747d9"},
+{
+                                        "concept": "934e4832-4f8c-4f18-8e6c-44df60185a4f"},
+{
+                                        "concept": "7e11b94c-759c-4c9e-a0fa-5268f59397b8"},
+{
+                                        "concept": "49ea1422-dfca-4b6d-b8d5-e8688f33d780"},
+{
+                                        "concept": "98a3d43a-1a0e-4f92-809b-894d5833cc1f"},
+{
+                                        "concept": "39f9ad3a-88f4-400d-a854-c2433dacbb91"},
+{
+                                        "concept": "ad0a4f7f-cb96-4b99-b2cf-52fae54f442a"},
+{
+                                        "concept": "2c18c145-faad-41ba-99e2-4547a0ca05aa"},
+{
+                                        "concept": "691ebd60-f916-4f9e-990e-8cc21420c6d9"},
+{
+                                        "concept": "54b53e46-def0-4aa1-b8ff-2728e377c0b3"},
+{
+                                        "concept": "71617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"},
+{
+                                        "concept": "c9c76271-4736-47cd-aadd-86521a678bfe"},
+{
+                                        "concept": "70252b71-5039-4afb-b8f8-3f22fe300918"},
+{
+                                        "concept": "dd766217-50a8-4a10-bc6d-031a1ff932b4"},
+{
+                                        "concept": "8b584bf2-5006-4e04-98d8-22af160e7689"},
+{
+                                        "concept": "9ceef3a8-b5d4-42ac-8584-710bcef00317"},
+{
+                                        "concept": "f010bba7-769f-4083-8ed9-581513734848"}
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
