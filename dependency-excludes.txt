@@ -4,6 +4,7 @@
 \.\*openmrs_config.\*ampathforms.\*demo.\*json
 \.\*openmrs_config.\*appointment.\*
 \.\*openmrs_config.\*concepts.\*demo.\*csv
+\.\*openmrs_config.\*encountertypes.\*demo.\*csv
 \.\*openmrs_config.\*personattributetypes.\*demo.\*csv
 \.\*openmrs_config.\*privileges.\*demo.\*csv
 \.\*openmrs_config.\*program.\*
