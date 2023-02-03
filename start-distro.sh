@@ -14,7 +14,7 @@ rm -rf ${destinationFolder}
 rm -f ${outputFile}
 
 # Build the distro
-./mvnw clean package
+./mvnw clean package -Pprod
 
 # Download Ozone Pro Docker Compose
 ./mvnw org.apache.maven.plugins:maven-dependency-plugin:get -DremoteRepositories=${serverId}::::${repoUrl}/repository/${repoName} -Dartifact=${groupId}:${artifactId}:${version}:zip -Dtransitive=false
@@ -24,7 +24,9 @@ rm -f ${outputFile}
 # Concatenate and clean up the env files
 sort -u -t '=' -k 1,1 target/resources/ozonepro-docker-compose.env ${destinationFolder}/.env | sed '/^#/d' > ${destinationFolder}/concatenated.env
 
+# update images
+
 # Run
-docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up -d proxy keycloak superset
+docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up --pull -d proxy keycloak superset
 
 exit 0
