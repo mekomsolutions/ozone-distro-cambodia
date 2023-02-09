@@ -32,6 +32,6 @@ sort -u -t '=' -k 1,1 target/resources/ozonepro-docker-compose.env ${destination
 # update images
 
 # Run
-docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up --pull -d proxy keycloak superset
+docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up --pull -d proxy keycloak openmrs frontend mysql
 
 exit 0
