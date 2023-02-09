@@ -9,12 +9,17 @@ artifactId=ozonepro-docker-compose
 version=1.0.0-SNAPSHOT
 destinationFolder=./target/${artifactId}-${version}
 
+
+# Set the profile value if provided
+[ -z "$1" ] && profileArg="" || profileArg="-P$1"
+ 
+
 # Clean
 rm -rf ${destinationFolder}
 rm -f ${outputFile}
 
 # Build the distro
-./mvnw clean package -Pprod
+./mvnw clean package $profileArg
 
 # Download Ozone Pro Docker Compose
 ./mvnw org.apache.maven.plugins:maven-dependency-plugin:get -DremoteRepositories=${serverId}::::${repoUrl}/repository/${repoName} -Dartifact=${groupId}:${artifactId}:${version}:zip -Dtransitive=false
