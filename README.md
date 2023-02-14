@@ -9,7 +9,7 @@ Maven project for Ozone distribution for Cambodia. Downloads and brings in one p
 
 ## Implementer instructions
 
-The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environement.
+The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
 
 ```
 $ git clone https://github.com/ozone-his/ozone-distro-cambodia
