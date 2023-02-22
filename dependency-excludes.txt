@@ -11,3 +11,4 @@
 \.\*openmrs_config.\*roles.\*demo.\*csv
 
 # \.\*openmrs_config.\*demo.\*csv
+\.\*ozone-frontend-config.json

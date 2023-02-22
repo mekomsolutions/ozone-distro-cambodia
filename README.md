@@ -14,9 +14,34 @@ The distro can be run using the Ozone Pro Docker project. Quick start command be
 ```
 $ git clone https://github.com/ozone-his/ozone-distro-cambodia
 $ cd ozone-distro-cambodia
-$ ./start-distro.sh
+```
+
+Package the distro (optional, provide a prod profile to include confidential configs)
+```
+./mvnw clean package [-Pprod]
+```
+
+Prepare for the run (optional override the default `hostUrl` value - for Macs)
+```
+./mvnw -f run/pom.xml clean package [-DhostUrl=http://host.docker.internal]
+```
+
+Pull images
+```
+docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" pull proxy frontend openmrs mysql
+```
+
+Run
+```
+docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia up -d proxy frontend openmrs mysql
+
+```
+
+_WIP_ Run Analytics
+```
 $ ./start-analytics.sh
 ```
+
 
 Then start browsing:
 
@@ -28,18 +53,13 @@ Then start browsing:
 ---
 
 #### Running on a Mac
-If running the project on a Mac, make sure to edit [resources/ozonepro-docker-compose.env](resources/ozonepro-docker-compose.env) and update the variables
- - `HOST_URL`
- - `KEYCLOAK_FRONTEND_URL`
- - `OAUTH_ACCESS_TOKEN_URI`
-
-Replace `172.17.0.1` by `host.docker.internal` (and add `127.0.0.1 host.docker.internal` in your system `/etc/hosts` file).
+If running the project on a Mac, make sure to build the [run/](run/) Maven project with `-DhostUrl=http://host.docker.internal` 
 
 If using the Ozone Anayltics, do the same in [resources/ozone-analytics.env](resources/ozone-analytics.env)
 
-#### Note regarding excluding inherited files from Ozone Pro Distro:
+#### Note regarding excluding inherited files from Ozone Distro:
 
-It is possible to exclude some of the files inherited from the Ozone Pro Distribution, thus also the OpenMRS Distro Reference Application.
+It is possible to exclude some of the files inherited from the Ozone distro transitive dependencies (thus the OpenMRS Distro Reference Application)
 To do so, provide your exclusion regular expression in the [dependency-excludes.txt](dependency-excludes.txt) file.
 
 Eg:
