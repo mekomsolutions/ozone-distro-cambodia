@@ -16,9 +16,9 @@ $ git clone https://github.com/ozone-his/ozone-distro-cambodia
 $ cd ozone-distro-cambodia
 ```
 
-Package the distro (optional, provide a prod profile to include confidential configs)
+Build the distro (optional, provide a prod profile to include confidential configs)
 ```
-./mvnw clean package [-Pprod]
+./mvnw clean install [-Pprod]
 ```
 
 Prepare for the run (optional override the default `hostUrl` value - for Macs)
