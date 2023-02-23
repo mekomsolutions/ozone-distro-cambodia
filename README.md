@@ -16,14 +16,14 @@ $ git clone https://github.com/ozone-his/ozone-distro-cambodia
 $ cd ozone-distro-cambodia
 ```
 
-Build the distro (optional, provide a prod profile to include confidential configs)
+Build the distro (optional, provide a `prod` profile to include confidential configs)
 ```
 ./mvnw clean install [-Pprod]
 ```
 
-Prepare for the run (optional override the default `hostUrl` value - for Macs)
+Prepare for the run (optional override the default `hostUrl` value - for Macs, provide a `prod` profile)
 ```
-./mvnw -f run/pom.xml clean package [-DhostUrl=http://host.docker.internal]
+./mvnw -f run/pom.xml clean package [-DhostUrl=http://host.docker.internal] [-Pprod]
 ```
 
 Pull images

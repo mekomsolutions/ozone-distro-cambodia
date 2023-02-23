@@ -17,23 +17,48 @@
   </developers>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    
     <!-- Variables used for subsitution in resource files -->
     <hostUrl>http://172.17.0.1</hostUrl>
     <distroArtifactId>ozone-distro-cambodia</distroArtifactId>
     <distroVersion>1.0.0-SNAPSHOT</distroVersion>
+    <distro.classifier/>
   </properties>
-  
+  <profiles>
+    <profile>
+      <!-- Introducing confidentiality dependencies for production environments -->
+      <id>prod</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>com.ozonehis</groupId>
+          <artifactId>ozone-distro-cambodia</artifactId>
+          <type>zip</type>
+          <version>1.0.0-SNAPSHOT</version>
+          <classifier>prod</classifier>
+        </dependency>
+      </dependencies>
+    </profile>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>com.ozonehis</groupId>
+          <artifactId>ozone-distro-cambodia</artifactId>
+          <type>zip</type>
+          <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
   <dependencies>
     <dependency>
       <groupId>com.ozonehis</groupId>
       <artifactId>ozone-docker-compose</artifactId>
-      <type>zip</type>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-     <dependency>
-      <groupId>com.ozonehis</groupId>
-      <artifactId>ozone-distro-cambodia</artifactId>
       <type>zip</type>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
@@ -59,7 +84,7 @@
               <includeArtifactIds>ozone-docker-compose</includeArtifactIds>
             </configuration>
           </execution>
-           <!-- Unpack Ozone Distro Cambodia-->
+          <!-- Unpack Ozone Distro Cambodia-->
           <execution>
             <id>Unpack Ozone Distro Cambodia</id>
             <phase>generate-resources</phase>
@@ -102,6 +127,7 @@
       <plugin>
         <artifactId>exec-maven-plugin</artifactId>
         <groupId>org.codehaus.mojo</groupId>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <!-- Concatenate env vars -->
