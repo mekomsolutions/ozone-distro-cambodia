@@ -1,12 +1,10 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
-  
   <groupId>com.ozonehis</groupId>
   <artifactId>ozone-distro-cambodia</artifactId>
   <name>Ozone Distribution for Cambodia</name>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
   <organization>
     <name>Ozone HIS</name>
     <url>http://www.ozone-his.com</url>
@@ -17,22 +15,19 @@
       <url>http://www.mekomsolutions.com</url>
     </developer>
   </developers>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <buildDirectory>${project.build.directory}</buildDirectory>
     <assemblyClassifier/>
   </properties>
-  
   <dependencies>
     <dependency>
       <groupId>com.ozonehis</groupId>
-      <artifactId>ozonepro-distro</artifactId>
+      <artifactId>ozone-distro</artifactId>
       <type>zip</type>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
-  
   <profiles>
     <profile>
       <!-- Introducing confidentiality dependencies for production environments -->
@@ -53,22 +48,65 @@
       </dependencies>
       <build>
         <plugins>
-          <plugin>
+           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <version>2.8</version>
             <executions>
+              <!-- Copy the confidential configs -->
               <execution>
-                <id>unpack-ozone-config-cambodia0</id>
-                <phase>package</phase>
+                <id>Unpack Ozone Config Cambodia 0</id>
+                <phase>generate-resources</phase>
                 <goals>
                   <goal>unpack-dependencies</goal>
                 </goals>
                 <configuration>
                   <excludeTransitive>true</excludeTransitive>
                   <useBaseVersion>true</useBaseVersion>
-                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}</outputDirectory>
+                  <outputDirectory>${buildDirectory}/ozone-config-cambodia0</outputDirectory>
                   <includeArtifactIds>ozone-config-cambodia0</includeArtifactIds>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.3.0</version>
+            <executions>
+              <execution>
+                <!-- Copy the non-prod target dir -->
+                <id>Copy non-prodcution files</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>copy-resources</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
+                  <overwrite>true</overwrite>
+                  <resources>
+                    <resource>
+                      <directory>${buildDirectory}/${project.artifactId}-${project.version}</directory>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+                <execution>
+                <!-- Overwrite non-prod configs with confidential configs -->
+                <!-- # Unknown -->
+                <id>Copy confidential configs</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>copy-resources</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
+                  <overwrite>true</overwrite>
+                  <resources>
+                    <resource>
+                      <directory>${buildDirectory}/ozone-config-cambodia0</directory>
+                    </resource>
+                  </resources>
                 </configuration>
               </execution>
             </executions>
@@ -78,7 +116,7 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <executions>
               <execution>
-                <id>package-distro-prod-artifact</id>
+                <id>Package production distro</id>
                 <phase>package</phase>
                 <goals>
                   <goal>single</goal>
@@ -86,7 +124,7 @@
                 <configuration>
                   <appendAssemblyId>true</appendAssemblyId>
                   <descriptors>
-                    <descriptor>assembly.xml</descriptor>
+                    <descriptor>assembly-prod.xml</descriptor>
                   </descriptors>
                 </configuration>
               </execution>
@@ -96,18 +134,17 @@
       </build>
     </profile>
   </profiles>
-  
   <build>
     <plugins>
-      <!-- Copy the Ozone Pro Distro resources -->
+      <!-- Copy the Ozone Distro resources -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <version>2.8</version>
         <executions>
           <execution>
-            <id>unpack-ozone-pro-distro</id>
-            <phase>prepare-package</phase>
+            <id>Unpack Ozone Distro</id>
+            <phase>generate-resources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
             </goals>
@@ -115,7 +152,7 @@
               <excludeTransitive>true</excludeTransitive>
               <useBaseVersion>true</useBaseVersion>
               <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}</outputDirectory>
-              <includeArtifactIds>ozonepro-distro</includeArtifactIds>
+              <includeArtifactIds>ozone-distro</includeArtifactIds>
             </configuration>
           </execution>
         </executions>
@@ -127,13 +164,13 @@
         <groupId>org.codehaus.mojo</groupId>
         <executions>
           <execution>
-            <id>exclude-files</id>
-            <phase>package</phase>
+            <id>Run exclude-files.sh</id>
+            <phase>process-resources</phase>
             <goals>
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>${basedir}/resources/exclude-files.sh</executable>
+              <executable>${basedir}/exclude-files.sh</executable>
               <commandlineArgs>${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
             </configuration>
           </execution>
@@ -145,34 +182,18 @@
         <version>3.3.0</version>
         <executions>
           <execution>
-            <!-- Override with local configuration into the target folder -->
-            <id>copy-local-resources</id>
+            <!-- Override with local files into the target folder -->
+            <id>Copy local resources</id>
             <phase>prepare-package</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
               <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}</outputDirectory>
+              <overwrite>true</overwrite>
               <resources>
                 <resource>
                   <directory>${project.basedir}/configs</directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <!-- Substitue variables present in the resources/ folder -->
-            <id>substitute-variables</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${buildDirectory}/resources</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${project.basedir}/resources</directory>
-                  <filtering>true</filtering>
                 </resource>
               </resources>
             </configuration>
@@ -185,7 +206,7 @@
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
-            <id>package-distro-artifact</id>
+            <id>Package distro</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>
@@ -201,7 +222,6 @@
       </plugin>
     </plugins>
   </build>
-  
   <repositories>
     <repository>
       <id>mks-nexus-public</id>
@@ -212,7 +232,6 @@
       <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
     </repository>
   </repositories>
-  
   <distributionManagement>
     <repository>
       <name>Mekom Solutions Nexus repo</name>
@@ -225,5 +244,4 @@
       <url>https://nexus.mekomsolutions.net/repository/maven-private-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
-  
 </project>
