@@ -1,4 +1,4 @@
-# Ozone Ditribution For Cambodia 🇰🇭
+# Ozone Distribution For Cambodia 🇰🇭
 
 Ozone - All in one system for healthcare facilities: https://www.ozone-his.com/
 
