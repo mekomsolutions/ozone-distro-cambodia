@@ -37,6 +37,13 @@
           "uuid": "157d3d3c-fdc7-443d-82be-71b7b3d92940",
           "placeholder": "placeholder",
           "answerConceptSetUuid": "4e7a07f2-345f-419c-8d30-b060d9b8681a"
+        },
+        {
+          "id": "educationField",
+          "type": "person attribute",
+          "uuid": "a6cac115-4369-4bf2-a3b2-8e86276cbc65",
+          "placeholder": "placeholder",
+          "answerConceptSetUuid": "27059c69-511a-47af-b987-16580c36905a"
         }
       ],
       "sectionDefinitions": [
@@ -59,7 +66,8 @@
             "occupationField",
             "ethnicityField",
             "birthPlaceField",
-            "socialStatusField"
+            "socialStatusField",
+            "educationField"
           ]
         },
         {
