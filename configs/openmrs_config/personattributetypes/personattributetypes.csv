@@ -6,3 +6,4 @@ Uuid,Void/Retire,Name,display:en,display:km,Description,Format,Foreign uuid,Sear
 4752b0ca-d8dd-4de9-b59a-7c77895b7657,,Place of Birth,Place of Birth,ទី​កន្លែង​កំណើត,Place of birth attribute,java.lang.String,,,,
 157d3d3c-fdc7-443d-82be-71b7b3d92940,,Marital Status,Marital Status,ស្ថានភាពគ្រួសារ,Situation matrimoniale,org.openmrs.Concept,4e7a07f2-345f-419c-8d30-b060d9b8681a,,,
 a6cac115-4369-4bf2-a3b2-8e86276cbc65,,Education,Education,ការអប់រំ,Patient education list,org.openmrs.Concept,27059c69-511a-47af-b987-16580c36905a,,,
+a6cac115-4369-4bf2-a3b2-8e86276cbc65,,Education,Education,ការអប់រំ,Patient education list,org.openmrs.Concept,27059c69-511a-47af-b987-16580c36905a,,,
