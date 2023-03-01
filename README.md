@@ -47,8 +47,7 @@ Then start browsing:
 
 | HIS Component     | URL                            | Username | Password |
 |-------------------|--------------------------------|----------|----------|
-| OpenMRS 3         | http://localhost/openmrs/spa  | jdoe    | password |
-| Superset | http://localhost:8088/openmrs      | jdoe    | password |
+| OpenMRS 3         | http://localhost/openmrs/spa  | admin    | Admin123 |
 
 ---
 
