@@ -1,10 +1,10 @@
 {
-    "name": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ  (Adult NCD Screening)",
-    "description": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Screening Form)",
+    "name": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព (Health Center - NCD Screening)",
+    "description": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព (Health Center - NCD Screening)",
     "version": "1",
     "published": true,
     "retired": false,
-    "encounter": "Adult NCD Screening",
+    "encounter": "Health Center - NCD Screening",
     "processor": "EncounterFormProcessor",
     "uuid": "xxxx",
     "referencedForms": [],
