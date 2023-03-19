@@ -32,7 +32,33 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
+						{
+                            "id": "xxxxxxxx",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(TBsx) ||  TBsx!== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "",
+                                "answers": [
+                                    {
+                                        "concept": ""
+                                    },
+                                    {
+                                        "concept": ""
+                                    },
+                                    {
+                                        "concept": ""
+                                    },
+                                    {
+                                        "concept": ""
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
 					]
 				},
 				{
