@@ -8,11 +8,11 @@ The Ozone Distribution For Cambodia or **Ozone Kh** is a distribution of [Ozone 
 
 ## Demo Environments
 
-| Server   | URL                                        | Credentials      |
-|----------|--------------------------------------------|------------------|
-| Dev      | https://oz-kh-dev.mekomsolutions.net       | admin / Admin123 |
-| Training | https://oz-kh-training.mekomsolutions.nett | admin / Admin123 |
-| UAT      | [TBC]                                      | [TBC]            |
+| Server   | URL                                                          | Credentials      |
+|----------|--------------------------------------------------------------|------------------|
+| Dev      | https://oz-kh-dev.mekomsolutions.net/openmrs/spa/login#      | admin / Admin123 |
+| Training | https://oz-kh-training.mekomsolutions.net/openmrs/spa/login# | admin / Admin123 |
+| UAT      | [TBC]                                                        | [TBC]            |
 
 ## Implementer Guide
 
