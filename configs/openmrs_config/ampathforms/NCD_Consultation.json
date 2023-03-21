@@ -34,25 +34,25 @@
 							"validators": []
 						},
 						{
-                            "id": "xxxxxxxx",
+                            "id": "TB symptoms",
                             "hide": {
                                 "hideWhenExpression": "isEmpty(TBsx) ||  TBsx!== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "questionOptions": {
                                 "rendering": "multiCheckbox",
-                                "concept": "",
+                                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
                                 "answers": [
                                     {
-                                        "concept": ""
+                                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
                             },
