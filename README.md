@@ -1,68 +1,35 @@
 # Ozone Distribution For Cambodia 🇰🇭
 
-Ozone - All in one system for healthcare facilities: https://www.ozone-his.com/
+A Maven project to download and package in one place all the software artefacts that make the Ozone Distribution for Cambodia.
 
------
+## Summary
 
-Maven project for Ozone distribution for Cambodia. Downloads and brings in one place all artifacts needed by the distribution
+The Ozone Distribution For Cambodia or **Ozone Kh** is a distribution of [Ozone HIS](https://www.ozone-his.com) specially configured for the MoH of Cambodia. In its original form it is an integrated system between an NCD-capable EMR system and a reporting & analytics platform for NCD population reporting.
 
+## Demo Environments
 
-## Implementer instructions
+| Server   | URL                                                          | Credentials      |
+|----------|--------------------------------------------------------------|------------------|
+| Dev      | https://oz-kh-dev.mekomsolutions.net/openmrs/spa/login#      | admin / Admin123 |
+| Training | https://oz-kh-training.mekomsolutions.net/openmrs/spa/login# | admin / Admin123 |
+| UAT      | [TBC]                                                        | [TBC]            |
 
-The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
+## Implementer Guide
 
-```
-$ git clone https://github.com/openmrs/ozone-distro-cambodia
-$ cd ozone-distro-cambodia
-```
+A technical guide to help implementer building and running the project can be found [here](readme/impl-guide.md).
 
-Build the distro (optional, provide a `prod` profile to include confidential configs)
-```
-./mvnw clean install [-Pprod]
-```
+## Public Access to the Project
 
-Prepare for the run (optional override the default `hostUrl` value - for Macs, provide a `prod` profile)
-```
-./mvnw -f run/pom.xml clean package [-DhostUrl=http://host.docker.internal] [-Pprod]
-```
+A large part Ozone Kh's roadmap is managed publicly to promote transparency and foster synergies. Feel free to check our public resources and get in touch through the Slack channel to know more about the project.
 
-Pull images
-```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" pull proxy frontend openmrs mysql
-```
+### Public Resources
 
-Run
-```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia up -d proxy frontend openmrs mysql
+* Slack channel: https://openmrs.slack.com/archives/C03ESJABQKY
+* Issue tracker: https://issues.openmrs.org/projects/KH/issues
 
-```
+## Release Notes
 
-_WIP_ Run Analytics
-```
-$ ./start-analytics.sh
-```
-
-
-Then start browsing:
-
-| HIS Component     | URL                            | Username | Password |
-|-------------------|--------------------------------|----------|----------|
-| OpenMRS 3         | http://localhost/openmrs/spa  | admin    | Admin123 |
-
----
-
-#### Running on a Mac
-If running the project on a Mac, make sure to build the [run/](run/) Maven project with `-DhostUrl=http://host.docker.internal` 
-
-If using the Ozone Anayltics, do the same in [resources/ozone-analytics.env](resources/ozone-analytics.env)
-
-#### Note regarding excluding inherited files from Ozone Distro:
-
-It is possible to exclude some of the files inherited from the Ozone distro transitive dependencies (thus the OpenMRS Distro Reference Application)
-To do so, provide your exclusion regular expression in the [dependency-excludes.txt](dependency-excludes.txt) file.
-
-Eg:
-```
-\.\*openmrs_config.\demo*csv
-```
-
+### Version 1.0.0
+* [TBC] Item 1
+* [TBC] Item 2
+* ...
