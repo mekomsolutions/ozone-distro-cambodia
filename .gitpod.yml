@@ -1,0 +1,10 @@
+---
+
+tasks:
+  - init: ./start-distro.sh default
+
+ports:
+  - name: OpenMRS
+    description: OpenMRS 3
+    port: 80
+    onOpen: open-browser
