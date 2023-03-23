@@ -1,21 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-repoUrl=https://nexus.mekomsolutions.net
-serverId=mks-repo-private
-repoName=maven-private
-groupId=com.ozonehis
-artifactId=ozone-docker-compose
-version=1.0.0-SNAPSHOT
 destinationFolder=./run/target/${artifactId}
 servicesToRun="proxy openmrs frontend mysql"
 
-: "${HOST_URL:=DEFAULT_VALUE}"
-
-
 # Set the profile value if provided
 [ -z "$1" ] && profileArg="" || profileArg="-P$1"
-[ -z "$2" ] && hostUrl="" || hostUrl="-P$1"
 
 # Clean
 rm -rf ${destinationFolder}
