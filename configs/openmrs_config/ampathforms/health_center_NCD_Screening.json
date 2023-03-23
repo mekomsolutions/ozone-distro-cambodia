@@ -75,11 +75,11 @@
             ]
         },
         {
-            "label": "ប្រវត្តិជំងឺ (Past Medical History)",
+            "label": "ប្រវត្តិជំងឺ (Medical History)",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ប្រវត្តិជំងឺ (Past Medical History)",
+                    "label": "ប្រវត្តិជំងឺ (Medical History)",
                     "questions": [
                         {
                             "id": "knownHypertensive",
