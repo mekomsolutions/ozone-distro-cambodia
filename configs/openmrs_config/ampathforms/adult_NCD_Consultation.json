@@ -1,10 +1,10 @@
 {
-	"name": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Consultation)",
-	"description": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Consultation)",
+	"name": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង (NCD Consultation)",
+	"description": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង (NCD Consultation)",
 	"version": "1",
 	"published": true,
 	"retired": false,
-	"encounter": "Adult NCD Consultation",
+	"encounter": "NCD Consultation",
 	"processor": "EncounterFormProcessor",
 	"uuid": "xxxx",
 	"referencedForms": [],
