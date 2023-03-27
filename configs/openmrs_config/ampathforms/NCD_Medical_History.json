@@ -1,10 +1,10 @@
 {
-    "name": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Registration)",
-    "description": "ទម្រង់ពិនិត្យស្រាវជ្រាវរុករកជំងឺមិនឆ្លង សម្រាប់មនុស្សពេញវ័យ (Adult NCD Registration Form)",
+    "name": "ប្រវត្តជំងឺ (NCD Medical History)",
+    "description": "ប្រវត្តជំងឺ (NCD Medical History Form)",
     "version": "1",
     "published": true,
     "retired": false,
-    "encounter": "Adult NCD Registration",
+    "encounter": "NCD Medical History",
     "processor": "EncounterFormProcessor",
     "uuid": "xxxx",
     "referencedForms": [],
