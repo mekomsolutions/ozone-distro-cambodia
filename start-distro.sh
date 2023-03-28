@@ -20,10 +20,6 @@ printf "%s\n" "Done."
 printf "%s\n" "Prepare the run..."
 ./mvnw -f run/pom.xml clean package
 
-# Concatenate and clean up the env files
-sort -u -t '=' -k 1,1 run/target/resources/ozone-docker-compose.env ${destinationFolder}/.env | sed '/^#/d' > ${destinationFolder}/concatenated.env
-printf "%s\n" "Done."
-
 # Pull images
 printf "%s\n" "Pull..."
 docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" pull ${servicesToRun}
