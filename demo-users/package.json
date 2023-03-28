@@ -1,0 +1,23 @@
+{
+  "name": "create-demo-users",
+  "version": "1.0.0",
+  "description": "Node script to create demo users in OpenMRS",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openmrs/ozone-distro-cambodia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/openmrs/ozone-distro-cambodia/issues"
+  },
+  "homepage": "https://github.com/openmrs/ozone-distro-cambodia#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  }
+}
