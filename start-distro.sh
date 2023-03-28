@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-destinationFolder=./run/target/${artifactId}
+ozoneDockerArtifactId=ozone-docker-compose
+destinationFolder=./run/target/${ozoneDockerArtifactId}
 servicesToRun="proxy openmrs frontend mysql"
 
 # Set the profile value if provided
