@@ -89,11 +89,11 @@
       "Translation overrides": {
         "en": {
 
-          "Commune": "Commune",
-          "Village": "City",
-          "Country": "Country",
-          "Province": "Province",
-          "District": "District",
+          "address1": "Commune",
+          "cityVillage": "Village",
+          "country": "Country",
+          "stateProvince": "Province",
+          "countyDistrict": "District",
           "contactSection": "Contact Details",
           "demographicsSection": "Basic Info",
           "Male": "Male",
@@ -102,11 +102,11 @@
           "Unknown": "Unknown"
         },
         "km": {
-          "Commune": "ឃុំ/សង្កាត់",
-          "Village": "ទីក្រុង",
-          "Country": "ប្រទេស",
-          "Province": "ខេត្ត",
-          "District": "ស្រុក/ខ័ណ្ឌ",
+          "address1": "ឃុំ/សង្កាត់",
+          "cityVillage": "ភូមិ",
+          "country": "ប្រទេស",
+          "stateProvince": "ខេត្ត",
+          "countyDistrict": "ស្រុក/ខ័ណ្ឌ",
           "contactSection": "ព័ត៌មានទំនាក់ទំនងលម្អិត",
           "demographicsSection": "ព័ត៌មានមូលដ្ឋាន",
           "Male": "ប្រុស",

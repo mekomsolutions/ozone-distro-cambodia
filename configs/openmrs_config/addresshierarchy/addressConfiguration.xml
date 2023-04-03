@@ -3,32 +3,32 @@
   <addressComponents>
     <addressComponent>
       <field>COUNTRY</field>
-      <nameMapping>Country</nameMapping>
+      <nameMapping>Location.country</nameMapping>
       <sizeMapping>40</sizeMapping>
-      <elementDefault>កម្ពុជា (Cambodia)</elementDefault>
+      <elementDefault>addresshierachy.cambodia</elementDefault>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>STATE_PROVINCE</field>
-      <nameMapping>Province</nameMapping>
+      <nameMapping>Location.province</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>COUNTY_DISTRICT</field>
-      <nameMapping>District</nameMapping>
+      <nameMapping>Location.district</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>ADDRESS_1</field>
-      <nameMapping>Commune</nameMapping>
+      <nameMapping>impl.commune</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
     <addressComponent>
       <field>CITY_VILLAGE</field>
-      <nameMapping>Village</nameMapping>
+      <nameMapping>Location.village</nameMapping>
       <sizeMapping>40</sizeMapping>
       <requiredInHierarchy>true</requiredInHierarchy>
     </addressComponent>
