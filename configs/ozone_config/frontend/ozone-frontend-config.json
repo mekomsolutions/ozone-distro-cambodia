@@ -256,6 +256,42 @@
         ]
       }
     },
+    "@openmrs/esm-offline-tools-app": {
+      "Display conditions": {
+        "privileges": [
+          "Access Offline Tools"
+        ]
+      }
+    },
+    "@openmrs/esm-home-app": {
+      "extensionSlots": {
+        "homepage-dashboard-slot": {
+          "configure": {
+            "patient-lists-dashboard-link": {
+              "Display conditions": {
+                "privileges": [
+                  "Manage Patient Lists"
+                ]
+              }
+            },
+            "service-queues-dashboard-link": {
+              "Display conditions": {
+                "privileges": [
+                  "Manage Service queues"
+                ]
+              }
+            },
+            "clinical-appointments-dashboard-link": {
+              "Display conditions": {
+                "privileges": [
+                  "Manage Appointments"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
       "@openmrs/esm-primary-navigation-app": {
         "extensionSlots": {
           "app-menu-slot": {
@@ -295,10 +331,17 @@
                   ]
                 }
               },
-              "offline-tools-linkq": {
+              "offline-tools-link": {
                 "Display conditions": {
                   "privileges": [
                     "Access Offline Tools"
+                  ]
+                }
+              },
+              "cohort-builder-app-link": {
+                "Display conditions": {
+                  "privileges": [
+                    "Manage cohorts"
                   ]
                 }
               },
