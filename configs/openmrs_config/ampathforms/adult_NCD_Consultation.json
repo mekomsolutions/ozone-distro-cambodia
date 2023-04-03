@@ -155,7 +155,19 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
+						{
+                            "id": "HBA1c",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
+                                "max": "20",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
 					]
 				},
 				{
