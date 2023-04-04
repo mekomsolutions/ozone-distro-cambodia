@@ -1,6 +1,6 @@
 {
-    "name": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព (Health Center - NCD Screening)",
-    "description": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព (Health Center - NCD Screening)",
+    "name": "Health Center - NCD Screening",
+    "description": "Health Center - NCD Screening",
     "version": "1",
     "published": true,
     "retired": false,
@@ -10,11 +10,11 @@
     "referencedForms": [],
     "pages": [
         {
-            "label": "ទូទៅ (General)",
+            "label": "General",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ទូទៅ (General)",
+                    "label": "General",
                     "questions": [
                         {
                             "id": "smoked",
@@ -75,11 +75,11 @@
             ]
         },
         {
-            "label": "ប្រវត្តិជំងឺ (Medical History)",
+            "label": "Medical History",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ប្រវត្តិជំងឺ (Medical History)",
+                    "label": "Medical History",
                     "questions": [
                         {
                             "id": "knownHypertensive",
@@ -194,11 +194,11 @@
             ]
         },
         {
-            "label": "ការពិនិត្យវិភាគ (Investigations)",
+            "label": "Investigations",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "សញ្ញាជីវិត និងជីវមាត្រ (Vitals and Biometrics)",
+                    "label": "Vitals and Biometrics",
                     "questions": [
                         {
                             "id": "Ht",
@@ -303,7 +303,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "កម្រិតជាតិស្ករក្នុងឈាម (Blood sugar levels)",
+                    "label": "Blood sugar levels",
                     "questions": [
                         {
                             "id": "FBS",
@@ -357,7 +357,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "ការធ្វើតេស្តទឹកនោម (Urine Tests)",
+                    "label": "Urine Tests",
                     "questions": [
                         {
                             "id": "albumin",
@@ -387,7 +387,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "ជាតិខ្លាញ់ (Lipids)",
+                    "label": "Lipids",
                     "questions": [
                         {
                             "id": "cholestrol",
@@ -405,7 +405,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "រោគសញ្ញាសង្ស័យជំងឺរបេង (Tuberculosis Symptoms)",
+                    "label": "Tuberculosis Symptoms",
                     "questions": [
                         {
                             "id": "TBsx",
@@ -429,11 +429,11 @@
             ]
         },
         {
-            "label": "ការវាយតម្លៃ (Assessment)",
+            "label": "Assessment",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ការវាយតម្លៃ (Assessment)",
+                    "label": "Assessment",
                     "questions": [
                         {
                             "id": "CVDscore",
@@ -472,11 +472,11 @@
             ]
         },
         {
-            "label": "ការគ្រប់គ្រង (Management)",
+            "label": "Management",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ការគ្រប់គ្រង (Management)",
+                    "label": "Management",
                     "questions": [
                         {
                             "id": "CVDfollowUpScreening",
