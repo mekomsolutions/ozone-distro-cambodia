@@ -451,6 +451,38 @@
                             "validators": []
                         },
                         {
+                            "label": "Diagnosis1",
+                            "isExpanded": "true",
+                            "questions": [
+                              {
+                                "label": "Diagnosis1",
+                                "id": "Diagnosis1Id",
+                                "type": "diagnosis",
+                                "questionOptions": {
+                                  "rendering": "repeating",
+                                  "dataSource": "diagnoses",
+                                  "rank": 1
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "label": "Diagnosis2",
+                            "isExpanded": "true",
+                            "questions": [
+                              {
+                                "label": "Diagnosis2",
+                                "id": "Diagnosis2Id",
+                                "type": "diagnosis",
+                                "questionOptions": {
+                                  "rendering": "repeating",
+                                  "dataSource": "diagnoses",
+                                  "rank": 2
+                                }
+                              }
+                            ]
+                          },
+                        {
                             "id": "hospitalReferral",
                             "questionOptions": {
                                 "rendering": "radio",
