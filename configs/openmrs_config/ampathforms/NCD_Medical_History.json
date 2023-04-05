@@ -1,6 +1,6 @@
 {
-    "name": "ប្រវត្តជំងឺ (NCD Medical History)",
-    "description": "ប្រវត្តជំងឺ (NCD Medical History Form)",
+    "name": "NCD Medical History",
+    "description": "NCD Medical History Form",
     "version": "1",
     "published": true,
     "retired": false,
@@ -10,11 +10,11 @@
     "referencedForms": [],
     "pages": [
         {
-            "label": "ទូទៅ (General)",
+            "label": "General",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ទូទៅ (General)",
+                    "label": "General",
                     "questions": [
                         {
                             "id": "referralType",
@@ -38,11 +38,11 @@
             ]
         },
         {
-            "label": "ប្រវត្តិជំងឺ (Medical History)",
+            "label": "Medical History",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "ប្រវត្តិជំងឺ (Medical History)",
+                    "label": "Medical History",
                     "questions": [
                         {
                             "id": "diagnosedForDM",
@@ -220,11 +220,11 @@
             ]
         },
         {
-            "label": "របៀបរស់នៅ (Life Style)",
+            "label": "Life Style",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "របៀបរស់នៅ (Life Style)",
+                    "label": "Life Style",
                     "questions": [
                         {
                             "id": "smoked",

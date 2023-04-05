@@ -13,8 +13,8 @@ rm -rf ${destinationFolder}
 rm -f ${outputFile}
 
 # Package the distro
-printf "%s\n" "Package the distro..."
-./mvnw clean package $profileArg
+printf "%s\n" "Package and install the distro..."
+./mvnw clean install $profileArg
 printf "%s\n" "Done."
 
 # Prepare the run (build the run/ Maven project)

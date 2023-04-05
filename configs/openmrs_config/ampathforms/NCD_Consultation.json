@@ -1,6 +1,6 @@
 {
-	"name": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង (NCD Consultation)",
-	"description": "ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង (NCD Consultation)",
+	"name": "NCD Consultation",
+	"description": "NCD Consultation",
 	"version": "1",
 	"published": true,
 	"retired": false,
@@ -10,11 +10,11 @@
 	"referencedForms": [],
 	"pages": [
 		{
-			"label": "Medical Assesment (ការវាយតម្លៃវេជ្ជសាស្រ្ត)",
+			"label": "Medical Assessment",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "រោគសញ្ញាសង្ស័យជំងឺរបេង (Tuberculosis Symptoms)",
+					"label": "Tuberculosis Symptoms",
 					"questions": [
 						{
 							"id": "TBsx",
@@ -37,7 +37,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "សញ្ញាជីវិត និងជីវមាត្រ (Vitals and Biometrics)",
+					"label": "Vitals and Biometrics",
 					"questions": [
 						{
 							"id": "Ht",
@@ -130,7 +130,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "កម្រិតជាតិស្ករក្នុងឈាម (Blood sugar levels)",
+					"label": "Blood sugar levels",
 					"questions": [
 						{
 							"id": "FBS",
@@ -172,7 +172,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "ការធ្វើតេស្តទឹកនោម (Urine Tests)",
+					"label": "Urine Tests",
 					"questions": [
 						{
 							"id": "albumin",
@@ -202,7 +202,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "ជាតិខ្លាញ់ (Lipids)",
+					"label": "Lipids",
 					"questions": [
 						{
 							"id": "lowDenseLipoProtein",
@@ -257,10 +257,10 @@
 			]
 		},
 		{
-			"label": "Physical Examination (ការ​ពិនិត្យ​រាងកាយ)",
+			"label": "Physical Examination",
 			"sections": [
 				{
-					"label": "Physical Examination (ការ​ពិនិត្យ​រាងកាយ)",
+					"label": "Physical Examination",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -773,11 +773,11 @@
 		},
 		
 		{
-			"label": "Diagnosis (រោគវិនិច្ឆ័យ)",
+			"label": "Diagnosis",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Diagnosis (រោគវិនិច្ឆ័យ)",
+					"label": "Diagnosis",
 					"questions": [
 						{
 							"id": "smoked",
@@ -902,11 +902,11 @@
 		},
 
 		{
-			"label": "Treatment plan (ផែនការព្យាបាល)",
+			"label": "Treatment plan",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Treatment plan (ផែនការព្យាបាល)",
+					"label": "Treatment plan",
 					"questions": [
 						{
                             "id": "currentTherapy",
@@ -1022,11 +1022,11 @@
 		},
 
 		{
-			"label": "Referral (បញ្ជូន)",
+			"label": "Referral",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Referral (បញ្ជូន)",
+					"label": "Referral",
 					"questions": [
 						{
 							"id": "facility",
