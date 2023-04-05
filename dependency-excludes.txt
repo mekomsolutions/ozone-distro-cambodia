@@ -1,7 +1,6 @@
 #
 # Escaped regex pattern. Supports multiple lines.
 #
-\.\*openmrs_config.\*ampathforms.\*demo.\*json
 \.\*openmrs_config.\*appointment.\*
 \.\*openmrs_config.\*concepts.\*demo.\*csv
 \.\*openmrs_config.\*encountertypes.\*demo.\*csv
@@ -9,6 +8,7 @@
 \.\*openmrs_config.\*privileges.\*demo.\*csv
 \.\*openmrs_config.\*program.\*
 \.\*openmrs_config.\*roles.\*demo.\*csv
-
+\.\*openmrs_config.\*ampathforms.\*json
+\.\*openmrs_config.\*ampathformstranslations.\*json
 # \.\*openmrs_config.\*demo.\*csv
 \.\*ozone-frontend-config.json
