@@ -277,7 +277,7 @@
             "service-queues-dashboard-link": {
               "Display conditions": {
                 "privileges": [
-                  "Manage Service queues"
+                  "Manage Service Queues"
                 ]
               }
             },
@@ -341,7 +341,7 @@
               "cohort-builder-app-link": {
                 "Display conditions": {
                   "privileges": [
-                    "Manage cohorts"
+                    "Manage Cohorts"
                   ]
                 }
               },
