@@ -157,7 +157,7 @@
 							"validators": []
 						},
 						{
-                            "id": "HBA1c",
+                            "id": "HbA1c",
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
