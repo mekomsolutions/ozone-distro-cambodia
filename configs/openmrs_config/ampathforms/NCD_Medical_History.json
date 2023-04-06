@@ -23,28 +23,35 @@
                                 "concept": "fd588078-9286-46ea-b133-36aab1b025ec",
                                 "answers": [
                                     {
-                                        "concept": ""
+                                        "concept": "62518d14-e495-442c-810d-a1a784a4b0bd"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "9f3d41d0-1bcb-49bc-8022-f9c0295aa996"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "7c53975f-be65-499d-b82c-abe01bcd6eca"
                                     },
                                     {
-                                        "concept": ""
+                                        "concept": "fda15e24-6474-4797-8b59-ce11d0df0bb9"
                                     },
                                     {
-                                        "concept": ""
-                                    },
-                                    {
-                                        "concept": ""
+                                        "concept": "459b0fe3-62a1-42e3-bc9f-d22f1b1506ce"
                                     }
                                 ]
                             },
                             "type": "obs",
                             "validators": []
-                        }
+                        },
+                        {
+							"id": "other",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "2d5b1956-bb4b-40c8-8bac-947b9803eabe",
+								"rows": 2
+							},
+							"type": "obs",
+							"validators": []
+						}
                     ]
                 }
             ]
