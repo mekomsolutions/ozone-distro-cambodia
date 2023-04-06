@@ -4,6 +4,26 @@
         "demographicsSection",
         "contactSection"
       ],
+      "fieldConfigurations":
+      {
+        "gender": [
+          {
+            "id": "male",
+            "value": "Male",
+            "label": "Male"
+          },
+          {
+            "id": "female",
+            "value": "Female",
+            "label": "Female"
+          },
+          {
+            "id": "other",
+            "value": "Other",
+            "label": "Other"
+          }
+        ]
+      },
       "fieldDefinitions": [
         {
           "id": "telephoneField",
