@@ -3,7 +3,7 @@ Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:k
 9f3d41d0-1bcb-49bc-8022-f9c0295aa996,,,Health Centre,មណ្ឌលសុខភាព,HC,មណ្ឌលសុខភាព,,,Misc,N/A,,,,
 7c53975f-be65-499d-b82c-abe01bcd6eca,,,Referral Centre,មន្ទីរពេទ្យបង្អែក,RH,មន្ទីរពេទ្យបង្អែក,,,Misc,N/A,,,,
 fda15e24-6474-4797-8b59-ce11d0df0bb9,,,Non Government Organization,អង្គការក្រៅរដ្ឋាភិបាល,NGO,,,,Misc,N/A,,,,
-459b0fe3-62a1-42e3-bc9f-d22f1b1506ce,,,Self presented,,Self presented,,,,Misc,N/A,,,,
+459b0fe3-62a1-42e3-bc9f-d22f1b1506ce,,,Self presented,មកដោយខ្លួនឯង,Self presented,មកដោយខ្លួនឯង,,,Misc,N/A,,,,
 2d5b1956-bb4b-40c8-8bac-947b9803eabe,,,Other,ផ្សេងៗ,Other,ផ្សេងៗ,,,Misc,N/A,,,,
 fd588078-9286-46ea-b133-36aab1b025ec,,,Referred from,បញ្ជូនមកពី,Referred from,បញ្ជូនមកពី,,,Question,Coded,Local Authority;HC;RH;NGO;Self presented;Other,,,
 cfb6f0f6-b5a8-433f-8e2d-70ef668e2094,,,Mild,ស្រាល,Mild,ស្រាល,,,Misc,N/A,,,,
