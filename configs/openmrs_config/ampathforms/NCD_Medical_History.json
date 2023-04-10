@@ -43,7 +43,7 @@
                             "validators": []
                         },
                         {
-							"id": "otherReferralType",
+							"id": "otherReferralLocation",
 							"questionOptions": {
 								"rendering": "textarea",
 								"concept": "2d5b1956-bb4b-40c8-8bac-947b9803eabe",
