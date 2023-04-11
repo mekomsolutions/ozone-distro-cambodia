@@ -18,7 +18,7 @@ Build the distro (optional, provide a `prod` profile to include confidential con
 ./mvnw clean install [-Pprod]
 ```
 
-Prepare for the run (optional override the default `hostUrl` value - for Macs, provide a `prod` profile)
+Prepare for the run (optional override the default `hostUrl` value - for macOS, provide a `prod` profile)
 ```
 ./mvnw -f run/pom.xml clean package [-Pprod]
 ```
