@@ -1013,6 +1013,130 @@
 							"validators": []
 						}
 					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Breast Cancer",
+					"questions": [
+						{
+							"id": "breastCancerEduc",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "c208aa27-9790-4dbf-84eb-2ffc321a1230",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "selfBreastExam",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "d1fd20ef-6363-4065-98d6-f36b8f1dc27e",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "ebd85cb3-32a4-4438-addf-1c7d954cbe3c"
+									},
+									{
+										"concept": "d9ef9bbe-4408-4b9e-9787-a1bde6e87786"
+									},
+									{
+										"concept": "8028de40-18d0-412c-8f7a-68cef81de52b"
+									},
+									{
+										"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "selfBreastExamDetails",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "f984b718-d674-40c4-9ac4-8d22963e1933",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(selfBreastExam) || selfBreastExam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerReasonForReferral",
+							"questionOptions": {
+								"concept": "e676ab7f-13b0-4251-84fd-9874c80133b5",
+								"answers": [
+									{
+										"concept": "4ad960b5-7168-48ae-a9c1-d0826f3caa8e"
+									},
+									{
+										"concept": "d58bacd2-0541-4e3c-97ac-d79463630da7"
+									},
+									{
+										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
+								"rendering": "multiCheckbox"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerReasonForReferralOther",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "d7e7f0b4-94c8-4bd9-a6ef-a38e1d3efcc8",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "arrayContains(['1ab9a6cf-4140-444d-980e-682961de33f5', 'd58bacd2-0541-4e3c-97ac-d79463630da7', '4ad960b5-7168-48ae-a9c1-d0826f3caa8e', ''], breastCancerReasonForReferral)"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerTreatment",
+							"questionOptions": {
+								"rendering": "multiCheckbox",
+								"concept": "ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12",
+								"answers": [
+									{
+										"concept": "132fffbd-7261-4b71-a34d-20508544c56b"
+									},
+									{
+										"concept": "fc11f6e5-5261-4845-bb96-1e95f44f1617"
+									},
+									{
+										"concept": "fcfda85e-f415-432f-a548-cc5ef7bcca42"
+									},
+									{
+										"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
 				}
 			]
 		}
