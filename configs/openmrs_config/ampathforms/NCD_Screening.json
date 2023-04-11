@@ -451,36 +451,57 @@
                             "validators": []
                         },
                         {
-                            "label": "Diagnosis1",
-                            "isExpanded": "true",
-                            "questions": [
-                              {
-                                "label": "Diagnosis1",
-                                "id": "Diagnosis1Id",
-                                "type": "diagnosis",
-                                "questionOptions": {
-                                  "rendering": "repeating",
-                                  "dataSource": "diagnoses",
-                                  "rank": 1
-                                }
-                              }
-                            ]
-                          },
+                            "id": "Diagnosis1",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+                                "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
                           {
-                            "label": "Diagnosis2",
-                            "isExpanded": "true",
-                            "questions": [
-                              {
-                                "label": "Diagnosis2",
-                                "id": "Diagnosis2Id",
-                                "type": "diagnosis",
-                                "questionOptions": {
-                                  "rendering": "repeating",
-                                  "dataSource": "diagnoses",
-                                  "rank": 2
-                                }
-                              }
-                            ]
+                              "id": "Diagnosis2",
+                              "questionOptions": {
+                                  "rendering": "radio",
+                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                                  "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                                    },
+                                    {
+                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                  ]
+                              },
+                              "type": "obs",
+                              "validators": []
                           },
                         {
                             "id": "hospitalReferral",
