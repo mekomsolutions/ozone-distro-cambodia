@@ -36,6 +36,9 @@
                                     },
                                     {
                                         "concept": "459b0fe3-62a1-42e3-bc9f-d22f1b1506ce"
+                                    },
+                                    {
+                                        "concept": "2d5b1956-bb4b-40c8-8bac-947b9803eabe"
                                     }
                                 ]
                             },
@@ -43,15 +46,18 @@
                             "validators": []
                         },
                         {
-							"id": "otherReferralLocation",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "2d5b1956-bb4b-40c8-8bac-947b9803eabe",
-								"rows": 5
-							},
-							"type": "obs",
-							"validators": []
-						}
+                            "id": "otherReferralLocation",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(referralType) || referralType !== '2d5b1956-bb4b-40c8-8bac-947b9803eabe'"
+                            },
+                            "questionOptions": {
+                                "rendering": "textarea",
+                                "concept": "81572b50-3588-4e6b-9f5e-bbedbb522860",
+                                "rows": 5
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
                     ]
                 }
             ]
