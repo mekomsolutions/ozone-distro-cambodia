@@ -10,71 +10,6 @@
     "referencedForms": [],
     "pages": [
         {
-            "label": "General",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "General",
-                    "questions": [
-                        {
-                            "id": "smoked",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
-                                "answers": [
-                                    {
-                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
-                                    },
-                                    {
-                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
-                                    },
-                                    {
-                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "exercise",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "drinkAlcohol",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "label": "Medical History",
             "sections": [
                 {
@@ -185,6 +120,75 @@
                                         "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "previousMedicalComplications",
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "a9e26e21-126f-45ed-98f2-f4fb423bc634",
+                                "answers": [
+                                    {
+                                        "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                                    },
+                                    {
+                                        "concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+                                    },
+                                    {
+                                        "concept": "63ab6543-78c9-4079-887a-8498a51bb98c"
+                                    },
+                                    {
+                                        "concept": "fcf078a5-a839-49d7-99cf-5427b0fbaad3"
+                                    },
+                                    {
+                                        "concept": "c64409ef-18fb-4e33-a187-e127243cb30c"
+                                    },
+                                    {
+                                        "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "otherHealthComplications",
+                            "questionOptions": {
+                                "rendering": "textarea",
+                                "concept": "868e9ebe-86fd-467a-b7a8-345437f340af",
+                                "rows": 5
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "presenceOfAllergies",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c67a6c5e-2559-46a8-b9da-2cb38bfff8a3",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "allergiesDetails",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(presenceOfAllergies) || presenceOfAllergies !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                                "rendering": "textarea",
+                                "concept": "b082eb80-3495-4af8-a970-0ae0af6ce184",
+                                "rows": 5
                             },
                             "type": "obs",
                             "validators": []
@@ -390,7 +394,7 @@
                     "label": "Lipids",
                     "questions": [
                         {
-                            "id": "cholestrol",
+                            "id": "ketone",
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
@@ -412,6 +416,71 @@
                             "questionOptions": {
                                 "rendering": "radio",
                                 "concept": "e0fffb24-5973-40a9-af11-2e4033831747",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Lifestyle",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "Lifestyle",
+                    "questions": [
+                        {
+                            "id": "smoked",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
+                                "answers": [
+                                    {
+                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
+                                    },
+                                    {
+                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
+                                    },
+                                    {
+                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "exercise",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "drinkAlcohol",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
                                 "answers": [
                                     {
                                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -500,6 +569,23 @@
                             "validators": []
                         },
                         {
+                            "id": "followUpOnPatient",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "2e27bbf9-d744-46a2-a7d4-cecd33c28b8a",
+                                "answers": [
+                                    {
+                                        "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
+                                    },
+                                    {
+                                        "concept": "33f058fd-8341-4ca1-b843-be71e5fe59ac"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "followUpDate",
                             "questionOptions": {
                                 "rendering": "date",
@@ -558,9 +644,58 @@
                             },
                             "type": "obs",
                             "validators": []
+                        },
+                        {
+                            "id": "dischargedService",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "8ee37ce5-cb9d-44a6-8adc-6efb39b07b75",
+                                "answers": [
+                                    {
+                                        "concept": "0eb2b443-57d6-4998-8596-c9303d33abf0"
+                                    },
+                                    {
+                                        "concept": "c84f1b1c-9f19-4999-a618-0c256d132365"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
                         }
                     ]
-                }
+                },
+                {
+					"isExpanded": "true",
+					"label": "Referral to:",
+					"questions": [
+						{
+							"id": "facility",
+							"questionOptions": {
+								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
+								"answers": [
+									{
+										"concept": "7ddf61cd-8ef7-43f5-968e-26485e24beef"
+									},
+									{
+										"concept": "0af3fc1c-cc41-4c95-aa90-33fb7d15c0d2"
+									},
+									{
+										"concept": "1d8dc414-6b12-43e6-9434-3e55d66d1b5d"
+									},
+									{
+										"concept": "2ddd88f5-ee95-4f08-86cf-6522a629e190"
+									},
+									{
+										"concept": "a6e9857f-b1db-4ef9-bd4f-fe0961498ec3"
+									}
+								],
+								"rendering": "select"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
             ]
         }
     ]
