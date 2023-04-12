@@ -23,12 +23,37 @@
                                 "concept": "fd588078-9286-46ea-b133-36aab1b025ec",
                                 "answers": [
                                     {
-                                        "concept": "37811074-14d1-41f3-bda9-e3422f6e22b0"
+                                        "concept": "62518d14-e495-442c-810d-a1a784a4b0bd"
                                     },
                                     {
-                                        "concept": "989a3c74-141f-4dcf-9716-d4d3e2eaacdb"
+                                        "concept": "9f3d41d0-1bcb-49bc-8022-f9c0295aa996"
+                                    },
+                                    {
+                                        "concept": "7c53975f-be65-499d-b82c-abe01bcd6eca"
+                                    },
+                                    {
+                                        "concept": "fda15e24-6474-4797-8b59-ce11d0df0bb9"
+                                    },
+                                    {
+                                        "concept": "459b0fe3-62a1-42e3-bc9f-d22f1b1506ce"
+                                    },
+                                    {
+                                        "concept": "2d5b1956-bb4b-40c8-8bac-947b9803eabe"
                                     }
                                 ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "otherReferralLocation",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(referralType) || referralType !== '2d5b1956-bb4b-40c8-8bac-947b9803eabe'"
+                            },
+                            "questionOptions": {
+                                "rendering": "textarea",
+                                "concept": "81572b50-3588-4e6b-9f5e-bbedbb522860",
+                                "rows": 5
                             },
                             "type": "obs",
                             "validators": []
