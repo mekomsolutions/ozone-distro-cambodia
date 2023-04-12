@@ -91,6 +91,19 @@
           ]
         },
         {
+          "id": "contactSection",
+          "name": "Contact Details",
+          "fields": [
+            "address",
+            "telephoneField",
+            "occupationField",
+            "ethnicityField",
+            "birthPlaceField",
+            "socialStatusField",
+            "educationField"
+          ]
+        },
+        {
           "id": "deathSection",
           "name": "Death Info",
           "fields": []
