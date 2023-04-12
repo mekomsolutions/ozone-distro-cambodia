@@ -2,7 +2,8 @@
     "@openmrs/esm-patient-registration-app": {
       "sections": [
         "demographicsSection",
-        "contactSection"
+        "contactSection",
+        "additionalInformation"
       ],
       "fieldConfigurations":
       {
@@ -83,22 +84,15 @@
           "fields": [
             "address",
             "telephoneField",
-            "occupationField",
-            "ethnicityField",
-            "birthPlaceField",
-            "socialStatusField",
-            "educationField"
+            "birthPlaceField"
           ]
         },
         {
-          "id": "contactSection",
-          "name": "Contact Details",
+          "id": "additionalInformation",
+          "name": "Additional information",
           "fields": [
-            "address",
-            "telephoneField",
             "occupationField",
             "ethnicityField",
-            "birthPlaceField",
             "socialStatusField",
             "educationField"
           ]
