@@ -18,7 +18,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <buildDirectory>${project.build.directory}</buildDirectory>
-    <assemblyClassifier/>
+    <assemblyClassifier />
   </properties>
   <dependencies>
     <dependency>
@@ -48,7 +48,7 @@
       </dependencies>
       <build>
         <plugins>
-           <plugin>
+          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
             <version>2.8</version>
@@ -76,13 +76,14 @@
             <executions>
               <execution>
                 <!-- Copy the non-prod target dir -->
-                <id>Copy non-prodcution files</id>
+                <id>Copy non-production files</id>
                 <phase>package</phase>
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
+                  <outputDirectory>
+                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
                   <overwrite>true</overwrite>
                   <resources>
                     <resource>
@@ -91,22 +92,42 @@
                   </resources>
                 </configuration>
               </execution>
-                <execution>
+              <execution>
                 <!-- Overwrite non-prod configs with confidential configs -->
-                <!-- # Unknown -->
                 <id>Copy confidential configs</id>
                 <phase>package</phase>
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
+                  <outputDirectory>
+                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
                   <overwrite>true</overwrite>
                   <resources>
                     <resource>
                       <directory>${buildDirectory}/ozone-config-cambodia0</directory>
                     </resource>
                   </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Exclude resource files as speficied in dependency-excludes-prod.txt -->
+          <plugin>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.1.0</version>
+            <groupId>org.codehaus.mojo</groupId>
+            <executions>
+              <execution>
+                <id>Run exclude-files.sh</id>
+                <phase>process-resources</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>${basedir}/exclude-files.sh</executable>
+                  <commandlineArgs>${basedir}/dependency-excludes-${assemblyClassifier}.txt
+                    ${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
                 </configuration>
               </execution>
             </executions>
@@ -171,7 +192,8 @@
             </goals>
             <configuration>
               <executable>${basedir}/exclude-files.sh</executable>
-              <commandlineArgs>${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
+              <commandlineArgs>${basedir}/dependency-excludes.txt
+                ${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
             </configuration>
           </execution>
         </executions>

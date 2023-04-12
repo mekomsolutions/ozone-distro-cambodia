@@ -1,0 +1,5 @@
+#
+# Escaped regex pattern. Supports multiple lines.
+#
+\.\*openmrs_modules.\*referencedemodata.\*
+
