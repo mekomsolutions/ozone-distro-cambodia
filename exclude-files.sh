@@ -15,7 +15,7 @@ do
       find ${targetDir} -regex ${line} | xargs rm -r
       echo "$count file(s) excluded."
     else
-      echo "No file was matched to be excluded."
+      echo "No file matches the exclusion pattern."
     fi
   fi
 done
