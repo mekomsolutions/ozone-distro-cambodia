@@ -1,6 +1,6 @@
 {
-	"name": "ការពិនិត្យស្រាវជ្រាវរកជំងឺមហារីកមាត់ស្បូន (Cervical Cancer Screening)",
-	"description": "ការពិនិត្យស្រាវជ្រាវរកជំងឺមហារីកមាត់ស្បូន (Cervical Cancer Screening)",
+	"name": "Cervical Cancer Screening",
+	"description": "Cervical Cancer Screening",
 	"version": "1",
 	"published": true,
 	"retired": false,
@@ -10,11 +10,11 @@
 	"referencedForms": [],
 	"pages": [
 		{
-			"label": "Reproductive history (ប្រវត្តិបន្តពូជ)",
+			"label": "Reproductive history",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Reproductive history (ប្រវត្តិបន្តពូជ)",
+					"label": "Reproductive history",
 					"questions": [
 						{
 							"id": "sexDebut",
@@ -170,11 +170,11 @@
 			]
 		},
 		{
-			"label": "Menstrual history (ប្រវត្តិនៃការមករដូវ)",
+			"label": "Menstrual history",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Menstrual bleeding history (ប្រវត្តិនៃការធ្លាក់ឈាមរដូវ)",
+					"label": "Menstrual bleeding history",
 					"questions": [
 						{
 							"id": "menarche",
@@ -225,11 +225,11 @@
 			]
 		},
 		{
-			"label": "Risk factors (កត្តាហានិភ័យ)",
+			"label": "Risk factors",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Risk factors (កត្តាហានិភ័យ)",
+					"label": "Risk factors",
 					"questions": [
 						{
 							"id": "bleedingAfterSex",
@@ -567,6 +567,23 @@
 					"label": "Cervical Cancer Test result",
 					"questions": [
 						{
+							"id": "cervicalCancerEduc",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "4066c646-40c3-48ac-99fa-91a2f5f57e3c",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "HPVTestResult",
 							"questionOptions": {
 								"rendering": "radio",
@@ -837,29 +854,12 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
-							"id": "cervicalCancerEduc",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "4066c646-40c3-48ac-99fa-91a2f5f57e3c",
-								"answers": [
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
 						}
 					]
 				},
 				{
 					"isExpanded": "true",
-					"label": "Physical examination",
+					"label": "Physical Examination",
 					"questions": [
 						{
 							"id": "vulvaExam",

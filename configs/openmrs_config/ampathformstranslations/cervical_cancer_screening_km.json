@@ -1,0 +1,18 @@
+{
+    "uuid": "74c23528-7191-4aa3-bb66-0015d5e6e6d8",
+    "form": "Cervical Cancer Screening",
+    "form_name_translation": "ការពិនិត្យស្រាវជ្រាវរកជំងឺមហារីកមាត់ស្បូន",
+    "description": "Khmer translations for the Cervical Cancer Screening form",
+    "language": "km",
+    "translations": {
+      "Reproductive history": "ប្រវត្តិបន្តពូជ",
+      "Menstrual history": "ប្រវត្តិនៃការមករដូវ",
+      "Menstrual bleeding history": "ប្រវត្តិនៃការធ្លាក់ឈាមរដូវ",
+      "Risk factors" :"កត្តាហានិភ័យ",
+      "Cervical Cancer": "ជំងឺមហារីកមាត់ស្បូន",
+      "Cervical Cancer Test result": "លទ្ធផលតេស្តទាក់ទងនឹងជំងឺមហារីកមាត់ស្បូន",
+      "Referral center": "បញ្ជូន",
+      "Physical Examination": "ការ​ពិនិត្យ​រាងកាយ",
+      "Breast Cancer":"ជំងឺមហារីកដោះr"
+    }
+}
