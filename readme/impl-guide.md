@@ -13,12 +13,12 @@ $ cd ozone-distro-cambodia
 ```
 
 ## Manual instructions
-Build the distro (optional, provide a `prod` profile to include confidential configs)
+Build the distro (optional, provide a `prod` profile to include confidential configs and exclude demo artifacts)
 ```
 ./mvnw clean install [-Pprod]
 ```
 
-Prepare for the run (optional override the default `hostUrl` value - for Macs, provide a `prod` profile)
+Prepare for the run (optional, provide a `prod` profile to use the previously built `prod` distribution)
 ```
 ./mvnw -f run/pom.xml clean package [-Pprod]
 ```
