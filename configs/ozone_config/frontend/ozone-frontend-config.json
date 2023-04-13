@@ -83,8 +83,7 @@
           "name": "Contact Details",
           "fields": [
             "address",
-            "telephoneField",
-            "birthPlaceField"
+            "telephoneField"
           ]
         },
         {
@@ -93,6 +92,7 @@
           "fields": [
             "occupationField",
             "ethnicityField",
+            "birthPlaceField",
             "socialStatusField",
             "educationField"
           ]
