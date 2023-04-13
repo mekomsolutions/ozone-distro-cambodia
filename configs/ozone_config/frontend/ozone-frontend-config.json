@@ -110,7 +110,7 @@
         "en": {
 
           "Commune": "Commune",
-          "Village": "City",
+          "Village": "Village",
           "Country": "Country",
           "Province": "Province",
           "District": "District",
@@ -281,6 +281,24 @@
         "privileges": [
           "Access Offline Tools"
         ]
+      }
+    },
+    "@openmrs/esm-patient-banner-app": {
+      "Translation overrides": {
+        "en": {
+          "address1": "Commune",
+          "city": "Village",
+          "Country": "Country",
+          "state": "Province",
+          "district": "District"
+        },
+        "km": {
+          "address1": "ឃុំ/សង្កាត់",
+          "city": "ទីក្រុង",
+          "Country": "ប្រទេស",
+          "state": "ខេត្ត",
+          "district": "ស្រុក/ខ័ណ្ឌ"
+        }
       }
     },
     "@openmrs/esm-home-app": {
