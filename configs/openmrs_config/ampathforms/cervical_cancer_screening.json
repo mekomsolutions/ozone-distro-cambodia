@@ -859,7 +859,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Physical examination",
+					"label": "Physical Examination",
 					"questions": [
 						{
 							"id": "vulvaExam",
