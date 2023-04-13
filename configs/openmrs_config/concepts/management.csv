@@ -4,6 +4,6 @@ a085b404-2596-48d6-a454-cd164d4a83fc,,,Monitor every 6 months (20% to <30%),ធ�
 9b305de5-9df6-4db9-820d-9a24541418ab,,,Monitor every 3 months (>=30%),ធ្វើការតាមដានរៀងរាល់៣ខែម្តង (ហានិភ័យ >=30%),Monitor every 3 months (>=30%),ធ្វើការតាមដានរៀងរាល់៣ខែម្តង (ហានិភ័យ >=30%),,,Misc,N/A,,,,
 7a67e555-1320-4197-a5df-54be3e68a1fe,,,Follow-up screening CVD risk factors,តាមដានពិនិត្យរុករកកត្តាហានិភ័យជំងឺសរសៃឈាម-បេះដូង,Follow-up screening CVD risk factors,តាមដានពិនិត្យរុករកកត្តាហានិភ័យជំងឺសរសៃឈាម-បេះដូង,,,Question,Coded,Monitor every year (<20%);Monitor every 6 months (20% to <30%);Monitor every 3 months (>=30%),,,
 4d32413a-95a4-45bf-95a0-ff81e26cfd35,,,CVD Risk Factors,,CVD Risk Factors,,,,Misc,N/A,,,,
-33f058fd-8341-4ca1-b843-be71e5fe59ac,,,Diabetes mellitus/Hypertension artérielle,,DM / HTA,,,,Misc,N/A,,,,
-2e27bbf9-d744-46a2-a7d4-cecd33c28b8a,,,Follow-up for:,,Follow-up for:,,,,Question,Coded,CVD Risk Factors;Diabetes mellitus/Hypertension artérielle,,,
+33f058fd-8341-4ca1-b843-be71e5fe59ac,,,Diabetes mellitus/Hypertension,,DM/HTA,,,,Misc,N/A,,,,
+2e27bbf9-d744-46a2-a7d4-cecd33c28b8a,,,Follow-up for:,,Follow-up for:,,,,Question,Coded,CVD Risk Factors;Diabetes mellitus/Hypertension,,,
 e9c145c1-f4e9-4c34-b237-da069939dc38,,,Follow-up date,កាលបរិច្ឆេទតាមដាន,Follow-up date,កាលបរិច្ឆេទតាមដាន,,,Misc,Date,,,,
