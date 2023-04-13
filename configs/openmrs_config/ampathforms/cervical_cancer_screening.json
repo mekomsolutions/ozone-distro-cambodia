@@ -567,6 +567,23 @@
 					"label": "Cervical Cancer Test result",
 					"questions": [
 						{
+							"id": "cervicalCancerEduc",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "4066c646-40c3-48ac-99fa-91a2f5f57e3c",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "HPVTestResult",
 							"questionOptions": {
 								"rendering": "radio",
@@ -832,23 +849,6 @@
 									},
 									{
 										"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "cervicalCancerEduc",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "4066c646-40c3-48ac-99fa-91a2f5f57e3c",
-								"answers": [
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								]
 							},
