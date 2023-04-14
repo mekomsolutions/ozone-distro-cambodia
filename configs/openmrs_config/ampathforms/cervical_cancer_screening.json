@@ -829,14 +829,39 @@
 										"concept": "3f80b4bd-6370-4ee7-ad4a-cbe07cb7af31"
 									},
 									{
+										"concept": "c0027068-fe1b-4401-aad5-d70e4437362c"
+									},
+									{
 										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
 									},
 									{
 										"concept": "44b23eee-963f-4a9f-b7fd-8a8e753ffbe4"
-									},
-									{
-										"concept": "d534da3e-7b59-40ca-a415-d2f5eb94f4a3"
-									},
+									}
+								],
+								"rendering": "select"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "reasonForReferralText",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "12f61ec2-e0b1-420d-be7b-43a95bce6e4a",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(reasonForReferral) || reasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "caTreatmentOption",
+							"questionOptions": {
+								"concept": "1ca7d712-f7d7-4e09-8184-048bc4173902",
+								"answers": [
+									
 									{
 										"concept": "250edbb0-f7bc-4f69-84c2-1a74e75ae73b"
 									},
@@ -859,14 +884,14 @@
 							"validators": []
 						},
 						{
-							"id": "reasonForReferralText",
+							"id": "caTreatmentOptionText",
 							"questionOptions": {
 								"rendering": "textarea",
-								"concept": "12f61ec2-e0b1-420d-be7b-43a95bce6e4a",
+								"concept": "e6d18ff5-9d52-4e47-b2b2-762d9aa30604",
 								"rows": 5
 							},
 							"hide": {
-								"hideWhenExpression": "isEmpty(reasonForReferral) || reasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(caTreatmentOption) || caTreatmentOption !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"type": "obs",
 							"validators": []
