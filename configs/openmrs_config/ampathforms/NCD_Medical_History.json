@@ -121,9 +121,19 @@
                         {
                             "id": "HighBloodPressureSx",
                             "questionOptions": {
-                                "rendering": "textarea",
+                                "rendering": "radio",
                                 "concept": "d3c8a8d4-c141-401f-8354-adbeda86011f",
-                                "rows": 5
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
                             },
                             "type": "obs",
                             "validators": []
