@@ -1,4 +1,4 @@
-Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Description:en,Description:fr,Data class,Data type,Answers,Members,_version:1,_order:1001,
+Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Description:en,Description:fr,Data class,Data type,Answers,Members,_version:1,_order:1000,
 1284AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,CIEL:1284,org.openmrs.module.emrapi:Coded Diagnosis,Problem List,Liste de problème,,List of problems for a given patient visit.,,Finding,Coded,,,,,
 160250AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,SNOMED CT:89100005;CIEL:160250,Final diagnosis,Diagnostic final,,,,,Misc,N/A,,,,,
 159392AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,SNOMED CT:395098000;CIEL:159392;org.openmrs.module.emrapi:Confirmed;PIH:1345,Confirmed diagnosis,Diagnostic confirmé,,,"The diagnosis is confirmed, not just presumed.",,Misc,N/A,,,,,
@@ -50,3 +50,4 @@ Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:k
 3cce906e-26fe-102b-80cb-0017a47871b2,,ICD-10:B37.9,Candidiasis (B37.9),Candidose (B37.9),Candidiasis,Candidose,,,Diagnosis,N/A,,,,,
 cbde94b4-214a-4c25-a8e3-c39f787064f8,,ICD-10:A59.9,Trichomoniasis (A59.9),Trichomonase (A59.9),Trichomoniasis,Trichomonase,,,Diagnosis,N/A,,,,,
 3cd80b44-26fe-102b-80cb-0017a47871b2,,ICD-10:B97.7,Human papillomavirus (B97.7),Papillovirus humain (B97.7),Human papillomavirus,Papillovirus humain,,,Diagnosis,N/A,,,,,
+3cd50188-26fe-102b-80cb-0017a47871b2,,ICD-10:I10,Hypertension (I10),ជំងឺលើសឈាម,Hypertension (I10),ជំងឺលើសឈាម,,,Diagnosis,N/A,,,,,
