@@ -399,6 +399,19 @@
 											}
 										]
 									}
+								},
+								{
+									"id": "otherSTIHistory",
+									"questionOptions": {
+										"rendering": "textarea",
+										"concept": "529c57b6-a232-46a0-a6eb-2e1aaa9e3758",
+										"rows": 5
+									},
+									"hide": {
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', '3cce906e-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], historyOfSTIsOptions)"
+									},
+									"type": "obs",
+									"validators": []
 								}
 							]
 						},
@@ -460,6 +473,19 @@
 											}
 										]
 									}
+								},
+								{
+									"id": "otherSTICurrent",
+									"questionOptions": {
+										"rendering": "textarea",
+										"concept": "529c57b6-a232-46a0-a6eb-2e1aaa9e3758",
+										"rows": 5
+									},
+									"hide": {
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', '3cce906e-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], currentSTIsOptions)"
+									},
+									"type": "obs",
+									"validators": []
 								}
 							]
 						},
@@ -551,6 +577,19 @@
 										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "otherCancerTypes",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "1260b402-07f1-4505-abac-182fbe30d6a8",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "arrayContains(['9673f964-3ccf-43b7-a740-7e8689c21b90', '69c29886-eb92-44f9-bcef-1ec5a12ae3eb', '02f49e6b-7a35-44f4-9726-ac44affbbafd', '7ba23507-eca8-424b-b870-21eacd678454', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], typeOfCancer)"
 							},
 							"type": "obs",
 							"validators": []
