@@ -129,6 +129,40 @@
                             "validators": []
                         },
                         {
+                            "id": "prematureHeartOrStrokeDisease",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "6bb3f867-70ee-4854-9408-d386c99c5990",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "diabetesOrKidneyDisease",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "4d180dd2-9bc7-4ea8-b64e-5e851c9e5c7d",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "currentTherapy",
                             "questionOptions": {
                                 "rendering": "radio",
