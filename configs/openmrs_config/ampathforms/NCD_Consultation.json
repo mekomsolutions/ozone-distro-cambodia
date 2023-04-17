@@ -282,6 +282,70 @@
 				}
 			]
 		},
+        {
+            "label": "Life Style",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "Life Style",
+                    "questions": [
+                        {
+                            "id": "smoked",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
+                                "answers": [
+                                    {
+                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
+                                    },
+                                    {
+                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"                                    },
+                                    {
+                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "exercise",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "drinkAlcohol",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                }
+            ]
+        },
 		{
 			"label": "Physical Examination",
 			"sections": [
