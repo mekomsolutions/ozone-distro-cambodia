@@ -30,8 +30,23 @@
   </dependencies>
   <profiles>
     <profile>
-      <!-- Introducing confidentiality dependencies for production environments -->
+      <!-- 
+        #
+        # 'prod' Profile
+        #
+      -->
+      <!-- 
+- 
+- Load the confidential configs on to of the non-prod configs.
+- Exclude the Ref Demo Data module
+- Generate a -prod artficat (ideally via classifier)
+- Be published on private repos
+- Uses the parent version number
+       -->
       <id>prod</id>
+      <!-- <modules>
+        <module>prod</module>
+      </modules> -->
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
@@ -50,34 +65,13 @@
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.8</version>
-            <executions>
-              <!-- Copy the confidential configs -->
-              <execution>
-                <id>Unpack Ozone Config Cambodia 0</id>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>unpack-dependencies</goal>
-                </goals>
-                <configuration>
-                  <excludeTransitive>true</excludeTransitive>
-                  <useBaseVersion>true</useBaseVersion>
-                  <outputDirectory>${buildDirectory}/ozone-config-cambodia0</outputDirectory>
-                  <includeArtifactIds>ozone-config-cambodia0</includeArtifactIds>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-resources-plugin</artifactId>
             <version>3.3.0</version>
             <executions>
               <execution>
                 <!-- Copy the non-prod target dir -->
-                <id>Copy non-production files</id>
-                <phase>package</phase>
+                <id>Prod: Copy files from the non-prod build</id>
+                <phase>generate-resources</phase>
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
@@ -92,22 +86,25 @@
                   </resources>
                 </configuration>
               </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <version>2.8</version>
+            <executions>
+              <!-- Copy the confidential configs -->
               <execution>
-                <!-- Overwrite non-prod configs with confidential configs -->
-                <id>Copy confidential configs</id>
-                <phase>package</phase>
+                <id>Prod: Copy Ozone Config Cambodia 0</id>
+                <phase>process-resources</phase>
                 <goals>
-                  <goal>copy-resources</goal>
+                  <goal>unpack-dependencies</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>
-                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
-                  <overwrite>true</overwrite>
-                  <resources>
-                    <resource>
-                      <directory>${buildDirectory}/ozone-config-cambodia0</directory>
-                    </resource>
-                  </resources>
+                  <excludeTransitive>true</excludeTransitive>
+                  <useBaseVersion>true</useBaseVersion>
+                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
+                  <includeArtifactIds>ozone-config-cambodia0</includeArtifactIds>
                 </configuration>
               </execution>
             </executions>
@@ -119,7 +116,7 @@
             <groupId>org.codehaus.mojo</groupId>
             <executions>
               <execution>
-                <id>Run exclude-files.sh</id>
+                <id>Prod: Run 'prod' exclude-files.sh</id>
                 <phase>process-resources</phase>
                 <goals>
                   <goal>exec</goal>
@@ -127,7 +124,7 @@
                 <configuration>
                   <executable>${basedir}/exclude-files.sh</executable>
                   <commandlineArgs>${basedir}/dependency-excludes-${assemblyClassifier}.txt
-                    ${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
+                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</commandlineArgs>
                 </configuration>
               </execution>
             </executions>
@@ -137,7 +134,7 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <executions>
               <execution>
-                <id>Package production distro</id>
+                <id>Prod: Package the production distro</id>
                 <phase>package</phase>
                 <goals>
                   <goal>single</goal>
@@ -155,6 +152,7 @@
       </build>
     </profile>
   </profiles>
+  
   <build>
     <plugins>
       <!-- Copy the Ozone Distro resources -->
@@ -165,7 +163,7 @@
         <executions>
           <execution>
             <id>Unpack Ozone Distro</id>
-            <phase>generate-resources</phase>
+            <phase>generate-sources</phase>
             <goals>
               <goal>unpack-dependencies</goal>
             </goals>
@@ -186,7 +184,7 @@
         <executions>
           <execution>
             <id>Run exclude-files.sh</id>
-            <phase>process-resources</phase>
+            <phase>generate-sources</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -206,7 +204,7 @@
           <execution>
             <!-- Override with local files into the target folder -->
             <id>Copy local resources</id>
-            <phase>prepare-package</phase>
+            <phase>process-sources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
