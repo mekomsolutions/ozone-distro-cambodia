@@ -396,11 +396,19 @@
                         {
                             "id": "ketone",
                             "questionOptions": {
-                                "rendering": "number",
                                 "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
+                                "answers": [
+									{
+										"concept": "2923f985-8334-4bf8-b8c4-968042722050"
+									},
+									{
+										"concept": "bd3c7798-ff06-4be3-ad60-aa27aa2f4218"
+									},
+									{
+										"concept": "13c172c1-3116-44f1-85e8-59cf5951bcdb"
+									}
+								],
+                                "rendering": "select"
                             },
                             "type": "obs",
                             "validators": []
@@ -631,7 +639,10 @@
                                         "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
                                     },
                                     {
-                                        "concept": "33f058fd-8341-4ca1-b843-be71e5fe59ac"
+                                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
                             },
