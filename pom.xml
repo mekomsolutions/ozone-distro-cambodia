@@ -1,255 +1,60 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ozonehis</groupId>
-  <artifactId>ozone-distro-cambodia</artifactId>
-  <name>Ozone Distribution for Cambodia</name>
+  <artifactId>ozone-distro-cambodia-parent</artifactId>
+  <name>Ozone Distribution for Cambodia - Parent project</name>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <organization>
     <name>Ozone HIS</name>
     <url>http://www.ozone-his.com</url>
   </organization>
+
   <developers>
     <developer>
       <name>Mekom Solutions</name>
       <url>http://www.mekomsolutions.com</url>
     </developer>
   </developers>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <buildDirectory>${project.build.directory}</buildDirectory>
-    <assemblyClassifier />
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.ozonehis</groupId>
-      <artifactId>ozone-distro</artifactId>
-      <type>zip</type>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
+
+  <modules>
+    <module>base</module>
+  </modules>
   <profiles>
     <profile>
-      <!-- 
-        #
-        # 'prod' Profile
-        #
-      -->
       <id>prod</id>
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
-      <properties>
-        <assemblyClassifier>prod</assemblyClassifier>
-      </properties>
-      <dependencies>
-        <dependency>
-          <groupId>com.ozonehis</groupId>
-          <artifactId>ozone-config-cambodia0</artifactId>
-          <type>zip</type>
-          <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-      </dependencies>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-            <version>3.3.0</version>
-            <executions>
-              <execution>
-                <!-- Copy the non-prod target dir -->
-                <id>Prod: Copy files from the non-prod build</id>
-                <phase>generate-resources</phase>
-                <goals>
-                  <goal>copy-resources</goal>
-                </goals>
-                <configuration>
-                  <outputDirectory>
-                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
-                  <overwrite>true</overwrite>
-                  <resources>
-                    <resource>
-                      <directory>${buildDirectory}/${project.artifactId}-${project.version}</directory>
-                    </resource>
-                  </resources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.8</version>
-            <executions>
-              <!-- Copy the confidential configs -->
-              <execution>
-                <id>Prod: Copy Ozone Config Cambodia 0</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>unpack-dependencies</goal>
-                </goals>
-                <configuration>
-                  <excludeTransitive>true</excludeTransitive>
-                  <useBaseVersion>true</useBaseVersion>
-                  <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</outputDirectory>
-                  <includeArtifactIds>ozone-config-cambodia0</includeArtifactIds>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <!-- Exclude resource files as speficied in dependency-excludes-prod.txt -->
-          <plugin>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>3.1.0</version>
-            <groupId>org.codehaus.mojo</groupId>
-            <executions>
-              <execution>
-                <id>Prod: Run 'prod' exclude-files.sh</id>
-                <phase>process-resources</phase>
-                <goals>
-                  <goal>exec</goal>
-                </goals>
-                <configuration>
-                  <executable>${basedir}/exclude-files.sh</executable>
-                  <commandlineArgs>${basedir}/dependency-excludes-${assemblyClassifier}.txt
-                    ${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</commandlineArgs>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>Prod: Package the production distro</id>
-                <phase>package</phase>
-                <goals>
-                  <goal>single</goal>
-                </goals>
-                <configuration>
-                  <appendAssemblyId>true</appendAssemblyId>
-                  <descriptors>
-                    <descriptor>assembly-prod.xml</descriptor>
-                  </descriptors>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+      <modules>
+        <module>base</module>
+        <module>prod</module>
+      </modules>
     </profile>
   </profiles>
-  <build>
-    <plugins>
-      <!-- Copy the Ozone Distro resources -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.8</version>
-        <executions>
-          <execution>
-            <id>Unpack Ozone Distro</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <configuration>
-              <excludeTransitive>true</excludeTransitive>
-              <useBaseVersion>true</useBaseVersion>
-              <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}</outputDirectory>
-              <includeArtifactIds>ozone-distro</includeArtifactIds>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Exclude resource files as speficied in dependency-excludes.txt -->
-      <plugin>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <groupId>org.codehaus.mojo</groupId>
-        <executions>
-          <execution>
-            <id>Run exclude-files.sh</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>${basedir}/exclude-files.sh</executable>
-              <commandlineArgs>${basedir}/dependency-excludes.txt
-                ${buildDirectory}/${project.artifactId}-${project.version}</commandlineArgs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.0</version>
-        <executions>
-          <execution>
-            <!-- Override with local files into the target folder -->
-            <id>Copy local resources</id>
-            <phase>process-sources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${buildDirectory}/${project.artifactId}-${project.version}</outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>${project.basedir}/configs</directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <!-- Packaging the distro as a installable/deployable file -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>Package distro</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <descriptors>
-                <descriptor>assembly.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+
   <repositories>
     <repository>
       <id>mks-nexus-public</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
     </repository>
-    <repository>
-      <id>mks-nexus-private</id>
-      <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
-    </repository>
   </repositories>
+
   <distributionManagement>
     <repository>
-      <name>Mekom Solutions Nexus repo</name>
-      <id>mks-nexus-private</id>
-      <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
+      <name>Mekom Solutions Nexus repo for releases</name>
+      <id>mks-nexus-public</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-releases</url>
     </repository>
     <snapshotRepository>
       <name>Mekom Solutions Nexus repo for snapshots</name>
-      <id>mks-nexus-private-snapshots</id>
-      <url>https://nexus.mekomsolutions.net/repository/maven-private-snapshots</url>
+      <id>mks-nexus--public-snapshots</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
 </project>
