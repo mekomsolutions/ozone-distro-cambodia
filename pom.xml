@@ -35,18 +35,7 @@
         # 'prod' Profile
         #
       -->
-      <!-- 
-- 
-- Load the confidential configs on to of the non-prod configs.
-- Exclude the Ref Demo Data module
-- Generate a -prod artficat (ideally via classifier)
-- Be published on private repos
-- Uses the parent version number
-       -->
       <id>prod</id>
-      <!-- <modules>
-        <module>prod</module>
-      </modules> -->
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
@@ -152,7 +141,6 @@
       </build>
     </profile>
   </profiles>
-  
   <build>
     <plugins>
       <!-- Copy the Ozone Distro resources -->
