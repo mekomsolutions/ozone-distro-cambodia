@@ -19,7 +19,7 @@ printf "%s\n" "Done."
 
 # Prepare the run (build the run/ Maven project)
 printf "%s\n" "Prepare the run..."
-./mvnw -f run/pom.xml clean package
+./mvnw -f run/pom.xml clean package $profileArg
 
 # Pull images
 printf "%s\n" "Pull..."
