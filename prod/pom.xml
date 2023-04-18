@@ -32,7 +32,6 @@
     </dependencies>
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -102,7 +101,7 @@
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <appendAssemblyId>true</appendAssemblyId>
+                            <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
                                 <descriptor>assembly.xml</descriptor>
                             </descriptors>
