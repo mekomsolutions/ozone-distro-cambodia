@@ -838,7 +838,7 @@
 										"concept": "44b23eee-963f-4a9f-b7fd-8a8e753ffbe4"
 									}
 								],
-								"rendering": "select"
+								"rendering": "multiCheckbox"
 							},
 							"type": "obs",
 							"validators": []
