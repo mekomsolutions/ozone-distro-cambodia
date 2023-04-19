@@ -279,6 +279,200 @@
 							"validators": []
 						}
 					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Right Eye Retinal Exam",
+					"questions": [
+						{
+							"id": "Creatinine",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "CreatinineClearance",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "Proteinuria",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "Potassium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "ACEInhibitor",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "088e714b-0529-414b-9a09-46bb10185603",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Other",
+					"questions": [
+						{
+							"id": "Sodium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "ALT",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						}
+						
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Left Eye Retinal Exam",
+					"questions": [
+						{
+							"id": "Creatinine",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "CreatinineClearance",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "Proteinuria",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "Potassium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "ACEInhibitor",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "088e714b-0529-414b-9a09-46bb10185603",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Other",
+					"questions": [
+						{
+							"id": "Sodium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "ALT",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						}
+						
+					]
 				}
 			]
 		},
