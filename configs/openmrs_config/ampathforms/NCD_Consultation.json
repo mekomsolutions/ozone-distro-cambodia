@@ -363,18 +363,119 @@
 							"id": "physicalExamination",
 							"questions": [
 								{
-									"id": "footExam",
+									"id": "leftFootExam",
 									"questionOptions": {
 										"concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "98f98b12-9c3e-4266-9afd-1caece6a2ec2"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "b570f671-efd7-48bd-8ab2-7144715736f1"
+											},
+											{
+												"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+											},
+											{
+												"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+											},
+											{
+												"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+											},
+											{
+												"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+											},
+											{
+												"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+											},
+											{
+												"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+											},
+											{
+												"concept": "0571152b-1f18-4603-9c86-d77883525e61"
+											},
+											{
+												"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+											},
+											{
+												"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+											},
+											{
+												"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+											},
+											{
+												"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+											},
+											{
+												"concept": "8009fc0e-c60e-42b0-a2ef-5181bbf4cc84"
+											},
+											{
+												"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+											},
+											{
+												"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
 											}
 										],
-										"rendering": "select"
+										"rendering": "multiCheckbox"
+									},
+									"type": "obs",
+									"validators": []
+								},
+								{
+									"id": "rightFootExam",
+									"questionOptions": {
+										"concept": "d6f32f81-6d85-49bb-b4c5-cef725bb7616",
+										"answers": [
+											{
+												"concept": "98f98b12-9c3e-4266-9afd-1caece6a2ec2"
+											},
+											{
+												"concept": "b570f671-efd7-48bd-8ab2-7144715736f1"
+											},
+											{
+												"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+											},
+											{
+												"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+											},
+											{
+												"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+											},
+											{
+												"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+											},
+											{
+												"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+											},
+											{
+												"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+											},
+											{
+												"concept": "0571152b-1f18-4603-9c86-d77883525e61"
+											},
+											{
+												"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+											},
+											{
+												"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+											},
+											{
+												"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+											},
+											{
+												"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+											},
+											{
+												"concept": "8009fc0e-c60e-42b0-a2ef-5181bbf4cc84"
+											},
+											{
+												"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+											},
+											{
+												"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
+											}
+										],
+										"rendering": "multiCheckbox"
 									},
 									"type": "obs",
 									"validators": []
@@ -405,18 +506,59 @@
 							"id": "eyesExamination",
 							"questions": [
 								{
-									"id": "eyesExam",
+									"id": "leftEyeExam",
 									"questionOptions": {
 										"concept": "db2e363c-a5b5-4136-a786-adae6f52e10b",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+											},
+											{
+												"concept": "476d87b3-9e19-499d-8d3a-97501b176f99"
+											},
+											{
+												"concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
+											},
+											{
+												"concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
+											},
+											{
+												"concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
 											}
 										],
-										"rendering": "select"
+										"rendering": "multiCheckbox"
+									},
+									"type": "obs",
+									"validators": []
+								},
+								{
+									"id": "rightEyeExam",
+									"questionOptions": {
+										"concept": "0684f8bf-7e2f-40b7-9479-a02c44a8937f",
+										"answers": [
+											{
+												"concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
+											},
+											{
+												"concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+											},
+											{
+												"concept": "476d87b3-9e19-499d-8d3a-97501b176f99"
+											},
+											{
+												"concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
+											},
+											{
+												"concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
+											},
+											{
+												"concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
+											}
+										],
+										"rendering": "multiCheckbox"
 									},
 									"type": "obs",
 									"validators": []
@@ -452,13 +594,28 @@
 										"concept": "5969b812-49bf-48d1-8477-e33935141c0c",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "b0a50ba0-84dd-44d6-bd1b-5eb3b82f2f17"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "95496c04-b5c7-4dc6-ad0f-664bf47a98be"
+											},
+											{
+												"concept": "ad681aca-d429-49f0-b390-e1edd3050503"
+											},
+											{
+												"concept": "16a53891-b85e-4914-b6dc-c7ab25cc29f2"
+											},
+											{
+												"concept": "227e22c4-1982-4510-827f-2440a1cdbc56"
+											},
+											{
+												"concept": "7d614732-0eb1-426e-8ede-a8c93d2d7b41"
+											},
+											{
+												"concept": "880a9a97-0885-4bc0-a421-f4edaafc2f5c"
 											}
 										],
-										"rendering": "select"
+										"rendering": "multiCheckbox"
 									},
 									"type": "obs",
 									"validators": []
@@ -491,16 +648,19 @@
 								{
 									"id": "uroGenExam",
 									"questionOptions": {
+										"rendering": "radio",
 										"concept": "0426d08e-1035-4c8f-a400-3b9d276f3a6b",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "3cd0b0b9-c075-4b21-81ce-11e7c395dea6"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "b03b800f-f421-4735-b227-6f25dda74ed4"
+											},
+											{
+												"concept": "4c9bfe7c-0e30-44f0-9400-363615e240ac"
 											}
-										],
-										"rendering": "select"
+										]
 									},
 									"type": "obs",
 									"validators": []
