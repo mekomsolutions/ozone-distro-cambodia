@@ -6,7 +6,7 @@
     http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2
       http://maven.apache.org/xsd/assembly-1.1.2.xsd"
 >
-  <id>${assemblyClassifier}</id>
+  <id>prod</id>
   <formats>
     <format>zip</format>
   </formats>
@@ -14,7 +14,7 @@
   <fileSets>
     <fileSet>
       <outputDirectory>..</outputDirectory>
-      <directory>${buildDirectory}/${project.artifactId}-${project.version}-${assemblyClassifier}</directory>
+      <directory>${project.build.directory}/${project.artifactId}-${project.version}</directory>
     </fileSet>
   </fileSets>
 </assembly>
