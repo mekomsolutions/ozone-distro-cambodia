@@ -870,28 +870,6 @@
 					"label": "Diagnosis",
 					"questions": [
 						{
-							"id": "smoked",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
-								"answers": [
-									{
-										"concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
-									},
-									{
-										"concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
-									},
-									{
-										"concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
-									}
-								],
-								"useMostRecentValue": true
-							},
-							"historicalExpression": "HD.getObject('prevObs').getValue('7533aa7e-04cb-4cfd-9c97-6ac36f114bab')",
-							"type": "obs",
-							"validators": []
-						},
-						{
 							"id": "CVDscore",
 							"label": "CVD Score",
 							"questionOptions": {
@@ -907,46 +885,6 @@
 							"type": "obs",
 							"validators": []
 						},
-						{
-                            "id": "Dx",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "fe0b5b8e-c9a2-4c87-813d-f10884987d9c",
-                                "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-									{
-                                        "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-                            "id": "knownHypertensive",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f8fd0782-a9fc-4c02-b556-72740853bc18",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
 						{
                             "id": "currentMedicalComplications",
                             "questionOptions": {
