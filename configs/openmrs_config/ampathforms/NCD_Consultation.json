@@ -1043,7 +1043,16 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
+						{
+                            "id": "followUpDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
 					]
 				}
 			]
