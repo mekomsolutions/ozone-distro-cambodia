@@ -396,6 +396,7 @@
                         {
                             "id": "ketone",
                             "questionOptions": {
+                                "rendering": "select",
                                 "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
                                 "answers": [
 									{
@@ -407,8 +408,7 @@
 									{
 										"concept": "13c172c1-3116-44f1-85e8-59cf5951bcdb"
 									}
-								],
-                                "rendering": "select"
+								]
                             },
                             "type": "obs",
                             "validators": []
@@ -639,10 +639,10 @@
                                         "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
                                     },
                                     {
-                                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     },
                                     {
-                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
                             },
