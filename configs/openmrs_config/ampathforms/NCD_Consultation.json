@@ -285,7 +285,7 @@
 					"label": "Right Eye Retinal Exam",
 					"questions": [
 						{
-							"id": "Creatinine",
+							"id": "creatinine",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
