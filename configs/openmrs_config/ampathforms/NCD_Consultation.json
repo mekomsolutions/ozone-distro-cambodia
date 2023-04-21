@@ -297,7 +297,7 @@
 							"validators": []
 						},
 						{
-							"id": "CreatinineClearance",
+							"id": "creatinineClearance",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
@@ -309,7 +309,7 @@
 							"validators": []
 						},
 						{
-							"id": "Proteinuria",
+							"id": "proteinuria",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
@@ -321,7 +321,7 @@
 							"validators": []
 						},
 						{
-							"id": "Potassium",
+							"id": "potassium",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -333,7 +333,7 @@
 							"validators": []
 						},
 						{
-							"id": "ACEInhibitor",
+							"id": "aceInhibitor",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "088e714b-0529-414b-9a09-46bb10185603",
@@ -351,7 +351,7 @@
 					"label": "Other",
 					"questions": [
 						{
-							"id": "Sodium",
+							"id": "sodium",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -382,7 +382,7 @@
 					"label": "Left Eye Retinal Exam",
 					"questions": [
 						{
-							"id": "Creatinine",
+							"id": "creatinine",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -394,7 +394,7 @@
 							"validators": []
 						},
 						{
-							"id": "CreatinineClearance",
+							"id": "creatinineClearance",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
@@ -406,7 +406,7 @@
 							"validators": []
 						},
 						{
-							"id": "Proteinuria",
+							"id": "proteinuria",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
@@ -418,7 +418,7 @@
 							"validators": []
 						},
 						{
-							"id": "Potassium",
+							"id": "potassium",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
@@ -430,7 +430,7 @@
 							"validators": []
 						},
 						{
-							"id": "ACEInhibitor",
+							"id": "aceInhibitor",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "088e714b-0529-414b-9a09-46bb10185603",
@@ -448,7 +448,7 @@
 					"label": "Other",
 					"questions": [
 						{
-							"id": "Sodium",
+							"id": "sodium",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
