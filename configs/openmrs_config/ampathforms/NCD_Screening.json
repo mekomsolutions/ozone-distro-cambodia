@@ -233,8 +233,8 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
-                                "max": "",
-                                "min": "",
+                                "max": "200",
+                                "min": "0",
                                 "showDate": "false"
                             },
                             "type": "obs",
@@ -350,7 +350,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "450",
+                                "max": "600",
                                 "min": "20",
                                 "showDate": "false"
                             },
