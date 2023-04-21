@@ -433,11 +433,11 @@
             ]
         },
         {
-            "label": "Lifestyle",
+            "label": "Life Style",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "Lifestyle",
+                    "label": "Life Style",
                     "questions": [
                         {
                             "id": "smoked",
