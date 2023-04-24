@@ -441,11 +441,11 @@
             ]
         },
         {
-            "label": "Lifestyle",
+            "label": "Life Style",
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "Lifestyle",
+                    "label": "Life Style",
                     "questions": [
                         {
                             "id": "smoked",
@@ -738,19 +738,19 @@
 								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
 								"answers": [
 									{
-										"concept": "7ddf61cd-8ef7-43f5-968e-26485e24beef"
+										"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
 									},
 									{
-										"concept": "0af3fc1c-cc41-4c95-aa90-33fb7d15c0d2"
+										"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
 									},
 									{
-										"concept": "1d8dc414-6b12-43e6-9434-3e55d66d1b5d"
+										"concept": "75768295-02df-47ae-965b-d7e84040194b"
 									},
 									{
-										"concept": "2ddd88f5-ee95-4f08-86cf-6522a629e190"
+										"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
 									},
 									{
-										"concept": "a6e9857f-b1db-4ef9-bd4f-fe0961498ec3"
+										"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
 									}
 								],
 								"rendering": "select"

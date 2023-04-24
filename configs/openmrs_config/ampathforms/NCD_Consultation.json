@@ -368,10 +368,10 @@
 										"concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -385,7 +385,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(footExam) || footExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(footExam) || footExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -410,10 +410,10 @@
 										"concept": "db2e363c-a5b5-4136-a786-adae6f52e10b",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -427,7 +427,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(eyesExam) || eyesExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(eyesExam) || eyesExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -452,10 +452,10 @@
 										"concept": "5969b812-49bf-48d1-8477-e33935141c0c",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -469,7 +469,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(cardiovacscularExam) || cardiovacscularExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(cardiovacscularExam) || cardiovacscularExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -494,10 +494,10 @@
 										"concept": "0426d08e-1035-4c8f-a400-3b9d276f3a6b",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -511,7 +511,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(uroGenExam) || uroGenExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(uroGenExam) || uroGenExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -536,10 +536,10 @@
 										"concept": "337b27dd-e1a3-4da6-a962-113158b39b2d",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -553,7 +553,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(ENTExam) || ENTExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(ENTExam) || ENTExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -578,10 +578,10 @@
 										"concept": "819b36ec-1631-4e14-91cc-6f547565a855",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -595,7 +595,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(respiratoryExam) || respiratoryExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(respiratoryExam) || respiratoryExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -620,10 +620,10 @@
 										"concept": "67b6dcc4-4c7e-41db-b7f3-020655489a62",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -637,7 +637,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(gastroIntestinalExam) || gastroIntestinalExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(gastroIntestinalExam) || gastroIntestinalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -662,10 +662,10 @@
 										"concept": "c017f994-b6e3-409f-9f80-7869665df179",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -679,7 +679,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(skinExtremitiesExam) || skinExtremitiesExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(skinExtremitiesExam) || skinExtremitiesExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -704,10 +704,10 @@
 										"concept": "8dce7636-f3ad-4509-a2e2-f9f35ad10cca",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -721,7 +721,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(CNSExam) || CNSExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(CNSExam) || CNSExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -746,10 +746,10 @@
 										"concept": "807616c8-0a1b-4a13-b1c9-89a5216eb46b",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -763,7 +763,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(mentalStateExam) || mentalStateExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(mentalStateExam) || mentalStateExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -788,10 +788,10 @@
 										"concept": "e237e038-be15-4ade-b457-067ddde84c07",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -805,7 +805,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(abdominalExam) || abdominalExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(abdominalExam) || abdominalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -830,10 +830,10 @@
 										"concept": "f09530d2-75ab-4b6a-80a2-f92112edbf51",
 										"answers": [
 											{
-												"concept": "480f3707-f71b-4ffd-805b-5902932647cd"
+												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											},
 											{
-												"concept": "bd33bb58-d034-4fc3-b993-c55af3e21320"
+												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 											}
 										],
 										"rendering": "select"
@@ -847,7 +847,7 @@
 									"required": "false",
 									"default": "",
 									"hide": {
-										"hideWhenExpression": "isEmpty(othersExam) || othersExam !== 'bd33bb58-d034-4fc3-b993-c55af3e21320'"
+										"hideWhenExpression": "isEmpty(othersExam) || othersExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 									},
 									"questionOptions": {
 										"rendering": "textarea",
@@ -870,28 +870,6 @@
 					"label": "Diagnosis",
 					"questions": [
 						{
-							"id": "smoked",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
-								"answers": [
-									{
-										"concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
-									},
-									{
-										"concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
-									},
-									{
-										"concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
-									}
-								],
-								"useMostRecentValue": true
-							},
-							"historicalExpression": "HD.getObject('prevObs').getValue('7533aa7e-04cb-4cfd-9c97-6ac36f114bab')",
-							"type": "obs",
-							"validators": []
-						},
-						{
 							"id": "CVDscore",
 							"label": "CVD Score",
 							"questionOptions": {
@@ -907,46 +885,6 @@
 							"type": "obs",
 							"validators": []
 						},
-						{
-                            "id": "Dx",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "fe0b5b8e-c9a2-4c87-813d-f10884987d9c",
-                                "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-									{
-                                        "concept": "82827a07-0bb7-40b6-a70d-4de4eab78195"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-                            "id": "knownHypertensive",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f8fd0782-a9fc-4c02-b556-72740853bc18",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
 						{
                             "id": "currentMedicalComplications",
                             "questionOptions": {
@@ -1105,7 +1043,16 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
+						{
+                            "id": "followUpDate",
+                            "questionOptions": {
+                                "rendering": "date",
+                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
 					]
 				}
 			]
@@ -1124,19 +1071,19 @@
 								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
 								"answers": [
 									{
-										"concept": "7ddf61cd-8ef7-43f5-968e-26485e24beef"
+										"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
 									},
 									{
-										"concept": "0af3fc1c-cc41-4c95-aa90-33fb7d15c0d2"
+										"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
 									},
 									{
-										"concept": "1d8dc414-6b12-43e6-9434-3e55d66d1b5d"
+										"concept": "75768295-02df-47ae-965b-d7e84040194b"
 									},
 									{
-										"concept": "2ddd88f5-ee95-4f08-86cf-6522a629e190"
+										"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
 									},
 									{
-										"concept": "a6e9857f-b1db-4ef9-bd4f-fe0961498ec3"
+										"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
 									}
 								],
 								"rendering": "select"
