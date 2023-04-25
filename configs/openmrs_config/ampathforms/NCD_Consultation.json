@@ -94,8 +94,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
-								"max": "",
-								"min": "",
+								"max": "200",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -163,8 +163,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
-								"max": "",
-								"min": "",
+								"max": "600",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -175,8 +175,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
-								"max": "",
-								"min": "",
+								"max": "600",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -205,8 +205,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "c423325e-be95-42e2-ae38-b940c2586327",
-								"max": "",
-								"min": "",
+								"max": "100",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -217,8 +217,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
-								"max": "",
-								"min": "",
+								"max": "200",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -259,8 +259,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "a86c14a1-9453-46af-9b9a-f950b21b8952",
-								"max": "",
-								"min": "",
+								"max": "600",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -271,8 +271,8 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
-								"max": "",
-								"min": "",
+								"max": "900",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
