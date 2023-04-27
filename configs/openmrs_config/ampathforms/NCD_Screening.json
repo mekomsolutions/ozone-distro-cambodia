@@ -350,7 +350,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "20",
+                                "max": "600",
                                 "min": "0",
                                 "showDate": "false"
                             },
