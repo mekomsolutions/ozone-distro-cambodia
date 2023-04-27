@@ -7,6 +7,9 @@
       ],
       "fieldConfigurations":
       {
+        "name": {
+          "displayCapturePhoto": false
+        },
         "gender": [
           {
             "id": "male",
