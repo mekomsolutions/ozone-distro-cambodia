@@ -37,6 +37,16 @@
       </modules>
     </profile>
   </profiles>
+  
+  <!-- Adding this dependency here for OCD3 to pick up the dependency. -->
+  <dependencies>
+    <dependency>
+      <groupId>com.ozonehis</groupId>
+      <artifactId>ozone-distro</artifactId>
+      <type>zip</type>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
 
   <repositories>
     <repository>

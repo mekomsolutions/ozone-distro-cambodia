@@ -233,8 +233,8 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
-                                "max": "",
-                                "min": "",
+                                "max": "200",
+                                "min": "0",
                                 "showDate": "false"
                             },
                             "type": "obs",
@@ -350,7 +350,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "450",
+                                "max": "600",
                                 "min": "20",
                                 "showDate": "false"
                             },
@@ -396,11 +396,22 @@
                         {
                             "id": "ketone",
                             "questionOptions": {
-                                "rendering": "number",
+                                "rendering": "select",
                                 "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
+                                "answers": [
+									{
+										"concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+                                    {
+										"concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
                             },
                             "type": "obs",
                             "validators": []
@@ -631,7 +642,10 @@
                                         "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
                                     },
                                     {
-                                        "concept": "33f058fd-8341-4ca1-b843-be71e5fe59ac"
+                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
                             },
