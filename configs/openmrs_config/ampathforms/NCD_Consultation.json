@@ -235,7 +235,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "0bf33271-d553-42ae-a854-624e5258551d",
-								"max": "300",
+								"max": "600",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -248,7 +248,7 @@
 								"rendering": "number",
 								"concept": "a5d68184-6849-4a1d-9a86-5bcea3297f70",
 								"max": "200",
-								"min": "0",
+								"min": "1",
 								"showDate": "false"
 							},
 							"type": "obs",
