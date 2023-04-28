@@ -351,7 +351,7 @@
                                 "rendering": "number",
                                 "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "max": "600",
-                                "min": "20",
+                                "min": "0",
                                 "showDate": "false"
                             },
                             "type": "obs",
@@ -368,7 +368,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "c423325e-be95-42e2-ae38-b940c2586327",
-                                "max": "90",
+                                "max": "100",
                                 "min": "0",
                                 "showDate": "false"
                             },
@@ -380,7 +380,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
-                                "max": "9",
+                                "max": "200",
                                 "min": "0",
                                 "showDate": "false"
                             },
