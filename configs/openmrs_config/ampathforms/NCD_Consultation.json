@@ -235,7 +235,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "0bf33271-d553-42ae-a854-624e5258551d",
-								"max": "300",
+								"max": "600",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -248,7 +248,7 @@
 								"rendering": "number",
 								"concept": "a5d68184-6849-4a1d-9a86-5bcea3297f70",
 								"max": "200",
-								"min": "0",
+								"min": "1",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -267,11 +267,118 @@
 							"validators": []
 						},
 						{
-							"id": "totalCholestrol",
+                            "id": "ketone",
+                            "questionOptions": {
+                                "rendering": "select",
+                                "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
+                                "answers": [
+									{
+										"concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+                                    {
+										"concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Renal Tests",
+					"questions": [
+						{
+							"id": "creatinine",
 							"questionOptions": {
 								"rendering": "number",
-								"concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
-								"max": "900",
+								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "creatinineClearance",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "proteinuria",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "potassium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "aceInhibitor",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "088e714b-0529-414b-9a09-46bb10185603",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Other Tests",
+					"questions": [
+						{
+							"id": "sodium",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
+								"min": "0",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "ALT",
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "200",
 								"min": "0",
 								"showDate": "false"
 							},
