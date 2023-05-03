@@ -1,5 +1,5 @@
 Uuid,Void/Retire,Name,display:en,display:km,Description,View privilege,Edit privilege,_order:1000,
 b870b6bb-9441-4664-9087-3d3477174213,,NCD Consultation,NCD Consultation,ការពិគ្រោះយោបល់ជំងឺមិនឆ្លង,,View NCD Consultation encounters,Edit NCD Consultation encounters,,
 f9fdbe63-12b4-479f-b8fd-dcbfde6aa944,,NCD Medical History,NCD Medical History,ប្រវត្តជំងឺ,,View NCD Medical History encounters,Edit NCD Medical History encounters,,
-422b7e0c-b8f3-4748-8e60-d6684315f141,,Health Center - NCD Screening,Health Center - NCD Screening,ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព,,View NCD Screening encounters,Edit NCD Screening encounters,,
+422b7e0c-b8f3-4748-8e60-d6684315f141,,NCD Screening,NCD Screening,,,View NCD Screening encounters,Edit NCD Screening encounters,,
 3fd606b6-4c9d-4077-a532-c1ac58644ad2,,Cervical Cancer Screening,Cervical Cancer Screening,ការពិនិត្យស្រាវជ្រាវរកជំងឺមហារីកមាត់ស្បូន,,,,,
