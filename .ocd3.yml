@@ -2,5 +2,5 @@ version: 1
 build:
   bash_commands: "exit 0"
 deploy:
-  # Do not deploy via OCD3. Publishing is done via GitHub Actions. Temporary fix: Wait for 10m to make sure it's done in GA first.
-  bash_commands: "sleep 10m; exit 0"
+  # Do not deploy via OCD3. Publishing is done via GitHub Actions. Temporary fix: Wait for 5m to make sure it's done in GA first.
+  bash_commands: "sleep 5m; exit 0"
