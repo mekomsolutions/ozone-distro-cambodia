@@ -22,7 +22,7 @@
 								"rendering": "number",
 								"concept": "cd9d1cab-5a14-41e4-bf4b-e9425bc53958",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -54,7 +54,7 @@
 								"rendering": "number",
 								"concept": "b5913f28-31f5-4634-8970-316fba5f0eaf",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -69,7 +69,7 @@
 								"rendering": "number",
 								"concept": "ac127f70-514c-4f42-aa46-a13bb0d26a79",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -84,7 +84,7 @@
 								"rendering": "number",
 								"concept": "e83196b4-793a-40dc-b30f-3a0ddac746bc",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -116,7 +116,7 @@
 								"rendering": "number",
 								"concept": "40026557-6b03-4f1d-9592-ced1369814ff",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -182,7 +182,7 @@
 								"rendering": "number",
 								"concept": "f44fcc48-4666-4270-a69e-d86e745d9a09",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -294,7 +294,7 @@
 								"rendering": "number",
 								"concept": "e5c015db-9c06-45da-aaba-bf3fee26a4c7",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -323,7 +323,7 @@
 								"rendering": "number",
 								"concept": "c2e13ca7-9c7c-49cd-bada-2c8bb34f3e6c",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -335,7 +335,7 @@
 								"rendering": "number",
 								"concept": "bd4a43d6-455e-40b8-abbd-fd4311167556",
 								"max": "",
-								"min": "",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
