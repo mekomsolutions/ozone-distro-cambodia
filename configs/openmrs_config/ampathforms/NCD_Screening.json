@@ -531,6 +531,44 @@
                             "validators": []
                         },
                         {
+                            "id": "consultationBy",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "3786ab5c-1d22-4ac6-b8fc-4c7b5a97b754",
+                                "answers": [
+                                    {
+                                        "concept": "f094cac6-2322-4b29-8ed4-25bab0cd68b1"
+                                    },
+                                    {
+                                        "concept": "2b9aeab5-694b-481c-9f18-81a5dc3bf4c5"
+                                    },
+                                    {
+                                        "concept": "ec54ae7c-1007-4fc9-a62b-ee5914056468"
+                                    }
+
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "teleConsultation",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "80fc2e59-8c16-40db-9767-ac9d9ffeb010",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "Diagnosis1",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -551,7 +589,6 @@
                                     {
                                         "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
-
                                 ]
                             },
                             "type": "obs",
