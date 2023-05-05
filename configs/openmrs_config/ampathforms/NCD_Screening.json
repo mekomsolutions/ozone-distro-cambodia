@@ -417,29 +417,6 @@
                             "validators": []
                         }
                     ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Tuberculosis Symptoms",
-                    "questions": [
-                        {
-                            "id": "TBsx",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "e0fffb24-5973-40a9-af11-2e4033831747",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
                 }
             ]
         },
@@ -619,7 +596,67 @@
                               },
                               "type": "obs",
                               "validators": []
-                          },     
+                        },
+                        {
+                          "id": "TBsx",
+                          "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "b10eae79-8358-4653-822b-33336644db36",
+                              "answers": [
+                                  {
+                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  }
+                              ]
+                          },
+                          "type": "obs",
+                          "validators": []
+                      },
+                      {
+                          "id": "tbSymptom",
+                          "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                              "answers": [
+                                  {
+                                      "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "53e7d24b-20e1-4e54-a5ec-e338d48aaff0"
+                                  },
+                                  {
+                                      "concept": "85231ffc-1014-466c-8627-fc21ac7f30f4"
+                                  }
+                              ]
+                          },
+                          "hide": {
+                              "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          },
+                          "type": "obs",
+                          "validators": []
+                      },
+                      {
+                          "id": "tbs",
+                          "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
+                              "answers": [
+                                  {
+                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  }
+                              ]
+                          },
+                          "type": "obs",
+                          "validators": []
+                      },
                         {
                             "id": "hospitalReferral",
                             "questionOptions": {
