@@ -545,8 +545,47 @@
                                     {
                                         "concept": "ec54ae7c-1007-4fc9-a62b-ee5914056468"
                                     }
-
                                 ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "footExam",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "8c2d8409-7c6d-4d8b-84a3-a2bea243c0b8",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "footProblem",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5",
+                                "answers": [
+                                    {
+                                        "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
+                                    },
+                                    {
+                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
+                                    },
+                                    {
+                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
+                                    }
+                                ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(footExam) || footExam !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "type": "obs",
                             "validators": []
