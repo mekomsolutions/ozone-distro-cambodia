@@ -408,7 +408,7 @@
                             "id": "totalCholesterol",
                             "questionOptions": {
                                 "rendering": "number",
-                                "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
+                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
                                 "max": "200",
                                 "min": "0",
                                 "showDate": "false"
