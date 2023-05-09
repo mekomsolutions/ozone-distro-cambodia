@@ -522,8 +522,47 @@
                                     {
                                         "concept": "ec54ae7c-1007-4fc9-a62b-ee5914056468"
                                     }
-
                                 ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "footExam",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "8c2d8409-7c6d-4d8b-84a3-a2bea243c0b8",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "footProblem",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5",
+                                "answers": [
+                                    {
+                                        "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
+                                    },
+                                    {
+                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
+                                    },
+                                    {
+                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
+                                    }
+                                ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(footExam) || footExam !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             },
                             "type": "obs",
                             "validators": []
@@ -796,10 +835,37 @@
 							"concept": "62e5ac97-0fb6-478b-bd30-2157374b3cc0",
 							"answers": [
 								{
-									"concept": "79651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									"concept": "adb6d578-7356-4910-adef-1e994af1da0f"
 								},
 								{
-									"concept": "98a3d43a-1a0e-4f92-809b-894d5833cc1f"
+									"concept": "71137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								},
+								{
+									"concept": "70252b71-5039-4afb-b8f8-3f22fe300918"
+								},
+								{
+									"concept": "7e11b94c-759c-4c9e-a0fa-5268f59397b8"
+								},
+								{
+									"concept": "f5005dfe-bd0c-4078-aac7-df6113712f02"
+								},
+								{
+									"concept": "bc8bec7f-8367-446d-81ac-459687bedcdb"
+								},
+								{
+									"concept": "dd766217-50a8-4a10-bc6d-031a1ff932b4"
+								},
+								{
+									"concept": "90723f94-aa16-4b74-8beb-b6a26296f1a9"
+								},
+								{
+									"concept": "1cc19da3-4c56-470e-aa52-c10a9791eeda"
+								},
+								{
+									"concept": "f72293b4-5f61-4b96-9c32-b454eb4ddfe5"
+								},
+								{
+									"concept": "77696AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 								},
 								{
 									"concept": "39f9ad3a-88f4-400d-a854-c2433dacbb91"
@@ -811,13 +877,25 @@
 									"concept": "2c18c145-faad-41ba-99e2-4547a0ca05aa"
 								},
 								{
+									"concept": "73cd8ce8-a531-4294-b843-83341acd63ba"
+								},
+								{
+									"concept": "934e4832-4f8c-4f18-8e6c-44df60185a4f"
+								},
+								{
+									"concept": "79651AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+								},
+								{
+									"concept": "0f9aa345-d300-4a4b-be49-fa4f8442e2e9"
+								},
+								{
+									"concept": "96a714c2-6874-465e-ab0c-47b5ef49e9fe"
+								},
+								{
 									"concept": "691ebd60-f916-4f9e-990e-8cc21420c6d9"
 								},
 								{
-									"concept": "54b53e46-def0-4aa1-b8ff-2728e377c0b3"
-								},
-								{
-									"concept": "71617AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									"concept": "879390ce-0d76-4959-90f4-42ab2b17772d"
 								}
                                 ]
                             },
