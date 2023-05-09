@@ -551,6 +551,23 @@
                             "validators": []
                         },
                         {
+                            "id": "teleConsultation",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "80fc2e59-8c16-40db-9767-ac9d9ffeb010",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "footExam",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -586,23 +603,6 @@
                             },
                             "hide": {
                                 "hideWhenExpression": "isEmpty(footExam) || footExam !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "teleConsultation",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "80fc2e59-8c16-40db-9767-ac9d9ffeb010",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
                             },
                             "type": "obs",
                             "validators": []
