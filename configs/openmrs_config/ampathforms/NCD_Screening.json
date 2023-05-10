@@ -378,26 +378,8 @@
                         {
                             "id": "ketones",
                             "questionOptions": {
-                                "rendering": "number",
-                                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
-                                "max": "200",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Lipids",
-                    "questions": [
-                        {
-                            "id": "ketone",
-                            "questionOptions": {
                                 "rendering": "select",
-                                "concept": "f5f76f5e-2e6a-4112-ab4e-629299829ae3",
+                                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
                                 "answers": [
 									{
 										"concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -412,6 +394,24 @@
 										"concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Lipids",
+                    "questions": [
+                        {
+                            "id": "totalCholesterol",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                                "max": "200",
+                                "min": "0",
+                                "showDate": "false"
                             },
                             "type": "obs",
                             "validators": []
