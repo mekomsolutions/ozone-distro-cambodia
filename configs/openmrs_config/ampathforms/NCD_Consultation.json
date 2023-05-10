@@ -1148,6 +1148,9 @@
                         },
 					    {
 						"id": "medicineDetails",
+						"hide": {
+							"hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+						},
 						"questionOptions": {
 							"rendering": "multiCheckbox",
 							"concept": "62e5ac97-0fb6-478b-bd30-2157374b3cc0",
