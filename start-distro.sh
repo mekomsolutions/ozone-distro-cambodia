@@ -28,6 +28,7 @@ printf "%s\n" "Done."
 
 # Run
 printf "%s\n" "Run..."
+docker network inspect web >/dev/null 2>&1 || docker network create web
 docker compose -f "${destinationFolder}/docker-compose.yml" -f "${destinationFolder}/docker-compose-proxy.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up -d ${servicesToRun}
 
 exit 0
