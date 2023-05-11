@@ -23,11 +23,12 @@ printf "%s\n" "Prepare the run..."
 
 # Pull images
 printf "%s\n" "Pull..."
-docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" pull ${servicesToRun}
+docker compose -f "${destinationFolder}/docker-compose.yml" -f "${destinationFolder}/docker-compose-proxy.yml" --env-file "${destinationFolder}/concatenated.env" pull ${servicesToRun}
 printf "%s\n" "Done."
 
 # Run
 printf "%s\n" "Run..."
-docker compose -f "${destinationFolder}/docker-compose.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up -d ${servicesToRun}
+docker network inspect web >/dev/null 2>&1 || docker network create web
+docker compose -f "${destinationFolder}/docker-compose.yml" -f "${destinationFolder}/docker-compose-proxy.yml" --env-file "${destinationFolder}/concatenated.env" -p ozone-distro-cambodia up -d ${servicesToRun}
 
 exit 0
