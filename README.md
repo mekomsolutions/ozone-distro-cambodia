@@ -11,8 +11,7 @@ The Ozone Distribution For Cambodia or **Ozone Kh** is a distribution of [Ozone 
 | Server   | URL                                                          | Credentials      |
 |----------|--------------------------------------------------------------|------------------|
 | Dev      | https://oz-kh-dev.mekomsolutions.net/openmrs/spa/login#      | admin / Admin123 |
-| Training | https://oz-kh-training.mekomsolutions.net/openmrs/spa/login# | admin / Admin123 |
-| UAT      | [TBC]                                                        | [TBC]            |
+| UAT      | https://oz-kh-uat.mekomsolutions.net/openmrs/spa/login# | admin / Admin123   |
 
 ## Implementer Guide
 
@@ -30,6 +29,9 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.0.0
-* [TBC] Item 1
-* [TBC] Item 2
-* ...
+* Clinical forms for screening and management of diabetes and hypertension (NCD Medical History, NCD Screening, NCD Consultation)
+* Clinical form for cercival cancer screening
+* Cambodia-specific patient registration
+* Full localization of all clinical forms in Khmer
+* Partial localization application screens in Khmer
+
