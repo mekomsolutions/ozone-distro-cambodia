@@ -123,7 +123,7 @@
         <repository>
           <name>Mekom SolutionsNexus private repo for releases</name>
           <id>mks-nexus-private</id>
-          <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
+          <url>https://nexus.mekomsolutions.net/repository/maven-private-releases/</url>
         </repository>
         <snapshotRepository>
           <name>Mekom Solutions Nexus private repo for snapshots</name>
