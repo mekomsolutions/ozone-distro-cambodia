@@ -7,6 +7,12 @@
     ],
     "fieldConfigurations":
     {
+      "address": {
+      "useAddressHierarchy": {
+        "enabled":true,
+        "searchAddressByLevel": true
+      }
+      },
       "name": {
         "displayCapturePhoto": false
       },
