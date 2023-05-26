@@ -33,9 +33,11 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * [TBD]
 
 ### Version 1.0.0
-* Clinical forms for screening and management of diabetes and hypertension (NCD Medical History, NCD Screening, NCD Consultation)
-* Clinical form for cercival cancer screening
 * Cambodia-specific patient registration
+* Clinical forms for screening and management of diabetes and hypertension:
+  * NCD Medical History
+  * NCD Screening
+  * NCD Consultation
+* Clinical form for cervical cancer screening
 * Full localization of all clinical forms in Khmer
 * Partial localization application screens in Khmer
-
