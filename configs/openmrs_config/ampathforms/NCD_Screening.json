@@ -817,7 +817,7 @@
 							"rendering": "multiCheckbox",
 							"concept": "62e5ac97-0fb6-478b-bd30-2157374b3cc0",
 							"answers": [
-                                {
+                                				{
 									"concept": "adb6d578-7356-4910-adef-1e994af1da0f"
 								},
 								{
