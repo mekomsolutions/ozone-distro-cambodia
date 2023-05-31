@@ -688,11 +688,14 @@
 						{
 							"id": "numberOfQuadrant",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "multiCheckbox",
 								"concept": "0dd61510-1ddd-49e8-838b-b4ec7fdaf95f",
 								"answers": [
 									{
 										"concept": "a285044f-7897-4640-890a-c729caf2f1dd"
+									},
+									{
+										"concept": "4f6a3d40-690f-49d5-a158-d14b98fbf34d"
 									},
 									{
 										"concept": "513d8b5a-aac6-4379-b061-e4b002897e7d"
