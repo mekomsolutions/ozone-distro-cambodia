@@ -1,6 +1,6 @@
 Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Description:en,Description:fr,Data class,Data type,Answers,Members,_version:1,_order:1003
 123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Ulcer,,Ulcer,,,,Misc,N/A,,,,
-871389dc-a412-40ba-aa6d-d12497065ce0,,,Amputation,,Amputation,,,,Misc,N/A,,,,
+871389dc-a412-40ba-aa6d-d12497065ce0,,,Amputation,កាត់ជើង,Amputation,កាត់ជើង,,,Misc,N/A,,,,
 735dc19f-78f0-4f0f-861b-e2b4328521b4,,,AKA,,AKA,,,,Misc,N/A,,,,
 bb9a023b-a077-4aad-baac-021c8ed1f626,,,BKA,,BKA,,,,Misc,N/A,,,,
 81318009-e9fb-4b8a-9bf6-17082cefd19e,,,Symptom of PN-Pain,,Symptom of PN-Pain,,,,Misc,N/A,,,,
@@ -34,7 +34,7 @@ db2e363c-a5b5-4136-a786-adae6f52e10b,,,Left Eye Exam,ធ្វើតេស្ត
 0684f8bf-7e2f-40b7-9479-a02c44a8937f,,,Right Eye Exam,ធ្វើតេស្តភ្នែកខាងស្តាំ,Right Eye Exam,ធ្វើតេស្តភ្នែកខាងស្តាំ,,,Question,Coded,Blurred vision;Vision impairment;Cataract;Macular Oedema;NPR;PR,,,
 16fb43ef-a4cc-4a89-be31-3486aa61177c,,,Eye Exam Details,ការអធិប្បាយលម្អិតពីការពិនិត្យភ្នែក,Eye Exam Details,Eye Exam Details,,,Question,Text,,,,
 358b010b-e553-4380-a4c7-10af4aa5aa7d,,,Eye Exam Set,,Eye Exam Set,Eye Exam Set,,,ConvSet,N/A,,Eye Exam;Eye Exam Details,,
-fcf078a5-a839-49d7-99cf-5427b0fbaad3,,,Acute myocardial infarction,,Acute myocardial infarction,,,,Misc,N/A,,,,
+fcf078a5-a839-49d7-99cf-5427b0fbaad3,,,Acute myocardial infarction,ជំងឺខូចសាច់ដុំបេះដូងស្រួចស្រាល់,Acute myocardial infarction,ជំងឺខូចសាច់ដុំបេះដូងស្រួចស្រាល់,,,Misc,N/A,,,,
 95496c04-b5c7-4dc6-ad0f-664bf47a98be,,,Angina,,Angina,,,,Misc,N/A,,,,
 ad681aca-d429-49f0-b390-e1edd3050503,,,Pulmonary Oedema,,Pulmonary Oedema,,,,Misc,N/A,,,,
 16a53891-b85e-4914-b6dc-c7ab25cc29f2,,,TIA,,TIA,,,,Misc,N/A,,,,
