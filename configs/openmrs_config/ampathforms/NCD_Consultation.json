@@ -1076,9 +1076,18 @@
                                     {
                                         "concept": "111103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     },
-                                    {
-                                        "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
+									{
+										"concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+									},
+									{
+										"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+									},
+									{
+										"concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
                                 ]
                             },
                             "type": "obs",
