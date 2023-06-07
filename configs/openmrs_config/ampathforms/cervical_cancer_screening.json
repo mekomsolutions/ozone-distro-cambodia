@@ -603,9 +603,9 @@
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Cervical Cancer Test result",
+					"label": "Cervical Cancer Health Education",
 					"questions": [
-						{
+							{
 							"id": "cervicalCancerEduc",
 							"questionOptions": {
 								"rendering": "radio",
@@ -621,8 +621,14 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "Human Papilloma Virus Test",
+					"questions": [
+							{
 							"id": "HPVTestResult",
 							"questionOptions": {
 								"rendering": "radio",
@@ -638,8 +644,14 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "VIA Test",
+					"questions": [
+							{
 							"id": "SCJVisibility",
 							"questionOptions": {
 								"rendering": "radio",
@@ -688,11 +700,14 @@
 						{
 							"id": "numberOfQuadrant",
 							"questionOptions": {
-								"rendering": "radio",
+								"rendering": "multiCheckbox",
 								"concept": "0dd61510-1ddd-49e8-838b-b4ec7fdaf95f",
 								"answers": [
 									{
 										"concept": "a285044f-7897-4640-890a-c729caf2f1dd"
+									},
+									{
+										"concept": "4f6a3d40-690f-49d5-a158-d14b98fbf34d"
 									},
 									{
 										"concept": "513d8b5a-aac6-4379-b061-e4b002897e7d"
@@ -721,8 +736,14 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "Colposcopy",
+					"questions": [
+							{
 							"id": "colposcopy",
 							"questionOptions": {
 								"rendering": "radio",
@@ -738,8 +759,14 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "Cervical Biopsis",
+					"questions": [
+							{
 							"id": "cervicalBiopsis",
 							"questionOptions": {
 								"rendering": "radio",
@@ -755,7 +782,13 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "Pap Smear",
+					"questions": [
 						{
 							"id": "papSmear",
 							"questionOptions": {
@@ -792,7 +825,13 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
+						}
+						]
+					},
+					{
+					"isExpanded": "true",
+					"label": "Other Details",
+					"questions": [
 						{
 							"id": "referralSite",
 							"label": "Referral center",
@@ -921,9 +960,9 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
-					]
-				},
+						}	
+						]
+					},
 				{
 					"isExpanded": "true",
 					"label": "Physical Examination",
