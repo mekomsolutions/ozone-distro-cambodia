@@ -17,9 +17,11 @@
       "Cervical Cancer Health Education":"អប់រំសុខភាពអំពីជំងឺមហារីកមាត់ស្បូន",
       "Human Papilloma Virus Test":"តេស្ត​ HPV",
       "VIA Test":"តេស្ត​ VIA",
-      "Colposcopy":"ការឆ្លុះពិនិត្យមើលមាត់ស្បូនដោយប្រើឧបករណ៍",
-      "Cervical Biopsis":"ការច្រឹបយកសាច់មាត់ស្បូនទៅពិនិត្យ​ (រកជំងឺមហារីក)",
-      "Pap Smear":"ការយកសំណាកមាត់ស្បូនដើម្បីពិនិត្យ (រកជំងឺមហារីក)",
-      "Other Details":"ព័ត៌មានលម្អិតផ្សេងទៀត។"
+      "Colposcopy":"ការថត​ឆ្លុះ​មាត់​ស្បូន",
+      "Cervical Biopsy":"ច្រឹបសាច់សម្រាប់ការពិនិត្យកោសិការវិទ្យា (Biospy)",
+      "Pap Smear":"តេស្ត​ Pap Smear",
+      "Referral":"បញ្ជូន",
+      "Treatment":"ការព្យាបាល",
+      "Appointment":"ការណាត់ជួប"
     }
 }
