@@ -30,7 +30,12 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ### Version 1.1.0
 
-* [TBD]
+* Drug names displayed with their dosage
+* ID 'poor' made non-unique
+* Default system locale to Khmer(KH)
+* Quadrant question in Cervical Cancer Screening form modified
+* Drop down items (Amputation, Myocardial) translated
+* HIV,TB,Pre-diabetes added to Complication question
 
 ### Version 1.0.0
 * Cambodia-specific patient registration
