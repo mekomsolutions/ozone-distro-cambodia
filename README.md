@@ -28,6 +28,9 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.2.0
+* [TBD]
+
 ### Version 1.1.0
 
 * Drug names displayed with their dosage
