@@ -1,4 +1,5 @@
 Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Description:en,Description:fr,Data class,Data type,Answers,Members,_version:1,_order:1001
+b147d693-8c18-4c62-9807-ecd0e60e8fdf,,,Which year did the patient quit smoking?,តើអ្នកជំងឺបានឈប់ជក់បារីនៅឆ្នាំណា?,Which year did the patient quit smoking?,តើអ្នកជំងឺបានឈប់ជក់បារីនៅឆ្នាំណា?,,,Misc,Numeric,,,,
 60bf95e1-04b5-48cf-8d05-3f5883a891e0,,,Never smoked,មិនដែលជក់បារីទេ,Never smoked,មិនដែលជក់បារីទេ,,,Misc,N/A,,,,
 fd676d9a-1a47-4f6c-a24e-f57ac796b7f1,,,Current smoker,កំពុងជក់បារី,Current smoker,កំពុងជក់បារី,,,Misc,N/A,,,,
 57ce8832-7ea7-45f9-91ba-09e1c064073b,,,Ex-smoker,អតីតអ្នកជក់បារី ឬ ធ្លាប់ជក់បារី,Ex-smoker,អតីតអ្នកជក់បារី ឬ ធ្លាប់ជក់បារី,,,Misc,N/A,,,,
