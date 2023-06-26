@@ -579,7 +579,7 @@
                         {
                             "id": "footProblem",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "multiCheckbox",
                                 "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5",
                                 "answers": [
                                     {
@@ -671,7 +671,7 @@
                       {
                           "id": "tbSymptom",
                           "questionOptions": {
-                              "rendering": "radio",
+                              "rendering": "multiCheckbox",
                               "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
                               "answers": [
                                   {
