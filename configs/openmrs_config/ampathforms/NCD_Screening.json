@@ -905,23 +905,6 @@
                             },
                             "type": "obs",
                             "validators": []
-                        },
-                        {
-                            "id": "dischargedService",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "8ee37ce5-cb9d-44a6-8adc-6efb39b07b75",
-                                "answers": [
-                                    {
-                                        "concept": "0eb2b443-57d6-4998-8596-c9303d33abf0"
-                                    },
-                                    {
-                                        "concept": "c84f1b1c-9f19-4999-a618-0c256d132365"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
                         }
                     ]
                 },
