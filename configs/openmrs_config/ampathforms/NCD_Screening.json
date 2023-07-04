@@ -314,7 +314,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
-                                "max": "600",
+                                "max": "900",
                                 "min": "0",
                                 "showDate": "false"
                             },
@@ -326,7 +326,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
-                                "max": "600",
+                                "max": "900",
                                 "min": "0",
                                 "showDate": "false"
                             },
@@ -350,7 +350,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "600",
+                                "max": "900",
                                 "min": "0",
                                 "showDate": "false"
                             },
@@ -409,7 +409,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "200",
+                                "max": "1500",
                                 "min": "0",
                                 "showDate": "false"
                             },
@@ -447,6 +447,21 @@
                             "type": "obs",
                             "validators": []
                         },
+                        {
+							"id": "quitSmoking",
+							"hide": {
+								"hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
+							},
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
+								"max": "2100",
+								"min": "1900",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
                         {
                             "id": "exercise",
                             "questionOptions": {
@@ -603,7 +618,7 @@
                                         "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
                                     },
                                     {
-                                        "concept": "82827a07-0bb7-40b6-a70d-4de4eab78195"
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                 ]
                             },
@@ -629,7 +644,7 @@
                                         "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
                                     },
                                     {
-                                        "concept": "82827a07-0bb7-40b6-a70d-4de4eab78195"
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
                                   ]
                               },
@@ -758,33 +773,22 @@
                             "validators": []
                         },
                         {
-                            "id": "tobaccoCessationCounselling",
+                            "id": "recommendations",
                             "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "d7035879-6668-4cb0-87ab-a1311ccb774c",
+                                "rendering": "multiCheckbox",
+                                "concept": "9f7c8739-3ea3-4f7f-8648-d6c36fef7be2",
                                 "answers": [
                                     {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "7feb6724-dd34-411a-aa24-2422bfefe407"
                                     },
                                     {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "dietAndExerciseCounselling",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "dc833bb7-2d04-4be0-ab58-47b9fb2bf771",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
                                     },
                                     {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
+                                    },
+									{
+                                        "concept": "f24e644d-7c12-476a-9ec4-9734f148502a"
                                     }
                                 ]
                             },
