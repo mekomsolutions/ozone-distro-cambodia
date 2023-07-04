@@ -8,7 +8,8 @@
     "fieldConfigurations":
     {
       "name": {
-        "displayCapturePhoto": false
+        "displayCapturePhoto": false,
+        "displayMiddleName": false
       },
       "gender": [
         {
