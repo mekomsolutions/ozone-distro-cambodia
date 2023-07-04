@@ -163,7 +163,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
-								"max": "600",
+								"max": "900",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -175,7 +175,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
-								"max": "600",
+								"max": "900",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -246,7 +246,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "0bf33271-d553-42ae-a854-624e5258551d",
-								"max": "600",
+								"max": "1000",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -259,7 +259,7 @@
 								"rendering": "number",
 								"concept": "a5d68184-6849-4a1d-9a86-5bcea3297f70",
 								"max": "200",
-								"min": "1",
+								"min": "0",
 								"showDate": "false"
 							},
 							"type": "obs",
@@ -270,7 +270,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "a86c14a1-9453-46af-9b9a-f950b21b8952",
-								"max": "600",
+								"max": "1500",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -282,7 +282,7 @@
                             "questionOptions": {
                                 "rendering": "number",
                                 "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "200",
+								"max": "1500",
 								"min": "0",
 								"showDate": "false"
                             },
@@ -300,7 +300,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "200",
+								"max": "500",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -312,7 +312,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
-								"max": "200",
+								"max": "500",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -336,7 +336,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "200",
+								"max": "20",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -348,7 +348,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "088e714b-0529-414b-9a09-46bb10185603",
-								"max": "200",
+								"max": "100",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -366,7 +366,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "200",
+								"max": "500",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -378,7 +378,7 @@
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "200",
+								"max": "100",
 								"min": "0",
 								"showDate": "false"
 							},
@@ -1054,6 +1054,92 @@
 							},
 							"type": "obs",
 							"validators": []
+						},
+						{
+                            "id": "Diagnosis1",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+                                "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                                    },
+                                    {
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                          {
+                              "id": "Diagnosis2",
+                              "questionOptions": {
+                                  "rendering": "radio",
+                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                                  "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                                    },
+                                    {
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                  ]
+                              },
+                              "type": "obs",
+                              "validators": []
+                        },
+						{
+                            "id": "otherHealthProblems",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
+                                "answers": [
+									{
+										"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+									},
+									{
+                                        "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+						{
+							"type": "obs",
+							"id": "otherHealthProblem",
+							"required": "false",
+							"default": "",
+							"hide": {
+								"hideWhenExpression": "isEmpty(otherHealthProblems) || otherHealthProblems !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"rows": 3,
+								"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							}
 						},
 						{
                             "id": "currentMedicalComplications",
