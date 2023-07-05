@@ -41,7 +41,7 @@ b082eb80-3495-4af8-a970-0ae0af6ce184,,,Allergies,ប្រតិកម្មថ�
 6ba80ae0-724b-41db-8831-6b3d89dbef06,,,Pre-diabetes,ត្រៀមកើតជំងឺទឹកនោមផ្អែម,Pre-diabetes,ត្រៀមកើតជំងឺទឹកនោមផ្អែម,,,Misc,N/A,,,,
 f4d21c60-db31-4318-a8e8-13414dc0fa34,,,TB,ជំងឺរបេង,TB,ជំងឺរបេង,,,Misc,N/A,,,,
 884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,HIV,ជំំងឺអេដស៍,HIV,ជំំងឺអេដស៍,,,Misc,N/A,,,,
-2c50ded9-779a-4316-be00-d9a065674e54,,,Other health problems,Other health problems,Other health problems,Other health problems,,,Question,Coded,TB;HIV;Other,,,
+2c50ded9-779a-4316-be00-d9a065674e54,,,Other health conditions,បញ្ហាសុខភាពផ្សេងទៀត,Other health conditions,បញ្ហាសុខភាពផ្សេងទៀត,,,Question,Coded,TB;HIV;Other,,,
 3f36a039-eac3-46bd-8798-102c55639d49,,,Current complications,ផលវិបាកបច្ចុប្បន្ន,Current complications,ផលវិបាកបច្ចុប្បន្ន,,,Question,Coded,Cardiovascular disease;Foot problem;Nephropathy;Cerebrovascular Accident (I64);Retinopathy;Pre-diabetes;TB;HIV;Other,,,
 140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Fever,ក្តៅខ្លួន,Fever,ក្តៅខ្លួន,,,Misc,N/A,,,,
 27ee5bdc-1af9-475b-974d-43beb4f2c6a8,,,Sweat,បែកញើស,Sweat,បែកញើស,,,Misc,N/A,,,,
