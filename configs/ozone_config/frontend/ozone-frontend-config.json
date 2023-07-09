@@ -8,10 +8,10 @@
     "fieldConfigurations":
     {
       "address": {
-      "useAddressHierarchy": {
-        "enabled":true,
-        "searchAddressByLevel": true
-      }
+        "useAddressHierarchy": {
+          "enabled": true,
+          "searchAddressByLevel": true
+        }
       },
       "name": {
         "displayCapturePhoto": false
