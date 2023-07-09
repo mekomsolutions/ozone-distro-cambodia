@@ -505,7 +505,7 @@
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "Assessment",
+                    "label": "Assessment I",
                     "questions": [
                         {
                             "id": "CVDscore",
@@ -875,7 +875,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "Assessment",
+                    "label": "Assessment II",
                     "questions": [
                         {
                             "id": "Diagnosis1",
