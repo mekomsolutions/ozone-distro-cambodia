@@ -736,7 +736,7 @@
                                 "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
                                 "rendering": "group"
                             },
-                            "id": "leftEyeExamination",
+                            "id": "rightEyeExamination",
                             "questions": [
                                 {
                                     "id": "eyeExam",
