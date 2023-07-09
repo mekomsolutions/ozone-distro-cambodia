@@ -517,7 +517,7 @@
                                 "showDate": "false",
                                 "calculate": {
                                     "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
-                                 }
+                                }
                             },
                             "type": "obs",
                             "validators": []
@@ -598,10 +598,16 @@
                             },
                             "type": "obs",
                             "validators": []
-                        },
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Left Eye Examination",
+                    "questions": [
                         {
                             "type": "obsGroup",
-                            "label": "Left Eye Exam Set",
+                            "label": "Left Eye Examination",
                             "questionOptions": {
                                 "concept": "62d486b6-ebc3-4245-8d03-277c4b2a21ea",
                                 "rendering": "group"
@@ -728,10 +734,16 @@
                                     "validators": []
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Right Eye Examination",
+                    "questions": [
                         {
                             "type": "obsGroup",
-                            "label": "Right Eye Exam Set",
+                            "label": "Right Eye Examination",
                             "questionOptions": {
                                 "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
                                 "rendering": "group"
@@ -858,7 +870,13 @@
                                     "validators": []
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Assessment",
+                    "questions": [
                         {
                             "id": "Diagnosis1",
                             "questionOptions": {
@@ -885,12 +903,12 @@
                             "type": "obs",
                             "validators": []
                         },
-                          {
-                              "id": "Diagnosis2",
-                              "questionOptions": {
-                                  "rendering": "radio",
-                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
-                                  "answers": [
+                        {
+                            "id": "Diagnosis2",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                                "answers": [
                                     {
                                         "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
                                     },
@@ -906,71 +924,71 @@
                                     {
                                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
-                                  ]
-                              },
-                              "type": "obs",
-                              "validators": []
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
                         },
                         {
-                          "id": "TBsx",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "b10eae79-8358-4653-822b-33336644db36",
-                              "answers": [
-                                  {
-                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }
-                              ]
-                          },
-                          "type": "obs",
-                          "validators": []
-                      },
-                      {
-                          "id": "tbSymptom",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
-                              "answers": [
-                                  {
-                                      "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "89574491-9b87-4179-b5cc-106481d00d05"
-                                  },
-                                  {
-                                      "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
-                                  },
-                                  {
-                                      "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }                               
-                              ]
-                          },
-                          "hide": {
-                              "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                          },
-                          "type": "obs",
-                          "validators": []
-                      },
-                      {
-                          "id": "tbs",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
-                              "answers": [
-                                  {
-                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }
-                              ]
-                          },
-                          "type": "obs",
-                          "validators": []
-                      }
+                            "id": "TBsx",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "b10eae79-8358-4653-822b-33336644db36",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "tbSymptom",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                                "answers": [
+                                    {
+                                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                                    },
+                                    {
+                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                                    },
+                                    {
+                                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "tbs",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
                     ]
                 }
             ]
