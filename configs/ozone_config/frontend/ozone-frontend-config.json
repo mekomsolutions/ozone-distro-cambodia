@@ -9,7 +9,8 @@
     {
       "name": {
         "displayCapturePhoto": false,
-        "displayMiddleName": false
+        "displayMiddleName": false,
+        "displayReverseFieldOrder": true
       },
       "gender": [
         {
