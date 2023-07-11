@@ -170,6 +170,10 @@
       {
         "uuid": "d81acbb7-93b4-4e4e-8507-82d1c3ca6cd7",
         "required": true
+      },
+      {
+        "uuid": "547f2d61-589f-4b04-9da8-8a5c639b5cc6",
+        "required": true
       }
     ],
     "extensionSlots": {

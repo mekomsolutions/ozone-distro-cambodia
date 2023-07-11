@@ -41,3 +41,4 @@ f094cac6-2322-4b29-8ed4-25bab0cd68b1,,,Doctor/Medical Assistant,វេជ្ជ�
 2b9aeab5-694b-481c-9f18-81a5dc3bf4c5,,,Nurse,គិលានុបដ្ឋាក,Nurse,គិលានុបដ្ឋាក,,,Misc,N/A,,,,
 ec54ae7c-1007-4fc9-a62b-ee5914056468,,,Midwife,ឆ្មប,Midwife,ឆ្មប,,,Misc,N/A,,,,
 3786ab5c-1d22-4ac6-b8fc-4c7b5a97b754,,,Consultation by:,ពិគ្រោះជំងឺដោយ ៖,Consultation by:,ពិគ្រោះជំងឺដោយ ៖,,,Question,Coded,Doctor/Medical Assistant;Nurse;Midwife,,,
+2af5ca01-4135-45a2-af05-84b1eeea1293,,,Has a referral letter ?,មានលិខិតបញ្ជូន,Has a referral letter ?,មានលិខិតបញ្ជូន,,,Question,Coded,Yes;No,,,
