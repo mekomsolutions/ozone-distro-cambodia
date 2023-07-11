@@ -2,5 +2,6 @@ Uuid,Void/Retire,Entity name,Name,display:en,display:km,Description,Min occurs,M
 6f9f22c3-c3e8-4683-b55b-42943a46d8bb,,Visit,Visit Sequence,Visit Sequence,ប្រភេទជំងឺមកពិនិត្យ,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,aff366ff-5477-4e45-a795-f79fb2db5c9d,,,
 af89d44d-5074-472f-b5bc-470feb567633,,Visit,Insurance Type,Insurance Type,ប្រភេទធានារ៉ាប់រង,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,8e807373-be15-4580-9a1c-0d681e04a2ed,,,
 2792fddc-1ca6-4093-84d2-853bd9b0245e,,Visit,Punctuality,Punctuality,មកពិនិត្យទាន់ពេលវេលា,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,d81d4698-e78c-420d-aac5-cb1f606fb32e,,,
+1c75188f-625f-4181-a4e3-9de1d4f21f90,,Visit,Address Zone,Address Zone,អាសយដ្ឋានតំបន់,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,c384dbf9-1ce5-4294-ab28-23773810ae1c,,,
 547f2d61-589f-4b04-9da8-8a5c639b5cc6,,Visit,Has a referral letter ?,Has a referral letter ?,មានលិខិតបញ្ជូន,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,2af5ca01-4135-45a2-af05-84b1eeea1293,,,
 d81acbb7-93b4-4e4e-8507-82d1c3ca6cd7,,Visit,Referred from,Referred from,បញ្ជូនមកពី,,0,1,org.openmrs.customdatatype.datatype.ConceptDatatype,fd588078-9286-46ea-b133-36aab1b025ec,,,
