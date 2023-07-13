@@ -1108,7 +1108,7 @@
                               "validators": []
                         },
 						{
-                            "id": "otherHealthProblems",
+                            "id": "otherHealthConditions",
                             "questionOptions": {
                                 "rendering": "radio",
                                 "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
@@ -1133,7 +1133,7 @@
 							"required": "false",
 							"default": "",
 							"hide": {
-								"hideWhenExpression": "isEmpty(otherHealthProblems) || otherHealthProblems !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(otherHealthConditions) || otherHealthConditions !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "textarea",

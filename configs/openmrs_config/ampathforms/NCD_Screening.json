@@ -508,21 +508,6 @@
                     "label": "Assessment",
                     "questions": [
                         {
-                            "id": "CVDscore",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
-                                "max": "100",
-                                "min": "0",
-                                "showDate": "false",
-                                "calculate": {
-                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
-                                 }
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
                             "id": "consultationBy",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -600,58 +585,6 @@
                             "validators": []
                         },
                         {
-                            "id": "Diagnosis1",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
-                                "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                          {
-                              "id": "Diagnosis2",
-                              "questionOptions": {
-                                  "rendering": "radio",
-                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
-                                  "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                  ]
-                              },
-                              "type": "obs",
-                              "validators": []
-                        },
-                        {
                           "id": "TBsx",
                           "questionOptions": {
                               "rendering": "radio",
@@ -713,6 +646,122 @@
                       }
                     ]
                 }
+            ]
+        },
+        {
+            "label": "Diagnosis",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "Diagnosis",
+                    "questions": [
+                        {
+                            "id": "CVDscore",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
+                                "max": "100",
+                                "min": "0",
+                                "showDate": "false",
+                                "calculate": {
+                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
+                                 }
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "Diagnosis1",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+                                "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                                    },
+                                    {
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                              "id": "Diagnosis2",
+                              "questionOptions": {
+                                  "rendering": "radio",
+                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                                  "answers": [
+                                    {
+                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                                    },
+                                    {
+                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                                    },
+                                    {
+                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                                    },
+                                    {
+                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                                    },
+                                    {
+                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                  ]
+                              },
+                              "type": "obs",
+                              "validators": []
+                        }
+                    ]
+                },
+                {
+					"isExpanded": "true",
+                    "label": "Other Health Conditions",
+					"questions": [
+						{
+							"id": "otherHealthConditions",
+							"questionOptions": {
+								"concept": "2c50ded9-779a-4316-be00-d9a065674e54",
+                                "answers": [
+                                    {
+                                        "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+                                    },
+                                    {
+                                        "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "4e81c9e2-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d1c6-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d374-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d6da-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
+                                    }
+                                ],
+								"rendering": "multiCheckbox"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
             ]
         },
         {
