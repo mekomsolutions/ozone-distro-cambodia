@@ -461,122 +461,144 @@
 					"isExpanded": "true",
 					"questions": [
 						{
-							"id": "leftFootExam",
+							"type": "obsGroup",
+							"label": "Left Foot Exam",
 							"questionOptions": {
-								"concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
-								"answers": [
-									{
-										"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
-									},
-									{
-										"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
-									},
-									{
-										"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
-									},
-									{
-										"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
-									},
-									{
-										"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
-									},
-									{
-										"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
-									},
-									{
-										"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
-									},
-									{
-										"concept": "0571152b-1f18-4603-9c86-d77883525e61"
-									},
-									{
-										"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
-									},
-									{
-										"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
-									},
-									{
-										"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
-									},
-									{
-										"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
-									},
-									{
-										"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
-									},
-									{
-										"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
-									}
-								],
-								"rendering": "multiCheckbox"
+								"concept": "b658c353-0808-4106-a9e8-6ec39c0213d8",
+								"rendering": "group"
 							},
-							"type": "obs",
-							"validators": []
+							"id": "leftFootExamSet",
+							"questions": [
+								{
+									"id": "leftFootExam",
+									"questionOptions": {
+										"concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
+										"answers": [
+											{
+												"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+											},
+											{
+												"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+											},
+											{
+												"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+											},
+											{
+												"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+											},
+											{
+												"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+											},
+											{
+												"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+											},
+											{
+												"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+											},
+											{
+												"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+											},
+											{
+												"concept": "0571152b-1f18-4603-9c86-d77883525e61"
+											},
+											{
+												"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+											},
+											{
+												"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+											},
+											{
+												"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+											},
+											{
+												"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+											},
+											{
+												"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+											},
+											{
+												"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+											},
+											{
+												"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
+											}
+										],
+										"rendering": "multiCheckbox"
+									},
+									"type": "obs",
+									"validators": []
+								}
+							]
 						},
 						{
-							"id": "rightFootExam",
+							"type": "obsGroup",
+							"label": "Right Foot Exam",
 							"questionOptions": {
-								"concept": "d6f32f81-6d85-49bb-b4c5-cef725bb7616",
-								"answers": [
-									{
-										"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
-									},
-									{
-										"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
-									},
-									{
-										"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
-									},
-									{
-										"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
-									},
-									{
-										"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
-									},
-									{
-										"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
-									},
-									{
-										"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
-									},
-									{
-										"concept": "0571152b-1f18-4603-9c86-d77883525e61"
-									},
-									{
-										"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
-									},
-									{
-										"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
-									},
-									{
-										"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
-									},
-									{
-										"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
-									},
-									{
-										"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
-									},
-									{
-										"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
-									}
-								],
-								"rendering": "multiCheckbox"
+								"concept": "8945d113-0c4b-4f67-98ca-e236bad5750d",
+								"rendering": "group"
 							},
-							"type": "obs",
-							"validators": []
+							"id": "rightFootExamSet",
+							"questions": [
+								{
+									"id": "rightFootExam",
+									"questionOptions": {
+										"concept": "d6f32f81-6d85-49bb-b4c5-cef725bb7616",
+										"answers": [
+											{
+												"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+											},
+											{
+												"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+											},
+											{
+												"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+											},
+											{
+												"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+											},
+											{
+												"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+											},
+											{
+												"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+											},
+											{
+												"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+											},
+											{
+												"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+											},
+											{
+												"concept": "0571152b-1f18-4603-9c86-d77883525e61"
+											},
+											{
+												"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+											},
+											{
+												"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+											},
+											{
+												"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+											},
+											{
+												"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+											},
+											{
+												"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+											},
+											{
+												"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+											},
+											{
+												"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
+											}
+										],
+										"rendering": "multiCheckbox"
+									},
+									"type": "obs",
+									"validators": []
+								}
+							]
 						},
 						{
 							"id": "leftEyeExam",
