@@ -585,65 +585,337 @@
                             "validators": []
                         },
                         {
-                          "id": "TBsx",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "b10eae79-8358-4653-822b-33336644db36",
-                              "answers": [
-                                  {
-                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }
-                              ]
-                          },
-                          "type": "obs",
-                          "validators": []
-                      },
-                      {
-                          "id": "tbSymptom",
-                          "questionOptions": {
-                              "rendering": "multiCheckbox",
-                              "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
-                              "answers": [
-                                  {
-                                      "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "89574491-9b87-4179-b5cc-106481d00d05"
-                                  },
-                                  {
-                                      "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
-                                  },
-                                  {
-                                      "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }                               
-                              ]
-                          },
-                          "hide": {
-                              "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                          },
-                          "type": "obs",
-                          "validators": []
-                      },
-                      {
-                          "id": "tbs",
-                          "questionOptions": {
-                              "rendering": "radio",
-                              "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
-                              "answers": [
-                                  {
-                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  },
-                                  {
-                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                  }
-                              ]
-                          },
-                          "type": "obs",
-                          "validators": []
-                      }
+                            "id": "TBsx",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "b10eae79-8358-4653-822b-33336644db36",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "tbSymptom",
+                            "questionOptions": {
+                                "rendering": "multiCheckbox",
+                                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                                "answers": [
+                                    {
+                                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                                    },
+                                    {
+                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                                    },
+                                    {
+                                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
+                            "id": "tbs",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Left Eye Examination",
+                    "questions": [
+                        {
+                            "type": "obsGroup",
+                            "label": "Left Eye Examination",
+                            "questionOptions": {
+                                "concept": "62d486b6-ebc3-4245-8d03-277c4b2a21ea",
+                                "rendering": "group"
+                            },
+                            "id": "leftEyeExamination",
+                            "questions": [
+                                {
+                                    "id": "eyeExam",
+                                    "questionOptions": {
+                                        "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "visualAcuity",
+                                    "questionOptions": {
+                                        "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "eyelidsEyelashes",
+                                    "questionOptions": {
+                                        "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "conjunctiva",
+                                    "questionOptions": {
+                                        "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "cornea",
+                                    "questionOptions": {
+                                        "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "pupil",
+                                    "questionOptions": {
+                                        "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "lens",
+                                    "questionOptions": {
+                                        "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "isExpanded": "true",
+                    "label": "Right Eye Examination",
+                    "questions": [
+                        {
+                            "type": "obsGroup",
+                            "label": "Right Eye Examination",
+                            "questionOptions": {
+                                "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
+                                "rendering": "group"
+                            },
+                            "id": "rightEyeExamination",
+                            "questions": [
+                                {
+                                    "id": "eyeExam",
+                                    "questionOptions": {
+                                        "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "visualAcuity",
+                                    "questionOptions": {
+                                        "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "eyelidsEyelashes",
+                                    "questionOptions": {
+                                        "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "conjunctiva",
+                                    "questionOptions": {
+                                        "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "cornea",
+                                    "questionOptions": {
+                                        "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "pupil",
+                                    "questionOptions": {
+                                        "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                },
+                                {
+                                    "id": "lens",
+                                    "questionOptions": {
+                                        "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
+                                        "answers": [
+                                            {
+                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            },
+                                            {
+                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                            }
+                                        ],
+                                        "rendering": "select"
+                                    },
+                                    "type": "obs",
+                                    "validators": []
+                                }
+                            ]
+                        }
                     ]
                 }
             ]
