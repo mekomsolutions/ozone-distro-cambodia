@@ -19,7 +19,7 @@ b5aead5b-e0ed-4462-8d38-44cc0ab63dfc,,,Monofilament-Abnormal,Monofilament មិ
 c08665e0-5f0a-4d23-886d-d14e8e1bf40d,,,Numbness,ស្ពឹក,Numbness,ស្ពឹក,,,Misc,N/A,,,,
 978422b8-a953-44c4-8dfb-ca7128d1e4ca,,,Wounds,របួស,Wounds,របួស,,,Misc,N/A,,,,
 f10be2a3-fd0d-43d8-8f6c-1f3d6d779044,,,Pain,ចុករោយ,Pain,ចុករោយ,,,Misc,N/A,,,,
-c01f876c-0a08-47c6-a003-e3dd22098634,,,problems:,បញ្ហាជើង:,problems:,បញ្ហាជើង:,,,Question,Coded,Numbness;Pain;Wounds,,,
+c01f876c-0a08-47c6-a003-e3dd22098634,,,Foot problems:,បញ្ហាជើង:,Foot problems:,បញ្ហាជើង:,,,Question,Coded,Numbness;Pain;Wounds,,,
 dd16ec73-fa62-431b-bbd5-4e3a04d93cfc,,,Left Foot Exam,ធ្វើតេស្តជើងឆ្វេង,Left Foot Exam,ធ្វើតេស្តជើងឆ្វេង,,,Question,Coded,Ulcer;Amputation;AKA;BKA;Symptom of PN-Pain;Symptom of PN-Pins and Needle;Symptom of PN-Numbness;Symptom of PN-Burning;Symptom PAD-Yes;Symptom of PAD-No;Pulses-Normal;Pulse-Abnormal;Pulse-Normal-Detectable;Absent;Monofilament-Normal;Monofilament-Abnormal,,,
 d6f32f81-6d85-49bb-b4c5-cef725bb7616,,,Right Foot Exam,ធ្វើតេស្តជើងស្តាំ,Right Foot Exam,ធ្វើតេស្តជើងស្តាំ,,,Question,Coded,Ulcer;Amputation;AKA;BKA;Symptom of PN-Pain;Symptom of PN-Pins and Needle;Symptom of PN-Numbness;Symptom of PN-Burning;Symptom PAD-Yes;Symptom of PAD-No;Pulses-Normal;Pulse-Abnormal;Pulse-Normal-Detectable;Absent;Monofilament-Normal;Monofilament-Abnormal,,,
 660b460d-7c8a-4e4a-a7fc-ed4e835b62fd,,,Foot Exam Details,ការអធិប្បាយលម្អិតពីការពិនិត្យជើង,Foot Exam Details,Foot Exam Details,,,Question,Text,,,,
