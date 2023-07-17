@@ -80,5 +80,5 @@ dba7a06f-50d4-4e02-82a4-3b79d2d7cc49,,,Eyelids-Eyelashes,ត្របកភ្�
 960d1a6b-7183-4c9b-930a-d34ccdf9b4e7,,,Cornea,កញ្ចក់ភ្នែក,Cornea,កញ្ចក់ភ្នែក,,,Question,Coded,Normal;Abnormal,,,
 c09f8404-dc04-4ca8-87cc-a4793928ef78,,,Pupil,កូនក្រមុំភ្នែក,Pupil,កូនក្រមុំភ្នែក,,,Question,Coded,Normal;Abnormal,,,
 b78e7118-4d9f-4135-a7a3-aaf9aba7a33e,,,Lens,កែវភ្នែក,Lens,កែវភ្នែក,,,Question,Coded,Normal;Abnormal,,,
-62d486b6-ebc3-4245-8d03-277c4b2a21ea,,,Left Eye Exam Set,Left Eye Exam Set,Left Eye Exam Set,Left Eye Exam Set,,,ConvSet,N/A,,Eye Examination;Visual Acuity;Eyelids-Eyelashes;Conjunctiva;Cornea;Pupil;Lens,,
-ea132b45-c846-4f66-bc81-fe8c46f793a4,,,Right Eye Exam Set,Right Eye Exam Set,Right Eye Exam Set,Right Eye Exam Set,,,ConvSet,N/A,,Eye Examination;Visual Acuity;Eyelids-Eyelashes;Conjunctiva;Cornea;Pupil;Lens,,
+62d486b6-ebc3-4245-8d03-277c4b2a21ea,,,Left Eye Exam Set,ការពិនិត្យភ្នែកខាងឆ្វេង,Left Eye Exam Set,ការពិនិត្យភ្នែកខាងឆ្វេង,,,ConvSet,N/A,,Eye Examination;Visual Acuity;Eyelids-Eyelashes;Conjunctiva;Cornea;Pupil;Lens,,
+ea132b45-c846-4f66-bc81-fe8c46f793a4,,,Right Eye Exam Set,ការពិនិត្យភ្នែកខាងស្តាំ,Right Eye Exam Set,ការពិនិត្យភ្នែកខាងស្តាំ,,,ConvSet,N/A,,Eye Examination;Visual Acuity;Eyelids-Eyelashes;Conjunctiva;Cornea;Pupil;Lens,,
