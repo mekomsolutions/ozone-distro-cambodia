@@ -564,17 +564,17 @@
                         {
                             "id": "footProblem",
                             "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5",
+                                "rendering": "multiCheckbox",
+                                "concept": "c01f876c-0a08-47c6-a003-e3dd22098634",
                                 "answers": [
                                     {
                                         "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
                                     },
                                     {
-                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
+                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
                                     },
                                     {
-                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
+                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
                                     }
                                 ]
                             },
@@ -604,7 +604,7 @@
                       {
                           "id": "tbSymptom",
                           "questionOptions": {
-                              "rendering": "radio",
+                              "rendering": "multiCheckbox",
                               "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
                               "answers": [
                                   {
