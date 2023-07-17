@@ -7,6 +7,12 @@
     ],
     "fieldConfigurations":
     {
+      "address": {
+        "useAddressHierarchy": {
+          "enabled": true,
+          "searchAddressByLevel": true
+        }
+      },
       "name": {
         "displayCapturePhoto": false,
         "displayMiddleName": false,
@@ -22,11 +28,6 @@
           "id": "female",
           "value": "Female",
           "label": "Female"
-        },
-        {
-          "id": "other",
-          "value": "Other",
-          "label": "Other"
         }
       ]
     },
@@ -43,6 +44,13 @@
         "uuid": "7e142fa0-64ca-4220-ae90-a8f7f955458b",
         "placeholder": "placeholder",
         "answerConceptSetUuid": "2ef163b6-eec8-4678-abed-0dd261220168"
+      },
+      {
+        "id": "sexualOrientation",
+        "type": "person attribute",
+        "uuid": "cd36e567-7bec-465c-9a3e-32684861c17c",
+        "placeholder": "placeholder",
+        "answerConceptSetUuid": "12634919-8592-428f-8ae3-f14518d914c5"
       },
       {
         "id": "ethnicityField",
@@ -79,6 +87,7 @@
         "fields": [
           "name",
           "gender",
+          "sexualOrientation",
           "dob",
           "id"
         ]
@@ -169,6 +178,14 @@
       },
       {
         "uuid": "d81acbb7-93b4-4e4e-8507-82d1c3ca6cd7",
+        "required": true
+      },
+      {
+        "uuid": "1c75188f-625f-4181-a4e3-9de1d4f21f90",
+        "required": true
+      },
+      {
+        "uuid": "547f2d61-589f-4b04-9da8-8a5c639b5cc6",
         "required": true
       }
     ],

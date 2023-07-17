@@ -1,10 +1,10 @@
 {
-    "name": "Health Center - NCD Screening",
-    "description": "Health Center - NCD Screening",
+    "name": "NCD Screening",
+    "description": "NCD Screening Form",
     "version": "1",
     "published": true,
     "retired": false,
-    "encounter": "Health Center - NCD Screening",
+    "encounter": "NCD Screening",
     "processor": "EncounterFormProcessor",
     "uuid": "xxxx",
     "referencedForms": [],
@@ -508,21 +508,6 @@
                     "label": "Assessment I",
                     "questions": [
                         {
-                            "id": "CVDscore",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
-                                "max": "100",
-                                "min": "0",
-                                "showDate": "false",
-                                "calculate": {
-                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
-                                }
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
                             "id": "consultationBy",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -579,17 +564,17 @@
                         {
                             "id": "footProblem",
                             "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5",
+                                "rendering": "multiCheckbox",
+                                "concept": "c01f876c-0a08-47c6-a003-e3dd22098634",
                                 "answers": [
                                     {
                                         "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
                                     },
                                     {
-                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
+                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
                                     },
                                     {
-                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
+                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
                                     }
                                 ]
                             },
@@ -878,6 +863,92 @@
                     "label": "Assessment II",
                     "questions": [
                         {
+                          "id": "TBsx",
+                          "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "b10eae79-8358-4653-822b-33336644db36",
+                              "answers": [
+                                  {
+                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  }
+                              ]
+                          },
+                          "type": "obs",
+                          "validators": []
+                      },
+                      {
+                          "id": "tbSymptom",
+                          "questionOptions": {
+                              "rendering": "multiCheckbox",
+                              "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                              "answers": [
+                                  {
+                                      "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                                  },
+                                  {
+                                      "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                                  },
+                                  {
+                                      "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  }                               
+                              ]
+                          },
+                          "hide": {
+                              "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                          },
+                          "type": "obs",
+                          "validators": []
+                      },
+                      {
+                          "id": "tbs",
+                          "questionOptions": {
+                              "rendering": "radio",
+                              "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
+                              "answers": [
+                                  {
+                                      "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  },
+                                  {
+                                      "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                  }
+                              ]
+                          },
+                          "type": "obs",
+                          "validators": []
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "Diagnosis",
+            "sections": [
+                {
+                    "isExpanded": "true",
+                    "label": "Diagnosis",
+                    "questions": [
+                        {
+                            "id": "CVDscore",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
+                                "max": "100",
+                                "min": "0",
+                                "showDate": "false",
+                                "calculate": {
+                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
+                                 }
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "Diagnosis1",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -904,11 +975,11 @@
                             "validators": []
                         },
                         {
-                            "id": "Diagnosis2",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "76ca08a5-2128-4b53-afba-74227b015924",
-                                "answers": [
+                              "id": "Diagnosis2",
+                              "questionOptions": {
+                                  "rendering": "radio",
+                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                                  "answers": [
                                     {
                                         "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
                                     },
@@ -924,73 +995,51 @@
                                     {
                                         "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "TBsx",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "b10eae79-8358-4653-822b-33336644db36",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "tbSymptom",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
-                                "answers": [
-                                    {
-                                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
-                                    },
-                                    {
-                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
-                                    },
-                                    {
-                                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "tbs",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
+                                  ]
+                              },
+                              "type": "obs",
+                              "validators": []
                         }
                     ]
-                }
+                },
+                {
+					"isExpanded": "true",
+                    "label": "Other Health Conditions",
+					"questions": [
+						{
+							"id": "otherHealthConditions",
+							"questionOptions": {
+								"concept": "2c50ded9-779a-4316-be00-d9a065674e54",
+                                "answers": [
+                                    {
+                                        "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+                                    },
+                                    {
+                                        "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "4e81c9e2-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d1c6-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d374-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d6da-1c68-11ee-be56-0242ac120002"
+                                    },
+                                    {
+                                        "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
+                                    }
+                                ],
+								"rendering": "multiCheckbox"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
             ]
         },
         {
@@ -1031,10 +1080,7 @@
                                         "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
                                     },
                                     {
-                                        "concept": "117399AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        "concept": "0640e59c-5a0d-469e-907b-9c5515fd0a19"
                                     }
                                 ]
                             },
