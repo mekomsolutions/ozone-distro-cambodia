@@ -462,12 +462,12 @@
 					"questions": [
 						{
 							"type": "obsGroup",
-							"label": "Left Foot Exam",
+							"label": "Foot Exam :",
 							"questionOptions": {
 								"concept": "b658c353-0808-4106-a9e8-6ec39c0213d8",
 								"rendering": "group"
 							},
-							"id": "leftFootExamSet",
+							"id": "FootExamSet:",
 							"questions": [
 								{
 									"id": "leftFootExam",
@@ -527,18 +527,7 @@
 									},
 									"type": "obs",
 									"validators": []
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Right Foot Exam",
-							"questionOptions": {
-								"concept": "8945d113-0c4b-4f67-98ca-e236bad5750d",
-								"rendering": "group"
-							},
-							"id": "rightFootExamSet",
-							"questions": [
+								},
 								{
 									"id": "rightFootExam",
 									"questionOptions": {
