@@ -16,6 +16,7 @@
       "name": {
         "displayCapturePhoto": false,
         "displayMiddleName": false,
+        "allowUnidentifiedPatients": false,
         "displayReverseFieldOrder": true
       },
       "gender": [
