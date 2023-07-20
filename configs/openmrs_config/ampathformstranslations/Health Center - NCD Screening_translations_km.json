@@ -1,7 +1,7 @@
 {
     "uuid": "ffd34161-e81e-4906-8cc0-ea0efede1f08",
-    "form": "NCD Screening",
-    "form_name_translation": "ពិនិត្យស្រាវជ្រាវជំងឺមិនឆ្លង",
+    "form": "Health Center - NCD Screening",
+    "form_name_translation": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព",
     "description": "Khmer translations for the NCD Screening form",
     "language": "km",
     "translations": {
