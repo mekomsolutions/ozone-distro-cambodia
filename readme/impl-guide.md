@@ -25,12 +25,12 @@ Prepare for the run (optional, provide a `prod` profile to use the previously bu
 
 Pull images
 ```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" pull proxy frontend openmrs mysql
+docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" pull proxy frontend openmrs mysql
 ```
 
 Run
 ```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia up -d proxy frontend openmrs mysql
+docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia up -d proxy frontend openmrs mysql
 
 ```
 
@@ -50,7 +50,7 @@ If needed to work on the distro configurations and see the results, you have sev
 
 #### 1. Turn down the whole project and start afresh
 ```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia down -v
+docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia down -v
 ```
 Then follow the [Quick start guide](#quick-start) or the [manual instructions](#manual-instructions) to install and then run.
 
