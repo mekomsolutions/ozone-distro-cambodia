@@ -202,7 +202,7 @@
             "sections": [
                 {
                     "isExpanded": "true",
-                    "label": "Vitals and Biometrics",
+                    "label": "Vitals and biometrics",
                     "questions": [
                         {
                             "id": "Ht",
@@ -361,7 +361,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "Urine Tests",
+                    "label": "Urine tests",
                     "questions": [
                         {
                             "id": "albumin",
@@ -648,11 +648,11 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "Left Eye Examination",
+                    "label": "Left eye examination",
                     "questions": [
                         {
                             "type": "obsGroup",
-                            "label": "Left Eye Examination",
+                            "label": "Left eye examination",
                             "questionOptions": {
                                 "concept": "62d486b6-ebc3-4245-8d03-277c4b2a21ea",
                                 "rendering": "group"
@@ -784,11 +784,11 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "Right Eye Examination",
+                    "label": "Right eye examination",
                     "questions": [
                         {
                             "type": "obsGroup",
-                            "label": "Right Eye Examination",
+                            "label": "Right eye examination",
                             "questionOptions": {
                                 "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
                                 "rendering": "group"
@@ -998,7 +998,7 @@
                 },
                 {
 					"isExpanded": "true",
-                    "label": "Other Health Conditions",
+                    "label": "Other health conditions",
 					"questions": [
 						{
 							"id": "otherHealthConditions",

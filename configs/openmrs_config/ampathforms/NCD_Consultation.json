@@ -14,7 +14,7 @@
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Tuberculosis Symptoms",
+					"label": "Tuberculosis symptoms",
 					"questions": [
 						{
 							"id": "TBsx",
@@ -63,7 +63,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Vitals and Biometrics",
+					"label": "Vitals and biometrics",
 					"questions": [
 						{
 							"id": "Ht",
@@ -198,7 +198,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Urine Tests",
+					"label": "Urine tests",
 					"questions": [
 						{
 							"id": "albumin",
@@ -293,7 +293,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Renal Tests",
+					"label": "Renal tests",
 					"questions": [
 						{
 							"id": "creatinine",
@@ -359,7 +359,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Other Tests",
+					"label": "Other tests",
 					"questions": [
 						{
 							"id": "sodium",
@@ -457,7 +457,7 @@
 			"label": "Physical Examination",
 			"sections": [
 				{
-					"label": "Physical Examination",
+					"label": "Physical examination",
 					"isExpanded": "true",
 					"questions": [
 						{
@@ -693,7 +693,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "ENT Exam Set",
+							"label": "ENT exam set",
 							"questionOptions": {
 								"concept": "39d50db7-ee96-472c-9dcf-b0efd4b586e4",
 								"rendering": "group"
@@ -735,7 +735,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Respiratory Exam Set",
+							"label": "Respiratory exam set",
 							"questionOptions": {
 								"concept": "5c685694-7474-40d0-9096-55782411f7be",
 								"rendering": "group"
@@ -777,7 +777,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "GastroIntestinal Exam Set",
+							"label": "GastroIntestinal exam set",
 							"questionOptions": {
 								"concept": "92a61792-2269-4127-9a3b-3492c9f0959c",
 								"rendering": "group"
@@ -819,7 +819,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Skin and Extemities Exam Set",
+							"label": "Skin and extemities exam set",
 							"questionOptions": {
 								"concept": "149704a3-819d-4dbc-b50b-2400a503fec9",
 								"rendering": "group"
@@ -861,7 +861,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "CNS Exam Set",
+							"label": "CNS exam set",
 							"questionOptions": {
 								"concept": "86e96e7e-ed58-47ed-9516-dc14eab1a2db",
 								"rendering": "group"
@@ -903,7 +903,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Mental Status Exam Set",
+							"label": "Mental status exam set",
 							"questionOptions": {
 								"concept": "c1246a4c-f1e7-4754-b413-492736f511a2",
 								"rendering": "group"
@@ -945,7 +945,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Abdominal Exam Set",
+							"label": "Abdominal exam set",
 							"questionOptions": {
 								"concept": "99829097-4c1d-43a5-b19e-eda807dd64d5",
 								"rendering": "group"
@@ -987,7 +987,7 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Other Body Parts Exam Set",
+							"label": "Other body parts exam set",
 							"questionOptions": {
 								"concept": "95f13196-797e-48f5-bfbf-9e5ddbdba7d4",
 								"rendering": "group"
@@ -1195,11 +1195,11 @@
 		},
 
 		{
-			"label": "Treatment plan",
+			"label": "Treatment Plan",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Treatment plan",
+					"label": "Treatment Plan",
 					"questions": [
 						{
                             "id": "currentTherapy",

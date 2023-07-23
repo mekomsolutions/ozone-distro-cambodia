@@ -10,7 +10,7 @@
 	"referencedForms": [],
 	"pages": [
 		{
-			"label": "Reproductive history",
+			"label": "Reproductive History",
 			"sections": [
 				{
 					"isExpanded": "true",
@@ -170,7 +170,7 @@
 			]
 		},
 		{
-			"label": "Menstrual history",
+			"label": "Menstrual History",
 			"sections": [
 				{
 					"isExpanded": "true",
@@ -225,7 +225,7 @@
 			]
 		},
 		{
-			"label": "Risk factors",
+			"label": "Risk Factors",
 			"sections": [
 				{
 					"isExpanded": "true",
@@ -603,7 +603,7 @@
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Cervical Cancer Health Education",
+					"label": "Cervical cancer health education",
 					"questions": [
 							{
 							"id": "cervicalCancerEduc",
@@ -626,7 +626,7 @@
 					},
 					{
 					"isExpanded": "true",
-					"label": "Human Papilloma Virus Test",
+					"label": "Human papilloma virus test",
 					"questions": [
 							{
 							"id": "HPVTestResult",
@@ -649,7 +649,7 @@
 					},
 					{
 					"isExpanded": "true",
-					"label": "VIA Test",
+					"label": "VIA test",
 					"questions": [
 							{
 							"id": "SCJVisibility",
@@ -764,7 +764,7 @@
 					},
 					{
 					"isExpanded": "true",
-					"label": "Cervical Biopsy",
+					"label": "Cervical biopsy",
 					"questions": [
 							{
 							"id": "cervicalBiopsy",
@@ -787,7 +787,7 @@
 					},
 					{
 					"isExpanded": "true",
-					"label": "Pap Smear",
+					"label": "Pap smear",
 					"questions": [
 						{
 							"id": "papSmear",
@@ -979,7 +979,7 @@
 						},
 					{
 					"isExpanded": "true",
-					"label": "Physical Examination",
+					"label": "Physical examination",
 					"questions": [
 						{
 							"id": "vulvaExam",
@@ -1136,7 +1136,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Breast Cancer",
+					"label": "Breast cancer",
 					"questions": [
 						{
 							"id": "breastCancerEduc",
