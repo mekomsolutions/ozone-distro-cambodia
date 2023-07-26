@@ -131,7 +131,7 @@
         </repository>
         <repository>
             <id>mks-nexus-public</id>
-            <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
+            <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
         </repository>
     </repositories>
 
