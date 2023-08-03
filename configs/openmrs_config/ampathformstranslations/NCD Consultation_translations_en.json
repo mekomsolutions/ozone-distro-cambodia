@@ -1,0 +1,23 @@
+{
+  "uuid": "91b2e66e-a769-40c5-b46e-3148e07c2524",
+  "form": "NCD Consultation",
+  "form_name_translation": "NCD Consultation",
+  "description": "English translations for the NCD Consultation form",
+  "language": "en",
+  "translations": {
+    "Medical Assessment": "Medical Assessment",
+    "Tuberculosis Symptoms": "Tuberculosis Symptoms",
+    "Vitals and Biometrics": "Vitals and Biometrics",
+    "Blood sugar levels": "Blood sugar levels",
+    "Urine Tests": "Urine Tests",
+    "Lipids": "Lipids",
+    "Physical Examination": "Physical Examination",
+    "Diagnosis": "Diagnosis",
+    "Treatment plan": "Treatment plan",
+    "Referral": "Referral",
+    "Life Style": "Life Style",
+    "CVD Score": "CVD Score",
+    "Renal Tests": "Renal Tests",
+    "Other Tests": "Other Tests"
+  }
+}

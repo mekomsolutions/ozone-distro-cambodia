@@ -1,0 +1,12 @@
+{
+    "uuid": "2530cbd4-3a0f-4fe0-a03d-9759238bb9e7",
+    "form": "NCD Medical History",
+    "form_name_translation": "NCD Medical History",
+    "description": "English translations for the NCD Medical History form",
+    "language": "en",
+    "translations": {
+      "General": "General",
+      "Medical History": "Medical History",
+      "Life Style": "Life Style"
+    }
+}

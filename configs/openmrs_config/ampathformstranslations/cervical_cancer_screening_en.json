@@ -1,0 +1,27 @@
+{
+    "uuid": "fab0d355-473c-4c24-a748-5bd7ee391851",
+    "form": "Cervical Cancer Screening",
+    "form_name_translation": "Cervical Cancer Screening",
+    "description": "English translations for the Cervical Cancer Screening form",
+    "language": "en",
+    "translations": {
+      "Reproductive history":"Reproductive history",
+      "Menstrual history":"Menstrual history",
+      "Menstrual bleeding history":"Menstrual bleeding history",
+      "Risk factors":"Risk factors",
+      "Cervical Cancer":"Cervical Cancer",
+      "Cervical Cancer Test result":"Cervical Cancer Test result",
+      "Referral center":"Referral center",
+      "Physical Examination":"Physical Examination",
+      "Breast Cancer":"Breast Cancer",
+      "Cervical Cancer Health Education":"Cervical Cancer Health Education",
+      "Human Papilloma Virus Test":"Human Papilloma Virus Test",
+      "VIA Test":"VIA Test",
+      "Colposcopy":"Colposcopy",
+      "Cervical Biopsy":"Cervical Biopsy",
+      "Pap Smear":"Pap Smear",
+      "Referral":"Referral",
+      "Treatment":"Treatment",
+      "Appointment":"Appointment"
+    }
+}
