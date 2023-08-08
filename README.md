@@ -28,8 +28,12 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
-### Version 1.2.0
-* [TBD]
+### Version 1.2.2
+* Patient chart translated to Khemer
+* Improved caching of form resources
+* Removed the middle name from registration form
+* Visit punctuality made optional
+* Made family name to be first on the patient registration form
 
 ### Version 1.1.0
 
