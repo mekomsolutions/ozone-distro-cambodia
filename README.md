@@ -29,11 +29,31 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.2.0
-* Patient chart translated to Khemer
-* Improved caching of form resources
-* Removed the middle name from registration form
+* Patient chart translated to Khmer
+* Removed the middle name field from the patient registration form
 * Visit punctuality made optional
-* Made family name to be first on the patient registration form
+* Made family name to be first in the patient registration form
+* Added Other Health Problems question and answers
+* Removed question for uknown patient in the patient registration form
+* Fixed data in Patient Report under Common Report section
+* Modified Diagnosis section of the NCD consultation form 
+* Modified Management section of the HC NCD screening form
+* Fixed HC1 report
+* Changed TB symptoms and Foot problem questions from single select to multi select
+* Added a question "Has a referral letter" to Start Visit page
+* Added question about address zones to Start Visit page
+* Added gender question and answers to patient registration form
+* Added question about visual acuity to NCD Screening form
+* Removed "Reason for Discharge" question in NCD Screening form
+* Changed "Unknown" answer to "None" for the two Diagnosis questions in the "Assessment" section of the NCD Screening form
+* Added Year for quitting smoking to NCD Screening form
+* Moved the referral question to Start Visit page
+* Translate Login screen to khmer
+* Modify the Lab test ranges
+* Add a Cervical Cancer follow up visit type
+* Enable searchAddressByLevel address hierarchy entry
+* Fixed "0 is not considered out of range in AMPATH forms"
+* i18n of Location Picker
 
 ### Version 1.1.0
 
