@@ -38,7 +38,6 @@
     </profile>
   </profiles>
   
-  <!-- Adding this dependency here for OCD3 to pick up the dependency. -->
   <dependencies>
     <dependency>
       <groupId>com.ozonehis</groupId>
