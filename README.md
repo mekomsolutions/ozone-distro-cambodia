@@ -28,6 +28,9 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.2.2
+* Improved caching of form resources
+
 ### Version 1.2.0
 * Patient chart translated to Khmer
 * Removed the middle name field from the patient registration form
