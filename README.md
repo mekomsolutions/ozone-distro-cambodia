@@ -62,14 +62,14 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Fixed HC1 report
 * Fixed '0 is not considered out of range in AMPATH forms'
 * Fixed data in Patient Report under Common Report section
+* Made ID 'Poor' non-unique
 * i18n of Location Picker
 
 ### Version 1.1.0
 
-* Drug names displayed with their dosage
-* ID 'Poor' made non-unique
-* Default system locale to Khmer(KH)
-* Quadrant question in Cervical Cancer Screening form modified
+* Display drug names with dosage
+* Default system locale to Khmer (kh)
+* Adjust 'Quadrant' question in Cervical Cancer Screening form
 * Drop down items (Amputation, Myocardial) translated
 * HIV,TB,Pre-diabetes added to Complication question
 
