@@ -45,7 +45,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Record visual acuity in NCD Screening form
 * Changeed TB symptoms and Foot problem questions as multi select in NCD Screening form
 * Adjusted the Management section in NCD screening form
-* Added question and answers to 'Other Health Problems' in NCD Screening form
+* Added 'Other Health Conditions' question and answers in NCD Screening form
 * Added some gender options in Patient Registration
 * Removed question of unknown patient in Patient Registration form
 * Removed the middle name field from the patient registration form
@@ -60,15 +60,14 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Modified Diagnosis section of the NCD consultation form 
 * Modified Management section of the HC NCD screening form
 * Fixed HC1 report
-* Fixed "0 is not considered out of range in AMPATH forms"
+* Fixed '0 is not considered out of range in AMPATH forms'
 * Fixed data in Patient Report under Common Report section
-* Added Other Health Problems question and answers in NCD Screening form
 * i18n of Location Picker
 
 ### Version 1.1.0
 
 * Drug names displayed with their dosage
-* ID 'poor' made non-unique
+* ID 'Poor' made non-unique
 * Default system locale to Khmer(KH)
 * Quadrant question in Cervical Cancer Screening form modified
 * Drop down items (Amputation, Myocardial) translated
@@ -82,4 +81,4 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
   * NCD Consultation
 * Clinical form for cervical cancer screening
 * Full localization of all clinical forms in Khmer
-* Partial localization application screens in Khmer
+* Partial localization of application screens in Khmer
