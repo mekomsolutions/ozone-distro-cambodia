@@ -32,30 +32,37 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Improved caching of form resources
 
 ### Version 1.2.0
-* Patient chart translated to Khmer
+* Added ability to search address hierarchy entries by level
+* Added ability to have IDPoor as a non-unique ID
+* Added a Cervical Cancer Follow-up visit type
+* Adjusted the Lab test ranges
+* Translated Login screen to Khmer
+* Improved Khmer translations of Patient Chart
+* Adjusted 'Follow up for' question in NCD Screening form
+* Record year of quitting smoking in NCD Screening form
+* Swapped Family Name and First Name in registration
+* Remove 'Reason for Discharge' question in NCD Screening form
+* Record visual acuity in NCD Screening form
+* Changeed TB symptoms and Foot problem questions as multi select in NCD Screening form
+* Adjusted the Management section in NCD screening form
+* Added question and answers to 'Other Health Problems' in NCD Screening form
+* Added some gender options in Patient Registration
+* Removed question of unknown patient in Patient Registration form
 * Removed the middle name field from the patient registration form
-* Visit punctuality made optional
-* Made family name to be first in the patient registration form
-* Added Other Health Problems question and answers
-* Removed question for uknown patient in the patient registration form
-* Fixed data in Patient Report under Common Report section
+* Record sexual orientation
+* Record address zones in Start Visit screen
+* Record 'Has a referral letter' in Start Visit page
+* Fixed error message on Start Visit screen
+* Made punctuality question on Start visit page optional
+* Adjusted Diagnosis section NCD consultation form
+* Added HIV/TB/Pre-diabetes to current complication in NCD Consultation form
+* Changed 'Unknown' answer to 'None' in NCD Screening form
 * Modified Diagnosis section of the NCD consultation form 
 * Modified Management section of the HC NCD screening form
 * Fixed HC1 report
-* Changed TB symptoms and Foot problem questions from single select to multi select
-* Added a question "Has a referral letter" to Start Visit page
-* Added question about address zones to Start Visit page
-* Added gender question and answers to patient registration form
-* Added question about visual acuity to NCD Screening form
-* Removed "Reason for Discharge" question in NCD Screening form
-* Changed "Unknown" answer to "None" for the two Diagnosis questions in the "Assessment" section of the NCD Screening form
-* Added Year for quitting smoking to NCD Screening form
-* Moved the referral question to Start Visit page
-* Translate Login screen to khmer
-* Modify the Lab test ranges
-* Add a Cervical Cancer follow up visit type
-* Enable searchAddressByLevel address hierarchy entry
 * Fixed "0 is not considered out of range in AMPATH forms"
+* Fixed data in Patient Report under Common Report section
+* Added Other Health Problems question and answers in NCD Screening form
 * i18n of Location Picker
 
 ### Version 1.1.0
