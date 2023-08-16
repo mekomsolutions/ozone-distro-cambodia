@@ -269,6 +269,21 @@
 							"validators": []
 						},
 						{
+							"id": "quitSmoking",
+							"hide": {
+								"hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
+							},
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
+								"max": "2100",
+								"min": "1900",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "corticosteroidUse",
 							"questionOptions": {
 								"rendering": "radio",
