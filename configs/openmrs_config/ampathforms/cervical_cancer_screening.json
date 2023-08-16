@@ -700,7 +700,7 @@
 						{
 							"id": "numberOfQuadrant",
 							"questionOptions": {
-								"rendering": "multiCheckbox",
+								"rendering": "Checkbox",
 								"concept": "0dd61510-1ddd-49e8-838b-b4ec7fdaf95f",
 								"answers": [
 									{
