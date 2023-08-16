@@ -1,4 +1,4 @@
-Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Absolute low,Absolute high,Units,Description:en,Description:fr,Allow decimals,Data class,Data type,Answers,Members,_version:1,_order:1450
+Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:km,Short name:en,Short name:km,Absolute low,Absolute high,Units,Description:en,Description:fr,Allow decimals,Data class,Data type,Answers,Members,_version:1,_order:1002
 f52d731e-58da-4f3a-a480-77c5e9d8d2eb,,,Random Blood Sugar,រកកម្រិតជាតិស្ករក្នុងឈាមក្រោយពេលហូបអាហារ,Random Blood Sugar,រកកម្រិតជាតិស្ករក្នុងឈាមក្រោយពេលហូបអាហារ,0,900,mg/dl,,,Yes,Test,Numeric,,,,
 4a6ad2db-86af-4acc-906b-b749b7f6cda6,,,Fasting Blood Sugar,រកកម្រិតជាតិស្ករក្នុងឈាមមុនពេលហូបអាហារ,Fasting Blood Sugar,រកកម្រិតជាតិស្ករក្នុងឈាមមុនពេលហូបអាហារ,0,900,mg/dl,,,Yes,Test,Numeric,,,,
 1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,+,,+,,,,,,,,Misc,N/A,,,,
