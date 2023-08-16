@@ -415,6 +415,21 @@
                             "type": "obs",
                             "validators": []
                         },
+						{
+							"id": "quitSmoking",
+							"hide": {
+								"hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
+							},
+							"questionOptions": {
+								"rendering": "number",
+								"concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
+								"max": "2100",
+								"min": "1900",
+								"showDate": "false"
+							},
+							"type": "obs",
+							"validators": []
+						},
                         {
                             "id": "exercise",
                             "questionOptions": {
@@ -1252,6 +1267,9 @@
 							"answers": [
 								{
 									"concept": "adb6d578-7356-4910-adef-1e994af1da0f"
+								},
+								{
+									"concept": "8a6423da-6480-4686-96ea-0c67ed4378e1"
 								},
 								{
 									"concept": "71137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
