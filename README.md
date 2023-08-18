@@ -62,7 +62,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Fixed HC1 report
 * Fixed '0 is not considered out of range in AMPATH forms'
 * Fixed data in Patient Report under Common Report section
-* Made ID 'Poor' non-unique
+* Made IDPoor non-unique
 * i18n of Location Picker
 
 ### Version 1.1.0
