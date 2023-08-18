@@ -28,6 +28,12 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.2.3
+* Added drug Amlodipine with 5 mg dosage
+* Added 'Year of quitting smoking' in NCD Consultation form
+* Changed quadrant answers to render as check boxes in CC Screening form
+* Removed visit punctuality on start visit page
+
 ### Version 1.2.2
 * Improved caching of form resources
 
