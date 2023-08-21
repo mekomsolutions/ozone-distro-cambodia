@@ -10,11 +10,11 @@
 	"referencedForms": [],
 	"pages": [
 		{
-			"label": "Reproductive history",
+			"label": "Reproductive History",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Reproductive history",
+					"label": "Reproductive History",
 					"questions": [
 						{
 							"id": "sexDebut",
@@ -170,11 +170,11 @@
 			]
 		},
 		{
-			"label": "Menstrual history",
+			"label": "Menstrual History",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Menstrual bleeding history",
+					"label": "Menstrual Bleeding History",
 					"questions": [
 						{
 							"id": "menarche",
@@ -225,11 +225,11 @@
 			]
 		},
 		{
-			"label": "Risk factors",
+			"label": "Risk Factors",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Risk factors",
+					"label": "Risk Factors",
 					"questions": [
 						{
 							"id": "bleedingAfterSex",
