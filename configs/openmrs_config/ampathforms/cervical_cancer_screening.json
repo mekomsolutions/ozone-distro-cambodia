@@ -928,7 +928,7 @@
 											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 										}
 									],
-									"rendering": "select"
+									"rendering": "checkbox"
 								},
 								"type": "obs",
 								"validators": []
