@@ -141,7 +141,8 @@
         "Male": "Male",
         "Female": "Female",
         "Other": "Other",
-        "Unknown": "Unknown"
+        "Unknown": "Unknown",
+        "selectAnOption": "Select an option"
       },
       "km": {
         "Commune": "ឃុំ/សង្កាត់",
@@ -154,7 +155,8 @@
         "Male": "ប្រុស",
         "Female": "ស្រី",
         "Other": "ផ្សេងៗ",
-        "Unknown": "មិនដឹង"
+        "Unknown": "មិនដឹង",
+        "selectAnOption": "សូមជ្រើសរើសជម្រើសណាមួយ"
       }
     }
   },
