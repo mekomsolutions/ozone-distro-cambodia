@@ -307,7 +307,7 @@
                 },
                 {
                     "isExpanded": "true",
-                    "label": "Blood sugar levels",
+                    "label": "Blood Sugar Levels",
                     "questions": [
                         {
                             "id": "FBS",
