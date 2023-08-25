@@ -19,7 +19,7 @@
     "CVD Score": "CVD Score",
     "Renal Tests": "Renal Tests",
     "Other Tests": "Other Tests",
-    "Primary Diagnoses": "Test Primary",
-    "Secondary Diagnoses": "Test Secondary"
+    "Primary Diagnosis": "Test Primary",
+    "Secondary Diagnosis": "Test Secondary"
   }
 }
