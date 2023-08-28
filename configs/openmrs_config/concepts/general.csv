@@ -40,3 +40,7 @@ ec54ae7c-1007-4fc9-a62b-ee5914056468,,,Midwife,ឆ្មប,Midwife,ឆ្មប
 43e92bd2-5958-440d-b5f2-9e2b2b48871b,,,Zone C,តំបន់់ គ,Zone C,តំបន់់ គ,,,Misc,N/A,,,,
 c384dbf9-1ce5-4294-ab28-23773810ae1c,,,Address Zone,អាសយដ្ឋានតំបន់,Address Zone,អាសយដ្ឋានតំបន់,,,Question,Coded,Zone A;Zone B;Zone C,,,
 2af5ca01-4135-45a2-af05-84b1eeea1293,,,Has a referral letter ?,មានលិខិតបញ្ជូន,Has a referral letter ?,មានលិខិតបញ្ជូន,,,Question,Coded,Yes;No,,,
+56773142-a3e4-4f63-a794-c75f9a84ff40,,,First screening,,First screening,,,,Misc,N/A,,,,
+84042061-af23-4bb2-84c5-3b94c95ede1f,,,Follow up,,Follow up,,,,Misc,N/A,,,,
+08e7f010-97b8-419d-b54a-691777651d11,,,Patient diagnosed by the private provider,,Patient diagnosed by the private provider,,,,Misc,N/A,,,,
+bb41402f-ad5a-47d4-acc0-28016905a611,,,Screening status,,Screening status,,,,Question,Coded,First screening;Follow up;Patient diagnosed by the private provider,,,
