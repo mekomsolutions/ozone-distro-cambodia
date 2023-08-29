@@ -1305,6 +1305,26 @@
 							"validators": []
 						},
 						{
+							"id": "hpvTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14",
+								"answers": [
+									{
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "viaTest",
 							"hide": {
 								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'f90dc342-292e-4a47-9fef-860a03bf255f'"
@@ -1366,26 +1386,6 @@
 								"rendering": "textarea",
 								"concept": "414ae1f0-701a-4dd3-91d2-4059fa24057c",
 								"rows": 5
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "hpvTest",
-							"hide": {
-								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
-							},
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14",
-								"answers": [
-									{
-										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								]
 							},
 							"type": "obs",
 							"validators": []
