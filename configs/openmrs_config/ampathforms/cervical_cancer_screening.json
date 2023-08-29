@@ -1261,11 +1261,11 @@
 			]
 		},
 		{
-			"label": "History of Cervical Cancer Screening",
+			"label": "History Of Cervical Cancer Screening",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "History of Cervical Cancer Screening",
+					"label": "History Of Cervical Cancer Screening",
 					"questions": [
 						{
 							"id": "screenedForCc",
