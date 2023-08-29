@@ -1259,6 +1259,140 @@
 					]
 				}
 			]
+		},
+		{
+			"label": "History of Cervical Cancer Screening",
+			"sections": [
+				{
+					"isExpanded": "true",
+					"label": "History of Cervical Cancer Screening",
+					"questions": [
+						{
+							"id": "screenedForCc",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "75681e39-683c-4de9-9ca7-5b55b736bfa7",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "whichTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(screenedForCc) || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "baf42703-65ed-4ea3-9d3f-e5cf0305d2fd",
+								"answers": [
+									{
+										"concept": "f90dc342-292e-4a47-9fef-860a03bf255f"
+									},
+									{
+										"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "viaTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'f90dc342-292e-4a47-9fef-860a03bf255f'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "f90dc342-292e-4a47-9fef-860a03bf255f",
+								"answers": [
+									{
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "receivedTreatment",
+							"hide": {
+								"hideWhenExpression": "isEmpty(viaTest) || viaTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6027bf55-5288-4ace-bc7f-b75d2291f8e0",
+								"answers": [
+									{
+										"concept": "4070623e-945b-499f-8b62-316e699a3cc7"
+									},
+									{
+										"concept": "3c3da620-1b38-4ad7-afe9-5233e52e282b"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "typeOfTreatment",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '4070623e-945b-499f-8b62-316e699a3cc7'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "8094b06a-1a1d-4446-ab28-66d2b8c77f8c",
+								"rows": 5
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "reason",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '3c3da620-1b38-4ad7-afe9-5233e52e282b'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "414ae1f0-701a-4dd3-91d2-4059fa24057c",
+								"rows": 5
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "hpvTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14",
+								"answers": [
+									{
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
+			]
 		}
 	]
 }
