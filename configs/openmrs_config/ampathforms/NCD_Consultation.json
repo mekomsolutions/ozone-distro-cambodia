@@ -156,7 +156,7 @@
 				},
 				{
 					"isExpanded": "true",
-					"label": "Blood sugar levels",
+					"label": "Blood Sugar Levels",
 					"questions": [
 						{
 							"id": "FBS",
@@ -1056,7 +1056,7 @@
 					"questions": [
 						{
 							"id": "CVDscore",
-							"label": "CVD Score",
+							"label": "CVD score",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
@@ -1210,11 +1210,11 @@
 		},
 
 		{
-			"label": "Treatment plan",
+			"label": "Treatment Plan",
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Treatment plan",
+					"label": "Treatment Plan",
 					"questions": [
 						{
                             "id": "currentTherapy",

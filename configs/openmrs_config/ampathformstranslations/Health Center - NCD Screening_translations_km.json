@@ -10,7 +10,7 @@
       "Life Style": "របៀបរស់នៅ",
       "Investigations": "ការពិនិត្យវិភាគ",
       "Vitals and Biometrics": "សញ្ញាជីវិត និងជីវមាត្រ",
-      "Blood sugar levels": "កម្រិតជាតិស្ករក្នុងឈាម",
+      "Blood Sugar Levels": "កម្រិតជាតិស្ករក្នុងឈាម",
       "Diagnosis": "រោគវិនិច្ឆ័យ",
       "Other Health Conditions": "បញ្ហាសុខភាពផ្សេងទៀត",
       "Urine Tests": "ការធ្វើតេស្តទឹកនោម",
@@ -20,6 +20,7 @@
       "Management": "ការគ្រប់គ្រង",
       "Referral to:": "បញ្ជូនទៅ៖",
       "Left Eye Examination": "ការពិនិត្យភ្នែកខាងឆ្វេង",
-      "Right Eye Examination": "ការពិនិត្យភ្នែកខាងស្តាំ"
+      "Right Eye Examination": "ការពិនិត្យភ្នែកខាងស្តាំ",
+      "Screening Status": "ស្ថានភាពនៃការពិនិត្យជំងឺ"
     }
 }
