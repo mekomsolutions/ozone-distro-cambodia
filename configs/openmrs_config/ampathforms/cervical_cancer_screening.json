@@ -1272,6 +1272,15 @@
 							},
 							"type": "obs",
 							"validators": []
+						},
+						{
+							"id": "breastCancerFollowupDate",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "47ab49cc-d7b0-4a2c-bc79-d60784e240d5"
+							},
+							"type": "obs",
+							"validators": []
 						}
 					]
 				}
