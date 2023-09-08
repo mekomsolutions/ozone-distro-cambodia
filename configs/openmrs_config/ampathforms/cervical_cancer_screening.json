@@ -321,7 +321,7 @@
 							"id": "numberOfSexPartners",
 							"questionOptions": {
 								"rendering": "radio",
-								"concept": "c2e13ca7-9c7c-49cd-bada-2c8bb34f3e6c",
+								"concept": "b6f6dc57-f3a3-4bf9-94a5-5db24d96ed1d",
 								"answers": [
 									{
 										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
