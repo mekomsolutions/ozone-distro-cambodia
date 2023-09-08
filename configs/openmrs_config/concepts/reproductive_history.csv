@@ -133,3 +133,4 @@ f984b718-d674-40c4-9ac4-8d22963e1933,,,Other self-breast examination details,Oth
 e676ab7f-13b0-4251-84fd-9874c80133b5,,,Breast cancer reason for referral,Breast cancer reason for referral,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,,,Misc,Coded,Ultrasound;Mammography;Biopsis;Other,,,,,
 d7e7f0b4-94c8-4bd9-a6ef-a38e1d3efcc8,,,Breast cancer reason for referral (Non-coded),Breast cancer reason for referral (Non-coded),មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ (មិនមានលេខកូដសម្គាល់),មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ (មិនមានលេខកូដសម្គាល់),,,Misc,Text,,,,,,
 ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12,,,Breast cancer treatment,Breast cancer treatment,ការព្យាបាលជំងឺមហារីកដោះ,ការព្យាបាលជំងឺមហារីកដោះ,,,Misc,Coded,Surgery;Medical treatment;Radiotherapy;Chemotherapy,,,,,
+47ab49cc-d7b0-4a2c-bc79-d60784e240d5,,,Breast cancer screening date,Breast cancer screening date,កាលបរិច្ឆេទពិនិត្យជំងឺមហារីកដោះ,កាលបរិច្ឆេទពិនិត្យជំងឺមហារីកដោះ,,,Misc,Date,,,,,,
