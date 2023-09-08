@@ -697,9 +697,6 @@
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-										"concept": "3c2ee376-15ca-4445-b326-dddad91d4ede"
-									},
-									{
 										"concept": "da15c40f-e24b-4771-9986-d3ce5ca56b94"
 									},
 									{
@@ -1274,6 +1271,15 @@
 										"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
 									}
 								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerFollowupDate",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "47ab49cc-d7b0-4a2c-bc79-d60784e240d5"
 							},
 							"type": "obs",
 							"validators": []
