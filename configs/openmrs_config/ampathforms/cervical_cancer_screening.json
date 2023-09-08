@@ -337,11 +337,16 @@
 						{
 							"id": "numberOfPartnerzSexPartners",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "bd4a43d6-455e-40b8-abbd-fd4311167556",
-								"max": "",
-								"min": "0",
-								"showDate": "false"
+								"rendering": "radio",
+								"concept": "194da4ae-74fd-48c0-9d25-78c70e9fb21f",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
