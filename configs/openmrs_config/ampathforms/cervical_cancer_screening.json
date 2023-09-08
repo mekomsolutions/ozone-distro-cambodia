@@ -613,6 +613,29 @@
 			"sections": [
 				{
 					"isExpanded": "true",
+					"label": "Cervical Cancer Screening Status",
+					"questions": [
+						{
+							"id": "ccScreenStatus",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "c581a4d0-207f-4b6f-a0da-7efd7d3b6a49",
+								"answers": [
+									{
+										"concept": "56773142-a3e4-4f63-a794-c75f9a84ff40"
+									},
+									{
+										"concept": "84042061-af23-4bb2-84c5-3b94c95ede1f"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
 					"label": "Cervical Cancer Health Education",
 					"questions": [
 							{
