@@ -907,19 +907,16 @@
 									"concept": "c158e3b2-edf9-4e0e-9e95-d36de1a51527",
 									"answers": [
 										{
-											"concept": "3f80b4bd-6370-4ee7-ad4a-cbe07cb7af31"
+											"concept": "fc3909e3-9ddb-46e3-b4f7-6905732d977b"
 										},
 										{
-											"concept": "c0027068-fe1b-4401-aad5-d70e4437362c"
+											"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
 										},
 										{
-											"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
-										},
-										{
-											"concept": "44b23eee-963f-4a9f-b7fd-8a8e753ffbe4"
+											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 										}
 									],
-									"rendering": "multiCheckbox"
+									"rendering": "checkbox"
 								},
 								"type": "obs",
 								"validators": []
@@ -932,7 +929,7 @@
 									"rows": 5
 								},
 								"hide": {
-									"hideWhenExpression": "isEmpty(reasonForReferral) || reasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+									"hideWhenExpression": "arrayContains(['fc3909e3-9ddb-46e3-b4f7-6905732d977b','7d469a03-a56b-4c51-a421-0e5787556630',''], reasonForReferral)"
 								},
 								"type": "obs",
 								"validators": []
