@@ -1,10 +1,10 @@
 {
-    "name": "NCD Screening",
-    "description": "NCD Screening Form",
+    "name": "Health Center - NCD Screening",
+    "description": "Health Center - NCD Screening",
     "version": "1",
     "published": true,
     "retired": false,
-    "encounter": "NCD Screening",
+    "encounter": "Health Center - NCD Screening",
     "processor": "EncounterFormProcessor",
     "uuid": "xxxx",
     "referencedForms": [],
