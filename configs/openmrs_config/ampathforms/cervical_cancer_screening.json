@@ -1,6 +1,6 @@
 {
 	"name": "Cervical Cancer Screening",
-	"description": "Cervical Cancer Screening",
+	"description": "Cervical Cancer Screening Form",
 	"version": "1",
 	"published": true,
 	"retired": false,
@@ -320,11 +320,16 @@
 						{
 							"id": "numberOfSexPartners",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "c2e13ca7-9c7c-49cd-bada-2c8bb34f3e6c",
-								"max": "",
-								"min": "0",
-								"showDate": "false"
+								"rendering": "radio",
+								"concept": "b6f6dc57-f3a3-4bf9-94a5-5db24d96ed1d",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
@@ -332,11 +337,16 @@
 						{
 							"id": "numberOfPartnerzSexPartners",
 							"questionOptions": {
-								"rendering": "number",
-								"concept": "bd4a43d6-455e-40b8-abbd-fd4311167556",
-								"max": "",
-								"min": "0",
-								"showDate": "false"
+								"rendering": "radio",
+								"concept": "194da4ae-74fd-48c0-9d25-78c70e9fb21f",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
@@ -599,8 +609,31 @@
 			]
 		},
 		{
-			"label": "Cervical Cancer",
+			"label": "Cancer",
 			"sections": [
+				{
+					"isExpanded": "true",
+					"label": "Cervical Cancer Screening Status",
+					"questions": [
+						{
+							"id": "ccScreenStatus",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "c581a4d0-207f-4b6f-a0da-7efd7d3b6a49",
+								"answers": [
+									{
+										"concept": "56773142-a3e4-4f63-a794-c75f9a84ff40"
+									},
+									{
+										"concept": "84042061-af23-4bb2-84c5-3b94c95ede1f"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
 				{
 					"isExpanded": "true",
 					"label": "Cervical Cancer Health Education",
@@ -639,6 +672,9 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "49b79baa-c7db-4e6c-88e6-93e67ecc2a79"
 									}
 								]
 							},
@@ -682,9 +718,6 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "3c2ee376-15ca-4445-b326-dddad91d4ede"
 									},
 									{
 										"concept": "da15c40f-e24b-4771-9986-d3ce5ca56b94"
@@ -754,6 +787,9 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "49b79baa-c7db-4e6c-88e6-93e67ecc2a79"
 									}
 								]
 							},
@@ -777,6 +813,9 @@
 									},
 									{
 										"concept": "f743c638-bbe0-4af8-a746-6be18c0b7c84"
+									},
+									{
+										"concept": "49b79baa-c7db-4e6c-88e6-93e67ecc2a79"
 									}
 								]
 							},
@@ -800,6 +839,9 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "49b79baa-c7db-4e6c-88e6-93e67ecc2a79"
 									}
 								]
 							},
@@ -1252,6 +1294,15 @@
 										"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
 									}
 								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerFollowupDate",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "47ab49cc-d7b0-4a2c-bc79-d60784e240d5"
 							},
 							"type": "obs",
 							"validators": []

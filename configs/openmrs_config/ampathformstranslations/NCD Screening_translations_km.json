@@ -1,7 +1,7 @@
 {
     "uuid": "ffd34161-e81e-4906-8cc0-ea0efede1f08",
-    "form": "Health Center - NCD Screening",
-    "form_name_translation": "ពិនិត្យស្វែងរកជំងឺមិនឆ្លងនៅមណ្ឌលសុខភាព",
+    "form": "NCD Screening",
+    "form_name_translation": "ពិនិត្យស្រាវជ្រាវជំងឺមិនឆ្លង",
     "description": "Khmer translations for the NCD Screening form",
     "language": "km",
     "translations": {
@@ -20,6 +20,7 @@
       "Management": "ការគ្រប់គ្រង",
       "Referral to:": "បញ្ជូនទៅ៖",
       "Left Eye Examination": "ការពិនិត្យភ្នែកខាងឆ្វេង",
-      "Right Eye Examination": "ការពិនិត្យភ្នែកខាងស្តាំ"
+      "Right Eye Examination": "ការពិនិត្យភ្នែកខាងស្តាំ",
+      "Screening Status": "ស្ថានភាពនៃការពិនិត្យជំងឺ"
     }
 }

@@ -9,7 +9,7 @@
       "Menstrual History":"Menstrual History",
       "Menstrual Bleeding History":"Menstrual Bleeding History",
       "Risk Factors":"Risk Factors",
-      "Cervical Cancer":"Cervical Cancer",
+      "Cancer":"Cancer",
       "Cervical Cancer Test result":"Cervical Cancer Test result",
       "Referral center":"Referral center",
       "Physical Examination":"Physical Examination",
@@ -23,6 +23,7 @@
       "Referral":"Referral",
       "Treatment":"Treatment",
       "Appointment":"Appointment",
-      "History Of Cervical Cancer Screening":"History Of Cervical Cancer Screening"
+      "History Of Cervical Cancer Screening":"History Of Cervical Cancer Screening",
+      "Cervical Cancer Screening Status": "Cervical Cancer Screening Status"
     }
 }
