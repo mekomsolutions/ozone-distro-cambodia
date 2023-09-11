@@ -97,7 +97,7 @@ fcfda85e-f415-432f-a548-cc5ef7bcca42,,,Radiotherapy,Radiotherapy,ការព្
 fc11f6e5-5261-4845-bb96-1e95f44f1617,,,Medical treatment,Medical treatment,ការព្យាបាលដោយឳសថ,ការព្យាបាលដោយឳសថ,,,Misc,N/A,,,,,,
 c158e3b2-edf9-4e0e-9e95-d36de1a51527,,,Cervical cancer reason for referral,Cervical cancer reason for referral,ហេតុផលនៃមហារីកមាត់ស្បូនសម្រាប់ការបញ្ជូន,ហេតុផលនៃមហារីកមាត់ស្បូនសម្រាប់ការបញ្ជូន,,,Misc,Coded,VIA test;Colposcopy;Biopsis;Treatment,,,,,
 12f61ec2-e0b1-420d-be7b-43a95bce6e4a,,,Cervical cancer reason for referral (Non-coded),Cervical cancer reason for referral (Non-coded),ហេតុផលនៃមហារីកមាត់ស្បូនសម្រាប់ការបញ្ជូន (មិនមានដាក់លេខកូដ),ហេតុផលនៃមហារីកមាត់ស្បូនសម្រាប់ការបញ្ជូន (មិនមានដាក់លេខកូដ),,,Misc,Text,,,,,,
-1ca7d712-f7d7-4e09-8184-048bc4173902,,,Cervical cancer treatment options,Cervical cancer treatment options,ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន,ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន,,,Misc,Coded,Thermo-ablation device;LEEP;Surgery;Chemotherapy;Radiotherapy;Other,,,,,
+1ca7d712-f7d7-4e09-8184-048bc4173902,,,Cervical cancer treatment options,Cervical cancer treatment options,ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន,ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន,,,Misc,Coded,Thermo-ablation device;LEEP;Other,,,,,
 e6d18ff5-9d52-4e47-b2b2-762d9aa30604,,,Cervical cancer treatment options (Non-coded),Cervical cancer treatment options (Non-coded),ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន (មិនមានលេខកូដ),ជម្រើសក្នុងការព្យាបាលជំងឺមហារីកមាត់ស្បូន (មិនមានលេខកូដ),,,Misc,Text,,,,,,
 aaf920a1-08a2-49ac-ad72-a876a040ce41,,,4 weeks,4 weeks,៤​ សប្តាហ៍,៤​ សប្តាហ៍,,,Misc,N/A,,,,,,
 c2127bca-35e4-4986-8774-4145456f62a7,,,6 weeks,6 weeks,៦​ សប្តាហ៍,៦​ សប្តាហ៍,,,Misc,N/A,,,,,,

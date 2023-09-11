@@ -958,19 +958,13 @@
 											"concept": "250edbb0-f7bc-4f69-84c2-1a74e75ae73b"
 										},
 										{
-											"concept": "132fffbd-7261-4b71-a34d-20508544c56b"
-										},
-										{
-											"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
-										},
-										{
-											"concept": "fcfda85e-f415-432f-a548-cc5ef7bcca42"
-										},
-										{
 											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 										}
 									],
 									"rendering": "checkbox"
+								},
+								"hide": {
+									"hideWhenExpression": "isEmpty(VIATestResults) || VIATestResults !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 								},
 								"type": "obs",
 								"validators": []
@@ -983,7 +977,7 @@
 									"rows": 5
 								},
 								"hide": {
-									"hideWhenExpression": "arrayContains(['d534da3e-7b59-40ca-a415-d2f5eb94f4a3', '250edbb0-f7bc-4f69-84c2-1a74e75ae73b','132fffbd-7261-4b71-a34d-20508544c56b','e7b6313b-9cf9-4783-9ba6-719a2e7c8aab','fcfda85e-f415-432f-a548-cc5ef7bcca42', ''], caTreatmentOption)"
+									"hideWhenExpression": "arrayContains(['d534da3e-7b59-40ca-a415-d2f5eb94f4a3', '250edbb0-f7bc-4f69-84c2-1a74e75ae73b', ''], caTreatmentOption) || VIATestResults !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 								},
 								"type": "obs",
 								"validators": []
