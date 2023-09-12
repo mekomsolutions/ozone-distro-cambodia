@@ -1147,12 +1147,12 @@
 						},
 						{
 							"type": "obsGroup",
-							"label": "Bimanual Examination",
 							"questionOptions": {
 								"concept": "262082e4-df22-41a7-9827-466ec4c5e5da",
 								"rendering": "group"
 							},
 							"id": "bimanualExam",
+							"label": "Bimanual Examination",
 							"questions": [
 								{
 									"id": "cervixText",
