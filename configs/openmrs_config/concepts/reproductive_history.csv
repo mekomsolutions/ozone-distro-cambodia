@@ -136,3 +136,8 @@ ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12,,,Breast cancer treatment,Breast cancer tre
 194da4ae-74fd-48c0-9d25-78c70e9fb21f,,,Does your partner have many sexual partners?,Does your partner have many sexual partners?,តើដៃគូរបស់អ្នកមានដៃគូរួមភេទច្រើនឬទេ?,តើដៃគូរបស់អ្នកមានដៃគូរួមភេទច្រើនឬទេ?,,,Question,Coded,Yes;No,,,,,
 b6f6dc57-f3a3-4bf9-94a5-5db24d96ed1d,,,Do you have many sexual partners?,Do you have many sexual partners?,តើអ្នកមានដៃគូរួមភេទច្រើនឬទេ?,តើអ្នកមានដៃគូរួមភេទច្រើនឬទេ?,,,Question,Coded,Yes;No,,,,,
 47ab49cc-d7b0-4a2c-bc79-d60784e240d5,,,Breast cancer screening date,Breast cancer screening date,កាលបរិច្ឆេទពិនិត្យជំងឺមហារីកដោះ,កាលបរិច្ឆេទពិនិត្យជំងឺមហារីកដោះ,,,Misc,Date,,,,,,
+ad9889cb-0584-48ae-93f3-f126e92f6eae,,,Appointment after 1 year,Appointment after 1 year,,,,,Misc,Date,,,,,,
+a837af9c-d324-4bba-9e27-f2978a082096,,,Appointment after 3 years,Appointment after 3 years,,,,,Misc,Date,,,,,,
+5ed0b610-badf-4e29-9ad6-8a118013a480,,,1 year,1 year,,,,,Misc,N/A,,,,,,
+5e3abc04-2117-450b-8efa-c6a29511ea0b,,,3 years,3 years,,,,,Misc,N/A,,,,,,
+a12eba13-0fbf-43f6-b0c2-7f8d0af385aa,,,Appointment for retesting,Appointment for retesting,,,,,Question,Coded,1 year;3 years,,,,,

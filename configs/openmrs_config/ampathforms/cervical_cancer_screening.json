@@ -731,6 +731,50 @@
 							"validators": []
 						},
 						{
+							"id": "appForRetest",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "a12eba13-0fbf-43f6-b0c2-7f8d0af385aa",
+								"answers": [
+									{
+										"concept": "5ed0b610-badf-4e29-9ad6-8a118013a480"
+									},
+									{
+										"concept": "5e3abc04-2117-450b-8efa-c6a29511ea0b"
+									}
+								]
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(VIATestResults) || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "appAfterOneYear",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae"
+							},
+							"hide":{
+								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '5ed0b610-badf-4e29-9ad6-8a118013a480' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "appAfterThreeYears",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "a837af9c-d324-4bba-9e27-f2978a082096"
+							},
+							"hide":{
+								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '5e3abc04-2117-450b-8efa-c6a29511ea0b' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "numberOfQuadrant",
 							"questionOptions": {
 								"rendering": "checkbox",
