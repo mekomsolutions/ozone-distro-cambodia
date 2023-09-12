@@ -754,7 +754,10 @@
 							"id": "appAfterOneYear",
 							"questionOptions": {
 								"rendering": "date",
-								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae"
+								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae",
+								"calculate": {
+									"calculateExpression": "moment.add(365, 'days').toDate():''"
+								}
 							},
 							"hide":{
 								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '5ed0b610-badf-4e29-9ad6-8a118013a480' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
@@ -766,7 +769,10 @@
 							"id": "appAfterThreeYears",
 							"questionOptions": {
 								"rendering": "date",
-								"concept": "a837af9c-d324-4bba-9e27-f2978a082096"
+								"concept": "a837af9c-d324-4bba-9e27-f2978a082096",
+								"calculate": {
+									"calculateExpression": "moment.add(1095, 'days').toDate():''"
+								}
 							},
 							"hide":{
 								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '5e3abc04-2117-450b-8efa-c6a29511ea0b' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
