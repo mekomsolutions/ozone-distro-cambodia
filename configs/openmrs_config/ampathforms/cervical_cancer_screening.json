@@ -1144,62 +1144,63 @@
 							},
 							"type": "obs",
 							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"type": "obsGroup",
+					"label": "Bimanual Examination",
+					"questionOptions": {
+						"concept": "262082e4-df22-41a7-9827-466ec4c5e5da",
+						"rendering": "group"
+					},
+					"id": "bimanualExam",
+					"questions": [
+						{
+							"id": "cervixText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
+							},
+							"type": "obs",
+							"validators": []
 						},
 						{
-							"type": "obsGroup",
+							"id": "uterusText",
 							"questionOptions": {
-								"concept": "262082e4-df22-41a7-9827-466ec4c5e5da",
-								"rendering": "group"
+								"rendering": "text",
+								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
 							},
-							"id": "bimanualExam",
-							"label": "Bimanual Examination",
-							"questions": [
-								{
-									"id": "cervixText",
-									"questionOptions": {
-										"rendering": "text",
-										"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"id": "uterusText",
-									"questionOptions": {
-										"rendering": "text",
-										"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"id": "fallopianTubeText",
-									"questionOptions": {
-										"rendering": "text",
-										"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"id": "vulvaText",
-									"questionOptions": {
-										"rendering": "text",
-										"concept": "0a80e4ad-c144-4439-868b-f32b6b63816d"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"id": "rectumText",
-									"questionOptions": {
-										"rendering": "text",
-										"concept": "57ea911d-dcfa-45a3-96f7-1d768dcc6013"
-									},
-									"type": "obs",
-									"validators": []
-								}
-							]
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "fallopianTubeText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "vulvaText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "0a80e4ad-c144-4439-868b-f32b6b63816d"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "rectumText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "57ea911d-dcfa-45a3-96f7-1d768dcc6013"
+							},
+							"type": "obs",
+							"validators": []
 						}
 					]
 				},
