@@ -1158,8 +1158,7 @@
 									"id": "cervixText",
 									"questionOptions": {
 										"rendering": "text",
-										"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789",
-										"rows": 5
+										"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
 									},
 									"type": "obs",
 									"validators": []
@@ -1168,8 +1167,7 @@
 									"id": "uterusText",
 									"questionOptions": {
 										"rendering": "text",
-										"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359",
-										"rows": 5
+										"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
 									},
 									"type": "obs",
 									"validators": []
@@ -1178,8 +1176,7 @@
 									"id": "fallopianTubeText",
 									"questionOptions": {
 										"rendering": "text",
-										"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710",
-										"rows": 5
+										"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
 									},
 									"type": "obs",
 									"validators": []
@@ -1188,8 +1185,7 @@
 									"id": "vulvaText",
 									"questionOptions": {
 										"rendering": "text",
-										"concept": "0a80e4ad-c144-4439-868b-f32b6b63816d",
-										"rows": 5
+										"concept": "0a80e4ad-c144-4439-868b-f32b6b63816d"
 									},
 									"type": "obs",
 									"validators": []
@@ -1198,8 +1194,7 @@
 									"id": "rectumText",
 									"questionOptions": {
 										"rendering": "text",
-										"concept": "57ea911d-dcfa-45a3-96f7-1d768dcc6013",
-										"rows": 5
+										"concept": "57ea911d-dcfa-45a3-96f7-1d768dcc6013"
 									},
 									"type": "obs",
 									"validators": []
