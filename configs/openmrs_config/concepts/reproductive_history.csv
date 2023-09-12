@@ -133,7 +133,7 @@ f984b718-d674-40c4-9ac4-8d22963e1933,,,Other self-breast examination details,Oth
 e676ab7f-13b0-4251-84fd-9874c80133b5,,,Breast cancer reason for referral,Breast cancer reason for referral,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,,,Misc,Coded,Ultrasound;Mammography;Biopsis;Other,,,,,
 d7e7f0b4-94c8-4bd9-a6ef-a38e1d3efcc8,,,Breast cancer reason for referral (Non-coded),Breast cancer reason for referral (Non-coded),មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ (មិនមានលេខកូដសម្គាល់),មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ (មិនមានលេខកូដសម្គាល់),,,Misc,Text,,,,,,
 ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12,,,Breast cancer treatment,Breast cancer treatment,ការព្យាបាលជំងឺមហារីកដោះ,ការព្យាបាលជំងឺមហារីកដោះ,,,Misc,Coded,Surgery;Medical treatment;Radiotherapy;Chemotherapy,,,,,
-414ae1f0-701a-4dd3-91d2-4059fa24057c,,,Reason,Reason,មូលហេតុ,មូលហេតុ,,,Misc,Text,,,,,,
+414ae1f0-701a-4dd3-91d2-4059fa24057c,,,Reason for not being treated,Reason for not being treated,មូលហេតុដែលមិនទទួលការព្យាបាល,មូលហេតុដែលមិនទទួលការព្យាបាល,,,Misc,Text,,,,,,
 3c3da620-1b38-4ad7-afe9-5233e52e282b,,,Not treated,Not treated,មិនបានព្យាបាល,មិនបានព្យាបាល,,,Misc,N/A,,,,,,
 8094b06a-1a1d-4446-ab28-66d2b8c77f8c,,,Type of treatment,Type of treatment,ព្យាបាលដោយ,ព្យាបាលដោយ,,,Misc,Text,,,,,,
 4070623e-945b-499f-8b62-316e699a3cc7,,,Treated,Treated,បានព្យាបាល,បានព្យាបាល,,,Misc,N/A,,,,,,

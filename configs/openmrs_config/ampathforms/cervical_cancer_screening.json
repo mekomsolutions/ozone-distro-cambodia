@@ -1336,7 +1336,7 @@
 							"validators": []
 						},
 						{
-							"id": "whichTest",
+							"id": "testType",
 							"hide": {
 								"hideWhenExpression": "isEmpty(screenedForCc) || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
@@ -1358,7 +1358,7 @@
 						{
 							"id": "hpvTest",
 							"hide": {
-								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(testType) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
@@ -1378,7 +1378,7 @@
 						{
 							"id": "viaTest",
 							"hide": {
-								"hideWhenExpression": "isEmpty(whichTest) || whichTest !== 'f90dc342-292e-4a47-9fef-860a03bf255f' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(testType) || testType !== 'f90dc342-292e-4a47-9fef-860a03bf255f' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
@@ -1398,7 +1398,7 @@
 						{
 							"id": "receivedTreatment",
 							"hide": {
-								"hideWhenExpression": "isEmpty(viaTest) || viaTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || whichTest == 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
+								"hideWhenExpression": "isEmpty(viaTest) || viaTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
@@ -1418,7 +1418,7 @@
 						{
 							"id": "typeOfTreatment",
 							"hide": {
-								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || whichTest == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "textarea",
@@ -1429,9 +1429,9 @@
 							"validators": []
 						},
 						{
-							"id": "reason",
+							"id": "reasonForNotBeingTreated",
 							"hide": {
-								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || whichTest == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "textarea",
