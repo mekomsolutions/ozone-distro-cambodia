@@ -161,6 +161,14 @@
     }
   },
   "@openmrs/esm-patient-chart-app": {
+    "Translation overrides": {
+      "en": {
+        "patientBreadcrumb": "Patient"
+      },
+      "km": {
+        "patientBreadcrumb": "អ្នកជំងឺ"
+      }
+    },    
     "logo": {
       "src": "ozone/ozone_logo_white.svg",
       "alt": "ozone-logo"
