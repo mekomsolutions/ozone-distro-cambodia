@@ -756,7 +756,7 @@
 								"rendering": "date",
 								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae",
 								"calculate": {
-									"calculateExpression": "moment.add(365, 'days').toDate()"
+									"calculateExpression": "moment().add(1, 'years').toDate()"
 								}
 							},
 							"hide":{
@@ -771,7 +771,7 @@
 								"rendering": "date",
 								"concept": "a837af9c-d324-4bba-9e27-f2978a082096",
 								"calculate": {
-									"calculateExpression": "moment.add(1095, 'days').toDate()"
+									"calculateExpression": "moment().add(3, 'years').toDate()"
 								}
 							},
 							"hide":{
