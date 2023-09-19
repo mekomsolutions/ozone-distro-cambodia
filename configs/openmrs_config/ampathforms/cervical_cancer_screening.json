@@ -613,29 +613,6 @@
 			"sections": [
 				{
 					"isExpanded": "true",
-					"label": "Cervical Cancer Screening Status",
-					"questions": [
-						{
-							"id": "ccScreenStatus",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "c581a4d0-207f-4b6f-a0da-7efd7d3b6a49",
-								"answers": [
-									{
-										"concept": "56773142-a3e4-4f63-a794-c75f9a84ff40"
-									},
-									{
-										"concept": "84042061-af23-4bb2-84c5-3b94c95ede1f"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				},
-				{
-					"isExpanded": "true",
 					"label": "Cervical Cancer Health Education",
 					"questions": [
 							{
@@ -957,19 +934,16 @@
 									"concept": "c158e3b2-edf9-4e0e-9e95-d36de1a51527",
 									"answers": [
 										{
-											"concept": "3f80b4bd-6370-4ee7-ad4a-cbe07cb7af31"
+											"concept": "fc3909e3-9ddb-46e3-b4f7-6905732d977b"
 										},
 										{
-											"concept": "c0027068-fe1b-4401-aad5-d70e4437362c"
+											"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
 										},
 										{
-											"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
-										},
-										{
-											"concept": "44b23eee-963f-4a9f-b7fd-8a8e753ffbe4"
+											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 										}
 									],
-									"rendering": "multiCheckbox"
+									"rendering": "checkbox"
 								},
 								"type": "obs",
 								"validators": []
@@ -982,7 +956,7 @@
 									"rows": 5
 								},
 								"hide": {
-									"hideWhenExpression": "isEmpty(reasonForReferral) || reasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+									"hideWhenExpression": "arrayContains(['fc3909e3-9ddb-46e3-b4f7-6905732d977b','7d469a03-a56b-4c51-a421-0e5787556630',''], reasonForReferral)"
 								},
 								"type": "obs",
 								"validators": []
@@ -1197,29 +1171,60 @@
 							},
 							"type": "obs",
 							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"type": "obsGroup",
+					"label": "Bimanual Examination",
+					"questionOptions": {
+						"concept": "262082e4-df22-41a7-9827-466ec4c5e5da",
+						"rendering": "group"
+					},
+					"id": "bimanualExam",
+					"questions": [
+						{
+							"id": "cervixText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
+							},
+							"type": "obs",
+							"validators": []
 						},
 						{
-							"id": "bimanualExam",
+							"id": "uterusText",
 							"questionOptions": {
-								"rendering": "multiCheckbox",
-								"concept": "05b3b2c5-79fd-48e4-9416-3737c8f74233",
-								"answers": [
-									{
-										"concept": "2288d1ba-24c3-4434-85c2-29f14e45bc83"
-									},
-									{
-										"concept": "eaf38fc1-ece9-404a-8de3-ea1a3d2ece4d"
-									},
-									{
-										"concept": "e99f42d4-2175-4060-8a95-60e1ce3b49b3"
-									},
-									{
-										"concept": "7fe6a1ea-5fc0-4f05-a6c3-6e72c0dc15ab"
-									},
-									{
-										"concept": "eeccfed1-c059-460c-8dc0-713b75436293"
-									}
-								]
+								"rendering": "text",
+								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "fallopianTubeText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "vulvaText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "0a80e4ad-c144-4439-868b-f32b6b63816d"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "rectumText",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "57ea911d-dcfa-45a3-96f7-1d768dcc6013"
 							},
 							"type": "obs",
 							"validators": []
@@ -1353,6 +1358,140 @@
 							"questionOptions": {
 								"rendering": "date",
 								"concept": "47ab49cc-d7b0-4a2c-bc79-d60784e240d5"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"label": "History of Cervical Cancer Screening",
+			"sections": [
+				{
+					"isExpanded": "true",
+					"label": "History of Cervical Cancer Screening",
+					"questions": [
+						{
+							"id": "screenedForCc",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "75681e39-683c-4de9-9ca7-5b55b736bfa7",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "testType",
+							"hide": {
+								"hideWhenExpression": "isEmpty(screenedForCc) || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "baf42703-65ed-4ea3-9d3f-e5cf0305d2fd",
+								"answers": [
+									{
+										"concept": "f90dc342-292e-4a47-9fef-860a03bf255f"
+									},
+									{
+										"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "hpvTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(testType) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14",
+								"answers": [
+									{
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "viaTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(testType) || testType !== 'f90dc342-292e-4a47-9fef-860a03bf255f' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "f90dc342-292e-4a47-9fef-860a03bf255f",
+								"answers": [
+									{
+										"concept": "703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "receivedTreatment",
+							"hide": {
+								"hideWhenExpression": "isEmpty(viaTest) || viaTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6027bf55-5288-4ace-bc7f-b75d2291f8e0",
+								"answers": [
+									{
+										"concept": "4070623e-945b-499f-8b62-316e699a3cc7"
+									},
+									{
+										"concept": "3c3da620-1b38-4ad7-afe9-5233e52e282b"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "typeOfTreatment",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "8094b06a-1a1d-4446-ab28-66d2b8c77f8c",
+								"rows": 5
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "reasonForNotBeingTreated",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatment) || receivedTreatment !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || viaTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "414ae1f0-701a-4dd3-91d2-4059fa24057c",
+								"rows": 5
 							},
 							"type": "obs",
 							"validators": []
