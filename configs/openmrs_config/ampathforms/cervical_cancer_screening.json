@@ -708,6 +708,56 @@
 							"validators": []
 						},
 						{
+							"id": "appForRetest",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "a12eba13-0fbf-43f6-b0c2-7f8d0af385aa",
+								"answers": [
+									{
+										"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
+									},
+									{
+										"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
+									}
+								]
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(VIATestResults) || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "appAfterOneYear",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae",
+								"calculate": {
+									"calculateExpression": "appForRetest === '99f47ce5-a000-4c6b-9066-a14133f7f603' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(1, 'years').toDate() : null"
+								}
+							},
+							"hide":{
+								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '99f47ce5-a000-4c6b-9066-a14133f7f603' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "appAfterThreeYears",
+							"questionOptions": {
+								"rendering": "date",
+								"concept": "a837af9c-d324-4bba-9e27-f2978a082096",
+								"calculate": {
+									"calculateExpression": "appForRetest === 'f3f1ecb7-f4cd-4f80-8691-50626b5bcca3' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(3, 'years').toDate() : null"
+								}
+							},
+							"hide":{
+								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== 'f3f1ecb7-f4cd-4f80-8691-50626b5bcca3' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "numberOfQuadrant",
 							"questionOptions": {
 								"rendering": "checkbox",
