@@ -28,6 +28,25 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.3.0
+* Modified all concepts CSVs to have correct _order values.
+* Ensured consistent naming of sections and labels in all forms.
+* Improved Khmer translations in patient registration form.
+* Changed answer for Cervical Screening follow up question from '6 months - 1 year' to '1 year'in Cervical Cancer Screening form.
+* Added answer option 'Test not done' to tests in Cervical Cancer Screening form.
+* Changed answers to question 'How many sex partners do you have?' from Numeric type to radio button in Cervical Cancer Screening form.
+* Changed section name from 'Cervical Cancer' to 'Cancer' in Cervical Cancer Screening form.
+* Removed answer option 'Invasive' from VIA test results in Cervical Cancer Screening form.
+* Added follow-up date for breast cancer screening to Cervical Cancer Screening form.
+* Changed question under Risk Factors from 'How many sex partners does your partner have?' to 'Does your partner have many sexual partners?' in Cervical Cancer Screening form.
+* Changed answers for 'Bimanual Examination' to individual text fields in Cervical Cancer Screening form.
+* Modified treatment question to be multi checkbox in Cervical Cancer Screening form.
+* Added ability to search for locations in both Khmer and English locales.
+* Updated answer options to question 'cervical cancer reason for referral' in Cervical Cancer Screening form.
+* Added new section 'History Of Cervical Cancer Screening' to Cervical Cancer Screening form.
+* Improved Khmer translations for Patient Chart.
+* Added question 'Have you been screened for Diabetes and Hypertension?' to Medical History and NCD Screening forms.
+
 ### Version 1.2.3
 * Added drug Amlodipine with 5 mg dosage
 * Added 'Year of quitting smoking' in NCD Consultation form
