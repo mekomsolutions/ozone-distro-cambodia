@@ -733,7 +733,7 @@
 								"rendering": "date",
 								"concept": "ad9889cb-0584-48ae-93f3-f126e92f6eae",
 								"calculate": {
-									"calculateExpression": "moment().add(1, 'years').toDate()"
+									"calculateExpression": "appForRetest === '99f47ce5-a000-4c6b-9066-a14133f7f603' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(1, 'years').toDate() : null"
 								}
 							},
 							"hide":{
@@ -748,7 +748,7 @@
 								"rendering": "date",
 								"concept": "a837af9c-d324-4bba-9e27-f2978a082096",
 								"calculate": {
-									"calculateExpression": "moment().add(3, 'years').toDate()"
+									"calculateExpression": "appForRetest === 'f3f1ecb7-f4cd-4f80-8691-50626b5bcca3' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(3, 'years').toDate() : null"
 								}
 							},
 							"hide":{
