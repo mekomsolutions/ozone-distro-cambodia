@@ -46,6 +46,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Added new section 'History Of Cervical Cancer Screening' to Cervical Cancer Screening form.
 * Improved Khmer translations for Patient Chart.
 * Added question 'Have you been screened for Diabetes and Hypertension?' to Medical History and NCD Screening forms.
+* Added ability to auto-calculate appointment date when VIA test is negative in Cervical Cancer Screening form.
 
 ### Version 1.2.3
 * Added drug Amlodipine with 5 mg dosage
