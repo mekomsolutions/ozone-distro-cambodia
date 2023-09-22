@@ -1,7 +1,7 @@
 {
 	"name": "Cervical Cancer Screening",
 	"description": "Cervical Cancer Screening",
-	"version": "1",
+	"version": "2",
 	"published": true,
 	"retired": false,
 	"encounter": "Cervical Cancer Screening",
