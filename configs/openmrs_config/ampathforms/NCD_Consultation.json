@@ -67,6 +67,7 @@
 					"questions": [
 						{
 							"id": "Ht",
+							"historicalExpression": "_.isEmpty(HD.getObject('prevEnc').getValue('5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')) ? undefined : HD.getObject('prevEnc').getValue('5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')",
 							"questionOptions": {
 								"rendering": "number",
 								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
