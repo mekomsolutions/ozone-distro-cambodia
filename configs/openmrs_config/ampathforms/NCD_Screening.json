@@ -1085,7 +1085,7 @@
                             "validators": [
                                 {
                                     "type": "js_expression", 
-                                    "failsWhenExpression": "isEmpty(CVDscore) || isEmpty(CVDfollowUpScreening) || (CVDfollowUpScreening !== '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' || CVDfollowUpScreening !== 'a085b404-2596-48d6-a454-cd164d4a83fc'|| CVDfollowUpScreening !== '9b305de5-9df6-4db9-820d-9a24541418ab')",                            
+                                    "failsWhenExpression": "isEmpty(CVDscore) || CVDscore <= 0 || isEmpty(CVDfollowUpScreening) || (CVDfollowUpScreening !== '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' || CVDfollowUpScreening !== 'a085b404-2596-48d6-a454-cd164d4a83fc'|| CVDfollowUpScreening !== '9b305de5-9df6-4db9-820d-9a24541418ab')",                            
                                     "message": "Please ensure that CVD Risk Score is calculated"
                                 }
                             ]
