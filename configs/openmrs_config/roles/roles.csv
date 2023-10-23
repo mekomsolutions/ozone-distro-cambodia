@@ -9,4 +9,4 @@ ffba7d63-c1cf-470f-8a58-ad393c42fc98,NCD Care Provider in Hospital,NCD care prov
 31f77d8e-4a7c-40d4-bcf6-6f5c0e8eae5a,CC Care Provider,CC Care Provider,Basic Patient Admin,View CC Screening encounters;Edit CC Screening encounters;View Reports,
 46a040a4-7556-4911-80ee-4c213e13f992,OD/PHD User,OD/PHD User,Basic User Admin,View Reports,
 c40fc728-eda9-4905-bd28-6ee1dea602a7,NCD Manager,NCD Manager,,View Reports,
-94a2f20c-08f9-4faf-a950-bff18b229e2c,PMD Admin,PMD Admin,NCD Care Provider,View NCD Screening encounters;Edit NCD Screening encounters;View NCD Consultation encounters;Edit NCD Consultation encounters;View CC Screening encounters;Edit CC Screening encounters;View Reports,
+94a2f20c-08f9-4faf-a950-bff18b229e2c,PMD Admin,PMD Admin,System Developer;Provider,View NCD Screening encounters;Edit NCD Screening encounters;View NCD Consultation encounters;Edit NCD Consultation encounters;View CC Screening encounters;Edit CC Screening encounters;View Reports,
