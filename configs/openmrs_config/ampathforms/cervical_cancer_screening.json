@@ -1060,7 +1060,7 @@
 									"rendering": "select"
 								},
 								"hide": {
-									"hideWhenExpression": "(isEmpty(VIATestResults) && isEmpty(selfBreastExam)) || (VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' && selfBreastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)"
+									"hideWhenExpression": "arrayContains(['664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], VIATestResults) || arrayContains(['1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], selfBreastExam)"
 								},
 								"type": "obs",
 								"validators": []
