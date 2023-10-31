@@ -234,7 +234,8 @@
           }
         }
       }
-    }
+    },
+    "disableChangingVisitLocation": true 
   },
   "@openmrs/esm-patient-biometrics-app": {
     "Display conditions": {
