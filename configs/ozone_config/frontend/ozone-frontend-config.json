@@ -3,9 +3,7 @@
     "sections": [
       "demographics",
       "contact",
-      "additionalInformation",
-      "death",
-      "relationships"
+      "additionalInformation"
     ],
     "fieldConfigurations":
     {
@@ -141,8 +139,6 @@
         "contactSection": "Contact Details",
         "demographicsSection": "Basic Info",
         "additionalInformationSection": "Additional Information",
-        "deathSection": "Death",
-        "relationshipsSection": "Relationships",
         "Male": "Male",
         "Female": "Female",
         "Other": "Other",
@@ -158,8 +154,6 @@
         "contactSection": "ព័ត៌មានទំនាក់ទំនងលម្អិត",
         "demographicsSection": "ព័ត៌មានផ្ទាល់ខ្លួនអ្នកជំងឺ",
         "additionalInformationSection": "ព័​ត៍​មាន​បន្ថែម",
-        "deathSection": "ព័ត៌មានមរណភាព",
-        "relationshipsSection": "ទំនាក់ទំនង",
         "Male": "ប្រុស",
         "Female": "ស្រី",
         "Other": "ផ្សេងៗ",
