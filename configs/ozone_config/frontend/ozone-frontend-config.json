@@ -1,8 +1,8 @@
 {
   "@openmrs/esm-patient-registration-app": {
     "sections": [
-      "demographicsSection",
-      "contactSection",
+      "demographics",
+      "contact",
       "additionalInformation"
     ],
     "fieldConfigurations":
@@ -83,7 +83,7 @@
     ],
     "sectionDefinitions": [
       {
-        "id": "demographicsSection",
+        "id": "demographics",
         "name": "Basic Info",
         "fields": [
           "name",
@@ -94,7 +94,7 @@
         ]
       },
       {
-        "id": "contactSection",
+        "id": "contact",
         "name": "Contact Details",
         "fields": [
           "address",
@@ -113,12 +113,12 @@
         ]
       },
       {
-        "id": "deathSection",
+        "id": "death",
         "name": "Death Info",
         "fields": []
       },
       {
-        "id": "relationshipsSection",
+        "id": "relationships",
         "name": "Relationships",
         "fields": []
       }
@@ -138,6 +138,7 @@
         "District": "District",
         "contactSection": "Contact Details",
         "demographicsSection": "Basic Info",
+        "additionalInformationSection": "Additional Information",
         "Male": "Male",
         "Female": "Female",
         "Other": "Other",
@@ -151,7 +152,8 @@
         "Province": "ខេត្ត",
         "District": "ស្រុក/ខ័ណ្ឌ",
         "contactSection": "ព័ត៌មានទំនាក់ទំនងលម្អិត",
-        "demographicsSection": "ព័ត៌មានមូលដ្ឋាន",
+        "demographicsSection": "ព័ត៌មានផ្ទាល់ខ្លួនអ្នកជំងឺ",
+        "additionalInformationSection": "ព័​ត៍​មាន​បន្ថែម",
         "Male": "ប្រុស",
         "Female": "ស្រី",
         "Other": "ផ្សេងៗ",
@@ -234,7 +236,8 @@
           }
         }
       }
-    }
+    },
+    "disableChangingVisitLocation": true 
   },
   "@openmrs/esm-patient-biometrics-app": {
     "Display conditions": {
