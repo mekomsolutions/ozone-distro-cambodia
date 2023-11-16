@@ -1387,7 +1387,7 @@
 							"validators": []
 						},
 						{
-							"id": "selfBreastExam",
+							"id": "breastExam",
 							"questionOptions": {
 								"rendering": "radio",
 								"concept": "d1fd20ef-6363-4065-98d6-f36b8f1dc27e",
@@ -1405,6 +1405,9 @@
 										"concept": "8028de40-18d0-412c-8f7a-68cef81de52b"
 									},
 									{
+										"concept": "8d11e8c4-5031-4755-a8b3-cc7ebf9bd915"
+									},
+									{
 										"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
 									},
 									{
@@ -1416,14 +1419,14 @@
 							"validators": []
 						},
 						{
-							"id": "selfBreastExamDetails",
+							"id": "breastExamDetails",
 							"questionOptions": {
 								"rendering": "textarea",
 								"concept": "f984b718-d674-40c4-9ac4-8d22963e1933",
 								"rows": 5
 							},
 							"hide": {
-								"hideWhenExpression": "isEmpty(selfBreastExam) || selfBreastExam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(breastExam) || breastExam !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"type": "obs",
 							"validators": []
