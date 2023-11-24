@@ -1189,6 +1189,19 @@
                             "validators": []
                         },
                         {
+                            "questionOptions": {
+                                "rendering": "workspace-launcher",
+                                "workspaceName": "add-drug-order",
+                                "buttonType": "ghost",
+                                "buttonLabel": "Add +"
+                            },
+                            "id": "orderDrugs",
+                            "label": "Order for Drugs here:",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            }
+                        },
+                        {
                             "id": "medicineDetails",
                             "hide": {
                                 "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
