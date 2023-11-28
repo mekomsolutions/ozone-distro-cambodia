@@ -1059,6 +1059,9 @@
 									],
 									"rendering": "select"
 								},
+								"hide": {
+									"hideWhenExpression": "(isEmpty(VIATestResults) || VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (isEmpty(breastExam) || breastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+								},
 								"type": "obs",
 								"validators": []
 							},
