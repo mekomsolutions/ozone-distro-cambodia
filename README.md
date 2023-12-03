@@ -28,6 +28,24 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.4.0
+* Updated translation for sexually transmitted infection.
+* Moved 'History of CC Screening section' to be the first section in Cervical Cancer Screening form.
+* Updated address hierarchy
+* Added 'follow-up date' for breast screening in Cervical Cancer Screening form.
+* Disabled changing 'Visit Location' in the Start Visit form.
+* Added auto-selection of 'Follow-up screening CVD risk factors' based on CVD risk score.
+* Renamed 'Health Center-NCD Screening' to 'NCD Screening' form
+* Added Khmer translations and improve naming of sections in patient registration form.
+* Renamed 'Self-breast examination' to 'Breast examination' in Cervical Cancer Screening form.
+* Added 'Abcess' option under Breast examination in Cervical Cancer Screening form.
+* Re-organized referral questions in NCD Screening form.
+* Created and adapted roles in OpenMRS Admin.
+* Created a link to the drug order basket.
+* Updated location names to include province and district.
+* Added ability to display referral centers if VIA test results or breast cancer exams are abnormal.
+* Added ability to search the health facility in 'Referral to' question in NCD Consulation form.
+
 ### Version 1.3.0
 * Modified all concepts CSVs to have correct `_order` values.
 * Ensured consistent naming of sections and labels in all forms.
