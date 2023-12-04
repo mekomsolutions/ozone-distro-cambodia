@@ -1057,7 +1057,10 @@
 											"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
 										}
 									],
-									"rendering": "select"
+									"rendering": "single-select"
+								},
+								"hide": {
+									"hideWhenExpression": "(isEmpty(VIATestResults) || VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (isEmpty(breastExam) || breastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 								},
 								"type": "obs",
 								"validators": []
