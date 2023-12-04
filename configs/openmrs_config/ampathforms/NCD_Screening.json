@@ -1107,7 +1107,7 @@
                                     "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'a09fe05c-8a36-4f40-8559-354fd5a94af8'"
                                 },
                                 "questionOptions": {
-                                    "rendering": "radio",
+                                    "rendering": "multiCheckbox",
                                     "concept": "19026f9a-3668-4d57-be43-1c82717d89a7",
                                     "answers": [
                                         {
@@ -1139,20 +1139,20 @@
                                     "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'eb3bacce-15a8-4822-b69c-bea43db0a34b'"
                                 },
                                 "questionOptions": {
-                                    "rendering": "radio",
+                                    "rendering": "multiCheckbox",
                                     "concept": "6d15cab0-2814-4082-a4ea-74925f636bec",
                                     "answers": [
                                         {
                                             "concept": "5701caad-dd50-4cec-b3cd-0950c3ad6e90"
                                         },
                                         {
-                                            "concept": "54e78acd-e457-4f36-a5a9-0fc33b920e81"
+                                            "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
                                         },
                                         {
-                                            "concept": "b5747293-e1a7-49d9-88b9-d9f0b3ea74bf"
+                                            "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
                                         },
                                         {
-                                            "concept": ""
+                                            "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
                                         },
                                         {
                                             "concept": "2a53125a-13e2-4b56-ab62-9456fa7e5d09"
@@ -1213,12 +1213,12 @@
                                 "validators": []
                             },
                             {
-                                "id": "hypertension",
+                                "id": "hypertensionDiagnosis",
                                 "hide": {
                                     "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                                 },
                                 "questionOptions": {
-                                    "rendering": "checkbox",
+                                    "rendering": "multiCheckbox",
                                     "concept": "68f158ff-6396-4bab-8194-73255282bd23",
                                     "answers": [
                                         {
