@@ -1200,8 +1200,7 @@
                             "hide": {
                                 "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
                             }
-                        }
-                        }
+                        } 
                     ]
                 }
             ]
