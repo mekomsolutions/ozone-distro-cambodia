@@ -1261,7 +1261,7 @@
 								"rendering": "workspace-launcher",
 								"workspaceName": "add-drug-order",
 								"buttonType": "ghost",
-								"buttonLabel": "បន្ថែម +",
+								"buttonLabel": "Add (បន្ថែម) +",
 								"id": "ordering-id"
 							},
 							"id": "orderDrugs",
