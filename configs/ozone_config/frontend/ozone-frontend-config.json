@@ -47,13 +47,6 @@
         "answerConceptSetUuid": "2ef163b6-eec8-4678-abed-0dd261220168"
       },
       {
-        "id": "sexualOrientation",
-        "type": "person attribute",
-        "uuid": "cd36e567-7bec-465c-9a3e-32684861c17c",
-        "placeholder": "placeholder",
-        "answerConceptSetUuid": "12634919-8592-428f-8ae3-f14518d914c5"
-      },
-      {
         "id": "ethnicityField",
         "type": "person attribute",
         "uuid": "632d27a5-58c6-49f3-acb1-2a7b5855eaca",
@@ -88,7 +81,6 @@
         "fields": [
           "name",
           "gender",
-          "sexualOrientation",
           "dob",
           "id"
         ]
