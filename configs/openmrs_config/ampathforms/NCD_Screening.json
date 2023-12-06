@@ -1,7 +1,7 @@
 {
     "name": "Health Center - NCD Screening",
     "description": "Health Center - NCD Screening",
-    "version": "1",
+    "version": "2",
     "published": true,
     "retired": false,
     "encounter": "Health Center - NCD Screening",
