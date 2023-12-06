@@ -2,7 +2,7 @@ Uuid,Void/Retire,Same as mappings,Fully specified name:en,Fully specified name:k
 dff491e3-b14c-4b32-ab64-63b96966d72d,,,CVD risk score (%),ពិន្ទុនៃការវាយតម្លៃហានិភ័យជំងឺសរសៃឈាម-បេះដូង (%),CVD risk score (%),ពិន្ទុនៃការវាយតម្លៃហានិភ័យជំងឺសរសៃឈាម-បេះដូង (%),,,Question,Numeric,,,,
 027995aa-fdf9-4f88-973d-e7f401c01ae7,,,CVD risk follow-up,ការតាមដានហានិភ័យជំងឺសរសៃឈាម-បេះដូង,CVD risk follow-up,ការតាមដានហានិភ័យជំងឺសរសៃឈាម-បេះដូង,,,Question,Coded,Yes;No,,,
 41648b2c-9caf-4f2f-8ce2-ef7d94db48a5,,,Refer to referral hospital,បញ្ជូនទៅមន្ទីពេទ្យបង្អែក,Refer to referral hospital,បញ្ជូនទៅមន្ទីពេទ្យបង្អែក,,,Question,Coded,Yes;No,,,
-4bbeb3ce-f7ff-476c-9661-60b774fb96f4,,,Referral Criteria,លក្ខណៈវិនិច្ឆ័យសម្រាប់ការបញ្ជូន,Referral Criteria,លក្ខណៈវិនិច្ឆ័យសម្រាប់ការបញ្ជូន,,,Question,Coded,Yes;No,,,
+4bbeb3ce-f7ff-476c-9661-60b774fb96f4,,,Criteria for referral,លក្ខណៈវិនិច្ឆ័យសម្រាប់ការបញ្ជូន,Criteria for referral,លក្ខណៈវិនិច្ឆ័យសម្រាប់ការបញ្ជូន,,,Question,Coded,Yes;No,,,
 45583478-f703-46e3-b63a-54b0a95c25f0,,,Diagnosis 1,រោគវិនិច្ឆ័យ ទី១,Diagnosis 1,រោគវិនិច្ឆ័យ ទី១,,,Question,Coded,Type 1 diabetes (E10);Type 2 diabetes (E11);Gestational diabetes (O24.4);Hypertension (I10);Unknown,,,
 76ca08a5-2128-4b53-afba-74227b015924,,,Diagnosis 2,រោគវិនិច្ឆ័យ ទី ២,Diagnosis 2,រោគវិនិច្ឆ័យ ទី ២,,,Question,Coded,Type 1 diabetes (E10);Type 2 diabetes (E11);Gestational diabetes (O24.4);Hypertension (I10);Unknown,,,
 725f4512-c460-46a0-a951-f2a45e094e32,,,Type I or Suspected Type I Diabetes,ជំងឺទឹកនោមផ្អែមប្រភេទ១​ ឬសង្ស័យមានជំងឺទឹកនោមផ្អែមប្រភេទ១,Type I or Suspected Type I Diabetes,ជំងឺទឹកនោមផ្អែមប្រភេទ១​ ឬសង្ស័យមានជំងឺទឹកនោមផ្អែមប្រភេទ១,,,Misc,N/A,,,,
