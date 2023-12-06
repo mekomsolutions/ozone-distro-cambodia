@@ -1193,7 +1193,7 @@
                                 "rendering": "workspace-launcher",
                                 "workspaceName": "add-drug-order",
                                 "buttonType": "ghost",
-                                "buttonLabel": "Add +"
+                                "buttonLabel": "Add (បន្ថែម) +"
                             },
                             "id": "orderDrugs",
                             "label": "Order for Drugs here:",
