@@ -1053,6 +1053,198 @@
 				},
                 {
                     "isExpanded": "true",
+					"label": "Referral Criteria",
+					"questions": [
+						{
+							"id": "criteriaForReferral",
+							"questionOptions": {
+								"concept": "4bbeb3ce-f7ff-476c-9661-60b774fb96f4",
+								"answers": [
+									{
+										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
+								"rendering": "radio"
+							},
+							"type": "obs",
+							"validators": []
+						},
+                        {
+                                "id": "diabetes",
+                                "hide": {
+                                    "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                                },
+                                "questionOptions": {
+                                    "rendering": "radio",
+                                    "concept": "cde3716a-2b98-4f10-b619-4d5a5a55503c",
+                                    "answers": [
+                                        {
+                                            "concept": "725f4512-c460-46a0-a951-f2a45e094e32"
+                                        },
+                                        {
+                                            "concept": "af34b28a-ab67-48d8-9dec-58244a267af1"
+                                        },
+                                        {
+                                            "concept": "a09fe05c-8a36-4f40-8559-354fd5a94af8"
+                                        },
+                                        {
+                                            "concept": "eb3bacce-15a8-4822-b69c-bea43db0a34b"
+                                        },
+                                        {
+                                            "concept": "c37fe032-933b-4bda-9e76-1ab5b5b6a3ff"
+                                        }
+                                    ]
+                                },
+                                "type": "obs",
+                                "validators": []
+                            },
+                            {
+                                "id": "chronicComplications",
+                                "hide": {
+                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'a09fe05c-8a36-4f40-8559-354fd5a94af8'"
+                                },
+                                "questionOptions": {
+                                    "rendering": "multiCheckbox",
+                                    "concept": "19026f9a-3668-4d57-be43-1c82717d89a7",
+                                    "answers": [
+                                        {
+                                            "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
+                                        },
+                                        {
+                                            "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                                        },
+                                        {
+                                            "concept": "28ce7f5a-ea19-4332-9f65-f43be0dbaaaf"
+                                        },
+                                        {
+                                            "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
+                                        },
+                                        {
+                                            "concept": "99b4d220-d665-4af9-8e5b-c69a2c4a938e"
+                                        },
+                                        {
+                                            "concept": "872a5453-093a-4c37-a328-62dee7df1238"
+                                        }
+                                    ]
+                                },
+                                "type": "obs",
+                                "validators": []
+                            },
+                            {
+                                "id": "dMSuspectedSymptoms",
+                                "hide": {
+                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'eb3bacce-15a8-4822-b69c-bea43db0a34b'"
+                                },
+                                "questionOptions": {
+                                    "rendering": "multiCheckbox",
+                                    "concept": "6d15cab0-2814-4082-a4ea-74925f636bec",
+                                    "answers": [
+                                        {
+                                            "concept": "5701caad-dd50-4cec-b3cd-0950c3ad6e90"
+                                        },
+                                        {
+                                            "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
+                                        },
+                                        {
+                                            "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
+                                        },
+                                        {
+                                            "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                                        },
+                                        {
+                                            "concept": "2a53125a-13e2-4b56-ab62-9456fa7e5d09"
+                                        },
+                                        {
+                                            "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
+                                        },
+                                        {
+                                            "concept": "02763c1b-abb9-4581-9f75-bdd480d7a85d"
+                                        },
+                                        {
+                                            "concept": "121629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                        },
+                                        {
+                                            "concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
+                                        },
+                                        {
+                                            "concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+                                        },
+                                        {
+                                            "concept": "1088b9fc-05c4-4392-a1c1-476e0c700b02"
+                                        },
+                                        {
+                                            "concept": "bb6208f6-fef5-4a18-aea6-3d34c9fad895"
+                                        },
+                                        {
+                                            "concept": "76af92a4-6cbd-465c-9ea7-c30824212a55"
+                                        },
+                                        {
+                                            "concept": "4896306d-f8f0-4b28-acf8-1c0c612a27a5"
+                                        },
+                                        {
+                                            "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
+                                        }
+                                    ]
+                                },
+                                "type": "obs",
+                                "validators": []
+                            },
+                            {
+                                "id": "uncontrolledDiabetes",
+                                "hide": {
+                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'c37fe032-933b-4bda-9e76-1ab5b5b6a3ff'"
+                                },
+                                "questionOptions": {
+                                    "rendering": "radio",
+                                    "concept": "021a86c5-c001-480d-a9f2-6d634d1b7b13",
+                                    "answers": [
+                                        {
+                                            "concept": "ee72f13a-54ef-4cf7-8094-f84b031d58e5"
+                                        },
+                                        {
+                                            "concept": "7de2f7e3-dd99-452e-ba3e-e534ac9a5f78"
+                                        }
+                                    ]
+                                },
+                                "type": "obs",
+                                "validators": []
+                            },
+                            {
+                                "id": "hypertensionDiagnosis",
+                                "hide": {
+                                    "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                                },
+                                "questionOptions": {
+                                    "rendering": "multiCheckbox",
+                                    "concept": "68f158ff-6396-4bab-8194-73255282bd23",
+                                    "answers": [
+                                        {
+                                            "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
+                                        },
+                                        {
+                                            "concept": "0c389648-0b02-4efb-94a3-ca4596548fa1"
+                                        },
+                                        {
+                                            "concept": "e3bc9bb0-2e70-4ee1-b957-2d0558607238"
+                                        },
+                                        {
+                                            "concept": "dc53de3a-5d6a-4ca7-b4b4-935463e92760"
+                                        },
+                                        {
+                                            "concept": "fa826f3f-9e01-4909-b4a6-9a5c3276416a"
+                                        }
+                                    ]
+                                },
+                                "type": "obs",
+                                "validators": []
+                            }
+					]
+				},
+                {
+                    "isExpanded": "true",
 					"label": "Referral to:",
 					"questions": [
 						{
