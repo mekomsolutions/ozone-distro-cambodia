@@ -31,20 +31,25 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ### Version 1.4.0
 * Updated translation for sexually transmitted infection.
 * Moved 'History of CC Screening section' to be the first section in Cervical Cancer Screening form.
-* Updated address hierarchy
+* Updated address hierarchy to include new locations.
 * Added 'follow-up date' for breast screening in Cervical Cancer Screening form.
 * Disabled changing 'Visit Location' in the Start Visit form.
 * Added auto-selection of 'Follow-up screening CVD risk factors' based on CVD risk score.
-* Renamed 'Health Center-NCD Screening' to 'NCD Screening' form
-* Added Khmer translations and improve naming of sections in patient registration form.
+* Renamed 'Health Center-NCD Screening' to 'NCD Screening' form.
+* Added Khmer translations for O3.
+* Improved naming of sections in patient registration form.
 * Renamed 'Self-breast examination' to 'Breast examination' in Cervical Cancer Screening form.
 * Added 'Abcess' option under Breast examination in Cervical Cancer Screening form.
 * Re-organized referral questions in NCD Screening form.
 * Created and adapted roles in OpenMRS Admin.
 * Created a link to the drug order basket.
 * Updated location names to include province and district.
-* Added ability to display referral centers if VIA test results or breast cancer exams are abnormal.
+* Added ability to display referral centers if VIA test results or breast cancer exams are abnormal in Cervical Cancer Screening form.
 * Added ability to search the health facility in 'Referral to' question in NCD Consulation form.
+* Removed sexual orientation question from patient registration form.
+* Increased clinical forms version to '2'.
+* Replaced facility name in drop downs by Province > District > Facility code - Name in NCD screening form and NCD consultation form.
+* Added referral criterial under diagnosis section in NCD Screening form.
 
 ### Version 1.3.0
 * Modified all concepts CSVs to have correct `_order` values.
