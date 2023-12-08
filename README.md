@@ -28,6 +28,8 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.5.0
+
 ### Version 1.4.0
 * Updated translation for sexually transmitted infection.
 * Moved 'History of CC Screening section' to be the first section in Cervical Cancer Screening form.
