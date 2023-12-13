@@ -52,7 +52,6 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Added ability to display referral centers if VIA test results or breast cancer exams are abnormal in Cervical Cancer Screening form.
 * Added ability to search the health facility in 'Referral to' question in NCD Consulation form.
 * Removed sexual orientation question from patient registration form.
-* Increased clinical forms version to '2'.
 * Replaced facility name in drop downs by Province > District > Facility code - Name in NCD screening form and NCD consultation form.
 * Added referral criterial under diagnosis section in NCD Screening form.
 
