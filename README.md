@@ -28,7 +28,8 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
-### Version 1.5.0
+### Version 1.4.1
+* Reverted clinical forms version from '2' to '1'.
 
 ### Version 1.4.0
 * Updated translation for sexually transmitted infection.
