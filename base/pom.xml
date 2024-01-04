@@ -93,9 +93,9 @@
                     <exclude>distro/**/privileges*demo.csv</exclude>
                     <exclude>distro/**/program*</exclude>
                     <exclude>distro/**/roles*demo.csv</exclude>
-                    <exclude>distro/**/ampathforms.json</exclude>
-                    <exclude>distro/**/ampathformstranslations.json</exclude>
-                    <exclude>distro/**/demo.csv</exclude>
+                    <exclude>distro/**/ampathforms/*.json</exclude>
+                    <exclude>distro/**/ampathformstranslations/*.json</exclude>
+                    <exclude>distro/**/*demo.csv</exclude>
                   </excludes>
                 </resource>
               </resources>
