@@ -29,6 +29,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.5.0
+* Refactor the repository structure
 
 ### Version 1.4.1
 * Reverted clinical forms version from '2' to '1'.

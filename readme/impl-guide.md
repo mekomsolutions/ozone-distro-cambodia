@@ -1,6 +1,6 @@
 # 🇰🇭 Ozone Kh - Implementer Guide
 
-The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
+The distro can be run using the Ozone Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
 
 ```
 $ git clone https://github.com/openmrs/ozone-cambodia
