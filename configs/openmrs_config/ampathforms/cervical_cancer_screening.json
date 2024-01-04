@@ -1324,8 +1324,19 @@
 						{
 							"id": "cervixText",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
+								"rendering": "select",
+								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+                    "concept": "925f547b-7aed-4671-a11f-9f215e0ea64a"
+                  },
+									{
+										"concept": "6c552b86-52b2-434d-ae43-b8174aafb97c"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
@@ -1333,8 +1344,19 @@
 						{
 							"id": "uterusText",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
+								"rendering": "select",
+								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+                    "concept": "feda9460-64af-4ca3-84d9-840630b18ce7"
+                  },
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
