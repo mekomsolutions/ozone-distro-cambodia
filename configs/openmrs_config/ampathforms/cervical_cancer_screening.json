@@ -97,6 +97,24 @@
 							"validators": []
 						},
 						{
+							"id": "cytologyTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(testType) || testType !== 'a44360e4-6337-4d26-a2c7-3d7dbf64f863' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'" 
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "0c35f74a-5927-4bc6-824c-1f7876f2c932",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "e70f4eaf-eb87-4db7-8959-8cb2030a0de5"
+									}
+								]
+							}
+						},
+						{
 							"id": "receivedTreatment",
 							"hide": {
 								"hideWhenExpression": "isEmpty(viaTest) || viaTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
