@@ -55,8 +55,8 @@
         <executions>
           <execution>
             <!-- Override with local config files-->
-            <id>Copy local resources</id>
-            <phase>process-resources</phase>
+            <id>Copy local configs</id>
+            <phase>prepare-package</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
