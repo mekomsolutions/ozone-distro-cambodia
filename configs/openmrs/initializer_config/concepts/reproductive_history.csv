@@ -150,7 +150,7 @@ ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12,,,Breast cancer treatment,Breast cancer tre
 d2a2849a-5b21-452c-8967-b9d31dc82b14,,,HPV test,HPV test,តេស្តអេចភិវី,តេស្តអេចភិវី,,,Question,Coded,Negative;Positive,,,,,
 f90dc342-292e-4a47-9fef-860a03bf255f,,,VIA test.,VIA test.,តេស្តវីអាយអេ,តេស្តវីអាយអេ,,,Question,Coded,Negative;Positive,,,,,
 0c35f74a-5927-4bc6-824c-1f7876f2c932,,,Cytology test,Cytology test,តេស្តគំនៀរមាត់ស្បូន,តេស្តគំនៀរមាត់ស្បូន,,,Question,Coded,Normal;ASCUS or Greater,,,,,
-baf42703-65ed-4ea3-9d3f-e5cf0305d2fd,,,Which test?,Which test?,តើបានធ្វើតេស្តមួយណាដែរ?,តើបានធ្វើតេស្តមួយណាដែរ?,,,Question,Coded,HPV test;VIA test;Cytology test.,,,,,
+baf42703-65ed-4ea3-9d3f-e5cf0305d2fd,,,Which test?,Which test?,តើបានធ្វើតេស្តមួយណាដែរ?,តើបានធ្វើតេស្តមួយណាដែរ?,,,Question,Coded,HPV test;VIA test.;Cytology test,,,,,
 75681e39-683c-4de9-9ca7-5b55b736bfa7,,,Have you ever screened for cervical cancer?,Have you ever screened for cervical cancer?,តើអ្នកធ្លាប់ពិនិត្យសុខភាពមាត់ស្បូនរកមហារីក ?,តើអ្នកធ្លាប់ពិនិត្យសុខភាពមាត់ស្បូនរកមហារីក ?,,,Question,Coded,Yes;No,,,,,
 194da4ae-74fd-48c0-9d25-78c70e9fb21f,,,Does your partner have many sexual partners?,Does your partner have many sexual partners?,តើដៃគូរបស់អ្នកមានដៃគូរួមភេទច្រើនឬទេ?,តើដៃគូរបស់អ្នកមានដៃគូរួមភេទច្រើនឬទេ?,,,Question,Coded,Yes;No,,,,,
 b6f6dc57-f3a3-4bf9-94a5-5db24d96ed1d,,,Do you have many sexual partners?,Do you have many sexual partners?,តើអ្នកមានដៃគូរួមភេទច្រើនឬទេ?,តើអ្នកមានដៃគូរួមភេទច្រើនឬទេ?,,,Question,Coded,Yes;No,,,,,
