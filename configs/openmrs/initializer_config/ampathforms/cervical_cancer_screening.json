@@ -122,7 +122,7 @@
 						{
 							"id": "typeOfTreatmentForHpv",
 							"hide": {
-								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType != 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "textarea",
@@ -135,7 +135,7 @@
 						{
 							"id": "reasonForNotBeingTreatedForHpv",
 							"hide": {
-								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType != 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "textarea",
