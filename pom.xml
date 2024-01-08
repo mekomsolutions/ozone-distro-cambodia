@@ -1,8 +1,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ozonehis</groupId>
-  <artifactId>ozone-distro-cambodia-parent</artifactId>
-  <name>Ozone Distribution for Cambodia - Parent project</name>
+  <artifactId>ozone-cambodia-parent</artifactId>
+  <name>Ozone for Cambodia - Parent project</name>
   <version>1.5.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -37,15 +37,66 @@
       </modules>
     </profile>
   </profiles>
-  
-  <dependencies>
-    <dependency>
-      <groupId>com.ozonehis</groupId>
-      <artifactId>ozone-distro</artifactId>
-      <type>zip</type>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <!-- Copy and substitute some helper files (for demo and Gitpod) -->
+            <id>Copy and substitute some helper files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>../scripts</directory>
+                  <filtering>false</filtering>
+                </resource>
+                <resource>
+                  <directory>../scripts</directory>
+                  <includes>
+                    <include>*.sh</include>
+                  </includes>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <!-- Copy the docker-compose-files.txt file to set the services to run -->
+            <id>Copy docker-compose-files.txt</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/run/docker/scripts</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>../scripts</directory>
+                  <includes>
+                    <include>docker-compose-files.txt</include>
+                  </includes>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
   <repositories>
     <repository>
