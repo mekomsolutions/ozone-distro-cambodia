@@ -157,10 +157,12 @@
   "@openmrs/esm-patient-chart-app": {
     "Translation overrides": {
       "en": {
-        "patientBreadcrumb": "Patient"
+        "patientBreadcrumb": "Patient",
+        "markDeceased": "Mark deceased"
       },
       "km": {
-        "patientBreadcrumb": "អ្នកជំងឺ"
+        "patientBreadcrumb": "អ្នកជំងឺ",
+        "markDeceased": "គូសលើអ្នកជាស្លាប់"
       }
     },    
     "logo": {
