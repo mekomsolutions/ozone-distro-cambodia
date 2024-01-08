@@ -112,7 +112,9 @@
 										"concept": "e70f4eaf-eb87-4db7-8959-8cb2030a0de5"
 									}
 								]
-							}
+							},
+							"type": "obs",
+							"validators": []
 						},
 						{
 							"id": "receivedTreatment",
