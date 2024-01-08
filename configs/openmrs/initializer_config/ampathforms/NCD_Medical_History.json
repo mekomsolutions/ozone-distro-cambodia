@@ -17,10 +17,10 @@
                     "label": "Medical History",
                     "questions": [
                         {
-                            "id": "screenedForDM",
+                            "id": "treatmentForHighBloodPressure",
                             "questionOptions": {
                                 "rendering": "radio",
-                                "concept": "e43b443b-70de-48f3-8d6c-081337621982",
+                                "concept": "39b08112-d30c-4d14-829e-62e7df844747",
                                 "answers": [
                                     {
                                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

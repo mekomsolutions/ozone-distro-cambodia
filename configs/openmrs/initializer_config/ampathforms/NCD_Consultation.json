@@ -242,6 +242,18 @@
 					"label": "Lipids",
 					"questions": [
 						{
+                            "id": "totalCholesterol",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "1500",
+								"min": "0",
+								"showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+						{
 							"id": "lowDenseLipoProtein",
 							"questionOptions": {
 								"rendering": "number",
@@ -276,19 +288,7 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
-                            "id": "totalCholesterol",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "1500",
-								"min": "0",
-								"showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
+						}
 					]
 				},
 				{
