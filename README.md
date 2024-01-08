@@ -1,10 +1,10 @@
-# Ozone Distribution For Cambodia 🇰🇭
+# Ozone for Cambodia 🇰🇭
 
-A Maven project to download and package in one place all the software artefacts that make the Ozone Distribution for Cambodia.
+A Maven project to download and package in one place all the software artefacts that make the Ozone for Cambodia.
 
 ## Summary
 
-The Ozone Distribution For Cambodia or **Ozone Kh** is a distribution of [Ozone HIS](https://www.ozone-his.com) specially configured for the MoH of Cambodia. In its original form it is an integrated system between an NCD-capable EMR system and a reporting & analytics platform for NCD population reporting.
+Ozone for Cambodia or **Ozone Kh** is a distribution of [Ozone HIS](https://www.ozone-his.com) specially configured for the MoH of Cambodia. In its original form it is an integrated system between an NCD-capable EMR system and a reporting & analytics platform for NCD population reporting.
 
 ## Demo Environments
 
@@ -29,6 +29,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.5.0
+* Refactor the repository structure
 
 ### Version 1.4.1
 * Reverted clinical forms version from '2' to '1'.

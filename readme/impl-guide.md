@@ -1,74 +1,71 @@
 # 🇰🇭 Ozone Kh - Implementer Guide
 
-The distro can be run using the Ozone Pro Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
+The distro can be run using the Ozone Docker project. Quick start command below, for trials purposes only - would not suit for stable environment.
 
-```
-$ git clone https://github.com/openmrs/ozone-distro-cambodia
-$ cd ozone-distro-cambodia
+```bash
+$ git clone https://github.com/openmrs/ozone-cambodia
+$ cd ozone-cambodia
 ```
 
 ## Quick start
-```
-./start-distro.sh
-```
 
-## Manual instructions
-Build the distro (optional, provide a `prod` profile to include confidential configs and exclude demo artifacts)
-```
-./mvnw clean install [-Pprod]
-```
-
-Prepare for the run (optional, provide a `prod` profile to use the previously built `prod` distribution)
-```
-./mvnw -f run/pom.xml clean package [-Pprod]
-```
-
-Pull images
-```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" pull proxy frontend openmrs mysql
+Build
+```bash
+./scripts/mvnw clean package [-Pprod]
 ```
 
 Run
+```bash
+source [base|prod]/target/go-to-scripts-dir.sh
+./start-demo.sh
 ```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia up -d proxy frontend openmrs mysql
 
-```
-
-## Then start browsing:
-
-| HIS Component     | URL                            | Username | Password |
-|-------------------|--------------------------------|----------|----------|
-| OpenMRS 3         | http://localhost/openmrs/spa  | admin    | Admin123 |
-
----
+Tip: After running the `source [base|prod]/target/go-to-scripts-dir.sh` command you can use `popd` to easily move back to the root directory, if needed.
 
 ### Working on configurations:
 
 If needed to work on the distro configurations and see the results, you have several options:
-- (1) Turn down the whole project with its volumes, compile again and run.
+- (1) Turn down the whole project with its volumes, build again and run.
 - (2) Replace files in the mounted Docker volume (all files or only individual files)
 
-#### 1. Turn down the whole project and start afresh
-```
-docker compose -f "./run/target/ozone-docker-compose/docker-compose.yml" -f "./run/target/ozone-docker-compose/docker-compose-proxy.yml" --env-file "./run/target/ozone-docker-compose/concatenated.env" -p ozone-distro-cambodia down -v
-```
-Then follow the [Quick start guide](#quick-start) or the [manual instructions](#manual-instructions) to install and then run.
+#### Option 1. Turn down the whole project and start afresh
 
-#### 2. Replace files in the mounted Docker volume
+Turn down the project (including volumes)
+```bash
+source base/target/go-to-scripts-dir.sh
+./destroy-demo.sh
 ```
-./mvnw clean install [–Pprod]
+
+Re-build:
+```bash
+popd # Return to the root directory
+./scripts/mvnw clean package [-Pprod]
 ```
+
+Then start afresh:
+```bash
+source [base|prod]/target/go-to-scripts-dir.sh
+./start-demo.sh
 ```
-rsync -av target/ozone-distro-cambodia-<version>/ run/target/ozone-distro-cambodia/ --delete
+
+#### Option 2. Replace only the files needed, directly in the mounted Docker volume
+
+```bash
+rsync -av configs/ [base|prod]/target/ozone-cambodia[-prod]-<version>/distro/configs
 ```
 (replace `<version>` with its value)
 
 ### Excluding inherited files from Ozone Distro:
 
 It is possible to exclude some of the files inherited from the parent Ozone Distro transitive dependencies (thus the OpenMRS Distro Reference Application).
-This can be achieved by providing your exclusion RegEx in the [dependency-excludes.txt](dependency-excludes.txt) file.
+This can be achieved by providing your exclusion path in the main pom.xml, using the Maven Resource plugin `excludes`:
 
 Eg.:
-```
-\.\*openmrs_config.\demo*csv
+```xml
+<directory>${project.build.directory}/ozone</directory>
+  <excludes>
+    <exclude>distro/**/appointment*</exclude>
+    <exclude>distro/**/concepts*demo.csv</exclude>
+    ...
+  <excludes>
 ```
