@@ -79,7 +79,7 @@
 						{
 							"id": "hpvVirus",
 							"hide": {
-								"hideWhenExpression": "isEmpty(hpvTest) || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
@@ -102,7 +102,7 @@
 						{
 							"id": "receivedTreatmentForHpv",
 							"hide": {
-								"hideWhenExpression": "isEmpty(hpvTest) || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType == 'd2a2849a-5b21-452c-8967-b9d31dc82b14'"
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
