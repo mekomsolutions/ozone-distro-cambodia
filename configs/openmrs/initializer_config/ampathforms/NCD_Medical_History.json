@@ -17,6 +17,23 @@
                     "label": "Medical History",
                     "questions": [
                         {
+                            "id": "treatmentForHighBloodPressure",
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "39b08112-d30c-4d14-829e-62e7df844747",
+                                "answers": [
+                                    {
+                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    },
+                                    {
+                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "diagnosedForDM",
                             "questionOptions": {
                                 "rendering": "radio",
