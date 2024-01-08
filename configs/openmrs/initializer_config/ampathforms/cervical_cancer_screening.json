@@ -1302,9 +1302,6 @@
 										"concept": "59e68692-9cb2-4138-81b9-0986e3ce35b2"
 									},
 									{
-										"concept": "cfca3230-c44b-4fce-9ccf-897349230c8a"
-									},
-									{
 										"concept": "b2e08a56-4bcd-4bc9-891b-c2f08cb42258"
 									},
 									{
@@ -1326,7 +1323,7 @@
 								"rows": 5
 							},
 							"hide": {
-								"hideWhenExpression": "arrayContains(['cd4558c3-56d5-47b7-8f16-0c5317877aeb', 'b2e08a56-4bcd-4bc9-891b-c2f08cb42258', 'cfca3230-c44b-4fce-9ccf-897349230c8a','59e68692-9cb2-4138-81b9-0986e3ce35b2', 'ee2741e5-1ae4-4b44-8d56-041c0b257c51', '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], cervixExam)"
+								"hideWhenExpression": "arrayContains(['cd4558c3-56d5-47b7-8f16-0c5317877aeb', 'b2e08a56-4bcd-4bc9-891b-c2f08cb42258', '59e68692-9cb2-4138-81b9-0986e3ce35b2', 'ee2741e5-1ae4-4b44-8d56-041c0b257c51', '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], cervixExam)"
 
 							},
 							"type": "obs",
