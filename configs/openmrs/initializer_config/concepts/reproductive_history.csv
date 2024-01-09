@@ -138,7 +138,7 @@ a617d0d6-85f7-4609-bcc1-dbb0930f4710,,,Fallopian tube,Fallopian tube,ដៃស�
 0a80e4ad-c144-4439-868b-f32b6b63816d,,,Vulva,Vulva,យោនី,យោនី,,,Misc,Text,,,,,,
 57ea911d-dcfa-45a3-96f7-1d768dcc6013,,,Rectum,Rectum,ចុងពោះវៀនធំ,ចុងពោះវៀនធំ,,,Misc,Text,,,,,,
 262082e4-df22-41a7-9827-466ec4c5e5da,,,Bimanual examination,Bimanual examination,ការពិនិត្យលូកទ្វារមាស ស្ទាបដោយដៃទាំងពីរ,ការពិនិត្យលូកទ្វារមាស ស្ទាបដោយដៃទាំងពីរ,,,ConvSet,N/A,,,Cervix;Uterus;Fallopian tube;Vulva;Rectum,,,
-d1fd20ef-6363-4065-98d6-f36b8f1dc27e,,,Breast examination,Breast examination,ការពិនិត្យដោះ,ការពិនិត្យដោះ,,,Misc,Coded,Normal;Mastitis;Abscesses;;Tumor;Suspected breast cancer;Other,,,,,
+d1fd20ef-6363-4065-98d6-f36b8f1dc27e,,,Sign of breast,Sign of breast,សញ្ញាណបញ្ហារបស់ដោះ,សញ្ញាណបញ្ហារបស់ដោះ,,,Misc,Coded,Normal;Mastitis;Abscesses;;Tumor;Suspected breast cancer;Other,,,,,
 f984b718-d674-40c4-9ac4-8d22963e1933,,,Other self-breast examination details,Other self-breast examination details,ភាពពិស្តារអំពីការពិនិត្យដោះដោយខ្លួនឯង,ភាពពិស្តារអំពីការពិនិត្យដោះដោយខ្លួនឯង,,,Misc,Text,,,,,,
 e676ab7f-13b0-4251-84fd-9874c80133b5,,,Breast cancer reason for referral,Breast cancer reason for referral,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,មូលហេតុដែលត្រូវបញ្ជូនអ្នកជំងឺមហារីកដោះ,,,Misc,Coded,Ultrasound;Mammography;Biopsis;Tumor;Other,,,,,
 04140f44-d3b5-41b8-98fd-5a1faf2980cb,,,
