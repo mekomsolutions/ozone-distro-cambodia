@@ -166,7 +166,7 @@
       }
     },    
     "logo": {
-      "src": "ozone_config/frontend/emr_logo_white.svg",
+      "src": "ozone/emr_logo_white.svg",
       "alt": "emr-logo"
     },
     "Display conditions": {
@@ -373,13 +373,13 @@
   },
   "@openmrs/esm-login-app": {
     "logo": {
-      "src": "ozone_config/frontend/emr_logo_color.svg",
+      "src": "ozone/emr_logo_color.svg",
       "alt": "emr-logo"
     }
   },
     "@openmrs/esm-primary-navigation-app": {
       "logo": {
-      "src": "ozone_config/frontend/emr_logo_white.svg",
+      "src": "ozone/emr_logo_white.svg",
       "alt": "emr-logo"
       },
       "extensionSlots": {
