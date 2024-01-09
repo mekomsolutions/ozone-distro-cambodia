@@ -1508,7 +1508,7 @@
 								"rows": 5
 							},
 							"hide": {
-								"hideWhenExpression": "isEmpty(breastCancerReasonForReferral) || breastCancerReasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+								"hideWhenExpression": "arrayContains(['1ab9a6cf-4140-444d-980e-682961de33f5', 'd58bacd2-0541-4e3c-97ac-d79463630da7', '4ad960b5-7168-48ae-a9c1-d0826f3caa8e', 'd4879fb5-5ad5-435f-8881-d0523e706ae5', '4103d60b-ec8b-4197-8290-7cc4132139ca',''], breastCancerReasonForReferral)"
 							},
 							"type": "obs",
 							"validators": []
