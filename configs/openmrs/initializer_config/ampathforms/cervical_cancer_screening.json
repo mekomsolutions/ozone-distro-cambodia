@@ -103,6 +103,19 @@
 							"validators": []
 						},
 						{
+							"id": "otherHpvVirus",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "a225534a-8507-4e78-8510-9cf41e61b0cf",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hpvVirus !== 'a225534a-8507-4e78-8510-9cf41e61b0cf'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
 							"id": "receivedTreatmentForHpv",
 							"hide": {
 								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
