@@ -4,7 +4,7 @@ cd9d1cab-5a14-41e4-bf4b-e9425bc53958,,,Age of first sexual intercourse,Age of fi
 9186111c-9df6-467f-8479-cb950b7fb252,,,Has patient been pregnant before?,Has patient been pregnant before?,តើអ្នកជំងឺមានផ្ទៃពោះពីមុនទេ?,តើអ្នកជំងឺមានផ្ទៃពោះពីមុនទេ?,,,Question,Coded,Yes;No,,,,,
 b5913f28-31f5-4634-8970-316fba5f0eaf,,,Number of pregnancies,Number of pregnancies,ចំនួនដងនៃការមានផ្ទៃពោះ,ចំនួនដងនៃការមានផ្ទៃពោះ,,,Misc,Numeric,,,,,,
 ac127f70-514c-4f42-aa46-a13bb0d26a79,,,Number of deliveries,Number of deliveries,ចំនួនដងនៃការសម្រាលកូន,ចំនួនដងនៃការសម្រាលកូន,,,Misc,Numeric,,,,,,
-e83196b4-793a-40dc-b30f-3a0ddac746bc,,,Number of miscarriages,Number of miscarriages?,ចំនួនដងនៃការរលូតកូន,ចំនួនដងនៃការរលូតកូន,,,Misc,Numeric,,,,,,
+e83196b4-793a-40dc-b30f-3a0ddac746bc,,,Number of miscarriages,Number of miscarriages?,ចំនួនដងនៃការរលូត និងរំលូតកូន,ចំនួនដងនៃការរលូត និងរំលូតកូន,,,Misc,Numeric,,,,,,
 e45b3453-ad10-475c-abc7-4523fce69be6,,,Is patient currently pregnant?,Is patient currently pregnant?,តើអ្នកជំងឺកំពុងមានផ្ទៃពោះទេ?,តើអ្នកជំងឺកំពុងមានផ្ទៃពោះទេ?,,,Question,Coded,Yes;No,,,,,
 40026557-6b03-4f1d-9592-ced1369814ff,,,Weeks of amenorrhea,Weeks of amenorrhea?,សប្តាហ៍នៃការអត់ធ្លាក់ឈាមរដូវ,សប្តាហ៍នៃការអត់ធ្លាក់ឈាមរដូវ,,,Misc,Numeric,,,,Yes,,
 f44fcc48-4666-4270-a69e-d86e745d9a09,,,Menarche,Menarche,ការមានឈាមរដូវលើកដំបូង,ការមានឈាមរដូវលើកដំបូង,,,Question,Numeric,,,,Yes,,
