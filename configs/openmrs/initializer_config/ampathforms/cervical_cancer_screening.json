@@ -1410,7 +1410,7 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
 						{
 							"id": "vulvaText",
 							"questionOptions": {
