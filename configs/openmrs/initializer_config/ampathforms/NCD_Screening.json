@@ -108,6 +108,32 @@
                             "validators": []
                         },
                         {
+                            "id": "diabetesMedicationUse",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty(antidiabeticmedsUse) || antidiabeticmedsUse !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "0fd5e5be-edba-400b-9e8e-b3265b4458e3",
+                                "answers": [
+                                    {
+                                        "concept": "6d659ab9-798f-4091-9be0-90ebf52c18c2"
+                                    },
+                                    {
+                                        "concept": "21b0331b-8832-497d-9421-38cbefc508cc"
+                                    },
+                                    {
+                                        "concept": "4b1d8faf-5b54-4b07-ab96-27efaf68132d"
+                                    },
+                                    {
+                                        "concept": "1c622322-e086-4e0d-a23c-4fecda67d8b2"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "hxHeartDisease",
                             "questionOptions": {
                                 "rendering": "radio",
