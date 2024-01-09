@@ -1517,6 +1517,9 @@
 							"validators": []
 						},
 						{
+
+						},
+						{
 							"id": "breastCancerTreatment",
 							"questionOptions": {
 								"rendering": "multiCheckbox",
@@ -1549,14 +1552,29 @@
 							"validators": []
 						},
 						{
-                            "id": "followUpDate",
-                            "questionOptions": {
-                                "rendering": "date",
-                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
+							"id": "followUpDate",
+							"questionOptions": {
+									"rendering": "radio",
+									"concept": "a44e83c1-e274-4338-b150-e8f8f5f52d18",
+									"answers": [
+										{
+											"concept": "aaf920a1-08a2-49ac-ad72-a876a040ce41"
+										},
+										{
+											"concept": "c2127bca-35e4-4986-8774-4145456f62a7"
+										},	
+										{
+											"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
+										},	
+										{
+											"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
+										}
+									]
+							},
+
+							"type": "obs",
+							"validators": []
+						}
 					]
 				}
 			]
