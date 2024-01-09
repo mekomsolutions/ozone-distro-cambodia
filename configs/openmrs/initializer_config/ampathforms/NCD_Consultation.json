@@ -242,6 +242,18 @@
 					"label": "Lipids",
 					"questions": [
 						{
+                            "id": "totalCholesterol",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"max": "1500",
+								"min": "0",
+								"showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+						{
 							"id": "lowDenseLipoProtein",
 							"questionOptions": {
 								"rendering": "number",
@@ -276,19 +288,7 @@
 							},
 							"type": "obs",
 							"validators": []
-						},
-						{
-                            "id": "totalCholesterol",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "1500",
-								"min": "0",
-								"showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
+						}
 					]
 				},
 				{
@@ -1122,21 +1122,24 @@
                               "type": "obs",
                               "validators": []
                         },
-						{
+												{
                             "id": "otherHealthConditions",
                             "questionOptions": {
                                 "rendering": "multiCheckbox",
                                 "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
                                 "answers": [
-									{
-										"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
-									},
-									{
-                                        "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
+																	{
+																		"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+																	},
+																	{
+																			"concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+																	},
+																	{
+																		"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+																	},
+																	{
+																		"concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+                                  }
                                 ]
                             },
                             "type": "obs",
@@ -1282,6 +1285,9 @@
                                     {
                                         "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
                                     },
+																		{
+																			"concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
+																		},
                                     {
                                         "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
                                     },

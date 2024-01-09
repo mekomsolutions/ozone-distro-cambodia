@@ -111,7 +111,7 @@
                             "id": "hxHeartDisease",
                             "questionOptions": {
                                 "rendering": "radio",
-                                "concept": "7cf6d87c-4a23-467d-83c1-cd5efacd8cd1",
+                                "concept": "4d180dd2-9bc7-4ea8-b64e-5e851c9e5c7d",
                                 "answers": [
                                     {
                                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -128,7 +128,7 @@
                             "id": "hxDiabetesAndHeartDisease",
                             "questionOptions": {
                                 "rendering": "radio",
-                                "concept": "157621ff-16ac-4dd4-bc96-6164d3248807",
+                                "concept": "6bb3f867-70ee-4854-9408-d386c99c5990",
                                 "answers": [
                                     {
                                         "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1041,6 +1041,9 @@
                                         "concept": "4e81d6da-1c68-11ee-be56-0242ac120002"
                                     },
                                     {
+                                        "concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+                                    },
+                                    {
                                         "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
                                     }
                                 ],
@@ -1351,6 +1354,9 @@
                                     },
                                     {
                                         "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
+                                    },
+                                    {
+                                        "concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
                                     },
                                     {
                                         "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"

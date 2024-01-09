@@ -47,6 +47,9 @@
 									},
 									{
 										"concept": "d2a2849a-5b21-452c-8967-b9d31dc82b14"
+									},
+									{
+										"concept": "0c35f74a-5927-4bc6-824c-1f7876f2c932"
 									}
 								]
 							},
@@ -87,6 +90,26 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "cytologyTest",
+							"hide": {
+								"hideWhenExpression": "isEmpty(testType) || testType !== '0c35f74a-5927-4bc6-824c-1f7876f2c932' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'" 
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "0c35f74a-5927-4bc6-824c-1f7876f2c932",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "e70f4eaf-eb87-4db7-8959-8cb2030a0de5"
 									}
 								]
 							},
