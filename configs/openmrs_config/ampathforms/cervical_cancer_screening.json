@@ -1399,19 +1399,13 @@
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-										"concept": "ebd85cb3-32a4-4438-addf-1c7d954cbe3c"
-									},
-									{
-										"concept": "d9ef9bbe-4408-4b9e-9787-a1bde6e87786"
-									},
-									{
-										"concept": "8028de40-18d0-412c-8f7a-68cef81de52b"
-									},
-									{
 										"concept": "8d11e8c4-5031-4755-a8b3-cc7ebf9bd915"
 									},
 									{
-										"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									},
+									{
+										"concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1421,6 +1415,26 @@
 							"type": "obs",
 							"validators": []
 						},
+            {
+              "id": "breastCancerTumor",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "4103d60b-ec8b-4197-8290-7cc4132139ca",
+                "answers": [
+                  {
+                    "concept": "ebd85cb3-32a4-4438-addf-1c7d954cbe3c"
+                  },
+                  {
+                    "concept": "d9ef9bbe-4408-4b9e-9787-a1bde6e87786"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": [],
+              "hide": {
+                "hideWhenExpression": "isEmpty(breastExam) || breastExam !== '4103d60b-ec8b-4197-8290-7cc4132139ca'"
+              }
+            },
 						{
 							"id": "breastExamDetails",
 							"questionOptions": {
@@ -1448,6 +1462,12 @@
 									{
 										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
 									},
+                  {
+                    "concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+                  },
+                  {
+                    "concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
+                  },
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
@@ -1465,7 +1485,7 @@
 								"rows": 5
 							},
 							"hide": {
-								"hideWhenExpression": "arrayContains(['1ab9a6cf-4140-444d-980e-682961de33f5', 'd58bacd2-0541-4e3c-97ac-d79463630da7', '4ad960b5-7168-48ae-a9c1-d0826f3caa8e', ''], breastCancerReasonForReferral)"
+								"hideWhenExpression": "isEmpty(breastCancerReasonForReferral) || breastCancerReasonForReferral !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"type": "obs",
 							"validators": []
