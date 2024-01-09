@@ -1347,7 +1347,7 @@
 						{
 							"id": "cervixText",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789",
 								"answers": [
 									{
@@ -1367,7 +1367,7 @@
 						{
 							"id": "uterusText",
 							"questionOptions": {
-								"rendering": "select",
+								"rendering": "radio",
 								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359",
 								"answers": [
 									{
@@ -1387,12 +1387,30 @@
 						{
 							"id": "fallopianTubeText",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
+								"rendering": "radio",
+								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710",
+								"answers": [
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									},
+									{
+										"concept": "73ea0688-4c68-48b6-8f77-c0a2611f0b01"
+									}
+								]
 							},
+
 							"type": "obs",
 							"validators": []
 						},
+						{
+							"id": "vaginalRectalTest",
+							"questionOptions": {
+								"rendering": "text",
+								"concept": "f2d2e6ef-1277-4dd3-8374-396de070a858"
+							},
+							"type": "obs",
+							"validators": []
+						}
 						{
 							"id": "vulvaText",
 							"questionOptions": {
