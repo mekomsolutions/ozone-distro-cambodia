@@ -96,6 +96,7 @@
                     <exclude>distro/**/ampathforms/*.json</exclude>
                     <exclude>distro/**/ampathformstranslations/*.json</exclude>
                     <exclude>distro/**/*demo.csv</exclude>
+                    <exclude>distro/configs/openmrs/frontend_config/ozone_logo*</exclude>
                   </excludes>
                 </resource>
               </resources>
