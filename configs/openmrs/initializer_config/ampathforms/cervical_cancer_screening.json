@@ -1442,8 +1442,19 @@
 						{
 							"id": "cervixText",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789"
+								"rendering": "radio",
+								"concept": "fc049f25-978b-4938-aaaa-cf80dafdc789",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+                    "concept": "925f547b-7aed-4671-a11f-9f215e0ea64a"
+                  },
+									{
+										"concept": "6c552b86-52b2-434d-ae43-b8174aafb97c"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
@@ -1451,8 +1462,19 @@
 						{
 							"id": "uterusText",
 							"questionOptions": {
-								"rendering": "text",
-								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359"
+								"rendering": "radio",
+								"concept": "ad789cf7-ffb6-447c-9dbe-5b989c8e9359",
+								"answers": [
+									{
+										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+                    "concept": "feda9460-64af-4ca3-84d9-840630b18ce7"
+                  },
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									}
+								]
 							},
 							"type": "obs",
 							"validators": []
@@ -1460,8 +1482,26 @@
 						{
 							"id": "fallopianTubeText",
 							"questionOptions": {
+								"rendering": "radio",
+								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710",
+								"answers": [
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									},
+									{
+										"concept": "73ea0688-4c68-48b6-8f77-c0a2611f0b01"
+									}
+								]
+							},
+
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "vaginalRectalTest",
+							"questionOptions": {
 								"rendering": "text",
-								"concept": "a617d0d6-85f7-4609-bcc1-dbb0930f4710"
+								"concept": "f2d2e6ef-1277-4dd3-8374-396de070a858"
 							},
 							"type": "obs",
 							"validators": []
