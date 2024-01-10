@@ -1336,7 +1336,7 @@
 							"id": "otherPhysicalExam",
 							"questionOptions": {
 								"rendering": "textarea",
-								"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"concept": "697b84b3-0a5e-4d90-9820-f5e359414cac",
 								"rows": 5
 							},
 							"type": "obs",

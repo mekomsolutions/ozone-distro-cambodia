@@ -131,6 +131,7 @@ b88d4e86-5324-4fe7-ac6a-9437f91d4988,,,Vagina examination,Vagina examination,ក
 26033a22-edcc-4608-aa08-d00e0394d473,,,Other vagina examination details,Other vagina examination details,ភាពពិស្តារអំពីការពិនិត្យទ្វារមាស,ភាពពិស្តារអំពីការពិនិត្យទ្វារមាស,,,Misc,Text,,,,,,
 288feadf-eb58-4b0a-9fa7-a57a2aea4dc6,,,Cervix examination,Cervix examination,ការពិនិត្យមាត់ស្បូន/កស្បូន,ការពិនិត្យមាត់ស្បូន/កស្បូន,,,Misc,Coded,Normal;Cervicitis;Naboth cyst;Polyp;Suspected cervical cancer;Other,,,,,
 02d981e3-e0c9-4d86-ab6b-197cd15cd149,,,Other cervix examination details,Other cervix examination details,ភាពពិស្តារផ្សេងទៀតទាក់ទងនឹងការពិនិត្យមាត់ស្បូន/កស្បូន,ភាពពិស្តារផ្សេងទៀតទាក់ទងនឹងការពិនិត្យមាត់ស្បូន/កស្បូន,,,Misc,Text,,,,,,
+697b84b3-0a5e-4d90-9820-f5e359414cac,,,Other physical examinations,Other physical examinations,ការពិនិត្យរាងកាយផ្សេងទៀត។,ការពិនិត្យរាងកាយផ្សេងទៀត។,,,Misc,Text,,,,,,
 05b3b2c5-79fd-48e4-9416-3737c8f74233,TRUE,,Bimanual examination,Bimanual examination,ការពិនិត្យលូកទ្វារមាស ស្ទាបដោយដៃទាំងពីរ,ការពិនិត្យលូកទ្វារមាស ស្ទាបដោយដៃទាំងពីរ,,,Misc,Coded,Cervix;Uterus;Fallopian tube;Vulva;Rectum,,,,,
 c208aa27-9790-4dbf-84eb-2ffc321a1230,,,Self-breast education offered?,Self-breast education offered?,តើការអប់រំអំពី ការពិនិត្យដោះដោយខ្លួនឯង ត្រូវបានគេផ្តល់ឲ្យឬទេ?,តើការអប់រំអំពី ការពិនិត្យដោះដោយខ្លួនឯង ត្រូវបានគេផ្តល់ឲ្យឬទេ?,,,Misc,Coded,Yes;No,,,,,
 fc049f25-978b-4938-aaaa-cf80dafdc789,,,Cervix,Cervix,មាត់ស្បូន/កស្បូន,មាត់ស្បូន/កស្បូន,,,Misc,Text,,,,,,
