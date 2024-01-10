@@ -70,8 +70,93 @@
 									},
 									{
 										"concept": "664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									},
+									{
+										"concept": "8290a6a8-5dd0-4ea1-9e7b-b3df99e01a68"
 									}
 								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "hpvVirus",
+							"hide": {
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "5f27683c-e4ab-4a10-922d-e34bbb560884",
+								"answers": [
+									{
+										"concept": "5d0ee6f6-3815-4dea-ab0d-bd9fa0afad23"
+									},
+									{
+										"concept": "d49b98d3-e1e2-49b8-8f61-45638b17ca21"
+									},
+									{
+										"concept": "a225534a-8507-4e78-8510-9cf41e61b0cf"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "otherHpvVirus",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "a225534a-8507-4e78-8510-9cf41e61b0cf",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hpvVirus !== 'a225534a-8507-4e78-8510-9cf41e61b0cf'"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "receivedTreatmentForHpv",
+							"hide": {
+								"hideWhenExpression": "isEmpty(hpvTest) || testType !== 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "6027bf55-5288-4ace-bc7f-b75d2291f8e0",
+								"answers": [
+									{
+										"concept": "4070623e-945b-499f-8b62-316e699a3cc7"
+									},
+									{
+										"concept": "3c3da620-1b38-4ad7-afe9-5233e52e282b"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "typeOfTreatmentForHpv",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '4070623e-945b-499f-8b62-316e699a3cc7' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType != 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "8094b06a-1a1d-4446-ab28-66d2b8c77f8c",
+								"rows": 5
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "reasonForNotBeingTreatedForHpv",
+							"hide": {
+								"hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || testType != 'd2a2849a-5b21-452c-8967-b9d31dc82b14' || hpvTest != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+							},
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "414ae1f0-701a-4dd3-91d2-4059fa24057c",
+								"rows": 5
 							},
 							"type": "obs",
 							"validators": []
