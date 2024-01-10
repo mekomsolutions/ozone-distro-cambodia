@@ -1220,16 +1220,16 @@
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
+										"concept": "4ef86ec5-e804-476c-8009-90e89cedb6af"
+									},
+									{
 										"concept": "0241c9eb-fef8-4dca-8d5c-dd6bdb48b4f9"
 									},
 									{
-										"concept": "5a8f6920-f3fe-4018-a821-3cff2ed4434b"
+										"concept": "f5a8f6920-f3fe-4018-a821-3cff2ed4434b"
 									},
 									{
 										"concept": "f89ac0c9-298e-43dc-8c13-158b8ec2db63"
-									},
-									{
-										"concept": "4ef86ec5-e804-476c-8009-90e89cedb6af"
 									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -1263,7 +1263,7 @@
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-										"concept": "4a9d6f88-82f4-47d0-a83c-09648bb891e7"
+										"concept": "4ef86ec5-e804-476c-8009-90e89cedb6af"
 									},
 									{
 										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
@@ -1328,6 +1328,16 @@
 							"hide": {
 								"hideWhenExpression": "arrayContains(['cd4558c3-56d5-47b7-8f16-0c5317877aeb', 'b2e08a56-4bcd-4bc9-891b-c2f08cb42258', '59e68692-9cb2-4138-81b9-0986e3ce35b2', 'ee2741e5-1ae4-4b44-8d56-041c0b257c51', '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], cervixExam)"
 
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "otherPhysicalExam",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+								"rows": 5
 							},
 							"type": "obs",
 							"validators": []
