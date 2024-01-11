@@ -31,7 +31,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ### Version 1.5.0
 * Refactored the repository structure.
 * Removed 'Have you been screened for Diabetes and Hypertension?' from NCD Medical History form.
-* Updated Khmer translation for 'markDeceased' in the patient chart page.
+* Updated Khmer translation for 'markDeceased' in the patient chart.
 * Updated Khmer translations for Medical History section in the NCD Screening form.
 * Added 'Currently, is the patient using drug for the treatment of High Blood Pressure?' in NCD Medical history form.
 * Moved 'Total Cholesterol' to the top of 'Low-density lipoprotein' for Medical assessment in NCD Consultation form.
@@ -49,7 +49,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Update 'Physical Examination' in Cervical Cancer Screening form.
 * Added answers to Cervix and Uterus questions in Cervical Cancer Screening form.
 * Updated concepts for TB Symptoms in NCD Consultation form.
-* Added temporature, respiratory rate and spo2 under vitals and biometrics in NCD Consultation form.
+* Added temperature, respiratory rate and spo2 under vitals and biometrics in NCD Consultation form.
 * Renamed 'Sivastatin 20mg' to 'Simvastatin 20mg' in medication of treatment plan in NCD Consultation form.
 * Added drug 'Simvastatin 10mg' for 'Medication of treatment plan' in NCD Consultation form.
 * Updated fields for breast cancer in Cervical Cancer Screening.
