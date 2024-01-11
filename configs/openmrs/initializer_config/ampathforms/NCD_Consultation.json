@@ -151,7 +151,43 @@
 							},
 							"type": "obs",
 							"validators": []
-						}
+						},
+						{
+              "id": "temperature",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "43",
+                "min": "25",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "respiratoryRate",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "showDate": "false",
+                "max": "999",
+                "min": "0"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "spo2",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "100",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
 					]
 				},
 				{
