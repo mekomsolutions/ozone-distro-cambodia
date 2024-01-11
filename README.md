@@ -29,7 +29,34 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.5.0
-* Refactor the repository structure
+* Refactored the repository structure.
+* Removed 'Have you been screened for Diabetes and Hypertension?' from NCD Medical History form.
+* Updated Khmer translation for 'markDeceased' in the patient chart page.
+* Updated Khmer translations for Medical History section in the NCD Screening form.
+* Added 'Currently, is the patient using drug for the treatment of High Blood Pressure?' in NCD Medical history form.
+* Moved 'Total Cholesterol' to the top of 'Low-density lipoprotein' for Medical assessment in NCD Consultation form.
+* Added units to each field in Renal Tests in NCD Consultation form.
+* Added new Cytology test in Cervical Cancer Screening form.
+* Updated and added 'Managing stress' option in treatment recommendation in NCD Consultation form and NCD Screening form.
+* Added pre-diabetes concept under 'Other health condition' in NCD Consultation form.
+* Updated translation for 'Facility'.
+* Updated translation for 'Number of miscarriages' in Cervical Cancer Screening form.
+* Updated 'Method of family planning' in Cervical Cancer Screening form.
+* Updated Cervix Examination in Cervical Cerver Screening form.
+* Updated translation for 'Foot exam problem' in NCD Screening form.
+* Updated translation for 'Visibility of SCJ' in Cervical Cancer Screening form.
+* Added follow up questions to HPV Test in Cervical Cancer Screening form.
+* Update 'Physical Examination' in Cervical Cancer Screening form.
+* Added answers to Cervix and Uterus questions in Cervical Cancer Screening form.
+* Updated concepts for TB Symptoms in NCD Consultation form.
+* Added temporature, respiratory rate and spo2 under vitals and biometrics in NCD Consultation form.
+* Renamed 'Sivastatin 20mg' to 'Simvastatin 20mg' in medication of treatment plan in NCD Consultation form.
+* Added drug 'Simvastatin 10mg' for 'Medication of treatment plan' in NCD Consultation form.
+* Updated fields for breast cancer in Cervical Cancer Screening.
+* Updated translation of STIs in Cervical Cancer Screening form.
+* Replaced Ozone with MOH logo.
+* Added new Blood Sugar levels for 'Medical Assessment' in NCD Consultation form.
+* Added question for Diabetes treatment in NCD Screening form.
 
 ### Version 1.4.1
 * Reverted clinical forms version from '2' to '1'.
