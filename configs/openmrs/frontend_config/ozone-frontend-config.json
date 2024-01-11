@@ -166,8 +166,8 @@
       }
     },    
     "logo": {
-      "src": "ozone/ozone_logo_white.svg",
-      "alt": "ozone-logo"
+      "src": "ozone/emr_logo_small.png",
+      "alt": "emr-logo"
     },
     "Display conditions": {
       "privileges": [
@@ -214,7 +214,7 @@
             },
             "data": [
               {
-                "label": "Facility (អាគារផ្តល់សេវា)",
+                "label": "Facility (ឈ្មោះមូលដ្ឋានសុខាភិបាល)",
                 "concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
                 "color": "blue"
               },
@@ -373,14 +373,14 @@
   },
   "@openmrs/esm-login-app": {
     "logo": {
-      "src": "ozone/ozone_logo_color.svg",
-      "alt": "ozone-logo"
+      "src": "ozone/emr_logo_color.png",
+      "alt": "emr-logo"
     }
   },
     "@openmrs/esm-primary-navigation-app": {
       "logo": {
-      "src": "ozone/ozone_logo_white.svg",
-      "alt": "ozone-logo"
+      "src": "ozone/emr_logo_small.png",
+      "alt": "emr-logo"
       },
       "extensionSlots": {
         "app-menu-slot": {
