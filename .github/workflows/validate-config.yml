@@ -33,4 +33,4 @@ jobs:
               "password": "${{ secrets.MEKOM_NEXUS_PASSWORD }}"
             }]
       - name: Build and validate distro
-        run: mvn --batch-mode clean install -P validator
+        run: mvn --batch-mode clean install  -P prod -P validator
