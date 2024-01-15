@@ -22,7 +22,18 @@ jobs:
         uses: s4u/maven-settings-action@v2.8.0
         with:
           servers: |
-            [{
+            [
+            {
+              "id": "mks-nexus-public",
+              "username": "${{ secrets.MEKOM_NEXUS_USERNAME }}",
+              "password": "${{ secrets.MEKOM_NEXUS_PASSWORD }}"
+            },
+            {
+              "id": "mks-nexus-public-snapshots",
+              "username": "${{ secrets.MEKOM_NEXUS_USERNAME }}",
+              "password": "${{ secrets.MEKOM_NEXUS_PASSWORD }}"
+            },
+            {
               "id": "mks-nexus-private",
               "username": "${{ secrets.MEKOM_NEXUS_USERNAME }}",
               "password": "${{ secrets.MEKOM_NEXUS_PASSWORD }}"
