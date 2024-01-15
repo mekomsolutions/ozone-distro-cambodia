@@ -43,6 +43,23 @@
     </dependency>
   </dependencies>
 
+  <profiles>
+    <profile>
+      <id>validator</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.openmrs.maven.plugins</groupId>
+              <artifactId>openmrs-packager-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <build>
     <plugins>
       <plugin>
