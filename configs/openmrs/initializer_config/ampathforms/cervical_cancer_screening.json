@@ -1598,35 +1598,6 @@
 							"validators": []
 						},
 						{
-							"id": "breastCancerReasonForReferral",
-							"questionOptions": {
-								"concept": "e676ab7f-13b0-4251-84fd-9874c80133b5",
-								"answers": [
-									{
-										"concept": "4ad960b5-7168-48ae-a9c1-d0826f3caa8e"
-									},
-									{
-										"concept": "d58bacd2-0541-4e3c-97ac-d79463630da7"
-									},
-									{
-										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
-									},
-									{
-										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
-									},
-									{
-										"concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
 							"id": "referralSite",
 							"label": "Referral center",
 							"questionOptions": {
@@ -1652,6 +1623,35 @@
 							},
 							"hide": {
 								"hideWhenExpression": "(isEmpty(VIATestResults) || VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (isEmpty(breastExam) || breastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "breastCancerReasonForReferral",
+							"questionOptions": {
+								"concept": "e676ab7f-13b0-4251-84fd-9874c80133b5",
+								"answers": [
+									{
+										"concept": "4ad960b5-7168-48ae-a9c1-d0826f3caa8e"
+									},
+									{
+										"concept": "d58bacd2-0541-4e3c-97ac-d79463630da7"
+									},
+									{
+										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
+									},
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									},
+									{
+										"concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
+								"rendering": "multiCheckbox"
 							},
 							"type": "obs",
 							"validators": []
