@@ -108,6 +108,32 @@
                             "validators": []
                         },
                         {
+                            "id": "diabetesMedicationUse",
+                            "hide": {
+                                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty(antidiabeticmedsUse) || antidiabeticmedsUse !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                            },
+                            "questionOptions": {
+                                "rendering": "radio",
+                                "concept": "00808084-99a8-4ea8-98b4-63cae2a34273",
+                                "answers": [
+                                    {
+                                        "concept": "6d659ab9-798f-4091-9be0-90ebf52c18c2"
+                                    },
+                                    {
+                                        "concept": "8c0fc1cc-f430-4201-968b-db0071b01dfd"
+                                    },
+                                    {
+                                        "concept": "d99b139e-4d8f-462c-9825-a0cdc0824417"
+                                    },
+                                    {
+                                        "concept": "c4c14717-6624-4963-b038-863eb51669a8"
+                                    }
+                                ]
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+                        {
                             "id": "hxHeartDisease",
                             "questionOptions": {
                                 "rendering": "radio",
@@ -628,10 +654,10 @@
                                         "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
                                     },
                                     {
-                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
                                     },
                                     {
-                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
                                     },
                                     {
                                         "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"

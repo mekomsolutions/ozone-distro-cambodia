@@ -3,7 +3,7 @@
   <groupId>com.ozonehis</groupId>
   <artifactId>ozone-cambodia-parent</artifactId>
   <name>Ozone for Cambodia - Parent project</name>
-  <version>1.5.0-SNAPSHOT</version>
+  <version>1.6.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <organization>
