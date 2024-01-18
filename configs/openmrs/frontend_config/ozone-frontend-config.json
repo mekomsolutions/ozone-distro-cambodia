@@ -164,7 +164,7 @@
       }
     },
     "logo": {
-      "src": "ozone/emr_logo_small.png",
+      "src": "ozone/emr_logo_small_not_bold.png",
       "alt": "emr-logo"
     },
     "Display conditions": {
@@ -377,7 +377,7 @@
   },
   "@openmrs/esm-primary-navigation-app": {
     "logo": {
-      "src": "ozone/emr_logo_not_bold.png",
+      "src": "ozone/emr_logo_small_not_bold.png",
       "alt": "emr-logo"
     },
     "extensionSlots": {
