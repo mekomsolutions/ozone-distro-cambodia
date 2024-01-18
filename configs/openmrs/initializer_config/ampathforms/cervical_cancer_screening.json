@@ -184,7 +184,7 @@
 						{
 							"id": "cytologyTest",
 							"hide": {
-								"hideWhenExpression": "isEmpty(testType) || testType !== '0c35f74a-5927-4bc6-824c-1f7876f2c932' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'" 
+								"hideWhenExpression": "isEmpty(testType) || testType !== '0c35f74a-5927-4bc6-824c-1f7876f2c932' || screenedForCc !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"questionOptions": {
 								"rendering": "radio",
@@ -884,7 +884,7 @@
 					"isExpanded": "true",
 					"label": "Cervical Cancer Health Education",
 					"questions": [
-							{
+						{
 							"id": "cervicalCancerEduc",
 							"questionOptions": {
 								"rendering": "radio",
@@ -901,13 +901,13 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "Human Papilloma Virus Test",
 					"questions": [
-							{
+						{
 							"id": "HPVTestResult",
 							"questionOptions": {
 								"rendering": "radio",
@@ -927,13 +927,13 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "VIA Test",
 					"questions": [
-							{
+						{
 							"id": "SCJVisibility",
 							"questionOptions": {
 								"rendering": "radio",
@@ -1005,7 +1005,7 @@
 									"calculateExpression": "appForRetest === '99f47ce5-a000-4c6b-9066-a14133f7f603' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(1, 'years').toDate() : null"
 								}
 							},
-							"hide":{
+							"hide": {
 								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== '99f47ce5-a000-4c6b-9066-a14133f7f603' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
 							},
 							"type": "obs",
@@ -1020,7 +1020,7 @@
 									"calculateExpression": "appForRetest === 'f3f1ecb7-f4cd-4f80-8691-50626b5bcca3' && VIATestResults === '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' ? moment().add(3, 'years').toDate() : null"
 								}
 							},
-							"hide":{
+							"hide": {
 								"hideWhenExpression": "isEmpty(appForRetest) || appForRetest !== 'f3f1ecb7-f4cd-4f80-8691-50626b5bcca3' || VIATestResults !== '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' "
 							},
 							"type": "obs",
@@ -1066,13 +1066,13 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "Colposcopy",
 					"questions": [
-							{
+						{
 							"id": "colposcopy",
 							"questionOptions": {
 								"rendering": "radio",
@@ -1092,13 +1092,13 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "Cervical Biopsy",
 					"questions": [
-							{
+						{
 							"id": "cervicalBiopsy",
 							"questionOptions": {
 								"rendering": "radio",
@@ -1118,9 +1118,9 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "Pap Smear",
 					"questions": [
@@ -1164,158 +1164,125 @@
 							"type": "obs",
 							"validators": []
 						}
-						]
-					},
-					{
-						"isExpanded": "true",
-						"label": "Referral",
-						"questions": [
-							{
-								"id": "referralSite",
-								"label": "Referral center",
-								"questionOptions": {
-									"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
-									"answers": [
-										{
-											"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
-										},
-										{
-											"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
-										},
-										{
-											"concept": "75768295-02df-47ae-965b-d7e84040194b"
-										},
-										{
-											"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
-										},
-										{
-											"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
-										}
-									],
-									"rendering": "single-select"
-								},
-								"hide": {
-									"hideWhenExpression": "(isEmpty(VIATestResults) || VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (isEmpty(breastExam) || breastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
-								},
-								"type": "obs",
-								"validators": []
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Referral",
+					"questions": [
+						{
+							"id": "reasonForReferral",
+							"questionOptions": {
+								"concept": "c158e3b2-edf9-4e0e-9e95-d36de1a51527",
+								"answers": [
+									{
+										"concept": "fc3909e3-9ddb-46e3-b4f7-6905732d977b"
+									},
+									{
+										"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
+								"rendering": "checkbox"
 							},
-							{
-								"id": "reasonForReferral",
-								"questionOptions": {
-									"concept": "c158e3b2-edf9-4e0e-9e95-d36de1a51527",
-									"answers": [
-										{
-											"concept": "fc3909e3-9ddb-46e3-b4f7-6905732d977b"
-										},
-										{
-											"concept": "7d469a03-a56b-4c51-a421-0e5787556630"
-										},
-										{
-											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-										}
-									],
-									"rendering": "checkbox"
-								},
-								"type": "obs",
-								"validators": []
-							},
-							{
-								"id": "reasonForReferralText",
-								"questionOptions": {
-									"rendering": "textarea",
-									"concept": "12f61ec2-e0b1-420d-be7b-43a95bce6e4a",
-									"rows": 5
-								},
-								"hide": {
-									"hideWhenExpression": "arrayContains(['fc3909e3-9ddb-46e3-b4f7-6905732d977b','7d469a03-a56b-4c51-a421-0e5787556630',''], reasonForReferral)"
-								},
-								"type": "obs",
-								"validators": []
-							}
-								
-							]
+							"type": "obs",
+							"validators": []
 						},
 						{
-						"isExpanded": "true",
-						"label": "Treatment",
-						"questions": [
-	
-							{
-								"id": "caTreatmentOption",
-								"questionOptions": {
-									"concept": "1ca7d712-f7d7-4e09-8184-048bc4173902",
-									"answers": [
-										
-										{
-											"concept": "d534da3e-7b59-40ca-a415-d2f5eb94f4a3"
-										},
-										{
-											"concept": "250edbb0-f7bc-4f69-84c2-1a74e75ae73b"
-										},
-										{
-											"concept": "132fffbd-7261-4b71-a34d-20508544c56b"
-										},
-										{
-											"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
-										},
-										{
-											"concept": "fcfda85e-f415-432f-a548-cc5ef7bcca42"
-										},
-										{
-											"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-										}
-									],
-									"rendering": "checkbox"
-								},
-								"type": "obs",
-								"validators": []
+							"id": "reasonForReferralText",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "12f61ec2-e0b1-420d-be7b-43a95bce6e4a",
+								"rows": 5
 							},
-							{
-								"id": "caTreatmentOptionText",
-								"questionOptions": {
-									"rendering": "textarea",
-									"concept": "e6d18ff5-9d52-4e47-b2b2-762d9aa30604",
-									"rows": 5
-								},
-								"hide": {
-									"hideWhenExpression": "arrayContains(['d534da3e-7b59-40ca-a415-d2f5eb94f4a3', '250edbb0-f7bc-4f69-84c2-1a74e75ae73b','132fffbd-7261-4b71-a34d-20508544c56b','e7b6313b-9cf9-4783-9ba6-719a2e7c8aab','fcfda85e-f415-432f-a548-cc5ef7bcca42', ''], caTreatmentOption)"
-								},
-								"type": "obs",
-								"validators": []
-							}	
-							]
+							"hide": {
+								"hideWhenExpression": "arrayContains(['fc3909e3-9ddb-46e3-b4f7-6905732d977b','7d469a03-a56b-4c51-a421-0e5787556630',''], reasonForReferral)"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Treatment",
+					"questions": [
+						{
+							"id": "caTreatmentOption",
+							"questionOptions": {
+								"concept": "1ca7d712-f7d7-4e09-8184-048bc4173902",
+								"answers": [
+									{
+										"concept": "d534da3e-7b59-40ca-a415-d2f5eb94f4a3"
+									},
+									{
+										"concept": "250edbb0-f7bc-4f69-84c2-1a74e75ae73b"
+									},
+									{
+										"concept": "132fffbd-7261-4b71-a34d-20508544c56b"
+									},
+									{
+										"concept": "e7b6313b-9cf9-4783-9ba6-719a2e7c8aab"
+									},
+									{
+										"concept": "fcfda85e-f415-432f-a548-cc5ef7bcca42"
+									},
+									{
+										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+									}
+								],
+								"rendering": "checkbox"
+							},
+							"type": "obs",
+							"validators": []
 						},
 						{
-						"isExpanded": "true",
-						"label": "Appointment",
-						"questions": [
-							{
-								"id": "followUp",
-								"questionOptions": {
-									"rendering": "radio",
-									"concept": "f6a3e29c-9ecc-4583-9768-359c77529635",
-									"answers": [
-										{
-											"concept": "aaf920a1-08a2-49ac-ad72-a876a040ce41"
-										},
-										{
-											"concept": "c2127bca-35e4-4986-8774-4145456f62a7"
-										},
-										{
-											"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
-										},
-										{
-											"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
-										}
-									]
-								},
-								"type": "obs",
-								"validators": []
-							}	
-							]
-						},
-					{
+							"id": "caTreatmentOptionText",
+							"questionOptions": {
+								"rendering": "textarea",
+								"concept": "e6d18ff5-9d52-4e47-b2b2-762d9aa30604",
+								"rows": 5
+							},
+							"hide": {
+								"hideWhenExpression": "arrayContains(['d534da3e-7b59-40ca-a415-d2f5eb94f4a3', '250edbb0-f7bc-4f69-84c2-1a74e75ae73b','132fffbd-7261-4b71-a34d-20508544c56b','e7b6313b-9cf9-4783-9ba6-719a2e7c8aab','fcfda85e-f415-432f-a548-cc5ef7bcca42', ''], caTreatmentOption)"
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
+					"isExpanded": "true",
+					"label": "Appointment",
+					"questions": [
+						{
+							"id": "followUp",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "f6a3e29c-9ecc-4583-9768-359c77529635",
+								"answers": [
+									{
+										"concept": "aaf920a1-08a2-49ac-ad72-a876a040ce41"
+									},
+									{
+										"concept": "c2127bca-35e4-4986-8774-4145456f62a7"
+									},
+									{
+										"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
+									},
+									{
+										"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": []
+						}
+					]
+				},
+				{
 					"isExpanded": "true",
 					"label": "Physical Examination",
 					"questions": [
@@ -1357,7 +1324,6 @@
 							},
 							"hide": {
 								"hideWhenExpression": "arrayContains(['4ef86ec5-e804-476c-8009-90e89cedb6af', 'f89ac0c9-298e-43dc-8c13-158b8ec2db63', 'bc755971-834f-4db0-97c6-92c94e0156e9','0241c9eb-fef8-4dca-8d5c-dd6bdb48b4f9', '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], vulvaExam)"
-
 							},
 							"type": "obs",
 							"validators": []
@@ -1436,7 +1402,6 @@
 							},
 							"hide": {
 								"hideWhenExpression": "arrayContains(['cd4558c3-56d5-47b7-8f16-0c5317877aeb', 'b2e08a56-4bcd-4bc9-891b-c2f08cb42258', '59e68692-9cb2-4138-81b9-0986e3ce35b2', 'ee2741e5-1ae4-4b44-8d56-041c0b257c51', '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], cervixExam)"
-
 							},
 							"type": "obs",
 							"validators": []
@@ -1473,8 +1438,8 @@
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-                    "concept": "925f547b-7aed-4671-a11f-9f215e0ea64a"
-                  },
+										"concept": "925f547b-7aed-4671-a11f-9f215e0ea64a"
+									},
 									{
 										"concept": "6c552b86-52b2-434d-ae43-b8174aafb97c"
 									}
@@ -1493,8 +1458,8 @@
 										"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									},
 									{
-                    "concept": "feda9460-64af-4ca3-84d9-840630b18ce7"
-                  },
+										"concept": "feda9460-64af-4ca3-84d9-840630b18ce7"
+									},
 									{
 										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
 									}
@@ -1517,7 +1482,6 @@
 									}
 								]
 							},
-
 							"type": "obs",
 							"validators": []
 						},
@@ -1600,26 +1564,26 @@
 							"type": "obs",
 							"validators": []
 						},
-            {
-              "id": "breastCancerTumor",
-              "questionOptions": {
-                "rendering": "radio",
-                "concept": "4103d60b-ec8b-4197-8290-7cc4132139ca",
-                "answers": [
-                  {
-                    "concept": "ebd85cb3-32a4-4438-addf-1c7d954cbe3c"
-                  },
-                  {
-                    "concept": "d9ef9bbe-4408-4b9e-9787-a1bde6e87786"
-                  }
-                ]
-              },
-              "type": "obs",
-              "validators": [],
-              "hide": {
-                "hideWhenExpression": "isEmpty(breastExam) || breastExam !== '4103d60b-ec8b-4197-8290-7cc4132139ca'"
-              }
-            },
+						{
+							"id": "breastCancerTumor",
+							"questionOptions": {
+								"rendering": "radio",
+								"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca",
+								"answers": [
+									{
+										"concept": "ebd85cb3-32a4-4438-addf-1c7d954cbe3c"
+									},
+									{
+										"concept": "d9ef9bbe-4408-4b9e-9787-a1bde6e87786"
+									}
+								]
+							},
+							"type": "obs",
+							"validators": [],
+							"hide": {
+								"hideWhenExpression": "isEmpty(breastExam) || breastExam !== '4103d60b-ec8b-4197-8290-7cc4132139ca'"
+							}
+						},
 						{
 							"id": "breastExamDetails",
 							"questionOptions": {
@@ -1647,17 +1611,47 @@
 									{
 										"concept": "1ab9a6cf-4140-444d-980e-682961de33f5"
 									},
-                  {
-                    "concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
-                  },
-                  {
-                    "concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
-                  },
+									{
+										"concept": "4103d60b-ec8b-4197-8290-7cc4132139ca"
+									},
+									{
+										"concept": "d4879fb5-5ad5-435f-8881-d0523e706ae5"
+									},
 									{
 										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 									}
 								],
 								"rendering": "multiCheckbox"
+							},
+							"type": "obs",
+							"validators": []
+						},
+						{
+							"id": "referralSite",
+							"label": "Referral center",
+							"questionOptions": {
+								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
+								"answers": [
+									{
+										"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
+									},
+									{
+										"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
+									},
+									{
+										"concept": "75768295-02df-47ae-965b-d7e84040194b"
+									},
+									{
+										"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
+									},
+									{
+										"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
+									}
+								],
+								"rendering": "single-select"
+							},
+							"hide": {
+								"hideWhenExpression": "(isEmpty(VIATestResults) || VIATestResults == '664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') && (isEmpty(breastExam) || breastExam == '1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')"
 							},
 							"type": "obs",
 							"validators": []
@@ -1675,9 +1669,7 @@
 							"type": "obs",
 							"validators": []
 						},
-						{
-
-						},
+						{},
 						{
 							"id": "breastCancerTreatment",
 							"questionOptions": {
@@ -1713,24 +1705,23 @@
 						{
 							"id": "followUpDate",
 							"questionOptions": {
-									"rendering": "radio",
-									"concept": "a44e83c1-e274-4338-b150-e8f8f5f52d18",
-									"answers": [
-										{
-											"concept": "aaf920a1-08a2-49ac-ad72-a876a040ce41"
-										},
-										{
-											"concept": "c2127bca-35e4-4986-8774-4145456f62a7"
-										},	
-										{
-											"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
-										},	
-										{
-											"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
-										}
-									]
+								"rendering": "radio",
+								"concept": "a44e83c1-e274-4338-b150-e8f8f5f52d18",
+								"answers": [
+									{
+										"concept": "aaf920a1-08a2-49ac-ad72-a876a040ce41"
+									},
+									{
+										"concept": "c2127bca-35e4-4986-8774-4145456f62a7"
+									},
+									{
+										"concept": "99f47ce5-a000-4c6b-9066-a14133f7f603"
+									},
+									{
+										"concept": "f3f1ecb7-f4cd-4f80-8691-50626b5bcca3"
+									}
+								]
 							},
-
 							"type": "obs",
 							"validators": []
 						}
