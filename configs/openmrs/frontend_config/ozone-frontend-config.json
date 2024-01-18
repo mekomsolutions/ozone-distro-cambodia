@@ -5,8 +5,7 @@
       "contact",
       "additionalInformation"
     ],
-    "fieldConfigurations":
-    {
+    "fieldConfigurations": {
       "address": {
         "useAddressHierarchy": {
           "enabled": true,
@@ -122,7 +121,6 @@
     ],
     "Translation overrides": {
       "en": {
-
         "Commune": "Commune",
         "Village": "Village",
         "Country": "Country",
@@ -164,7 +162,7 @@
         "patientBreadcrumb": "អ្នកជំងឺ",
         "markDeceased": "គូសលើអ្នកជាស្លាប់"
       }
-    },    
+    },
     "logo": {
       "src": "ozone/emr_logo_small.png",
       "alt": "emr-logo"
@@ -231,7 +229,7 @@
         }
       }
     },
-    "disableChangingVisitLocation": true 
+    "disableChangingVisitLocation": true
   },
   "@openmrs/esm-patient-biometrics-app": {
     "Display conditions": {
@@ -377,79 +375,79 @@
       "alt": "emr-logo"
     }
   },
-    "@openmrs/esm-primary-navigation-app": {
-      "logo": {
-      "src": "ozone/emr_logo_small.png",
+  "@openmrs/esm-primary-navigation-app": {
+    "logo": {
+      "src": "ozone/emr_logo_not_bold.png",
       "alt": "emr-logo"
-      },
-      "extensionSlots": {
-        "app-menu-slot": {
-          "configure": {
-            "appointments-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Manage Appointments"
-                ]
-              }
-            },
-            "form-builder-app-menu-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Build Forms"
-                ]
-              }
-            },
-            "dispensing-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Manage Dispensing"
-                ]
-              }
-            },
-            "forms-app-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Access Fast Data Entry"
-                ]
-              }
-            },
-            "patient-list-linkq": {
-              "Display conditions": {
-                "privileges": [
-                  "Manage Patient Lists"
-                ]
-              }
-            },
-            "offline-tools-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Access Offline Tools"
-                ]
-              }
-            },
-            "cohort-builder-app-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Manage Cohorts"
-                ]
-              }
-            },
-            "system-administration-link": {
-              "Display conditions": {
-                "privileges": [
-                  "View Administration Functions"
-                ]
-              }
-            },
-            "outpatient-link": {
-              "Display conditions": {
-                "privileges": [
-                  "Access Outpatient App"
-                ]
-              }
+    },
+    "extensionSlots": {
+      "app-menu-slot": {
+        "configure": {
+          "appointments-link": {
+            "Display conditions": {
+              "privileges": [
+                "Manage Appointments"
+              ]
+            }
+          },
+          "form-builder-app-menu-link": {
+            "Display conditions": {
+              "privileges": [
+                "Build Forms"
+              ]
+            }
+          },
+          "dispensing-link": {
+            "Display conditions": {
+              "privileges": [
+                "Manage Dispensing"
+              ]
+            }
+          },
+          "forms-app-link": {
+            "Display conditions": {
+              "privileges": [
+                "Access Fast Data Entry"
+              ]
+            }
+          },
+          "patient-list-linkq": {
+            "Display conditions": {
+              "privileges": [
+                "Manage Patient Lists"
+              ]
+            }
+          },
+          "offline-tools-link": {
+            "Display conditions": {
+              "privileges": [
+                "Access Offline Tools"
+              ]
+            }
+          },
+          "cohort-builder-app-link": {
+            "Display conditions": {
+              "privileges": [
+                "Manage Cohorts"
+              ]
+            }
+          },
+          "system-administration-link": {
+            "Display conditions": {
+              "privileges": [
+                "View Administration Functions"
+              ]
+            }
+          },
+          "outpatient-link": {
+            "Display conditions": {
+              "privileges": [
+                "Access Outpatient App"
+              ]
             }
           }
         }
       }
+    }
   }
 }
