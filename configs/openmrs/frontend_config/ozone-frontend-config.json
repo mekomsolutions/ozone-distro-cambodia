@@ -343,6 +343,11 @@
     }
   },
   "@openmrs/esm-home-app": {
+    "Translation overrides": {
+      "km": {
+        "Home": "ទំព័រដើម"
+      }
+    },
     "extensionSlots": {
       "homepage-dashboard-slot": {
         "configure": {
