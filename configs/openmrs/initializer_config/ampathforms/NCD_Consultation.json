@@ -243,18 +243,25 @@
 							"validators": []
 						},
 						{
-                            "id": "OGTTTest",
+                            "id": "OGTT1Hour",
                             "questionOptions": {
-                                "rendering": "radio",
+                                "rendering": "number",
                                 "concept": "3c884cd2-4aba-41e0-a535-e3e7bc70b5ee",
-								"answers": [
-									{
-										"concept": "871f987d-8c3c-40a0-a63c-6ca74353fe62"
-									},
-									{
-										"concept": "47e89894-51ea-4d47-a6a3-958c30897448"
-									}
-								]
+                                "max": "900",
+                                "min": "0",
+                                "showDate": "false"
+                            },
+                            "type": "obs",
+                            "validators": []
+                        },
+						{
+                            "id": "OGTT2Hours",
+                            "questionOptions": {
+                                "rendering": "number",
+                                "concept": "1941f03b-9a5e-4285-b66a-c10880a3362d",
+                                "max": "900",
+                                "min": "0",
+                                "showDate": "false"
                             },
                             "type": "obs",
                             "validators": []
