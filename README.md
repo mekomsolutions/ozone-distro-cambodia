@@ -29,10 +29,10 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ## Release Notes
 
 ### Version 1.6.0
-* Added 'Have you been screened for Diabetes and Hypertension?' from NCD Medical History form.
+* Added 'Have you been screened for Diabetes and Hypertension?' to NCD Medical History form.
 * Updated Khmer translation for 'mark patient deceased' in the patient chart.
-* Added OGTT tests for 1hour and 2hours in NCD Consultation form.
-* Improved the MOH logo resolution.
+* Added OGTT tests for 1hour and 2hours in NCD Consultation form as numeric fields.
+* Improved the MOH logo resolution in the patient chart and primary navigation.
 * Updated 'Dont know' option to 'Test not done' in Cervical Cancer Screening form.
 * Updated Khmer translations for STIs in Cervical Cancer Screening form.
 * Moved 'Referral center' to the top of 'Breast cancer reason for referral' in Cervical Cancer Screening form.
