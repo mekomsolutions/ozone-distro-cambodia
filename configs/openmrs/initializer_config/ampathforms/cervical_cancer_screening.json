@@ -638,9 +638,6 @@
 												"concept": "3cd4eca2-26fe-102b-80cb-0017a47871b2"
 											},
 											{
-												"concept": "3cce906e-26fe-102b-80cb-0017a47871b2"
-											},
-											{
 												"concept": "cbde94b4-214a-4c25-a8e3-c39f787064f8"
 											},
 											{
@@ -658,12 +655,12 @@
 											{
 												"concept": "1cdb4ac0-7258-4bd6-8109-fe1f9f81e5be"
 											},
-											{
-												"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "8290a6a8-5dd0-4ea1-9e7b-b3df99e01a68"
-											}
+											 {
+                        "concept": "0da87934-b12f-4f68-8160-9e0d4f3dd33b"
+                      },
+                      {
+                        "concept": "229a30d0-2c57-4e57-be1f-2e93198a4882"
+                      }
 										]
 									}
 								},
@@ -675,7 +672,7 @@
 										"rows": 5
 									},
 									"hide": {
-										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', '3cce906e-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], historyOfSTIsOptions)"
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], historyOfSTIsOptions)"
 									},
 									"type": "obs",
 									"validators": []
@@ -724,9 +721,6 @@
 												"concept": "3cd4eca2-26fe-102b-80cb-0017a47871b2"
 											},
 											{
-												"concept": "3cce906e-26fe-102b-80cb-0017a47871b2"
-											},
-											{
 												"concept": "cbde94b4-214a-4c25-a8e3-c39f787064f8"
 											},
 											{
@@ -744,12 +738,12 @@
 											{
 												"concept": "1cdb4ac0-7258-4bd6-8109-fe1f9f81e5be"
 											},
-											{
-												"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "8290a6a8-5dd0-4ea1-9e7b-b3df99e01a68"
-											}
+										  {
+                        "concept": "0da87934-b12f-4f68-8160-9e0d4f3dd33b"
+                      },
+                      {
+                        "concept": "229a30d0-2c57-4e57-be1f-2e93198a4882"
+                      }
 										]
 									}
 								},
@@ -761,7 +755,7 @@
 										"rows": 5
 									},
 									"hide": {
-										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', '3cce906e-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], currentSTIsOptions)"
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2','cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], currentSTIsOptions)"
 									},
 									"type": "obs",
 									"validators": []
