@@ -672,7 +672,7 @@
 										"rows": 5
 									},
 									"hide": {
-										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2', 'cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], historyOfSTIsOptions)"
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2','3cd4eca2-26fe-102b-80cb-0017a47871b2','cbde94b4-214a-4c25-a8e3-c39f787064f8','3cd80b44-26fe-102b-80cb-0017a47871b2','60aedd3f-73af-4730-9370-2d95ae1f8d89','69b7dc75-10e6-45a4-bfaf-59894494ad44','bc755971-834f-4db0-97c6-92c94e0156e9','1cdb4ac0-7258-4bd6-8109-fe1f9f81e5be','229a30d0-2c57-4e57-be1f-2e93198a4882',''], historyOfSTIsOptions)"
 									},
 									"type": "obs",
 									"validators": []
@@ -755,7 +755,7 @@
 										"rows": 5
 									},
 									"hide": {
-										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2', '3cd4eca2-26fe-102b-80cb-0017a47871b2','cbde94b4-214a-4c25-a8e3-c39f787064f8', '3cd80b44-26fe-102b-80cb-0017a47871b2', '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], currentSTIsOptions)"
+										"hideWhenExpression": "arrayContains(['3cceae50-26fe-102b-80cb-0017a47871b2','3cd4eca2-26fe-102b-80cb-0017a47871b2','cbde94b4-214a-4c25-a8e3-c39f787064f8','3cd80b44-26fe-102b-80cb-0017a47871b2','60aedd3f-73af-4730-9370-2d95ae1f8d89','69b7dc75-10e6-45a4-bfaf-59894494ad44','bc755971-834f-4db0-97c6-92c94e0156e9','1cdb4ac0-7258-4bd6-8109-fe1f9f81e5be','229a30d0-2c57-4e57-be1f-2e93198a4882',''], currentSTIsOptions)"
 									},
 									"type": "obs",
 									"validators": []
