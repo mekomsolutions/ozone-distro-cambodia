@@ -36,6 +36,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 * Updated 'Dont know' option to 'Test not done' in Cervical Cancer Screening form.
 * Updated Khmer translations for STIs in Cervical Cancer Screening form.
 * Moved 'Referral center' to the top of 'Breast cancer reason for referral' in Cervical Cancer Screening form.
+* Added 'Other STIs', 'Don't know STIs' options and removed 'Candidiosis' option under Sexually transmitted infections in Cervical Cancer Screening form.
 * Fixed Ozone to version '1.0.0-alpha.9'.
 * Updated the translation for 'Home' on the home page.
 
