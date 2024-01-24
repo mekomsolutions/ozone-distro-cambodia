@@ -1,12 +1,12 @@
 {
-    "uuid": "fd2cb7fc-d993-4572-8ff2-2618a0547141",
-    "form": "NCD Medical History",
-    "form_name_translation": "ប្រវត្តជំងឺ",
-    "description": "Khmer translations for the NCD Medical History form",
-    "language": "km",
-    "translations": {
-      "General": "ទូទៅ",
-      "Medical History": "ប្រវត្តិជំងឺ",
-      "Life Style": "របៀបរស់នៅ"
-    }
+  "uuid": "fd2cb7fc-d993-4572-8ff2-2618a0547141",
+  "form": "NCD Medical History",
+  "form_name_translation": "ប្រវត្តជំងឺ",
+  "description": "Khmer translations for the NCD Medical History form",
+  "language": "km",
+  "translations": {
+    "General": "ទូទៅ",
+    "Medical History": "ប្រវត្តិជំងឺ",
+    "Life Style": "របៀបរស់នៅ"
+  }
 }

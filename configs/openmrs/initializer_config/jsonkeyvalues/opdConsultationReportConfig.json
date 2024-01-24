@@ -1,6 +1,6 @@
 {
-    "report.opdconsult.active" : "true",
-    "report.opdconsult.diagnosisQuestion.concept" : "45583478-f703-46e3-b63a-54b0a95c25f0",
-    "report.opdconsult.diagnosesList.concept" : "058c31c8-cade-403b-a93c-9c45ab7171ff",
-    "report.opdconsult.referredTo.concept" : "fd588078-9286-46ea-b133-36aab1b025ec"
+  "report.opdconsult.active": "true",
+  "report.opdconsult.diagnosisQuestion.concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+  "report.opdconsult.diagnosesList.concept": "058c31c8-cade-403b-a93c-9c45ab7171ff",
+  "report.opdconsult.referredTo.concept": "fd588078-9286-46ea-b133-36aab1b025ec"
 }

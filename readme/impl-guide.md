@@ -10,11 +10,13 @@ $ cd ozone-cambodia
 ## Quick start
 
 Build
+
 ```bash
 ./scripts/mvnw clean package [-Pprod]
 ```
 
 Run
+
 ```bash
 source [base|prod]/target/go-to-scripts-dir.sh
 ./start-demo.sh
@@ -25,24 +27,28 @@ Tip: After running the `source [base|prod]/target/go-to-scripts-dir.sh` command 
 ### Working on configurations:
 
 If needed to work on the distro configurations and see the results, you have several options:
+
 - (1) Turn down the whole project with its volumes, build again and run.
 - (2) Replace files in the mounted Docker volume (all files or only individual files)
 
 #### Option 1. Turn down the whole project and start afresh
 
 Turn down the project (including volumes)
+
 ```bash
 source base/target/go-to-scripts-dir.sh
 ./destroy-demo.sh
 ```
 
 Re-build:
+
 ```bash
 popd # Return to the root directory
 ./scripts/mvnw clean package [-Pprod]
 ```
 
 Then start afresh:
+
 ```bash
 source [base|prod]/target/go-to-scripts-dir.sh
 ./start-demo.sh
@@ -53,6 +59,7 @@ source [base|prod]/target/go-to-scripts-dir.sh
 ```bash
 rsync -av configs/ [base|prod]/target/ozone-cambodia[-prod]-<version>/distro/configs
 ```
+
 (replace `<version>` with its value)
 
 ### Excluding inherited files from Ozone Distro:
@@ -61,6 +68,7 @@ It is possible to exclude some of the files inherited from the parent Ozone Dist
 This can be achieved by providing your exclusion path in the main pom.xml, using the Maven Resource plugin `excludes`:
 
 Eg.:
+
 ```xml
 <directory>${project.build.directory}/ozone</directory>
   <excludes>
