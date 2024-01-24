@@ -1,1433 +1,1432 @@
 {
-    "name": "Health Center - NCD Screening",
-    "description": "Health Center - NCD Screening",
-    "version": "1",
-    "published": true,
-    "retired": false,
-    "encounter": "Health Center - NCD Screening",
-    "processor": "EncounterFormProcessor",
-    "uuid": "xxxx",
-    "referencedForms": [],
-    "pages": [
+  "name": "Health Center - NCD Screening",
+  "description": "Health Center - NCD Screening",
+  "version": "1",
+  "published": true,
+  "retired": false,
+  "encounter": "Health Center - NCD Screening",
+  "processor": "EncounterFormProcessor",
+  "uuid": "xxxx",
+  "referencedForms": [],
+  "pages": [
+    {
+      "label": "Medical History",
+      "sections": [
         {
-            "label": "Medical History",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Medical History",
-                    "questions": [
-                        {
-                            "id": "screenedForDM",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "e43b443b-70de-48f3-8d6c-081337621982",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "knownHypertensive",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "f8fd0782-a9fc-4c02-b556-72740853bc18",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "knownHypertensivemedsUse",
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(knownHypertensive) || knownHypertensive !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "c311aec0-dd3d-4c84-a4ab-601fab82ca37",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "knownDiabetic",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "b8edfbde-5f94-421e-8b25-e86afe35d0f7",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "antidiabeticmedsUse",
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "3c803217-425c-4d7c-a2cb-fc2256ad7ca2",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "diabetesMedicationUse",
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty(antidiabeticmedsUse) || antidiabeticmedsUse !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "00808084-99a8-4ea8-98b4-63cae2a34273",
-                                "answers": [
-                                    {
-                                        "concept": "6d659ab9-798f-4091-9be0-90ebf52c18c2"
-                                    },
-                                    {
-                                        "concept": "8c0fc1cc-f430-4201-968b-db0071b01dfd"
-                                    },
-                                    {
-                                        "concept": "d99b139e-4d8f-462c-9825-a0cdc0824417"
-                                    },
-                                    {
-                                        "concept": "c4c14717-6624-4963-b038-863eb51669a8"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "hxHeartDisease",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "4d180dd2-9bc7-4ea8-b64e-5e851c9e5c7d",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "hxDiabetesAndHeartDisease",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "6bb3f867-70ee-4854-9408-d386c99c5990",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "previousMedicalComplications",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "a9e26e21-126f-45ed-98f2-f4fb423bc634",
-                                "answers": [
-                                    {
-                                        "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
-                                    },
-                                    {
-                                        "concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
-                                    },
-                                    {
-                                        "concept": "63ab6543-78c9-4079-887a-8498a51bb98c"
-                                    },
-                                    {
-                                        "concept": "fcf078a5-a839-49d7-99cf-5427b0fbaad3"
-                                    },
-                                    {
-                                        "concept": "c64409ef-18fb-4e33-a187-e127243cb30c"
-                                    },
-                                    {
-                                        "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "otherHealthComplications",
-                            "questionOptions": {
-                                "rendering": "textarea",
-                                "concept": "868e9ebe-86fd-467a-b7a8-345437f340af",
-                                "rows": 5
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "presenceOfAllergies",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "c67a6c5e-2559-46a8-b9da-2cb38bfff8a3",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "allergiesDetails",
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(presenceOfAllergies) || presenceOfAllergies !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "questionOptions": {
-                                "rendering": "textarea",
-                                "concept": "b082eb80-3495-4af8-a970-0ae0af6ce184",
-                                "rows": 5
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "label": "Investigations",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Vitals and Biometrics",
-                    "questions": [
-                        {
-                            "id": "Ht",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "272",
-                                "min": "10",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "Wt",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "250",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "waistCircumference",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
-                                "max": "200",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "BMI",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "a89c60c0-1350-11df-a1f1-0026b9348838",
-                                "max": "",
-                                "min": "0",
-                                "showDate": "false",
-                                "calculate": {
-                                    "calculateExpression": "calcBMI(Ht,Wt)"
-                                  }
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "systole",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "250",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "diastole",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "150",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "pulse",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "230",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "temp",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "43",
-                                "min": "25",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Blood Sugar Levels",
-                    "questions": [
-                        {
-                            "id": "FBS",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "RBS",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "HbA1c",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
-                                "max": "20",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "OGTT",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Urine Tests",
-                    "questions": [
-                        {
-                            "id": "albumin",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "c423325e-be95-42e2-ae38-b940c2586327",
-                                "max": "100",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "ketones",
-                            "questionOptions": {
-                                "rendering": "select",
-                                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
-                                "answers": [
-									{
-										"concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-                                    {
-										"concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Lipids",
-                    "questions": [
-                        {
-                            "id": "totalCholesterol",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                                "max": "1500",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "label": "Life Style",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Life Style",
-                    "questions": [
-                        {
-                            "id": "smoked",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
-                                "answers": [
-                                    {
-                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
-                                    },
-                                    {
-                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
-                                    },
-                                    {
-                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-							"id": "quitSmoking",
-							"hide": {
-								"hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
-							},
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
-								"max": "2100",
-								"min": "1900",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-                        {
-                            "id": "exercise",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "drinkAlcohol",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "label": "Assessment",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Assessment",
-                    "questions": [
-                        {
-                            "id": "consultationBy",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "3786ab5c-1d22-4ac6-b8fc-4c7b5a97b754",
-                                "answers": [
-                                    {
-                                        "concept": "f094cac6-2322-4b29-8ed4-25bab0cd68b1"
-                                    },
-                                    {
-                                        "concept": "2b9aeab5-694b-481c-9f18-81a5dc3bf4c5"
-                                    },
-                                    {
-                                        "concept": "ec54ae7c-1007-4fc9-a62b-ee5914056468"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "teleConsultation",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "80fc2e59-8c16-40db-9767-ac9d9ffeb010",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "footExam",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "8c2d8409-7c6d-4d8b-84a3-a2bea243c0b8",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "footProblem",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "c01f876c-0a08-47c6-a003-e3dd22098634",
-                                "answers": [
-                                    {
-                                        "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
-                                    },
-                                    {
-                                        "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
-                                    },
-                                    {
-                                        "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
-                                    }
-                                ]
-                            },
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(footExam) || footExam !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "TBsx",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "b10eae79-8358-4653-822b-33336644db36",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "tbSymptom",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
-                                "answers": [
-                                    {
-                                        "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
-                                    },
-                                    {
-                                        "concept": "89574491-9b87-4179-b5cc-106481d00d05"
-                                    },
-                                    {
-                                        "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "tbs",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Left Eye Examination",
-                    "questions": [
-                        {
-                            "type": "obsGroup",
-                            "label": "Left Eye Examination",
-                            "questionOptions": {
-                                "concept": "62d486b6-ebc3-4245-8d03-277c4b2a21ea",
-                                "rendering": "group"
-                            },
-                            "id": "leftEyeExamination",
-                            "questions": [
-                                {
-                                    "id": "eyeExam",
-                                    "questionOptions": {
-                                        "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "visualAcuity",
-                                    "questionOptions": {
-                                        "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "eyelidsEyelashes",
-                                    "questionOptions": {
-                                        "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "conjunctiva",
-                                    "questionOptions": {
-                                        "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "cornea",
-                                    "questionOptions": {
-                                        "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "pupil",
-                                    "questionOptions": {
-                                        "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "lens",
-                                    "questionOptions": {
-                                        "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "isExpanded": "true",
-                    "label": "Right Eye Examination",
-                    "questions": [
-                        {
-                            "type": "obsGroup",
-                            "label": "Right Eye Examination",
-                            "questionOptions": {
-                                "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
-                                "rendering": "group"
-                            },
-                            "id": "rightEyeExamination",
-                            "questions": [
-                                {
-                                    "id": "eyeExam",
-                                    "questionOptions": {
-                                        "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "visualAcuity",
-                                    "questionOptions": {
-                                        "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "eyelidsEyelashes",
-                                    "questionOptions": {
-                                        "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "conjunctiva",
-                                    "questionOptions": {
-                                        "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "cornea",
-                                    "questionOptions": {
-                                        "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "pupil",
-                                    "questionOptions": {
-                                        "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                },
-                                {
-                                    "id": "lens",
-                                    "questionOptions": {
-                                        "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
-                                        "answers": [
-                                            {
-                                                "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            },
-                                            {
-                                                "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                            }
-                                        ],
-                                        "rendering": "select"
-                                    },
-                                    "type": "obs",
-                                    "validators": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "label": "Diagnosis",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Diagnosis",
-                    "questions": [
-                        {
-                            "id": "CVDscore",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
-                                "max": "100",
-                                "min": "0",
-                                "showDate": "false",
-                                "calculate": {
-                                    "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
-                                 }
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "Diagnosis1",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
-                                "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                              "id": "Diagnosis2",
-                              "questionOptions": {
-                                  "rendering": "radio",
-                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
-                                  "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                  ]
-                              },
-                              "type": "obs",
-                              "validators": []
-                        }
-                    ]
-                },
-                {
-					"isExpanded": "true",
-                    "label": "Other Health Conditions",
-					"questions": [
-						{
-							"id": "otherHealthConditions",
-							"questionOptions": {
-								"concept": "2c50ded9-779a-4316-be00-d9a065674e54",
-                                "answers": [
-                                    {
-                                        "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
-                                    },
-                                    {
-                                        "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "4e81c9e2-1c68-11ee-be56-0242ac120002"
-                                    },
-                                    {
-                                        "concept": "4e81d1c6-1c68-11ee-be56-0242ac120002"
-                                    },
-                                    {
-                                        "concept": "4e81d374-1c68-11ee-be56-0242ac120002"
-                                    },
-                                    {
-                                        "concept": "4e81d6da-1c68-11ee-be56-0242ac120002"
-                                    },
-                                    {
-                                        "concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
-                                    },
-                                    {
-                                        "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
-                                    }
-                                ],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				},
-                {
-                    "isExpanded": "true",
-					"label": "Referral Criteria",
-					"questions": [
-						{
-							"id": "criteriaForReferral",
-							"questionOptions": {
-								"concept": "4bbeb3ce-f7ff-476c-9661-60b774fb96f4",
-								"answers": [
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								],
-								"rendering": "radio"
-							},
-							"type": "obs",
-							"validators": []
-						},
-                        {
-                                "id": "diabetes",
-                                "hide": {
-                                    "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                                },
-                                "questionOptions": {
-                                    "rendering": "radio",
-                                    "concept": "cde3716a-2b98-4f10-b619-4d5a5a55503c",
-                                    "answers": [
-                                        {
-                                            "concept": "725f4512-c460-46a0-a951-f2a45e094e32"
-                                        },
-                                        {
-                                            "concept": "af34b28a-ab67-48d8-9dec-58244a267af1"
-                                        },
-                                        {
-                                            "concept": "a09fe05c-8a36-4f40-8559-354fd5a94af8"
-                                        },
-                                        {
-                                            "concept": "eb3bacce-15a8-4822-b69c-bea43db0a34b"
-                                        },
-                                        {
-                                            "concept": "c37fe032-933b-4bda-9e76-1ab5b5b6a3ff"
-                                        }
-                                    ]
-                                },
-                                "type": "obs",
-                                "validators": []
-                            },
-                            {
-                                "id": "chronicComplications",
-                                "hide": {
-                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'a09fe05c-8a36-4f40-8559-354fd5a94af8'"
-                                },
-                                "questionOptions": {
-                                    "rendering": "multiCheckbox",
-                                    "concept": "19026f9a-3668-4d57-be43-1c82717d89a7",
-                                    "answers": [
-                                        {
-                                            "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
-                                        },
-                                        {
-                                            "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
-                                        },
-                                        {
-                                            "concept": "28ce7f5a-ea19-4332-9f65-f43be0dbaaaf"
-                                        },
-                                        {
-                                            "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
-                                        },
-                                        {
-                                            "concept": "99b4d220-d665-4af9-8e5b-c69a2c4a938e"
-                                        },
-                                        {
-                                            "concept": "872a5453-093a-4c37-a328-62dee7df1238"
-                                        }
-                                    ]
-                                },
-                                "type": "obs",
-                                "validators": []
-                            },
-                            {
-                                "id": "dMSuspectedSymptoms",
-                                "hide": {
-                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'eb3bacce-15a8-4822-b69c-bea43db0a34b'"
-                                },
-                                "questionOptions": {
-                                    "rendering": "multiCheckbox",
-                                    "concept": "6d15cab0-2814-4082-a4ea-74925f636bec",
-                                    "answers": [
-                                        {
-                                            "concept": "5701caad-dd50-4cec-b3cd-0950c3ad6e90"
-                                        },
-                                        {
-                                            "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
-                                        },
-                                        {
-                                            "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
-                                        },
-                                        {
-                                            "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
-                                        },
-                                        {
-                                            "concept": "2a53125a-13e2-4b56-ab62-9456fa7e5d09"
-                                        },
-                                        {
-                                            "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
-                                        },
-                                        {
-                                            "concept": "02763c1b-abb9-4581-9f75-bdd480d7a85d"
-                                        },
-                                        {
-                                            "concept": "121629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                        },
-                                        {
-                                            "concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
-                                        },
-                                        {
-                                            "concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
-                                        },
-                                        {
-                                            "concept": "1088b9fc-05c4-4392-a1c1-476e0c700b02"
-                                        },
-                                        {
-                                            "concept": "bb6208f6-fef5-4a18-aea6-3d34c9fad895"
-                                        },
-                                        {
-                                            "concept": "76af92a4-6cbd-465c-9ea7-c30824212a55"
-                                        },
-                                        {
-                                            "concept": "4896306d-f8f0-4b28-acf8-1c0c612a27a5"
-                                        },
-                                        {
-                                            "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
-                                        }
-                                    ]
-                                },
-                                "type": "obs",
-                                "validators": []
-                            },
-                            {
-                                "id": "uncontrolledDiabetes",
-                                "hide": {
-                                    "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'c37fe032-933b-4bda-9e76-1ab5b5b6a3ff'"
-                                },
-                                "questionOptions": {
-                                    "rendering": "radio",
-                                    "concept": "021a86c5-c001-480d-a9f2-6d634d1b7b13",
-                                    "answers": [
-                                        {
-                                            "concept": "ee72f13a-54ef-4cf7-8094-f84b031d58e5"
-                                        },
-                                        {
-                                            "concept": "7de2f7e3-dd99-452e-ba3e-e534ac9a5f78"
-                                        }
-                                    ]
-                                },
-                                "type": "obs",
-                                "validators": []
-                            },
-                            {
-                                "id": "hypertensionDiagnosis",
-                                "hide": {
-                                    "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                                },
-                                "questionOptions": {
-                                    "rendering": "multiCheckbox",
-                                    "concept": "68f158ff-6396-4bab-8194-73255282bd23",
-                                    "answers": [
-                                        {
-                                            "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
-                                        },
-                                        {
-                                            "concept": "0c389648-0b02-4efb-94a3-ca4596548fa1"
-                                        },
-                                        {
-                                            "concept": "e3bc9bb0-2e70-4ee1-b957-2d0558607238"
-                                        },
-                                        {
-                                            "concept": "dc53de3a-5d6a-4ca7-b4b4-935463e92760"
-                                        },
-                                        {
-                                            "concept": "fa826f3f-9e01-4909-b4a6-9a5c3276416a"
-                                        }
-                                    ]
-                                },
-                                "type": "obs",
-                                "validators": []
-                            }
-					]
-				},
-                {
-                    "isExpanded": "true",
-					"label": "Referral to:",
-					"questions": [
-						{
-							"id": "facility",
-							"questionOptions": {
-								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
-								"answers": [
-									{
-										"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
-									},
-									{
-										"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
-									},
-									{
-										"concept": "75768295-02df-47ae-965b-d7e84040194b"
-									},
-									{
-										"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
-									},
-									{
-										"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
-									}
-								],
-								"rendering": "single-select"
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				}
-            ]
-        },
-        {
-            "label": "Management",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Management",
-                    "questions": [
-                        {
-                            "id": "CVDfollowUpScreening",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "7a67e555-1320-4197-a5df-54be3e68a1fe",
-                                "answers": [
-                                    {
-
-                                        "concept": "1dbd741d-b9d9-49d1-b021-90931a6bdd1a"
-                                    },
-                                    {
-                                        "concept": "a085b404-2596-48d6-a454-cd164d4a83fc"
-                                    },
-                                    {
-                                        "concept": "9b305de5-9df6-4db9-820d-9a24541418ab"
-                                    }
-                                ],
-                            "calculate": {
-                                "calculateExpression": "CVDscore > 0 && CVDscore < 20 ? '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' : CVDscore >= 20 && CVDscore < 30 ?  'a085b404-2596-48d6-a454-cd164d4a83fc' : CVDscore >= 30 ? '9b305de5-9df6-4db9-820d-9a24541418ab' : null "
-                            }
-                            },
-                            "type": "obs",
-                            "validators": [
-                                {
-                                    "type": "js_expression", 
-                                    "failsWhenExpression": "isEmpty(CVDscore) || CVDscore <= 0 || isEmpty(CVDfollowUpScreening) || (CVDfollowUpScreening !== '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' || CVDfollowUpScreening !== 'a085b404-2596-48d6-a454-cd164d4a83fc'|| CVDfollowUpScreening !== '9b305de5-9df6-4db9-820d-9a24541418ab')",                            
-                                    "message": "Please ensure that CVD Risk Score is calculated"
-                                }
-                            ]
-                        },
-                        {
-                            "id": "followUpOnPatient",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "2e27bbf9-d744-46a2-a7d4-cecd33c28b8a",
-                                "answers": [
-                                    {
-                                        "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
-                                    },
-                                    {
-                                        "concept": "0640e59c-5a0d-469e-907b-9c5515fd0a19"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "followUpDate",
-                            "questionOptions": {
-                                "rendering": "date",
-                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "recommendations",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "9f7c8739-3ea3-4f7f-8648-d6c36fef7be2",
-                                "answers": [
-                                    {
-                                        "concept": "7feb6724-dd34-411a-aa24-2422bfefe407"
-                                    },
-                                    {
-                                        "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
-                                    },
-                                    {
-                                        "concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
-                                    },
-                                    {
-                                        "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
-                                    },
-									{
-                                        "concept": "f24e644d-7c12-476a-9ec4-9734f148502a"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "medicinePrescribed",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "questionOptions": {
-                                "rendering": "workspace-launcher",
-                                "workspaceName": "add-drug-order",
-                                "buttonType": "ghost",
-                                "buttonLabel": "Add (បន្ថែម) +"
-                            },
-                            "id": "orderDrugs",
-                            "label": "Order for Drugs here:",
-                            "hide": {
-                                "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-                            }
-                        } 
-                    ]
-                }
-            ]
+          "isExpanded": "true",
+          "label": "Medical History",
+          "questions": [
+            {
+              "id": "screenedForDM",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e43b443b-70de-48f3-8d6c-081337621982",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "knownHypertensive",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "f8fd0782-a9fc-4c02-b556-72740853bc18",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "knownHypertensivemedsUse",
+              "hide": {
+                "hideWhenExpression": "isEmpty(knownHypertensive) || knownHypertensive !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "c311aec0-dd3d-4c84-a4ab-601fab82ca37",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "knownDiabetic",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "b8edfbde-5f94-421e-8b25-e86afe35d0f7",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "antidiabeticmedsUse",
+              "hide": {
+                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3c803217-425c-4d7c-a2cb-fc2256ad7ca2",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "diabetesMedicationUse",
+              "hide": {
+                "hideWhenExpression": "isEmpty(knownDiabetic) || knownDiabetic !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || isEmpty(antidiabeticmedsUse) || antidiabeticmedsUse !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "00808084-99a8-4ea8-98b4-63cae2a34273",
+                "answers": [
+                  {
+                    "concept": "6d659ab9-798f-4091-9be0-90ebf52c18c2"
+                  },
+                  {
+                    "concept": "8c0fc1cc-f430-4201-968b-db0071b01dfd"
+                  },
+                  {
+                    "concept": "d99b139e-4d8f-462c-9825-a0cdc0824417"
+                  },
+                  {
+                    "concept": "c4c14717-6624-4963-b038-863eb51669a8"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "hxHeartDisease",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "4d180dd2-9bc7-4ea8-b64e-5e851c9e5c7d",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "hxDiabetesAndHeartDisease",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "6bb3f867-70ee-4854-9408-d386c99c5990",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "previousMedicalComplications",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "a9e26e21-126f-45ed-98f2-f4fb423bc634",
+                "answers": [
+                  {
+                    "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                  },
+                  {
+                    "concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+                  },
+                  {
+                    "concept": "63ab6543-78c9-4079-887a-8498a51bb98c"
+                  },
+                  {
+                    "concept": "fcf078a5-a839-49d7-99cf-5427b0fbaad3"
+                  },
+                  {
+                    "concept": "c64409ef-18fb-4e33-a187-e127243cb30c"
+                  },
+                  {
+                    "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHealthComplications",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "868e9ebe-86fd-467a-b7a8-345437f340af",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "presenceOfAllergies",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "c67a6c5e-2559-46a8-b9da-2cb38bfff8a3",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "allergiesDetails",
+              "hide": {
+                "hideWhenExpression": "isEmpty(presenceOfAllergies) || presenceOfAllergies !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "b082eb80-3495-4af8-a970-0ae0af6ce184",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "label": "Investigations",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Vitals and Biometrics",
+          "questions": [
+            {
+              "id": "Ht",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "272",
+                "min": "10",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Wt",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "250",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "waistCircumference",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
+                "max": "200",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "BMI",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a89c60c0-1350-11df-a1f1-0026b9348838",
+                "max": "",
+                "min": "0",
+                "showDate": "false",
+                "calculate": {
+                  "calculateExpression": "calcBMI(Ht,Wt)"
+                }
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "systole",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "250",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "diastole",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "150",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "pulse",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "230",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "temp",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "43",
+                "min": "25",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Blood Sugar Levels",
+          "questions": [
+            {
+              "id": "FBS",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "RBS",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "HbA1c",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
+                "max": "20",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "OGTT",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Urine Tests",
+          "questions": [
+            {
+              "id": "albumin",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "c423325e-be95-42e2-ae38-b940c2586327",
+                "max": "100",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "ketones",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
+                "answers": [
+                  {
+                    "concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Lipids",
+          "questions": [
+            {
+              "id": "totalCholesterol",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "1500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Life Style",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Life Style",
+          "questions": [
+            {
+              "id": "smoked",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
+                "answers": [
+                  {
+                    "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
+                  },
+                  {
+                    "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
+                  },
+                  {
+                    "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "quitSmoking",
+              "hide": {
+                "hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
+              },
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
+                "max": "2100",
+                "min": "1900",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "exercise",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "drinkAlcohol",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Assessment",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Assessment",
+          "questions": [
+            {
+              "id": "consultationBy",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "3786ab5c-1d22-4ac6-b8fc-4c7b5a97b754",
+                "answers": [
+                  {
+                    "concept": "f094cac6-2322-4b29-8ed4-25bab0cd68b1"
+                  },
+                  {
+                    "concept": "2b9aeab5-694b-481c-9f18-81a5dc3bf4c5"
+                  },
+                  {
+                    "concept": "ec54ae7c-1007-4fc9-a62b-ee5914056468"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "teleConsultation",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "80fc2e59-8c16-40db-9767-ac9d9ffeb010",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "footExam",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "8c2d8409-7c6d-4d8b-84a3-a2bea243c0b8",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "footProblem",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "c01f876c-0a08-47c6-a003-e3dd22098634",
+                "answers": [
+                  {
+                    "concept": "c08665e0-5f0a-4d23-886d-d14e8e1bf40d"
+                  },
+                  {
+                    "concept": "f10be2a3-fd0d-43d8-8f6c-1f3d6d779044"
+                  },
+                  {
+                    "concept": "978422b8-a953-44c4-8dfb-ca7128d1e4ca"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(footExam) || footExam !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "TBsx",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "b10eae79-8358-4653-822b-33336644db36",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "tbSymptom",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                "answers": [
+                  {
+                    "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                  },
+                  {
+                    "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                  },
+                  {
+                    "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(TBsx) || TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "tbs",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "ea543526-f3d3-4a23-a8aa-0c0acf529d51",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Left Eye Examination",
+          "questions": [
+            {
+              "type": "obsGroup",
+              "label": "Left Eye Examination",
+              "questionOptions": {
+                "concept": "62d486b6-ebc3-4245-8d03-277c4b2a21ea",
+                "rendering": "group"
+              },
+              "id": "leftEyeExamination",
+              "questions": [
+                {
+                  "id": "eyeExam",
+                  "questionOptions": {
+                    "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "visualAcuity",
+                  "questionOptions": {
+                    "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "eyelidsEyelashes",
+                  "questionOptions": {
+                    "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "conjunctiva",
+                  "questionOptions": {
+                    "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "cornea",
+                  "questionOptions": {
+                    "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "pupil",
+                  "questionOptions": {
+                    "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "lens",
+                  "questionOptions": {
+                    "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Right Eye Examination",
+          "questions": [
+            {
+              "type": "obsGroup",
+              "label": "Right Eye Examination",
+              "questionOptions": {
+                "concept": "ea132b45-c846-4f66-bc81-fe8c46f793a4",
+                "rendering": "group"
+              },
+              "id": "rightEyeExamination",
+              "questions": [
+                {
+                  "id": "eyeExam",
+                  "questionOptions": {
+                    "concept": "d635d74b-1316-4a7e-b104-e6691995bf0d",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "visualAcuity",
+                  "questionOptions": {
+                    "concept": "eb52b489-420e-4499-89a5-7179bcc5c925",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "eyelidsEyelashes",
+                  "questionOptions": {
+                    "concept": "dba7a06f-50d4-4e02-82a4-3b79d2d7cc49",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "conjunctiva",
+                  "questionOptions": {
+                    "concept": "9d14b8af-8da3-44d6-953f-c23c1c87a735",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "cornea",
+                  "questionOptions": {
+                    "concept": "960d1a6b-7183-4c9b-930a-d34ccdf9b4e7",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "pupil",
+                  "questionOptions": {
+                    "concept": "c09f8404-dc04-4ca8-87cc-a4793928ef78",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "id": "lens",
+                  "questionOptions": {
+                    "concept": "b78e7118-4d9f-4135-a7a3-aaf9aba7a33e",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Diagnosis",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Diagnosis",
+          "questions": [
+            {
+              "id": "CVDscore",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
+                "max": "100",
+                "min": "0",
+                "showDate": "false",
+                "calculate": {
+                  "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex, smoked === 'fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false , age, systole, BMI)"
+                }
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Diagnosis1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+                "answers": [
+                  {
+                    "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                  },
+                  {
+                    "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                  },
+                  {
+                    "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                  },
+                  {
+                    "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Diagnosis2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                "answers": [
+                  {
+                    "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                  },
+                  {
+                    "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                  },
+                  {
+                    "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                  },
+                  {
+                    "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Other Health Conditions",
+          "questions": [
+            {
+              "id": "otherHealthConditions",
+              "questionOptions": {
+                "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
+                "answers": [
+                  {
+                    "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+                  },
+                  {
+                    "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "4e81c9e2-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "4e81d1c6-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "4e81d374-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "4e81d6da-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+                  },
+                  {
+                    "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Referral Criteria",
+          "questions": [
+            {
+              "id": "criteriaForReferral",
+              "questionOptions": {
+                "concept": "4bbeb3ce-f7ff-476c-9661-60b774fb96f4",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ],
+                "rendering": "radio"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "diabetes",
+              "hide": {
+                "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "cde3716a-2b98-4f10-b619-4d5a5a55503c",
+                "answers": [
+                  {
+                    "concept": "725f4512-c460-46a0-a951-f2a45e094e32"
+                  },
+                  {
+                    "concept": "af34b28a-ab67-48d8-9dec-58244a267af1"
+                  },
+                  {
+                    "concept": "a09fe05c-8a36-4f40-8559-354fd5a94af8"
+                  },
+                  {
+                    "concept": "eb3bacce-15a8-4822-b69c-bea43db0a34b"
+                  },
+                  {
+                    "concept": "c37fe032-933b-4bda-9e76-1ab5b5b6a3ff"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "chronicComplications",
+              "hide": {
+                "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'a09fe05c-8a36-4f40-8559-354fd5a94af8'"
+              },
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "19026f9a-3668-4d57-be43-1c82717d89a7",
+                "answers": [
+                  {
+                    "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
+                  },
+                  {
+                    "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                  },
+                  {
+                    "concept": "28ce7f5a-ea19-4332-9f65-f43be0dbaaaf"
+                  },
+                  {
+                    "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
+                  },
+                  {
+                    "concept": "99b4d220-d665-4af9-8e5b-c69a2c4a938e"
+                  },
+                  {
+                    "concept": "872a5453-093a-4c37-a328-62dee7df1238"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "dMSuspectedSymptoms",
+              "hide": {
+                "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'eb3bacce-15a8-4822-b69c-bea43db0a34b'"
+              },
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "6d15cab0-2814-4082-a4ea-74925f636bec",
+                "answers": [
+                  {
+                    "concept": "5701caad-dd50-4cec-b3cd-0950c3ad6e90"
+                  },
+                  {
+                    "concept": "6df2cce3-cc63-4ef5-befd-fcda359ea32e"
+                  },
+                  {
+                    "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
+                  },
+                  {
+                    "concept": "634f28c7-74c9-4b4e-b74d-6ac6a7a797ea"
+                  },
+                  {
+                    "concept": "2a53125a-13e2-4b56-ab62-9456fa7e5d09"
+                  },
+                  {
+                    "concept": "9b6370d3-7ed2-48a5-9737-8f95587f3761"
+                  },
+                  {
+                    "concept": "02763c1b-abb9-4581-9f75-bdd480d7a85d"
+                  },
+                  {
+                    "concept": "121629AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
+                  },
+                  {
+                    "concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+                  },
+                  {
+                    "concept": "1088b9fc-05c4-4392-a1c1-476e0c700b02"
+                  },
+                  {
+                    "concept": "bb6208f6-fef5-4a18-aea6-3d34c9fad895"
+                  },
+                  {
+                    "concept": "76af92a4-6cbd-465c-9ea7-c30824212a55"
+                  },
+                  {
+                    "concept": "4896306d-f8f0-4b28-acf8-1c0c612a27a5"
+                  },
+                  {
+                    "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "uncontrolledDiabetes",
+              "hide": {
+                "hideWhenExpression": "isEmpty(diabetes) || diabetes !== 'c37fe032-933b-4bda-9e76-1ab5b5b6a3ff'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "021a86c5-c001-480d-a9f2-6d634d1b7b13",
+                "answers": [
+                  {
+                    "concept": "ee72f13a-54ef-4cf7-8094-f84b031d58e5"
+                  },
+                  {
+                    "concept": "7de2f7e3-dd99-452e-ba3e-e534ac9a5f78"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "hypertensionDiagnosis",
+              "hide": {
+                "hideWhenExpression": "isEmpty(criteriaForReferral) || criteriaForReferral !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "68f158ff-6396-4bab-8194-73255282bd23",
+                "answers": [
+                  {
+                    "concept": "fbb0154f-5800-40d8-adba-0c52945bcf81"
+                  },
+                  {
+                    "concept": "0c389648-0b02-4efb-94a3-ca4596548fa1"
+                  },
+                  {
+                    "concept": "e3bc9bb0-2e70-4ee1-b957-2d0558607238"
+                  },
+                  {
+                    "concept": "dc53de3a-5d6a-4ca7-b4b4-935463e92760"
+                  },
+                  {
+                    "concept": "fa826f3f-9e01-4909-b4a6-9a5c3276416a"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Referral to:",
+          "questions": [
+            {
+              "id": "facility",
+              "questionOptions": {
+                "concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
+                "answers": [
+                  {
+                    "concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
+                  },
+                  {
+                    "concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
+                  },
+                  {
+                    "concept": "75768295-02df-47ae-965b-d7e84040194b"
+                  },
+                  {
+                    "concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
+                  },
+                  {
+                    "concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
+                  }
+                ],
+                "rendering": "single-select"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Management",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Management",
+          "questions": [
+            {
+              "id": "CVDfollowUpScreening",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "7a67e555-1320-4197-a5df-54be3e68a1fe",
+                "answers": [
+                  {
+                    "concept": "1dbd741d-b9d9-49d1-b021-90931a6bdd1a"
+                  },
+                  {
+                    "concept": "a085b404-2596-48d6-a454-cd164d4a83fc"
+                  },
+                  {
+                    "concept": "9b305de5-9df6-4db9-820d-9a24541418ab"
+                  }
+                ],
+                "calculate": {
+                  "calculateExpression": "CVDscore > 0 && CVDscore < 20 ? '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' : CVDscore >= 20 && CVDscore < 30 ?  'a085b404-2596-48d6-a454-cd164d4a83fc' : CVDscore >= 30 ? '9b305de5-9df6-4db9-820d-9a24541418ab' : null "
+                }
+              },
+              "type": "obs",
+              "validators": [
+                {
+                  "type": "js_expression",
+                  "failsWhenExpression": "isEmpty(CVDscore) || CVDscore <= 0 || isEmpty(CVDfollowUpScreening) || (CVDfollowUpScreening !== '1dbd741d-b9d9-49d1-b021-90931a6bdd1a' || CVDfollowUpScreening !== 'a085b404-2596-48d6-a454-cd164d4a83fc'|| CVDfollowUpScreening !== '9b305de5-9df6-4db9-820d-9a24541418ab')",
+                  "message": "Please ensure that CVD Risk Score is calculated"
+                }
+              ]
+            },
+            {
+              "id": "followUpOnPatient",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "2e27bbf9-d744-46a2-a7d4-cecd33c28b8a",
+                "answers": [
+                  {
+                    "concept": "4d32413a-95a4-45bf-95a0-ff81e26cfd35"
+                  },
+                  {
+                    "concept": "0640e59c-5a0d-469e-907b-9c5515fd0a19"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "followUpDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "recommendations",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "9f7c8739-3ea3-4f7f-8648-d6c36fef7be2",
+                "answers": [
+                  {
+                    "concept": "7feb6724-dd34-411a-aa24-2422bfefe407"
+                  },
+                  {
+                    "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
+                  },
+                  {
+                    "concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
+                  },
+                  {
+                    "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
+                  },
+                  {
+                    "concept": "f24e644d-7c12-476a-9ec4-9734f148502a"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "medicinePrescribed",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "questionOptions": {
+                "rendering": "workspace-launcher",
+                "workspaceName": "add-drug-order",
+                "buttonType": "ghost",
+                "buttonLabel": "Add (បន្ថែម) +"
+              },
+              "id": "orderDrugs",
+              "label": "Order for Drugs here:",
+              "hide": {
+                "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

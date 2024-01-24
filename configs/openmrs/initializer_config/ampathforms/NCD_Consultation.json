@@ -1,158 +1,158 @@
 {
-	"name": "NCD Consultation",
-	"description": "NCD Consultation",
-	"version": "1",
-	"published": true,
-	"retired": false,
-	"encounter": "NCD Consultation",
-	"processor": "EncounterFormProcessor",
-	"uuid": "xxxx",
-	"referencedForms": [],
-	"pages": [
-		{
-			"label": "Medical Assessment",
-			"sections": [
-				{
-					"isExpanded": "true",
-					"label": "Tuberculosis Symptoms",
-					"questions": [
-						{
-							"id": "TBsx",
-							"questionOptions": {
-								"rendering": "radio",
-								"concept": "e0fffb24-5973-40a9-af11-2e4033831747",
-								"answers": [
-									{
-										"concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-						"id": "TBSymptoms",
-						"hide": {
-							"hideWhenExpression": "isEmpty(TBsx) ||  TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-						},
-						"questionOptions": {
-							"rendering": "multiCheckbox",
-							"concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
-							"answers": [
-								{
-									"concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-								},
-								{
-									"concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
-								},
-								{
-									"concept": "89574491-9b87-4179-b5cc-106481d00d05"
-								},
-								{
-									"concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-								}
-							]
-						},
-						"type": "obs",
-						"validators": []
-					}
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Vitals and Biometrics",
-					"questions": [
-						{
-							"id": "Ht",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "272",
-								"min": "10",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "Wt",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "250",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "waistCircumference",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
-								"max": "200",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "BMI",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "a89c60c0-1350-11df-a1f1-0026b9348838",
-								"max": "",
-								"min": "",
-								"showDate": "false",
-								"calculate": {
-									"calculateExpression": "calcBMI(Ht,Wt)"
-								}
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "systole",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "250",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "diastole",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "150",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "pulse",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "230",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
+  "name": "NCD Consultation",
+  "description": "NCD Consultation",
+  "version": "1",
+  "published": true,
+  "retired": false,
+  "encounter": "NCD Consultation",
+  "processor": "EncounterFormProcessor",
+  "uuid": "xxxx",
+  "referencedForms": [],
+  "pages": [
+    {
+      "label": "Medical Assessment",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Tuberculosis Symptoms",
+          "questions": [
+            {
+              "id": "TBsx",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e0fffb24-5973-40a9-af11-2e4033831747",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "TBSymptoms",
+              "hide": {
+                "hideWhenExpression": "isEmpty(TBsx) ||  TBsx !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "f7a59dd0-127b-489f-aa6d-9723f18c2220",
+                "answers": [
+                  {
+                    "concept": "140238AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "27ee5bdc-1af9-475b-974d-43beb4f2c6a8"
+                  },
+                  {
+                    "concept": "89574491-9b87-4179-b5cc-106481d00d05"
+                  },
+                  {
+                    "concept": "143264AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Vitals and Biometrics",
+          "questions": [
+            {
+              "id": "Ht",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "272",
+                "min": "10",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Wt",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "250",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "waistCircumference",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "90c9e0ae-d9f6-477c-9f23-bd7af88994e4",
+                "max": "200",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "BMI",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a89c60c0-1350-11df-a1f1-0026b9348838",
+                "max": "",
+                "min": "",
+                "showDate": "false",
+                "calculate": {
+                  "calculateExpression": "calcBMI(Ht,Wt)"
+                }
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "systole",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "250",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "diastole",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "150",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "pulse",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "230",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
               "id": "temperature",
               "questionOptions": {
                 "rendering": "number",
@@ -188,1260 +188,1260 @@
               "type": "obs",
               "validators": []
             }
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Blood Sugar Levels",
-					"questions": [
-						{
-							"id": "FBS",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
-								"max": "900",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "RBS",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
-								"max": "900",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-                            "id": "HbA1c",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
-                                "max": "20",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "HB",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "04a4a69c-b687-4e0d-83fe-bd7c6228189c",
-								"max": "",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-                            "id": "OGTT1Hour",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "3c884cd2-4aba-41e0-a535-e3e7bc70b5ee",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-                            "id": "OGTT2Hours",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "1941f03b-9a5e-4285-b66a-c10880a3362d",
-                                "max": "900",
-                                "min": "0",
-                                "showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Urine Tests",
-					"questions": [
-						{
-							"id": "albumin",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "c423325e-be95-42e2-ae38-b940c2586327",
-								"max": "100",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "ketones",
-							"questionOptions": {
-								"rendering": "select",
-								"concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
-								"answers": [
-									{
-										"concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-                                    {
-										"concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Lipids",
-					"questions": [
-						{
-                            "id": "totalCholesterol",
-                            "questionOptions": {
-                                "rendering": "number",
-                                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "1500",
-								"min": "0",
-								"showDate": "false"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "lowDenseLipoProtein",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "0bf33271-d553-42ae-a854-624e5258551d",
-								"max": "1000",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "highDenseLipoProtein",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "a5d68184-6849-4a1d-9a86-5bcea3297f70",
-								"max": "200",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "triglyceride",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "a86c14a1-9453-46af-9b9a-f950b21b8952",
-								"max": "1500",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Renal Tests",
-					"questions": [
-						{
-							"id": "creatinine",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "500",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "creatinineClearance",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "681d9109-4414-440f-a733-c4cce954cd41",
-								"max": "500",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "proteinuria",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
-								"max": "200",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "potassium",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "20",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "aceInhibitor",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "088e714b-0529-414b-9a09-46bb10185603",
-								"max": "100",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				},
-				{
-					"isExpanded": "true",
-					"label": "Other Tests",
-					"questions": [
-						{
-							"id": "sodium",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "500",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "ALT",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-								"max": "100",
-								"min": "0",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				}
-			]
-		},
-        {
-            "label": "Life Style",
-            "sections": [
-                {
-                    "isExpanded": "true",
-                    "label": "Life Style",
-                    "questions": [
-                        {
-                            "id": "smoked",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
-                                "answers": [
-                                    {
-                                        "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
-                                    },
-                                    {
-                                        "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"                                    },
-                                    {
-                                        "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "quitSmoking",
-							"hide": {
-								"hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
-							},
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
-								"max": "2100",
-								"min": "1900",
-								"showDate": "false"
-							},
-							"type": "obs",
-							"validators": []
-						},
-                        {
-                            "id": "exercise",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                        {
-                            "id": "drinkAlcohol",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-                    ]
-                }
-            ]
+          ]
         },
-		{
-			"label": "Physical Examination",
-			"sections": [
-				{
-					"label": "Physical Examination",
-					"isExpanded": "true",
-					"questions": [
-						{
-							"id": "leftFootExam",
-							"questionOptions": {
-								"concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
-								"answers": [
-									{
-										"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
-									},
-									{
-										"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
-									},
-									{
-										"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
-									},
-									{
-										"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
-									},
-									{
-										"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
-									},
-									{
-										"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
-									},
-									{
-										"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
-									},
-									{
-										"concept": "0571152b-1f18-4603-9c86-d77883525e61"
-									},
-									{
-										"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
-									},
-									{
-										"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
-									},
-									{
-										"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
-									},
-									{
-										"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
-									},
-									{
-										"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
-									},
-									{
-										"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "rightFootExam",
-							"questionOptions": {
-								"concept": "d6f32f81-6d85-49bb-b4c5-cef725bb7616",
-								"answers": [
-									{
-										"concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
-									},
-									{
-										"concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
-									},
-									{
-										"concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
-									},
-									{
-										"concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
-									},
-									{
-										"concept": "be0c7342-12da-48c1-a247-89379f80e18d"
-									},
-									{
-										"concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
-									},
-									{
-										"concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
-									},
-									{
-										"concept": "0571152b-1f18-4603-9c86-d77883525e61"
-									},
-									{
-										"concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
-									},
-									{
-										"concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
-									},
-									{
-										"concept": "bbf9ee15-e3df-4026-825f-e17325027795"
-									},
-									{
-										"concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
-									},
-									{
-										"concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
-									},
-									{
-										"concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "leftEyeExam",
-							"questionOptions": {
-								"concept": "db2e363c-a5b5-4136-a786-adae6f52e10b",
-								"answers": [
-									{
-										"concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
-									},
-									{
-										"concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
-									},
-									{
-										"concept": "4e81d892-1c68-11ee-be56-0242ac120002"
-									},
-									{
-										"concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
-									},
-									{
-										"concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
-									},
-									{
-										"concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "rightEyeExam",
-							"questionOptions": {
-								"concept": "0684f8bf-7e2f-40b7-9479-a02c44a8937f",
-								"answers": [
-									{
-										"concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
-									},
-									{
-										"concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
-									},
-									{
-										"concept": "4e81d892-1c68-11ee-be56-0242ac120002"
-									},
-									{
-										"concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
-									},
-									{
-										"concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
-									},
-									{
-										"concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "cardiovacscularExam",
-							"questionOptions": {
-								"concept": "5969b812-49bf-48d1-8477-e33935141c0c",
-								"answers": [
-									{
-										"concept": "fcf078a5-a839-49d7-99cf-5427b0fbaad3"
-									},
-									{
-										"concept": "95496c04-b5c7-4dc6-ad0f-664bf47a98be"
-									},
-									{
-										"concept": "ad681aca-d429-49f0-b390-e1edd3050503"
-									},
-									{
-										"concept": "16a53891-b85e-4914-b6dc-c7ab25cc29f2"
-									},
-									{
-										"concept": "111103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "7d614732-0eb1-426e-8ede-a8c93d2d7b41"
-									},
-									{
-										"concept": "880a9a97-0885-4bc0-a421-f4edaafc2f5c"
-									},
-									{
-										"concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-								],
-								"rendering": "multiCheckbox"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"id": "uroGenExam",
-							"questionOptions": {
-								"rendering": "multiCheckbox",
-								"concept": "0426d08e-1035-4c8f-a400-3b9d276f3a6b",
-								"answers": [
-									{
-										"concept": "3cd0b0b9-c075-4b21-81ce-11e7c395dea6"
-									},
-									{
-										"concept": "b03b800f-f421-4735-b227-6f25dda74ed4"
-									},
-									{
-										"concept": "4c9bfe7c-0e30-44f0-9400-363615e240ac"
-									}
-								]
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-							"type": "obsGroup",
-							"label": "ENT Exam Set",
-							"questionOptions": {
-								"concept": "39d50db7-ee96-472c-9dcf-b0efd4b586e4",
-								"rendering": "group"
-							},
-							"id": "ENTExamination",
-							"questions": [
-								{
-									"id": "ENTExam",
-									"questionOptions": {
-										"concept": "337b27dd-e1a3-4da6-a962-113158b39b2d",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "ENTExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(ENTExam) || ENTExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "81a7d818-a671-4e6e-b62a-503582ad6850"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Respiratory Exam Set",
-							"questionOptions": {
-								"concept": "5c685694-7474-40d0-9096-55782411f7be",
-								"rendering": "group"
-							},
-							"id": "respiratoryExamination",
-							"questions": [
-								{
-									"id": "respiratoryExam",
-									"questionOptions": {
-										"concept": "819b36ec-1631-4e14-91cc-6f547565a855",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "respiratoryExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(respiratoryExam) || respiratoryExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "9e7c6e42-a71b-4ec6-a017-a978bf335db5"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "GastroIntestinal Exam Set",
-							"questionOptions": {
-								"concept": "92a61792-2269-4127-9a3b-3492c9f0959c",
-								"rendering": "group"
-							},
-							"id": "gastroIntestinalExamination",
-							"questions": [
-								{
-									"id": "gastroIntestinalExam",
-									"questionOptions": {
-										"concept": "67b6dcc4-4c7e-41db-b7f3-020655489a62",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "gastroIntestinalExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(gastroIntestinalExam) || gastroIntestinalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "06e80723-ec47-4826-886e-38376e1ac30b"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Skin and Extemities Exam Set",
-							"questionOptions": {
-								"concept": "149704a3-819d-4dbc-b50b-2400a503fec9",
-								"rendering": "group"
-							},
-							"id": "skinExtremitiesExamination",
-							"questions": [
-								{
-									"id": "skinExtremitiesExam",
-									"questionOptions": {
-										"concept": "c017f994-b6e3-409f-9f80-7869665df179",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "skinExtremitiesExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(skinExtremitiesExam) || skinExtremitiesExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "e03e1008-2393-47c0-8d3f-871bbc5d8298"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "CNS Exam Set",
-							"questionOptions": {
-								"concept": "86e96e7e-ed58-47ed-9516-dc14eab1a2db",
-								"rendering": "group"
-							},
-							"id": "CNSExamination",
-							"questions": [
-								{
-									"id": "CNSExam",
-									"questionOptions": {
-										"concept": "8dce7636-f3ad-4509-a2e2-f9f35ad10cca",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "CNSExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(CNSExam) || CNSExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "66fa9337-af93-45c6-8480-65c96e691207"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Mental Status Exam Set",
-							"questionOptions": {
-								"concept": "c1246a4c-f1e7-4754-b413-492736f511a2",
-								"rendering": "group"
-							},
-							"id": "mentalStateExamination",
-							"questions": [
-								{
-									"id": "mentalStateExam",
-									"questionOptions": {
-										"concept": "807616c8-0a1b-4a13-b1c9-89a5216eb46b",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "mentalStateExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(mentalStateExam) || mentalStateExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "667fa9a9-fece-483f-8544-049d122c12e9"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Abdominal Exam Set",
-							"questionOptions": {
-								"concept": "99829097-4c1d-43a5-b19e-eda807dd64d5",
-								"rendering": "group"
-							},
-							"id": "abdominalExamination",
-							"questions": [
-								{
-									"id": "abdominalExam",
-									"questionOptions": {
-										"concept": "e237e038-be15-4ade-b457-067ddde84c07",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "abdominalExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(abdominalExam) || abdominalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "9cdbee40-1a2d-4ed6-9ffc-729d058f57e2"
-									}
-								}
-							]
-						},
-						{
-							"type": "obsGroup",
-							"label": "Other Body Parts Exam Set",
-							"questionOptions": {
-								"concept": "95f13196-797e-48f5-bfbf-9e5ddbdba7d4",
-								"rendering": "group"
-							},
-							"id": "othersExamination",
-							"questions": [
-								{
-									"id": "othersExam",
-									"questionOptions": {
-										"concept": "f09530d2-75ab-4b6a-80a2-f92112edbf51",
-										"answers": [
-											{
-												"concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											},
-											{
-												"concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-											}
-										],
-										"rendering": "select"
-									},
-									"type": "obs",
-									"validators": []
-								},
-								{
-									"type": "obs",
-									"id": "othersExamDetails",
-									"required": "false",
-									"default": "",
-									"hide": {
-										"hideWhenExpression": "isEmpty(othersExam) || othersExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-									},
-									"questionOptions": {
-										"rendering": "textarea",
-										"rows": 3,
-										"concept": "e52c8dae-3bc8-43c3-8ae0-64852e094b29"
-									}
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		
-		{
-			"label": "Diagnosis",
-			"sections": [
-				{
-					"isExpanded": "true",
-					"label": "Diagnosis",
-					"questions": [
-						{
-							"id": "CVDscore",
-							"label": "CVD score",
-							"questionOptions": {
-								"rendering": "number",
-								"concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
-								"max": "100",
-								"min": "0",
-								"showDate": "false",
-								"calculate": {
-									"calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex,((!isEmpty(getObsFromControlOrEncounter(smoked,rawPrevObs,'7533aa7e-04cb-4cfd-9c97-6ac36f114bab')) && getObsFromControlOrEncounter(smoked,rawPrevObs,'7533aa7e-04cb-4cfd-9c97-6ac36f114bab')==='fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false)),age,systole,BMI)"
-								}
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-                            "id": "Diagnosis1",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
-                                "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-                          {
-                              "id": "Diagnosis2",
-                              "questionOptions": {
-                                  "rendering": "radio",
-                                  "concept": "76ca08a5-2128-4b53-afba-74227b015924",
-                                  "answers": [
-                                    {
-                                        "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
-                                    },
-                                    {
-                                        "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
-                                    },
-                                    {
-                                        "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
-                                    },
-                                    {
-                                        "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
-                                    },
-                                    {
-                                        "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                  ]
-                              },
-                              "type": "obs",
-                              "validators": []
-                        },
-												{
-                            "id": "otherHealthConditions",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
-                                "answers": [
-																	{
-																		"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
-																	},
-																	{
-																			"concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-																	},
-																	{
-																		"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-																	},
-																	{
-																		"concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
-                                  }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "otherHealthCondition",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "556b1ed9-9fd6-4022-adb4-4d1e971194ef",
-								"rows": 5
-							},
-							"hide": {
-								"hideWhenExpression": "arrayContains(['4d21c60-db31-4318-a8e8-13414dc0fa34', '884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], otherHealthConditions)"
+        {
+          "isExpanded": "true",
+          "label": "Blood Sugar Levels",
+          "questions": [
+            {
+              "id": "FBS",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "4a6ad2db-86af-4acc-906b-b749b7f6cda6",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "RBS",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "f52d731e-58da-4f3a-a480-77c5e9d8d2eb",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "HbA1c",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a8af7520-1350-11df-a1f1-0026b9348838",
+                "max": "20",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "HB",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "04a4a69c-b687-4e0d-83fe-bd7c6228189c",
+                "max": "",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "OGTT1Hour",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "3c884cd2-4aba-41e0-a535-e3e7bc70b5ee",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "OGTT2Hours",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1941f03b-9a5e-4285-b66a-c10880a3362d",
+                "max": "900",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Urine Tests",
+          "questions": [
+            {
+              "id": "albumin",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "c423325e-be95-42e2-ae38-b940c2586327",
+                "max": "100",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "ketones",
+              "questionOptions": {
+                "rendering": "select",
+                "concept": "07015405-c865-4a22-8ad1-c8863d5f005b",
+                "answers": [
+                  {
+                    "concept": "1362AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1363AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1364AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1365AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Lipids",
+          "questions": [
+            {
+              "id": "totalCholesterol",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "1500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "lowDenseLipoProtein",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "0bf33271-d553-42ae-a854-624e5258551d",
+                "max": "1000",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "highDenseLipoProtein",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a5d68184-6849-4a1d-9a86-5bcea3297f70",
+                "max": "200",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "triglyceride",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "a86c14a1-9453-46af-9b9a-f950b21b8952",
+                "max": "1500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Renal Tests",
+          "questions": [
+            {
+              "id": "creatinine",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "creatinineClearance",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "681d9109-4414-440f-a733-c4cce954cd41",
+                "max": "500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "proteinuria",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "808d6fc6-f762-4f37-b8ed-ece810f52cef",
+                "max": "200",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "potassium",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "20",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "aceInhibitor",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "088e714b-0529-414b-9a09-46bb10185603",
+                "max": "100",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        },
+        {
+          "isExpanded": "true",
+          "label": "Other Tests",
+          "questions": [
+            {
+              "id": "sodium",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "500",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "ALT",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "max": "100",
+                "min": "0",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Life Style",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Life Style",
+          "questions": [
+            {
+              "id": "smoked",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "7533aa7e-04cb-4cfd-9c97-6ac36f114bab",
+                "answers": [
+                  {
+                    "concept": "60bf95e1-04b5-48cf-8d05-3f5883a891e0"
+                  },
+                  {
+                    "concept": "fd676d9a-1a47-4f6c-a24e-f57ac796b7f1"
+                  },
+                  {
+                    "concept": "57ce8832-7ea7-45f9-91ba-09e1c064073b"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "quitSmoking",
+              "hide": {
+                "hideWhenExpression": "isEmpty(smoked) || smoked !== '57ce8832-7ea7-45f9-91ba-09e1c064073b'"
+              },
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "b147d693-8c18-4c62-9807-ecd0e60e8fdf",
+                "max": "2100",
+                "min": "1900",
+                "showDate": "false"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "exercise",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "c31a2da0-f16b-44e3-baea-8a259d8beb31",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "drinkAlcohol",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "e737c8c9-a154-47a1-aa20-ed13008d46cf",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Physical Examination",
+      "sections": [
+        {
+          "label": "Physical Examination",
+          "isExpanded": "true",
+          "questions": [
+            {
+              "id": "leftFootExam",
+              "questionOptions": {
+                "concept": "dd16ec73-fa62-431b-bbd5-4e3a04d93cfc",
+                "answers": [
+                  {
+                    "concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+                  },
+                  {
+                    "concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+                  },
+                  {
+                    "concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+                  },
+                  {
+                    "concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+                  },
+                  {
+                    "concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+                  },
+                  {
+                    "concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+                  },
+                  {
+                    "concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+                  },
+                  {
+                    "concept": "0571152b-1f18-4603-9c86-d77883525e61"
+                  },
+                  {
+                    "concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+                  },
+                  {
+                    "concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+                  },
+                  {
+                    "concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+                  },
+                  {
+                    "concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+                  },
+                  {
+                    "concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+                  },
+                  {
+                    "concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "rightFootExam",
+              "questionOptions": {
+                "concept": "d6f32f81-6d85-49bb-b4c5-cef725bb7616",
+                "answers": [
+                  {
+                    "concept": "123919AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "871389dc-a412-40ba-aa6d-d12497065ce0"
+                  },
+                  {
+                    "concept": "735dc19f-78f0-4f0f-861b-e2b4328521b4"
+                  },
+                  {
+                    "concept": "bb9a023b-a077-4aad-baac-021c8ed1f626"
+                  },
+                  {
+                    "concept": "81318009-e9fb-4b8a-9bf6-17082cefd19e"
+                  },
+                  {
+                    "concept": "be0c7342-12da-48c1-a247-89379f80e18d"
+                  },
+                  {
+                    "concept": "4ff6c3ea-2be8-4aac-b371-faa3bb450255"
+                  },
+                  {
+                    "concept": "8c001d6a-9525-4008-8d06-eebc713f5d8c"
+                  },
+                  {
+                    "concept": "0571152b-1f18-4603-9c86-d77883525e61"
+                  },
+                  {
+                    "concept": "c9cfaaf9-0f14-4805-a151-b0544cbd8870"
+                  },
+                  {
+                    "concept": "7640b59c-0692-4736-90a1-52a9f5f2d089"
+                  },
+                  {
+                    "concept": "bbf9ee15-e3df-4026-825f-e17325027795"
+                  },
+                  {
+                    "concept": "eceb2426-dd37-490d-b4f0-711c5f76060b"
+                  },
+                  {
+                    "concept": "163747AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "9661c8c0-d5d6-4b80-8043-fa1d5fa0ec94"
+                  },
+                  {
+                    "concept": "b5aead5b-e0ed-4462-8d38-44cc0ab63dfc"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "leftEyeExam",
+              "questionOptions": {
+                "concept": "db2e363c-a5b5-4136-a786-adae6f52e10b",
+                "answers": [
+                  {
+                    "concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
+                  },
+                  {
+                    "concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+                  },
+                  {
+                    "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
+                  },
+                  {
+                    "concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
+                  },
+                  {
+                    "concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "rightEyeExam",
+              "questionOptions": {
+                "concept": "0684f8bf-7e2f-40b7-9479-a02c44a8937f",
+                "answers": [
+                  {
+                    "concept": "4f09f4b9-d1bd-43b3-8487-bc138e62a6e7"
+                  },
+                  {
+                    "concept": "d62ed944-515d-4d61-97ed-39b3871954f7"
+                  },
+                  {
+                    "concept": "4e81d892-1c68-11ee-be56-0242ac120002"
+                  },
+                  {
+                    "concept": "91d796f1-33dc-427c-a678-61bf12e52afd"
+                  },
+                  {
+                    "concept": "7ffd8f4f-5681-4f6f-ab79-b8499d720263"
+                  },
+                  {
+                    "concept": "e4cb0610-3d07-4e28-a321-3b376e18e4db"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "cardiovacscularExam",
+              "questionOptions": {
+                "concept": "5969b812-49bf-48d1-8477-e33935141c0c",
+                "answers": [
+                  {
+                    "concept": "fcf078a5-a839-49d7-99cf-5427b0fbaad3"
+                  },
+                  {
+                    "concept": "95496c04-b5c7-4dc6-ad0f-664bf47a98be"
+                  },
+                  {
+                    "concept": "ad681aca-d429-49f0-b390-e1edd3050503"
+                  },
+                  {
+                    "concept": "16a53891-b85e-4914-b6dc-c7ab25cc29f2"
+                  },
+                  {
+                    "concept": "111103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "7d614732-0eb1-426e-8ede-a8c93d2d7b41"
+                  },
+                  {
+                    "concept": "880a9a97-0885-4bc0-a421-f4edaafc2f5c"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ],
+                "rendering": "multiCheckbox"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "uroGenExam",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "0426d08e-1035-4c8f-a400-3b9d276f3a6b",
+                "answers": [
+                  {
+                    "concept": "3cd0b0b9-c075-4b21-81ce-11e7c395dea6"
+                  },
+                  {
+                    "concept": "b03b800f-f421-4735-b227-6f25dda74ed4"
+                  },
+                  {
+                    "concept": "4c9bfe7c-0e30-44f0-9400-363615e240ac"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "type": "obsGroup",
+              "label": "ENT Exam Set",
+              "questionOptions": {
+                "concept": "39d50db7-ee96-472c-9dcf-b0efd4b586e4",
+                "rendering": "group"
+              },
+              "id": "ENTExamination",
+              "questions": [
+                {
+                  "id": "ENTExam",
+                  "questionOptions": {
+                    "concept": "337b27dd-e1a3-4da6-a962-113158b39b2d",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "ENTExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(ENTExam) || ENTExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "81a7d818-a671-4e6e-b62a-503582ad6850"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "Respiratory Exam Set",
+              "questionOptions": {
+                "concept": "5c685694-7474-40d0-9096-55782411f7be",
+                "rendering": "group"
+              },
+              "id": "respiratoryExamination",
+              "questions": [
+                {
+                  "id": "respiratoryExam",
+                  "questionOptions": {
+                    "concept": "819b36ec-1631-4e14-91cc-6f547565a855",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "respiratoryExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(respiratoryExam) || respiratoryExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "9e7c6e42-a71b-4ec6-a017-a978bf335db5"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "GastroIntestinal Exam Set",
+              "questionOptions": {
+                "concept": "92a61792-2269-4127-9a3b-3492c9f0959c",
+                "rendering": "group"
+              },
+              "id": "gastroIntestinalExamination",
+              "questions": [
+                {
+                  "id": "gastroIntestinalExam",
+                  "questionOptions": {
+                    "concept": "67b6dcc4-4c7e-41db-b7f3-020655489a62",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "gastroIntestinalExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(gastroIntestinalExam) || gastroIntestinalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "06e80723-ec47-4826-886e-38376e1ac30b"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "Skin and Extemities Exam Set",
+              "questionOptions": {
+                "concept": "149704a3-819d-4dbc-b50b-2400a503fec9",
+                "rendering": "group"
+              },
+              "id": "skinExtremitiesExamination",
+              "questions": [
+                {
+                  "id": "skinExtremitiesExam",
+                  "questionOptions": {
+                    "concept": "c017f994-b6e3-409f-9f80-7869665df179",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "skinExtremitiesExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(skinExtremitiesExam) || skinExtremitiesExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "e03e1008-2393-47c0-8d3f-871bbc5d8298"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "CNS Exam Set",
+              "questionOptions": {
+                "concept": "86e96e7e-ed58-47ed-9516-dc14eab1a2db",
+                "rendering": "group"
+              },
+              "id": "CNSExamination",
+              "questions": [
+                {
+                  "id": "CNSExam",
+                  "questionOptions": {
+                    "concept": "8dce7636-f3ad-4509-a2e2-f9f35ad10cca",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "CNSExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(CNSExam) || CNSExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "66fa9337-af93-45c6-8480-65c96e691207"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "Mental Status Exam Set",
+              "questionOptions": {
+                "concept": "c1246a4c-f1e7-4754-b413-492736f511a2",
+                "rendering": "group"
+              },
+              "id": "mentalStateExamination",
+              "questions": [
+                {
+                  "id": "mentalStateExam",
+                  "questionOptions": {
+                    "concept": "807616c8-0a1b-4a13-b1c9-89a5216eb46b",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "mentalStateExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(mentalStateExam) || mentalStateExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "667fa9a9-fece-483f-8544-049d122c12e9"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "Abdominal Exam Set",
+              "questionOptions": {
+                "concept": "99829097-4c1d-43a5-b19e-eda807dd64d5",
+                "rendering": "group"
+              },
+              "id": "abdominalExamination",
+              "questions": [
+                {
+                  "id": "abdominalExam",
+                  "questionOptions": {
+                    "concept": "e237e038-be15-4ade-b457-067ddde84c07",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "abdominalExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(abdominalExam) || abdominalExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "9cdbee40-1a2d-4ed6-9ffc-729d058f57e2"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "obsGroup",
+              "label": "Other Body Parts Exam Set",
+              "questionOptions": {
+                "concept": "95f13196-797e-48f5-bfbf-9e5ddbdba7d4",
+                "rendering": "group"
+              },
+              "id": "othersExamination",
+              "questions": [
+                {
+                  "id": "othersExam",
+                  "questionOptions": {
+                    "concept": "f09530d2-75ab-4b6a-80a2-f92112edbf51",
+                    "answers": [
+                      {
+                        "concept": "1115AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      },
+                      {
+                        "concept": "1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                      }
+                    ],
+                    "rendering": "select"
+                  },
+                  "type": "obs",
+                  "validators": []
+                },
+                {
+                  "type": "obs",
+                  "id": "othersExamDetails",
+                  "required": "false",
+                  "default": "",
+                  "hide": {
+                    "hideWhenExpression": "isEmpty(othersExam) || othersExam !== '1116AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                  },
+                  "questionOptions": {
+                    "rendering": "textarea",
+                    "rows": 3,
+                    "concept": "e52c8dae-3bc8-43c3-8ae0-64852e094b29"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
 
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-                            "id": "currentMedicalComplications",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "3f36a039-eac3-46bd-8798-102c55639d49",
-                                "answers": [
-                                    {
-                                        "concept": "0c61b26b-c242-4e36-94b6-97328586bee4"
-                                    },
-                                    {
-                                        "concept": "43c557a0-6e35-40e2-90f8-862a07377152"
-                                    },
-                                    {
-                                        "concept": "375325ae-dddf-480f-827a-1bfcf581c97b"
-                                    },
-                                    {
-                                        "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
-                                    },
-                                    {
-                                        "concept": "111103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-									{
-										"concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
-									},
-									{
-										"concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
-									},
-									{
-										"concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									},
-									{
-										"concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-									}
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "otherHealthComplications",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "868e9ebe-86fd-467a-b7a8-345437f340af",
-								"rows": 5
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				}
-			]
-		},
+    {
+      "label": "Diagnosis",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Diagnosis",
+          "questions": [
+            {
+              "id": "CVDscore",
+              "label": "CVD score",
+              "questionOptions": {
+                "rendering": "number",
+                "concept": "dff491e3-b14c-4b32-ab64-63b96966d72d",
+                "max": "100",
+                "min": "0",
+                "showDate": "false",
+                "calculate": {
+                  "calculateExpression": "calcSouthEastAsiaNonLabCVDRisk(sex,((!isEmpty(getObsFromControlOrEncounter(smoked,rawPrevObs,'7533aa7e-04cb-4cfd-9c97-6ac36f114bab')) && getObsFromControlOrEncounter(smoked,rawPrevObs,'7533aa7e-04cb-4cfd-9c97-6ac36f114bab')==='fd676d9a-1a47-4f6c-a24e-f57ac796b7f1' ? true : false)),age,systole,BMI)"
+                }
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Diagnosis1",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "45583478-f703-46e3-b63a-54b0a95c25f0",
+                "answers": [
+                  {
+                    "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                  },
+                  {
+                    "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                  },
+                  {
+                    "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                  },
+                  {
+                    "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "Diagnosis2",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "76ca08a5-2128-4b53-afba-74227b015924",
+                "answers": [
+                  {
+                    "concept": "105903f4-7b6d-496a-b613-37ab9d0f5450"
+                  },
+                  {
+                    "concept": "8b26ecd3-8726-4c8e-b042-cbe71e44a863"
+                  },
+                  {
+                    "concept": "932d395c-d509-4d42-bac4-5a3281efe149"
+                  },
+                  {
+                    "concept": "3cd50188-26fe-102b-80cb-0017a47871b2"
+                  },
+                  {
+                    "concept": "1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHealthConditions",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "2c50ded9-779a-4316-be00-d9a065674e54",
+                "answers": [
+                  {
+                    "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+                  },
+                  {
+                    "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHealthCondition",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "556b1ed9-9fd6-4022-adb4-4d1e971194ef",
+                "rows": 5
+              },
+              "hide": {
+                "hideWhenExpression": "arrayContains(['4d21c60-db31-4318-a8e8-13414dc0fa34', '884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', ''], otherHealthConditions)"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "currentMedicalComplications",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "3f36a039-eac3-46bd-8798-102c55639d49",
+                "answers": [
+                  {
+                    "concept": "0c61b26b-c242-4e36-94b6-97328586bee4"
+                  },
+                  {
+                    "concept": "43c557a0-6e35-40e2-90f8-862a07377152"
+                  },
+                  {
+                    "concept": "375325ae-dddf-480f-827a-1bfcf581c97b"
+                  },
+                  {
+                    "concept": "11a2da88-7235-4182-b808-99ba2fb4a1a5"
+                  },
+                  {
+                    "concept": "111103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "6ba80ae0-724b-41db-8831-6b3d89dbef06"
+                  },
+                  {
+                    "concept": "f4d21c60-db31-4318-a8e8-13414dc0fa34"
+                  },
+                  {
+                    "concept": "884AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHealthComplications",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "868e9ebe-86fd-467a-b7a8-345437f340af",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
 
-		{
-			"label": "Treatment Plan",
-			"sections": [
-				{
-					"isExpanded": "true",
-					"label": "Treatment Plan",
-					"questions": [
-						{
-                            "id": "currentTherapy",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "00808084-99a8-4ea8-98b4-63cae2a34273",
-                                "answers": [
-                                    {
-                                        "concept": "4aea53d6-88d1-4e4c-8702-a8142366af02"
-                                    },
-                                    {
-                                        "concept": "8c0fc1cc-f430-4201-968b-db0071b01dfd"
-                                    },
-                                    {
-                                        "concept": "d99b139e-4d8f-462c-9825-a0cdc0824417"
-                                    },
-                                    {
-                                        "concept": "c4c14717-6624-4963-b038-863eb51669a8"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-                            "id": "medicinePrescribed",
-                            "questionOptions": {
-                                "rendering": "radio",
-                                "concept": "805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad",
-                                "answers": [
-                                    {
-                                        "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    },
-                                    {
-                                        "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"questionOptions": {
-								"rendering": "workspace-launcher",
-								"workspaceName": "add-drug-order",
-								"buttonType": "ghost",
-								"buttonLabel": "Add (បន្ថែម) +",
-								"id": "ordering-id"
-							},
-							"id": "orderDrugs",
-							"label": "Order for Drugs here:",
-							"hide": {
-								"hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
-							}
-						},
-						{
-                            "id": "recommendations",
-                            "questionOptions": {
-                                "rendering": "multiCheckbox",
-                                "concept": "9f7c8739-3ea3-4f7f-8648-d6c36fef7be2",
-                                "answers": [
-                                    {
-                                        "concept": "7feb6724-dd34-411a-aa24-2422bfefe407"
-                                    },
-                                    {
-                                        "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
-                                    },
-																		{
-																			"concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
-																		},
-                                    {
-                                        "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
-                                    },
-									{
-                                        "concept": "f24e644d-7c12-476a-9ec4-9734f148502a"
-                                    }
-                                ]
-                            },
-                            "type": "obs",
-                            "validators": []
-                        },
-						{
-							"id": "otherRecomendations",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "2aad4642-7c64-4249-a9ac-8e52aa94c4f4",
-								"rows": 5
-							},
-							"type": "obs",
-							"validators": []
-						},
-						{
-                            "id": "followUpDate",
-                            "questionOptions": {
-                                "rendering": "date",
-                                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
-                            },
-                            "type": "obs",
-                            "validators": []
-                        }
-					]
-				}
-			]
-		},
+    {
+      "label": "Treatment Plan",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Treatment Plan",
+          "questions": [
+            {
+              "id": "currentTherapy",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "00808084-99a8-4ea8-98b4-63cae2a34273",
+                "answers": [
+                  {
+                    "concept": "4aea53d6-88d1-4e4c-8702-a8142366af02"
+                  },
+                  {
+                    "concept": "8c0fc1cc-f430-4201-968b-db0071b01dfd"
+                  },
+                  {
+                    "concept": "d99b139e-4d8f-462c-9825-a0cdc0824417"
+                  },
+                  {
+                    "concept": "c4c14717-6624-4963-b038-863eb51669a8"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "medicinePrescribed",
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "questionOptions": {
+                "rendering": "workspace-launcher",
+                "workspaceName": "add-drug-order",
+                "buttonType": "ghost",
+                "buttonLabel": "Add (បន្ថែម) +",
+                "id": "ordering-id"
+              },
+              "id": "orderDrugs",
+              "label": "Order for Drugs here:",
+              "hide": {
+                "hideWhenExpression": "isEmpty(medicinePrescribed) || medicinePrescribed !== '1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              }
+            },
+            {
+              "id": "recommendations",
+              "questionOptions": {
+                "rendering": "multiCheckbox",
+                "concept": "9f7c8739-3ea3-4f7f-8648-d6c36fef7be2",
+                "answers": [
+                  {
+                    "concept": "7feb6724-dd34-411a-aa24-2422bfefe407"
+                  },
+                  {
+                    "concept": "91ac05d8-174b-4127-ae40-ae90b2244993"
+                  },
+                  {
+                    "concept": "7569536d-4dff-4dfc-bcbc-bfb057700fb8"
+                  },
+                  {
+                    "concept": "73ac6960-6205-466e-8fad-54165e8a55f7"
+                  },
+                  {
+                    "concept": "f24e644d-7c12-476a-9ec4-9734f148502a"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherRecomendations",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "2aad4642-7c64-4249-a9ac-8e52aa94c4f4",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "followUpDate",
+              "questionOptions": {
+                "rendering": "date",
+                "concept": "e9c145c1-f4e9-4c34-b237-da069939dc38"
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    },
 
-		{
-			"label": "Referral",
-			"sections": [
-				{
-					"isExpanded": "true",
-					"label": "Referral",
-					"questions": [
-						{
-							"id": "facility",
-							"questionOptions": {
-								"concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
-								"answers": [
-									{
-										"concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
-									},
-									{
-										"concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
-									},
-									{
-										"concept": "75768295-02df-47ae-965b-d7e84040194b"
-									},
-									{
-										"concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
-									},
-									{
-										"concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
-									}
-								],
-								"rendering": "single-select"
-							},
-							"type": "obs",
-							"validators": []
-						},
-						
-						{
-							"id": "reasonForReferral",
-							"questionOptions": {
-								"rendering": "textarea",
-								"concept": "dee2db0c-5a06-4b1e-8be6-0f327fe6158d",
-								"rows": 5
-							},
-							"type": "obs",
-							"validators": []
-						}
-					]
-				}
-			]
-		}
-	]
+    {
+      "label": "Referral",
+      "sections": [
+        {
+          "isExpanded": "true",
+          "label": "Referral",
+          "questions": [
+            {
+              "id": "facility",
+              "questionOptions": {
+                "concept": "758b9dd8-b6d0-4ac2-b245-0e7bffb4693a",
+                "answers": [
+                  {
+                    "concept": "ba3a8941-016e-4585-bec0-469c4e6ab103"
+                  },
+                  {
+                    "concept": "d583bf9f-1117-4dd6-8bd3-f3e337615bb6"
+                  },
+                  {
+                    "concept": "75768295-02df-47ae-965b-d7e84040194b"
+                  },
+                  {
+                    "concept": "beab3652-6f9a-4066-9159-bc5a91fda2f2"
+                  },
+                  {
+                    "concept": "46ab571a-79ba-4954-a259-21c6ff038df3"
+                  }
+                ],
+                "rendering": "single-select"
+              },
+              "type": "obs",
+              "validators": []
+            },
+
+            {
+              "id": "reasonForReferral",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "dee2db0c-5a06-4b1e-8be6-0f327fe6158d",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

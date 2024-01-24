@@ -1,10 +1,6 @@
 {
   "@openmrs/esm-patient-registration-app": {
-    "sections": [
-      "demographics",
-      "contact",
-      "additionalInformation"
-    ],
+    "sections": ["demographics", "contact", "additionalInformation"],
     "fieldConfigurations": {
       "address": {
         "useAddressHierarchy": {
@@ -77,20 +73,12 @@
       {
         "id": "demographics",
         "name": "Basic Info",
-        "fields": [
-          "name",
-          "gender",
-          "dob",
-          "id"
-        ]
+        "fields": ["name", "gender", "dob", "id"]
       },
       {
         "id": "contact",
         "name": "Contact Details",
-        "fields": [
-          "address",
-          "telephoneField"
-        ]
+        "fields": ["address", "telephoneField"]
       },
       {
         "id": "additionalInformation",
@@ -168,9 +156,7 @@
       "alt": "emr-logo"
     },
     "Display conditions": {
-      "privileges": [
-        "View Patient Summary"
-      ]
+      "privileges": ["View Patient Summary"]
     },
     "visitAttributeTypes": [
       {
@@ -192,23 +178,15 @@
     ],
     "extensionSlots": {
       "patient-chart-summary-dashboard-slot": {
-        "add": [
-          "obs-by-encounter-widget#referral"
-        ],
-        "order": [
-          "obs-by-encounter-widget#referral"
-        ],
+        "add": ["obs-by-encounter-widget#referral"],
+        "order": ["obs-by-encounter-widget#referral"],
         "configure": {
           "obs-by-encounter-widget#referral": {
             "title": "Referral (បញ្ជូន)",
             "showGraphByDefault": true,
-            "encounterTypes": [
-              "b870b6bb-9441-4664-9087-3d3477174213"
-            ],
+            "encounterTypes": ["b870b6bb-9441-4664-9087-3d3477174213"],
             "Display conditions": {
-              "privileges": [
-                "Add Users"
-              ]
+              "privileges": ["Add Users"]
             },
             "data": [
               {
@@ -233,93 +211,67 @@
   },
   "@openmrs/esm-patient-biometrics-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Vitals and Biometrics"
-      ]
+      "privileges": ["Add Vitals and Biometrics"]
     }
   },
   "@openmrs/esm-patient-appointments-app": {
     "Display conditions": {
-      "privileges": [
-        "Manage Appointments"
-      ]
+      "privileges": ["Manage Appointments"]
     }
   },
   "@openmrs/esm-patient-immunizations-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Immunizations"
-      ]
+      "privileges": ["Add Immunizations"]
     }
   },
   "@openmrs/esm-patient-allergies-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Allergies"
-      ]
+      "privileges": ["Add Allergies"]
     }
   },
   "@openmrs/esm-patient-attachments-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Attachments"
-      ]
+      "privileges": ["Add Attachments"]
     }
   },
   "@openmrs/esm-patient-conditions-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Conditions"
-      ]
+      "privileges": ["Add Conditions"]
     }
   },
   "@openmrs/esm-patient-forms-app": {
     "Display conditions": {
-      "privileges": [
-        "Get Forms"
-      ]
+      "privileges": ["Get Forms"]
     }
   },
   "@openmrs/esm-patient-medications-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Orders"
-      ]
+      "privileges": ["Add Orders"]
     }
   },
   "@openmrs/esm-patient-notes-app": {
     "Display conditions": {
-      "privileges": [
-        "Get Notes"
-      ]
+      "privileges": ["Get Notes"]
     }
   },
   "@openmrs/esm-patient-programs-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Patient Programs"
-      ]
+      "privileges": ["Add Patient Programs"]
     }
   },
   "@openmrs/esm-patient-test-results-app": {
     "Display conditions": {
-      "privileges": [
-        "View Test Results"
-      ]
+      "privileges": ["View Test Results"]
     }
   },
   "@openmrs/esm-patient-vitals-app": {
     "Display conditions": {
-      "privileges": [
-        "Add Vitals and Biometrics"
-      ]
+      "privileges": ["Add Vitals and Biometrics"]
     }
   },
   "@openmrs/esm-offline-tools-app": {
     "Display conditions": {
-      "privileges": [
-        "Access Offline Tools"
-      ]
+      "privileges": ["Access Offline Tools"]
     }
   },
   "@openmrs/esm-patient-banner-app": {
@@ -351,23 +303,17 @@
         "configure": {
           "patient-lists-dashboard-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Patient Lists"
-              ]
+              "privileges": ["Manage Patient Lists"]
             }
           },
           "service-queues-dashboard-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Service Queues"
-              ]
+              "privileges": ["Manage Service Queues"]
             }
           },
           "clinical-appointments-dashboard-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Appointments"
-              ]
+              "privileges": ["Manage Appointments"]
             }
           }
         }
@@ -390,65 +336,47 @@
         "configure": {
           "appointments-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Appointments"
-              ]
+              "privileges": ["Manage Appointments"]
             }
           },
           "form-builder-app-menu-link": {
             "Display conditions": {
-              "privileges": [
-                "Build Forms"
-              ]
+              "privileges": ["Build Forms"]
             }
           },
           "dispensing-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Dispensing"
-              ]
+              "privileges": ["Manage Dispensing"]
             }
           },
           "forms-app-link": {
             "Display conditions": {
-              "privileges": [
-                "Access Fast Data Entry"
-              ]
+              "privileges": ["Access Fast Data Entry"]
             }
           },
           "patient-list-linkq": {
             "Display conditions": {
-              "privileges": [
-                "Manage Patient Lists"
-              ]
+              "privileges": ["Manage Patient Lists"]
             }
           },
           "offline-tools-link": {
             "Display conditions": {
-              "privileges": [
-                "Access Offline Tools"
-              ]
+              "privileges": ["Access Offline Tools"]
             }
           },
           "cohort-builder-app-link": {
             "Display conditions": {
-              "privileges": [
-                "Manage Cohorts"
-              ]
+              "privileges": ["Manage Cohorts"]
             }
           },
           "system-administration-link": {
             "Display conditions": {
-              "privileges": [
-                "View Administration Functions"
-              ]
+              "privileges": ["View Administration Functions"]
             }
           },
           "outpatient-link": {
             "Display conditions": {
-              "privileges": [
-                "Access Outpatient App"
-              ]
+              "privileges": ["Access Outpatient App"]
             }
           }
         }
