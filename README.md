@@ -30,6 +30,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ### Version 1.6.0
 
+- Updated Common Reports OpenMRS module to version 1.4.0 that comes with a Disbursement report.
 - Added 'Have you been screened for Diabetes and Hypertension?' to NCD Medical History form.
 - Updated Khmer translation for 'mark patient deceased' in the patient chart.
 - Added OGTT tests for 1hour and 2hours in NCD Consultation form as numeric fields.
