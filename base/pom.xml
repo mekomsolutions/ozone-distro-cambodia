@@ -138,6 +138,7 @@
                     <exclude>distro/**/ampathformstranslations/*.json</exclude>
                     <exclude>distro/**/*demo.csv</exclude>
                     <exclude>distro/configs/openmrs/frontend_config/ozone_logo*</exclude>
+                    <!-- Excluding the Common Reports OpenMRS module inherited from Ozone -->
                     <exclude>distro/binaries/openmrs/modules/commonreports-*.omod</exclude>
                   </excludes>
                 </resource>
