@@ -23,6 +23,12 @@
       <type>zip</type>
       <version>1.0.0-alpha.9</version>
     </dependency>
+    <dependency>
+      <groupId>org.openmrs.module</groupId>
+      <artifactId>commonreports-omod</artifactId>
+      <version>1.4.0</version>
+      <type>jar</type>
+    </dependency>
   </dependencies>
 
   <build>
@@ -45,6 +51,41 @@
               <outputDirectory>${project.build.directory}/ozone</outputDirectory>
               <includeArtifactIds>ozone</includeArtifactIds>
             </configuration>
+          </execution>
+          <execution>
+            <id>Copy dependency jars/omod binaries</id>
+            <phase>package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <excludeTransitive>true</excludeTransitive>
+              <useBaseVersion>true</useBaseVersion>
+              <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules</outputDirectory>
+              <!-- copying jars and omods only -->
+              <includeTypes>jar, omod</includeTypes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>Rename dependency *.jar to *.omod binaries</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <move todir="${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules">
+                  <fileset dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules" />
+                  <mapper type="regexp" from="^(.+)-omod-(.+)\.jar" to="\1-\2.omod" />
+                </move>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -97,6 +138,8 @@
                     <exclude>distro/**/ampathformstranslations/*.json</exclude>
                     <exclude>distro/**/*demo.csv</exclude>
                     <exclude>distro/configs/openmrs/frontend_config/ozone_logo*</exclude>
+                    <!-- Excluding the Common Reports OpenMRS module inherited from Ozone -->
+                    <exclude>distro/binaries/openmrs/modules/commonreports-*.omod</exclude>
                   </excludes>
                 </resource>
               </resources>
