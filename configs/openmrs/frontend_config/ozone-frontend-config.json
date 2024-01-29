@@ -245,6 +245,16 @@
     }
   },
   "@openmrs/esm-patient-medications-app": {
+    "Translation overrides": {
+      "en": {
+        "drugOrders": "Drug orders",
+        "orderActionIncomplete": "Incomplete"
+      },
+      "km": {
+        "drugOrders": "វេជ្ជបញ្ជាសម្រាប់ឱសថ",
+        "orderActionIncomplete": "Incomplete"
+      }
+    },
     "Display conditions": {
       "privileges": ["Add Orders"]
     }
