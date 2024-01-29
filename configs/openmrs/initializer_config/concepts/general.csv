@@ -75,7 +75,7 @@ c384dbf9-1ce5-4294-ab28-23773810ae1c,,,Address Zone,អាសយដ្ឋាន�
 1074AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Months,ខែ,Months,ខែ,,,Misc,N/A,,,,
 1734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Years,ឆ្នាំ,Years,ឆ្នាំ,,,Misc,N/A,,,,
 162582AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Number of occurrences,ចំនួននៃការកើតឡើង,Number of occurrences,ចំនួននៃការកើតឡើង,,,Misc,N/A,,,,
-1732AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Duration unit,ឯកតារយៈពេល,Duration unit,ឯកតារយៈពេល,,,Question,Coded,Seconds;Minutes;Hours;Days;Weeks;Months;Years;Number of occurrences,,,
+1732AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Duration units,ឯកតារយៈពេល,Duration units,ឯកតារយៈពេល,,,Question,Coded,Months;Weeks;Days;Years;Minutes;Hours;Number of occurrences;Seconds,Seconds;Minutes;Hours;Days;Weeks;Months;Years;Number of occurrences,,
 1513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Tablet,គ្រាប់,Tablet,គ្រាប់,,,Misc,N/A,,,,
 162395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Bag,កាបូប,Bag,កាបូប,,,Misc,N/A,,,,
 162396AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Box,ប្រអប់,Box,ប្រអប់,,,Misc,N/A,,,,
