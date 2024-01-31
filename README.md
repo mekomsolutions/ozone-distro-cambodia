@@ -28,6 +28,11 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.6.1
+
+- Added Disbursement report.
+- Added 'Unknown' option under HPV virus test in Cervical Cancer Screening form
+
 ### Version 1.6.0
 
 - Updated Common Reports OpenMRS module to version 1.4.0 that comes with a Disbursement report.
