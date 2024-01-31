@@ -32,7 +32,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 - Updated Common Reports OpenMRS module to version 1.4.1 containing Disbursement report improvements.
 - Added 'Unknown' option under HPV virus test in Cervical Cancer Screening form.
-- Translated the drug order form to Khmer.
+- Translated most of the drug order basket to Khmer.
 - Edited the Khmer translation for the Physical Activity concept.
 
 ### Version 1.6.0
