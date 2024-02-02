@@ -958,7 +958,7 @@
                 "rows": 5
               },
               "hide": {
-                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' || hpvVirus !== '5d0ee6f6-3815-4dea-ab0d-bd9fa0afad23' || hpvVirus !== 'd49b98d3-e1e2-49b8-8f61-45638b17ca21' || hpvVirus !== '1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "type": "obs",
               "validators": []
