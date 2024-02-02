@@ -979,6 +979,32 @@
               },
               "type": "obs",
               "validators": []
+            },
+            {
+              "id": "typeOfTreatmentForHpvirus",
+              "hide": {
+                "hideWhenExpression": "isEmpty(receivedTreatmentForHpvirus) || receivedTreatmentForHpvirus !== '4070623e-945b-499f-8b62-316e699a3cc7' || HPVTestResult != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "8094b06a-1a1d-4446-ab28-66d2b8c77f8c",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "reasonForNotBeingTreatedForHpvirus",
+              "hide": {
+                "hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || HPVTestResult != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "414ae1f0-701a-4dd3-91d2-4059fa24057c",
+                "rows": 5
+              },
+              "type": "obs",
+              "validators": []
             }
           ]
         },
