@@ -996,7 +996,7 @@
             {
               "id": "reasonForNotBeingTreatedForHpvirus",
               "hide": {
-                "hideWhenExpression": "isEmpty(receivedTreatmentForHpv) || receivedTreatmentForHpv !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || HPVTestResult != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(receivedTreatmentForHpvirus) || receivedTreatmentForHpvirus !== '3c3da620-1b38-4ad7-afe9-5233e52e282b' || HPVTestResult != '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               },
               "questionOptions": {
                 "rendering": "textarea",
