@@ -923,6 +923,45 @@
               },
               "type": "obs",
               "validators": []
+            },
+            {
+              "id": "hpvVirus",
+              "hide": {
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "5f27683c-e4ab-4a10-922d-e34bbb560884",
+                "answers": [
+                  {
+                    "concept": "5d0ee6f6-3815-4dea-ab0d-bd9fa0afad23"
+                  },
+                  {
+                    "concept": "d49b98d3-e1e2-49b8-8f61-45638b17ca21"
+                  },
+                  {
+                    "concept": "a225534a-8507-4e78-8510-9cf41e61b0cf"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHpvVirus",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "a225534a-8507-4e78-8510-9cf41e61b0cf",
+                "rows": 5
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "type": "obs",
+              "validators": []
             }
           ]
         },
