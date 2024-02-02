@@ -923,6 +923,65 @@
               },
               "type": "obs",
               "validators": []
+            },
+            {
+              "id": "hpvVirusType",
+              "hide": {
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "5f27683c-e4ab-4a10-922d-e34bbb560884",
+                "answers": [
+                  {
+                    "concept": "5d0ee6f6-3815-4dea-ab0d-bd9fa0afad23"
+                  },
+                  {
+                    "concept": "d49b98d3-e1e2-49b8-8f61-45638b17ca21"
+                  },
+                  {
+                    "concept": "a225534a-8507-4e78-8510-9cf41e61b0cf"
+                  },
+                  {
+                    "concept": "1067AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "otherHpvVirusType",
+              "questionOptions": {
+                "rendering": "textarea",
+                "concept": "a225534a-8507-4e78-8510-9cf41e61b0cf",
+                "rows": 5
+              },
+              "hide": {
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'  || hpvVirusType !== 'a225534a-8507-4e78-8510-9cf41e61b0cf'"
+              },
+              "type": "obs",
+              "validators": []
+            },
+            {
+              "id": "receivedTreatmentForHpvirus",
+              "hide": {
+                "hideWhenExpression": "isEmpty(HPVTestResult) || HPVTestResult !== '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+              },
+              "questionOptions": {
+                "rendering": "radio",
+                "concept": "6027bf55-5288-4ace-bc7f-b75d2291f8e0",
+                "answers": [
+                  {
+                    "concept": "4070623e-945b-499f-8b62-316e699a3cc7"
+                  },
+                  {
+                    "concept": "3c3da620-1b38-4ad7-afe9-5233e52e282b"
+                  }
+                ]
+              },
+              "type": "obs",
+              "validators": []
             }
           ]
         },
