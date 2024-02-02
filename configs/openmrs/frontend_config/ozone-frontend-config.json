@@ -248,11 +248,13 @@
     "Translation overrides": {
       "en": {
         "drugOrders": "Drug orders",
-        "orderActionIncomplete": "Incomplete"
+        "orderActionIncomplete": "Incomplete",
+        "editRouteComboBoxTitle": "Route"
       },
       "km": {
         "drugOrders": "វេជ្ជបញ្ជាសម្រាប់ឱសថ",
-        "orderActionIncomplete": "Incomplete"
+        "orderActionIncomplete": "Incomplete",
+        "editRouteComboBoxTitle": "របៀបប្រើប្រាស់"
       }
     },
     "Display conditions": {
