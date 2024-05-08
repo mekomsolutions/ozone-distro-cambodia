@@ -1,45 +1,36 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ozonehis</groupId>
-  <artifactId>ozone-cambodia-prod</artifactId>
-  <name>Ozone for Cambodia - Production</name>
-  <version>1.7.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-
-  <organization>
-    <name>Ozone HIS</name>
-    <url>http://www.ozone-his.com</url>
-  </organization>
-
-  <developers>
-    <developer>
-      <name>Mekom Solutions</name>
-      <url>http://www.mekomsolutions.com</url>
-    </developer>
-  </developers>
-
   <parent>
     <groupId>com.ozonehis</groupId>
-    <artifactId>ozone-cambodia-parent</artifactId>
-    <version>1.7.0-SNAPSHOT</version>
+    <artifactId>maven-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath></relativePath>
   </parent>
+
+  <groupId>com.ozonehis</groupId>
+  <artifactId>ozone-cambodia-prod</artifactId>
+  <version>1.7.0-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+
+    <!-- Override the Ozone coordinates to point Ozone Cambodia -->
+    <ozone.artifactId>ozone-cambodia</ozone.artifactId>
+    <ozone.groupId>com.ozonehis</ozone.groupId>
+    <ozone.version>1.7.0-SNAPSHOT</ozone.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>com.ozonehis</groupId>
-      <artifactId>ozone-cambodia</artifactId>
-      <version>1.7.0-SNAPSHOT</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.ozonehis</groupId>
       <artifactId>ozone-config-cambodia0</artifactId>
       <type>zip</type>
-      <version>1.7.0-SNAPSHOT</version>
+      <version>${ozone.version}</version>
     </dependency>
   </dependencies>
 
@@ -50,25 +41,10 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <version>2.8</version>
         <executions>
-          <!-- Copy the non-prod artifact -->
-          <execution>
-            <id>Prod: Copy Oz Kh non-prod</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <configuration>
-              <excludeTransitive>true</excludeTransitive>
-              <useBaseVersion>true</useBaseVersion>
-              <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}</outputDirectory>
-              <includeArtifactIds>ozone-cambodia</includeArtifactIds>
-            </configuration>
-          </execution>
           <!-- Copy the confidential configs -->
           <execution>
             <id>Prod: Copy Ozone Config Cambodia 0</id>
-            <phase>process-resources</phase>
+            <phase>prepare-package</phase>
             <goals>
               <goal>unpack-dependencies</goal>
             </goals>
@@ -76,27 +52,8 @@
               <excludeTransitive>true</excludeTransitive>
               <useBaseVersion>true</useBaseVersion>
               <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}/distro</outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/distro/</outputDirectory>
               <includeArtifactIds>ozone-config-cambodia0</includeArtifactIds>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>Prod: Package the production distro</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <descriptors>
-                <descriptor>assembly.xml</descriptor>
-              </descriptors>
             </configuration>
           </execution>
         </executions>
@@ -108,10 +65,6 @@
     <repository>
       <id>mks-nexus-private</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
-    </repository>
-    <repository>
-      <id>mks-nexus-public</id>
-      <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
     </repository>
   </repositories>
 
@@ -127,4 +80,40 @@
       <url>https://nexus.mekomsolutions.net/repository/maven-private-snapshots</url>
     </snapshotRepository>
   </distributionManagement>
+
+  <profiles>
+    <profile>
+      <id>validator</id>
+      <activation>
+        <jdk>1.8</jdk>
+        <property>
+          <name>env.CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <!-- hooking the OpenMRS config validation to the integration-test phase -->
+          <plugin>
+            <groupId>org.openmrs.maven.plugins</groupId>
+            <artifactId>openmrs-packager-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>Validate OpenMRS configuration</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>validate-configurations</goal>
+                </goals>
+                <configuration>
+                  <sourceDir>
+                    ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config</sourceDir>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

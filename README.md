@@ -13,9 +13,6 @@ Ozone for Cambodia or **Ozone Kh** is a distribution of [Ozone HIS](https://www.
 | Dev    | https://oz-kh-dev.mekomsolutions.net/openmrs/spa/login# | admin / Admin123 |
 | UAT    | https://oz-kh-uat.mekomsolutions.net/openmrs/spa/login# | admin / Admin123 |
 
-## Implementer Guide
-
-A technical guide to help implementer building and running the project can be found [here](readme/impl-guide.md).
 
 ## Public Access to the Project
 
@@ -25,8 +22,13 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 - Slack channel: https://openmrs.slack.com/archives/C03ESJABQKY
 - Issue tracker: https://issues.openmrs.org/projects/KH/issues
+- Ozone Docs: https://docs.ozone-his.com/
 
 ## Release Notes
+
+### Version 1.7.0 (WIP)
+
+- Update project structure to be compatible with Ozone alpha.10 and above.
 
 ### Version 1.6.1
 

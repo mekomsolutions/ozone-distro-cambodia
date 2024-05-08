@@ -1,120 +1,38 @@
-<project>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ozonehis</groupId>
-  <artifactId>ozone-cambodia</artifactId>
-  <name>Ozone for Cambodia</name>
-  <version>1.7.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-
   <parent>
     <groupId>com.ozonehis</groupId>
-    <artifactId>ozone-cambodia-parent</artifactId>
-    <version>1.7.0-SNAPSHOT</version>
+    <artifactId>maven-parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath></relativePath>
   </parent>
+
+  <groupId>com.ozonehis</groupId>
+  <artifactId>ozone-cambodia</artifactId>
+  <version>1.7.0-SNAPSHOT</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>com.ozonehis</groupId>
-      <artifactId>ozone</artifactId>
-      <type>zip</type>
-      <version>1.0.0-alpha.9</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openmrs.module</groupId>
-      <artifactId>commonreports-omod</artifactId>
-      <version>1.4.2</version>
-      <type>jar</type>
-    </dependency>
+    <!-- TODO: Add any implementation-specific dependencies -->
   </dependencies>
 
   <build>
     <plugins>
-      <!-- Copy the Ozone resources in a temporary folder -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>2.8</version>
-        <executions>
-          <execution>
-            <id>Unpack Ozone</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>unpack-dependencies</goal>
-            </goals>
-            <configuration>
-              <excludeTransitive>true</excludeTransitive>
-              <useBaseVersion>true</useBaseVersion>
-              <outputDirectory>${project.build.directory}/ozone</outputDirectory>
-              <includeArtifactIds>ozone</includeArtifactIds>
-            </configuration>
-          </execution>
-          <execution>
-            <id>Copy dependency jars/omod binaries</id>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <excludeTransitive>true</excludeTransitive>
-              <useBaseVersion>true</useBaseVersion>
-              <outputDirectory>${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules</outputDirectory>
-              <!-- copying jars and omods only -->
-              <includeTypes>jar, omod</includeTypes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <id>Rename dependency *.jar to *.omod binaries</id>
-            <phase>package</phase>
-            <configuration>
-              <target>
-                <move todir="${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules">
-                  <fileset dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/binaries/openmrs/modules" />
-                  <mapper type="regexp" from="^(.+)-omod-(.+)\.jar" to="\1-\2.omod" />
-                </move>
-              </target>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.0</version>
         <executions>
           <execution>
-            <!-- Override with local config files-->
-            <id>Copy local configs</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs</outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>${project.parent.basedir}/configs</directory>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
             <!-- Exclude files from Ozone -->
-            <id>Exclude some Ozone files</id>
+            <id>Exclude unneeded Ozone files</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
@@ -127,19 +45,21 @@
                 <resource>
                   <directory>${project.build.directory}/ozone</directory>
                   <excludes>
-                    <exclude>distro/**/appointment*</exclude>
-                    <exclude>distro/**/concepts*demo.csv</exclude>
-                    <exclude>distro/**/encountertypes*demo.csv</exclude>
-                    <exclude>distro/**/personattributetypes*demo.csv</exclude>
-                    <exclude>distro/**/privileges*demo.csv</exclude>
-                    <exclude>distro/**/program*</exclude>
-                    <exclude>distro/**/roles*demo.csv</exclude>
-                    <exclude>distro/**/ampathforms/*.json</exclude>
-                    <exclude>distro/**/ampathformstranslations/*.json</exclude>
-                    <exclude>distro/**/*demo.csv</exclude>
-                    <exclude>distro/configs/openmrs/frontend_config/ozone_logo*</exclude>
-                    <!-- Excluding the Common Reports OpenMRS module inherited from Ozone -->
-                    <exclude>distro/binaries/openmrs/modules/commonreports-*.omod</exclude>
+                    <exclude>distro/configs/**/address*/*demo.*</exclude>
+                    <exclude>distro/configs/**/concepts/*demo.csv</exclude>
+                    <exclude>distro/configs/**/program*</exclude>
+                    <exclude>distro/configs/**/ampathforms/</exclude>
+                    <exclude>distro/configs/**/ampathformstranslations/</exclude>
+                    <exclude>distro/configs/**/appointment*/</exclude>
+                    <exclude>distro/configs/**/attributetypes/</exclude>
+                    <exclude>distro/configs/**/globalproperties/*demo.xml</exclude>
+                    <exclude>distro/configs/**/drugs/</exclude>
+                    <exclude>distro/configs/**/locations/</exclude>
+                    <exclude>distro/configs/**/patientidentifiertypes/</exclude>
+                    <exclude>distro/configs/**/personattributetypes/</exclude>
+                    <exclude>distro/configs/**/privileges/</exclude>
+                    <exclude>distro/configs/**/roles/*demo.*</exclude>
+                    <exclude>distro/configs/**/visittypes*</exclude>
                   </excludes>
                 </resource>
               </resources>
@@ -147,27 +67,42 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Packaging the package as a zip -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>Package distro</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <appendAssemblyId>false</appendAssemblyId>
-              <descriptors>
-                <descriptor>${project.basedir}/assembly.xml</descriptor>
-              </descriptors>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>validator</id>
+      <activation>
+        <jdk>1.8</jdk>
+        <property>
+          <name>env.CI</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <!-- hooking the OpenMRS config validation to the integration-test phase -->
+          <plugin>
+            <groupId>org.openmrs.maven.plugins</groupId>
+            <artifactId>openmrs-packager-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>Validate OpenMRS configuration</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>validate-configurations</goal>
+                </goals>
+                <configuration>
+                  <sourceDir>
+                    ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config</sourceDir>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
-  

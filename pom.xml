@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ozonehis</groupId>
@@ -32,71 +33,10 @@
         <activeByDefault>false</activeByDefault>
       </activation>
       <modules>
-        <module>base</module>
         <module>prod</module>
       </modules>
     </profile>
   </profiles>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>3.3.0</version>
-        <executions>
-          <execution>
-            <!-- Copy and substitute some helper files (for demo and Gitpod) -->
-            <id>Copy and substitute some helper files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.directory}/</outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>../scripts</directory>
-                  <filtering>false</filtering>
-                </resource>
-                <resource>
-                  <directory>../scripts</directory>
-                  <includes>
-                    <include>*.sh</include>
-                  </includes>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <!-- Copy the docker-compose-files.txt file to set the services to run -->
-            <id>Copy docker-compose-files.txt</id>
-            <phase>prepare-package</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}/run/docker/scripts</outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>../scripts</directory>
-                  <includes>
-                    <include>docker-compose-files.txt</include>
-                  </includes>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 
   <repositories>
     <repository>
