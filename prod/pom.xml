@@ -7,6 +7,7 @@
     <groupId>com.ozonehis</groupId>
     <artifactId>maven-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <relativePath></relativePath>
   </parent>
 
   <groupId>com.ozonehis</groupId>
@@ -62,6 +63,10 @@
   </build>
 
   <repositories>
+    <repository>
+      <id>mks-nexus-public</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
+    </repository>
     <repository>
       <id>mks-nexus-private</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-private/</url>
