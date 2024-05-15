@@ -11,6 +11,7 @@ jobs:
     uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-build-test.yml@main
     with:
       java-version: "8"
+      use-secrets: true
       maven-phase: "install"
       maven-args: "-P validator -Pprod" #  OMRS config validation
     secrets:
