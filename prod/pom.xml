@@ -35,12 +35,6 @@
       <type>zip</type>
       <version>${ozone.version}</version>
     </dependency>
-    <dependency>
-      <groupId>com.ozonehis</groupId>
-      <artifactId>ozone-scripts</artifactId>
-      <type>zip</type>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
   </dependencies>
 
   <build>
