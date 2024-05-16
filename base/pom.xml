@@ -91,7 +91,12 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <profiles>
+  <!-- 
+    Disable OpenMRS Initalizer Validator due to an error when running it consequently in 2 Maven sub-modules.
+    OpennMRS config validation will be done in the child Maven project "prod" which should validate this project to a great extent.
+    See Slack conversation: https://mekomsolutions.slack.com/archives/G421UNF5L/p1715787009629219?thread_ts=1715774419.673979&cid=G421UNF5L
+  -->
+    <!-- <profiles>
     <profile>
       <id>validator</id>
       <activation>
@@ -103,7 +108,6 @@
       </activation>
       <build>
         <plugins>
-          <!-- hooking the OpenMRS config validation to the integration-test phase -->
           <plugin>
             <groupId>org.openmrs.maven.plugins</groupId>
             <artifactId>openmrs-packager-maven-plugin</artifactId>
@@ -125,5 +129,5 @@
         </plugins>
       </build>
     </profile>
-  </profiles>
+  </profiles> -->
 </project>
