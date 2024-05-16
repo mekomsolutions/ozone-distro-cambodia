@@ -18,6 +18,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
+
+    <!-- Classifier for the dependency report artifact -->
+    <dependencyReportClassifier>dependencies</dependencyReportClassifier>
   </properties>
 
   <dependencies>
@@ -67,6 +70,46 @@
           </execution>
         </executions>
       </plugin>
+
+      <!-- Compile a dependency report -->
+      <plugin>
+        <groupId>net.mekomsolutions.maven.plugin</groupId>
+        <artifactId>dependency-tracker-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Compile dependency report</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>track</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Attach the dependency report to the build -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Attach the dependency report</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>
+                    ${project.build.directory}/${project.artifactId}-${project.version}-dependencies.txt</file>
+                  <type>txt</type>
+                  <classifier>${dependencyReportClassifier}</classifier>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
@@ -91,11 +134,14 @@
   </distributionManagement>
 
   <!--
-    Disable OpenMRS Initalizer Validator due to an error when running it consequently in 2 Maven sub-modules.
-    OpennMRS config validation will be done in the child Maven project "prod" which should validate this project to a great extent.
-    See Slack conversation: https://mekomsolutions.slack.com/archives/G421UNF5L/p1715787009629219?thread_ts=1715774419.673979&cid=G421UNF5L
+    Disable OpenMRS Initalizer Validator due to an error when running it consequently in 2 Maven
+  sub-modules.
+    OpennMRS config validation will be done in the child Maven project "prod" which should validate
+  this project to a great extent.
+    See Slack conversation:
+  https://mekomsolutions.slack.com/archives/G421UNF5L/p1715787009629219?thread_ts=1715774419.673979&cid=G421UNF5L
   -->
-    <!-- <profiles>
+  <!-- <profiles>
     <profile>
       <id>validator</id>
       <activation>
@@ -119,7 +165,7 @@
                 </goals>
                 <configuration>
                   <sourceDir>
-                    ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config</sourceDir>
+  ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config</sourceDir>
                 </configuration>
               </execution>
             </executions>
