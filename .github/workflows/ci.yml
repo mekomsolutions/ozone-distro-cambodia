@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-build-test.yml@main
+    with:
+      java-version: "8"
+      maven-phase: "install"
+      maven-args: "-P validator -P prod"
+      use-secrets: true
+    secrets:
+      NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
+      NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
+
+  release:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: validate
+    uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-publish.yml@main
+    with:
+      java-version: "8"
+      maven-args: "-P prod -DskipTests=true"
+    secrets:
+      NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
+      NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
