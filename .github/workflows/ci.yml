@@ -13,6 +13,7 @@ jobs:
       java-version: "8"
       maven-phase: "install"
       maven-args: "-P validator -P prod"
+      use-secrets: true
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
