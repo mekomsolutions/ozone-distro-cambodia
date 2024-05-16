@@ -10,7 +10,6 @@
     <relativePath></relativePath>
   </parent>
 
-  <groupId>com.ozonehis</groupId>
   <artifactId>ozone-cambodia</artifactId>
   <version>1.7.0-SNAPSHOT</version>
   <description>Ozone Cambodia</description>
@@ -91,7 +90,7 @@
     </snapshotRepository>
   </distributionManagement>
 
-  <!-- 
+  <!--
     Disable OpenMRS Initalizer Validator due to an error when running it consequently in 2 Maven sub-modules.
     OpennMRS config validation will be done in the child Maven project "prod" which should validate this project to a great extent.
     See Slack conversation: https://mekomsolutions.slack.com/archives/G421UNF5L/p1715787009629219?thread_ts=1715774419.673979&cid=G421UNF5L
