@@ -1,3 +1,5 @@
 Uuid,Void/Retire,Name,Description
 f47ac10b-58cc-4372-a567-0e02b2c3d479,,Referral Hospital,"Tag to mark Facility/Location as Referral Hospital",
-550e8400-e29b-41d4-a716-4466554403dc,,Health Centre,"Tag to mark Facility/Location as Health Centre",
+550e8400-e29b-41d4-a716-4466554403dc,,Health Center,"Tag to mark Facility/Location as Health Centre",
+8b0d576b-8c2f-4c47-9310-d82c57c41a88,,National Hospital,"Tag to mark Facility/Location as National Hospital",
+af9a1a43-0d6e-46d6-8ef2-56f9c87688c7,,Provincial Hospital,"Tag to mark Facility/Location as Provincial Hospital",
