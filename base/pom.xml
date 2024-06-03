@@ -123,7 +123,7 @@
   <distributionManagement>
     <repository>
       <name>Mekom Solutions Nexus repo for releases</name>
-      <id>mks-nexus-public</id>
+      <id>mks-nexus-public-releases</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-releases</url>
     </repository>
     <snapshotRepository>

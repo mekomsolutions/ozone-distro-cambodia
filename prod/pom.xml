@@ -117,7 +117,7 @@
   <distributionManagement>
     <repository>
       <name>Mekom SolutionsNexus private repo for releases</name>
-      <id>mks-nexus-private</id>
+      <id>mks-nexus-private-releases</id>
       <url>https://nexus.mekomsolutions.net/repository/maven-private-releases/</url>
     </repository>
     <snapshotRepository>
