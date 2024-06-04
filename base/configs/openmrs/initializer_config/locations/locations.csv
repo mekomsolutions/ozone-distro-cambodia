@@ -1,6 +1,6 @@
 Uuid,Void/Retire,Name,display:en,display:km,Description,Parent,Tags,Tag|Facility Location,Attribute|9eca4f4e-707f-4bb8-8289-2f9b6e93803c,Attribute|Last Audit Date,Address 1,Address 2,Address 3,Address 4,Address 5,Address 6,City/Village,County/District,State/Province,Postal Code,Country,_order:1000
-2e013076-ddf3-4f44-9a10-54fb6a8855f7,,100101. មន្ទីរពេទ្យបង្អែកឆ្លូង_RH / Chhlong_RH,100101. Chhlong_RH,100101. មន្ទីរពេទ្យបង្អែកឆ្លូង_RH,100101. Chhlong_RH,,Login Location,TRUE,,,,,,,,,,,,,,
-d84e5c0a-ff31-4288-9718-7acff068e14b,,100102. ចំបក់_HC / Chambak_HC,100102. Chambak_HC,100102. ចំបក់_HC,100102. Chambak_HC,,Login Location,TRUE,,,,,,,,,,,,,,
-609033e0-097c-46ba-87a2-58c749171708,,100103. តាម៉ៅ_HC / Ta Mao_HC,100103. Ta Mao_HC,100103. តាម៉ៅ_HC,100103. Ta Mao_HC,,Login Location,TRUE,,,,,,,,,,,,,,
-3e135aad-ab0d-447d-85f8-1421f2455a59,,100105. ខ្សាច់អណ្តែត_HC / Khsach Andet_HC,100105. Khsach Andet_HC,100105. ខ្សាច់អណ្តែត_HC,100105. Khsach Andet_HC,,Login Location,TRUE,,,,,,,,,,,,,,
-ec030870-1d8f-457f-960b-3ede527841a4,,100106. ពង្រ_HC / Pongro_HC,100106. Pongro_HC,100106. ពង្រ_HC,100106. Pongro_HC,,Login Location,TRUE,,,,,,,,,,,,,,
+2e013076-ddf3-4f44-9a10-54fb6a8855f7,,100101. មន្ទីរពេទ្យបង្អែកឆ្លូង_RH / Chhlong_RH,100101. Chhlong_RH,100101. មន្ទីរពេទ្យបង្អែកឆ្លូង_RH,100101. Chhlong_RH,,Login Location;Facility Location;Referral Hospital,TRUE,,,,,,,,,,ឆ្លូង / Chhlong,ក្រចេះ / Kratie,100101,Cambodia,
+d84e5c0a-ff31-4288-9718-7acff068e14b,,100102. ចំបក់_HC / Chambak_HC,100102. Chambak_HC,100102. ចំបក់_HC,100102. Chambak_HC,,Login Location;Facility Location;Health Center,TRUE,,,,,,,,,,ឆ្លូង / Chhlong,ក្រចេះ / Kratie,100102,Cambodia,
+609033e0-097c-46ba-87a2-58c749171708,,100103. តាម៉ៅ_HC / Ta Mao_HC,100103. Ta Mao_HC,100103. តាម៉ៅ_HC,100103. Ta Mao_HC,,Login Location;Facility Location;Health Center,TRUE,,,,,,,,,,ឆ្លូង / Chhlong,ក្រចេះ / Kratie,100103,Cambodia,
+3e135aad-ab0d-447d-85f8-1421f2455a59,,100105. ខ្សាច់អណ្តែត_HC / Khsach Andet_HC,100105. Khsach Andet_HC,100105. ខ្សាច់អណ្តែត_HC,100105. Khsach Andet_HC,,Login Location;Facility Location;Health Center,TRUE,,,,,,,,,,ឆ្លូង / Chhlong,ក្រចេះ / Kratie,100105,Cambodia,
+ec030870-1d8f-457f-960b-3ede527841a4,,100106. ពង្រ_HC / Pongro_HC,100106. Pongro_HC,100106. ពង្រ_HC,100106. Pongro_HC,,Login Location;Facility Location;Health Center,TRUE,,,,,,,,,,ឆ្លូង / Chhlong,ក្រចេះ / Kratie,100106,Cambodia,
