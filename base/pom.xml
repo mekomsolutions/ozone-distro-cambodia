@@ -162,7 +162,8 @@
                   <configuration>
                     <target>
                       <copy todir="${project.build.directory}/validator/configuration">
-                        <fileset dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config"/>
+                        <fileset
+  dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config"/>
                       </copy>
                     </target>
                   </configuration>
@@ -183,8 +184,7 @@
                   <goal>validate-configurations</goal>
                 </goals>
                 <configuration>
-                  <sourceDir>
-  ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/openmrs/initializer_config</sourceDir>
+                  <sourceDir>${project.build.directory}/validator/configuration</sourceDir>
                 </configuration>
               </execution>
             </executions>
