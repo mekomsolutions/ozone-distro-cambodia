@@ -20,6 +20,6 @@ a86c14a1-9453-46af-9b9a-f950b21b8952,,,Triglycerides,ទ្រីក្លីស
 681d9109-4414-440f-a733-c4cce954cd41,,,Creatinine clearance (ml/min),ការធ្វើតេស្តដើម្បីដឹងពីការច្រោះជម្រះជាតិក្រេអាទីនីនពីក្នុងទឹកនោម (ml/min),Creatinine clearance (ml/min),ការធ្វើតេស្តដើម្បីដឹងពីការច្រោះជម្រះជាតិក្រេអាទីនីនពីក្នុងទឹកនោម (ml/min),0,500,,,,Yes,Test,Numeric,,,,
 808d6fc6-f762-4f37-b8ed-ece810f52cef,,,Proteinuria,ជាតិសាច់ក្នុងទឹកនោម (ជាតិប្រូតេអ៊ីនក្នុងទឹកនោម),Proteinuria,ជាតិសាច់ក្នុងទឹកនោម (ជាតិប្រូតេអ៊ីនក្នុងទឹកនោម),0,,,,,Yes,Test,Numeric,,,,
 1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Potassium (mmol/l),ប៉ូតាស្យូម (mmol/l),Potassium (mmol/l),ប៉ូតាស្យូម (mmol/l),0,20,mmol/L,,,Yes,Test,Numeric,,,,
-088e714b-0529-414b-9a09-46bb10185603,,,ACE inhibitor (nmol/ml/min),ពពួកថ្នាំព្យាបាលជំងឺបេះដូងសរសៃឈាម (nmol/ml/min),ACE inhibitor (nmol/ml/min),ពពួកថ្នាំព្យាបាលជំងឺបេះដូងសរសៃឈាម (nmol/ml/min),0,100,,,,Yes,Test,Numeric,,,,
+088e714b-0529-414b-9a09-46bb10185603,,,ACE inhibitor (nmol/ml/min),អង់ស៊ីម ACE (nmol/mL/min),ACE inhibitor (nmol/ml/min),អង់ស៊ីម ACE (nmol/mL/min),0,100,,,,Yes,Test,Numeric,,,,
 1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Sodium,សូដ្យូម,Sodium,សូដ្យូម,0,500,MEq,,,Yes,Test,Numeric,,,,
 654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,ALT,អង់ស៊ីម ALT របស់ថ្លើម,ALT,អង់ស៊ីម ALT របស់ថ្លើម,0,100,IU/L,,,Yes,Test,Numeric,,,,
