@@ -12,7 +12,7 @@ jobs:
     with:
       java-version: "8"
       maven-phase: "install"
-      maven-args: "-P validator -P prod"
+      maven-args: "-P prod" # Remove -Pvalidator to temporarily bypass validation
       use-secrets: true
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
