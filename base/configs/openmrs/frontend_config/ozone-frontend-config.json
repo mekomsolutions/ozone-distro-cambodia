@@ -121,7 +121,10 @@
         "Female": "Female",
         "Other": "Other",
         "Unknown": "Unknown",
-        "selectAnOption": "Select an option"
+        "selectAnOption": "Select an option",
+        "createNew": "Register",
+        "patient": "New Patient"
+
       },
       "km": {
         "Commune": "ឃុំ/សង្កាត់",
@@ -136,7 +139,9 @@
         "Female": "ស្រី",
         "Other": "ផ្សេងៗ",
         "Unknown": "មិនដឹង",
-        "selectAnOption": "សូមជ្រើសរើសជម្រើសណាមួយ"
+        "selectAnOption": "សូមជ្រើសរើសជម្រើសណាមួយ",
+        "createNew": "ចុះឈ្មោះ",
+        "patient": "អ្នកជំងឺថ្"
       }
     }
   },
