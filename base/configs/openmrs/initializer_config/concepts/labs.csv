@@ -9,7 +9,7 @@ f52d731e-58da-4f3a-a480-77c5e9d8d2eb,,,Random blood sugar,រកកម្រិ�
 07015405-c865-4a22-8ad1-c8863d5f005b,,,Ketones (Urine),ពិនិត្យរកសារជាតិកេតូន (ក្នុងទឹកនោម),Ketones (Urine),ពិនិត្យរកសារជាតិកេតូន (ក្នុងទឹកនោម),,,,,,,Question,Coded,+;++;+++;++++,,,
 c423325e-be95-42e2-ae38-b940c2586327,,,Albumin (Urine),តេស្តអាលប៊ុយម៊ីន (ក្នុងទឹកនោម),Albumin (Urine),តេស្តអាលប៊ុយម៊ីន (ក្នុងទឹកនោម),0,100,mg/dl,,,Yes,Test,Text,,,,
 1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,Total Cholesterol,កូលេស្តេរ៉ុលសរុប,Total Cholesterol,កូលេស្តេរ៉ុលសរុប,0,1500,mg/dl,,,Yes,Test,Text,,,,
-a8af7520-1350-11df-a1f1-0026b9348838,,,HbA1c,អេម៉ូក្លូប៊ីនអេវ័នស៊ី,HbA1c,អេម៉ូក្លូប៊ីនអេវ័នស៊ី,0,20,%,,,Yes,Test,Numeric,,,,
+a8af7520-1350-11df-a1f1-0026b9348838,,,HbA1c (optional),HbA1c (ជាជម្រើស),HbA1c (optional),HbA1c (ជាជម្រើស),0,20,%,,,Yes,Test,Numeric,,,,
 163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,,OGTT,តេស្តកម្រិតជាតិស្ករក្នុងឈាម២ម៉ោងក្រោយផឹកទឹកស្ករ៧៥ក្រាម,OGTT,តេស្តកម្រិតជាតិស្ករក្នុងឈាម២ម៉ោងក្រោយផឹកទឹកស្ករ៧៥ក្រាម,0,900,mg/dl,,,Yes,Test,Numeric,,,,
 3c884cd2-4aba-41e0-a535-e3e7bc70b5ee,,,OGTT 1hour,OGTT 1ម៉ោង,OGTT 1hour,OGTT 1ម៉ោង,0,900,mg/dl,,,Yes,Test,Numeric,,,,
 1941f03b-9a5e-4285-b66a-c10880a3362d,,,OGTT 2hours,OGTT 2ម៉ោង,OGTT 2hours,OGTT 2ម៉ោង,0,900,mg/dl,,,Yes,Test,Numeric,,,,
