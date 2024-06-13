@@ -60,8 +60,6 @@
                     <exclude>distro/configs/**/locations/</exclude>
                     <exclude>distro/configs/**/patientidentifiertypes/</exclude>
                     <exclude>distro/configs/**/personattributetypes/</exclude>
-                    <exclude>distro/configs/**/privileges/</exclude>
-                    <exclude>distro/configs/**/roles/*demo.*</exclude>
                     <exclude>distro/configs/**/visittypes*</exclude>
                   </excludes>
                 </resource>
