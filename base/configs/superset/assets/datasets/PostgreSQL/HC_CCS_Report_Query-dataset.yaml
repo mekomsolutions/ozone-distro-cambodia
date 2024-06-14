@@ -1,0 +1,585 @@
+table_name: HC CCS Report Query-dataset
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT\n    CASE \n        WHEN identifiers ~ '.*OpenMRS ID: (.*?)(,|$).*' THEN\
+  \ REGEXP_REPLACE(identifiers, '.*OpenMRS ID: (.*?)(,|$).*', '\\1', 'g')\n      \
+  \  ELSE ''\n    END AS \"OpenMRS ID\",\n    CASE \n        WHEN identifiers ~ '.*IDPoor:\
+  \ (.*?)(,|$).*' THEN REGEXP_REPLACE(identifiers, '.*IDPoor: (.*?)(,|$).*', '\\1',\
+  \ 'g')\n        ELSE ''\n    END AS \"ID Poor Card\",\n    CASE \n        WHEN identifiers\
+  \ ~ '.*National ID: (.*?)(,|$).*' THEN REGEXP_REPLACE(identifiers, '.*National ID:\
+  \ (.*?)(,|$).*', '\\1', 'g')\n        ELSE ''\n    END AS \"National ID Card\",\n\
+  \    CASE \n        WHEN identifiers ~ '.*PMRS ID: (.*?)(,|$).*' THEN REGEXP_REPLACE(identifiers,\
+  \ '.*PMRS ID: (.*?)(,|$).*', '\\1', 'g')\n        ELSE ''\n    END AS \"PMRS ID\
+  \ Number\",\n    COALESCE(\n        REGEXP_REPLACE(\n            REGEXP_REPLACE(\n\
+  \                identifiers, \n                '(?:OpenMRS ID|National ID|IDPoor|PMRS\
+  \ ID): [^,]*,?\\s?', \n                '', \n                'g'\n            ),\
+  \ \n            '^, |, $', \n            ''\n        ), \n        NULL\n    ) AS\
+  \ \"Other Identifiers\",\n    CONCAT_WS(' ', given_name, middle_name, family_name)\
+  \ AS \"Patient's name\",\n    DATE_PART('year', age(visit_date, birthdate)) AS \"\
+  Age\",\n    address_state_province AS \"Province/City\",\n    address_county_district\
+  \ AS \"District/ Khan\",\n    address_city AS \"Commune/ Sangkat\",\n    address_1\
+  \ AS \"Village\",\n    CASE \n        WHEN attributes ~ '.*Telephone Number: (.*?)(\\\
+  /|$).*' THEN REGEXP_REPLACE(attributes, '.*Telephone Number: (.*?)(\\/|$).*', '\\\
+  1', 'g')\n        ELSE ''\n    END AS \"Phone number\",\n    visit_date AS \"Visit\
+  \ date\",\n    visit_type AS \"Type of visit\",\n    insurance_type AS \"Payment\
+  \ type\",\n    referred_from AS \"Referred From\",\n    scj AS \"SCJ\",\n    via_test_result\
+  \ AS \"VIA test result\",\n    number_of_quadrants  AS \"If VIA(+) Number of Quadrants\
+  \ involved\",\n    acetowhite AS \"If VIA(+) % of Acetowhite site\",\n    hpv_test\
+  \ AS \"HPV Test result\",\n    hpv_type AS \"Type of HPV \",\n    cervical_treatment_coded\
+  \ As \"Treatment option\",\n    cervical_treatment_text AS \"Other treatment specified\"\
+  ,\n    self_breast_exam AS \"Self breast examination and education\",\n    breast_exam_result_coded\
+  \ AS \"Breast Examination Result\",\n    breast_exam_result_text AS \"Other Breast\
+  \ Examination Result\",\n    breast_cancer_treatment AS \"Treatment\",\n    f_province\
+  \ AS \"Facility Province\",\n    f_district AS \"Facility District\",\n    f_facility\
+  \ AS \"Facility Name\"\nFROM (\n    SELECT\n        patient_id,\n        given_name,\n\
+  \        middle_name,\n        family_name,\n        identifiers,\n        birthdate,\n\
+  \        address_state_province,\n        address_county_district,\n        address_city,\n\
+  \        address_1,\n        attributes,\n        vi.date_started AS \"visit_date\"\
+  ,\n        vi.type AS \"visit_type\",\n        CASE \n            WHEN vi.visit_attributes\
+  \ ~ '.*Insurance Type: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(vi.visit_attributes,\
+  \ '.*Insurance Type: (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n       \
+  \ END AS \"insurance_type\",\n        CASE \n            WHEN vi.visit_attributes\
+  \ ~ '.*Referred from: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(vi.visit_attributes, '.*Referred\
+  \ from: (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n        END AS \"referred_from\"\
+  ,\n        obs_scj.answer_coded AS \"scj\",\n        obs_via_test_result.answer_coded\
+  \ AS \"via_test_result\",\n        obs_number_of_quadrants.answer_coded  AS \"number_of_quadrants\"\
+  ,\n        obs_acetowhite.answer_coded AS \"acetowhite\",\n        obs_hpv_test.answer_coded\
+  \ AS \"hpv_test\",\n        obs_hpv_type.answer_coded AS \"hpv_type\",\n       \
+  \ obs_cervical_treatment.answer_coded As \"cervical_treatment_coded\",\n       \
+  \ obs_cervical_treatment.answer_text AS \"cervical_treatment_text\",\n        obs_self_breast_exam.answer_coded\
+  \ AS \"self_breast_exam\",\n        obs_breast_exam_result.answer_coded AS \"breast_exam_result_coded\"\
+  ,\n        obs_breast_exam_result.answer_text AS \"breast_exam_result_text\",\n\
+  \        obs_breast_cancer_treatment.answer_coded AS \"breast_cancer_treatment\"\
+  ,\n        facility_address.state_province AS \"f_province\",\n        facility_address.county_district\
+  \ AS \"f_district\",\n        facility_address.name AS \"f_facility\",\n       \
+  \ facility_address.location_tags AS \"l_tags\"\n    FROM patients pa\n    LEFT OUTER\
+  \ JOIN visits vi on vi.patient_uuid = pa.patient_uuid\n    LEFT OUTER JOIN locations\
+  \ facility_address ON facility_address.uuid = vi.location_uuid\n    LEFT OUTER JOIN\
+  \ (\n        SELECT obs1.visit_uuid, MAX(date_created), obs1.answer_coded, obs1.encounter_uuid\n\
+  \        FROM observations obs1\n        WHERE obs1.question_uuid = 'd2ec630a-a223-492a-89f2-597266b36571'\n\
+  \        GROUP BY obs1.visit_uuid, obs1.question_uuid, obs1.answer_coded, obs1.encounter_uuid\n\
+  \    ) AS obs_scj on obs_scj.visit_uuid = vi.visit_uuid\n    LEFT OUTER JOIN (\n\
+  \        SELECT obs2.visit_uuid, MAX(date_created), obs2.answer_coded, obs2.encounter_uuid\n\
+  \        FROM observations obs2\n        WHERE obs2.question_uuid = '27912a31-4b1e-40d4-a3a0-947e0eb2e588'\n\
+  \        GROUP BY obs2.visit_uuid, obs2.question_uuid, obs2.answer_coded, obs2.encounter_uuid\n\
+  \    ) AS obs_via_test_result on obs_via_test_result.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs3.visit_uuid, MAX(date_created), obs3.answer_coded,\
+  \ obs3.encounter_uuid\n        FROM observations obs3\n        WHERE obs3.question_uuid\
+  \ = '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f'\n        GROUP BY obs3.visit_uuid, obs3.question_uuid,\
+  \ obs3.answer_coded, obs3.encounter_uuid\n    ) AS obs_number_of_quadrants  on obs_number_of_quadrants.encounter_uuid\
+  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs4.visit_uuid,\
+  \ MAX(date_created), obs4.answer_coded, obs4.encounter_uuid\n        FROM observations\
+  \ obs4\n        WHERE obs4.question_uuid = 'a84a070a-172f-43f7-96f3-67574d42ba1b'\n\
+  \        GROUP BY obs4.visit_uuid, obs4.question_uuid, obs4.answer_coded, obs4.encounter_uuid\n\
+  \    ) AS obs_acetowhite  on obs_acetowhite.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs5.visit_uuid, MAX(date_created), obs5.answer_coded,\
+  \ obs5.encounter_uuid\n        FROM observations obs5\n        WHERE obs5.question_uuid\
+  \ = 'b643325d-0d63-4ba0-9c0d-e1c0a1c9f3ce'\n        GROUP BY obs5.visit_uuid, obs5.question_uuid,\
+  \ obs5.answer_coded, obs5.encounter_uuid\n    ) AS obs_hpv_test  on obs_hpv_test.encounter_uuid\
+  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs6.visit_uuid,\
+  \ MAX(date_created), obs6.answer_coded, obs6.encounter_uuid\n        FROM observations\
+  \ obs6\n        WHERE obs6.question_uuid = '5f27683c-e4ab-4a10-922d-e34bbb560884'\n\
+  \        GROUP BY obs6.visit_uuid, obs6.question_uuid, obs6.answer_coded, obs6.encounter_uuid\n\
+  \    ) AS obs_hpv_type  on obs_hpv_type.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs7.visit_uuid, MAX(obs7.date_created),\
+  \ obs7.answer_coded, obs7.encounter_uuid, obs_other_treatment.answer_text\n    \
+  \    FROM observations obs7\n        LEFT OUTER JOIN observations obs_other_treatment\
+  \ ON obs7.encounter_uuid = obs_other_treatment.encounter_uuid AND obs_other_treatment.question_uuid\
+  \ = 'e6d18ff5-9d52-4e47-b2b2-762d9aa30604'\n        WHERE obs7.question_uuid = '1ca7d712-f7d7-4e09-8184-048bc4173902'\n\
+  \        GROUP BY obs7.visit_uuid, obs7.question_uuid, obs7.answer_coded, obs7.encounter_uuid,\
+  \ obs_other_treatment.answer_text\n    ) AS obs_cervical_treatment  on obs_cervical_treatment.encounter_uuid\
+  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs8.visit_uuid,\
+  \ MAX(date_created), obs8.answer_coded, obs8.encounter_uuid\n        FROM observations\
+  \ obs8\n        WHERE obs8.question_uuid = 'c208aa27-9790-4dbf-84eb-2ffc321a1230'\n\
+  \        GROUP BY obs8.visit_uuid, obs8.question_uuid, obs8.answer_coded, obs8.encounter_uuid\n\
+  \    ) AS obs_self_breast_exam  on obs_self_breast_exam.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs9.visit_uuid, MAX(obs9.date_created),\
+  \ obs9.answer_coded, obs9.encounter_uuid, obs_other_result.answer_text\n       \
+  \ FROM observations obs9\n        LEFT OUTER JOIN observations obs_other_result\
+  \ ON obs9.encounter_uuid = obs_other_result.encounter_uuid AND obs_other_result.question_uuid\
+  \ = 'f984b718-d674-40c4-9ac4-8d22963e1933'\n        WHERE obs9.question_uuid = 'd1fd20ef-6363-4065-98d6-f36b8f1dc27e'\n\
+  \        GROUP BY obs9.visit_uuid, obs9.question_uuid, obs9.answer_coded, obs9.encounter_uuid,\
+  \ obs_other_result.answer_text\n    ) AS obs_breast_exam_result  on obs_breast_exam_result.encounter_uuid\
+  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs10.visit_uuid,\
+  \ MAX(date_created), obs10.answer_coded, obs10.encounter_uuid\n        FROM observations\
+  \ obs10\n        WHERE obs10.question_uuid = 'ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12'\n\
+  \        GROUP BY obs10.visit_uuid, obs10.question_uuid, obs10.answer_coded, obs10.encounter_uuid\n\
+  \    ) AS obs_breast_cancer_treatment  ON obs_breast_cancer_treatment.encounter_uuid\
+  \ = obs_scj.encounter_uuid\n) AS patient_info \nWHERE patient_info.visit_type IN\
+  \ ('Cervical Cancer New Visit', 'Cervical Cancer Follow-up Visit') AND patient_info.l_tags\
+  \ LIKE '%Health Center%'"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 7bbd77f5-46bc-49ef-8436-608aefbfb35e
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: Other treatment specified
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B - \u1794\
+    \u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u1785\u1793\u17D2\u179B\u17C4\u17C7\
+    \ 22 \"\u1795\u17D2\u179F\u17C1\u1784\u17D7\" \u179F\u17BC\u1798\u1798\u17C1\u178F\
+    \u17D2\u178F\u17B6\u1794\u1789\u17D2\u1787\u17B6\u1780\u17CB (Treatment - If Column\
+    \ 22 \"Other\", Please Specify)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: If VIA(+) % of Acetowhite site
+  verbose_name: "\u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE VIA(+) - \u1797\u17B6\
+    \u1782\u179A\u1799\u1793\u17C3\u178F\u17C6\u1794\u1793\u17CB\u1785\u17B6\u1794\
+    \u17CB\u1796\u178E\u17CC\u179F (If VIA(+) - % of Acetowhite site)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: If VIA(+) Number of Quadrants involved
+  verbose_name: "\u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE VIA(+) - \u1785\u17C6\
+    \u1793\u17BD\u1793\u1780\u17B6\u178A\u17D2\u179A\u1784\u17CB\u1796\u17B6\u1780\
+    \u17CB\u1796\u17D0\u1793\u17D2\u1792 (If VIA(+) - Number of Quadrants involved)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Other Breast Examination Result
+  verbose_name: "\u1794\u17D2\u179A\u179F\u17B7\u1793\u1794\u17BE\u1785\u1793\u17D2\
+    \u179B\u17C4\u17C7 29 \"\u1795\u17D2\u179F\u17C1\u1784\u17D7\" \u179F\u17BC\u1798\
+    \u1798\u17C1\u178F\u17D2\u178F\u17B6\u1794\u1789\u17D2\u1787\u17B6\u1780\u17CB\
+    \ (If Column 29 \"Other\", Please specify)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: 'Type of HPV '
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F - \u1794\u17D2\u179A\u1797\u17C1\u1791\
+    \u179C\u17B8\u179A\u17BB\u179F HPV (HPV Test - Type of HPV)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Self breast examination and education
+  verbose_name: "\u17A2\u1794\u17CB\u179A\u17C6 \u1793\u17B7\u1784\u178E\u17C2\u1793\
+    \u17B6\u17C6\u17A2\u17C6\u1796\u17B8\u1780\u17B6\u179A\u179F\u17D2\u1791\u17B6\
+    \u1794\u1793\u17B7\u1784\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u178A\u17C4\
+    \u17C7\u178A\u17C4\u1799\u1781\u17D2\u179B\u17BD\u1793\u17AF\u1784 (Self breast\
+    \ examination and education)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Breast Examination Result
+  verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B\u1780\u17B6\u179A\u1796\u17B7\
+    \u1793\u17B7\u178F\u17D2\u1799-\u179F\u17D2\u1791\u17B6\u1794\u178A\u17C4\u17C7\
+    \ (\u178A\u17C4\u1799\u1798\u1793\u17D2\u178F\u17D2\u179A\u17B8\u179F\u17BB\u1781\
+    \u17B6\u1797\u17B7\u1794\u17B6\u179B) (Breast Examination Result (By Health Staff))"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: VIA test result
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F VIA - \u179B\u1791\u17D2\u1792\u1795\
+    \u179B (VIA Test - Result)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: HPV Test result
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F - \u179B\u1791\u17D2\u1792\u1795\u179B\
+    \u178F\u17C1\u179F\u17D2\u178F HPV (HPV Test - Result)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Commune/ Sangkat
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793\u1794\u1785\
+    \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1783\u17BB\u17C6/\u179F\
+    \u1784\u17D2\u1780\u17B6\u178F\u17CB (Current Address - Commune)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: District/ Khan
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793\u1794\u1785\
+    \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u179F\u17D2\u179A\u17BB\
+    \u1780 (Current Address - District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: OpenMRS ID
+  verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB\u17A2\
+    \u178F\u17B7\u1790\u17B7\u1787\u1793\u1780\u17D2\u1793\u17BB\u1784\u1794\u17D2\
+    \u179A\u1796\u17D0\u1793\u17D2\u1792 EMR (Patient OpenMRS ID (EMR))"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Province/City
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793\u1794\u1785\
+    \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1781\u17C1\u178F\u17D2\
+    \u178F (Current Address - Province)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Village
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793\u1794\u1785\
+    \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1797\u17BC\u1798\u17B7\
+    \ (Current Address - Village)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Treatment option
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B - \u1798\
+    \u1792\u17D2\u1799\u17C4\u1794\u17B6\u1799 (Treatment - Option)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: PMRS ID Number
+  verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB PMRS\
+    \ (PMRS ID Number)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Treatment
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B - \u1798\
+    \u1792\u17D2\u1799\u17C4\u1794\u17B6\u1799 (Treatment - Option)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: National ID Card
+  verbose_name: "\u179B\u17C1\u1781\u17A2\u178F\u17D2\u178F\u179F\u1789\u17D2\u1789\
+    \u17B6\u178E\u1794\u178E\u17D2\u178E\u1787\u17B6\u178F\u17B7 (National ID Card)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ID Poor Card
+  verbose_name: "\u1794\u178E\u17D2\u178E\u1782\u17D2\u179A\u17BD\u179F\u17B6\u179A\
+    \u1780\u17D2\u179A\u17B8\u1780\u17D2\u179A (ID Poor Card)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Type of visit
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
+    \u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Type of Visit)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\
+    \u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
+    \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Province
+  verbose_name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\
+    \u17B7\u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Other Identifiers
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u178E\u17D2\u178E\u179F\
+    \u1798\u17D2\u1782\u17B6\u179B\u17CB\u1795\u17D2\u179F\u17C1\u1784\u17D7 (Other\
+    \ Identifier Types)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient's name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u178F\u17B7\u1790\u17B7\u1787\
+    \u1793 (Client's name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit date
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Visit Date)"
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referred From
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1798\u1780\u1796\u17B8 (Referred\
+    \ By)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility District
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7 (Operational District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Payment type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
+    \u1794\u1784\u17CB\u1790\u17D2\u179B\u17C3\u179F\u17C1\u179C\u17B6 (Payment types)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Phone number
+  verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u17D0\u1796\u17D2\u1791\
+    \u1791\u17C6\u1793\u17B6\u1780\u17CB\u1791\u17C6\u1793\u1784 (Phone number)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: SCJ
+  verbose_name: "\u1781\u17D2\u179F\u17C2\u1794\u1793\u17D2\u1791\u17B6\u178F\u17CB\
+    \ SCJ (SCJ)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Age
+  verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

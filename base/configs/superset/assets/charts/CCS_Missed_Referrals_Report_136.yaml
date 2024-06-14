@@ -1,0 +1,66 @@
+slice_name: CCS Missed Referrals Report
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 25__table
+  viz_type: table
+  slice_id: 136
+  granularity_sqla: Visit date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: aggregate
+  groupby:
+  - Facility Name
+  - Facility District
+  - Facility Province
+  - Referral Facility Name
+  - Referral Facility District
+  - Referral Facility Province
+  - OpenMRS ID
+  - Patient's name
+  - Age
+  - Phone number
+  - Province/City
+  - District/ Khan
+  - Commune/ Sangkat
+  - Village
+  - Visit date
+  - Cervical cancer reason for referral
+  - Other cervical cancer reason for referral
+  - Breast cancer reason for referral
+  - Other breast cancer reason for referral
+  all_columns: []
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  allow_rearrange_columns: true
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 12
+query_context: '{"datasource":{"id":25,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Visit date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","Referral Facility Name","Referral
+  Facility District","Referral Facility Province","OpenMRS ID","Patient''s name","Age","Phone
+  number","Province/City","District/ Khan","Commune/ Sangkat","Village","Visit date","Cervical
+  cancer reason for referral","Other cervical cancer reason for referral","Breast
+  cancer reason for referral","Other breast cancer reason for referral"],"metrics":[],"orderby":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"25__table","viz_type":"table","slice_id":136,"granularity_sqla":"Visit
+  date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"aggregate","groupby":["Facility
+  Name","Facility District","Facility Province","Referral Facility Name","Referral
+  Facility District","Referral Facility Province","OpenMRS ID","Patient''s name","Age","Phone
+  number","Province/City","District/ Khan","Commune/ Sangkat","Village","Visit date","Cervical
+  cancer reason for referral","Other cervical cancer reason for referral","Breast
+  cancer reason for referral","Other breast cancer reason for referral"],"all_columns":[],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":10000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","include_search":true,"show_cell_bars":true,"color_pn":true,"allow_rearrange_columns":true,"conditional_formatting":[],"extra_form_data":{},"dashboards":[12],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 14eb222c-0b43-4ba9-8617-dfeb3754bc46
+version: 1.0.0
+dataset_uuid: 412423af-0fdd-4e33-b15d-2b63a9e213e1

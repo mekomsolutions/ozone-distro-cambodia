@@ -1,0 +1,804 @@
+table_name: HC NCD OPD Register Query-dataset
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: 300
+schema: public
+sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility District\"\
+  ,\n    f_province AS \"Facility Province\",\n    CASE \n        WHEN identifiers\
+  \ ~ '.*OpenMRS ID: (.*?)(,|$).*' THEN REGEXP_REPLACE(identifiers, '.*OpenMRS ID:\
+  \ (.*?)(,|$).*', '\\1', 'g')\n        ELSE ''\n    END AS \"OpenMRS ID\",\n    CONCAT_WS('\
+  \ ', given_name, middle_name, family_name) AS \"Patient's name\",\n    gender AS\
+  \ \"Gender\",\n    referred_from AS \"Referred By\",\n    DATE_PART('year', age(visit_date,\
+  \ birthdate)) AS \"Age\",\n    CASE \n        WHEN attributes ~ '.*Telephone Number:\
+  \ (.*?)(\\/|$).*' THEN REGEXP_REPLACE(attributes, '.*Telephone Number: (.*?)(\\\
+  /|$).*', '\\1', 'g')\n        ELSE ''\n    END AS \"Phone number\",\n    zone AS\
+  \ \"Zone\",\n    address_1 AS \"Village\",\n    address_city AS \"Commune/ Sangkat\"\
+  ,\n    address_county_district AS \"District/ Khan\",\n    address_state_province\
+  \ AS \"Province/City\",\n    visit_date AS \"Visit Date\",\n    visit_type AS \"\
+  Visit\",\n    obs_weight AS \"Weight\",\n    obs_height AS \"Height\",\n    obs_diastolic_pressure\
+  \ AS \"Diastolic Pressure\",\n    obs_temperature AS \"Temperature\",\n    obs_bmi\
+  \ AS \"BMI\",\n    obs_pulse AS \"Pulse\",\n    obs_circumference AS \"Circumference\"\
+  ,\n    obs_respiratory_rate AS \"Respiratory Rate\",\n    obs_spo2 AS \"SpO2\",\n\
+  \    obs_systolic_pressure AS \"Systolic Pressure\",\n    obs_fasting_blood_sugar\
+  \ AS \"Fasting Blood Sugar\",\n    obs_random_blood_sugar AS \"Random Blood Sugar\"\
+  ,\n    obs_ogtt AS \"OGTT\",\n    obs_hba1c AS \"HbA1c\",\n    obs_ketones AS \"\
+  Ketones\",\n    obs_albumin AS \"Albumin\",\n    obs_smoking_status AS \"Smoking\
+  \ Status\",\n    obs_physical_exercise AS \"Physical Exercise\",\n    obs_alcohol_use\
+  \ AS \"Alcohol Use\",\n    obs_cvd_risk_score AS \"CVD risk score (%)\",\n    obs_teleconsultation\
+  \ AS \"Tele-consultation with NCD unit\",\n    obs_diagnosis1 AS \"Diagnosis 1\"\
+  ,\n    obs_diagnosis2 AS \"Diagnosis 2\",\n    obs_treatment_recommendations AS\
+  \ \"Management Lifestyle\",\n    CASE WHEN medications IS NOT NULL \n        THEN\
+  \ \n            (SELECT distinct_medications.medications FROM (\n              \
+  \  SELECT \n                    STRING_AGG(DISTINCT drug_name, ', ') AS medications\n\
+  \                FROM (\n                    SELECT unnest(string_to_array(medications,\
+  \ ', ')) AS drug_name\n                ) AS distinct_drugs\n            ) AS distinct_medications)\n\
+  \        ELSE NULL \n    END AS \"Management - Medications\",\n    obs_followup_date\
+  \ AS \"Appointment Date\",\n    obs_followup_for AS \"Appointment Reason\",\n  \
+  \  obs_facility AS \"Referral Facility\",\n    CONCAT_WS(', ', obs_diabetes_referral_reason,\
+  \ obs_hypertension_referral_reason) AS \"Reason for referral\",\n    insurance_type\
+  \ AS \"Payment Type\",\n    '' AS \"Remarks\"\nFROM (\n    SELECT\n        facility_address.state_province\
+  \ AS \"f_province\",\n        facility_address.county_district AS \"f_district\"\
+  ,\n        facility_address.name AS \"f_facility\",\n        MAX(given_name) AS\
+  \ given_name,\n        MAX(middle_name) AS middle_name,\n        MAX(family_name)\
+  \ AS family_name,\n        MAX(identifiers) AS identifiers,\n        MAX(birthdate)\
+  \ AS birthdate,\n        MAX(gender) AS gender,\n        MAX(address_state_province)\
+  \ AS address_state_province,\n        MAX(address_county_district) AS address_county_district,\n\
+  \        MAX(address_city) AS address_city,\n        MAX(address_1) AS address_1,\n\
+  \        MAX(attributes) AS attributes,\n        MAX(vi.date_started) AS \"visit_date\"\
+  ,\n        MAX(vi.type) AS \"visit_type\",\n        MAX(CASE \n            WHEN\
+  \ vi.visit_attributes ~ '.*Address Zone: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(vi.visit_attributes,\
+  \ '.*Address Zone: (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n        END)\
+  \ AS \"zone\",\n        MAX(CASE \n            WHEN vi.visit_attributes ~ '.*Insurance\
+  \ Type: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(vi.visit_attributes, '.*Insurance Type:\
+  \ (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n        END) AS \"insurance_type\"\
+  ,\n        MAX(CASE WHEN obs.question_uuid = 'fd588078-9286-46ea-b133-36aab1b025ec'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"referred_from\",\n        MAX(CASE WHEN\
+  \ obs.question_uuid = '5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_weight\",\n        MAX(CASE WHEN obs.question_uuid = '5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN obs.answer_numeric ELSE NULL END) AS \"obs_height\",\n        MAX(CASE WHEN\
+  \ obs.question_uuid = '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_diastolic_pressure\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric ELSE NULL END)\
+  \ AS \"obs_temperature\",\n        MAX(CASE WHEN obs.question_uuid = 'a89c60c0-1350-11df-a1f1-0026b9348838'\
+  \ THEN obs.answer_numeric ELSE NULL END) AS \"obs_bmi\",\n        MAX(CASE WHEN\
+  \ obs.question_uuid = '5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_pulse\",\n        MAX(CASE WHEN obs.question_uuid = '1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN obs.answer_numeric ELSE NULL END) AS \"obs_circumference\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = '5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_respiratory_rate\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric ELSE NULL END)\
+  \ AS \"obs_spo2\",\n        MAX(CASE WHEN obs.question_uuid = '5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN obs.answer_numeric ELSE NULL END) AS \"obs_systolic_pressure\",\n       \
+  \ MAX(CASE WHEN obs.question_uuid = '4a6ad2db-86af-4acc-906b-b749b7f6cda6' THEN\
+  \ obs.answer_numeric ELSE NULL END) AS \"obs_fasting_blood_sugar\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = 'f52d731e-58da-4f3a-a480-77c5e9d8d2eb' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_random_blood_sugar\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '163594AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN obs.answer_numeric ELSE NULL END)\
+  \ AS \"obs_ogtt\",\n        MAX(CASE WHEN obs.question_uuid = 'a8af7520-1350-11df-a1f1-0026b9348838'\
+  \ THEN obs.answer_numeric ELSE NULL END) AS \"obs_hba1c\",\n        MAX(CASE WHEN\
+  \ obs.question_uuid = '07015405-c865-4a22-8ad1-c8863d5f005b' THEN obs.answer_numeric\
+  \ ELSE NULL END) AS \"obs_ketones\",\n        MAX(CASE WHEN obs.question_uuid =\
+  \ 'c423325e-be95-42e2-ae38-b940c2586327' THEN obs.answer_numeric ELSE NULL END)\
+  \ AS \"obs_albumin\",\n        MAX(CASE WHEN obs.question_uuid = '7533aa7e-04cb-4cfd-9c97-6ac36f114bab'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_smoking_status\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = 'c31a2da0-f16b-44e3-baea-8a259d8beb31' THEN obs.answer_coded\
+  \ ELSE NULL END) AS \"obs_physical_exercise\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = 'e737c8c9-a154-47a1-aa20-ed13008d46cf' THEN obs.answer_coded ELSE NULL END)\
+  \ AS \"obs_alcohol_use\",\n        MAX(CASE WHEN obs.question_uuid = 'dff491e3-b14c-4b32-ab64-63b96966d72d'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_cvd_risk_score\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = '45583478-f703-46e3-b63a-54b0a95c25f0' THEN obs.answer_coded\
+  \ ELSE NULL END) AS \"obs_diagnosis1\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '76ca08a5-2128-4b53-afba-74227b015924' THEN obs.answer_coded ELSE NULL END)\
+  \ AS \"obs_diagnosis2\",\n        STRING_AGG(drug_order.drug_name, ', ') AS \"medications\"\
+  ,\n        MAX(CASE WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_treatment_recommendations\",\n \
+  \       MAX(CASE WHEN obs.question_uuid = '80fc2e59-8c16-40db-9767-ac9d9ffeb010'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_teleconsultation\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = 'cde3716a-2b98-4f10-b619-4d5a5a55503c' THEN obs.answer_coded\
+  \ ELSE NULL END) AS \"obs_diabetes_referral_reason\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '68f158ff-6396-4bab-8194-73255282bd23' THEN obs.answer_coded ELSE NULL END)\
+  \ AS \"obs_hypertension_referral_reason\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a' THEN obs.answer_coded ELSE NULL END)\
+  \ AS \"obs_facility\",\n        MAX(CASE WHEN obs.question_uuid = '2e27bbf9-d744-46a2-a7d4-cecd33c28b8a'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_followup_for\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = 'e9c145c1-f4e9-4c34-b237-da069939dc38' THEN obs.answer_datetime\
+  \ ELSE NULL END) AS \"obs_followup_date\"\n    FROM patients pa\n    LEFT OUTER\
+  \ JOIN visits vi ON vi.patient_uuid = pa.patient_uuid AND vi.type IN ('NCD New Visit',\
+  \ 'NCD Follow-up Visit')\n    LEFT OUTER JOIN locations facility_address ON facility_address.uuid\
+  \ = vi.location_uuid\n    LEFT OUTER JOIN observations obs ON obs.visit_uuid = vi.visit_uuid\
+  \ AND obs.question_uuid IN (\n        '5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n\
+  \        '5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
+  \ \n        '5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        'a89c60c0-1350-11df-a1f1-0026b9348838',\
+  \ \n        '5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
+  \ \n        '5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
+  \ \n        '5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\n        '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\n\
+  \        '4a6ad2db-86af-4acc-906b-b749b7f6cda6',\n        'f52d731e-58da-4f3a-a480-77c5e9d8d2eb',\n\
+  \        'a8af7520-1350-11df-a1f1-0026b9348838',\n        'fd588078-9286-46ea-b133-36aab1b025ec',\n\
+  \        '07015405-c865-4a22-8ad1-c8863d5f005b',\n        'c423325e-be95-42e2-ae38-b940c2586327',\n\
+  \        '7533aa7e-04cb-4cfd-9c97-6ac36f114bab',\n        'e737c8c9-a154-47a1-aa20-ed13008d46cf',\n\
+  \        'c31a2da0-f16b-44e3-baea-8a259d8beb31',\n        '45583478-f703-46e3-b63a-54b0a95c25f0',\n\
+  \        '80fc2e59-8c16-40db-9767-ac9d9ffeb010',\n        '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2',\n\
+  \        '76ca08a5-2128-4b53-afba-74227b015924',\n        'e9c145c1-f4e9-4c34-b237-da069939dc38',\n\
+  \        '2e27bbf9-d744-46a2-a7d4-cecd33c28b8a',\n        '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a',\n\
+  \        'cde3716a-2b98-4f10-b619-4d5a5a55503c',\n        '68f158ff-6396-4bab-8194-73255282bd23'\n\
+  \    ) AND obs.encounter_type IN ('Health Center - NCD Screening')\n    LEFT OUTER\
+  \ JOIN orders drug_order ON drug_order.patient_uuid = pa.patient_uuid AND obs.encounter_uuid\
+  \ = drug_order.encounter_uuid\n    GROUP BY \n        facility_address.state_province,\
+  \ \n        facility_address.county_district, \n        facility_address.name, \n\
+  \        vi.visit_uuid\n) AS patient_info "
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: Random Blood Sugar
+  verbose_name: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\
+    \u17D2\u1780\u179A\u1785\u17C3\u178A\u1793\u17D2\u1799 (Random (Any time Patient\
+    \ come to get BSL Test))"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Fasting Blood Sugar
+  verbose_name: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\
+    \u17D2\u1780\u179A\u1798\u17BB\u1793\u17A2\u17B6\u17A0\u17B6\u179A (Fasting (at\
+    \ least 8H before BSL))"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral Facility
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1791\u17C5\u1798\u17BC\u179B\
+    \u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\
+    \u179B\u1788\u17D2\u1798\u17C4\u17C7 - \u1794\u1789\u17D2\u1787\u17BC\u1793\u1791\
+    \u17C5 (Referral - To facility name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Tele-consultation with NCD unit
+  verbose_name: "\u1796\u17B7\u1782\u17D2\u179A\u17C4\u17C7\u178F\u17C1\u179B\u17C1\
+    \u1798\u17C1\u178C\u17B8\u179F\u17CA\u17B8\u1793)\u1787\u17B6\u1798\u17BD\u1799\
+    \u17A2\u17D2\u1793\u1780\u1787\u17C6\u1793\u17B6\u1789\u1793\u17C5\u1795\u17D2\
+    \u1793\u17C2\u1780\u1787\u17C6\u1784\u17BA\u1798\u17B7\u1793\u1786\u17D2\u179B\
+    \u1784 (Teleconsultation with NCD Unit)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Management - Medications
+  verbose_name: "\u1780\u17B6\u179A\u1782\u17D2\u179A\u1794\u17CB\u1782\u17D2\u179A\
+    \u1784 - \u1790\u17D2\u1793\u17B6\u17C6 (Management - Medicine)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: CVD risk score (%)
+  verbose_name: "CVD Risk (\u17A0\u17B6\u1793\u17B7\u1797\u17D0\u1799\u1787\u17C6\u1784\
+    \u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784 \u179F\u179A\u179F\u17C3\u1788\u17B6\
+    \u1798)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Diagnosis 1
+  verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
+    \u1799 - 1 (Diagnosis - 1)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Diagnosis 2
+  verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
+    \u1799 - 2 (Diagnosis - 2)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Management Lifestyle
+  verbose_name: "\u1780\u17B6\u179A\u1782\u17D2\u179A\u1794\u17CB\u1782\u17D2\u179A\
+    \u1784 - \u179A\u1794\u17C0\u1794\u179A\u179F\u17CB\u1793\u17C5 (Management -\
+    \ Lifestyle)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Albumin
+  verbose_name: "\u1791\u17B9\u1780\u1793\u17C4\u1798 - \u17A2\u17B6\u179B\u17CB\u1794\
+    \u17CA\u17BB\u1793\u1798\u17B8\u1793 (Urine - Albumin)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Ketones
+  verbose_name: "\u1791\u17B9\u1780\u1793\u17C4\u1798 - \u1780\u17C1\u178F\u17BC\u1793\
+    \ (Urine - Ketone)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Smoking Status
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1787\
+    \u1780\u17CB\u1794\u17B6\u179A\u17B8\u178A\u17C2\u179A\u17AC\u1791\u17C1? (Does\
+    \ the patient Smoke?)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Alcohol Use
+  verbose_name: "\u1795\u17B9\u1780\u1782\u17D2\u179A\u17BF\u1784\u179F\u17D2\u179A\
+    \u179C\u17B9\u1784\u1794\u17D2\u179A\u1780\u1794\u178A\u17C4\u1799\u1782\u17D2\
+    \u179A\u17C4\u17C7\u1790\u17D2\u1793\u17B6\u17C6 (Harmful use of alcohol)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Reason for referral
+  verbose_name: "\u1798\u17BC\u179B\u17A0\u17C1\u178F\u17BB\u1793\u17C3\u1780\u17B6\
+    \u179A\u1794\u1789\u17D2\u1787\u17BC\u1793 (Reason for referral)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\
+    \u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
+    \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Province
+  verbose_name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\
+    \u17B7\u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient's name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA (Client's name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Appointment Reason
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798/\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\
+    \u1788\u17B6\u1798 (Appointment reason)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Appointment Date
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u1791\u178F\
+    \u17B6\u1798\u178A\u17B6\u1793 (Date Appointment)"
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit Date
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Visit Date)"
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Respiratory Rate
+  verbose_name: "\u1787\u17B8\u1796\u1785\u179A (Pulse Rate)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referred By
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u178A\u17C4\u1799 (Referred\
+    \ by)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: OpenMRS ID
+  verbose_name: "\u17A2\u178F\u17D2\u178F\u179B\u17C1\u1781\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA (Client ID)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility District
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7 (Operational District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Physical Exercise
+  verbose_name: "\u17A2\u179F\u1780\u1798\u17D2\u1798\u1797\u17B6\u1796\u179A\u17B6\
+    \u1784\u1780\u17B6\u1799 (Physical inactivity)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Phone number
+  verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791 (Phone\
+    \ Number)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Payment Type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1780\u17B6\u179A\u1794\u1784\
+    \u17CB\u1794\u17D2\u179A\u17B6\u1780\u17CB (Payment Type)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Circumference
+  verbose_name: "\u1791\u17C6\u17A0\u17C6\u1785\u1784\u17D2\u1780\u17C1\u17C7 (\"\
+    Waist Circumference\")"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Commune/ Sangkat
+  verbose_name: "\u1783\u17BB\u17C6/\u179F\u1784\u17D2\u1780\u17B6\u178F\u17CB (Commune)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: District/ Khan
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780 (District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: BMI
+  verbose_name: "\u1795\u179B\u1792\u17C0\u1794\u1791\u1798\u17D2\u1784\u1793\u17CB\
+    \ \u1793\u17B7\u1784\u1780\u1798\u17D2\u1796\u179F\u17CB (BMI)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Diastolic Pressure
+  verbose_name: "\u178A\u17D2\u1799\u17B6\u179F\u17D2\u178F\u17BC\u179B (DBP)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Systolic Pressure
+  verbose_name: "\u179F\u17CA\u17B8\u179F\u17D2\u178F\u17BC\u179B (SBP)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Pulse
+  verbose_name: "\u1787\u17B8\u1796\u1785\u179A (Pulse Rate)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Province/City
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Age
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
+    \u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Age)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: OGTT
+  verbose_name: "\u1795\u17B9\u1780\u1791\u17B9\u1780\u179F\u17D2\u1780\u179A\u17E7\
+    \u17E5\u1780\u17D2\u179A (OGTT)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Height
+  verbose_name: "\u1780\u1798\u17D2\u1796\u179F\u17CB (Height)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Temperature
+  verbose_name: "\u1780\u1798\u17D2\u178F\u17C5 (Temperature)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Weight
+  verbose_name: "\u1791\u1798\u17D2\u1784\u1793\u17CB (Weight)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Gender
+  verbose_name: "\u1797\u17C1\u1791 (Gender)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Remarks
+  verbose_name: "\u1780\u17C6\u178E\u178F\u17CB\u179F\u1798\u17D2\u1782\u17B6\u179B\
+    \u17CB (Remarks)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Village
+  verbose_name: "\u1797\u17BC\u1798\u17B7 (Village)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Zone
+  verbose_name: "\u178F\u17C6\u1794\u1793\u17CB (Zone)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: HbA1c
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: SpO2
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

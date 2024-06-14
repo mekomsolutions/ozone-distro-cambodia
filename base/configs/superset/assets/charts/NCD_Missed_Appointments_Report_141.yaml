@@ -1,0 +1,61 @@
+slice_name: NCD Missed Appointments Report
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 29__table
+  viz_type: table
+  slice_id: 141
+  granularity_sqla: Appointment date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: raw
+  groupby: []
+  all_columns:
+  - Facility Name
+  - Facility District
+  - Facility Province
+  - OpenMRS ID
+  - Patient's name
+  - Gender
+  - Age
+  - Phone number
+  - Village
+  - Commune/ Sangkat
+  - District/ Khan
+  - Province/City
+  - Appointment date
+  - Appointment/follow-up reasaon
+  - Notes
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  allow_rearrange_columns: true
+  column_config:
+    Age:
+      showCellBars: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 16
+query_context: '{"datasource":{"id":29,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Appointment date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s name","Gender","Age","Phone
+  number","Village","Commune/ Sangkat","District/ Khan","Province/City","Appointment
+  date","Appointment/follow-up reasaon","Notes"],"orderby":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"29__table","viz_type":"table","slice_id":141,"granularity_sqla":"Appointment
+  date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"raw","groupby":[],"all_columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s name","Gender","Age","Phone
+  number","Village","Commune/ Sangkat","District/ Khan","Province/City","Appointment
+  date","Appointment/follow-up reasaon","Notes"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":10000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","include_search":true,"show_cell_bars":true,"color_pn":true,"allow_rearrange_columns":true,"column_config":{"Age":{"showCellBars":false}},"conditional_formatting":[],"extra_form_data":{},"dashboards":[16],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: a5640d1c-bc02-4507-b639-787965bc42c7
+version: 1.0.0
+dataset_uuid: ffccf504-e9e6-4312-916b-51489c810249

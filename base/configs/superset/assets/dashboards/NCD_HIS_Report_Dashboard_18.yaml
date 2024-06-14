@@ -1,0 +1,333 @@
+dashboard_title: NCD HIS Report Dashboard
+description: null
+css: ''
+slug: null
+uuid: c7de4cc7-bc96-48da-8723-b72028c6aa46
+position:
+  CHART-K-4SQcOr5u:
+    children: []
+    id: CHART-K-4SQcOr5u
+    meta:
+      chartId: 144
+      height: 42
+      sliceName: NCD HIS New Cases From The Beginning
+      uuid: edc6788b-ea27-457f-b3e7-1e272b7109ba
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-DTPUf0Dct
+    type: CHART
+  CHART-explore-148-1:
+    children: []
+    id: CHART-explore-148-1
+    meta:
+      chartId: 148
+      height: 50
+      sliceName: NCD HIS Follow-up Cases Within Reporting Range
+      uuid: e2896abd-821a-4aa8-8a19-c70c9eb18960
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-P0rzjFH098
+    type: CHART
+  CHART-explore-149-1:
+    children: []
+    id: CHART-explore-149-1
+    meta:
+      chartId: 149
+      height: 50
+      sliceName: NCD HIS Follow-up Cases From The Beginning
+      uuid: 17f99ed6-713a-4436-9e7c-79639f96490c
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-P0rzjFH098
+    type: CHART
+  CHART-nSlyozQPY1:
+    children: []
+    id: CHART-nSlyozQPY1
+    meta:
+      chartId: 143
+      height: 42
+      sliceName: NCD HIS New Cases Within Reporting Range
+      uuid: b3599541-6658-4325-968b-82dd749af4ec
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-DTPUf0Dct
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-DTPUf0Dct
+    - ROW-P0rzjFH098
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: NCD HIS Report Dashboard
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-DTPUf0Dct:
+    children:
+    - CHART-nSlyozQPY1
+    - CHART-K-4SQcOr5u
+    id: ROW-DTPUf0Dct
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-P0rzjFH098:
+    children:
+    - CHART-explore-148-1
+    - CHART-explore-149-1
+    id: ROW-P0rzjFH098
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  color_scheme: ''
+  refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  default_filters: '{}'
+  chart_configuration: {}
+  native_filter_configuration:
+  - id: NATIVE_FILTER-sRZWuJkpb
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\u17B7\
+      \u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: f_province
+      datasetUuid: 48365851-d1d2-451d-b2aa-18a5ffcdd72d
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 133
+    - 136
+    - 137
+    - 140
+    - 141
+    - 142
+    - 143
+    - 144
+    - 146
+    - 148
+    - 149
+    tabsInScope: []
+  - id: NATIVE_FILTER-IY0W6N-6N
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (Operational District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: f_district
+      datasetUuid: 48365851-d1d2-451d-b2aa-18a5ffcdd72d
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 133
+    - 136
+    - 137
+    - 140
+    - 141
+    - 142
+    - 143
+    - 144
+    - 146
+    - 148
+    - 149
+    tabsInScope: []
+  - id: NATIVE_FILTER-LVKn33ZeF
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\u1780\
+      \u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
+      \u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: f_name
+      datasetUuid: 48365851-d1d2-451d-b2aa-18a5ffcdd72d
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 133
+    - 136
+    - 137
+    - 140
+    - 141
+    - 142
+    - 143
+    - 144
+    - 146
+    - 148
+    - 149
+    tabsInScope: []
+  - id: NATIVE_FILTER-yC5-Yil3K
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u1796\u17C1\u1791\u17D2\u1799\u1781\
+      \u17C1\u178F\u17D2\u178F-\u1798\u1793\u17D2\u1791\u17B8\u179A\u1796\u17C1\u1791\
+      \u17D2\u1799\u1794\u1784\u17D2\u17A2\u17C2\u1780/\u1798\u178E\u17D2\u178C\u179B\
+      \u179F\u17BB\u1781\u1797\u17B6\u1796 (RH/HC)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: f_type
+      datasetUuid: 48365851-d1d2-451d-b2aa-18a5ffcdd72d
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 133
+    - 136
+    - 137
+    - 140
+    - 141
+    - 142
+    - 143
+    - 144
+    - 146
+    - 148
+    - 149
+    tabsInScope: []
+  - id: NATIVE_FILTER-hkcro12HK
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
+      \u17C6\u1796\u17B8\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\
+      \ (Reporting Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 144
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 133
+    - 136
+    - 137
+    - 140
+    - 141
+    - 142
+    - 143
+    - 146
+    - 148
+    - 149
+    tabsInScope: []
+  - id: NATIVE_FILTER-zzd1aTD-K
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\u179A\u17B6\u1799\u1780\u17B6\
+      \u179A\u178E\u17CD\u1796\u17B8\u1780\u17B6\u179A\u1785\u17B6\u1794\u17CB\u1795\
+      \u17D2\u178F\u17BE\u1798 (Reporing Time from the Beginning)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData:
+        time_range: 'Last 7 years : '
+      filterState:
+        value: 'Last 7 years : '
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 148
+      - 143
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 144
+    - 149
+    tabsInScope: []
+version: 1.0.0
