@@ -3,7 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ozonehis</groupId>
   <artifactId>ozone-cambodia-aggregator</artifactId>
-  <description>Ozone for Cambodia - Aggregator</description>
+  <name>Ozone Cambodia Aggregator</name>
+  <description>Aggregator project for the Ozone distribution for Cambodia</description>
   <version>1.7.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
