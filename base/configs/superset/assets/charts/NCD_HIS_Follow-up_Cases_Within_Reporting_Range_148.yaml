@@ -1,0 +1,986 @@
+slice_name: NCD HIS Follow-up Cases Within Reporting Range
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 34__table
+  viz_type: table
+  slice_id: 148
+  granularity_sqla: visit_date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: aggregate
+  groupby:
+  - diagnosis
+  metrics:
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml28d
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1104
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u1794\u17D2\u179A (0-28 day\
+        \ - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml28d
+    optionName: metric_3iadl22xl1t_h2eiqia49lp
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl28d
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1105
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u179F\u17D2\u179A (0-28 days\
+        \ - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl28d
+    optionName: metric_kvdxwzarnar_kudcxljma1b
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml12m
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1106
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u1794\u17D2\u179A\
+        \ (29 days - 11 months - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml12m
+    optionName: metric_y9tbhps4cwl_5io18y9famr
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl12m
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1107
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\u179A\
+        \ (29 days - 11 months - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl12m
+    optionName: metric_7zmclw7zqpe_0rs184ipvvhi
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml4
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1108
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml4
+    optionName: metric_n9d7q0hb3g_4npw9ecsblt
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl4
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1109
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (1-4\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl4
+    optionName: metric_xv1issi2mka_meht4ye2ma
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml13
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1110
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml13
+    optionName: metric_ptn6gekrz4_p5zvuar3gpm
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl13
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1111
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (5-13\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl13
+    optionName: metric_un8csqd451d_tufra9yf1ie
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml24
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1112
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml24
+    optionName: metric_affnn1k6eh5_vo2eyu9grwr
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl24
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1113
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (6-24\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl24
+    optionName: metric_dd1rcq6j4ga_yh6wcdgfjlr
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml49
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1114
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (25-49\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml49
+    optionName: metric_eq8lm7zlp9h_zuixh4upbek
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl49
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1115
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl49
+    optionName: metric_td6skswrbz_20jya2r9hzj
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: ml64
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1116
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (50-64\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: ml64
+    optionName: metric_zn2fxaj2xtg_y2h1ddzhte
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fl64
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1117
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fl64
+    optionName: metric_h6qoitqqqm9_6iewbvg60wd
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: mg64
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1118
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65\
+        \ years - M)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: mg64
+    optionName: metric_rshjp15ksio_hj1qxtzl6hn
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: fg64
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 1119
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (>=65\
+        \ years - F)"
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    label: fg64
+    optionName: metric_oh5u1cqmbbs_kgd27r8iqps
+    sqlExpression: null
+  - aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: true
+    label: "\u179F\u179A\u17BB\u1794 - \u1794\u17D2\u179A (Total - M)"
+    optionName: metric_cqh7dg4krfg_ai6k6t5n46i
+    sqlExpression: SUM(ml28d) + SUM(ml12m) + SUM(ml4) + SUM(ml13) + SUM(ml24) + SUM(ml49)
+      + SUM(ml64) + SUM(mg64)
+  - aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: true
+    label: "\u179F\u179A\u17BB\u1794 - \u179F\u17D2\u179A (Total - F)"
+    optionName: metric_re9vpqw0t9_2f9auqgjq1j
+    sqlExpression: SUM(fl28d) + SUM(fl12m) + SUM(fl4) + SUM(fl13) + SUM(fl24) + SUM(fl49)
+      + SUM(fl64) + SUM(fg64)
+  all_columns:
+  - diagnosis
+  - ml28d
+  - fl28d
+  - ml12m
+  - fl12m
+  - ml4
+  - fl4
+  - ml13
+  - fl13
+  - ml24
+  - fl24
+  - ml49
+  - fl49
+  - ml64
+  - fl64
+  - mg64
+  - fg64
+  - f_province
+  - f_district
+  - f_name
+  - f_type
+  - visit_date
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: false
+  show_totals: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  column_config:
+    fg64:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl12m:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl13:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl24:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl28d:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl4:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl49:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    fl64:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    mg64:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml12m:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml13:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml24:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml28d:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml4:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml49:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    ml64:
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    "\u179F\u179A\u17BB\u1794 - \u1794\u17D2\u179A (Total - M)":
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+    "\u179F\u179A\u17BB\u1794 - \u179F\u17D2\u179A (Total - F)":
+      d3NumberFormat: ~g
+      d3SmallNumberFormat: ~g
+      showCellBars: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 18
+query_context: "{\"datasource\":{\"id\":34,\"type\":\"table\"},\"force\":false,\"\
+  queries\":[{\"time_range\":\"No filter\",\"granularity\":\"visit_date\",\"filters\"\
+  :[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"having\":\"\",\"where\":\"\"},\"applied_time_extras\"\
+  :{},\"columns\":[\"diagnosis\"],\"metrics\":[{\"aggregate\":\"SUM\",\"column\":{\"\
+  advanced_data_type\":null,\"certification_details\":null,\"certified_by\":null,\"\
+  column_name\":\"ml28d\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1104,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"0-28 \u1790\u17D2\
+  \u1784\u17C3 - \u1794\u17D2\u179A (0-28 day - M)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"ml28d\",\"optionName\":\"metric_3iadl22xl1t_h2eiqia49lp\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"fl28d\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1105,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"0-28 \u1790\u17D2\u1784\u17C3 - \u179F\u17D2\u179A (0-28 days\
+  \ - F)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl28d\",\"optionName\":\"metric_kvdxwzarnar_kudcxljma1b\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"ml12m\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1106,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3\
+  -11 \u1781\u17C2 - \u1794\u17D2\u179A (29 days - 11 months - M)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"ml12m\",\"optionName\":\"metric_y9tbhps4cwl_5io18y9famr\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"fl12m\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1107,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\
+  \u179A (29 days - 11 months - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl12m\"\
+  ,\"optionName\":\"metric_7zmclw7zqpe_0rs184ipvvhi\",\"sqlExpression\":null},{\"\
+  aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml4\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1108,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml4\",\"optionName\":\"metric_n9d7q0hb3g_4npw9ecsblt\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl4\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1109,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\
+  \u17C6 - \u179F\u17D2\u179A (1-4 years - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl4\",\"\
+  optionName\":\"metric_xv1issi2mka_meht4ye2ma\",\"sqlExpression\":null},{\"aggregate\"\
+  :\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"ml13\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1110,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml13\",\"optionName\":\"metric_ptn6gekrz4_p5zvuar3gpm\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl13\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1111,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (5-13 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl13\",\"optionName\":\"metric_un8csqd451d_tufra9yf1ie\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml24\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1112,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml24\",\"optionName\":\"metric_affnn1k6eh5_vo2eyu9grwr\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl24\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1113,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (6-24 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl24\",\"optionName\":\"metric_dd1rcq6j4ga_yh6wcdgfjlr\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml49\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1114,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (25-49 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml49\",\"optionName\"\
+  :\"metric_eq8lm7zlp9h_zuixh4upbek\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl49\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1115,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"25-49 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl49\",\"optionName\":\"metric_td6skswrbz_20jya2r9hzj\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1116,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (50-64 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml64\",\"optionName\"\
+  :\"metric_zn2fxaj2xtg_y2h1ddzhte\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl64\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1117,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"50-64 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl64\",\"optionName\":\"metric_h6qoitqqqm9_6iewbvg60wd\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"mg64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1118,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"mg64\",\"optionName\":\"metric_rshjp15ksio_hj1qxtzl6hn\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fg64\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1119,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (>=65 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fg64\",\"optionName\":\"metric_oh5u1cqmbbs_kgd27r8iqps\",\"sqlExpression\"\
+  :null},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"expressionType\"\
+  :\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794 - \u1794\u17D2\
+  \u179A (Total - M)\",\"optionName\":\"metric_cqh7dg4krfg_ai6k6t5n46i\",\"sqlExpression\"\
+  :\"SUM(ml28d) + SUM(ml12m) + SUM(ml4) + SUM(ml13) + SUM(ml24) + SUM(ml49) + SUM(ml64)\
+  \ + SUM(mg64)\"},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"\
+  expressionType\":\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794\
+  \ - \u179F\u17D2\u179A (Total - F)\",\"optionName\":\"metric_re9vpqw0t9_2f9auqgjq1j\"\
+  ,\"sqlExpression\":\"SUM(fl28d) + SUM(fl12m) + SUM(fl4) + SUM(fl13) + SUM(fl24)\
+  \ + SUM(fl49) + SUM(fl64) + SUM(fg64)\"}],\"orderby\":[[{\"aggregate\":\"SUM\",\"\
+  column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"ml28d\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1104,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"0-28 \u1790\u17D2\
+  \u1784\u17C3 - \u1794\u17D2\u179A (0-28 day - M)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"ml28d\",\"optionName\":\"metric_3iadl22xl1t_h2eiqia49lp\",\"sqlExpression\"\
+  :null},false]],\"annotation_layers\":[],\"row_limit\":1000,\"series_limit\":0,\"\
+  order_desc\":false,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{},\"\
+  post_processing\":[]},{\"time_range\":\"No filter\",\"granularity\":\"visit_date\"\
+  ,\"filters\":[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"having\":\"\",\"where\"\
+  :\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[{\"aggregate\":\"\
+  SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"ml28d\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1104,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"0-28 \u1790\u17D2\u1784\u17C3 - \u1794\u17D2\u179A (0-28 day\
+  \ - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml28d\",\"optionName\":\"metric_3iadl22xl1t_h2eiqia49lp\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl28d\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1105,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"0-28 \u1790\u17D2\u1784\
+  \u17C3 - \u179F\u17D2\u179A (0-28 days - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl28d\"\
+  ,\"optionName\":\"metric_kvdxwzarnar_kudcxljma1b\",\"sqlExpression\":null},{\"aggregate\"\
+  :\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"ml12m\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1106,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u1794\u17D2\
+  \u179A (29 days - 11 months - M)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml12m\"\
+  ,\"optionName\":\"metric_y9tbhps4cwl_5io18y9famr\",\"sqlExpression\":null},{\"aggregate\"\
+  :\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"fl12m\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1107,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\
+  \u179A (29 days - 11 months - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl12m\"\
+  ,\"optionName\":\"metric_7zmclw7zqpe_0rs184ipvvhi\",\"sqlExpression\":null},{\"\
+  aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml4\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1108,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml4\",\"optionName\":\"metric_n9d7q0hb3g_4npw9ecsblt\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl4\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1109,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\
+  \u17C6 - \u179F\u17D2\u179A (1-4 years - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl4\",\"\
+  optionName\":\"metric_xv1issi2mka_meht4ye2ma\",\"sqlExpression\":null},{\"aggregate\"\
+  :\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"ml13\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1110,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml13\",\"optionName\":\"metric_ptn6gekrz4_p5zvuar3gpm\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl13\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1111,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (5-13 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl13\",\"optionName\":\"metric_un8csqd451d_tufra9yf1ie\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml24\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1112,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml24\",\"optionName\":\"metric_affnn1k6eh5_vo2eyu9grwr\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl24\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1113,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (6-24 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl24\",\"optionName\":\"metric_dd1rcq6j4ga_yh6wcdgfjlr\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml49\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1114,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (25-49 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml49\",\"optionName\"\
+  :\"metric_eq8lm7zlp9h_zuixh4upbek\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl49\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1115,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"25-49 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl49\",\"optionName\":\"metric_td6skswrbz_20jya2r9hzj\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1116,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (50-64 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml64\",\"optionName\"\
+  :\"metric_zn2fxaj2xtg_y2h1ddzhte\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl64\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1117,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"50-64 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl64\",\"optionName\":\"metric_h6qoitqqqm9_6iewbvg60wd\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"mg64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1118,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"mg64\",\"optionName\":\"metric_rshjp15ksio_hj1qxtzl6hn\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fg64\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1119,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (>=65 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fg64\",\"optionName\":\"metric_oh5u1cqmbbs_kgd27r8iqps\",\"sqlExpression\"\
+  :null},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"expressionType\"\
+  :\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794 - \u1794\u17D2\
+  \u179A (Total - M)\",\"optionName\":\"metric_cqh7dg4krfg_ai6k6t5n46i\",\"sqlExpression\"\
+  :\"SUM(ml28d) + SUM(ml12m) + SUM(ml4) + SUM(ml13) + SUM(ml24) + SUM(ml49) + SUM(ml64)\
+  \ + SUM(mg64)\"},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"\
+  expressionType\":\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794\
+  \ - \u179F\u17D2\u179A (Total - F)\",\"optionName\":\"metric_re9vpqw0t9_2f9auqgjq1j\"\
+  ,\"sqlExpression\":\"SUM(fl28d) + SUM(fl12m) + SUM(fl4) + SUM(fl13) + SUM(fl24)\
+  \ + SUM(fl49) + SUM(fl64) + SUM(fg64)\"}],\"annotation_layers\":[],\"row_limit\"\
+  :0,\"row_offset\":0,\"series_limit\":0,\"url_params\":{},\"custom_params\":{},\"\
+  custom_form_data\":{},\"post_processing\":[]}],\"form_data\":{\"datasource\":\"\
+  34__table\",\"viz_type\":\"table\",\"slice_id\":148,\"granularity_sqla\":\"visit_date\"\
+  ,\"time_grain_sqla\":\"P1D\",\"time_range\":\"No filter\",\"query_mode\":\"aggregate\"\
+  ,\"groupby\":[\"diagnosis\"],\"metrics\":[{\"aggregate\":\"SUM\",\"column\":{\"\
+  advanced_data_type\":null,\"certification_details\":null,\"certified_by\":null,\"\
+  column_name\":\"ml28d\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1104,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"0-28 \u1790\u17D2\
+  \u1784\u17C3 - \u1794\u17D2\u179A (0-28 day - M)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"ml28d\",\"optionName\":\"metric_3iadl22xl1t_h2eiqia49lp\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"fl28d\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1105,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"0-28 \u1790\u17D2\u1784\u17C3 - \u179F\u17D2\u179A (0-28 days\
+  \ - F)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl28d\",\"optionName\":\"metric_kvdxwzarnar_kudcxljma1b\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"ml12m\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1106,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3\
+  -11 \u1781\u17C2 - \u1794\u17D2\u179A (29 days - 11 months - M)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"ml12m\",\"optionName\":\"metric_y9tbhps4cwl_5io18y9famr\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"fl12m\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1107,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\
+  \u179A (29 days - 11 months - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl12m\"\
+  ,\"optionName\":\"metric_7zmclw7zqpe_0rs184ipvvhi\",\"sqlExpression\":null},{\"\
+  aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml4\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1108,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml4\",\"optionName\":\"metric_n9d7q0hb3g_4npw9ecsblt\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl4\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1109,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"1-4 \u1786\u17D2\u1793\u17B6\
+  \u17C6 - \u179F\u17D2\u179A (1-4 years - F)\",\"warning_markdown\":null},\"datasourceWarning\"\
+  :false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"fl4\",\"\
+  optionName\":\"metric_xv1issi2mka_meht4ye2ma\",\"sqlExpression\":null},{\"aggregate\"\
+  :\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"\
+  certified_by\":null,\"column_name\":\"ml13\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1110,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml13\",\"optionName\":\"metric_ptn6gekrz4_p5zvuar3gpm\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl13\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1111,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"5-13 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (5-13 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl13\",\"optionName\":\"metric_un8csqd451d_tufra9yf1ie\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml24\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1112,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml24\",\"optionName\":\"metric_affnn1k6eh5_vo2eyu9grwr\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fl24\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1113,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"6-24 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (6-24 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fl24\",\"optionName\":\"metric_dd1rcq6j4ga_yh6wcdgfjlr\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml49\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1114,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (25-49 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml49\",\"optionName\"\
+  :\"metric_eq8lm7zlp9h_zuixh4upbek\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl49\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1115,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"25-49 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl49\",\"optionName\":\"metric_td6skswrbz_20jya2r9hzj\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"ml64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1116,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\"50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A\
+  \ (50-64 years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"\
+  expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"ml64\",\"optionName\"\
+  :\"metric_zn2fxaj2xtg_y2h1ddzhte\",\"sqlExpression\":null},{\"aggregate\":\"SUM\"\
+  ,\"column\":{\"advanced_data_type\":null,\"certification_details\":null,\"certified_by\"\
+  :null,\"column_name\":\"fl64\",\"description\":null,\"expression\":null,\"filterable\"\
+  :true,\"groupby\":true,\"id\":1117,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\"\
+  :null,\"type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\"50-64 \u1786\u17D2\
+  \u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64 years - F)\",\"warning_markdown\"\
+  :null},\"datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\"\
+  :true,\"label\":\"fl64\",\"optionName\":\"metric_h6qoitqqqm9_6iewbvg60wd\",\"sqlExpression\"\
+  :null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\":null,\"certification_details\"\
+  :null,\"certified_by\":null,\"column_name\":\"mg64\",\"description\":null,\"expression\"\
+  :null,\"filterable\":true,\"groupby\":true,\"id\":1118,\"is_certified\":false,\"\
+  is_dttm\":false,\"python_date_format\":null,\"type\":\"INTEGER\",\"type_generic\"\
+  :0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65\
+  \ years - M)\",\"warning_markdown\":null},\"datasourceWarning\":false,\"expressionType\"\
+  :\"SIMPLE\",\"hasCustomLabel\":true,\"label\":\"mg64\",\"optionName\":\"metric_rshjp15ksio_hj1qxtzl6hn\"\
+  ,\"sqlExpression\":null},{\"aggregate\":\"SUM\",\"column\":{\"advanced_data_type\"\
+  :null,\"certification_details\":null,\"certified_by\":null,\"column_name\":\"fg64\"\
+  ,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"\
+  id\":1119,\"is_certified\":false,\"is_dttm\":false,\"python_date_format\":null,\"\
+  type\":\"INTEGER\",\"type_generic\":0,\"verbose_name\":\">=65 \u1786\u17D2\u1793\
+  \u17B6\u17C6 - \u179F\u17D2\u179A (>=65 years - F)\",\"warning_markdown\":null},\"\
+  datasourceWarning\":false,\"expressionType\":\"SIMPLE\",\"hasCustomLabel\":true,\"\
+  label\":\"fg64\",\"optionName\":\"metric_oh5u1cqmbbs_kgd27r8iqps\",\"sqlExpression\"\
+  :null},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"expressionType\"\
+  :\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794 - \u1794\u17D2\
+  \u179A (Total - M)\",\"optionName\":\"metric_cqh7dg4krfg_ai6k6t5n46i\",\"sqlExpression\"\
+  :\"SUM(ml28d) + SUM(ml12m) + SUM(ml4) + SUM(ml13) + SUM(ml24) + SUM(ml49) + SUM(ml64)\
+  \ + SUM(mg64)\"},{\"aggregate\":null,\"column\":null,\"datasourceWarning\":false,\"\
+  expressionType\":\"SQL\",\"hasCustomLabel\":true,\"label\":\"\u179F\u179A\u17BB\u1794\
+  \ - \u179F\u17D2\u179A (Total - F)\",\"optionName\":\"metric_re9vpqw0t9_2f9auqgjq1j\"\
+  ,\"sqlExpression\":\"SUM(fl28d) + SUM(fl12m) + SUM(fl4) + SUM(fl13) + SUM(fl24)\
+  \ + SUM(fl49) + SUM(fl64) + SUM(fg64)\"}],\"all_columns\":[\"diagnosis\",\"ml28d\"\
+  ,\"fl28d\",\"ml12m\",\"fl12m\",\"ml4\",\"fl4\",\"ml13\",\"fl13\",\"ml24\",\"fl24\"\
+  ,\"ml49\",\"fl49\",\"ml64\",\"fl64\",\"mg64\",\"fg64\",\"f_province\",\"f_district\"\
+  ,\"f_name\",\"f_type\",\"visit_date\"],\"percent_metrics\":[],\"adhoc_filters\"\
+  :[],\"order_by_cols\":[],\"row_limit\":1000,\"server_page_length\":10,\"order_desc\"\
+  :false,\"show_totals\":true,\"table_timestamp_format\":\"smart_date\",\"include_search\"\
+  :true,\"show_cell_bars\":true,\"color_pn\":true,\"column_config\":{\"fg64\":{\"\
+  d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\":false},\"\
+  fl12m\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl13\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl24\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl28d\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl4\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl49\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"fl64\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"mg64\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml12m\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml13\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml24\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml28d\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml4\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml49\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"ml64\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\"\
+  :false},\"\u179F\u179A\u17BB\u1794 - \u1794\u17D2\u179A (Total - M)\":{\"d3NumberFormat\"\
+  :\"~g\",\"d3SmallNumberFormat\":\"~g\",\"showCellBars\":false},\"\u179F\u179A\u17BB\
+  \u1794 - \u179F\u17D2\u179A (Total - F)\":{\"d3NumberFormat\":\"~g\",\"d3SmallNumberFormat\"\
+  :\"~g\",\"showCellBars\":false}},\"conditional_formatting\":[],\"extra_form_data\"\
+  :{},\"dashboards\":[18],\"force\":false,\"result_format\":\"json\",\"result_type\"\
+  :\"full\"},\"result_format\":\"json\",\"result_type\":\"full\"}"
+cache_timeout: null
+uuid: e2896abd-821a-4aa8-8a19-c70c9eb18960
+version: 1.0.0
+dataset_uuid: d534a5f4-9799-40a4-8096-cfe32243edc1

@@ -1,0 +1,65 @@
+slice_name: NCD Missed Referrals Report
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 28__table
+  viz_type: table
+  slice_id: 140
+  granularity_sqla: Referral date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: raw
+  groupby: []
+  metrics: []
+  all_columns:
+  - Facility Name
+  - Facility District
+  - Facility Province
+  - Referral Facility Name
+  - Referral Facility District
+  - Referral Facility Province
+  - OpenMRS ID
+  - Patient's name
+  - Age
+  - Phone number
+  - Village
+  - Commune/ Sangkat
+  - District/ Khan
+  - Province/City
+  - Reason for referral
+  - Referral date
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  allow_rearrange_columns: true
+  column_config:
+    Age:
+      showCellBars: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 15
+query_context: '{"datasource":{"id":28,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Referral date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","Referral Facility Name","Referral
+  Facility District","Referral Facility Province","OpenMRS ID","Patient''s name","Age","Phone
+  number","Village","Commune/ Sangkat","District/ Khan","Province/City","Reason for
+  referral","Referral date"],"orderby":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"28__table","viz_type":"table","slice_id":140,"granularity_sqla":"Referral
+  date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"raw","groupby":[],"metrics":[],"all_columns":["Facility
+  Name","Facility District","Facility Province","Referral Facility Name","Referral
+  Facility District","Referral Facility Province","OpenMRS ID","Patient''s name","Age","Phone
+  number","Village","Commune/ Sangkat","District/ Khan","Province/City","Reason for
+  referral","Referral date"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":10000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","include_search":true,"show_cell_bars":true,"color_pn":true,"allow_rearrange_columns":true,"column_config":{"Age":{"showCellBars":false}},"conditional_formatting":[],"extra_form_data":{},"dashboards":[15],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 9cf83bb1-cc39-4c8a-89fa-3291f726b69a
+version: 1.0.0
+dataset_uuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1

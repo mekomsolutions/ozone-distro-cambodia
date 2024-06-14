@@ -1,0 +1,103 @@
+slice_name: RH NCD OPD Register Report
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 33__table
+  viz_type: table
+  slice_id: 146
+  granularity_sqla: Visit Date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: raw
+  groupby: []
+  all_columns:
+  - Facility Name
+  - Facility District
+  - Facility Province
+  - OpenMRS ID
+  - Patient's name
+  - Gender
+  - Age
+  - Phone number
+  - Referred By
+  - Village
+  - Commune/ Sangkat
+  - District/ Khan
+  - Province/City
+  - Visit Date
+  - Zone
+  - Circumference
+  - Weight
+  - Height
+  - BMI
+  - Diastolic Pressure
+  - Systolic Pressure
+  - Pulse
+  - Temperature
+  - Respiratory Rate
+  - SpO2
+  - Fasting Blood Sugar
+  - Random Blood Sugar
+  - OGTT 1 Hour
+  - OGTT 2 Hours
+  - HbA1c
+  - Albumin
+  - Ketones
+  - Smoking Status
+  - Physical Exercise
+  - Alcohol Use
+  - CVD risk score (%)
+  - Diagnosis 1
+  - Diagnosis 2
+  - Complications
+  - Management - Lifestlye
+  - Management - Medications
+  - Appointment Reason
+  - Appointment Date
+  - Reason For Referral
+  - Referral Facility
+  - Payment Type
+  - Remarks
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  allow_rearrange_columns: true
+  column_config:
+    Age:
+      showCellBars: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 19
+query_context: '{"datasource":{"id":33,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Visit Date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s name","Gender","Age","Phone
+  number","Referred By","Village","Commune/ Sangkat","District/ Khan","Province/City","Visit
+  Date","Zone","Circumference","Weight","Height","BMI","Diastolic Pressure","Systolic
+  Pressure","Pulse","Temperature","Respiratory Rate","SpO2","Fasting Blood Sugar","Random
+  Blood Sugar","OGTT 1 Hour","OGTT 2 Hours","HbA1c","Albumin","Ketones","Smoking Status","Physical
+  Exercise","Alcohol Use","CVD risk score (%)","Diagnosis 1","Diagnosis 2","Complications","Management
+  - Lifestlye","Management - Medications","Appointment Reason","Appointment Date","Reason
+  For Referral","Referral Facility","Payment Type","Remarks"],"orderby":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"33__table","viz_type":"table","slice_id":146,"granularity_sqla":"Visit
+  Date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"raw","groupby":[],"all_columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s name","Gender","Age","Phone
+  number","Referred By","Village","Commune/ Sangkat","District/ Khan","Province/City","Visit
+  Date","Zone","Circumference","Weight","Height","BMI","Diastolic Pressure","Systolic
+  Pressure","Pulse","Temperature","Respiratory Rate","SpO2","Fasting Blood Sugar","Random
+  Blood Sugar","OGTT 1 Hour","OGTT 2 Hours","HbA1c","Albumin","Ketones","Smoking Status","Physical
+  Exercise","Alcohol Use","CVD risk score (%)","Diagnosis 1","Diagnosis 2","Complications","Management
+  - Lifestlye","Management - Medications","Appointment Reason","Appointment Date","Reason
+  For Referral","Referral Facility","Payment Type","Remarks"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":10000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","include_search":true,"show_cell_bars":true,"color_pn":true,"allow_rearrange_columns":true,"column_config":{"Age":{"showCellBars":false}},"conditional_formatting":[],"extra_form_data":{},"dashboards":[19],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 971a570a-0181-4e85-b6aa-f90ffd7e9926
+version: 1.0.0
+dataset_uuid: eae4ea82-b387-41fd-be9c-39bce338d4fa

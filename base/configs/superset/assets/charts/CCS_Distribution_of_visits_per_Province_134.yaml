@@ -1,0 +1,41 @@
+slice_name: CCS Distribution of visits per Province
+description: null
+certified_by: null
+certification_details: null
+viz_type: pie
+params:
+  datasource: 24__table
+  viz_type: pie
+  slice_id: 134
+  granularity_sqla: Visit date
+  time_range: '2024-02-01T07:15:38 : now'
+  groupby:
+  - Facility Province
+  metric: count
+  adhoc_filters: []
+  row_limit: 100
+  sort_by_metric: true
+  color_scheme: supersetColors
+  show_labels_threshold: 5
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  label_type: key
+  number_format: SMART_NUMBER
+  date_format: smart_date
+  show_labels: true
+  labels_outside: true
+  outerRadius: 87
+  donut: false
+  innerRadius: 30
+  extra_form_data: {}
+  dashboards:
+  - 11
+query_context: '{"datasource":{"id":24,"type":"table"},"force":false,"queries":[{"time_range":"2024-02-01T07:15:38
+  : now","granularity":"Visit date","filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Province"],"metrics":["count"],"orderby":[["count",false]],"annotation_layers":[],"row_limit":100,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"24__table","viz_type":"pie","slice_id":134,"granularity_sqla":"Visit
+  date","time_range":"2024-02-01T07:15:38 : now","groupby":["Facility Province"],"metric":"count","adhoc_filters":[],"row_limit":100,"sort_by_metric":true,"color_scheme":"supersetColors","show_labels_threshold":5,"show_legend":true,"legendType":"scroll","legendOrientation":"top","label_type":"key","number_format":"SMART_NUMBER","date_format":"smart_date","show_labels":true,"labels_outside":true,"outerRadius":87,"donut":false,"innerRadius":30,"extra_form_data":{},"dashboards":[11],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: dd5925be-e474-4104-97d9-0a2ef4a34290
+version: 1.0.0
+dataset_uuid: 7bbd77f5-46bc-49ef-8436-608aefbfb35e

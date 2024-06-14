@@ -1,0 +1,374 @@
+table_name: NCD HIS Followup Cases Query-dataset
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT o.answer_coded AS diagnosis,\n       CASE WHEN (o.visit_date_started\
+  \ - p.birthdate) <= interval '28 days' AND p.gender = 'M' THEN 1 ELSE 0 END AS \"\
+  ml28d\",\n       CASE WHEN (o.visit_date_started - p.birthdate) <= interval '28\
+  \ days' AND p.gender = 'F' THEN 1 ELSE 0 END AS \"fl28d\",\n       CASE WHEN (o.visit_date_started\
+  \ - p.birthdate) >= interval '29 days' AND (o.visit_date_started - p.birthdate)\
+  \ < interval '1 year' AND DATE_PART('month', (o.visit_date_started - p.birthdate))\
+  \ < 12 AND p.gender = 'M' THEN 1 ELSE 0 END AS \"ml12m\",\n       CASE WHEN (o.visit_date_started\
+  \ - p.birthdate) >= interval '29 days' AND (o.visit_date_started - p.birthdate)\
+  \ < interval '1 year' AND DATE_PART('month', (o.visit_date_started - p.birthdate))\
+  \ < 12 AND p.gender = 'F' THEN 1 ELSE 0 END AS \"fl12m\",\n       CASE WHEN (o.visit_date_started\
+  \ - p.birthdate) >= interval '1 year' AND (o.visit_date_started - p.birthdate) <\
+  \ interval '5 years' AND p.gender = 'M' THEN 1 ELSE 0 END AS \"ml4\",\n       CASE\
+  \ WHEN (o.visit_date_started - p.birthdate) >= interval '1 year' AND (o.visit_date_started\
+  \ - p.birthdate) < interval '5 years' AND p.gender = 'F' THEN 1 ELSE 0 END AS \"\
+  fl4\",\n       CASE WHEN (o.visit_date_started - p.birthdate) >= interval '5 years'\
+  \ AND (o.visit_date_started - p.birthdate) <= interval '13 years' AND p.gender =\
+  \ 'M' THEN 1 ELSE 0 END AS \"ml13\",\n       CASE WHEN (o.visit_date_started - p.birthdate)\
+  \ >= interval '5 years' AND (o.visit_date_started - p.birthdate) <= interval '13\
+  \ years' AND p.gender = 'F' THEN 1 ELSE 0 END AS \"fl13\",\n       CASE WHEN (o.visit_date_started\
+  \ - p.birthdate) >= interval '15 years' AND (o.visit_date_started - p.birthdate)\
+  \ <= interval '24 years' AND p.gender = 'M' THEN 1 ELSE 0 END AS \"ml24\",\n   \
+  \    CASE WHEN (o.visit_date_started - p.birthdate) >= interval '15 years' AND (o.visit_date_started\
+  \ - p.birthdate) <= interval '24 years' AND p.gender = 'F' THEN 1 ELSE 0 END AS\
+  \ \"fl24\",\n       CASE WHEN (o.visit_date_started - p.birthdate) >= interval '25\
+  \ years' AND (o.visit_date_started - p.birthdate) <= interval '49 years' AND p.gender\
+  \ = 'M' THEN 1 ELSE 0 END AS \"ml49\",\n       CASE WHEN (o.visit_date_started -\
+  \ p.birthdate) >= interval '25 years' AND (o.visit_date_started - p.birthdate) <=\
+  \ interval '49 years' AND p.gender = 'F' THEN 1 ELSE 0 END AS \"fl49\",\n      \
+  \ CASE WHEN (o.visit_date_started - p.birthdate) >= interval '50 years' AND (o.visit_date_started\
+  \ - p.birthdate) <= interval '64 years' AND p.gender = 'M' THEN 1 ELSE 0 END AS\
+  \ \"ml64\",\n       CASE WHEN (o.visit_date_started - p.birthdate) >= interval '50\
+  \ years' AND (o.visit_date_started - p.birthdate) <= interval '64 years' AND p.gender\
+  \ = 'F' THEN 1 ELSE 0 END AS \"fl64\",\n       CASE WHEN (o.visit_date_started -\
+  \ p.birthdate) >= interval '65 years' AND p.gender = 'M' THEN 1 ELSE 0 END AS \"\
+  mg64\",\n       CASE WHEN (o.visit_date_started - p.birthdate) >= interval '65 years'\
+  \ AND p.gender = 'F' THEN 1 ELSE 0 END AS \"fg64\",\n       facility_address.state_province\
+  \ AS \"f_province\",\n       facility_address.county_district AS \"f_district\"\
+  ,\n       facility_address.name AS \"f_name\",\n       CASE WHEN facility_address.location_tags\
+  \ LIKE '%Health Center%' THEN 'Health Center' \n            WHEN facility_address.location_tags\
+  \ LIKE '%Referral Hospital%' THEN 'Referral Hospital'\n            ELSE '' END AS\
+  \ \"f_type\",\n       o.visit_date_started AS visit_date\nFROM observations o\n\
+  INNER JOIN visits v ON o.visit_uuid = v.visit_uuid\nINNER JOIN patients p ON p.patient_uuid\
+  \ = o.patient_uuid\nINNER JOIN locations facility_address ON facility_address.uuid\
+  \ = o.location_uuid\nWHERE o.answer_coded_uuid IN ('105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \                 '8b26ecd3-8726-4c8e-b042-cbe71e44a863',\n                 'af34b28a-ab67-48d8-9dec-58244a267af1',\n\
+  \                 '634f28c7-74c9-4b4e-b74d-6ac6a7a797ea',\n                 '3cd50188-26fe-102b-80cb-0017a47871b2')\n\
+  AND o.visit_type = 'NCD Follow-up Visit'"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: d534a5f4-9799-40a4-8096-cfe32243edc1
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: fl12m
+  verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\u179A\
+    \ (29 days - 11 months - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml12m
+  verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u1794\u17D2\u179A\
+    \ (29 days - 11 months - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl28d
+  verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u179F\u17D2\u179A (0-28 days - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml28d
+  verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u1794\u17D2\u179A (0-28 day - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl64
+  verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64\
+    \ years - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml64
+  verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (50-64\
+    \ years - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl13
+  verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (5-13 years\
+    \ - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml13
+  verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13 years\
+    \ - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl4
+  verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (1-4 years\
+    \ - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml4
+  verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4 years\
+    \ - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl24
+  verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (6-24 years\
+    \ - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml24
+  verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24 years\
+    \ - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fl49
+  verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49\
+    \ years - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: ml49
+  verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (25-49\
+    \ years - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: fg64
+  verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (>=65 years\
+    \ - F)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: mg64
+  verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65 years\
+    \ - M)"
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: diagnosis
+  verbose_name: "\u1780\u179A\u178E\u17B8\u178F\u17B6\u1798\u178A\u17B6\u1793 (Follow-up\
+    \ case)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: visit_date
+  verbose_name: null
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: f_name
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: f_district
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: f_province
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: f_type
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

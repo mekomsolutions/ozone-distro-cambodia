@@ -1,0 +1,170 @@
+dashboard_title: NCD Missed Appointments Report Dashboard
+description: null
+css: ''
+slug: null
+uuid: 0971fabd-1194-4150-8cd2-b17ea31684c4
+position:
+  CHART-9_cxUnO_rZ:
+    children: []
+    id: CHART-9_cxUnO_rZ
+    meta:
+      chartId: 141
+      height: 74
+      sliceName: NCD Appointment Report
+      uuid: a5640d1c-bc02-4507-b639-787965bc42c7
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-OtyrqE9UuC
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-OtyrqE9UuC
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: NCD Appointment Report dashboard
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-OtyrqE9UuC:
+    children:
+    - CHART-9_cxUnO_rZ
+    id: ROW-OtyrqE9UuC
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  default_filters: '{}'
+  chart_configuration: {}
+  native_filter_configuration:
+  - id: NATIVE_FILTER-jvfgfSm-S
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\u17B7\
+      \u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility Province
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 141
+    tabsInScope: []
+  - id: NATIVE_FILTER-W14x47Ntg
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (Operational District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility District
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 141
+    tabsInScope: []
+  - id: NATIVE_FILTER-Fd7aO5l2E
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\u1780\
+      \u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
+      \u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility Name
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 141
+    tabsInScope: []
+  - id: NATIVE_FILTER-NpwLz6Lx7
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
+      \u17C6\u1796\u17B8\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\
+      \ (Reporting Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 141
+    tabsInScope: []
+  shared_label_colors: {}
+  color_scheme_domain: []
+version: 1.0.0

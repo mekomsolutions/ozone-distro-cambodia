@@ -1,0 +1,304 @@
+table_name: NCD Referral Status Query-dataset
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility District\"\
+  ,\n    f_province AS \"Facility Province\",\n    referral_facility_name AS \"Referral\
+  \ Facility Name\",\n    referral_facility_district AS \"Referral Facility District\"\
+  ,\n    referral_facility_province AS \"Referral Facility Province\",\n    CASE \n\
+  \        WHEN identifiers ~ '.*OpenMRS ID: (.*?)(,|$).*' THEN REGEXP_REPLACE(identifiers,\
+  \ '.*OpenMRS ID: (.*?)(,|$).*', '\\1', 'g')\n        ELSE ''\n    END AS \"OpenMRS\
+  \ ID\",\n    CONCAT_WS(' ', given_name, middle_name, family_name) AS \"Patient's\
+  \ name\",\n    DATE_PART('year', age(referral_date, birthdate)) AS \"Age\",\n  \
+  \  CASE \n        WHEN attributes ~ '.*Telephone Number: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(attributes,\
+  \ '.*Telephone Number: (.*?)(\\/|$).*', '\\1', 'g')\n        ELSE ''\n    END AS\
+  \ \"Phone number\",\n    address_1 AS \"Village\",\n    address_city AS \"Commune/\
+  \ Sangkat\",\n    address_county_district AS \"District/ Khan\",\n    address_state_province\
+  \ AS \"Province/City\",\n    CONCAT_WS(', ', diabetes_reason_for_referral, hypertension_reason_for_referral)\
+  \ AS \"Reason for referral\",\n    DATE(referral_date) AS \"Referral date\"\n\n\
+  FROM (\n    SELECT\n        DISTINCT obs_referral_centre.obs_id,\n        facility_address.state_province\
+  \ AS \"f_province\",\n        facility_address.county_district AS \"f_district\"\
+  ,\n        facility_address.name AS \"f_facility\",\n        TRIM(BOTH ' ' FROM\
+  \ split_part(obs_referral_centre.answer_coded, '>', 1)) AS referral_facility_province,\n\
+  \        TRIM(BOTH ' ' FROM split_part(obs_referral_centre.answer_coded, '>', 2))\
+  \ AS referral_facility_district,\n        TRIM(BOTH ' ' FROM split_part(obs_referral_centre.answer_coded,\
+  \ '>', 3)) AS referral_facility_name,\n        patient_id,\n        given_name,\n\
+  \        middle_name,\n        family_name,\n        identifiers,\n        birthdate,\n\
+  \        address_state_province,\n        address_county_district,\n        address_city,\n\
+  \        address_1,\n        attributes,\n        vi.date_started AS \"visit_date\"\
+  ,\n        vi.type AS \"visit_type\",\n        obs_referral_centre.obs_date_time\
+  \ AS \"referral_date\",\n        obs_diabetes_referral_reason.answer_coded AS \"\
+  diabetes_reason_for_referral\",\n        obs_hypertension_referral_reason.answer_coded\
+  \ AS \"hypertension_reason_for_referral\",\n        CASE \n            WHEN referral_visit.visit_uuid\
+  \ IS NOT NULL THEN 'Yes'\n            ELSE 'No'\n        END AS \"fulfilled_referral\"\
+  \n    FROM patients pa\n    LEFT OUTER JOIN visits vi on vi.patient_uuid = pa.patient_uuid\n\
+  \    LEFT OUTER JOIN locations facility_address ON facility_address.uuid = vi.location_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs1.obs_id, obs1.visit_uuid, MAX(obs_date_time)\
+  \ AS obs_date_time, STRING_AGG(obs1.answer_coded, ', ') AS answer_coded, obs1.encounter_uuid\n\
+  \        FROM observations obs1\n        WHERE obs1.question_uuid = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\
+  \ AND obs1.encounter_type IN ('Health Center - NCD Screening', 'NCD Consultation',\
+  \ 'NCD Medical History')\n        GROUP BY obs1.visit_uuid, obs1.question_uuid,\
+  \ obs1.answer_coded, obs1.encounter_uuid, obs1.obs_id\n    ) AS obs_referral_centre\
+  \ on obs_referral_centre.visit_uuid = vi.visit_uuid\n    \n    LEFT OUTER JOIN (\n\
+  \        SELECT obs2.visit_uuid, MAX(obs2.date_created), STRING_AGG(obs2.answer_coded,\
+  \ ', ') AS answer_coded, obs2.encounter_uuid\n        FROM observations obs2\n \
+  \       WHERE obs2.question_uuid = 'cde3716a-2b98-4f10-b619-4d5a5a55503c'\n    \
+  \    GROUP BY obs2.visit_uuid, obs2.question_uuid, obs2.answer_coded, obs2.encounter_uuid\n\
+  \    ) AS obs_diabetes_referral_reason  on obs_diabetes_referral_reason.encounter_uuid\
+  \ = obs_referral_centre.encounter_uuid\n    \n    LEFT OUTER JOIN (\n        SELECT\
+  \ obs3.visit_uuid, MAX(obs3.date_created), obs3.answer_coded, obs3.encounter_uuid\n\
+  \        FROM observations obs3\n        WHERE obs3.question_uuid = '68f158ff-6396-4bab-8194-73255282bd23'\n\
+  \        GROUP BY obs3.visit_uuid, obs3.question_uuid, obs3.answer_coded, obs3.encounter_uuid\n\
+  \    ) AS obs_hypertension_referral_reason  on obs_hypertension_referral_reason.encounter_uuid\
+  \ = obs_referral_centre.encounter_uuid\n\n    LEFT OUTER JOIN visits referral_visit\
+  \ ON referral_visit.patient_uuid = pa.patient_uuid AND DATE(referral_visit.date_started)\
+  \ >= DATE(vi.date_started) AND DATE(referral_visit.date_started) <= DATE(vi.date_started\
+  \ + INTERVAL '7 days') AND referral_visit.location = TRIM(BOTH ' ' FROM split_part(obs_referral_centre.answer_coded,\
+  \ '>', 3))\n\n    WHERE obs_referral_centre.answer_coded IS NOT NULL\n\n) AS patient_info\
+  \ \nWHERE patient_info.visit_type IN ('NCD New Visit', 'NCD Follow-up Visit')  AND\
+  \ patient_info.fulfilled_referral = 'No'\n"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: Referral Facility Name
+  verbose_name: "\u1791\u17C5 - \u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\
+    \u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (\u1780\u17BC\u178A_\u1788\u17D2\
+    \u1798\u17C4\u17C7) (To - Health facility (Code_Name))"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral Facility District
+  verbose_name: "\u1791\u17C5 - \u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\
+    \u17B7\u1794\u178F\u17D2\u178F\u17B7 (To - OD - Operational District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Name
+  verbose_name: "\u1796\u17B8 - \u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\
+    \u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (\u1780\u17BC\u178A_\u1788\u17D2\
+    \u1798\u17C4\u17C7) (From - Health facility (Code_Name))"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility District
+  verbose_name: "\u1796\u17B8 - \u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\
+    \u17B7\u1794\u178F\u17D2\u178F\u17B7 (From- OD - Operational District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral Facility Province
+  verbose_name: "\u1791\u17C5 - \u1781\u17C1\u178F\u17D2\u178F (To - Province)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Commune/ Sangkat
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1783\u17BB\
+    \u17C6/\u179F\u1784\u17D2\u1780\u17B6\u178F\u17CB (Address - Commune)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Province
+  verbose_name: "\u1796\u17B8 - \u1781\u17C1\u178F\u17D2\u178F (From - Province)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Province/City
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1781\u17C1\
+    \u178F\u17D2\u178F (Address - Province)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Village
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1797\u17BC\
+    \u1798\u17B7 (Address - Village)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: District/ Khan
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 \u179F\u17D2\
+    \u179A\u17BB\u1780 (Address - District)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Reason for referral
+  verbose_name: "\u1794\u1789\u17D2\u17A0\u17B6\u1780\u17B6\u179A\u1794\u1789\u17D2\
+    \u1787\u17BC\u1793 (Reason for referral)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient's name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA (Patient Name)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral date
+  verbose_name: "\u1780\u17B6\u179A\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1794\u1789\u17D2\u1787\u17BC\u1793 (Referral Date)"
+  is_dttm: true
+  is_active: null
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: OpenMRS ID
+  verbose_name: "\u17A2\u178F\u17D2\u178F\u179B\u17C1\u1781\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA (Client ID)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Phone number
+  verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791 (Phone\
+    \ number)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Age
+  verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

@@ -1,0 +1,84 @@
+slice_name: HC CCS Report
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 24__table
+  viz_type: table
+  slice_id: 133
+  granularity_sqla: Visit date
+  time_range: 'DATEADD(DATETIME("now"), -1, year) : now'
+  query_mode: raw
+  groupby: []
+  all_columns:
+  - OpenMRS ID
+  - ID Poor Card
+  - National ID Card
+  - PMRS ID Number
+  - Other Identifiers
+  - Patient's name
+  - Age
+  - Province/City
+  - District/ Khan
+  - Commune/ Sangkat
+  - Village
+  - Phone number
+  - Visit date
+  - Type of visit
+  - Payment type
+  - Referred From
+  - SCJ
+  - VIA test result
+  - If VIA(+) Number of Quadrants involved
+  - If VIA(+) % of Acetowhite site
+  - HPV Test result
+  - 'Type of HPV '
+  - Treatment option
+  - Other treatment specified
+  - Self breast examination and education
+  - Breast Examination Result
+  - Other Breast Examination Result
+  - Treatment
+  - Facility Province
+  - Facility District
+  - Facility Name
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  show_cell_bars: true
+  color_pn: true
+  allow_rearrange_columns: true
+  column_config:
+    Age:
+      showCellBars: false
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 11
+query_context: '{"datasource":{"id":24,"type":"table"},"force":false,"queries":[{"time_range":"DATEADD(DATETIME(\"now\"),
+  -1, year) : now","granularity":"Visit date","filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["OpenMRS
+  ID","ID Poor Card","National ID Card","PMRS ID Number","Other Identifiers","Patient''s
+  name","Age","Province/City","District/ Khan","Commune/ Sangkat","Village","Phone
+  number","Visit date","Type of visit","Payment type","Referred From","SCJ","VIA test
+  result","If VIA(+) Number of Quadrants involved","If VIA(+) % of Acetowhite site","HPV
+  Test result","Type of HPV ","Treatment option","Other treatment specified","Self
+  breast examination and education","Breast Examination Result","Other Breast Examination
+  Result","Treatment","Facility Province","Facility District","Facility Name"],"orderby":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"24__table","viz_type":"table","slice_id":133,"granularity_sqla":"Visit
+  date","time_range":"DATEADD(DATETIME(\"now\"), -1, year) : now","query_mode":"raw","groupby":[],"all_columns":["OpenMRS
+  ID","ID Poor Card","National ID Card","PMRS ID Number","Other Identifiers","Patient''s
+  name","Age","Province/City","District/ Khan","Commune/ Sangkat","Village","Phone
+  number","Visit date","Type of visit","Payment type","Referred From","SCJ","VIA test
+  result","If VIA(+) Number of Quadrants involved","If VIA(+) % of Acetowhite site","HPV
+  Test result","Type of HPV ","Treatment option","Other treatment specified","Self
+  breast examination and education","Breast Examination Result","Other Breast Examination
+  Result","Treatment","Facility Province","Facility District","Facility Name"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":10000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","include_search":true,"show_cell_bars":true,"color_pn":true,"allow_rearrange_columns":true,"column_config":{"Age":{"showCellBars":false}},"conditional_formatting":[],"extra_form_data":{},"dashboards":[11],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 5aaa773a-3be3-4fed-b221-a1f3c395cc8b
+version: 1.0.0
+dataset_uuid: 7bbd77f5-46bc-49ef-8436-608aefbfb35e
