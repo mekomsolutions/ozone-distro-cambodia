@@ -1,0 +1,1614 @@
+table_name: Cervical Cancer Screening HC Raw Data
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: null
+sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client_name,\n\
+  \  MAX(p.gender) AS gender,\n  MAX(\n    DATE_PART ('year', age (v.date_started,\
+  \ p.birthdate))\n  ) AS age,\n  MAX(p.birthdate) AS birthdate,\n  MAX(p.id_poor)\
+  \ AS id_poor,\n  MAX(p.national_id) AS national_id,\n  MAX(p.covid_vaccination_id)\
+  \ AS covid_vaccination_id,\n  MAX(p.pmrs_id) AS pmrs_id,\n  MAX(p.nssf) AS nssf,\n\
+  \  MAX(p.ssn) AS ssn,\n  MAX(p.passport_no) AS passport_no,\n  MAX(p.other_identifiers)\
+  \ AS other_identifiers,\n  MAX(p.province) AS province,\n  MAX(p.district) AS district,\n\
+  \  MAX(p.commune) AS commune,\n  MAX(p.village) AS village,\n  MAX(p.occupation)\
+  \ AS occupation,\n  MAX(p.place_of_birth) AS place_of_birth,\n  MAX(p.ethnicity)\
+  \ AS ethnicity,\n  MAX(p.marital_status) AS marital_status,\n  MAX(p.education)\
+  \ AS education,\n  MAX(v.date_started) AS visit_date,\n  MAX(DATE (v.date_started))\
+  \ AS visit_start_date,\n  MAX(CAST(v.date_started AS TIME)) AS visit_start_time,\n\
+  \  MAX(DATE (v.date_stopped)) AS visit_end_date,\n  MAX(CAST(v.date_stopped AS TIME))\
+  \ AS visit_end_time,\n  MAX(v.type) AS visit_type,\n  -- Referred from: Referral\
+  \ Hospital / Has a referral letter ?: No / Address Zone: Zone A / Insurance Type:\
+  \ HEF_Poor\n  MAX(\n    SUBSTRING(\n      v.visit_attributes\n      FROM\n     \
+  \   'Insurance Type: ([^/]*)'\n    )\n  ) AS payment_type,\n  MAX(\n    SUBSTRING(\n\
+  \      v.visit_attributes\n      FROM\n        'Referred from: ([^/]*)'\n    )\n\
+  \  ) AS referred_from,\n  MAX(\n    SUBSTRING(\n      v.visit_attributes\n     \
+  \ FROM\n        'Has a referral letter ?: ([^/]*)'\n    )\n  ) AS has_referral_letter,\n\
+  \  MAX(\n    SUBSTRING(\n      v.visit_attributes\n      FROM\n        'Address\
+  \ Zone: ([^/]*)'\n    )\n  ) AS address_zone,\n  MAX(l.state_province) AS visit_province,\n\
+  \  MAX(l.county_district) AS visit_district,\n  MAX(l.postal_code) AS visit_hf_code,\n\
+  \  MAX(l.name) AS visit_hf_name,\n  MAX(l.location_tags) AS location_tags,\n  --\
+  \ History Cervical Cancer Screening\n  -- Is screen for cervical cancer\n  MAX(\n\
+  \    CASE\n      WHEN o.question_uuid='75681e39-683c-4de9-9ca7-5b55b736bfa7'\n \
+  \     AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS is_screen_for_css,\n  -- Test type\n  MAX(\n    CASE\n      WHEN o.question_uuid='baf42703-65ed-4ea3-9d3f-e5cf0305d2fd'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS test_type,\n  -- HPV test result\n  MAX(\n    CASE\n      WHEN o.question_uuid='d2a2849a-5b21-452c-8967-b9d31dc82b14'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS hpv_test_result,\n  -- VIA test result\n  MAX(\n    CASE\n      WHEN o.question_uuid='f90dc342-292e-4a47-9fef-860a03bf255f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS via_test_result,\n  -- Cytology test result\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='0c35f74a-5927-4bc6-824c-1f7876f2c932'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS cytology_test_result,\n\
+  \  -- treatment\n  MAX(\n    CASE\n      WHEN o.question_uuid='6027bf55-5288-4ace-bc7f-b75d2291f8e0'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS treatment,\n  -- Sex debut\n  MAX(\n    CASE\n      WHEN o.question_uuid='cd9d1cab-5a14-41e4-bf4b-e9425bc53958'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS sex_debut,\n  -- Previous Pregnant\n  MAX(\n    CASE\n      WHEN o.question_uuid='9186111c-9df6-467f-8479-cb950b7fb252'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS previous_pregnant,\n  -- Number of pregnancies\n  MAX(\n    CASE\n     \
+  \ WHEN o.question_uuid='b5913f28-31f5-4634-8970-316fba5f0eaf'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n  ) AS number_of_pregnancies,\n\
+  \  -- Number of deliveries\n  MAX(\n    CASE\n      WHEN o.question_uuid='ac127f70-514c-4f42-aa46-a13bb0d26a79'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS number_of_deliveries,\n  -- Number of miscarriages\n  MAX(\n    CASE\n \
+  \     WHEN o.question_uuid='e83196b4-793a-40dc-b30f-3a0ddac746bc'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n  ) AS number_of_miscarriages,\n\
+  \  -- Bleeding after sex\n  MAX(\n    CASE\n      WHEN o.question_uuid='abcf6140-5cc9-42a7-86c3-60528cfc9d4e'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS bleeding_after_sex,\n  -- Does patient smoke?\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='7533aa7e-04cb-4cfd-9c97-6ac36f114bab'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS smoked,\n  -- Corticosteroid\
+  \ use\n  MAX(\n    CASE\n      WHEN o.question_uuid='76464977-5175-4593-9a59-82cd445c76b0'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS corticosteroid_use,\n  -- Corticosteroid use duration\n  MAX(\n    CASE\n\
+  \      WHEN o.question_uuid='e5c015db-9c06-45da-aaba-bf3fee26a4c7'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n  ) AS corticosteroid_use_duration,\n\
+  \  -- COC use For More Than 5 years\n  MAX(\n    CASE\n      WHEN o.question_uuid='9e34db11-fd5c-4ccc-8595-ace8d7d98373'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS coc_use_for_more_than_5_yrs,\n  -- Has multiple partners\n  MAX(\n    CASE\n\
+  \      WHEN o.question_uuid='b6f6dc57-f3a3-4bf9-94a5-5db24d96ed1d'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS has_multiple_sex_partners,\n\
+  \  -- Partner has multiple partners\n  MAX(\n    CASE\n      WHEN o.question_uuid='194da4ae-74fd-48c0-9d25-78c70e9fb21f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS partner_has_multiple_sex_partners,\n  -- Has history of STIs\n  MAX(\n \
+  \   CASE\n      WHEN o.question_uuid='a47c165a-2c06-4b6d-b127-d1edba82604a'\n  \
+  \    AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n \
+  \ ) AS has_history_stis,\n  -- History of STIs\n  MAX(\n    CASE\n      WHEN o.question_uuid='aab5fe68-16dc-484f-b3a5-88deba3d2c72'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS history_stis,\n  -- Current status of STIs\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='f6da3f1d-2b98-40a3-af57-7e30ce44ed90'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS has_current_stis,\n\
+  \  -- Current STIs\n  MAX(\n    CASE\n      WHEN o.question_uuid='aab5fe68-16dc-484f-b3a5-88deba3d2c72'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS current_stis,\n  -- HIV/AIDs status\n  MAX(\n    CASE\n      WHEN o.question_uuid='42235bf6-dac7-4d7d-b2a0-c8a33a7fb547'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS has_hiv,\n  -- HIV treatment\n  MAX(\n    CASE\n      WHEN o.question_uuid='ee809067-15e7-4c5e-9cbd-3629b034850d'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS hiv_treatment,\n  -- Family history of Cancer\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='026e7cdb-2609-480e-ae8f-c21ca092e79a'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS family_history_cancer,\n\
+  \  -- Type of Cancer\n  MAX(\n    CASE\n      WHEN o.question_uuid='541b8a94-ff7a-474c-b5b0-8c2a2135c684'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS type_of_cancer,\n  -- Vulva exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='20c37ce2-6db6-4c78-b956-79a629d6c5b6'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS vulva_exam,\n  -- Vagina exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='b88d4e86-5324-4fe7-ac6a-9437f91d4988'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS vagina_exam,\n  -- Cervix exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='288feadf-eb58-4b0a-9fa7-a57a2aea4dc6'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS cervix_exam,\n  -- Other Physical exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='697b84b3-0a5e-4d90-9820-f5e359414cac'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS other_physical_exam,\n  -- Cervix text\n  MAX(\n    CASE\n      WHEN o.question_uuid='fc049f25-978b-4938-aaaa-cf80dafdc789'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS cervix_text,\n  -- Uterus text\n  MAX(\n    CASE\n      WHEN o.question_uuid='ad789cf7-ffb6-447c-9dbe-5b989c8e9359'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS uterus_text,\n  -- Fallopian text\n  MAX(\n    CASE\n      WHEN o.question_uuid='a617d0d6-85f7-4609-bcc1-dbb0930f471'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS fallopian_text,\n  -- Vagina rectal text\n  MAX(\n    CASE\n      WHEN o.question_uuid='f2d2e6ef-1277-4dd3-8374-396de070a858'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS vaginal_rectal_text,\n  -- Vulva text\n  MAX(\n    CASE\n      WHEN o.question_uuid='0a80e4ad-c144-4439-868b-f32b6b63816d'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS vulva_text,\n  -- Rectum text\n  MAX(\n    CASE\n      WHEN o.question_uuid='57ea911d-dcfa-45a3-96f7-1d768dcc6013'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS rectum_text,\n  -- Educated for CCS\n  MAX(\n    CASE\n      WHEN o.question_uuid='4066c646-40c3-48ac-99fa-91a2f5f57e3c'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS is_educated_for_css,\n  -- HPV result\n  MAX(\n    CASE\n      WHEN o.question_uuid='b643325d-0d63-4ba0-9c0d-e1c0a1c9f3ce'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS hpv_result,\n  -- HPV type (If +ve)\n  MAX(\n    CASE\n      WHEN o.question_uuid='5f27683c-e4ab-4a10-922d-e34bbb560884'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS hpv_virus_type,\n  -- SCJ visibility\n  MAX(\n    CASE\n      WHEN o.question_uuid='d2ec630a-a223-492a-89f2-597266b36571'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS scj_visibility,\n  -- VIA Test results\n  MAX(\n    CASE\n      WHEN o.question_uuid='27912a31-4b1e-40d4-a3a0-947e0eb2e588'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS via_test_results,\n  -- No. of quadrants\n  MAX(\n    CASE\n      WHEN o.question_uuid='0dd61510-1ddd-49e8-838b-b4ec7fdaf95f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS number_of_quadrants,\n  -- What area of ectocervix does the acetowhite area\
+  \ occupy?\n  MAX(\n    CASE\n      WHEN o.question_uuid='a84a070a-172f-43f7-96f3-67574d42ba1b'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS aceto_white_ecto_cervix,\n  -- Colposcopy\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='c0027068-fe1b-4401-aad5-d70e4437362c'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS colposcopy,\n \
+  \ -- Cervical Biopsy\n  MAX(\n    CASE\n      WHEN o.question_uuid='df802805-a937-4031-928d-8ce7b69aefc7'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS cervical_biopsy,\n  -- Pap Smear\n  MAX(\n    CASE\n      WHEN o.question_uuid='863d4bf3-310d-472a-990d-8467e543ebab'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS pap_smear,\n  -- CC reason for referral\n  MAX(\n    CASE\n      WHEN o.question_uuid='c158e3b2-edf9-4e0e-9e95-d36de1a51527'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS cc_reason_for_referral,\n  -- CC other reason for referral\n  MAX(\n   \
+  \ CASE\n      WHEN o.question_uuid='12f61ec2-e0b1-420d-be7b-43a95bce6e4a'\n    \
+  \  AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n  ) AS\
+  \ cc_other_reason_for_referral,\n  -- CC treatment options\n  MAX(\n    CASE\n \
+  \     WHEN o.question_uuid='1ca7d712-f7d7-4e09-8184-048bc4173902'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS cc_treatment_options,\n\
+  \  -- CC Other treatment options\n  MAX(\n    CASE\n      WHEN o.question_uuid='e6d18ff5-9d52-4e47-b2b2-762d9aa30604'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n\
+  \  ) AS cc_other_treatment_options,\n  -- CC appointment date\n  MAX(\n    CASE\n\
+  \      WHEN v.visit_uuid IS NOT NULL THEN NULL\n      ELSE NULL\n    END\n  ) AS\
+  \ cc_appointment_date,\n  -- CC reason for appointment\n  MAX(\n    CASE\n     \
+  \ WHEN v.visit_uuid IS NOT NULL THEN NULL\n      ELSE NULL\n    END\n  ) AS cc_reason_for_appointment,\n\
+  \  -- Educated for Breast cancer\n  MAX(\n    CASE\n      WHEN o.question_uuid='c208aa27-9790-4dbf-84eb-2ffc321a1230'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS is_educated_for_bs,\n  -- Sign of Breast cancer\n  MAX(\n    CASE\n    \
+  \  WHEN o.question_uuid='d1fd20ef-6363-4065-98d6-f36b8f1dc27e'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS sign_of_breast,\n\
+  \  -- Other breast exam details\n  MAX(\n    CASE\n      WHEN o.question_uuid='f984b718-d674-40c4-9ac4-8d22963e1933'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS other_sign_of_breast,\n  -- BC reason for referral\n  MAX(\n    CASE\n \
+  \     WHEN o.question_uuid='e676ab7f-13b0-4251-84fd-9874c80133b5'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS bc_reason_for_referral,\n\
+  \  -- BC other reason for referral\n  MAX(\n    CASE\n      WHEN o.question_uuid='d7e7f0b4-94c8-4bd9-a6ef-a38e1d3efcc8'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n\
+  \  ) AS bc_other_reason_for_referral,\n  -- BC treatment\n  MAX(\n    CASE\n   \
+  \   WHEN o.question_uuid='ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS bc_treatment,\n\
+  \  -- BC appointment date\n  MAX(\n    CASE\n      WHEN v.visit_uuid IS NOT NULL\
+  \ THEN NULL\n      ELSE NULL\n    END\n  ) AS bc_appointment_date,\n  -- BC reason\
+  \ for appointment\n  MAX(\n    CASE\n      WHEN v.visit_uuid IS NOT NULL THEN NULL\n\
+  \      ELSE NULL\n    END\n  ) AS bc_reason_for_appointment,\n  -- Referral center\n\
+  \  MAX(\n    CASE\n      WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS referral_center,\n  MAX(\n    split_part (\n      split_part (\n       \
+  \ (\n          CASE\n            WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \            AND o.obs_voided IS FALSE THEN o.answer_coded\n            ELSE NULL\n\
+  \          END\n        ),\n        '>',\n        3\n      ),\n      '.',\n    \
+  \  1\n    )\n  ) AS rf_hf_code,\n  MAX(\n    split_part (\n      split_part (\n\
+  \        (\n          CASE\n            WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \            AND o.obs_voided IS FALSE THEN o.answer_coded\n            ELSE NULL\n\
+  \          END\n        ),\n        '>',\n        3\n      ),\n      '.',\n    \
+  \  2\n    )\n  ) AS rf_hf_name,\n  MAX(\n    split_part (\n      (\n        CASE\n\
+  \          WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n       \
+  \   AND o.obs_voided IS FALSE THEN o.answer_coded\n          ELSE NULL\n       \
+  \ END\n      ),\n      '>',\n      2\n    )\n  ) AS rf_hf_district,\n  MAX(\n  \
+  \  split_part (\n      (\n        CASE\n          WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \          AND o.obs_voided IS FALSE THEN o.answer_coded\n          ELSE NULL\n\
+  \        END\n      ),\n      '>',\n      1\n    )\n  ) AS rf_hf_province\nFROM\n\
+  \  visits v\n  LEFT JOIN observations o ON (\n    v.visit_uuid=o.visit_uuid\n  \
+  \  AND o.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN locations l ON (\n    l.uuid=v.location_uuid\n\
+  \    AND l.uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      patient_uuid,\n\
+  \      CONCAT_WS (' ', given_name, middle_name, family_name) AS patient_name,\n\
+  \      gender,\n      birthdate,\n      -- Identifiers\n      SUBSTRING(\n     \
+  \   identifiers\n        FROM\n          'IDPoor: ([^,]*)'\n      ) AS id_poor,\n\
+  \      SUBSTRING(\n        identifiers\n        FROM\n          'OpenMRS ID: ([^,]*)'\n\
+  \      ) AS openmrs_id,\n      SUBSTRING(\n        identifiers\n        FROM\n \
+  \         'National ID: ([^,]*)'\n      ) AS national_id,\n      SUBSTRING(\n  \
+  \      identifiers\n        FROM\n          'COVID vaccination ID: ([^,]*)'\n  \
+  \    ) AS covid_vaccination_id,\n      SUBSTRING(\n        identifiers\n       \
+  \ FROM\n          'PMRS ID: ([^,]*)'\n      ) AS pmrs_id,\n      SUBSTRING(\n  \
+  \      identifiers\n        FROM\n          'NSSF: ([^,]*)'\n      ) AS nssf,\n\
+  \      SUBSTRING(\n        identifiers\n        FROM\n          'SSN: ([^,]*)'\n\
+  \      ) AS ssn,\n      SUBSTRING(\n        identifiers\n        FROM\n        \
+  \  'Passport No: ([^,]*)'\n      ) AS passport_no,\n      COALESCE(\n        REGEXP_REPLACE\
+  \ (\n          REGEXP_REPLACE (\n            identifiers,\n            '(?:OpenMRS\
+  \ ID|National ID|IDPoor|PMRS ID|COVID vaccination ID): [^,]*,?\\s?',\n         \
+  \   '',\n            'g'\n          ),\n          '^, |, $',\n          ''\n   \
+  \     ),\n        NULL\n      ) AS other_identifiers,\n      -- Addresses\n    \
+  \  address_country AS country,\n      address_state_province AS province,\n    \
+  \  address_county_district AS district,\n      address_city AS commune,\n      address_1\
+  \ AS village,\n      -- Attributes\n      SUBSTRING(\n        attributes\n     \
+  \   FROM\n          'Occupation: ([^/]*)'\n      ) AS occupation,\n      SUBSTRING(\n\
+  \        attributes\n        FROM\n          'Place of Birth: ([^/]*)'\n      )\
+  \ AS place_of_birth,\n      SUBSTRING(\n        attributes\n        FROM\n     \
+  \     'Ethnicity: ([^/]*)'\n      ) AS ethnicity,\n      SUBSTRING(\n        attributes\n\
+  \        FROM\n          'Marital Status: ([^/]*)'\n      ) AS marital_status,\n\
+  \      SUBSTRING(\n        attributes\n        FROM\n          'Education: ([^/]*)'\n\
+  \      ) AS education\n    FROM\n      patients\n    WHERE\n      person_voided\
+  \ IS FALSE\n  ) p ON (p.patient_uuid=v.patient_uuid)\nWHERE\n  o.obs_voided IS FALSE\n\
+  \  AND v.visit_voided IS FALSE\n  -- Cervical Cancer New Visit & Cervical Cancer\
+  \ Follow-up Visit\n  AND v.visit_type_uuid IN (\n    'cad25c07-4657-4167-8b57-8ea1a3830e9b',\n\
+  \    'd2bf1776-671d-4e0f-a850-f7fef7aa4044'\n  )\n    -- Health Center (HC)\n AND\
+  \ l.location_tags ILIKE '%Health Center%'\nGROUP BY\n  v.visit_uuid,\n  p.patient_uuid"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: treatment
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B (Treatment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: The value here is based on which test type. It can be either VIA treatment
+    or HPV treatment or Cytology treatment
+  python_date_format: null
+  extra: {}
+- column_name: coc_use_for_more_than_5_yrs
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1794\
+    \u17B6\u1793\u1794\u17D2\u179A\u17BE\u1790\u17D2\u1793\u17B6\u17C6\u1782\u17D2\
+    \u179A\u17B6\u1794\u17CB\u1796\u1793\u17D2\u1799\u17B6\u179A\u1780\u17C6\u178E\
+    \u17BE\u178F \u17A2\u179F\u17CB\u179A\u1799\u17C8\u1796\u17C1\u179B\u1785\u17B6\
+    \u1794\u17CB\u1796\u17B8\u17E5\u1786\u17D2\u1793\u17B6\u17C6\u17A1\u17BE\u1784\
+    \u178A\u17C2\u179A\u17AC\u1791\u17C1? (Has patient used combined oral contraceptives\
+    \ for more than 5 years?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F \u179C\u17B8 \u17A2\u17B6\u1799 \u17A2\
+    \u17C1 \u179B\u1791\u17D2\u1792\u1795\u179B (VIA Result)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: History of cervical cancer screening
+  python_date_format: null
+  extra: {}
+- column_name: is_educated_for_bs
+  verbose_name: "\u178F\u17BE\u1794\u17B6\u1793\u17A2\u1794\u17CB\u179A\u17C6 \u1793\
+    \u17B7\u1784\u1794\u1784\u17D2\u179A\u17C0\u1793\u179F\u17D2\u178F\u17D2\u179A\
+    \u17B8\u17A2\u17C6\u1796\u17B8\u1780\u17B6\u179A\u1796\u17B7\u1793\u17B7\u178F\
+    \u17D2\u1799\u178A\u17C4\u17C7\u178A\u17C4\u1799\u1781\u17D2\u179B\u17BD\u1793\
+    \u17AF\u1784\u178A\u17C2\u179A\u17AC\u1791\u17C1? (Have you been educated about\
+    \ on self-breast checking?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: aceto_white_ecto_cervix
+  verbose_name: "\u178F\u17C6\u1794\u1793\u17CB\u1795\u17D2\u1791\u17C3\u1793\u17C3\
+    \u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793\u1781\u17B6\u1784\u1780\
+    \u17D2\u179A\u17C5\u1798\u17B6\u1793\u1780\u17C4\u179F\u17B7\u1780\u17B6\u1785\
+    \u17B6\u1794\u17CB\u1796\u178E\u17CC\u179F (What area of ectocervix does the acetowhite\
+    \ area occupy?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hpv_virus_type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u179C\u17B8\u179A\u17BB\u179F\
+    \ HPV (\u1780\u179A\u178E\u17B8 HPV+) (HPV Type (If HPV +))"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bleeding_after_sex
+  verbose_name: "\u1780\u17B6\u179A\u17A0\u17BC\u179A\u1788\u17B6\u1798\u1780\u17D2\
+    \u179A\u17C4\u1799\u1780\u17B6\u179A\u179A\u17BD\u1798\u1797\u17C1\u1791 (Have\
+    \ patient ever had blood during/after sexual intercourse?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: partner_has_multiple_sex_partners
+  verbose_name: "\u178F\u17BE\u178A\u17C3\u1782\u17BC\u179A\u1794\u179F\u17CB\u17A2\
+    \u17D2\u1793\u1780\u1798\u17B6\u1793\u178A\u17C3\u1782\u17BC\u179A\u17BD\u1798\
+    \u1797\u17C1\u1791\u1785\u17D2\u179A\u17BE\u1793\u17AC\u1791\u17C1? (Does patient's\
+    \ partner have many sexual partners?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_reason_for_referral
+  verbose_name: "\u1780\u17B6\u179A\u1794\u1789\u17D2\u1787\u17BC\u1793\u1794\u1789\
+    \u17D2\u17A0\u17B6\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793: \u1798\
+    \u17BC\u179B\u17A0\u17C1\u178F\u17BB\u1793\u17C3\u1780\u17B6\u179A\u1794\u1789\
+    \u17D2\u1787\u17BC\u1793 (Cervix Problem Referral: Reason of refer)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bc_reason_for_referral
+  verbose_name: "\u1780\u17B6\u179A\u1794\u1789\u17D2\u1787\u17BC\u1793\u1794\u1789\
+    \u17D2\u17A0\u17B6\u178A\u17C4\u17C7 \u1798\u17BC\u179B\u17A0\u17C1\u178F\u17BB\
+    \u1793\u17C3\u1780\u17B6\u179A\u1794\u1789\u17D2\u1787\u17BC\u1793 (Breast Problem\
+    \ Referral: Reason of refer)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_screen_for_css
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1792\u17D2\u179B\u17B6\u1794\
+    \u17CB\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\
+    \u1796\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793\u179A\u1780\u1798\
+    \u17A0\u17B6\u179A\u17B8\u1780? (Have you ever screened for cervical cancer?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_results
+  verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B \u178F\u17C1\u179F\u17D2\u178F\
+    \ \u179C\u17B8 \u17A2\u17B6\u1799 \u17A2\u17C1 (VIA test results)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: corticosteroid_use
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1794\
+    \u17D2\u179A\u17BE\u1796\u1796\u17BD\u1780\u1790\u17D2\u1793\u17B6\u17C6\u1782\
+    \u17D0\u179A\u1791\u17B8\u1780\u17BC\u17A2\u17CA\u17B8\u178A (corticosteroids)\
+    \ \u178A\u17C2\u179A\u17AC\u1791\u17C1? (Does patient use corticosteroids?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_reason_for_appointment
+  verbose_name: "\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794\u1796\
+    \u17B8\u1794\u1789\u17D2\u17A0\u17B6\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\
+    \u17BC\u1793: \u1798\u17BC\u179B\u17A0\u17C1\u178F\u17BB\u1793\u17C3\u1780\u17B6\
+    \u179A\u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794 (Cervical Appointment: Reason\
+    \ for Appointment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_appointment_date
+  verbose_name: "\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794\u1796\
+    \u17B8\u1794\u1789\u17D2\u17A0\u17B6\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\
+    \u17BC\u1793: \u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794 (Cervical Appointment:  Appointment\
+    \ date)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bc_reason_for_appointment
+  verbose_name: "\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794\u1796\
+    \u17B8\u1794\u1789\u17D2\u17A0\u17B6\u178A\u17C4\u17C7 \u1798\u17BC\u179B\u17A0\
+    \u17C1\u178F\u17BB\u1793\u17C3\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\
+    \u17BD\u1794 (Breast Appointment: Reason of Appointment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_multiple_sex_partners
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1798\u17B6\u1793\u178A\u17C3\
+    \u1782\u17BC\u179A\u17BD\u1798\u1797\u17C1\u1791\u1785\u17D2\u179A\u17BE\u1793\
+    \u17AC\u1791\u17C1? (Does patient have many sexual partners?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hpv_test_result
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F \u17A2\u17C1\u1785 \u1797\u17B8 \u179C\
+    \u17B8 \u179B\u1791\u17D2\u1792\u1795\u179B (HPV Result)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hpv_result
+  verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B \u178F\u17C1\u179F\u17D2\u178F\
+    \ \u17A2\u17C1\u1785 \u1797\u17B8 \u179C\u17B8 (HPV result)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: number_of_quadrants
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793 quadrants \u178A\u17C2\u179B\u1796\
+    \u17B6\u1780\u17CB\u1796\u17D0\u1793\u17D2\u1792 (Number of quadrants involved)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: corticosteroid_use_duration
+  verbose_name: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u1793\u17C3\u1780\u17B6\u179A\
+    \u1794\u17D2\u179A\u17BE\u1790\u17D2\u1793\u17B6\u17C6\u1796\u1796\u17BD\u1780\
+    \u1782\u17D0\u179A\u1791\u17B8\u1780\u17BC\u17A2\u17CA\u17B8\u178A (\u1782\u17B7\
+    \u178F\u1787\u17B6\u1786\u17D2\u1793\u17B6\u17C6) (Corticosteroids use duration\
+    \ (Year(s)))"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: current_stis
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1780\u17B6\u1798\u179A\u17C4\u1782 (Current\
+    \ Sexually transmitted infection(s)) "
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bc_appointment_date
+  verbose_name: "\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\u17BD\u1794\u1796\
+    \u17B8\u1794\u1789\u17D2\u17A0\u17B6\u178A\u17C4\u17C7 \u1780\u17B6\u179B\u1794\
+    \u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\u178E\u17B6\u178F\u17CB\u1787\u17BD\
+    \u1794 (Breat Appointment: Appointment date)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: previous_pregnant
+  verbose_name: "\u178F\u17BE\u179F\u17D2\u178F\u17D2\u179A\u17B8\u1798\u17B6\u1793\
+    \u1795\u17D2\u1791\u17C3\u1796\u17C4\u17C7\u1796\u17B8\u1798\u17BB\u1793\u1791\
+    \u17C1? (Has patient been pregnant before?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: birthdate
+  verbose_name: "\u1790\u17D2\u1784\u17C3 \u1781\u17C2 \u1786\u17D2\u1793\u17B6\u17C6\
+    \u1780\u17C6\u178E\u17BE\u178F (Date of Birth)"
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: sex_debut
+  verbose_name: "\u17A2\u17B6\u1799\u17BB\u1793\u17C3\u1780\u17B6\u179A\u179A\u17BD\
+    \u1798\u1797\u17C1\u1791\u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784 (Age\
+    \ of First Sexual Intercourse)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: vaginal_rectal_text
+  verbose_name: "\u1791\u17D2\u179C\u17B6\u179A\u1798\u17B6\u179F \u1793\u17B7\u1784\
+    \u179A\u1793\u17D2\u1792\u179B\u17B6\u1798\u1780 (Vaginal and rectum exam)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_end_time
+  verbose_name: "\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\u1794\u1789\u17D2\u1785\
+    \u1794\u17CB\u1780\u17B6\u179A\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u1787\
+    \u17C6\u1784\u17BA (End Time)"
+  is_dttm: true
+  is_active: true
+  type: TIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Visit's end time
+  python_date_format: null
+  extra: {}
+- column_name: visit_start_time_text
+  verbose_name: "\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\u1785\u17B6\u1794\u17CB\
+    \u1795\u17D2\u178F\u17BE\u1798\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u1787\
+    \u17C6\u1784\u17BA (Start Time)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: visit_start_time
+  description: Visit's Start Time
+  python_date_format: null
+  extra: {}
+- column_name: has_current_stis
+  verbose_name: "\u1794\u17B6\u1793\u1786\u17D2\u179B\u1784\u1787\u17C6\u1784\u17BA\
+    \u1780\u17B6\u1798\u179A\u17C4\u1782\u1780\u17D2\u1793\u17BB\u1784\u1796\u17C1\
+    \u179B\u1790\u17D2\u1798\u17B8\u17D7\u1793\u17C1\u17C7 (Currently contracted with\
+    \ STI(s))"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: history_stis
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1780\u17B6\u1798\u179A\u17C4\u1782 (Sexually\
+    \ transmitted infection(s)) "
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_hiv
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1798\u17B6\u1793\u1795\u17D2\
+    \u1791\u17BB\u1780\u1798\u17C1\u179A\u17C4\u1782\u17A2\u17C1\u178A\u179F\u17CD\
+    /\u1787\u17C6\u1784\u17BA\u17A2\u17C1\u178A\u179F\u17CD\u178A\u17C2\u179A\u17AC\
+    \u1791\u17C1? (Does patient have HIV/AIDS?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: smoked
+  verbose_name: "\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1787\
+    \u1780\u17CB\u1794\u17B6\u179A\u17B8\u1791\u17C1? (Does the patient smoke?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_referral_letter
+  verbose_name: "\u179B\u17B7\u1781\u17B7\u178F\u1794\u1789\u17D2\u1787\u17BC\u1793\
+    \ (Has a referral letter?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: number_of_deliveries
+  verbose_name: " \u1785\u17C6\u1793\u17BD\u1793\u178A\u1784\u1793\u17C3\u1780\u17B6\
+    \u179A\u179F\u1798\u17D2\u179A\u17B6\u179B\u1780\u17BC\u1793 (Number of Deliveries)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: number_of_miscarriages
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u178A\u1784\u1793\u17C3\u1780\u17B6\
+    \u179A\u179A\u179B\u17BC\u178F \u1793\u17B7\u1784\u179A\u17C6\u179B\u17BC\u178F\
+    \u1780\u17BC\u1793 (Number of miscarriages)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: scj_visibility
+  verbose_name: "\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u1781\u17D2\u179F\u17C2\
+    \ SCJ (Visibility of SCJ)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cytology_test_result
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F\u1782\u17C6\u1793\u17C0\u179A\u1798\
+    \u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793 \u179B\u1791\u17D2\u1792\u1795\
+    \u179B (Cytology Test Result)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_educated_for_css
+  verbose_name: "\u1780\u17B6\u179A\u17A2\u1794\u17CB\u179A\u17C6\u179F\u17BB\u1781\
+    \u1797\u17B6\u1796\u17A2\u17C6\u1796\u17B8\u1787\u17C6\u1784\u17BA\u1798\u17A0\
+    \u17B6\u179A\u17B8\u1780\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793\
+    \ (Cervical cancer health education)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_treatment_options
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1798\
+    \u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793 (Cervical cancer treatment options)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: family_history_cancer
+  verbose_name: "\u1794\u17D2\u179A\u179C\u178F\u17D2\u178F\u17B7\u1782\u17D2\u179A\
+    \u17BD\u179F\u17B6\u179A\u1791\u17B6\u1780\u17CB\u1791\u1784\u1793\u17B9\u1784\
+    \u1787\u17C6\u1784\u17BA\u1798\u17A0\u17B6\u179A\u17B8\u1780 (Family history of\
+    \ cancer)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: test_type
+  verbose_name: History of CSS Test Type
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_code
+  verbose_name: "\u179B\u17C1\u1781\u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Referral\
+    \ HF's Code)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1798\u17BC\u179B\u178A\u17D2\u178B\
+    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Referral HF's\
+    \ Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_history_stis
+  verbose_name: "\u1794\u17D2\u179A\u179C\u178F\u17D2\u178F\u17B7\u1791\u17B6\u1780\
+    \u17CB\u1791\u1784\u1793\u17B9\u1784\u1787\u17C6\u1784\u17BA\u1780\u17B6\u1798\
+    \u179A\u17C4\u1782 (History of STI(s))"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: number_of_pregnancies
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u178A\u1784\u1793\u17C3\u1780\u17B6\
+    \u179A\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\u1796\u17C4\u17C7 (Number of\
+    \ Pregnancies)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: place_of_birth
+  verbose_name: "\u1791\u17B8\u1780\u1793\u17D2\u179B\u17C2\u1784\u1780\u17C6\u178E\
+    \u17BE\u178F (Place of Birth)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bc_treatment
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u178A\
+    \u17C4\u17C7 (Breast cancer treatment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: pmrs_id
+  verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB PMRS\
+    \ (PMRS ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_physical_exam
+  verbose_name: "\u1795\u17D2\u179F\u17C1\u1784\u1791\u17C0\u178F (Other physical\
+    \ examinations)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: sign_of_breast
+  verbose_name: "\u179F\u1789\u17D2\u1789\u17B6\u178E\u1794\u1789\u17D2\u17A0\u17B6\
+    \u179A\u1794\u179F\u17CB\u178A\u17C4\u17C7 (Sign of breast)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: type_of_cancer
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1787\u17C6\u1784\
+    \u17BA\u1798\u17A0\u17B6\u179A\u17B8\u1780 (Type of cancer)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_end_date
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1794\u1789\u17D2\u1785\u1794\u17CB\u1793\u17C3\u1780\u17B6\u179A\u1796\u17B7\
+    \u1793\u17B7\u178F\u17D2\u1799 (End Visit EndDate)"
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: covid_vaccination_id
+  verbose_name: "\u179C\u17C9\u17B6\u1780\u17CB\u179F\u17B6\u17C6\u1784\u1780\u17BC\
+    \u179C\u17B8\u178F\u17E1\u17E9 (Covid Vaccination ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_province
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F/\u1780\u17D2\u179A\u17BB\u1784 (Province/city)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Visit's province
+  python_date_format: null
+  extra: {}
+- column_name: visit_district
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7 (OD)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Visit's district
+  python_date_format: null
+  extra: {}
+- column_name: province
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Patient's province
+  python_date_format: null
+  extra: {}
+- column_name: visit_hf_code
+  verbose_name: "\u179B\u17C1\u1781\u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (HF's\
+    \ Code)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: client_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17A2\u178F\u17B7\u1790\u17B7\u1787\u1793\
+    \ (Client's Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_hf_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1798\u17BC\u179B\u178A\u17D2\u178B\
+    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (HF's Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hiv_treatment
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1798\
+    \u17C1\u179A\u17C4\u1782\u17A2\u17C1\u178A\u179F\u17CD/\u1787\u17C6\u1784\u17BA\
+    \u17A2\u17C1\u178A\u179F\u17CD (HIV/AIDS treatment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_province
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F/\u1780\u17D2\u179A\u17BB\u1784 (Referral\
+    \ Province/City)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cervix_exam
+  verbose_name: "\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793/\u1780\u179F\
+    \u17D2\u1794\u17BC\u1793 (Cervix examination)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_start_date
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u1796\u17B7\u1793\u17B7\
+    \u178F\u17D2\u1799\u1787\u17C6\u1784\u17BA (Start Date)"
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: address_zone
+  verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793\u178F\u17C6\
+    \u1794\u1793\u17CB (Address zone)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: client_id
+  verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB\u17A2\
+    \u178F\u17B7\u1790\u17B7\u1787\u1793 (Client ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cervical_biopsy
+  verbose_name: "\u1785\u17D2\u179A\u17B9\u1794\u179F\u17B6\u1785\u17CB\u1798\u17B6\
+    \u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793 (Cervical biopsy)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: national_id
+  verbose_name: "\u179B\u17C1\u1781\u17A2\u178F\u17D2\u178F\u179F\u1789\u17D2\u1789\
+    \u17B6\u178E\u1794\u178E\u17D2\u178E\u1787\u17B6\u178F\u17B7 (National ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: id_poor
+  verbose_name: "\u179B\u17C1\u1781\u1794\u178E\u17D2\u178E\u1780\u17D2\u179A\u17B8\
+    \u1780\u17D2\u179A (ID Poor)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_district
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7 (Referral OD)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_start_time
+  verbose_name: "\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\u1785\u17B6\u1794\u17CB\
+    \u1795\u17D2\u178F\u17BE\u1798\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u1787\
+    \u17C6\u1784\u17BA (Start Time)"
+  is_dttm: true
+  is_active: true
+  type: TIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: fallopian_text
+  verbose_name: "\u178A\u17C3\u179F\u17D2\u1794\u17BC\u1793 (Fallopian tube)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_identifiers
+  verbose_name: "\u1795\u17D2\u179F\u17C1\u1784\u17D7 (Other Identifiers)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: marital_status
+  verbose_name: "\u179F\u17D2\u1790\u17B6\u1793\u1797\u17B6\u1796\u1782\u17D2\u179A\
+    \u17BD\u179F\u17B6\u179A (Marital status)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: passport_no
+  verbose_name: "\u179B\u17C1\u1781\u179B\u17B7\u1781\u17B7\u178F\u1786\u17D2\u179B\
+    \u1784\u178A\u17C2\u1793 (Passport No)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: pap_smear
+  verbose_name: "\u178F\u17C1\u179F\u17D2\u178F\u1782\u17C6\u1793\u17C0\u179A\u1798\
+    \u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793 (Pap Smear)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: payment_type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1780\u17B6\u179A\u1785\u17C6\
+    \u178E\u17B6\u1799 (Payment Type)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referred_from
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1798\u1780\u1796\u17B8 (Referred\
+    \ from)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: vagina_exam
+  verbose_name: "\u1791\u17D2\u179C\u17B6\u179A\u1798\u17B6\u179F (Vagina examination)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: vulva_exam
+  verbose_name: "\u1799\u17C4\u1793\u17B8 (Vulva examination)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cervix_text
+  verbose_name: "\u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793/\u1780\u179F\
+    \u17D2\u1794\u17BC\u1793 (Cervix)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: colposcopy
+  verbose_name: "\u1780\u17B6\u179A\u1790\u178F\u1786\u17D2\u179B\u17BB\u17C7\u1798\
+    \u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793 (Colposcopy)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: commune
+  verbose_name: "\u1783\u17BB\u17C6 (Commune)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: district
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780 (District)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: education
+  verbose_name: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u179C\u1794\u17D2\u1794\u1792\
+    \u1798\u17CC (Education)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ethnicity
+  verbose_name: "\u1787\u1793\u1787\u17B6\u178F\u17B7 (Ethnicity)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: nssf
+  verbose_name: "\u1794\u17C1\u17A1\u17B6\u1787\u17B6\u178F\u17B7\u179F\u1793\u17D2\
+    \u178F\u17B7\u179F\u17BB\u1781\u179F\u1784\u17D2\u1782\u1798 (NSSF)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: "\u1797\u17C1\u1791 (Gender)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ssn
+  verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB\u179F\
+    \u1793\u17D2\u178F\u17B7\u179F\u17BB\u1781\u179F\u1784\u17D2\u1782\u1798 (SSN)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: occupation
+  verbose_name: "\u1798\u17BB\u1781\u179A\u1794\u179A (Occupation)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rectum_text
+  verbose_name: "\u1785\u17BB\u1784\u1796\u17C4\u17C7\u179C\u17C0\u1793\u1792\u17C6\
+    \ (Rectum)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: uterus_text
+  verbose_name: "\u178F\u17BD\u179F\u17D2\u1794\u17BC\u1793 (Uterus)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: vulva_text
+  verbose_name: "\u1799\u17C4\u1793\u17B8 (Vulva)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: village
+  verbose_name: "\u1797\u17BC\u1798\u17B7 (Village)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_date
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bc_other_reason_for_referral
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_other_reason_for_referral
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_sign_of_breast
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cc_other_treatment_options
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: location_tags
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referral_center
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: b90d1451-c3b9-4f55-ab9a-f872d933a1f6
