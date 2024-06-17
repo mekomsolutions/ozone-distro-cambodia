@@ -1,0 +1,56 @@
+slice_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u17D2\u178F\u17D2\u179A\u17B8\u1794\
+  \u17B6\u1793 \u1792\u17D2\u179C\u17BE\u178F\u17C1\u179F\u17D2\u178F VIA (# of women\
+  \ with VIA tested)"
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 1__table
+  viz_type: pivot_table_v2
+  slice_id: 1
+  granularity_sqla: date_started
+  time_range: No filter
+  groupbyColumns:
+  - age_group
+  groupbyRows: []
+  metrics:
+  - count has via test result
+  metricsLayout: COLUMNS
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: age_group
+    operator: IS NOT NULL
+    operatorId: IS_NOT_NULL
+    comparator: null
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_34jgyf68k4e_7xz6k799l7k
+  row_limit: 10000
+  order_desc: true
+  aggregateFunction: Sum
+  rowTotals: false
+  colTotals: true
+  transposePivot: true
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 1
+query_context: '{"datasource":{"id":1,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"date_started","filters":[{"col":"age_group","op":"IS NOT
+  NULL"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["age_group"],"metrics":["count
+  has via test result"],"orderby":[["count has via test result",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"1__table","viz_type":"pivot_table_v2","slice_id":1,"granularity_sqla":"date_started","time_range":"No
+  filter","groupbyColumns":["age_group"],"groupbyRows":[],"metrics":["count has via
+  test result"],"metricsLayout":"COLUMNS","adhoc_filters":[{"expressionType":"SIMPLE","subject":"age_group","operator":"IS
+  NOT NULL","operatorId":"IS_NOT_NULL","comparator":null,"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_34jgyf68k4e_7xz6k799l7k"}],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","rowTotals":false,"colTotals":true,"transposePivot":true,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: a57aa88b-eb68-4d6f-9061-107c47d6b76d
+version: 1.0.0
+dataset_uuid: 105ff668-0cd3-4674-82d2-bcecc6813280
