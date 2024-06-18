@@ -1,0 +1,1824 @@
+table_name: NCD RH EMR Raw Data
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: null
+sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client_name,\n\
+  \  MAX(p.gender) AS gender,\n  MAX(\n    DATE_PART ('year', age (v.date_started,\
+  \ p.birthdate))\n  ) AS age,\n  MAX(p.id_poor) AS id_poor,\n  MAX(p.national_id)\
+  \ AS national_id,\n  MAX(p.covid_vacination_id) AS covid_vacination_id,\n  MAX(p.pmrs_id)\
+  \ AS pmrs_id,\n  MAX(p.nssf) AS nssf,\n  MAX(p.ssn) AS ssn,\n  MAX(p.passport_no)\
+  \ AS passport_no,\n  MAX(p.other_identifiers) AS other_identifiers,\n  MAX(p.village)\
+  \ AS village,\n  MAX(p.commune) AS commune,\n  MAX(p.district) AS district,\n  MAX(p.province)\
+  \ AS province,\n  MAX(p.country) AS country,\n  MAX(p.phone_number) AS phone_number,\n\
+  \  MAX(p.occupation) AS occupation,\n  MAX(p.place_of_birth) AS place_of_birth,\n\
+  \  MAX(p.ethnicity) AS ethnicity,\n  MAX(p.marital_status) AS marital_status,\n\
+  \  MAX(p.education) AS education,\n  MAX(v.date_started) AS visit_date_time,\n \
+  \ MAX(l.postal_code) AS hf_code,\n  MAX(l.name) AS hf_name,\n  MAX(v.type) AS visit_type,\n\
+  \  MAX(l.state_province) AS visit_province,\n  MAX(l.county_district) AS visit_district,\n\
+  \  MAX(l.location_tags) AS location_tags,\n  -- Referred from: Referral Hospital\
+  \ / Has a referral letter ?: No / Address Zone: Zone A / Insurance Type: HEF_Poor\n\
+  \  MAX(\n    SUBSTRING(\n      v.visit_attributes\n      FROM\n        'Insurance\
+  \ Type: ([^/]*)'\n    )\n  ) AS payment_type,\n  MAX(\n    SUBSTRING(\n      v.visit_attributes\n\
+  \      FROM\n        'Referred from: ([^/]*)'\n    )\n  ) AS referred_from,\n  MAX(\n\
+  \    SUBSTRING(\n      v.visit_attributes\n      FROM\n        'Address Zone: ([^/]*)'\n\
+  \    )\n  ) AS address_zone,\n  MAX(\n    SUBSTRING(\n      v.visit_attributes\n\
+  \      FROM\n        'Has a referral letter ?: ([^/]*)'\n    )\n  ) AS has_referral_letter,\n\
+  \  -- TB Symptoms presence\n  MAX(\n    CASE\n      WHEN o.question_uuid='e0fffb24-5973-40a9-af11-2e4033831747'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS tb_symptom_presence,\n  -- Referred to TB\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='ea543526-f3d3-4a23-a8aa-0c0acf529d51'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS refferred_tb,\n\
+  \  -- Waist Circumference\n  MAX(\n    CASE\n      WHEN o.question_uuid='90c9e0ae-d9f6-477c-9f23-bd7af88994e4'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS waist_circumference,\n  -- Weight\n  MAX(\n    CASE\n      WHEN o.question_uuid='5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS weight,\n  -- Height\n  MAX(\n    CASE\n      WHEN o.question_uuid='5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS height,\n  -- BMI\n  MAX(\n    CASE\n      WHEN o.question_uuid='a89c60c0-1350-11df-a1f1-0026b9348838'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS bmi,\n  -- Systolic\n  MAX(\n    CASE\n      WHEN o.question_uuid='5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS systolic,\n  -- diastolic\n  MAX(\n    CASE\n      WHEN o.question_uuid='5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS diastolic,\n  -- pulse_rate\n  MAX(\n    CASE\n      WHEN o.question_uuid='5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS pulse_rate,\n  -- temperature\n  MAX(\n    CASE\n      WHEN o.question_uuid='5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS temperature,\n  -- Respiratory\n  MAX(\n    CASE\n      WHEN o.question_uuid='5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS respiratory,\n  -- SPO2\n  MAX(\n    CASE\n      WHEN o.question_uuid='5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS spo2,\n  -- Fasting Blood Sugar\n  MAX(\n    CASE\n      WHEN o.question_uuid='4a6ad2db-86af-4acc-906b-b749b7f6cda6'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS fasting_blood_sugar,\n  -- Random Blood Sugar\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='f52d731e-58da-4f3a-a480-77c5e9d8d2eb'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS random_blood_sugar,\n\
+  \  -- OGTT H1\n  MAX(\n    CASE\n      WHEN o.question_uuid='3c884cd2-4aba-41e0-a535-e3e7bc70b5ee'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS ogtt_h1,\n  -- OGTT H2\n  MAX(\n    CASE\n      WHEN o.question_uuid='1941f03b-9a5e-4285-b66a-c10880a3362d'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS ogtt_h2,\n  -- HB1AC\n  MAX(\n    CASE\n      WHEN o.question_uuid='a8af7520-1350-11df-a1f1-0026b9348838'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS hb1ac,\n  -- Haemoglobin\n  MAX(\n    CASE\n      WHEN o.question_uuid='04a4a69c-b687-4e0d-83fe-bd7c6228189c'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS haemoglobin,\n  -- Albumin (Urine)\n  MAX(\n    CASE\n      WHEN o.question_uuid='c423325e-be95-42e2-ae38-b940c2586327'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS albumin,\n  -- Ketones\n  MAX(\n    CASE\n      WHEN o.question_uuid='07015405-c865-4a22-8ad1-c8863d5f005b'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS ketones,\n  -- Total Cholesterol\n  MAX(\n    CASE\n      WHEN o.question_uuid='1006AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS total_cholesterol,\n  -- Low-density lipoprotein\n  MAX(\n    CASE\n   \
+  \   WHEN o.question_uuid='0bf33271-d553-42ae-a854-624e5258551d'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n  ) AS low_density_lipoprotein,\n\
+  \  -- high-density lipoprotein\n  MAX(\n    CASE\n      WHEN o.question_uuid='a5d68184-6849-4a1d-9a86-5bcea3297f70'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS high_density_lipoprotein,\n  -- Triglycerides\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='a86c14a1-9453-46af-9b9a-f950b21b8952'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n  ) AS triglycerides,\n\
+  \  -- Creatinine\n  MAX(\n    CASE\n      WHEN o.question_uuid='1011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS creatinine,\n  -- Creatinine clearance\n  MAX(\n    CASE\n      WHEN o.question_uuid='681d9109-4414-440f-a733-c4cce954cd41'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS creatinine_clearance,\n  -- Proteinuria\n  MAX(\n    CASE\n      WHEN o.question_uuid='808d6fc6-f762-4f37-b8ed-ece810f52cef'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS proteinuria,\n  -- Potassium\n  MAX(\n    CASE\n      WHEN o.question_uuid='1133AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS potassium,\n  -- ACE inhibitor\n  MAX(\n    CASE\n      WHEN o.question_uuid='088e714b-0529-414b-9a09-46bb10185603'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS ace_inhibitor,\n  -- Sodium\n  MAX(\n    CASE\n      WHEN o.question_uuid='1132AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS Sodium,\n  -- AST/ASAT (N/A)\n  NULL AS ast_asat,\n  -- ALT/ALAT\n  MAX(\n\
+  \    CASE\n      WHEN o.question_uuid='654AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n \
+  \     AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS alt_alat,\n  -- Smoking\n  MAX(\n    CASE\n      WHEN o.question_uuid='7533aa7e-04cb-4cfd-9c97-6ac36f114bab'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS smoking,\n  -- Quit Smoking\n  MAX(\n    CASE\n      WHEN o.question_uuid='b147d693-8c18-4c62-9807-ecd0e60e8fdf'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS quit_smoking,\n  -- Physical activity\n  MAX(\n    CASE\n      WHEN o.question_uuid='c31a2da0-f16b-44e3-baea-8a259d8beb31'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS physical_activity,\n  -- Alcohol\n  MAX(\n    CASE\n      WHEN o.question_uuid='e737c8c9-a154-47a1-aa20-ed13008d46cf'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS alcohol,\n  -- Left Foot Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='dd16ec73-fa62-431b-bbd5-4e3a04d93cfc'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS left_foot_exam,\n  -- Right Foot Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='d6f32f81-6d85-49bb-b4c5-cef725bb7616'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS right_foot_exam,\n  -- Left Eye Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='db2e363c-a5b5-4136-a786-adae6f52e10b'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS left_eye_exam,\n  -- Right Eye Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='0684f8bf-7e2f-40b7-9479-a02c44a8937f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS right_eye_exam,\n  -- CardiovacscularExam\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='5969b812-49bf-48d1-8477-e33935141c0c'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS cardiovacscular_exam,\n\
+  \  -- uroGenExam\n  MAX(\n    CASE\n      WHEN o.question_uuid='0426d08e-1035-4c8f-a400-3b9d276f3a6b'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS uro_gen_exam,\n  -- ENT Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='337b27dd-e1a3-4da6-a962-113158b39b2d'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS ent_exam,\n  -- Respiratory Exam\n  MAX(\n    CASE\n      WHEN o.question_uuid='819b36ec-1631-4e14-91cc-6f547565a855'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS respiratory_exam,\n  -- GastroIntestinal Exam\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='67b6dcc4-4c7e-41db-b7f3-020655489a62'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS gastro_intestinal_exam,\n\
+  \  -- Skin Extremities Examination\n  MAX(\n    CASE\n      WHEN o.question_uuid='c017f994-b6e3-409f-9f80-7869665df179'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS skin_extremities_examination,\n  -- CNS Exam\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='8dce7636-f3ad-4509-a2e2-f9f35ad10ccaf'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS cns_exam,\n  --\
+  \ mentalStateExam\n  MAX(\n    CASE\n      WHEN o.question_uuid='807616c8-0a1b-4a13-b1c9-89a5216eb46b'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS mental_state_exam,\n  -- abdominalExam\n  MAX(\n    CASE\n      WHEN o.question_uuid='e237e038-be15-4ade-b457-067ddde84c07'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS abdominal_exam,\n  -- othersExam\n  MAX(\n    CASE\n      WHEN o.question_uuid='f09530d2-75ab-4b6a-80a2-f92112edbf51'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS others_exam,\n  -- CVD score\n  MAX(\n    CASE\n      WHEN o.question_uuid='dff491e3-b14c-4b32-ab64-63b96966d72d'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_numeric\n      ELSE NULL\n    END\n\
+  \  ) AS cvd_score,\n  -- Diagnosis One\n  MAX(\n    CASE\n      WHEN o.question_uuid='45583478-f703-46e3-b63a-54b0a95c25f0'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS diagnosis_one,\n  -- Diagnosis Two\n  MAX(\n    CASE\n      WHEN o.question_uuid='76ca08a5-2128-4b53-afba-74227b015924'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n\
+  \  ) AS diagnosis_two,\n  -- Other Health Conditions\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='2c50ded9-779a-4316-be00-d9a065674e54'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS other_health_conditions,\n\
+  \  -- currentMedicalComplications\n  MAX(\n    CASE\n      WHEN o.question_uuid='3f36a039-eac3-46bd-8798-102c55639d49'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS current_medical_complications,\n  -- other Health Complications\n  MAX(\n\
+  \    CASE\n      WHEN o.question_uuid='868e9ebe-86fd-467a-b7a8-345437f340af'\n \
+  \     AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n \
+  \ ) AS other_health_complications,\n  -- Current Therapy\n  MAX(\n    CASE\n   \
+  \   WHEN o.question_uuid='00808084-99a8-4ea8-98b4-63cae2a34273'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS current_therapy,\n\
+  \  -- Started on medicine\n  MAX(\n    CASE\n      WHEN o.question_uuid='805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS started_on_medicine,\n  -- ## Add drugs \n  -- recommendations\n  MAX(\n\
+  \    CASE\n      WHEN o.question_uuid='9f7c8739-3ea3-4f7f-8648-d6c36fef7be2'\n \
+  \     AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS recommendations,\n  -- otherRecomendations\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='2aad4642-7c64-4249-a9ac-8e52aa94c4f4'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n  ) AS other_recomendations,\n\
+  \  -- Follow-up Date\n  MAX(\n    CASE\n      WHEN o.question_uuid='e9c145c1-f4e9-4c34-b237-da069939dc38'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_datetime\n      ELSE NULL\n    END\n\
+  \  ) AS follow_up_date,\n  -- Referral facility\n  MAX(\n    CASE\n      WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS referral_center,\n  -- Reason for Referral\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='dee2db0c-5a06-4b1e-8be6-0f327fe6158d'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n  ) AS reason_for_referral,\n\
+  \  MAX(\n    split_part (\n      split_part (\n        (\n          CASE\n     \
+  \       WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n          \
+  \  AND o.obs_voided IS FALSE THEN o.answer_coded\n            ELSE NULL\n      \
+  \    END\n        ),\n        '>',\n        3\n      ),\n      '.',\n      1\n \
+  \   )\n  ) AS rf_hf_code,\n  MAX(\n    split_part (\n      split_part (\n      \
+  \  (\n          CASE\n            WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \            AND o.obs_voided IS FALSE THEN o.answer_coded\n            ELSE NULL\n\
+  \          END\n        ),\n        '>',\n        3\n      ),\n      '.',\n    \
+  \  2\n    )\n  ) AS rf_hf_name,\n  MAX(\n    split_part (\n      (\n        CASE\n\
+  \          WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n       \
+  \   AND o.obs_voided IS FALSE THEN o.answer_coded\n          ELSE NULL\n       \
+  \ END\n      ),\n      '>',\n      2\n    )\n  ) AS rf_hf_district,\n  MAX(\n  \
+  \  split_part (\n      (\n        CASE\n          WHEN o.question_uuid='758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n\
+  \          AND o.obs_voided IS FALSE THEN o.answer_coded\n          ELSE NULL\n\
+  \        END\n      ),\n      '>',\n      1\n    )\n  ) AS rf_hf_province,\n  --\
+  \ screenedForDM&HBP\n  MAX(\n    CASE\n      WHEN o.question_uuid='e43b443b-70de-48f3-8d6c-081337621982'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS screened_for_dm_hbp,\n  -- diagnosedForDM\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='7083941d-1342-4dd7-ba16-ddc78b61f239'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS diagnosed_for_dm,\n\
+  \  -- DM treatment\n  MAX(\n    CASE\n      WHEN o.question_uuid='fe0b5b8e-c9a2-4c87-813d-f10884987d9c'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS dm_treatment_before,\n  -- DM year of diagnosis\n  MAX(\n    CASE\n    \
+  \  WHEN o.question_uuid='3fe4ac96-893f-4193-a896-1b7e9528719d'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_datetime\n      ELSE NULL\n    END\n  ) AS dm_year_of_diagnosis,\n\
+  \  -- Diagnosed with HBP\n  MAX(\n    CASE\n      WHEN o.question_uuid='d3c8a8d4-c141-401f-8354-adbeda86011f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS diagnosed_for_hbp,\n  -- HBP treatment\n  MAX(\n    CASE\n      WHEN o.question_uuid='d3c8a8d4-c141-401f-8354-adbeda86011f'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS hbp_treatment_before,\n  -- HBP year of diagnosis\n  NULL AS hbp_year_of_diagnosis,\n\
+  \  -- Premature Heart Or StrokeDisease\n  MAX(\n    CASE\n      WHEN o.question_uuid='6bb3f867-70ee-4854-9408-d386c99c5990'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS premature_heart_or_stroke_disease,\n  -- Diabetes Or Kidney Disease\n  MAX(\n\
+  \    CASE\n      WHEN o.question_uuid='4d180dd2-9bc7-4ea8-b64e-5e851c9e5c7d'\n \
+  \     AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS diabetes_or_kidney_disease,\n  -- currentTherapy\n  MAX(\n    CASE\n   \
+  \   WHEN o.question_uuid='00808084-99a8-4ea8-98b4-63cae2a34273'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  ) AS medical_history_current_therapy,\n\
+  \  -- Tradition Medicine Use\n  MAX(\n    CASE\n      WHEN o.question_uuid='5d65d35a-8ccc-474a-a2ce-746a518ed6f5'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS tradition_medicine_use,\n  -- previousMedicalComplications\n  MAX(\n   \
+  \ CASE\n      WHEN o.question_uuid='a9e26e21-126f-45ed-98f2-f4fb423bc634'\n    \
+  \  AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n  )\
+  \ AS previous_medical_complications,\n  -- otherHealthComplications\n  MAX(\n  \
+  \  CASE\n      WHEN o.question_uuid='868e9ebe-86fd-467a-b7a8-345437f340af'\n   \
+  \   AND o.obs_voided IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n  )\
+  \ AS medical_history_other_health_complications,\n  -- Presence Of Allergies\n \
+  \ MAX(\n    CASE\n      WHEN o.question_uuid='c67a6c5e-2559-46a8-b9da-2cb38bfff8a3'\n\
+  \      AND o.obs_voided IS FALSE THEN o.answer_coded\n      ELSE NULL\n    END\n\
+  \  ) AS presence_of_allergies,\n  -- AllergiesDetails\n  MAX(\n    CASE\n      WHEN\
+  \ o.question_uuid='b082eb80-3495-4af8-a970-0ae0af6ce184'\n      AND o.obs_voided\
+  \ IS FALSE THEN o.answer_text\n      ELSE NULL\n    END\n  ) AS allergies_details,\n\
+  \  MAX(v.date_stopped) AS visit_end_date_time,\n  MAX(ord.concat_drug) AS drugs\n\
+  FROM\n  visits v\n  LEFT JOIN observations o ON (\n    v.visit_uuid=o.visit_uuid\n\
+  \    AND o.visit_uuid IS NOT NULL\n    AND o.obs_voided IS FALSE\n  )\n  LEFT JOIN\
+  \ locations l ON (\n    l.uuid=v.location_uuid\n    AND l.uuid IS NOT NULL\n   \
+  \ AND l.retired IS FALSE\n  )\n  LEFT JOIN encounters e ON (\n    v.visit_uuid=e.visit_uuid\n\
+  \    AND e.visit_uuid IS NOT NULL\n    AND e.encounter_voided IS FALSE\n  )\n  LEFT\
+  \ JOIN (\n    SELECT\n      encounter_uuid,\n      STRING_AGG (\n        CONCAT\
+  \ (drug_name, '|', quantity, '|', quantity_unit_name),\n        ', '\n      ) AS\
+  \ concat_drug\n    FROM\n      orders\n    GROUP BY\n      encounter_uuid\n  ) ord\
+  \ ON (\n    ord.encounter_uuid=e.encounter_uuid\n    AND ord.encounter_uuid IS NOT\
+  \ NULL\n  )\n  LEFT JOIN (\n    SELECT\n      patient_uuid,\n      CONCAT_WS ('\
+  \ ', given_name, middle_name, family_name) AS patient_name,\n      gender,\n   \
+  \   birthdate,\n      -- Identifiers\n      SUBSTRING(\n        identifiers\n  \
+  \      FROM\n          'IDPoor: ([^,]*)'\n      ) AS id_poor,\n      SUBSTRING(\n\
+  \        identifiers\n        FROM\n          'OpenMRS ID: ([^,]*)'\n      ) AS\
+  \ openmrs_id,\n      SUBSTRING(\n        identifiers\n        FROM\n          'National\
+  \ ID: ([^,]*)'\n      ) AS national_id,\n      SUBSTRING(\n        identifiers\n\
+  \        FROM\n          'COVID vaccination ID: ([^,]*)'\n      ) AS covid_vacination_id,\n\
+  \      SUBSTRING(\n        identifiers\n        FROM\n          'PMRS ID: ([^,]*)'\n\
+  \      ) AS pmrs_id,\n      SUBSTRING(\n        identifiers\n        FROM\n    \
+  \      'NSSF: ([^,]*)'\n      ) AS nssf,\n      SUBSTRING(\n        identifiers\n\
+  \        FROM\n          'SSN: ([^,]*)'\n      ) AS ssn,\n      SUBSTRING(\n   \
+  \     identifiers\n        FROM\n          'Passport No: ([^,]*)'\n      ) AS passport_no,\n\
+  \      COALESCE(\n        REGEXP_REPLACE (\n          REGEXP_REPLACE (\n       \
+  \     identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|PMRS ID|COVID\
+  \ vaccination ID): [^,]*,?\\s?',\n            '',\n            'g'\n          ),\n\
+  \          '^, |, $',\n          ''\n        ),\n        NULL\n      ) AS other_identifiers,\n\
+  \      -- Addresses\n      address_country AS country,\n      address_state_province\
+  \ AS province,\n      address_county_district AS district,\n      address_city AS\
+  \ commune,\n      address_1 AS village,\n      -- Attributes\n      SUBSTRING(\n\
+  \        attributes\n        FROM\n          'Occupation: ([^/]*)'\n      ) AS occupation,\n\
+  \      SUBSTRING(\n        attributes\n        FROM\n          'Place of Birth:\
+  \ ([^/]*)'\n      ) AS place_of_birth,\n      SUBSTRING(\n        attributes\n \
+  \       FROM\n          'Ethnicity: ([^/]*)'\n      ) AS ethnicity,\n      SUBSTRING(\n\
+  \        attributes\n        FROM\n          'Marital Status: ([^/]*)'\n      )\
+  \ AS marital_status,\n      SUBSTRING(\n        attributes\n        FROM\n     \
+  \     'Education: ([^/]*)'\n      ) AS education,\n      SUBSTRING(\n        attributes\n\
+  \        FROM\n          'Telephone Number: ([^/]*)'\n      ) AS phone_number\n\
+  \    FROM\n      patients\n    WHERE\n      person_voided IS FALSE\n  ) p ON (p.patient_uuid=v.patient_uuid)\n\
+  WHERE\n  o.obs_voided IS FALSE\n  AND v.visit_voided IS FALSE\n  AND v.visit_type_uuid\
+  \ IN (\n    '5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab',\n    '54da8fbc-b92f-4251-b53a-feedc8e8c594'\n\
+  \  )\n  -- NCD Consultation, Medication History and Orders Encounter Types\n  AND\
+  \ e.encounter_type_uuid IN (\n    'f9fdbe63-12b4-479f-b8fd-dcbfde6aa944',\n    'b870b6bb-9441-4664-9087-3d3477174213',\n\
+  \    '39da3525-afe4-45ff-8977-c53b7b359158'\n  ) -- 422b7e0c-b8f3-4748-8e60-d6684315f141\n\
+  \  -- Referral Hospital (RH)\n  AND l.location_tags ILIKE '%Referral Hospital%'\n\
+  GROUP BY\n  v.visit_uuid,\n  p.patient_uuid"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 8480636a-399d-438b-a307-a2a1d160ed05
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: screened_for_dm_hbp
+  verbose_name: "\u1780\u17B6\u179A\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 \u1787\
+    \u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+    \u1798/\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\
+    \u1796\u17B8\u1798\u17BB\u1793 (Screened for DM & HBP before)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_year_of_diagnosis
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798 \u1786\u17D2\u1793\u17B6\u17C6\u1793\u17C3\u1780\u17B6\
+    \u179A\u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\
+    \u17D2\u1786\u17D0\u1799 (DM Year of Diagnosis)"
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_date_time
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1793\u17B7\u1784\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\u1785\u17B6\u1794\
+    \u17CB\u1795\u17D2\u178F\u17BE\u1798\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\
+    \ (Visit Start Date and Time)"
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_year_of_diagnosis
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 \u1786\u17D2\u1793\u17B6\u17C6\u1793\u17C3\u1780\
+    \u17B6\u179A\u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\
+    \u1785\u17D2\u1786\u17D0\u1799 (HBP Year of Diagnosis)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diabetes_or_kidney_disease
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784 \u17AC\
+    \u1782\u17D2\u179A\u17C4\u17C7\u1790\u17D2\u1793\u17B6\u1780\u17CB\u179F\u179A\
+    \u179F\u17C3\u1788\u17B6\u1798\u1781\u17BD\u179A\u1780\u17D2\u1794\u17B6\u179B\
+    \ (Diabetes or Kidney disease)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: skin_extremities_examination
+  verbose_name: "\u179F\u17D2\u1794\u17C2\u1780 \u1793\u17B7\u1784 \u1795\u17D2\u1793\
+    \u17C2\u1780\u1785\u17BB\u1784\u17D7 (Skin and Extremities)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: quit_smoking
+  verbose_name: "\u17A2\u179F\u1780\u1798\u17D2\u1798\u1797\u17B6\u1796\u179A\u17B6\
+    \u1784\u1780\u17B6\u1799/\u17A2\u178F\u17B8\u178F\u17A2\u17D2\u1793\u1780\u1787\
+    \u1780\u17CB\u1794\u17B6\u179A\u17B8 (If Ex-smoker: Quit year)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: random_blood_sugar
+  verbose_name: "\u1780\u17C6\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\u17D2\
+    \u1780\u179A\u1785\u17C3\u178A\u1793\u17D2\u1799/\u1780\u17C6\u179A\u17B7\u178F\
+    \u1787\u17B6\u178F\u17B7\u179F\u17D2\u1780\u179A\u1780\u17D2\u1793\u17BB\u1784\
+    \u1788\u17B6\u1798\u1780\u17D2\u179A\u17C4\u1799\u17A2\u17B6\u17A0\u17B6\u179A\
+    \ (Random Blood Sugar Level)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_referral_letter
+  verbose_name: "\u1798\u17B6\u1793\u179B\u17B7\u1781\u17B7\u178F\u1794\u1789\u17D2\
+    \u1787\u17BC\u1793\u1791\u17C1? (Has a referral letter?)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: fasting_blood_sugar
+  verbose_name: "\u1780\u17C6\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\u17D2\
+    \u1780\u179A\u1780\u17D2\u1793\u17BB\u1784\u1788\u17B6\u1798\u1798\u17BB\u1793\
+    \u17A2\u17B6\u17A0\u17B6\u179A (Fasting Blood Sugar Level)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cvd_score
+  verbose_name: "\u1780\u17C6\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\u17D0\
+    \u1799\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784 \u179F\u179A\
+    \u179F\u17C3\u1788\u17B6\u1798 (CVD Risk Level)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosed_for_hbp
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 \u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\
+    \u17D0\u1799\u1796\u17B8\u1798\u17BB\u1793\u1798\u1780 (HBP Diagnosed Before)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_treatment_before
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 \u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\
+    \u17B6\u179B\u1796\u17B8\u1798\u17BB\u1793 (HBP Treatment Before)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_treatment_before
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798 \u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+    \u179B\u1796\u17B8\u1798\u17BB\u1793 (DM Treatment Before)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: tb_symptom_presence
+  verbose_name: "\u179A\u17C4\u1782\u179F\u1789\u17D2\u1789\u17B6\u1787\u17C6\u1784\
+    \u17BA\u179A\u1794\u17C1\u1784 (Presence of TB Symptoms)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosed_for_dm
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798 \u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D0\
+    \u1799\u1796\u17B8\u1798\u17BB\u1793\u1798\u1780 (DM diagnosed before)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ent_exam
+  verbose_name: "\u1787\u17C6\u1784\u17BA \u178F\u17D2\u179A\u1785\u17C0\u1780 \u1785\
+    \u17D2\u179A\u1798\u17BB\u17C7 \u1794\u17C6\u1796\u1784\u17CB\u1780 (ENT)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: tradition_medicine_use
+  verbose_name: "\u1780\u17B6\u179A\u1794\u17D2\u179A\u17BE\u1794\u17D2\u179A\u17B6\
+    \u179F\u17CB\u17B1\u179F\u1790\u1794\u17BB\u179A\u17B6\u178E (Use of Traditional\
+    \ Medicine)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_recomendations
+  verbose_name: "\u1790\u17D2\u1793\u17B6\u17C6\u1795\u17D2\u179F\u17C1\u1784\u17D7\
+    \u1791\u17C0\u178F\u178A\u17C2\u179B\u1794\u17D2\u179A\u17BE\u178F\u17B6\u1798\
+    \u179F\u17C6\u178E\u17BC\u1798\u1796\u179A\u178F\u17D2\u179A\u17BC\u179C\u178F\
+    \u17C2\u178F\u17B6\u1798\u178A\u17B6\u1793 \u1793\u17B7\u1784\u179A\u17B6\u1794\
+    \u17CB\u1780\u17D2\u1793\u17BB\u1784\u1794\u179A\u17B7\u1798\u17B6\u178E\u178A\
+    \u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\u179A\u17BE (Other treatment recommendation)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_end_date_time
+  verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1794\u1789\u17D2\u1785\u1794\u17CB\u1793\u17C3\u1780\u17B6\u179A\u1796\u17B7\
+    \u1793\u17B7\u178F\u17D2\u1799 (Visit End (Date))"
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: started_on_medicine
+  verbose_name: "\u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u1796\u17D2\
+    \u1799\u17B6\u1794\u17B6\u179B\u178A\u17C4\u1799\u1790\u17D2\u1793\u17B6\u17C6\
+    (\u17B1\u179F\u1790) (Started on Medicine)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: high_density_lipoprotein
+  verbose_name: "\u1780\u17BC\u179B\u17C1\u179F\u17D2\u178F\u17C1\u179A\u17C9\u17BB\
+    \u179B HDL (High-density Lipoprotein)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: low_density_lipoprotein
+  verbose_name: "\u1780\u17BC\u179B\u17C1\u179F\u17D2\u178F\u17C1\u179A\u17C9\u17BB\
+    \u179B LDL (Low-density Lipoprotein)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: premature_heart_or_stroke_disease
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798\u17AC\u1787\u17C6\u1784\u17BA\u178F\u1798\u17D2\u179A\
+    \u1784\u1793\u17C4\u1798 (Premature heart disease/stroke)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ogtt_h1
+  verbose_name: "\u1795\u17B9\u1780\u1791\u17B9\u1780\u179F\u17D2\u1780\u179A\u17E7\
+    \u17E5\u1780\u17D2\u179A \u1780\u17D2\u179A\u17C4\u1799\u17E1\u1798\u17C9\u17C4\
+    \u1784 (OGTT 1H)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_one
+  verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
+    \u1799 \u1791\u17B8\u17E1 (Diagnosis 1)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ogtt_h2
+  verbose_name: "\u1795\u17B9\u1780\u1791\u17B9\u1780\u179F\u17D2\u1780\u179A\u17E7\
+    \u17E5\u1780\u17D2\u179A \u1780\u17D2\u179A\u17C4\u1799\u17E2\u1798\u17C9\u17C4\
+    \u1784 (OGTT 2H)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ace_inhibitor
+  verbose_name: "\u17A2\u1784\u17CB\u179F\u17CA\u17B8\u1798 ACE (ACE Inhibitor)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: creatinine_clearance
+  verbose_name: "\u1780\u17D2\u179A\u17C1\u17A2\u17B6\u178F\u17C1\u1793\u17B8\u1793\
+    \ \u1783\u17D2\u179B\u17B6\u179A\u17C9\u17C1\u1793 (Creatinine Clearance)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: others_exam
+  verbose_name: "\u1795\u17D2\u1793\u17C2\u1780\u179A\u17B6\u1784\u1780\u17B6\u1799\
+    \u1795\u17D2\u179F\u17C1\u1784\u17D7\u1791\u17C0\u178F (Other Body parts)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: place_of_birth
+  verbose_name: "\u1791\u17B8\u1780\u1793\u17D2\u179B\u17C2\u1784\u1780\u17C6\u178E\
+    \u17BE\u178F (Place of Birth)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: refferred_tb
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1791\u17C5\u1795\u17D2\u1793\
+    \u17C2\u1780\u179A\u1794\u17C1\u1784 (Referred to TB)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: covid_vacination_id
+  verbose_name: "\u179C\u17C9\u17B6\u1780\u17CB\u179F\u17B6\u17C6\u1784\u1780\u17BC\
+    \u179C\u17B8\u178F\u17E1\u17E9 (Covid Vaccination ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hf_code
+  verbose_name: "\u179B\u17C1\u1781\u1780\u17BC\u1781\u1798\u17BC\u179B\u178A\u17D2\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health\
+    \ Facility Code)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_health_conditions
+  verbose_name: "\u1794\u1789\u17D2\u17A0\u17B6\u179F\u17BB\u1781\u1797\u17B6\u1796\
+    \u178A\u1791\u17C3\u1791\u17C0\u178F (Other Health Conditions)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cns_exam
+  verbose_name: "\u1794\u17D2\u179A\u179F\u17B6\u1791\u1780\u178E\u17D2\u178F\u17B6\
+    \u179B (Central Nervous System)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cardiovacscular_exam
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784 \u179F\
+    \u179A\u179F\u17C3\u1788\u17B6\u1798 (Cardiovascular system)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: national_id
+  verbose_name: "\u179F\u1789\u17D2\u1787\u17B6\u178F\u17B7\u1781\u17D2\u1798\u17C2\
+    \u179A (National ID) "
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hf_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1798\u17BC\u179B\u178A\u17D2\u178B\
+    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility\
+    \ Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_name
+  verbose_name: "\u1791\u17C5\u1788\u17D2\u1798\u17C4\u17C7\u1798\u17BC\u179B\u178A\
+    \u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\
+    \ (To Facility Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: reason_for_referral
+  verbose_name: "\u1794\u1789\u17D2\u17A0\u17B6\u1794\u1789\u17D2\u1787\u17BC\u1793\
+    \ (Reason for Referral)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: client_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA (Client's Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: haemoglobin
+  verbose_name: "\u17A2\u17C1\u1798\u17C9\u17BC\u1780\u17D2\u179A\u17BC\u1798\u17B8\
+    \u1793\xBF(\u17A2\u17C1\u1798\u17C9\u17BC\u1780\u17D2\u179B\u17BC\u1794\u17CA\u17B8\
+    \u1793\u17A2\u17C1\u1780\u1794\u17CA\u17B8) (Haemoglobin Hb)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: country
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F (\u1794\u17D2\u179A\u1791\u17C1\u179F\
+    ) (Country)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: follow_up_date
+  verbose_name: "\u1780\u17B6\u179A\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
+    \u1780\u17B6\u179A\u178F\u17B6\u1798\u178A\u17B6\u1793 (Follow-up Date)"
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gastro_intestinal_exam
+  verbose_name: "\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\u1792\u179A\u17C6\u179B\
+    \u17B6\u1799\u17A2\u17B6\u17A0\u17B6\u179A (Gastro-intestinal system)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: physical_activity
+  verbose_name: "\u1794\u17D2\u179A\u17BE\u1794\u17D2\u179A\u17B6\u179F\u17CB\u1790\
+    \u17D2\u1793\u17B6\u17C6\u1787\u1780\u17CB/\u17A2\u179F\u1780\u1798\u17D2\u1798\
+    \u1797\u17B6\u1796\u179A\u17B6\u1784\u1780\u17B6\u1799 (Physical Activity)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: waist_circumference
+  verbose_name: "\u1791\u17C6\u17A0\u17C6\u1785\u1784\u17D2\u1780\u17C1\u17C7/\u179A\
+    \u1784\u17D2\u179C\u17B6\u179F\u17CB\u1787\u17BB\u17C6\u179C\u17B7\u1789\u1780\
+    \u17D2\u1794\u17B6\u179B\u1796\u17C4\u17C7 (Waist Circumference)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: total_cholesterol
+  verbose_name: "\u1780\u17BC\u179B\u17C1\u179F\u17D2\u178F\u17C1\u179A\u17C9\u17BB\
+    \u179B (Total Cholesterol)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: pulse_rate
+  verbose_name: "\u1787\u17B8\u1796\u1785\u179A (Pulse Rate)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: respiratory
+  verbose_name: "\u1785\u1784\u17D2\u179C\u17B6\u1780\u17CB\u178A\u1784\u17D2\u17A0\
+    \u17BE\u1798 (Respiratory Rate)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: address_zone
+  verbose_name: "\u17A2\u17B6\u179F\u17D0\u1799\u178A\u17D2\u178B\u17B6\u1793\u1780\
+    \u17D2\u1793\u17BB\u1784\u178F\u17C6\u1794\u1793\u17CB (Address zone)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: current_medical_complications
+  verbose_name: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1780\u17C6\u1796\u17BB\
+    \u1784\u1798\u17B6\u1793 (Current Complications)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: client_id
+  verbose_name: "\u17A2\u178F\u17D2\u178F\u179B\u17C1\u1781\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA (Client ID)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: medical_history_other_health_complications
+  verbose_name: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1795\u17D2\u179F\u17C1\
+    \u1784\u17D7\u1791\u17C0\u178F (Other Complications)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_health_complications
+  verbose_name: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1795\u17D2\u179F\u17C1\
+    \u1784\u1791\u17C0\u178F (Other Complications)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: previous_medical_complications
+  verbose_name: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1780\u1793\u17D2\u179B\
+    \u1784\u1798\u1780 (Previous Complications)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: current_therapy
+  verbose_name: "\u1780\u17C6\u1796\u17BB\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+    \u179B (Current Therapy)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: id_poor
+  verbose_name: "\u1780\u17D2\u179A\u17B8\u1780\u17D2\u179A (ID Poor)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_district
+  verbose_name: "\u1791\u179F\u17D2\u179F\u1793\u17B6\u179F\u17D2\u179A\u17BB\u1780\
+    \ (Visit District)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: right_eye_exam
+  verbose_name: "\u1797\u17D2\u1793\u17C2\u1780\u179F\u17D2\u178F\u17B6\u17C6 (Right\
+    \ Eye)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referred_from
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1798\u1780\u1796\u17B8 (Referred\
+    \ From)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: other_identifiers
+  verbose_name: "\u1795\u17D2\u179F\u17C1\u1784 (Other Identifiers)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: left_eye_exam
+  verbose_name: "\u1797\u17D2\u1793\u17C2\u1780\u1792\u17D2\u179C\u17C1\u1784 (Left\
+    \ eye)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: left_foot_exam
+  verbose_name: "\u1787\u17BE\u1784\u1792\u17D2\u179C\u17C1\u1784 (Left foot)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: mental_state_exam
+  verbose_name: "\u179F\u17D2\u1790\u17B6\u1793\u1797\u17B6\u1796\u1795\u17D2\u179B\
+    \u17BC\u179C\u1785\u17B7\u178F\u17D2\u178F (Mental Status)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: marital_status
+  verbose_name: "\u179F\u17D2\u1790\u17B6\u1793\u1797\u17B6\u1796\u1782\u17D2\u179A\
+    \u17BD\u179F\u17B6\u179A (Marital Status)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: passport_no
+  verbose_name: "\u179B\u17B7\u1781\u17B7\u178F\u1786\u17D2\u179B\u1784\u178A\u17C2\
+    \u1793 (Passport No)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: phone_number
+  verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791 (Phone\
+    \ Number)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: uro_gen_exam
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\
+    \u1792\u178F\u17C6\u179A\u1784\u1793\u17C4\u1798 (Nephrophaty system)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: payment_type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\
+    \u179A\u17B6\u1780\u17CB (Payment Type)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_province
+  verbose_name: "\u1791\u179F\u17D2\u179F\u1793\u17B6\u1781\u17C1\u178F\u17D2\u178F\
+    \ (Visit Province)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: right_foot_exam
+  verbose_name: "\u1787\u17BE\u1784\u179F\u17D2\u178F\u17B6\u17C6 (Right foot)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_type
+  verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
+    \u1796\u17B7\u1793\u17B7\u178F\u17D2 (Visit Type)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: province
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7\u200B(\u1781\u17C1\u178F\u17D2\u178F) (Province)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: smoking
+  verbose_name: "\u17A2\u17B6\u17A0\u17B6\u179A\u1798\u17B7\u1793\u179F\u1798\u179F\
+    \u17D2\u179A\u1794/\u178F\u17BE\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\
+    \u1787\u1780\u17CB\u1794\u17B6\u179A\u17B8\u1791\u17C1? (Smoking)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: bmi
+  verbose_name: "\u1795\u179B\u1792\u17C0\u1794\u1791\u1798\u17D2\u1784\u1793\u17CB\
+    \u1793\u17B7\u1784\u1780\u17C6\u1796\u179F\u17CB/\u179F\u1793\u17D2\u1791\u179F\
+    \u17D2\u179F\u1793\u17CD\u1798\u17C9\u17B6\u179F\u179A\u17B6\u1784\u1780\u17B6\
+    \u1799 (BMI)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: potassium
+  verbose_name: "\u1794\u17C9\u17BC\u178F\u17C1\u179F\u17D2\u1799\u17BC\u1798/\u1794\
+    \u17C9\u17BC\u178F\u17B6\u179F\u17D2\u1799\u17BC\u1798 (Potassium)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: temperature
+  verbose_name: "\u1780\u17C6\u178A\u17C5/\u179F\u17B8\u178F\u17BB\u178E\u17D2\u17A0\
+    \u1797\u17B6 (Temperature)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: commune
+  verbose_name: "\u1783\u17BB\u17C6/\u179F\u1784\u17D2\u1780\u17B6\u178F\u17CB (Commune)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: district
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780/\u1781\u178E\u17D0\u17D2\u178C (District)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: spo2
+  verbose_name: "\u1780\u17C6\u17A0\u17B6\u1794\u17CB\u17A2\u17BB\u1780\u179F\u17CA\
+    \u17B8\u179F\u17C2\u1793 (SPO2)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: albumin
+  verbose_name: "\u17A2\u17B6\u179B\u17CB\u1794\u17CA\u17BB\u1793\u1798\u17B8\u1793\
+    \ (Albumin)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: creatinine
+  verbose_name: "\u1780\u17D2\u179A\u17C1\u17A2\u17B6\u178F\u17C1\u1793\u17B8\u1793\
+    \ (Creatinine)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diastolic
+  verbose_name: "\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u178A\u17D2\
+    \u1799\u17B6\u179F\u17D2\u178F\u17BC\u179B (Diastolic)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: height
+  verbose_name: "\u1780\u17C6\u1796\u179F\u17CB (Height)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: proteinuria
+  verbose_name: "\u1794\u17D2\u179A\u17BC\u178F\u17C1\u17A2\u17B8\u1793 (Proteinuria)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: systolic
+  verbose_name: "\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u179F\u17CA\
+    \u17B8\u179F\u17D2\u178F\u17BC\u179B (Systolic)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: sodium
+  verbose_name: "\u179F\u17BC\u178A\u17D2\u1799\u17BC\u1798 (Sodium)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: triglycerides
+  verbose_name: "\u1791\u17D2\u179A\u17B8\u1782\u17D2\u179B\u17B8\u179F\u17C1\u179A\
+    \u17B8\u178A (Triglycerides)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: weight
+  verbose_name: "\u1791\u17C6\u1784\u1793\u17CB (Weight)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: abdominal_exam
+  verbose_name: "\u1795\u17D2\u1793\u17C2\u1780\u1796\u17C4\u17C7 (Abdomen)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: allergies_details
+  verbose_name: "\u1794\u17D2\u179A\u178F\u17B7\u1780\u1798\u17D2\u1798 (Allergies)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: alcohol
+  verbose_name: "\u1795\u17B9\u1780\u1782\u17D2\u179A\u17BF\u1784\u179F\u17D2\u179A\
+    \u179C\u17B9\u1784\u1794\u17D2\u179A\u1780\u1794\u178A\u17C4\u1799\u1782\u17D2\
+    \u179A\u17C4\u17C7\u1790\u17D2\u1793\u17B6\u17C6\u1780\u17CB (Alcohol)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: drugs
+  verbose_name: "\u1782\u17D2\u179A\u17BF\u1784\u1789\u17C0\u1793 (Drugs)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: education
+  verbose_name: "\u1780\u17B6\u179A\u17A2\u1794\u17CB\u179A\u17C6 (Education)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ethnicity
+  verbose_name: "\u1787\u1793\u1787\u17B6\u178F\u17B7 (Ethnicity)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: nssf
+  verbose_name: "\u1798\u17BC\u179B\u1793\u17B7\u1792\u17B7\u1782\u17B6\u17C6\u1796\
+    \u17B6\u179F\u1784\u17D2\u1782\u1798 (NSSF)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: "\u1797\u17C1\u1791 (Gender)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ketones
+  verbose_name: "\u1780\u17C1\u178F\u17BC\u1793 (Ketones)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ssn
+  verbose_name: "\u1794\u179F\u179F (SSN)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: occupation
+  verbose_name: "\u1798\u17BB\u1781\u179A\u1794\u1794 (Occupation)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: respiratory_exam
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179F\u17BD\u178F (Respiratory)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: village
+  verbose_name: "\u1797\u17BC\u1798\u17B7 (Village)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: alt_alat
+  verbose_name: "\u17A2\u1784\u17CB\u179F\u17CA\u17B8\u1798\u1790\u17D2\u179B\u17BE\
+    \u1798 ALT/ALAT"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ast_asat
+  verbose_name: "\u17A2\u1784\u17CB\u179F\u17CA\u17B8\u1798\u1790\u17D2\u179B\u17BE\
+    \u1798 AST/ASAT"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: pmrs_id
+  verbose_name: PMRS ID
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_two
+  verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
+    \u1799 \u1791\u17B8\u17E2"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hb1ac
+  verbose_name: "HbA1c/(\u17A2\u17C1\u1798\u17C9\u17BC\u1780\u17D2\u179B\u17BC\u1794\
+    \u17CA\u17B8\u1793\u17A2\u17C1\u179C\u17D0\u1793\u179F\u17CA\u17B8)"
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: medical_history_current_therapy
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: presence_of_allergies
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: location_tags
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referral_center
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: recommendations
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: b90d1451-c3b9-4f55-ab9a-f872d933a1f6
