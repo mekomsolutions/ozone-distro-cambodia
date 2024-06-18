@@ -1,0 +1,394 @@
+table_name: Indicators for Monitoring CCS Management Program
+main_dttm_col: date_started
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: null
+sql: "SELECT\n  t1.date_started,\n  t1.patient_uuid,\n  t3.postal_code AS health_facility_code,\n\
+  \  t3.name AS health_facility_name,\n  t3.county_district AS health_facility_district,\n\
+  \  t3.state_province AS health_facility_province,\n  DATE_PART ('year', age (t1.date_started,\
+  \ t2.birthdate)) AS age,\n  t2.gender,\n  via.is_screen_cc,\n  via.is_screen_cc_uuid,\n\
+  \  via.test_type,\n  via.via_test_result,\n  via.via_test_result_uuid,\n  via.via_treatment,\n\
+  \  CASE\n    WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate)) BETWEEN\
+  \ 30 AND 49 THEN 'count/(%)'\n    ELSE NULL\n  END AS women_aged_30_49,\nCASE\n\
+  \    WHEN is_screen_cc_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN 1\n    ELSE\
+  \ 0\n  END AS screen_for_ccs,\n  CASE\n    WHEN is_screen_cc_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \    AND via_test_result_uuid='703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN 1\n  \
+  \  ELSE 0\n  END AS screen_cc_and_positive,\n  CASE -- \n    WHEN is_screen_cc_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \    AND via.via_treatment_uuid='4070623e-945b-499f-8b62-316e699a3cc7'\n    AND\
+  \ via.via_test_result_uuid='703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\tAND via.ca_treatment_uuid\
+  \ ='d534da3e-7b59-40ca-a415-d2f5eb94f4a3' THEN 1\n    ELSE 0\n  END AS screen_cc_and_positive_received_treatment\n\
+  FROM\n  visits t1\n  LEFT JOIN patients t2 ON (t1.patient_uuid=t2.patient_uuid)\n\
+  \  LEFT JOIN locations t3 ON (t1.location_uuid=t3.uuid)\n  -- Screen for CS VIA\
+  \ test, result and treatment\n  LEFT JOIN (\n    SELECT\n      o.encounter_uuid,\n\
+  \      o.visit_uuid,\n      MAX(o.date_created),\n      o.answer_coded AS is_screen_cc,\n\
+  \      o.answer_coded_uuid AS is_screen_cc_uuid,\n      obs1.answer_coded AS test_type,\n\
+  \      obs3.answer_coded AS via_test_result,\n      obs3.answer_coded_uuid AS via_test_result_uuid,\n\
+  \      obs6.answer_coded AS via_treatment,\n      obs6.answer_coded_uuid AS via_treatment_uuid,\n\
+  \t  obs7.answer_coded AS ca_treatment,\n      obs7.answer_coded_uuid AS ca_treatment_uuid\n\
+  \    FROM\n      observations o\n      -- Test Type\n      LEFT JOIN observations\
+  \ obs1 ON (\n        o.encounter_uuid=obs1.encounter_uuid\n        AND o.answer_coded_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \        AND obs1.question_uuid='baf42703-65ed-4ea3-9d3f-e5cf0305d2fd'\n      )\n\
+  \      -- VIA Test Result\n      LEFT JOIN observations obs3 ON (\n        o.encounter_uuid=obs3.encounter_uuid\n\
+  \        AND obs1.answer_coded_uuid='f90dc342-292e-4a47-9fef-860a03bf255f'\n   \
+  \     AND obs3.question_uuid='f90dc342-292e-4a47-9fef-860a03bf255f'\n      )\n \
+  \     -- VIA Treatment\n      LEFT JOIN observations obs6 ON (\n        o.encounter_uuid=obs6.encounter_uuid\n\
+  \        AND obs1.answer_coded_uuid='f90dc342-292e-4a47-9fef-860a03bf255f'\n   \
+  \     AND obs6.question_uuid='6027bf55-5288-4ace-bc7f-b75d2291f8e0'\n      )\n\t\
+  -- Cervical Cancer Treatment\n      LEFT JOIN observations obs7 ON (\n        o.encounter_uuid=obs7.encounter_uuid\n\
+  \        AND obs1.answer_coded_uuid='f90dc342-292e-4a47-9fef-860a03bf255f'\n   \
+  \     AND obs7.question_uuid='1ca7d712-f7d7-4e09-8184-048bc4173902'\n      )\n \
+  \   WHERE\n      o.question_uuid='75681e39-683c-4de9-9ca7-5b55b736bfa7' -- screen\
+  \ for ccs\n      AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n\
+  \      o.visit_uuid,\n      o.answer_coded,\n      o.answer_coded_uuid,\n      obs1.answer_coded,\n\
+  \      obs3.answer_coded,\n      obs3.answer_coded_uuid,\n      obs6.answer_coded,\n\
+  \      obs6.answer_coded_uuid,\n      obs1.question_uuid,\n      obs3.question_uuid,\n\
+  \      obs6.question_uuid,\n\t  obs7.answer_coded,\n      obs7.answer_coded_uuid,\n\
+  \t  obs7.question_uuid\n  ) via ON (\n    via.visit_uuid=t1.visit_uuid\n    AND\
+  \ via.visit_uuid IS NOT NULL\n  )\nWHERE\n  -- Cervical Cancer New Visit\n  t1.visit_type_uuid\
+  \ IN ('cad25c07-4657-4167-8b57-8ea1a3830e9b')\n  AND t1.visit_voided IS FALSE\n\
+  \  AND t2.person_voided IS FALSE\n  AND t2.patient_uuid IS NOT NULL\n  -- Women\
+  \ aged between 30 and 49\n  AND t2.gender='F'\n  AND DATE_PART ('year', age (now\
+  \ (), t2.birthdate)) BETWEEN 30 AND 49\n  -- Last 12 months\n  AND t1.date_started>=(NOW\
+  \ ()-INTERVAL '1 year')"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 21edab6c-4a53-4161-9f2c-f9cd1f305b13
+metrics:
+- metric_name: percentage screen ccs positive
+  verbose_name: " \u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u179F\u17D2\u178F\u17D2\
+    \u179A\u17B8\u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB\
+    \ \u17E4\u17E9\u1786\u17D2\u1793\u17B6\u17C6 \u178A\u17C2\u179B\u1794\u17B6\u1793\
+    \u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\u1796\
+    \u1798\u17B6\u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793\u179A\u1780\u178A\u17C6\
+    \u1794\u17C5\u1798\u17BB\u1793\u1780\u17D2\u179B\u17B6\u1799\u1787\u17B6\u1798\
+    \u17A0\u17B6\u179A\u17B8\u1780 \u1793\u17B7\u1784\u1798\u17B6\u1793\u179B\u1791\
+    \u17D2\u1792\u1795\u179B\u179C\u17B7\u1787\u17D2\u1787\u1798\u17B6\u1793 \u1780\
+    \u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\
+    \u17C2\u1798\u17BB\u1793\u17D4 (Percentage of women aged 30 - 49 who had a cervical\
+    \ cancer screening to detect the pre-cancerous lesion and had positive result\
+    \ in the last 12 months)"
+  metric_type: null
+  expression: ROUND((SUM(screen_cc_and_positive)::decimal / NULLIF(COUNT(DISTINCT
+    patient_uuid), 0)) * 100, 2)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage screen ccs positive received treatment
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u179F\u17D2\u178F\u17D2\
+    \u179A\u17B8\u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB\
+    \ \u17E4\u17E9\u1786\u17D2\u1793\u17B6\u17C6 \u178A\u17C2\u179B\u1798\u17B6\u1793\
+    \u179B\u1791\u17D2\u1792\u1795\u179B\u178F\u17C1\u179F\u17D2\u178F\u179C\u17B7\
+    \u1787\u17D2\u1787\u1798\u17B6\u1793 \u1793\u17B7\u1784\u1794\u17B6\u1793\u1791\
+    \u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\
+    \u179F\u1798\u179F\u17D2\u179A\u1794 \u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\
+    \u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\u17C2\u1798\u17BB\u1793\u17D4 (Percentage\
+    \ of women aged 30\u200B - \u200B\u200B49 who had positive result and received\
+    \ appropriate cervical cancer lesion treatment in the last 12 months)"
+  metric_type: null
+  expression: ROUND((SUM(screen_cc_and_positive_received_treatment)::decimal / NULLIF(SUM(screen_cc_and_positive),
+    0)) * 100, 2)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: screen ccs
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u17D2\u178F\u17D2\u179A\u17B8\
+    \u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB \u17E4\u17E9\
+    \u1786\u17D2\u1793\u17B6\u17C6 \u1794\u17B6\u1793\u1796\u17B7\u1793\u17B7\u178F\
+    \u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\u1796\u1798\u17B6\u178F\u17CB\u179F\
+    \u17D2\u1794\u17BC\u1793\u179A\u1780\u178A\u17C6\u1794\u17C5\u1798\u17BB\u1793\
+    \u1780\u17D2\u179B\u17B6\u1799\u1787\u17B6\u1798\u17A0\u17B6\u179A\u17B8\u1780\
+    \u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784 \u1780\u17D2\u1793\u17BB\u1784\
+    \u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\u17C2\u1798\u17BB\u1793\
+    \u17D4 (Number of women aged 30 - 49 who have had cervical cancer screening for\
+    \ the first time to detect the pre-cancerous lesion  in the last 12 months)"
+  metric_type: null
+  expression: COUNT(DISTINCT patient_uuid)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: screen ccs positive
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u17D2\u178F\u17D2\u179A\u17B8\
+    \u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB \u17E4\u17E9\
+    \u1786\u17D2\u1793\u17B6\u17C6 \u178A\u17C2\u179B\u1794\u17B6\u1793\u1796\u17B7\
+    \u1793\u17B7\u178F\u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\u1796\u1798\u17B6\
+    \u178F\u17CB\u179F\u17D2\u1794\u17BC\u1793\u179A\u1780\u178A\u17C6\u1794\u17C5\
+    \u1798\u17BB\u1793\u1780\u17D2\u179B\u17B6\u1799\u1787\u17B6\u1798\u17A0\u17B6\
+    \u179A\u17B8\u1780 \u1793\u17B7\u1784\u1798\u17B6\u1793\u179B\u1791\u17D2\u1792\
+    \u1795\u179B\u179C\u17B7\u1787\u17D2\u1787\u1798\u17B6\u1793 \u1780\u17D2\u1793\
+    \u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\u17C2\u1798\
+    \u17BB\u1793\u17D4 (Number of women aged 30 - 49 who had a cervical cancer screening\
+    \ to detect the pre-cancerous lesion and had positive result in the last 12 months)"
+  metric_type: null
+  expression: SUM(screen_cc_and_positive)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage screen
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u179F\u17D2\u178F\u17D2\
+    \u179A\u17B8\u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB\
+    \ \u17E4\u17E9\u1786\u17D2\u1793\u17B6\u17C6 \u1794\u17B6\u1793\u1796\u17B7\u1793\
+    \u17B7\u178F\u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\u1796\u1798\u17B6\u178F\
+    \u17CB\u179F\u17D2\u1794\u17BC\u1793\u179A\u1780\u178A\u17C6\u1794\u17C5\u1798\
+    \u17BB\u1793\u1780\u17D2\u179B\u17B6\u1799\u1787\u17B6\u1798\u17A0\u17B6\u179A\
+    \u17B8\u1780\u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784 \u1780\u17D2\u1793\
+    \u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\u17C2\u1798\
+    \u17BB\u1793\u17D4 (Percentage of women aged 30 - 49 who have had cervical cancer\
+    \ screening for the first time to detect the pre-cancerous lesion in the last\
+    \ 12 months)"
+  metric_type: null
+  expression: '''N/A'''
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: screen ccs positive received treatment
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u17D2\u178F\u17D2\u179A\u17B8\
+    \u17A2\u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB \u17E4\u17E9\
+    \u1786\u17D2\u1793\u17B6\u17C6 \u178A\u17C2\u179B\u1798\u17B6\u1793\u179B\u1791\
+    \u17D2\u1792\u1795\u179B\u178F\u17C1\u179F\u17D2\u178F\u179C\u17B7\u1787\u17D2\
+    \u1787\u1798\u17B6\u1793 \u1793\u17B7\u1784\u1794\u17B6\u1793\u1791\u1791\u17BD\
+    \u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u179F\u1798\
+    \u179F\u17D2\u179A\u1794 \u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\
+    \u17C1\u179B \u17E1\u17E2 \u1781\u17C2\u1798\u17BB\u1793\u17D4 (Number of women\
+    \ aged 30\u200B - \u200B\u200B49 who had positive result and received appropriate\
+    \ cervical cancer lesion treatment in the last 12 months)"
+  metric_type: null
+  expression: SUM(screen_cc_and_positive_received_treatment)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: women_aged_30_49
+  verbose_name: Indicators
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: date_started
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: screen_cc_and_positive_received_treatment
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: screen_cc_and_positive
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: screen_for_ccs
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_screen_cc_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_screen_cc
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_treatment
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: patient_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: test_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: b90d1451-c3b9-4f55-ab9a-f872d933a1f6
