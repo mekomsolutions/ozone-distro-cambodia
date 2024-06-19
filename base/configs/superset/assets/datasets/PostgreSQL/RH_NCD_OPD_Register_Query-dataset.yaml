@@ -29,22 +29,17 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ AS \"Physical Exercise\",\n    obs_alcohol_use AS \"Alcohol Use\",\n    obs_cvd_risk_score\
   \ AS \"CVD risk score (%)\",\n    obs_diagnosis1 AS \"Diagnosis 1\",\n    obs_diagnosis2\
   \ AS \"Diagnosis 2\",\n    obs_complications AS \"Complications\",\n    obs_treatment_recommendations\
-  \ AS \"Management - Lifestlye\",\n    CASE WHEN medications IS NOT NULL \n     \
-  \   THEN \n            (SELECT distinct_medications.medications FROM (\n       \
-  \         SELECT \n                    STRING_AGG(DISTINCT drug_name, ', ') AS medications\n\
-  \                FROM (\n                    SELECT unnest(string_to_array(medications,\
-  \ ', ')) AS drug_name\n                ) AS distinct_drugs\n            ) AS distinct_medications)\n\
-  \        ELSE NULL \n    END AS \"Management - Medications\",\n    obs_followup_date\
-  \ AS \"Appointment Date\",\n    obs_followup_for AS \"Appointment Reason\",\n  \
-  \  obs_facility AS \"Referral Facility\",\n    obs_reason_for_referral AS \"Reason\
-  \ For Referral\",\n    insurance_type AS \"Payment Type\",\n    '' AS \"Remarks\"\
-  \nFROM (\n    SELECT\n        facility_address.state_province AS \"f_province\"\
-  ,\n        facility_address.county_district AS \"f_district\",\n        facility_address.name\
-  \ AS \"f_facility\",\n        MAX(given_name) AS given_name,\n        MAX(middle_name)\
-  \ AS middle_name,\n        MAX(family_name) AS family_name,\n        MAX(identifiers)\
-  \ AS identifiers,\n        MAX(birthdate) AS birthdate,\n        MAX(gender) AS\
-  \ gender,\n        MAX(address_state_province) AS address_state_province,\n    \
-  \    MAX(address_county_district) AS address_county_district,\n        MAX(address_city)\
+  \ AS \"Management - Lifestlye\",\n    medications AS \"Management - Medications\"\
+  ,\n    obs_followup_date AS \"Appointment Date\",\n    obs_followup_for AS \"Appointment\
+  \ Reason\",\n    obs_facility AS \"Referral Facility\",\n    obs_reason_for_referral\
+  \ AS \"Reason For Referral\",\n    insurance_type AS \"Payment Type\",\n    '' AS\
+  \ \"Remarks\"\nFROM (\n    SELECT\n        facility_address.state_province AS \"\
+  f_province\",\n        facility_address.county_district AS \"f_district\",\n   \
+  \     facility_address.name AS \"f_facility\",\n        MAX(given_name) AS given_name,\n\
+  \        MAX(middle_name) AS middle_name,\n        MAX(family_name) AS family_name,\n\
+  \        MAX(identifiers) AS identifiers,\n        MAX(birthdate) AS birthdate,\n\
+  \        MAX(gender) AS gender,\n        MAX(address_state_province) AS address_state_province,\n\
+  \        MAX(address_county_district) AS address_county_district,\n        MAX(address_city)\
   \ AS address_city,\n        MAX(address_1) AS address_1,\n        MAX(attributes)\
   \ AS attributes,\n        MAX(vi.date_started) AS \"visit_date\",\n        MAX(vi.type)\
   \ AS \"visit_type\",\n        MAX(CASE \n            WHEN vi.visit_attributes ~\
@@ -94,8 +89,8 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ WHEN obs.question_uuid = '76ca08a5-2128-4b53-afba-74227b015924' THEN obs.answer_coded\
   \ ELSE NULL END) AS \"obs_diagnosis2\",\n        MAX(CASE WHEN obs.question_uuid\
   \ = '3f36a039-eac3-46bd-8798-102c55639d49' THEN obs.answer_coded ELSE NULL END)\
-  \ AS \"obs_complications\",\n        STRING_AGG(drug_order.drug_name, ', ') AS \"\
-  medications\",\n        MAX(CASE WHEN obs.question_uuid = 'dee2db0c-5a06-4b1e-8be6-0f327fe6158d'\
+  \ AS \"obs_complications\",\n        STRING_AGG(DISTINCT drug_order.drug_name, ',\
+  \ ') AS \"medications\",\n        MAX(CASE WHEN obs.question_uuid = 'dee2db0c-5a06-4b1e-8be6-0f327fe6158d'\
   \ THEN obs.answer_coded ELSE NULL END) AS \"obs_reason_for_referral\",\n       \
   \ MAX(CASE WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2' THEN\
   \ obs.answer_coded ELSE NULL END) AS \"obs_treatment_recommendations\",\n      \

@@ -1,0 +1,87 @@
+slice_name: Registered women aged 30 to 49 years that have had their CCS screening
+  for the first time
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 35__table
+  viz_type: table
+  slice_id: 154
+  granularity_sqla: Visit Start date
+  time_grain_sqla: P1D
+  time_range: No filter
+  query_mode: raw
+  groupby: []
+  metrics: []
+  all_columns:
+  - Facility Name
+  - Facility District
+  - Facility Province
+  - OpenMRS ID
+  - Patient's First name
+  - Patient's Last name
+  - Patient Address
+  - Phone number
+  - Other Identifiers
+  - Visit Start date
+  - Visit End date
+  - Visit Type
+  - Referral source
+  - Insurance type
+  - First Screening?
+  - HPV Test
+  - Visibility of SCJ
+  - VIA Test Result
+  - Number of Quadrants
+  - Area of ectocervix
+  - Colposcopy
+  - Cervical Biopsy
+  - Pap Smear
+  - Referral Facility
+  - CC Reason for Referral
+  - CC Treatment
+  - CC Follow-up date
+  - Encounter date and time
+  percent_metrics: []
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: indicator
+    operator: ==
+    operatorId: EQUALS
+    comparator: women-aged-30-49-years-with-ccs-screening-first-time
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_0sxq4bni7gig_9yc69feloca
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  show_cell_bars: true
+  color_pn: true
+  extra_form_data: {}
+  dashboards:
+  - 20
+query_context: '{"datasource":{"id":35,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Visit Start date","filters":[{"col":"indicator","op":"==","val":"women-aged-30-49-years-with-ccs-screening-first-time"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s
+  Last name","Patient Address","Phone number","Other Identifiers","Visit Start date","Visit
+  End date","Visit Type","Referral source","Insurance type","First Screening?","HPV
+  Test","Visibility of SCJ","VIA Test Result","Number of Quadrants","Area of ectocervix","Colposcopy","Cervical
+  Biopsy","Pap Smear","Referral Facility","CC Reason for Referral","CC Treatment","CC
+  Follow-up date","Encounter date and time"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"35__table","viz_type":"table","slice_id":154,"granularity_sqla":"Visit
+  Start date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"raw","groupby":[],"metrics":[],"all_columns":["Facility
+  Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s
+  Last name","Patient Address","Phone number","Other Identifiers","Visit Start date","Visit
+  End date","Visit Type","Referral source","Insurance type","First Screening?","HPV
+  Test","Visibility of SCJ","VIA Test Result","Number of Quadrants","Area of ectocervix","Colposcopy","Cervical
+  Biopsy","Pap Smear","Referral Facility","CC Reason for Referral","CC Treatment","CC
+  Follow-up date","Encounter date and time"],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"indicator","operator":"==","operatorId":"EQUALS","comparator":"women-aged-30-49-years-with-ccs-screening-first-time","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_0sxq4bni7gig_9yc69feloca"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[20],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 37c2b93f-2cdf-4bf7-9195-076c83eda4b4
+version: 1.0.0
+dataset_uuid: 3680ccf7-bec7-45bc-8e9d-8afaba18b508

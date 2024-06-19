@@ -1,0 +1,82 @@
+slice_name: CCS Indicators
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 35__table
+  viz_type: pivot_table_v2
+  slice_id: 150
+  granularity_sqla: Visit Start date
+  time_grain_sqla: P1D
+  time_range: No filter
+  groupbyColumns: []
+  groupbyRows: []
+  metrics:
+  - expressionType: SQL
+    sqlExpression: COUNT(DISTINCT CASE WHEN indicator = 'women-aged-30-49-years-with-ccs-screening-first-time'
+      THEN "OpenMRS ID" END)
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: Registered women aged 30 to 49 years that have had their CCS screening
+      for the first time
+    optionName: metric_bm4lu228m7_czv4wuqradj
+  - expressionType: SQL
+    sqlExpression: "CASE \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = '80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred'\
+      \ THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = 'women-aged-30-49-years-with-ccs-screening-first-time'\
+      \ THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+      \ THEN \"OpenMRS ID\" END))) >= 80 \n    THEN 'Yes'\n    ELSE 'No'\nEND\n"
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: 80% (of registered women aged 30 to 49 years that have had their CCS screening
+      for the first time) were VIA positive and referred?
+    optionName: metric_2cxj9ntl3yi_kdmjmpegqto
+  metricsLayout: ROWS
+  adhoc_filters: []
+  row_limit: 1000
+  order_desc: true
+  aggregateFunction: Sum
+  rowTotals: false
+  colTotals: false
+  transposePivot: true
+  combineMetric: false
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 20
+query_context: '{"datasource":{"id":35,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Visit Start date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  women aged 30 to 49 years that have had their CCS screening for the first time","optionName":"metric_bm4lu228m7_czv4wuqradj"},{"expressionType":"SQL","sqlExpression":"CASE
+  \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = ''80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred''
+  THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time''
+  THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator = ''80-pecent-followup-with-hypertension-iabetes-and-medication''
+  THEN \"OpenMRS ID\" END))) >= 80 \n    THEN ''Yes''\n    ELSE ''No''\nEND\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"80%
+  (of registered women aged 30 to 49 years that have had their CCS screening for the
+  first time) were VIA positive and referred?","optionName":"metric_2cxj9ntl3yi_kdmjmpegqto"}],"orderby":[[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  women aged 30 to 49 years that have had their CCS screening for the first time","optionName":"metric_bm4lu228m7_czv4wuqradj"},false]],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"35__table","viz_type":"pivot_table_v2","slice_id":150,"granularity_sqla":"Visit
+  Start date","time_grain_sqla":"P1D","time_range":"No filter","groupbyColumns":[],"groupbyRows":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  women aged 30 to 49 years that have had their CCS screening for the first time","optionName":"metric_bm4lu228m7_czv4wuqradj"},{"expressionType":"SQL","sqlExpression":"CASE
+  \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = ''80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred''
+  THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time''
+  THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator = ''80-pecent-followup-with-hypertension-iabetes-and-medication''
+  THEN \"OpenMRS ID\" END))) >= 80 \n    THEN ''Yes''\n    ELSE ''No''\nEND\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"80%
+  (of registered women aged 30 to 49 years that have had their CCS screening for the
+  first time) were VIA positive and referred?","optionName":"metric_2cxj9ntl3yi_kdmjmpegqto"}],"metricsLayout":"ROWS","adhoc_filters":[],"row_limit":1000,"order_desc":true,"aggregateFunction":"Sum","rowTotals":false,"colTotals":false,"transposePivot":true,"combineMetric":false,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[20],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: ee7add1c-c8aa-4984-9db7-3fa3f726f15c
+version: 1.0.0
+dataset_uuid: 3680ccf7-bec7-45bc-8e9d-8afaba18b508
