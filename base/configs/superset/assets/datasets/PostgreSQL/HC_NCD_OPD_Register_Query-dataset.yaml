@@ -29,14 +29,9 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ AS \"Alcohol Use\",\n    obs_cvd_risk_score AS \"CVD risk score (%)\",\n    obs_teleconsultation\
   \ AS \"Tele-consultation with NCD unit\",\n    obs_diagnosis1 AS \"Diagnosis 1\"\
   ,\n    obs_diagnosis2 AS \"Diagnosis 2\",\n    obs_treatment_recommendations AS\
-  \ \"Management Lifestyle\",\n    CASE WHEN medications IS NOT NULL \n        THEN\
-  \ \n            (SELECT distinct_medications.medications FROM (\n              \
-  \  SELECT \n                    STRING_AGG(DISTINCT drug_name, ', ') AS medications\n\
-  \                FROM (\n                    SELECT unnest(string_to_array(medications,\
-  \ ', ')) AS drug_name\n                ) AS distinct_drugs\n            ) AS distinct_medications)\n\
-  \        ELSE NULL \n    END AS \"Management - Medications\",\n    obs_followup_date\
-  \ AS \"Appointment Date\",\n    obs_followup_for AS \"Appointment Reason\",\n  \
-  \  obs_facility AS \"Referral Facility\",\n    CONCAT_WS(', ', obs_diabetes_referral_reason,\
+  \ \"Management Lifestyle\",\n    medications AS \"Management - Medications\",\n\
+  \    obs_followup_date AS \"Appointment Date\",\n    obs_followup_for AS \"Appointment\
+  \ Reason\",\n    obs_facility AS \"Referral Facility\",\n    CONCAT_WS(', ', obs_diabetes_referral_reason,\
   \ obs_hypertension_referral_reason) AS \"Reason for referral\",\n    insurance_type\
   \ AS \"Payment Type\",\n    '' AS \"Remarks\"\nFROM (\n    SELECT\n        facility_address.state_province\
   \ AS \"f_province\",\n        facility_address.county_district AS \"f_district\"\
@@ -91,8 +86,8 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ WHEN obs.question_uuid = '45583478-f703-46e3-b63a-54b0a95c25f0' THEN obs.answer_coded\
   \ ELSE NULL END) AS \"obs_diagnosis1\",\n        MAX(CASE WHEN obs.question_uuid\
   \ = '76ca08a5-2128-4b53-afba-74227b015924' THEN obs.answer_coded ELSE NULL END)\
-  \ AS \"obs_diagnosis2\",\n        STRING_AGG(drug_order.drug_name, ', ') AS \"medications\"\
-  ,\n        MAX(CASE WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2'\
+  \ AS \"obs_diagnosis2\",\n        STRING_AGG(DISTINCT drug_order.drug_name, ', ')\
+  \ AS \"medications\",\n        MAX(CASE WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2'\
   \ THEN obs.answer_coded ELSE NULL END) AS \"obs_treatment_recommendations\",\n \
   \       MAX(CASE WHEN obs.question_uuid = '80fc2e59-8c16-40db-9767-ac9d9ffeb010'\
   \ THEN obs.answer_coded ELSE NULL END) AS \"obs_teleconsultation\",\n        MAX(CASE\

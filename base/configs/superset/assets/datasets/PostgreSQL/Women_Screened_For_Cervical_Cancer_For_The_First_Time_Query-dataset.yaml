@@ -1,0 +1,495 @@
+table_name: Women Screened For Cervical Cancer For The First Time Query-dataset
+main_dttm_col: Visit Start date
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT \n        \"Facility Name\" AS \"Facility Name\",\n        \"Facility\
+  \ District\" AS \"Facility District\",\n        \"Facility Province\" AS \"Facility\
+  \ Province\",\n        \"OpenMRS ID\" AS \"OpenMRS ID\",\n        \"Patient's First\
+  \ name\" AS \"Patient's First name\",\n        \"Patient's Last name\" AS \"Patient's\
+  \ Last name\",\n        \"Patient Address\" AS \"Patient Address\",\n        \"\
+  Phone number\" AS \"Phone number\",\n        \"Other Identifiers\" AS \"Other Identifiers\"\
+  ,\n        \"Visit Start date\" AS \"Visit Start date\",\n        \"Visit End date\"\
+  \ AS \"Visit End date\",\n        \"Visit Type\" AS \"Visit Type\",\n        \"\
+  Referral source\" AS \"Referral source\",\n        \"Insurance type\" AS \"Insurance\
+  \ type\",\n        \"First Screening?\" AS \"First Screening?\",\n        \"HPV\
+  \ Test\" AS \"HPV Test\",\n        \"Visibility of SCJ\" AS \"Visibility of SCJ\"\
+  ,\n        \"VIA Test Result\" AS \"VIA Test Result\",\n        \"Number of Quadrants\"\
+  \ AS \"Number of Quadrants\",\n        \"Area of ectocervix\" AS \"Area of ectocervix\"\
+  ,\n        \"Colposcopy\" AS \"Colposcopy\",\n        \"Cervical Biopsy\" AS \"\
+  Cervical Biopsy\",\n        \"Pap Smear\" AS \"Pap Smear\",\n        \"Referral\
+  \ Facility\" AS \"Referral Facility\",\n        \"CC Reason for Referral\" AS \"\
+  CC Reason for Referral\",\n        \"CC Treatment\" AS \"CC Treatment\",\n     \
+  \   \"CC Follow-up date\" AS \"CC Follow-up date\",\n        \"Encounter date and\
+  \ time\" AS \"Encounter date and time\",\n        CASE \n            WHEN (raw_data_set.via_result_answer_uuid\
+  \ = '703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA') AND (raw_data_set.cc_reason_referral_answer_uuid=\
+  \ '7d469a03-a56b-4c51-a421-0e5787556630' OR raw_data_set.cc_reason_referral_answer_uuid\
+  \ = 'fc3909e3-9ddb-46e3-b4f7-6905732d977b')\n                THEN '80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred'\n\
+  \            ELSE 'women-aged-30-49-years-with-ccs-screening-first-time'\n     \
+  \   END AS \"indicator\"\nFROM\n    (SELECT \n        l.name AS \"Facility Name\"\
+  ,\n        l.county_district AS \"Facility District\",\n        l.state_province\
+  \ AS \"Facility Province\",\n        CASE \n            WHEN p.identifiers ~ '.*OpenMRS\
+  \ ID: (.*?)(,|$).*' THEN REGEXP_REPLACE(p.identifiers, '.*OpenMRS ID: (.*?)(,|$).*',\
+  \ '\\1', 'g')\n            ELSE ''\n        END AS \"OpenMRS ID\",\n        MAX(p.given_name)\
+  \ AS \"Patient's First name\",\n        MAX(p.family_name) AS \"Patient's Last name\"\
+  ,\n        MAX(CONCAT_WS(' ', p.address_state_province, p.address_county_district,\
+  \ p.address_city, p.address_1)) AS \"Patient Address\",\n        MAX(CASE \n   \
+  \         WHEN p.attributes ~ '.*Telephone Number: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(p.attributes,\
+  \ '.*Telephone Number: (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n     \
+  \   END) AS \"Phone number\",\n        COALESCE(\n            REGEXP_REPLACE(\n\
+  \                REGEXP_REPLACE(\n                    MAX(p.identifiers), \n   \
+  \                 '(?:OpenMRS ID): [^,]*,?\\s?', \n                    '', \n  \
+  \                  'g'\n                ), \n                '^, |, $', \n     \
+  \           ''\n            ), \n            NULL\n        ) AS \"Other Identifiers\"\
+  ,\n        MAX(v.date_started) AS \"Visit Start date\",\n        MAX(v.date_stopped)\
+  \ AS \"Visit End date\",\n        MAX(v.type) AS \"Visit Type\",\n        MAX(CASE\
+  \ \n            WHEN v.visit_attributes ~ '.*Referred from: (.*?)(\\/|$).*' THEN\
+  \ REGEXP_REPLACE(v.visit_attributes, '.*Referred from: (.*?)(\\/|$).*', '\\1', 'g')\n\
+  \            ELSE ''\n        END) AS \"Referral source\",\n        MAX(CASE \n\
+  \            WHEN v.visit_attributes ~ '.*Insurance Type: (.*?)(\\/|$).*' THEN REGEXP_REPLACE(v.visit_attributes,\
+  \ '.*Insurance Type: (.*?)(\\/|$).*', '\\1', 'g')\n            ELSE ''\n       \
+  \ END) AS \"Insurance type\",\n        MAX(CASE WHEN o.question_uuid = '75681e39-683c-4de9-9ca7-5b55b736bfa7'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"First Screening?\",\n        MAX(CASE\
+  \ WHEN o.question_uuid = '5f27683c-e4ab-4a10-922d-e34bbb560884' THEN o.answer_coded\
+  \ ELSE NULL END) AS \"HPV Test\",\n        MAX(CASE WHEN o.question_uuid = 'd2ec630a-a223-492a-89f2-597266b36571'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"Visibility of SCJ\",\n        MAX(CASE\
+  \ WHEN o.question_uuid = '27912a31-4b1e-40d4-a3a0-947e0eb2e588' THEN o.answer_coded\
+  \ ELSE NULL END) AS \"VIA Test Result\",\n        MAX(CASE WHEN o.question_uuid\
+  \ = '27912a31-4b1e-40d4-a3a0-947e0eb2e588' THEN o.answer_coded_uuid ELSE NULL END)\
+  \ AS \"via_result_answer_uuid\",\n        MAX(CASE WHEN o.question_uuid = '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"Number of Quadrants\",\n        MAX(CASE\
+  \ WHEN o.question_uuid = 'a84a070a-172f-43f7-96f3-67574d42ba1b' THEN o.answer_coded\
+  \ ELSE NULL END) AS \"Area of ectocervix\",\n        MAX(CASE WHEN o.question_uuid\
+  \ = 'c0027068-fe1b-4401-aad5-d70e4437362c' THEN o.answer_coded ELSE NULL END) AS\
+  \ \"Colposcopy\",\n        MAX(CASE WHEN o.question_uuid = 'df802805-a937-4031-928d-8ce7b69aefc7'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"Cervical Biopsy\",\n        MAX(CASE WHEN\
+  \ o.question_uuid = '863d4bf3-310d-472a-990d-8467e543ebab' THEN o.answer_coded ELSE\
+  \ NULL END) AS \"Pap Smear\",\n        MAX(CASE WHEN o.question_uuid = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"Referral Facility\",\n        MAX(CASE\
+  \ WHEN o.question_uuid = 'c158e3b2-edf9-4e0e-9e95-d36de1a51527' THEN o.answer_coded\
+  \ ELSE NULL END) AS \"CC Reason for Referral\",\n        MAX(CASE WHEN o.question_uuid\
+  \ = 'c158e3b2-edf9-4e0e-9e95-d36de1a51527' THEN o.answer_coded_uuid ELSE NULL END)\
+  \ AS \"cc_reason_referral_answer_uuid\",\n        MAX(CASE WHEN o.question_uuid\
+  \ = '1ca7d712-f7d7-4e09-8184-048bc4173902' THEN o.answer_coded ELSE NULL END) AS\
+  \ \"CC Treatment\",\n        MAX(CASE WHEN o.question_uuid = 'f6a3e29c-9ecc-4583-9768-359c77529635'\
+  \ THEN o.answer_coded ELSE NULL END) AS \"CC Follow-up date\",\n        MAX(e.encounter_datetime)\
+  \ AS \"Encounter date and time\"\n    FROM \n        encounters e \n    LEFT JOIN\
+  \ \n        patients p ON e.patient_uuid = p.patient_uuid\n    LEFT JOIN \n    \
+  \    visits v ON e.visit_uuid = v.visit_uuid\n    LEFT JOIN \n        observations\
+  \ o ON e.encounter_uuid = o.encounter_uuid  AND o.question_uuid IN (\n        '75681e39-683c-4de9-9ca7-5b55b736bfa7',\n\
+  \        '5f27683c-e4ab-4a10-922d-e34bbb560884',\n        'd2ec630a-a223-492a-89f2-597266b36571',\n\
+  \        '27912a31-4b1e-40d4-a3a0-947e0eb2e588',\n        '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f',\n\
+  \        'a84a070a-172f-43f7-96f3-67574d42ba1b',\n        'c0027068-fe1b-4401-aad5-d70e4437362c',\n\
+  \        'df802805-a937-4031-928d-8ce7b69aefc7',\n        '863d4bf3-310d-472a-990d-8467e543ebab',\n\
+  \        '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a',\n        'c158e3b2-edf9-4e0e-9e95-d36de1a51527',\n\
+  \        '1ca7d712-f7d7-4e09-8184-048bc4173902',\n        'f6a3e29c-9ecc-4583-9768-359c77529635'\n\
+  \        )\n    LEFT JOIN \n        locations l ON e.location_uuid = l.uuid\n  \
+  \  WHERE \n        e.encounter_type IN ('Cervical Cancer Screening')\n        AND\
+  \ (e.encounter_datetime - p.birthdate) >= interval '30 years' AND (e.encounter_datetime\
+  \ - p.birthdate) <= interval '49 years'\n        AND e.patient_uuid NOT IN (\n \
+  \           SELECT \n                patient_uuid \n            FROM \n        \
+  \        encounters previous_e\n            WHERE \n                previous_e.patient_uuid\
+  \ = e.patient_uuid AND previous_e.encounter_type IN ('Cervical Cancer Screening')\
+  \ \n                {% if from_dttm != undefined and from_dttm is not none %}\n\
+  \                    AND DATE(previous_e.encounter_datetime) <= '{{ from_dttm }}'\n\
+  \                {% else %}\n                    AND 1=0\n                {%- endif\
+  \ -%}\n        )\n    GROUP BY \n        \"Facility Name\", \"Facility District\"\
+  , \"Facility Province\", \"OpenMRS ID\", e.encounter_uuid\n    ) raw_data_set\n"
+params: null
+template_params: ''
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: 3680ccf7-bec7-45bc-8e9d-8afaba18b508
+metrics:
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: Encounter date and time
+  verbose_name: null
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: CC Reason for Referral
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient's First name
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient's Last name
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: CC Follow-up date
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit End date
+  verbose_name: null
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit Start date
+  verbose_name: null
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: VIA Test Result
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Area of ectocervix
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visibility of SCJ
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Number of Quadrants
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: First Screening?
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Patient Address
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Cervical Biopsy
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: CC Treatment
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility District
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: OpenMRS ID
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Name
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Facility Province
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral Facility
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: HPV Test
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Other Identifiers
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Insurance type
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Pap Smear
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Phone number
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Referral source
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Visit Type
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: Colposcopy
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: indicator
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

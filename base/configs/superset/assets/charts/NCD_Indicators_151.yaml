@@ -1,0 +1,82 @@
+slice_name: NCD Indicators
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 36__table
+  viz_type: pivot_table_v2
+  slice_id: 151
+  granularity_sqla: Visit Start date
+  time_grain_sqla: P1D
+  time_range: No filter
+  groupbyColumns: []
+  groupbyRows: []
+  metrics:
+  - expressionType: SQL
+    sqlExpression: COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time
+      ncd-screening' THEN "OpenMRS ID" END)
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: Registered patients aged 40 and above that have had their NCD screening
+      for the first time
+    optionName: metric_9ttlclpl5ts_chyyfmbkdlq
+  - expressionType: SQL
+    sqlExpression: "CASE \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+      \ THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time\
+      \ ncd-screening' THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator\
+      \ = '80-pecent-followup-with-hypertension-iabetes-and-medication' THEN \"OpenMRS\
+      \ ID\" END))) >= 80 \n    THEN 'Yes'\n    ELSE 'No'\nEND\n"
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: 80% (of registered patients with a Follow-up date and diagnosed with Hypertension
+      & Diabetes) were given medication with at least a 4 weeks prescription?
+    optionName: metric_dmznsk3y057_77lv31713b2
+  metricsLayout: ROWS
+  adhoc_filters: []
+  row_limit: 1000
+  order_desc: true
+  aggregateFunction: Sum
+  transposePivot: true
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 20
+query_context: '{"datasource":{"id":36,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"Visit Start date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''patients-aged-40-above-with-first-time ncd-screening'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  patients aged 40 and above that have had their NCD screening for the first time","optionName":"metric_9ttlclpl5ts_chyyfmbkdlq"},{"expressionType":"SQL","sqlExpression":"CASE
+  \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = ''80-pecent-followup-with-hypertension-iabetes-and-medication''
+  THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = ''patients-aged-40-above-with-first-time
+  ncd-screening'' THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator =
+  ''80-pecent-followup-with-hypertension-iabetes-and-medication'' THEN \"OpenMRS ID\"
+  END))) >= 80 \n    THEN ''Yes''\n    ELSE ''No''\nEND\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"80%
+  (of registered patients with a Follow-up date and diagnosed with Hypertension &
+  Diabetes) were given medication with at least a 4 weeks prescription?","optionName":"metric_dmznsk3y057_77lv31713b2"}],"orderby":[[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''patients-aged-40-above-with-first-time ncd-screening'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  patients aged 40 and above that have had their NCD screening for the first time","optionName":"metric_9ttlclpl5ts_chyyfmbkdlq"},false]],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"36__table","viz_type":"pivot_table_v2","slice_id":151,"granularity_sqla":"Visit
+  Start date","time_grain_sqla":"P1D","time_range":"No filter","groupbyColumns":[],"groupbyRows":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
+  CASE WHEN indicator = ''patients-aged-40-above-with-first-time ncd-screening'' THEN
+  \"OpenMRS ID\" END)","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"Registered
+  patients aged 40 and above that have had their NCD screening for the first time","optionName":"metric_9ttlclpl5ts_chyyfmbkdlq"},{"expressionType":"SQL","sqlExpression":"CASE
+  \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = ''80-pecent-followup-with-hypertension-iabetes-and-medication''
+  THEN \"OpenMRS ID\" END) * 100.0 / (COUNT(DISTINCT CASE WHEN indicator = ''patients-aged-40-above-with-first-time
+  ncd-screening'' THEN \"OpenMRS ID\" END) + COUNT(DISTINCT CASE WHEN indicator =
+  ''80-pecent-followup-with-hypertension-iabetes-and-medication'' THEN \"OpenMRS ID\"
+  END))) >= 80 \n    THEN ''Yes''\n    ELSE ''No''\nEND\n","column":null,"aggregate":null,"datasourceWarning":false,"hasCustomLabel":true,"label":"80%
+  (of registered patients with a Follow-up date and diagnosed with Hypertension &
+  Diabetes) were given medication with at least a 4 weeks prescription?","optionName":"metric_dmznsk3y057_77lv31713b2"}],"metricsLayout":"ROWS","adhoc_filters":[],"row_limit":1000,"order_desc":true,"aggregateFunction":"Sum","transposePivot":true,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[20],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 802a00e7-0681-407f-bd7a-c55a4f4e466e
+version: 1.0.0
+dataset_uuid: 54c5a8fb-66f7-4279-8498-abebf5d65e7f
