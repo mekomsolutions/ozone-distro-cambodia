@@ -46,9 +46,10 @@ sql: "SELECT o.answer_coded AS diagnosis,\n       CASE WHEN (o.visit_date_starte
   \ LIKE '%Health Center%' THEN 'Health Center' \n            WHEN facility_address.location_tags\
   \ LIKE '%Referral Hospital%' THEN 'Referral Hospital'\n            ELSE '' END AS\
   \ \"f_type\",\n       o.visit_date_started AS visit_date\nFROM observations o\n\
-  INNER JOIN visits v ON o.visit_uuid = v.visit_uuid\nINNER JOIN patients p ON p.patient_uuid\
-  \ = o.patient_uuid\nINNER JOIN locations facility_address ON facility_address.uuid\
-  \ = o.location_uuid\nWHERE o.answer_coded_uuid IN ('105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  INNER JOIN visits v ON v.visit_voided = false AND o.visit_uuid = v.visit_uuid\n\
+  INNER JOIN patients p ON p.person_voided = false AND p.patient_uuid = o.patient_uuid\n\
+  INNER JOIN locations facility_address ON facility_address.uuid = o.location_uuid\n\
+  WHERE o.obs_voided = false AND o.answer_coded_uuid IN ('105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
   \                 '8b26ecd3-8726-4c8e-b042-cbe71e44a863',\n                 'af34b28a-ab67-48d8-9dec-58244a267af1',\n\
   \                 '634f28c7-74c9-4b4e-b74d-6ac6a7a797ea',\n                 '3cd50188-26fe-102b-80cb-0017a47871b2')\n\
   AND o.visit_type = 'NCD New Visit'\n"

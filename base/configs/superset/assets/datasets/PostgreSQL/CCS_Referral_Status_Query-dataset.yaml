@@ -38,36 +38,39 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ AS \"other_breast_cancer_reason_for_referral\",\n        CASE \n            WHEN\
   \ referral_visit.visit_uuid IS NOT NULL THEN 'Yes'\n            ELSE 'No'\n    \
   \    END AS \"fulfilled_referral\"\n    FROM patients pa\n    LEFT OUTER JOIN visits\
-  \ vi on vi.patient_uuid = pa.patient_uuid\n    LEFT OUTER JOIN locations facility_address\
-  \ ON facility_address.uuid = vi.location_uuid\n    LEFT OUTER JOIN (\n        SELECT\
-  \ obs1.obs_id, obs1.visit_uuid, MAX(date_created), STRING_AGG(obs1.answer_coded,\
-  \ ', ') AS answer_coded, obs1.encounter_uuid\n        FROM observations obs1\n \
-  \       WHERE obs1.question_uuid = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a' AND obs1.encounter_type\
-  \ = 'Cervical Cancer Screening'\n        GROUP BY obs1.visit_uuid, obs1.question_uuid,\
-  \ obs1.answer_coded, obs1.encounter_uuid, obs1.obs_id\n    ) AS obs_referral_centre\
-  \ on obs_referral_centre.visit_uuid = vi.visit_uuid\n    \n    LEFT OUTER JOIN (\n\
-  \        SELECT obs2.visit_uuid, MAX(obs2.date_created), STRING_AGG(obs2.answer_coded,\
-  \ ', ') AS answer_coded, obs2.encounter_uuid, obs_other_reason.answer_text\n   \
-  \     FROM observations obs2\n        LEFT OUTER JOIN observations obs_other_reason\
-  \ ON obs2.encounter_uuid = obs_other_reason.encounter_uuid AND obs_other_reason.question_uuid\
-  \ = '12f61ec2-e0b1-420d-be7b-43a95bce6e4a'\n        WHERE obs2.question_uuid = 'c158e3b2-edf9-4e0e-9e95-d36de1a51527'\n\
+  \ vi ON vi.visit_voided = false AND vi.patient_uuid = pa.patient_uuid\n    LEFT\
+  \ OUTER JOIN locations facility_address ON facility_address.uuid = vi.location_uuid\n\
+  \    LEFT OUTER JOIN (\n        SELECT obs1.obs_id, obs1.visit_uuid, MAX(date_created),\
+  \ STRING_AGG(obs1.answer_coded, ', ') AS answer_coded, obs1.encounter_uuid\n   \
+  \     FROM observations obs1\n        WHERE obs1.obs_voided = false AND obs1.question_uuid\
+  \ = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a' AND obs1.encounter_type = 'Cervical Cancer\
+  \ Screening'\n        GROUP BY obs1.visit_uuid, obs1.question_uuid, obs1.answer_coded,\
+  \ obs1.encounter_uuid, obs1.obs_id\n    ) AS obs_referral_centre ON obs_referral_centre.visit_uuid\
+  \ = vi.visit_uuid\n    \n    LEFT OUTER JOIN (\n        SELECT obs2.visit_uuid,\
+  \ MAX(obs2.date_created), STRING_AGG(obs2.answer_coded, ', ') AS answer_coded, obs2.encounter_uuid,\
+  \ obs_other_reason.answer_text\n        FROM observations obs2\n        LEFT OUTER\
+  \ JOIN observations obs_other_reason ON obs2.encounter_uuid = obs_other_reason.encounter_uuid\
+  \ AND obs_other_reason.question_uuid = '12f61ec2-e0b1-420d-be7b-43a95bce6e4a'\n\
+  \        WHERE obs2.obs_voided = false AND obs2.question_uuid = 'c158e3b2-edf9-4e0e-9e95-d36de1a51527'\n\
   \        GROUP BY obs2.visit_uuid, obs2.question_uuid, obs2.answer_coded, obs2.encounter_uuid,\
-  \ obs_other_reason.answer_text\n    ) AS obs_cervical_referral_reason  on obs_cervical_referral_reason.encounter_uuid\
+  \ obs_other_reason.answer_text\n    ) AS obs_cervical_referral_reason  ON obs_cervical_referral_reason.encounter_uuid\
   \ = obs_referral_centre.encounter_uuid\n    \n    LEFT OUTER JOIN (\n        SELECT\
   \ obs3.visit_uuid, MAX(obs3.date_created), obs3.answer_coded, obs3.encounter_uuid,\
   \ obs_other_reason2.answer_text\n        FROM observations obs3\n        LEFT OUTER\
-  \ JOIN observations obs_other_reason2 ON obs3.encounter_uuid = obs_other_reason2.encounter_uuid\
-  \ AND obs_other_reason2.question_uuid = 'f984b718-d674-40c4-9ac4-8d22963e1933'\n\
-  \        WHERE obs3.question_uuid = 'e676ab7f-13b0-4251-84fd-9874c80133b5'\n   \
-  \     GROUP BY obs3.visit_uuid, obs3.question_uuid, obs3.answer_coded, obs3.encounter_uuid,\
-  \ obs_other_reason2.answer_text\n    ) AS obs_breast_referral_reason  on obs_breast_referral_reason.encounter_uuid\
+  \ JOIN observations obs_other_reason2 ON obs_other_reason2.obs_voided = false AND\
+  \ obs3.encounter_uuid = obs_other_reason2.encounter_uuid AND obs_other_reason2.question_uuid\
+  \ = 'f984b718-d674-40c4-9ac4-8d22963e1933'\n        WHERE obs3.obs_voided = false\
+  \ AND obs3.question_uuid = 'e676ab7f-13b0-4251-84fd-9874c80133b5'\n        GROUP\
+  \ BY obs3.visit_uuid, obs3.question_uuid, obs3.answer_coded, obs3.encounter_uuid,\
+  \ obs_other_reason2.answer_text\n    ) AS obs_breast_referral_reason ON obs_breast_referral_reason.encounter_uuid\
   \ = obs_referral_centre.encounter_uuid\n\n    LEFT OUTER JOIN visits referral_visit\
-  \ ON referral_visit.patient_uuid = pa.patient_uuid AND DATE(referral_visit.date_started)\
-  \ >= DATE(vi.date_started) AND DATE(referral_visit.date_started) <= DATE(vi.date_started\
-  \ + INTERVAL '7 days') AND referral_visit.location = TRIM(BOTH ' ' FROM split_part(obs_referral_centre.answer_coded,\
-  \ '>', 3))\n\n    WHERE obs_referral_centre.answer_coded IS NOT NULL\n\n) AS patient_info\
-  \ \nWHERE patient_info.visit_type IN ('Cervical Cancer New Visit', 'Cervical Cancer\
-  \ Follow-up Visit') AND patient_info.fulfilled_referral = 'No'\n"
+  \ ON referral_visit.visit_voided = false AND referral_visit.patient_uuid = pa.patient_uuid\
+  \ AND DATE(referral_visit.date_started) >= DATE(vi.date_started) AND DATE(referral_visit.date_started)\
+  \ <= DATE(vi.date_started + INTERVAL '7 days') AND referral_visit.location = TRIM(BOTH\
+  \ ' ' FROM split_part(obs_referral_centre.answer_coded, '>', 3))\n\n    WHERE obs_referral_centre.answer_coded\
+  \ IS NOT NULL\n\n) AS patient_info \nWHERE patient_info.visit_type IN ('Cervical\
+  \ Cancer New Visit', 'Cervical Cancer Follow-up Visit') AND patient_info.fulfilled_referral\
+  \ = 'No'\n"
 params: null
 template_params: null
 filter_select_enabled: false
