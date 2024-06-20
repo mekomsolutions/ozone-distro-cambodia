@@ -100,9 +100,10 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ THEN obs.answer_coded ELSE NULL END) AS \"obs_followup_for\",\n        MAX(CASE\
   \ WHEN obs.question_uuid = 'e9c145c1-f4e9-4c34-b237-da069939dc38' THEN obs.answer_datetime\
   \ ELSE NULL END) AS \"obs_followup_date\"\n    FROM patients pa\n    LEFT OUTER\
-  \ JOIN visits vi ON vi.patient_uuid = pa.patient_uuid AND vi.type IN ('NCD New Visit',\
-  \ 'NCD Follow-up Visit')\n    LEFT OUTER JOIN locations facility_address ON facility_address.uuid\
-  \ = vi.location_uuid\n    LEFT OUTER JOIN observations obs ON obs.visit_uuid = vi.visit_uuid\
+  \ JOIN visits vi ON vi.visit_voided = false AND vi.patient_uuid = pa.patient_uuid\
+  \ AND vi.type IN ('NCD New Visit', 'NCD Follow-up Visit')\n    LEFT OUTER JOIN locations\
+  \ facility_address ON facility_address.uuid = vi.location_uuid\n    LEFT OUTER JOIN\
+  \ observations obs ON obs.obs_voided = false AND obs.visit_uuid = vi.visit_uuid\
   \ AND obs.question_uuid IN (\n        '5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n\
   \        '5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
   \ \n        '5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        'a89c60c0-1350-11df-a1f1-0026b9348838',\

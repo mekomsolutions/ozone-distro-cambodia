@@ -80,9 +80,10 @@ sql: "SELECT \n        \"Facility Name\" AS \"Facility Name\",\n        \"Facili
   \ \"CC Treatment\",\n        MAX(CASE WHEN o.question_uuid = 'f6a3e29c-9ecc-4583-9768-359c77529635'\
   \ THEN o.answer_coded ELSE NULL END) AS \"CC Follow-up date\",\n        MAX(e.encounter_datetime)\
   \ AS \"Encounter date and time\"\n    FROM \n        encounters e \n    LEFT JOIN\
-  \ \n        patients p ON e.patient_uuid = p.patient_uuid\n    LEFT JOIN \n    \
-  \    visits v ON e.visit_uuid = v.visit_uuid\n    LEFT JOIN \n        observations\
-  \ o ON e.encounter_uuid = o.encounter_uuid  AND o.question_uuid IN (\n        '75681e39-683c-4de9-9ca7-5b55b736bfa7',\n\
+  \ \n        patients p ON e.patient_uuid = p.patient_uuid AND p.person_voided =\
+  \ false\n    LEFT JOIN \n        visits v ON e.visit_uuid = v.visit_uuid AND v.visit_voided\
+  \ = false\n    LEFT JOIN \n        observations o ON o.obs_voided = false AND e.encounter_uuid\
+  \ = o.encounter_uuid  AND o.question_uuid IN (\n        '75681e39-683c-4de9-9ca7-5b55b736bfa7',\n\
   \        '5f27683c-e4ab-4a10-922d-e34bbb560884',\n        'd2ec630a-a223-492a-89f2-597266b36571',\n\
   \        '27912a31-4b1e-40d4-a3a0-947e0eb2e588',\n        '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f',\n\
   \        'a84a070a-172f-43f7-96f3-67574d42ba1b',\n        'c0027068-fe1b-4401-aad5-d70e4437362c',\n\
@@ -90,11 +91,12 @@ sql: "SELECT \n        \"Facility Name\" AS \"Facility Name\",\n        \"Facili
   \        '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a',\n        'c158e3b2-edf9-4e0e-9e95-d36de1a51527',\n\
   \        '1ca7d712-f7d7-4e09-8184-048bc4173902',\n        'f6a3e29c-9ecc-4583-9768-359c77529635'\n\
   \        )\n    LEFT JOIN \n        locations l ON e.location_uuid = l.uuid\n  \
-  \  WHERE \n        e.encounter_type IN ('Cervical Cancer Screening')\n        AND\
-  \ (e.encounter_datetime - p.birthdate) >= interval '30 years' AND (e.encounter_datetime\
-  \ - p.birthdate) <= interval '49 years'\n        AND e.patient_uuid NOT IN (\n \
-  \           SELECT \n                patient_uuid \n            FROM \n        \
-  \        encounters previous_e\n            WHERE \n                previous_e.patient_uuid\
+  \  WHERE \n        e.encounter_voided = false AND e.encounter_type IN ('Cervical\
+  \ Cancer Screening')\n        AND (e.encounter_datetime - p.birthdate) >= interval\
+  \ '30 years' AND (e.encounter_datetime - p.birthdate) <= interval '49 years'\n \
+  \       AND e.patient_uuid NOT IN (\n            SELECT \n                patient_uuid\
+  \ \n            FROM \n                encounters previous_e\n            WHERE\
+  \ \n                previous_e.encounter_voided = false AND previous_e.patient_uuid\
   \ = e.patient_uuid AND previous_e.encounter_type IN ('Cervical Cancer Screening')\
   \ \n                {% if from_dttm != undefined and from_dttm is not none %}\n\
   \                    AND DATE(previous_e.encounter_datetime) <= '{{ from_dttm }}'\n\
