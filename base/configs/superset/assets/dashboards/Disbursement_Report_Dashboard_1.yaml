@@ -2,8 +2,8 @@ dashboard_title: Disbursement Report Dashboard
 description: null
 css: ''
 slug: null
-certified_by: null
-certification_details: null
+certified_by: ''
+certification_details: ''
 published: true
 uuid: 2439cfd3-bd2d-42f7-988e-e9af336eb2cd
 position:
@@ -63,9 +63,9 @@ position:
     meta:
       chartId: 13
       height: 50
-      sliceName: Registered patients screened for the first time with a follow-up
-        date and diagnosed with Hypertension & Diabetes and were given medication
-        with at least a 4 weeks prescription
+      sliceName: Registered patients aged 40 and above and screened for the first
+        time with a follow-up date and diagnosed with Hypertension & Diabetes and
+        were given medication with at least a 4 weeks prescription
       uuid: 07b02091-ffa9-4d41-8c26-965416489fb3
       width: 6
     parents:
@@ -243,7 +243,67 @@ metadata:
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
-  chart_configuration: {}
+  chart_configuration:
+    '5':
+      id: 5
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 6
+        - 7
+        - 13
+        - 14
+        - 16
+    '6':
+      id: 6
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 5
+        - 7
+        - 13
+        - 14
+        - 16
+    '7':
+      id: 7
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 5
+        - 6
+        - 13
+        - 14
+        - 16
+    '13':
+      id: 13
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 5
+        - 6
+        - 7
+        - 14
+        - 16
+    '14':
+      id: 14
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 5
+        - 6
+        - 7
+        - 13
+        - 16
+    '16':
+      id: 16
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 5
+        - 6
+        - 7
+        - 13
+        - 14
   native_filter_configuration:
   - id: NATIVE_FILTER-pBRxyNbMB
     controlValues:
@@ -373,4 +433,16 @@ metadata:
     tabsInScope:
     - TAB-MFLXG67ZDQ
     - TAB-Pf9SVE-52F
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 5
+    - 6
+    - 7
+    - 13
+    - 14
+    - 16
 version: 1.0.0

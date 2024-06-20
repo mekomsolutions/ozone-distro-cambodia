@@ -1,61 +1,93 @@
 slice_name: Registered women aged 30 to 49 years that have had their CCS screening
   for the first time
-description: null
+description: "\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\u178E\u17B6\u179F\u17CB\u179F\
+  \u17D2\u178F\u17D2\u179A\u17B8\u1785\u17C6\u1793\u17BD\u1793 \u17E3\u17E0 \u1793\
+  \u17B6\u1780\u17CB\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\u1799\u17BB\u17A2\
+  \u17B6\u1799\u17BB\u1796\u17B8 \u17E3\u17E0 \u178A\u179B\u17CB \u17E4\u17E9\u1786\
+  \u17D2\u1793\u17B6\u17C6 \u1780\u17D2\u1793\u17BB\u1784\u1798\u17BD\u1799\u1781\u17C2\
+  \ \u1794\u17B6\u1793\u1785\u17BB\u17C7\u1788\u17D2\u1798\u17C4\u17C7\u1796\u17B7\
+  \u1793\u17B7\u178F\u17D2\u1799\u179F\u17BB\u1781\u1797\u17B6\u1796\u1798\u17B6\u178F\
+  \u17CB\u179F\u17D2\u1794\u17BC\u1793\u179A\u1780\u178A\u17C6\u1794\u17C5\u1798\u17BB\
+  \u1793\u1780\u17D2\u179B\u17B6\u1799\u1787\u17B6\u1798\u17A0\u17B6\u179A\u17B8\u1780\
+  \u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784\u200B \u1793\u17B7\u1784 \u1780\
+  \u179A\u178E\u17B8VIA \u179C\u17B7\u1787\u17D2\u1787\u1798\u17B6\u1793 \u178F\u17D2\
+  \u179A\u17BC\u179C\u1794\u17B6\u1793\u1794\u1789\u17D2\u1787\u17BC\u1793\u1791\u17C5\
+  \u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u178A\u17C6\u1794\u17C5\u1798\u17B6\u178F\
+  \u17CB\u179F\u17D2\u1794\u17BC\u1793\u1787\u17B6\u179B\u17BE\u1780\u178A\u17C6\u1794\
+  \u17BC\u1784\u17D4 (At least 30 women aged 30 \u2013 49 years registered and received\
+  \ the first screening and VIA positive cases were referred for cervical precancerous\
+  \ lesion treatment per month)"
 certified_by: null
 certification_details: null
 viz_type: table
 params:
-  datasource: 35__table
+  datasource: 4__table
   viz_type: table
-  slice_id: 154
-  granularity_sqla: Visit Start date
-  time_grain_sqla: P1D
-  time_range: No filter
+  slice_id: 6
   query_mode: raw
   groupby: []
-  metrics: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    Encounter date and time: true
+    Visit End date: true
+    Visit Start date: true
+    Patient's Birthdate: true
   all_columns:
   - Facility Name
   - Facility District
   - Facility Province
-  - OpenMRS ID
-  - Patient's First name
   - Patient's Last name
+  - Patient's First name
+  - Patient's Gender
+  - Patient's Birthdate
   - Patient Address
   - Phone number
   - Other Identifiers
-  - Visit Start date
   - Visit End date
-  - Visit Type
+  - Visit Start date
   - Referral source
   - Insurance type
   - First Screening?
   - HPV Test
+  - OpenMRS ID
+  - Visit Type
   - Visibility of SCJ
   - VIA Test Result
-  - Number of Quadrants
   - Area of ectocervix
-  - Colposcopy
   - Cervical Biopsy
   - Pap Smear
   - Referral Facility
+  - Number of Quadrants
   - CC Reason for Referral
+  - Colposcopy
   - CC Treatment
   - CC Follow-up date
   - Encounter date and time
   percent_metrics: []
   adhoc_filters:
   - expressionType: SIMPLE
-    subject: indicator
-    operator: ==
-    operatorId: EQUALS
-    comparator: women-aged-30-49-years-with-ccs-screening-first-time
+    subject: Visit Start date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
     clause: WHERE
     sqlExpression: null
     isExtra: false
     isNew: false
     datasourceWarning: false
-    filterOptionName: filter_0sxq4bni7gig_9yc69feloca
+    filterOptionName: filter_7cvigde0ca_cgiov8yrc4w
+  - expressionType: SIMPLE
+    subject: indicator
+    operator: IN
+    operatorId: IN
+    comparator:
+    - 80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred
+    - women-aged-30-49-years-with-ccs-screening-first-time
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_p2xjxqmjbl_ztolrl0r7ek
   order_by_cols: []
   row_limit: 1000
   server_page_length: 10
@@ -65,23 +97,25 @@ params:
   color_pn: true
   extra_form_data: {}
   dashboards:
-  - 20
-  annotation_layers: []
-query_context: '{"datasource":{"id":35,"type":"table"},"force":false,"queries":[{"time_range":"No
-  filter","granularity":"Visit Start date","filters":[{"col":"indicator","op":"==","val":"women-aged-30-49-years-with-ccs-screening-first-time"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
-  Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s
-  Last name","Patient Address","Phone number","Other Identifiers","Visit Start date","Visit
-  End date","Visit Type","Referral source","Insurance type","First Screening?","HPV
-  Test","Visibility of SCJ","VIA Test Result","Number of Quadrants","Area of ectocervix","Colposcopy","Cervical
-  Biopsy","Pap Smear","Referral Facility","CC Reason for Referral","CC Treatment","CC
-  Follow-up date","Encounter date and time"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"35__table","viz_type":"table","slice_id":154,"granularity_sqla":"Visit
-  Start date","time_grain_sqla":"P1D","time_range":"No filter","query_mode":"raw","groupby":[],"metrics":[],"all_columns":["Facility
-  Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s
-  Last name","Patient Address","Phone number","Other Identifiers","Visit Start date","Visit
-  End date","Visit Type","Referral source","Insurance type","First Screening?","HPV
-  Test","Visibility of SCJ","VIA Test Result","Number of Quadrants","Area of ectocervix","Colposcopy","Cervical
-  Biopsy","Pap Smear","Referral Facility","CC Reason for Referral","CC Treatment","CC
-  Follow-up date","Encounter date and time"],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"indicator","operator":"==","operatorId":"EQUALS","comparator":"women-aged-30-49-years-with-ccs-screening-first-time","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_0sxq4bni7gig_9yc69feloca"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"include_time":false,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[20],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+  - 1
+query_context: '{"datasource":{"id":4,"type":"table"},"force":false,"queries":[{"filters":[{"col":"Visit
+  Start date","op":"TEMPORAL_RANGE","val":"No filter"},{"col":"indicator","op":"IN","val":["80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred","women-aged-30-49-years-with-ccs-screening-first-time"]}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
+  Name","Facility District","Facility Province","Patient''s Last name","Patient''s
+  First name","Patient''s Gender","Patient''s Birthdate","Patient Address","Phone
+  number","Other Identifiers","Visit End date","Visit Start date","Referral source","Insurance
+  type","First Screening?","HPV Test","OpenMRS ID","Visit Type","Visibility of SCJ","VIA
+  Test Result","Area of ectocervix","Cervical Biopsy","Pap Smear","Referral Facility","Number
+  of Quadrants","CC Reason for Referral","Colposcopy","CC Treatment","CC Follow-up
+  date","Encounter date and time"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"4__table","viz_type":"table","slice_id":6,"query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"Encounter
+  date and time":true,"Visit End date":true,"Visit Start date":true,"Patient''s Birthdate":true},"all_columns":["Facility
+  Name","Facility District","Facility Province","Patient''s Last name","Patient''s
+  First name","Patient''s Gender","Patient''s Birthdate","Patient Address","Phone
+  number","Other Identifiers","Visit End date","Visit Start date","Referral source","Insurance
+  type","First Screening?","HPV Test","OpenMRS ID","Visit Type","Visibility of SCJ","VIA
+  Test Result","Area of ectocervix","Cervical Biopsy","Pap Smear","Referral Facility","Number
+  of Quadrants","CC Reason for Referral","Colposcopy","CC Treatment","CC Follow-up
+  date","Encounter date and time"],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"Visit
+  Start date","operator":"TEMPORAL_RANGE","comparator":"No filter","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_7cvigde0ca_cgiov8yrc4w"},{"expressionType":"SIMPLE","subject":"indicator","operator":"IN","operatorId":"IN","comparator":["80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred","women-aged-30-49-years-with-ccs-screening-first-time"],"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_p2xjxqmjbl_ztolrl0r7ek"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: 37c2b93f-2cdf-4bf7-9195-076c83eda4b4
 version: 1.0.0
