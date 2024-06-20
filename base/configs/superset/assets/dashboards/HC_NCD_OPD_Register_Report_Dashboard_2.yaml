@@ -25,7 +25,7 @@ position:
   GRID_ID:
     children:
     - ROW-XCnHAguP-V
-    - ROW-N-4PLN0S4A
+    - ROW-N-NBVPSIP3
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -50,10 +50,10 @@ position:
     - ROOT_ID
     - GRID_ID
     type: ROW
-  ROW-N-4PLN0S4A:
+  ROW-N-NBVPSIP3:
     children:
-    - CHART-CA0GHGN3
-    id: ROW-N-4PLN0S4A
+    - CHART-NHKMBZNW
+    id: ROW-N-NBVPSIP3
     meta:
       '0': ROOT_ID
       background: BACKGROUND_TRANSPARENT
@@ -61,9 +61,9 @@ position:
     parents:
     - ROOT_ID
     - GRID_ID
-  CHART-CA0GHGN3:
+  CHART-NHKMBZNW:
     children: []
-    id: CHART-CA0GHGN3
+    id: CHART-NHKMBZNW
     meta:
       chartId: 20
       height: 50
@@ -74,7 +74,7 @@ position:
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-N-4PLN0S4A
+    - ROW-N-NBVPSIP3
 metadata:
   color_scheme: ''
   refresh_frequency: 0
