@@ -77,6 +77,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 20
+  annotation_layers: []
 query_context: '{"datasource":{"id":36,"type":"table"},"force":false,"queries":[{"time_range":"No
   filter","granularity":"Visit Start date","filters":[{"col":"indicator","op":"==","val":"patients-aged-40-above-with-first-time
   ncd-screening"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility

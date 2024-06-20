@@ -117,6 +117,8 @@ template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: 7bbd77f5-46bc-49ef-8436-608aefbfb35e
 metrics:
 - metric_name: count
@@ -125,6 +127,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -136,7 +139,7 @@ columns:
     \u17D2\u178F\u17B6\u1794\u1789\u17D2\u1787\u17B6\u1780\u17CB (Treatment - If Column\
     \ 22 \"Other\", Please Specify)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -151,7 +154,7 @@ columns:
     \u1782\u179A\u1799\u1793\u17C3\u178F\u17C6\u1794\u1793\u17CB\u1785\u17B6\u1794\
     \u17CB\u1796\u178E\u17CC\u179F (If VIA(+) - % of Acetowhite site)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -166,7 +169,7 @@ columns:
     \u1793\u17BD\u1793\u1780\u17B6\u178A\u17D2\u179A\u1784\u17CB\u1796\u17B6\u1780\
     \u17CB\u1796\u17D0\u1793\u17D2\u1792 (If VIA(+) - Number of Quadrants involved)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -182,7 +185,7 @@ columns:
     \u1798\u17C1\u178F\u17D2\u178F\u17B6\u1794\u1789\u17D2\u1787\u17B6\u1780\u17CB\
     \ (If Column 29 \"Other\", Please specify)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -196,7 +199,7 @@ columns:
   verbose_name: "\u178F\u17C1\u179F\u17D2\u178F - \u1794\u17D2\u179A\u1797\u17C1\u1791\
     \u179C\u17B8\u179A\u17BB\u179F HPV (HPV Test - Type of HPV)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -213,7 +216,7 @@ columns:
     \u17C7\u178A\u17C4\u1799\u1781\u17D2\u179B\u17BD\u1793\u17AF\u1784 (Self breast\
     \ examination and education)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -229,7 +232,7 @@ columns:
     \ (\u178A\u17C4\u1799\u1798\u1793\u17D2\u178F\u17D2\u179A\u17B8\u179F\u17BB\u1781\
     \u17B6\u1797\u17B7\u1794\u17B6\u179B) (Breast Examination Result (By Health Staff))"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -243,7 +246,7 @@ columns:
   verbose_name: "\u178F\u17C1\u179F\u17D2\u178F VIA - \u179B\u1791\u17D2\u1792\u1795\
     \u179B (VIA Test - Result)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -257,7 +260,7 @@ columns:
   verbose_name: "\u178F\u17C1\u179F\u17D2\u178F - \u179B\u1791\u17D2\u1792\u1795\u179B\
     \u178F\u17C1\u179F\u17D2\u178F HPV (HPV Test - Result)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -272,7 +275,7 @@ columns:
     \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1783\u17BB\u17C6/\u179F\
     \u1784\u17D2\u1780\u17B6\u178F\u17CB (Current Address - Commune)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -287,7 +290,7 @@ columns:
     \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u179F\u17D2\u179A\u17BB\
     \u1780 (Current Address - District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -302,7 +305,7 @@ columns:
     \u178F\u17B7\u1790\u17B7\u1787\u1793\u1780\u17D2\u1793\u17BB\u1784\u1794\u17D2\
     \u179A\u1796\u17D0\u1793\u17D2\u1792 EMR (Patient OpenMRS ID (EMR))"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -317,7 +320,7 @@ columns:
     \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1781\u17C1\u178F\u17D2\
     \u178F (Current Address - Province)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -332,7 +335,7 @@ columns:
     \u17D2\u1785\u17BB\u1794\u17D2\u1794\u1793\u17D2\u1793 - \u1797\u17BC\u1798\u17B7\
     \ (Current Address - Village)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -346,7 +349,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B - \u1798\
     \u1792\u17D2\u1799\u17C4\u1794\u17B6\u1799 (Treatment - Option)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -360,7 +363,7 @@ columns:
   verbose_name: "\u179B\u17C1\u1781\u179F\u1798\u17D2\u1782\u17B6\u179B\u17CB PMRS\
     \ (PMRS ID Number)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -374,7 +377,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B - \u1798\
     \u1792\u17D2\u1799\u17C4\u1794\u17B6\u1799 (Treatment - Option)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -388,7 +391,7 @@ columns:
   verbose_name: "\u179B\u17C1\u1781\u17A2\u178F\u17D2\u178F\u179F\u1789\u17D2\u1789\
     \u17B6\u178E\u1794\u178E\u17D2\u178E\u1787\u17B6\u178F\u17B7 (National ID Card)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -402,7 +405,7 @@ columns:
   verbose_name: "\u1794\u178E\u17D2\u178E\u1782\u17D2\u179A\u17BD\u179F\u17B6\u179A\
     \u1780\u17D2\u179A\u17B8\u1780\u17D2\u179A (ID Poor Card)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -416,7 +419,7 @@ columns:
   verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
     \u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Type of Visit)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -431,7 +434,7 @@ columns:
     \u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
     \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -445,7 +448,7 @@ columns:
   verbose_name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\
     \u17B7\u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -460,7 +463,7 @@ columns:
     \u1798\u17D2\u1782\u17B6\u179B\u17CB\u1795\u17D2\u179F\u17C1\u1784\u17D7 (Other\
     \ Identifier Types)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -474,7 +477,7 @@ columns:
   verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u178F\u17B7\u1790\u17B7\u1787\
     \u1793 (Client's name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -488,7 +491,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
     \u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Visit Date)"
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -502,7 +505,7 @@ columns:
   verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793\u1798\u1780\u1796\u17B8 (Referred\
     \ By)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -516,7 +519,7 @@ columns:
   verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
     \u178F\u17D2\u178F\u17B7 (Operational District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -530,7 +533,7 @@ columns:
   verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
     \u1794\u1784\u17CB\u1790\u17D2\u179B\u17C3\u179F\u17C1\u179C\u17B6 (Payment types)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -544,7 +547,7 @@ columns:
   verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u17D0\u1796\u17D2\u1791\
     \u1791\u17C6\u1793\u17B6\u1780\u17CB\u1791\u17C6\u1793\u1784 (Phone number)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -558,7 +561,7 @@ columns:
   verbose_name: "\u1781\u17D2\u179F\u17C2\u1794\u1793\u17D2\u1791\u17B6\u178F\u17CB\
     \ SCJ (SCJ)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -571,7 +574,7 @@ columns:
 - column_name: Age
   verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -582,4 +585,4 @@ columns:
   extra:
     warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

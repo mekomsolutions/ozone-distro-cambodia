@@ -118,14 +118,20 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \        'e9c145c1-f4e9-4c34-b237-da069939dc38',\n        '2e27bbf9-d744-46a2-a7d4-cecd33c28b8a',\n\
   \        '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a'\n    ) AND obs.encounter_type IN\
   \ ('NCD Consultation')\n    LEFT OUTER JOIN orders drug_order ON drug_order.patient_uuid\
-  \ = pa.patient_uuid AND obs.encounter_uuid = drug_order.encounter_uuid\n    GROUP\
-  \ BY \n        facility_address.state_province, \n        facility_address.county_district,\
-  \ \n        facility_address.name, \n        vi.visit_uuid\n) AS patient_info "
+  \ = pa.patient_uuid AND (drug_order.date_activated >= vi.date_started\n        \
+  \    {% if to_dttm != undefined and to_dttm is not none %}\n                AND\
+  \ drug_order.date_activated <= '{{ to_dttm }}'\n            {% else %}\n       \
+  \         AND drug_order.date_activated <= vi.date_stopped\n            {%- endif\
+  \ -%} \n            )\n    GROUP BY \n        facility_address.state_province, \n\
+  \        facility_address.county_district, \n        facility_address.name, \n \
+  \       vi.visit_uuid\n) AS patient_info "
 params: null
 template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: eae4ea82-b387-41fd-be9c-39bce338d4fa
 metrics:
 - metric_name: count
@@ -134,6 +140,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -144,7 +151,7 @@ columns:
     \u17D0\u1799\u1787\u17C6\u1784\u17BA\u179F\u179A\u179F\u17C3\u1788\u17B6\u1798\
     -\u1794\u17C1\u17C7\u178A\u17BC\u1784 (%) (CVD Risk Score (Percentage))"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -160,7 +167,7 @@ columns:
     \u179B\u1788\u17D2\u1798\u17C4\u17C7 - \u1794\u1789\u17D2\u1787\u17BC\u1793\u1791\
     \u17C5 (Referral - To facility name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -175,7 +182,7 @@ columns:
     \u1784 - \u179A\u1794\u17C0\u1794\u179A\u179F\u17CB\u1793\u17C5 (Management -\
     \ Lifestyle)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -190,7 +197,7 @@ columns:
     \u17E5\u1780\u17D2\u179A - \u1780\u17D2\u179A\u17C4\u1799\u17E1\u1798\u17C9\u17C4\
     \u1784 (OGTT - 1H)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -205,7 +212,7 @@ columns:
     \u17E5\u1780\u17D2\u179A - \u1780\u17D2\u179A\u17C4\u1799\u17E2\u1798\u17C9\u17C4\
     \u1784 (OGTT - 2H)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -219,7 +226,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u1782\u17D2\u179A\u1794\u17CB\u1782\u17D2\u179A\
     \u1784 - \u1790\u17D2\u1793\u17B6\u17C6(Management - Medicine)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -233,7 +240,7 @@ columns:
   verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
     \u1799 - 1 (Diagnosis - 1)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -247,7 +254,7 @@ columns:
   verbose_name: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
     \u1799 - 2 (Diagnosis - 2)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -261,7 +268,7 @@ columns:
   verbose_name: "\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 - \u178A\u17D2\
     \u1799\u17B6\u179F\u17D2\u178F\u17BC\u179B (BP - Diastolic)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -275,7 +282,7 @@ columns:
   verbose_name: "\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 - \u179F\u17CA\
     \u17B8\u179F\u17D2\u178F\u17BC\u179B (BP - Systolic)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -289,7 +296,7 @@ columns:
   verbose_name: "\u1791\u17B9\u1780\u1793\u17C4\u1798 - \u17A2\u17B6\u179B\u17CB\u1794\
     \u17CA\u17BB\u1793\u1798\u17B8\u1793 (Urine - Albumin)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -303,7 +310,7 @@ columns:
   verbose_name: "\u1791\u17B9\u1780\u1793\u17C4\u1798 - \u1780\u17C1\u178F\u17BC\u1793\
     \ (Urine - Ketone)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -318,7 +325,7 @@ columns:
     \u1780\u17CB\u1794\u17B6\u179A\u17B8\u178A\u17C2\u179A\u17AC\u1791\u17C1? (Does\
     \ the patient Smoke?)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -333,7 +340,7 @@ columns:
     \u179C\u17B9\u1784\u1794\u17D2\u179A\u1780\u1794\u178A\u17C4\u1799\u1782\u17D2\
     \u179A\u17C4\u17C7\u1790\u17D2\u1793\u17B6\u17C6 (Harmful use of alcohol)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -347,7 +354,7 @@ columns:
   verbose_name: "\u1798\u17BC\u179B\u17A0\u17C1\u178F\u17BB\u1793\u17C3\u1780\u17B6\
     \u179A\u1794\u1789\u17D2\u1787\u17BC\u1793 (Reason for referral)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -362,7 +369,7 @@ columns:
     \u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
     \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -377,7 +384,7 @@ columns:
     \u17D2\u17A2\u17C2\u1798/\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\
     \u1788\u17B6\u1798 (Appointment follow reason)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -391,7 +398,7 @@ columns:
   verbose_name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\
     \u17B7\u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -405,7 +412,7 @@ columns:
   verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u17D2\u1793\u1780\u1787\u17C6\
     \u1784\u17BA (Client's name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -419,7 +426,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u1791\u178F\
     \u17B6\u1798\u178A\u17B6\u1793 (Date Appointment)"
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -433,7 +440,7 @@ columns:
   verbose_name: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\
     \u17D2\u1780\u179A\u1798\u17BB\u1793\u17A2\u17B6\u17A0\u17B6\u179A (Fasting)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -447,7 +454,7 @@ columns:
   verbose_name: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u1787\u17B6\u178F\u17B7\u179F\
     \u17D2\u1780\u179A\u1785\u17C3\u178A\u1793\u17D2\u1799 (Random)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -461,7 +468,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
     \u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Visit Date)"
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -475,7 +482,7 @@ columns:
   verbose_name: "\u1785\u1784\u17D2\u179C\u17B6\u1780\u17CB\u178A\u1784\u17D2\u17A0\
     \u17BE\u1798 (Respiratory Rate)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -489,7 +496,7 @@ columns:
   verbose_name: "\u17A2\u178F\u17D2\u178F\u179B\u17C1\u1781\u17A2\u17D2\u1793\u1780\
     \u1787\u17C6\u1784\u17BA (Client ID)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -503,7 +510,7 @@ columns:
   verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
     \u178F\u17D2\u178F\u17B7 (Operational District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -517,7 +524,7 @@ columns:
   verbose_name: "\u17A2\u179F\u1780\u1798\u17D2\u1798\u1797\u17B6\u1796\u179A\u17B6\
     \u1784\u1780\u17B6\u1799 (Physical inactivity)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -531,7 +538,7 @@ columns:
   verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791 (Phone\
     \ Number)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -545,7 +552,7 @@ columns:
   verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1780\u17B6\u179A\u1794\u1784\
     \u17CB\u1794\u17D2\u179A\u17B6\u1780\u17CB (Payment Type)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -559,7 +566,7 @@ columns:
   verbose_name: "\u1791\u17C6\u17A0\u17C6\u1785\u1784\u17D2\u1780\u17C1\u17C7 (\"\
     Waist Circumference\")"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -572,7 +579,7 @@ columns:
 - column_name: Commune/ Sangkat
   verbose_name: "\u1783\u17BB\u17C6/\u179F\u1784\u17D2\u1780\u17B6\u178F\u17CB (Commune)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -585,7 +592,7 @@ columns:
 - column_name: District/ Khan
   verbose_name: "\u179F\u17D2\u179A\u17BB\u1780 (District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -599,7 +606,7 @@ columns:
   verbose_name: "\u1795\u179B\u1792\u17C0\u1794\u1791\u1798\u17D2\u1784\u1793\u17CB\
     \ \u1793\u17B7\u1784\u1780\u1798\u17D2\u1796\u179F\u17CB (BMI)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -612,7 +619,7 @@ columns:
 - column_name: Pulse
   verbose_name: "\u1787\u17B8\u1796\u1785\u179A (Pulse Rate)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -625,7 +632,7 @@ columns:
 - column_name: Province/City
   verbose_name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -639,7 +646,7 @@ columns:
   verbose_name: "\u1780\u17C6\u17A0\u17B6\u1794\u17CB\u17A2\u17BB\u1780\u179F\u17CA\
     \u17B8\u179F\u17C2\u1793 (SpO2)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -653,7 +660,7 @@ columns:
   verbose_name: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1793\u17C3\u1780\u17B6\u179A\
     \u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799 (Age)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -666,7 +673,7 @@ columns:
 - column_name: Height
   verbose_name: "\u1780\u1798\u17D2\u1796\u179F\u17CB (Height)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -679,7 +686,7 @@ columns:
 - column_name: Temperature
   verbose_name: "\u1780\u1798\u17D2\u178F\u17C5 (Temperature)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -692,7 +699,7 @@ columns:
 - column_name: Weight
   verbose_name: "\u1791\u1798\u17D2\u1784\u1793\u17CB (Weight)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -705,7 +712,7 @@ columns:
 - column_name: Complications
   verbose_name: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780 (Complication)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -718,7 +725,7 @@ columns:
 - column_name: Gender
   verbose_name: "\u1797\u17C1\u1791 (Gender)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -732,7 +739,7 @@ columns:
   verbose_name: "\u1780\u17C6\u178E\u178F\u17CB\u179F\u1798\u17D2\u1782\u17B6\u179B\
     \u17CB (Remarks)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -745,7 +752,7 @@ columns:
 - column_name: Village
   verbose_name: "\u1797\u17BC\u1798\u17B7 (Village)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -758,7 +765,7 @@ columns:
 - column_name: Zone
   verbose_name: "\u178F\u17C6\u1794\u1793\u17CB (Zone)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -771,7 +778,7 @@ columns:
 - column_name: Referred By
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -784,7 +791,7 @@ columns:
 - column_name: HbA1c
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -797,7 +804,7 @@ columns:
 - column_name: Visit
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -808,4 +815,4 @@ columns:
   extra:
     warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

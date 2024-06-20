@@ -53,10 +53,12 @@ sql: "SELECT o.answer_coded AS diagnosis,\n       CASE WHEN (o.visit_date_starte
   \                 '634f28c7-74c9-4b4e-b74d-6ac6a7a797ea',\n                 '3cd50188-26fe-102b-80cb-0017a47871b2')\n\
   AND o.visit_type = 'NCD New Visit'\n"
 params: null
-template_params: ''
+template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: 48365851-d1d2-451d-b2aa-18a5ffcdd72d
 metrics:
 - metric_name: count
@@ -65,6 +67,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -73,7 +76,7 @@ columns:
   verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u179F\u17D2\u179A\
     \ (29 days - 11 months - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -87,7 +90,7 @@ columns:
   verbose_name: "29 \u1790\u17D2\u1784\u17C3-11 \u1781\u17C2 - \u1794\u17D2\u179A\
     \ (29 days - 11 months - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -100,7 +103,7 @@ columns:
 - column_name: fl28d
   verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u179F\u17D2\u179A (0-28 days - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -113,7 +116,7 @@ columns:
 - column_name: ml28d
   verbose_name: "0-28 \u1790\u17D2\u1784\u17C3 - \u1794\u17D2\u179A (0-28 day - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -127,7 +130,7 @@ columns:
   verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (50-64\
     \ years - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -141,7 +144,7 @@ columns:
   verbose_name: "50-64 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (50-64\
     \ years - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -155,7 +158,7 @@ columns:
   verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (5-13 years\
     \ - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -169,7 +172,7 @@ columns:
   verbose_name: "5-13 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (5-13 years\
     \ - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -183,7 +186,7 @@ columns:
   verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (1-4 years\
     \ - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -197,7 +200,7 @@ columns:
   verbose_name: "1-4 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (1-4 years\
     \ - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -211,7 +214,7 @@ columns:
   verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (6-24 years\
     \ - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -225,7 +228,7 @@ columns:
   verbose_name: "6-24 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (6-24 years\
     \ - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -239,7 +242,7 @@ columns:
   verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (25-49\
     \ years - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -253,7 +256,7 @@ columns:
   verbose_name: "25-49 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (25-49\
     \ years - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -267,7 +270,7 @@ columns:
   verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u179F\u17D2\u179A (>=65 years\
     \ - F)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -281,7 +284,7 @@ columns:
   verbose_name: ">=65 \u1786\u17D2\u1793\u17B6\u17C6 - \u1794\u17D2\u179A (>=65 years\
     \ - M)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -294,7 +297,7 @@ columns:
 - column_name: diagnosis
   verbose_name: "\u1780\u179A\u178E\u17B8\u1790\u17D2\u1798\u17B8 (New case)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -307,7 +310,7 @@ columns:
 - column_name: visit_date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -320,7 +323,7 @@ columns:
 - column_name: f_name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -333,7 +336,7 @@ columns:
 - column_name: f_district
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -346,7 +349,7 @@ columns:
 - column_name: f_province
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -359,7 +362,7 @@ columns:
 - column_name: f_type
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -370,4 +373,4 @@ columns:
   extra:
     warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

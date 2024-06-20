@@ -543,6 +543,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 18
+  annotation_layers: []
 query_context: "{\"datasource\":{\"id\":34,\"type\":\"table\"},\"force\":false,\"\
   queries\":[{\"time_range\":\"No filter\",\"granularity\":\"visit_date\",\"filters\"\
   :[],\"extras\":{\"time_grain_sqla\":\"P1D\",\"having\":\"\",\"where\":\"\"},\"applied_time_extras\"\

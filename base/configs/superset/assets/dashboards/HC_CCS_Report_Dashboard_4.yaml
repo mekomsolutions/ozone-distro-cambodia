@@ -2,13 +2,16 @@ dashboard_title: HC CCS Report Dashboard
 description: null
 css: ''
 slug: null
+certified_by: null
+certification_details: null
+published: true
 uuid: 64931de3-be8c-4c14-a282-eab9f08ab40d
 position:
   CHART-explore-133-1:
     children: []
     id: CHART-explore-133-1
     meta:
-      chartId: 133
+      chartId: 1
       height: 73
       sliceName: HC CCS Report
       uuid: 5aaa773a-3be3-4fed-b221-a1f3c395cc8b
@@ -24,7 +27,7 @@ position:
     children: []
     id: CHART-explore-134-1
     meta:
-      chartId: 134
+      chartId: 12
       height: 77
       sliceName: CCS Distribution of visits per Province
       uuid: dd5925be-e474-4104-97d9-0a2ef4a34290
@@ -40,7 +43,7 @@ position:
     children: []
     id: CHART-explore-135-1
     meta:
-      chartId: 135
+      chartId: 9
       height: 82
       sliceName: CCS Monthly total count of visits grouped by district
       uuid: 6d8cee3a-64cc-4a2e-af31-7f5b4fefc90b
@@ -157,7 +160,6 @@ position:
     - GRID_ID
     type: TABS
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
   expanded_slices: {}

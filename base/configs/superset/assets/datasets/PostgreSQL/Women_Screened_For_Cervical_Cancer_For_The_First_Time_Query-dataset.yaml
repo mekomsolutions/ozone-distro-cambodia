@@ -98,10 +98,12 @@ sql: "SELECT \n        \"Facility Name\" AS \"Facility Name\",\n        \"Facili
   \ -%}\n        )\n    GROUP BY \n        \"Facility Name\", \"Facility District\"\
   , \"Facility Province\", \"OpenMRS ID\", e.encounter_uuid\n    ) raw_data_set\n"
 params: null
-template_params: ''
+template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: 3680ccf7-bec7-45bc-8e9d-8afaba18b508
 metrics:
 - metric_name: count
@@ -110,6 +112,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -117,7 +120,7 @@ columns:
 - column_name: Encounter date and time
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -130,7 +133,7 @@ columns:
 - column_name: CC Reason for Referral
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -143,7 +146,7 @@ columns:
 - column_name: Patient's First name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -156,7 +159,7 @@ columns:
 - column_name: Patient's Last name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -169,7 +172,7 @@ columns:
 - column_name: CC Follow-up date
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -182,7 +185,7 @@ columns:
 - column_name: Visit End date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -195,7 +198,7 @@ columns:
 - column_name: Visit Start date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -208,7 +211,7 @@ columns:
 - column_name: VIA Test Result
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -221,7 +224,7 @@ columns:
 - column_name: Area of ectocervix
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -234,7 +237,7 @@ columns:
 - column_name: Visibility of SCJ
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -247,7 +250,7 @@ columns:
 - column_name: Number of Quadrants
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -260,7 +263,7 @@ columns:
 - column_name: First Screening?
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -273,7 +276,7 @@ columns:
 - column_name: Patient Address
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -286,7 +289,7 @@ columns:
 - column_name: Cervical Biopsy
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -299,7 +302,7 @@ columns:
 - column_name: CC Treatment
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -312,7 +315,7 @@ columns:
 - column_name: Facility District
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -325,7 +328,7 @@ columns:
 - column_name: OpenMRS ID
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -338,7 +341,7 @@ columns:
 - column_name: Facility Name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -351,7 +354,7 @@ columns:
 - column_name: Facility Province
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -364,7 +367,7 @@ columns:
 - column_name: Referral Facility
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -377,7 +380,7 @@ columns:
 - column_name: HPV Test
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -390,7 +393,7 @@ columns:
 - column_name: Other Identifiers
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -403,7 +406,7 @@ columns:
 - column_name: Insurance type
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -416,7 +419,7 @@ columns:
 - column_name: Pap Smear
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -429,7 +432,7 @@ columns:
 - column_name: Phone number
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -442,7 +445,7 @@ columns:
 - column_name: Referral source
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -455,7 +458,7 @@ columns:
 - column_name: Visit Type
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -468,7 +471,7 @@ columns:
 - column_name: Colposcopy
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -481,7 +484,7 @@ columns:
 - column_name: indicator
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -492,4 +495,4 @@ columns:
   extra:
     warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

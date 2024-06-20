@@ -1,27 +1,31 @@
-dashboard_title: CCS Referral Status Report Dashboard
+dashboard_title: HC NCD OPD Register Report Dashboard
 description: null
 css: ''
 slug: null
-uuid: f2ceaa67-1e71-4ed4-ad56-b97f4f3682a9
+certified_by: null
+certification_details: null
+published: true
+uuid: 5ad1d328-14a9-4063-bc27-ee40546d7581
 position:
-  CHART-GU8MjxzP6B:
+  CHART-Ab9xXvvBoP:
     children: []
-    id: CHART-GU8MjxzP6B
+    id: CHART-Ab9xXvvBoP
     meta:
-      chartId: 136
-      height: 97
-      sliceName: CCS Referral Status Report
-      uuid: 14eb222c-0b43-4ba9-8617-dfeb3754bc46
+      chartId: 17
+      height: 76
+      sliceName: HC NCD OPD Register Report
+      uuid: 21650553-f9e7-4249-a0b2-088c1aaca1ea
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-Rsxri3VTw8
+    - ROW-XCnHAguP-V
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-Rsxri3VTw8
+    - ROW-XCnHAguP-V
+    - ROW-N-4PLN0S4A
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -29,27 +33,53 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: CCS Referral Status Report Dashboard
+      text: HC NCD OPD Register Report Dashboard
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-Rsxri3VTw8:
+  ROW-XCnHAguP-V:
     children:
-    - CHART-GU8MjxzP6B
-    id: ROW-Rsxri3VTw8
+    - CHART-Ab9xXvvBoP
+    id: ROW-XCnHAguP-V
     meta:
       background: BACKGROUND_TRANSPARENT
     parents:
     - ROOT_ID
     - GRID_ID
     type: ROW
+  ROW-N-4PLN0S4A:
+    children:
+    - CHART-CA0GHGN3
+    id: ROW-N-4PLN0S4A
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-CA0GHGN3:
+    children: []
+    id: CHART-CA0GHGN3
+    meta:
+      chartId: 20
+      height: 50
+      sliceName: HC NCD OPD Register Report
+      uuid: ce1ff86a-5c0f-4223-ae62-3e56317a236d
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-4PLN0S4A
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
   expanded_slices: {}
   label_colors: {}
   timed_refresh_immune_slices: []
@@ -57,7 +87,7 @@ metadata:
   default_filters: '{}'
   chart_configuration: {}
   native_filter_configuration:
-  - id: NATIVE_FILTER-np_ziSrzJ
+  - id: NATIVE_FILTER-aWX-Gl58W
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -70,7 +100,7 @@ metadata:
     targets:
     - column:
         name: Facility Province
-      datasetUuid: 412423af-0fdd-4e33-b15d-2b63a9e213e1
+      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -83,9 +113,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 136
+    - 142
     tabsInScope: []
-  - id: NATIVE_FILTER-BTQbykPsy
+  - id: NATIVE_FILTER-Msdpr8SxL
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -98,7 +128,7 @@ metadata:
     targets:
     - column:
         name: Facility District
-      datasetUuid: 412423af-0fdd-4e33-b15d-2b63a9e213e1
+      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -111,9 +141,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 136
+    - 142
     tabsInScope: []
-  - id: NATIVE_FILTER-cwZV98z_b
+  - id: NATIVE_FILTER-pJ6UTB2-p
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -127,7 +157,7 @@ metadata:
     targets:
     - column:
         name: Facility Name
-      datasetUuid: 412423af-0fdd-4e33-b15d-2b63a9e213e1
+      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -140,9 +170,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 136
+    - 142
     tabsInScope: []
-  - id: NATIVE_FILTER-HPs6DabvT
+  - id: NATIVE_FILTER-a7uk2DuoT
     controlValues:
       enableEmptyFilter: false
     name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
@@ -163,8 +193,6 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 136
+    - 142
     tabsInScope: []
-  shared_label_colors: {}
-  color_scheme_domain: []
 version: 1.0.0

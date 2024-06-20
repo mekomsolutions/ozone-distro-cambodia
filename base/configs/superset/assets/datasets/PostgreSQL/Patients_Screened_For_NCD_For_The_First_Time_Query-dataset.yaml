@@ -118,18 +118,21 @@ sql: "SELECT \"Facility Name\" AS \"Facility Name\",\n       \"Facility District
   \            '805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad'\n        )\n    LEFT JOIN \n\
   \        locations l ON e.location_uuid = l.uuid\n    LEFT JOIN \n        (\n  \
   \          SELECT \n                CASE \n                    WHEN d_o.duration_unit_uuid\
-  \ LIKE '1822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN (d_o.duration / 672)\n      \
-  \              WHEN d_o.duration_unit_uuid LIKE '1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
-  \ THEN (d_o.duration / 7)\n                    WHEN d_o.duration_unit_uuid LIKE\
-  \ '1073AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN d_o.duration\n                   \
-  \ WHEN d_o.duration_unit_uuid LIKE '1074AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN (d_o.duration\
-  \ * 4.34524)\n                    WHEN d_o.duration_unit_uuid LIKE '1734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
-  \ THEN (d_o.duration * 52.1429)\n                    ELSE 0\n                END\
-  \ AS \"medication_duration_in_weeks\",\n                d_o.encounter_uuid,\n  \
-  \              d_o.patient_uuid,\n                d_o.drug_name\n            FROM\
+  \ = '1822AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN (d_o.duration / 672)\n         \
+  \           WHEN d_o.duration_unit_uuid = '1072AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN (d_o.duration / 7)\n                    WHEN d_o.duration_unit_uuid = '1073AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN d_o.duration\n                    WHEN d_o.duration_unit_uuid = '1074AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN (d_o.duration * 4.34524)\n                    WHEN d_o.duration_unit_uuid\
+  \ = '1734AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' THEN (d_o.duration * 52.1429)\n     \
+  \               ELSE 0\n                END AS \"medication_duration_in_weeks\"\
+  ,\n                d_o.encounter_uuid,\n                d_o.patient_uuid,\n    \
+  \            d_o.drug_name,\n                d_o.date_activated\n            FROM\
   \ \n                orders d_o\n        ) medications ON medications.patient_uuid\
-  \ = p.patient_uuid AND e.encounter_uuid = medications.encounter_uuid\n    WHERE\
-  \ \n        e.encounter_type IN ('Health Center - NCD Screening')\n        AND (e.encounter_datetime\
+  \ = p.patient_uuid AND (medications.date_activated >= v.date_started\n         \
+  \   {% if to_dttm != undefined and to_dttm is not none %}\n                AND medications.date_activated\
+  \ <= '{{ to_dttm }}'\n            {% else %}\n                AND medications.date_activated\
+  \ <= v.date_stopped\n            {%- endif -%} \n            )\n    WHERE \n   \
+  \     e.encounter_type IN ('Health Center - NCD Screening')\n        AND (e.encounter_datetime\
   \ - p.birthdate) >= interval '40 years'\n        AND e.patient_uuid NOT IN (\n \
   \           SELECT \n                patient_uuid \n            FROM \n        \
   \        encounters previous_e\n            WHERE \n                previous_e.patient_uuid\
@@ -140,10 +143,12 @@ sql: "SELECT \"Facility Name\" AS \"Facility Name\",\n       \"Facility District
   \ -%}\n        )\n    GROUP BY \n        \"Facility Name\", \"Facility District\"\
   , \"Facility Province\", \"OpenMRS ID\", e.encounter_uuid\n    ) raw_data_set"
 params: null
-template_params: ''
+template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: 54c5a8fb-66f7-4279-8498-abebf5d65e7f
 metrics:
 - metric_name: count
@@ -152,6 +157,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -159,7 +165,7 @@ columns:
 - column_name: Has a Referral Letter
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -167,11 +173,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Patient's First name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -179,11 +186,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Patient's Last name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -191,11 +199,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Fasting Blood Sugar
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -203,11 +212,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Random Blood Sugar
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -215,11 +225,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Visit End date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -227,11 +238,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Visit Start date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -239,11 +251,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: CVD Risk Score
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -251,11 +264,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Started on Medication
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -263,11 +277,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Follow-Up Date
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -275,11 +290,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Follow-Up For
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -287,11 +303,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Diagnosis 1
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -299,11 +316,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Diagnosis 2
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -311,11 +329,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Diastolic Pressure
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -323,11 +342,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Systolic Pressure
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -335,11 +355,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Patient Address
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -347,11 +368,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Facility District
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -359,11 +381,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: OpenMRS ID
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -371,11 +394,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Known Diabetes
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -383,11 +407,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Drug Names
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -395,11 +420,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Facility Name
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -407,11 +433,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Facility Province
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -419,11 +446,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Known Hypertension
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -431,11 +459,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Other Identifiers
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -443,11 +472,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Insurance type
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -455,11 +485,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Phone number
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -467,11 +498,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Referral source
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -479,11 +511,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Visit Type
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -491,11 +524,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: HbA1c
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -503,11 +537,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Albumin
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -515,11 +550,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: BMI
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -527,11 +563,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Circumference
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -539,11 +576,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: OGTT
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -551,11 +589,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Height
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -563,11 +602,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Ketones
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -575,11 +615,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Pulse
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -587,11 +628,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Temperature
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -599,11 +641,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Weight
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -611,11 +654,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: Facility
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -623,11 +667,12 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 - column_name: indicator
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -635,6 +680,7 @@ columns:
   expression: ''
   description: null
   python_date_format: null
-  extra: {}
+  extra:
+    warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

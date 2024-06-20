@@ -52,6 +52,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 20
+  annotation_layers: []
 query_context: '{"datasource":{"id":35,"type":"table"},"force":false,"queries":[{"time_range":"No
   filter","granularity":"Visit Start date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[{"expressionType":"SQL","sqlExpression":"COUNT(DISTINCT
   CASE WHEN indicator = ''women-aged-30-49-years-with-ccs-screening-first-time'' THEN

@@ -2,13 +2,16 @@ dashboard_title: Disbursement Report Dashboard
 description: null
 css: ''
 slug: null
+certified_by: null
+certification_details: null
+published: true
 uuid: 2439cfd3-bd2d-42f7-988e-e9af336eb2cd
 position:
   CHART-9thSsJSkeY:
     children: []
     id: CHART-9thSsJSkeY
     meta:
-      chartId: 152
+      chartId: 14
       height: 50
       sliceName: Registered patients aged 40 and above that have had their NCD screening
         for the first time
@@ -25,7 +28,7 @@ position:
     children: []
     id: CHART-auU0qpYADt
     meta:
-      chartId: 150
+      chartId: 16
       height: 31
       sliceName: CCS Indicators
       uuid: ee7add1c-c8aa-4984-9db7-3fa3f726f15c
@@ -41,7 +44,7 @@ position:
     children: []
     id: CHART-gSiI5FA9Eh
     meta:
-      chartId: 154
+      chartId: 6
       height: 50
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time
@@ -58,7 +61,7 @@ position:
     children: []
     id: CHART-l6yN9QRqOT
     meta:
-      chartId: 153
+      chartId: 13
       height: 50
       sliceName: Registered patients screened for the first time with a follow-up
         date and diagnosed with Hypertension & Diabetes and were given medication
@@ -76,7 +79,7 @@ position:
     children: []
     id: CHART-wE9z76bX9M
     meta:
-      chartId: 155
+      chartId: 5
       height: 50
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time and were VIA positive and referred
@@ -93,7 +96,7 @@ position:
     children: []
     id: CHART-wj7DkIY-Pb
     meta:
-      chartId: 151
+      chartId: 7
       height: 31
       sliceName: NCD Indicators
       uuid: 802a00e7-0681-407f-bd7a-c55a4f4e466e
@@ -231,7 +234,6 @@ position:
     - GRID_ID
     type: TABS
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
   shared_label_colors: {}

@@ -1,27 +1,30 @@
-dashboard_title: RH CCS Report Dashboard
+dashboard_title: NCD Missed Appointments Report Dashboard
 description: null
 css: ''
 slug: null
-uuid: ab9aeaaf-2a02-4f56-bfa6-ee531b963ea6
+certified_by: null
+certification_details: null
+published: true
+uuid: 0971fabd-1194-4150-8cd2-b17ea31684c4
 position:
-  CHART-QbQ4qr8Gxx:
+  CHART-9_cxUnO_rZ:
     children: []
-    id: CHART-QbQ4qr8Gxx
+    id: CHART-9_cxUnO_rZ
     meta:
-      chartId: 137
-      height: 90
-      sliceName: RH CSS Report
-      uuid: e04a169b-60d4-4514-8820-8a6b386dfa82
+      chartId: 11
+      height: 74
+      sliceName: NCD Appointment Report
+      uuid: a5640d1c-bc02-4507-b639-787965bc42c7
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-iksrbIRje0
+    - ROW-OtyrqE9UuC
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-iksrbIRje0
+    - ROW-OtyrqE9UuC
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -29,17 +32,17 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: RH CCS Report Dashboard
+      text: NCD Appointment Report dashboard
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-iksrbIRje0:
+  ROW-OtyrqE9UuC:
     children:
-    - CHART-QbQ4qr8Gxx
-    id: ROW-iksrbIRje0
+    - CHART-9_cxUnO_rZ
+    id: ROW-OtyrqE9UuC
     meta:
       background: BACKGROUND_TRANSPARENT
     parents:
@@ -47,11 +50,8 @@ position:
     - GRID_ID
     type: ROW
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
-  shared_label_colors: {}
-  color_scheme_domain: []
   expanded_slices: {}
   label_colors: {}
   timed_refresh_immune_slices: []
@@ -59,7 +59,7 @@ metadata:
   default_filters: '{}'
   chart_configuration: {}
   native_filter_configuration:
-  - id: NATIVE_FILTER-ldOxNBmPY
+  - id: NATIVE_FILTER-jvfgfSm-S
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -72,7 +72,7 @@ metadata:
     targets:
     - column:
         name: Facility Province
-      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -85,9 +85,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 141
     tabsInScope: []
-  - id: NATIVE_FILTER-CC9nN5FHx
+  - id: NATIVE_FILTER-W14x47Ntg
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -100,7 +100,7 @@ metadata:
     targets:
     - column:
         name: Facility District
-      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -113,9 +113,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 141
     tabsInScope: []
-  - id: NATIVE_FILTER-tGAL-IKjl
+  - id: NATIVE_FILTER-Fd7aO5l2E
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -129,7 +129,7 @@ metadata:
     targets:
     - column:
         name: Facility Name
-      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
+      datasetUuid: ffccf504-e9e6-4312-916b-51489c810249
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -142,9 +142,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 141
     tabsInScope: []
-  - id: NATIVE_FILTER-HQ1PU0hJg
+  - id: NATIVE_FILTER-NpwLz6Lx7
     controlValues:
       enableEmptyFilter: false
     name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
@@ -165,6 +165,8 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 141
     tabsInScope: []
+  shared_label_colors: {}
+  color_scheme_domain: []
 version: 1.0.0

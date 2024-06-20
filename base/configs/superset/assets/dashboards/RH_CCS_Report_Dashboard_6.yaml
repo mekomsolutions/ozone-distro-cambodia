@@ -1,27 +1,30 @@
-dashboard_title: NCD Referral Status Report Dashboard
+dashboard_title: RH CCS Report Dashboard
 description: null
 css: ''
 slug: null
-uuid: 8c5cf31e-629b-41f2-8ec8-5cd6229f1499
+certified_by: null
+certification_details: null
+published: true
+uuid: ab9aeaaf-2a02-4f56-bfa6-ee531b963ea6
 position:
-  CHART-VYBstwY1_B:
+  CHART-QbQ4qr8Gxx:
     children: []
-    id: CHART-VYBstwY1_B
+    id: CHART-QbQ4qr8Gxx
     meta:
-      chartId: 140
-      height: 81
-      sliceName: NCD Referral Status Report
-      uuid: 9cf83bb1-cc39-4c8a-89fa-3291f726b69a
+      chartId: 10
+      height: 90
+      sliceName: RH CSS Report
+      uuid: e04a169b-60d4-4514-8820-8a6b386dfa82
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-Si9ZuvRil
+    - ROW-iksrbIRje0
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-Si9ZuvRil
+    - ROW-iksrbIRje0
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -29,17 +32,17 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: NCD Referral Status Report Dashboard
+      text: RH CCS Report Dashboard
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-Si9ZuvRil:
+  ROW-iksrbIRje0:
     children:
-    - CHART-VYBstwY1_B
-    id: ROW-Si9ZuvRil
+    - CHART-QbQ4qr8Gxx
+    id: ROW-iksrbIRje0
     meta:
       background: BACKGROUND_TRANSPARENT
     parents:
@@ -47,19 +50,18 @@ position:
     - GRID_ID
     type: ROW
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
   expanded_slices: {}
   label_colors: {}
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
   chart_configuration: {}
-  shared_label_colors: {}
-  color_scheme_domain: []
   native_filter_configuration:
-  - id: NATIVE_FILTER-7J3bpaW7m
+  - id: NATIVE_FILTER-ldOxNBmPY
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -72,7 +74,7 @@ metadata:
     targets:
     - column:
         name: Facility Province
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -85,9 +87,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 137
     tabsInScope: []
-  - id: NATIVE_FILTER-oSWGxjyfb
+  - id: NATIVE_FILTER-CC9nN5FHx
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -100,7 +102,7 @@ metadata:
     targets:
     - column:
         name: Facility District
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -113,9 +115,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 137
     tabsInScope: []
-  - id: NATIVE_FILTER-WHn4E3Und
+  - id: NATIVE_FILTER-tGAL-IKjl
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -129,7 +131,7 @@ metadata:
     targets:
     - column:
         name: Facility Name
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+      datasetUuid: ec4ccb14-7449-490e-acb4-20bac3bd9935
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -142,9 +144,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 137
     tabsInScope: []
-  - id: NATIVE_FILTER-47jI6h7SU
+  - id: NATIVE_FILTER-HQ1PU0hJg
     controlValues:
       enableEmptyFilter: false
     name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
@@ -165,6 +167,6 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 137
     tabsInScope: []
 version: 1.0.0
