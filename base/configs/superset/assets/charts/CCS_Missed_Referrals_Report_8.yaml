@@ -47,6 +47,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 12
+  annotation_layers: []
 query_context: '{"datasource":{"id":25,"type":"table"},"force":false,"queries":[{"time_range":"No
   filter","granularity":"Visit date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
   Name","Facility District","Facility Province","Referral Facility Name","Referral

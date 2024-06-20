@@ -56,6 +56,8 @@ template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: ffccf504-e9e6-4312-916b-51489c810249
 metrics:
 - metric_name: count
@@ -64,6 +66,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -72,7 +75,7 @@ columns:
   verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1783\u17BB\
     \u17C6/\u179F\u1784\u17D2\u1780\u17B6\u178F\u17CB (Address - Commune)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -86,7 +89,7 @@ columns:
   verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u179F\u17D2\
     \u179A\u17BB\u1780 (Address - District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -100,7 +103,7 @@ columns:
   verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1781\u17C1\
     \u178F\u17D2\u178F (Address - Province)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -114,7 +117,7 @@ columns:
   verbose_name: "\u17A2\u17B6\u179F\u1799\u178A\u17D2\u178B\u17B6\u1793 - \u1797\u17BC\
     \u1798\u17B7 (Address - Village)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -129,7 +132,7 @@ columns:
     \u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
     \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -143,7 +146,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\u1791\
     \u178E\u178F\u17CB (Date Of Appointment)"
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATE
   advanced_data_type: null
   groupby: true
@@ -157,7 +160,7 @@ columns:
   verbose_name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\
     \u17B7\u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -171,7 +174,7 @@ columns:
   verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u17A2\u17D2\u1793\u1780\u1787\u17C6\
     \u1784\u17BA (Patient Name)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -185,7 +188,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u178E\u178F\u17CB\u178F\u17B6\u1798\u178A\u17B6\
     \u1793 (Appointment/follow-up reason)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -199,7 +202,7 @@ columns:
   verbose_name: "\u17A2\u178F\u17D2\u178F\u179B\u17C1\u1781\u17A2\u17D2\u1793\u1780\
     \u1787\u17C6\u1784\u17BA (Client ID)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -213,7 +216,7 @@ columns:
   verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
     \u178F\u17D2\u178F\u17B7 (Operational District)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -227,7 +230,7 @@ columns:
   verbose_name: "\u179B\u17C1\u1781\u1791\u17BC\u179A\u179F\u1796\u17D2\u1791 (Phone\
     \ number)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -240,7 +243,7 @@ columns:
 - column_name: Age
   verbose_name: "\u17A2\u17B6\u1799\u17BB (Age)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -253,7 +256,7 @@ columns:
 - column_name: Gender
   verbose_name: "\u1797\u17C1\u1791 (Gender)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -267,7 +270,7 @@ columns:
   verbose_name: "\u1780\u17C6\u178E\u178F\u17CB\u179F\u1798\u17D2\u1782\u17B6\u179B\
     \u17CB (Notes)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -278,4 +281,4 @@ columns:
   extra:
     warning_markdown: null
 version: 1.0.0
-database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333

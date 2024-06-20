@@ -78,6 +78,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 19
+  annotation_layers: []
 query_context: '{"datasource":{"id":33,"type":"table"},"force":false,"queries":[{"time_range":"No
   filter","granularity":"Visit Date","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
   Name","Facility District","Facility Province","OpenMRS ID","Patient''s name","Gender","Age","Phone

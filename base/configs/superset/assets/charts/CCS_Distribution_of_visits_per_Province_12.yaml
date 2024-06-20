@@ -31,6 +31,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 11
+  annotation_layers: []
 query_context: '{"datasource":{"id":24,"type":"table"},"force":false,"queries":[{"time_range":"2024-02-01T07:15:38
   : now","granularity":"Visit date","filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["Facility
   Province"],"metrics":["count"],"orderby":[["count",false]],"annotation_layers":[],"row_limit":100,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"24__table","viz_type":"pie","slice_id":134,"granularity_sqla":"Visit

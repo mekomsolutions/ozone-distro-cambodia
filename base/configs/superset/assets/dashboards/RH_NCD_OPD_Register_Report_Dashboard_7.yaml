@@ -2,13 +2,16 @@ dashboard_title: RH NCD OPD Register Report Dashboard
 description: null
 css: ''
 slug: null
+certified_by: null
+certification_details: null
+published: true
 uuid: e6903ed0-2ba9-4187-b93b-1b2ad57a5a73
 position:
   CHART-PscuRjwD2k:
     children: []
     id: CHART-PscuRjwD2k
     meta:
-      chartId: 146
+      chartId: 18
       height: 83
       sliceName: RH NCD OPD Register Report
       uuid: 971a570a-0181-4e85-b6aa-f90ffd7e9926
@@ -47,7 +50,6 @@ position:
     - GRID_ID
     type: ROW
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
   shared_label_colors: {}
