@@ -26,9 +26,40 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
-### Version 1.7.0 (WIP)
+### Version 1.7.0
 
-- Update project structure to be compatible with Ozone alpha.10 and above.
+- Updated project structure to be compatible with Ozone alpha.10 and above.
+- Removed OCL packages and retire Cancer concept.
+- Updated Common Reports to version 1.4.2
+- Fixed Route translation.
+- Included HPV virus test results in Cancer section in CSS form.
+- Updated project structure to be compatible with Ozone alpha.10 and above.
+- Adjusted aggregator artifact ID and remove relativePath.
+- Explicitly specify public repository in modules' pom.xml.
+- Disabled 'base' OpenMRS validation.
+- Validated on PR & self-rebuild upon dependency changes.
+- Compiled a dependency report for 'base' sub-module.
+- Renamed the Nexus server ID.
+- Set address and tags to Locations.
+- Copied OpenMRS configs for validation.
+- Fixed validator config path.
+- Removed empty curly brackets from Cervical Cancer Screening form.
+- Updated translation for 'History of Cervical Cancer Screening' in CCS form.
+- Updated question under Cancer section in CSS form.
+- Updated options for Menstrual History in CCS form.
+- Updated translation for 'ACE inhibitor' in NCD Consultation form.
+- Updated translation for 'Breast Cancer' in CCS form.
+- Updated translation for Abscesses in CCS form.
+- Updated translation for 'Tele-Consultation with NCD unit' in NCD Screening form.
+- Renamed 'Insurance Type' to 'Payment type' in Start visit.
+- Updated translation for 'Have you been screened for Diabetes and Hypertension?' in NCD Screening form.
+- Updated translation for Weight in NCD Screening form.
+- Renamed 'Create New Patient' to 'Register New Patient' in the Patient Registration.
+- Renamed 'HbA1c' to 'HbA1c (optional)' in NCD Screening and NCD Consultation forms.
+- Swapped O3 React Form Engine with AMPATH Form Engine.
+- Created the Superset config folder and Maven sub-module.
+- Fixed gender values to lowercase.
+
 
 ### Version 1.6.1
 
