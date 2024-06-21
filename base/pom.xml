@@ -28,6 +28,8 @@
 
     <!-- Classifier for the dependency report artifact -->
     <dependencyReportClassifier>dependencies</dependencyReportClassifier>
+
+    <analyticsQueriesVersion>1.1.0-SNAPSHOT</analyticsQueriesVersion>
   </properties>
 
   <modules>
@@ -35,7 +37,6 @@
   </modules>
 
   <dependencies>
-
     <!-- Ozone Cambodia Superset configs sub-module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -44,6 +45,7 @@
       <type>zip</type>
     </dependency>
 
+    <!-- Ozone Analytics Queries -->
     <dependency>
       <groupId>com.ozonehis</groupId>
       <artifactId>${analyticQueriesArtifactId}</artifactId>
@@ -152,6 +154,50 @@
             </configuration>
           </execution>
 
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.8</version>
+        <executions>
+          <execution>
+            <id>Copy Ozone Analytics Queries</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <excludeTransitive>true</excludeTransitive>
+              <useBaseVersion>true</useBaseVersion>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/analytics</outputDirectory>
+              <includeArtifactIds>analytics-queries</includeArtifactIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Switch Ozone Analytics Queries to locale 'km'</id>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <target>
+                    <replaceregexp flags="g">
+                        <regexp pattern="'en'"/>
+                        <substitution expression="'km'"/>
+                        <fileset dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/analytics" includes="**/*.sql"/>
+                    </replaceregexp>
+                </target>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
