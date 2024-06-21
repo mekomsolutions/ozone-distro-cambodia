@@ -164,6 +164,8 @@ metadata:
     title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
       \u178E\u17CD (Reporting Period)"
     description: ''
+    chartsInScope: []
+    tabsInScope: []
   - id: NATIVE_FILTER-ImsFdJ9jV
     controlValues:
       enableEmptyFilter: false
@@ -172,14 +174,18 @@ metadata:
     targets:
     - {}
     defaultDataMask:
-      extraFormData: {}
-      filterState: {}
-      ownState: {}
+      extraFormData:
+        time_range: Last year
+      filterState:
+        value: Last year
     cascadeParentIds: []
     scope:
       rootPath:
       - ROOT_ID
       excluded: []
     type: NATIVE_FILTER
-    description: A selected period in time.
+    description: Defaults to the last 12 months
+    chartsInScope:
+    - 33
+    tabsInScope: []
 version: 1.0.0
