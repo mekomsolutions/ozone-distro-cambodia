@@ -21,6 +21,8 @@
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
 
+    <supersetConfigsArtifactId>ozone-cambodia-superset-configs</supersetConfigsArtifactId>
+
     <!-- Classifier for the dependency report artifact -->
     <dependencyReportClassifier>dependencies</dependencyReportClassifier>
   </properties>
@@ -30,11 +32,40 @@
   </modules>
 
   <dependencies>
-    <!-- TODO: Add any implementation-specific dependencies -->
+
+    <!-- Ozone Cambodia Superset configs sub-module -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>${supersetConfigsArtifactId}</artifactId>
+      <version>${project.version}</version>
+      <type>zip</type>
+    </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Unpack Cambodia Superset configs sub-module</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <excludeTransitive>true</excludeTransitive>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/configs/superset</outputDirectory>
+              <includeArtifactIds>${supersetConfigsArtifactId}</includeArtifactIds>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -72,6 +103,31 @@
               </resources>
             </configuration>
           </execution>
+
+          <execution>
+            <!-- Override the inherited Maven Parent plugin execution to exclude Superset configs -->
+            <!-- Override with local config files -->
+            <id>Copy local resources</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/${project.artifactId}-${project.version}/distro/configs</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/configs</directory>
+                  <excludes>
+                    <exclude>.gitkeep</exclude>
+                    <exclude>superset/</exclude>
+                  </excludes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+
         </executions>
       </plugin>
 
