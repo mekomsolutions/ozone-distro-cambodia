@@ -4,7 +4,7 @@ description: null
 default_endpoint: null
 offset: 0
 cache_timeout: null
-schema: null
+schema: public
 sql: "SELECT\n  MAX(t1.date_started) AS date_started,\n  MAX(t3.postal_code) AS health_facility_code,\n\
   \  MAX(t3.name) AS health_facility_name,\n  MAX(t3.state_province) AS health_facility_province,\n\
   \  MAX(t3.county_district) AS health_facility_district,\n  MAX(t2.patient_uuid)\

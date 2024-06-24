@@ -4,7 +4,7 @@ description: 'A subset of the visits table that shows the appointment status tra
 default_endpoint: null
 offset: 0
 cache_timeout: null
-schema: null
+schema: public
 sql: "SELECT \n t1.date_started,\n\tt3.name AS hf_name,\n\tt3.county_district AS hf_district,\n\
   \    t3.state_province AS hf_province,\n\tSUBSTRING(\n    t2.identifiers\n    FROM\n\
   \      'OpenMRS ID: ([^,]*)'\n  ) AS patient_id,\n\tCONCAT_WS(' ', given_name, middle_name,\

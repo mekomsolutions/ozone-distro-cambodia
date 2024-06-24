@@ -4,7 +4,7 @@ description: null
 default_endpoint: null
 offset: 0
 cache_timeout: null
-schema: null
+schema: public
 sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client_name,\n\
   \  MAX(p.gender) AS gender,\n  MAX(\n    DATE_PART ('year', age (v.date_started,\
   \ p.birthdate))\n  ) AS age,\n  MAX(p.id_poor) AS id_poor,\n  MAX(p.national_id)\
