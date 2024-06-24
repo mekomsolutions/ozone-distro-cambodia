@@ -3,13 +3,16 @@ dashboard_title: Indicators for annual monitoring and evaluation Hypertension an
 description: null
 css: ''
 slug: null
+certified_by: null
+certification_details: null
+published: false
 uuid: 1c38c06f-0a18-48df-9bf7-82facc3ecc6e
 position:
   CHART-explore-65-1:
     children: []
     id: CHART-explore-65-1
     meta:
-      chartId: 65
+      chartId: 22
       height: 104
       sliceName: M&E Annual Indicators for Hypertension and Diabetes management program
       sliceNameOverride: "\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u1796\u17B7\
@@ -63,7 +66,6 @@ position:
     - GRID_ID
     type: ROW
 metadata:
-  show_native_filters: true
   color_scheme: ''
   refresh_frequency: 0
   shared_label_colors: {}
@@ -72,7 +74,6 @@ metadata:
   label_colors: {}
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
-  default_filters: '{}'
   chart_configuration: {}
   native_filter_configuration:
   - id: NATIVE_FILTER-Y0eNqUA-h

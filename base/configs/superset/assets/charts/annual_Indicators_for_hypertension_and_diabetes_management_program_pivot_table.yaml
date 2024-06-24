@@ -4,36 +4,51 @@ certified_by: null
 certification_details: null
 viz_type: pivot_table_v2
 params:
-  datasource: 18__table
+  datasource: 12__table
   viz_type: pivot_table_v2
-  slice_id: 65
-  granularity_sqla: date_started
-  time_grain_sqla: P1D
-  time_range: Last year
+  slice_id: 22
   groupbyColumns: []
   groupbyRows: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    date_started: true
   metrics:
-  - count patient screened
-  - sum patients diagnosed with dm
-  - percentage patients diagnosed with dm
-  - sum patients diagnosed with hbp
-  - percentage patients diagnosed with hbp
-  - sum patients diagnosed with dm and hbp
-  - percentage patients diagnosed with dm and hbp
-  - sum diagnosed with dm and treated
-  - percentage diagnosed with dm and treated
-  - sum diagnosed with hbp and treated
-  - percentage diagnosed with hbp and treated
-  - sum diagnosed with dm and hbp and treated
-  - percentage diagnosed with dm and hbp and treated
-  - sum dm dropout
-  - percentage dm dropout
-  - sum hbp dropout
-  - percentage hbp dropout
-  - sum dm with hbp dropout
-  - percentage dm with hbp dropout
+  - dist_count_patient_screened
+  - dist_count_patients_diagnosed_with_dm
+  - percentage_patients_diagnosed_with_dm
+  - dist_count_patients_diagnosed_with_hbp
+  - percentage_patients_diagnosed_with_hbp
+  - dist_count_patients_diagnosed_with_dm_and_hbp
+  - percentage_patients_diagnosed_with_dm_and_hbp
+  - dist_count_diagnosed_with_dm_and_treated
+  - percentage_diagnosed_with_dm_and_treated
+  - dist_count_diagnosed_with_hbp_and_treated
+  - percentage_diagnosed_with_hbp_and_treated
+  - dist_count_diagnosed_with_dm_and_hbp_and_treated
+  - percentage_diagnosed_with_dm_and_hbp_and_treated
+  - dist_count_diag_with_dm_treated_fulfilled_followup
+  - percentage_diag_with_dm_treated_fulfilled_followup
+  - dist_count_diag_with_hbp_treated_fulfilled_followup
+  - percentage_diag_with_hbp_treated_fulfilled_followup
+  - dist_count_diag_dm_treated_no_showup_after_30d_of_app
+  - percentage_diag_dm_treated_no_showup_after_30d_of_app
+  - dist_count_diag_hbp_treated_no_showup_after_30d_of_app
+  - percentage_diag_hbp_treated_no_showup_after_30d_of_app
+  - dist_count_diag_dm_hbp_treated_no_showup_after_30d_of_app
+  - percentage_diag_dm_hbp_treated_no_showup_after_30d_of_app
+  - dist_count_dm_dropout_90
+  - percentage_dm_dropout_90
+  - dist_count_hbp_dropout_90
+  - percentage_hbp_dropout_90
+  - dist_count_dm_with_hbp_dropout_90
+  - percentage_dm_with_hbp_dropout_90
   metricsLayout: ROWS
-  adhoc_filters: []
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: date_started
   row_limit: 10000
   order_desc: true
   aggregateFunction: Sum
@@ -46,27 +61,10 @@ params:
   conditional_formatting: []
   extra_form_data: {}
   dashboards:
-  - 12
-query_context: '{"datasource":{"id":18,"type":"table"},"force":false,"queries":[{"time_range":"Last
-  year","granularity":"date_started","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":["count
-  patient screened","sum patients diagnosed with dm","percentage patients diagnosed
-  with dm","sum patients diagnosed with hbp","percentage patients diagnosed with hbp","sum
-  patients diagnosed with dm and hbp","percentage patients diagnosed with dm and hbp","sum
-  diagnosed with dm and treated","percentage diagnosed with dm and treated","sum diagnosed
-  with hbp and treated","percentage diagnosed with hbp and treated","sum diagnosed
-  with dm and hbp and treated","percentage diagnosed with dm and hbp and treated","sum
-  dm dropout","percentage dm dropout","sum hbp dropout","percentage hbp dropout","sum
-  dm with hbp dropout","percentage dm with hbp dropout"],"orderby":[["count patient
-  screened",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"18__table","viz_type":"pivot_table_v2","slice_id":65,"granularity_sqla":"date_started","time_grain_sqla":"P1D","time_range":"Last
-  year","groupbyColumns":[],"groupbyRows":[],"metrics":["count patient screened","sum
-  patients diagnosed with dm","percentage patients diagnosed with dm","sum patients
-  diagnosed with hbp","percentage patients diagnosed with hbp","sum patients diagnosed
-  with dm and hbp","percentage patients diagnosed with dm and hbp","sum diagnosed
-  with dm and treated","percentage diagnosed with dm and treated","sum diagnosed with
-  hbp and treated","percentage diagnosed with hbp and treated","sum diagnosed with
-  dm and hbp and treated","percentage diagnosed with dm and hbp and treated","sum
-  dm dropout","percentage dm dropout","sum hbp dropout","percentage hbp dropout","sum
-  dm with hbp dropout","percentage dm with hbp dropout"],"metricsLayout":"ROWS","adhoc_filters":[],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","transposePivot":false,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","colSubtotalPosition":true,"conditional_formatting":[],"extra_form_data":{},"dashboards":[12],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+  - 10
+query_context: '{"datasource":{"id":12,"type":"table"},"force":false,"queries":[{"filters":[{"col":"date_started","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":["dist_count_patient_screened","dist_count_patients_diagnosed_with_dm","percentage_patients_diagnosed_with_dm","dist_count_patients_diagnosed_with_hbp","percentage_patients_diagnosed_with_hbp","dist_count_patients_diagnosed_with_dm_and_hbp","percentage_patients_diagnosed_with_dm_and_hbp","dist_count_diagnosed_with_dm_and_treated","percentage_diagnosed_with_dm_and_treated","dist_count_diagnosed_with_hbp_and_treated","percentage_diagnosed_with_hbp_and_treated","dist_count_diagnosed_with_dm_and_hbp_and_treated","percentage_diagnosed_with_dm_and_hbp_and_treated","dist_count_diag_with_dm_treated_fulfilled_followup","percentage_diag_with_dm_treated_fulfilled_followup","dist_count_diag_with_hbp_treated_fulfilled_followup","percentage_diag_with_hbp_treated_fulfilled_followup","dist_count_diag_dm_treated_no_showup_after_30d_of_app","percentage_diag_dm_treated_no_showup_after_30d_of_app","dist_count_diag_hbp_treated_no_showup_after_30d_of_app","percentage_diag_hbp_treated_no_showup_after_30d_of_app","dist_count_diag_dm_hbp_treated_no_showup_after_30d_of_app","percentage_diag_dm_hbp_treated_no_showup_after_30d_of_app","dist_count_dm_dropout_90","percentage_dm_dropout_90","dist_count_hbp_dropout_90","percentage_hbp_dropout_90","dist_count_dm_with_hbp_dropout_90","percentage_dm_with_hbp_dropout_90"],"orderby":[["dist_count_patient_screened",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"12__table","viz_type":"pivot_table_v2","slice_id":22,"groupbyColumns":[],"groupbyRows":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"date_started":true},"metrics":["dist_count_patient_screened","dist_count_patients_diagnosed_with_dm","percentage_patients_diagnosed_with_dm","dist_count_patients_diagnosed_with_hbp","percentage_patients_diagnosed_with_hbp","dist_count_patients_diagnosed_with_dm_and_hbp","percentage_patients_diagnosed_with_dm_and_hbp","dist_count_diagnosed_with_dm_and_treated","percentage_diagnosed_with_dm_and_treated","dist_count_diagnosed_with_hbp_and_treated","percentage_diagnosed_with_hbp_and_treated","dist_count_diagnosed_with_dm_and_hbp_and_treated","percentage_diagnosed_with_dm_and_hbp_and_treated","dist_count_diag_with_dm_treated_fulfilled_followup","percentage_diag_with_dm_treated_fulfilled_followup","dist_count_diag_with_hbp_treated_fulfilled_followup","percentage_diag_with_hbp_treated_fulfilled_followup","dist_count_diag_dm_treated_no_showup_after_30d_of_app","percentage_diag_dm_treated_no_showup_after_30d_of_app","dist_count_diag_hbp_treated_no_showup_after_30d_of_app","percentage_diag_hbp_treated_no_showup_after_30d_of_app","dist_count_diag_dm_hbp_treated_no_showup_after_30d_of_app","percentage_diag_dm_hbp_treated_no_showup_after_30d_of_app","dist_count_dm_dropout_90","percentage_dm_dropout_90","dist_count_hbp_dropout_90","percentage_hbp_dropout_90","dist_count_dm_with_hbp_dropout_90","percentage_dm_with_hbp_dropout_90"],"metricsLayout":"ROWS","adhoc_filters":[{"clause":"WHERE","comparator":"No
+  filter","expressionType":"SIMPLE","operator":"TEMPORAL_RANGE","subject":"date_started"}],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","transposePivot":false,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","colSubtotalPosition":true,"conditional_formatting":[],"extra_form_data":{},"dashboards":[10],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: 9bf461f4-855c-40af-9299-fd37dde51778
 version: 1.0.0
