@@ -1,0 +1,175 @@
+dashboard_title: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\
+  \u179A\u17BE (Drugs use)"
+description: null
+css: ''
+slug: null
+uuid: 63accbb1-bac7-4f32-94ae-943e4521e18d
+position:
+  CHART-gfnDjBja_j:
+    children: []
+    id: CHART-gfnDjBja_j
+    meta:
+      chartId: 66
+      height: 111
+      sliceName: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\
+        \u179A\u17BE (Drug Use)"
+      uuid: 979e89f3-4a04-4333-a91a-f2d10b17cd6b
+      width: 7
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-W--1eFnYmI
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-W--1eFnYmI
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\u179A\
+        \u17BE (Drugs use)"
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-W--1eFnYmI:
+    children:
+    - CHART-gfnDjBja_j
+    id: ROW-W--1eFnYmI
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  show_native_filters: true
+  color_scheme: ''
+  refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  default_filters: '{}'
+  chart_configuration: {}
+  native_filter_configuration:
+  - id: NATIVE_FILTER-rl5sVOsxi
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_province
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 66
+    tabsInScope: []
+  - id: NATIVE_FILTER-p6DPqaTV-
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_district
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-rl5sVOsxi
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 66
+    tabsInScope: []
+  - id: NATIVE_FILTER-P1wBhu7bt
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_name
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-rl5sVOsxi
+    - NATIVE_FILTER-p6DPqaTV-
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+  - id: NATIVE_FILTER_DIVIDER-ZZYhkwKAe
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
+      \u178E\u17CD (Reporting Period)"
+    description: ''
+  - id: NATIVE_FILTER-NSyyBr1X7
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+version: 1.0.0

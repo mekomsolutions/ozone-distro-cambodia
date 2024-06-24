@@ -1,0 +1,249 @@
+table_name: NCD EMR Drugs Use
+main_dttm_col: date_created
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT\n  ord.date_created,\n  l.postal_code AS health_facility_code,\n  l.name\
+  \ AS health_facility_name,\n  l.county_district AS health_facility_district,\n \
+  \ l.state_province AS health_facility_province,\n  ord.patient_uuid,\n  ord.encounter_type_name,\n\
+  \  ord.uuid AS order_uuid,\n  ord.order_number,\n  ord.order_action,\n  ord.date_stopped,\n\
+  \  ord.previous_order_id,\n  order_reason_non_coded,\n  ord.drug_name,\n  ord.quantity_unit_name\
+  \ AS dosage_form,\n  ord.quantity AS quantity\nFROM\n  orders ord\n  LEFT JOIN concepts\
+  \ ct ON (\n    ord.concept_uuid=ct.uuid\n    AND ct.uuid IS NOT NULL\n  )\n  LEFT\
+  \ JOIN encounters et ON (\n    ord.encounter_uuid=et.encounter_uuid\n    AND et.encounter_id\
+  \ IS NOT NULL\n  )\n  LEFT JOIN locations l ON (\n    et.location_uuid=l.uuid\n\
+  \    AND l.uuid IS NOT NULL\n  )\nWHERE\n  ord.voided IS FALSE\n  AND et.encounter_voided\
+  \ IS FALSE\n\t-- Drug Order Type\n  AND ord.order_type_uuid='131168f4-15f5-102d-96e4-000c29c2a5d7'\n\
+  \  -- Filter out REVISE orders\n  -- AND ord.date_stopped IS NULL\nORDER BY\n  ord.date_created\
+  \ DESC;\n"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+uuid: d728f593-99b5-402e-997f-fd71dbde1d75
+metrics:
+- metric_name: count distinct patient
+  verbose_name: "\u1780\u179A\u178E\u17B8\u179F\u17BB\u179A\u1794 (Total cases)"
+  metric_type: null
+  expression: COUNT(patient_uuid)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: sum quantity
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793 (Total quantity)"
+  metric_type: null
+  expression: SUM(quantity)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count
+  verbose_name: null
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: dosage_form
+  verbose_name: "\u1791\u17C6\u179A\u1784\u17CB (Dosage form)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: drug_name
+  verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7 (Name)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: date_created
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: date_stopped
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: quantity
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: previous_order_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: order_reason_non_coded
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: encounter_type_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: order_action
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: order_number
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: patient_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: order_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

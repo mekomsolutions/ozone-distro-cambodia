@@ -4,21 +4,6 @@ css: ''
 slug: ncd-rh-emr-report
 uuid: afd9bc68-256c-46c0-ac1e-52cb03d3a708
 position:
-  CHART-V1PWfx4x3x:
-    children: []
-    id: CHART-V1PWfx4x3x
-    meta:
-      chartId: 28
-      height: 65
-      sliceName: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\
-        \u179A\u17BE (Medicine)"
-      uuid: dcdf7222-3e11-4ba1-8dfc-d4d4589122d6
-      width: 12
-    parents:
-    - ROOT_ID
-    - GRID_ID
-    - ROW-MBfp3q2Ol
-    type: CHART
   CHART-explore-29-1:
     children: []
     id: CHART-explore-29-1
