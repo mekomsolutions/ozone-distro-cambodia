@@ -1,0 +1,1110 @@
+table_name: Patients Screened for CVD Risk, Diabetes and Hypertension
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: null
+sql: "SELECT\n  MAX(current_v.date_started) AS date_started,\n  MAX(t3.postal_code)\
+  \ AS health_facility_code,\n  MAX(t3.name) AS health_facility_name,\n  MAX(t3.county_district)\
+  \ AS health_facility_district,\n  MAX(t3.state_province) AS health_facility_province,\n\
+  \  MAX(t2.patient_uuid) AS patient_uuid,\n  MAX(\n    DATE_PART ('year', age (current_v.date_started,\
+  \ t2.birthdate))\n  ) AS age,\n  MAX(t2.gender) AS gender,\n  MAX(current_v.type)\
+  \ AS type,\n  MAX(t4.encounter_type) AS encounter_type,\n  MAX(obs1.cvd_score) AS\
+  \ cvd_score,\n  MAX(current_v.type) AS visit_type,\n  MAX(obs2.diagnosis_one) AS\
+  \ diagnosis_one,\n  MAX(obs3.diagnosis_two) AS diagnosis_two,\n  MAX(obs4.started_on_medicine)\
+  \ AS started_on_medicine,\n  -- Diagnosis\n  MAX(\n    CASE\n      WHEN (\n    \
+  \    (\n          obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid NOT IN\
+  \ ('3cd50188-26fe-102b-80cb-0017a47871b2')\n          OR obs3.diagnosis_two_uuid\
+  \ NOT IN ('3cd50188-26fe-102b-80cb-0017a47871b2')\n        )\n      ) THEN 1\n \
+  \     ELSE 0\n    END\n  ) AS is_diagnosed_with_dm,\n  MAX(\n    CASE\n      WHEN\
+  \ (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n  \
+  \      OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n     \
+  \ ) THEN 1\n      ELSE 0\n    END\n  ) AS is_diagnosed_with_hbp,\n  MAX(\n    CASE\n\
+  \      WHEN (\n        (\n          obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \          OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n \
+  \       )\n      ) THEN 1\n      ELSE 0\n    END\n  ) AS is_diagnosed_with_dm_and_hbp,\n\
+  \  -- Diagnosis and Treatment\n  MAX(\n    CASE\n      WHEN (\n        (\n     \
+  \     obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid NOT IN\
+  \ ('3cd50188-26fe-102b-80cb-0017a47871b2')\n          OR obs3.diagnosis_two_uuid\
+  \ NOT IN ('3cd50188-26fe-102b-80cb-0017a47871b2')\n        )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      ) THEN 1\n      ELSE 0\n    END\n  ) AS diagnosed_with_dm_and_treated,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN 1\n      ELSE 0\n    END\n  ) AS diagnosed_with_hbp_and_treated,\n  MAX(\n\
+  \    CASE\n      WHEN (\n        (\n          obs2.diagnosis_one_uuid IN (\n   \
+  \         '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n          OR obs3.diagnosis_two_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n        )\n  \
+  \      AND (\n          obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \          OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n \
+  \       )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      ) THEN 1\n      ELSE 0\n    END\n  ) AS diagnosed_with_dm_and_hbp_and_treated,\n\
+  \  -- Dropout within 30 days\n  MAX(\n    CASE\n      WHEN (\n        (\n      \
+  \    obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid NOT IN\
+  \ ('3cd50188-26fe-102b-80cb-0017a47871b2')\n          OR obs3.diagnosis_two_uuid\
+  \ NOT IN ('3cd50188-26fe-102b-80cb-0017a47871b2')\n        )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \        AND CURRENT_DATE-current_v.date_started>INTERVAL '30 days'\n      ) THEN\
+  \ 1\n      ELSE 0\n    END\n  ) AS dm_dropout_30,\n  MAX(\n    CASE\n      WHEN\
+  \ (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n  \
+  \      OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n     \
+  \ )\n      AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND CURRENT_DATE-current_v.date_started>INTERVAL '30 days' THEN 1\n     \
+  \ ELSE 0\n    END\n  ) AS hbp_dropout_30,\n  MAX(\n    CASE\n      WHEN (\n    \
+  \    (\n          obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \          OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n \
+  \       )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \        AND CURRENT_DATE-current_v.date_started>INTERVAL '30 days'\n      ) THEN\
+  \ 1\n      ELSE 0\n    END\n  ) AS dm_and_hbp_dropout_30,\n  -- Dropout within 90\
+  \ days\n  MAX(\n    CASE\n      WHEN (\n        (\n          obs2.diagnosis_one_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n          OR obs3.diagnosis_two_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n        )\n  \
+  \      AND (\n          obs2.diagnosis_one_uuid NOT IN ('3cd50188-26fe-102b-80cb-0017a47871b2')\n\
+  \          OR obs3.diagnosis_two_uuid NOT IN ('3cd50188-26fe-102b-80cb-0017a47871b2')\n\
+  \        )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \        AND CURRENT_DATE-current_v.date_started>INTERVAL '90 days'\n      ) THEN\
+  \ 1\n      ELSE 0\n    END\n  ) AS dm_dropout_90,\n  MAX(\n    CASE\n      WHEN\
+  \ (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n  \
+  \      OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n     \
+  \ )\n      AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \      AND CURRENT_DATE-current_v.date_started>INTERVAL '90 days' THEN 1\n     \
+  \ ELSE 0\n    END\n  ) AS hbp_dropout_90,\n  MAX(\n    CASE\n      WHEN (\n    \
+  \    (\n          obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n        AND (\n          obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \          OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n \
+  \       )\n        AND obs4.started_on_medicine_uuid='1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\n\
+  \        AND CURRENT_DATE-current_v.date_started>INTERVAL '90 days'\n      ) THEN\
+  \ 1\n      ELSE 0\n    END\n  ) AS dm_and_hbp_dropout_90,\n  MAX(\n    CASE\n  \
+  \    WHEN obs5.visit_uuid IS NOT NULL AND follow_up_v.visit_uuid IS NOT NULL THEN\
+  \ 1\n      ELSE 0\n    END\n  ) AS fulfilled_follow_up,\n  MAX(\n    CASE\n    \
+  \  WHEN obs5.visit_uuid IS NOT NULL AND follow_up_v_30.visit_uuid IS NULL AND (\
+  \ CURRENT_DATE - obs5.follow_up_date > INTERVAL '30 days') THEN 1\n      ELSE 0\n\
+  \    END\n  ) AS did_not_showup_30_days_after_appointment\nFROM\n  visits current_v\n\
+  \  LEFT JOIN patients t2 ON (current_v.patient_uuid=t2.patient_uuid)\n  LEFT JOIN\
+  \ locations t3 ON (current_v.location_uuid=t3.uuid)\n  LEFT JOIN encounters t4 ON\
+  \ (\n    current_v.visit_uuid=t4.visit_uuid\n    AND t4.visit_uuid IS NOT NULL\n\
+  \  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n      o.encounter_uuid,\n\
+  \      o.visit_uuid,\n      o.answer_numeric AS cvd_score\n    FROM\n      observations\
+  \ o\n    WHERE\n      o.question_uuid='dff491e3-b14c-4b32-ab64-63b96966d72d'\n \
+  \     AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_numeric\n  ) obs1 ON (\n    obs1.visit_uuid=current_v.visit_uuid\n\
+  \    AND obs1.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS diagnosis_one,\n\
+  \      o.answer_coded_uuid AS diagnosis_one_uuid\n    FROM\n      observations o\n\
+  \    WHERE\n      o.question_uuid='45583478-f703-46e3-b63a-54b0a95c25f0'\n     \
+  \ AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs2 ON (\n    obs2.visit_uuid=current_v.visit_uuid\n\
+  \    AND obs2.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS diagnosis_two,\n\
+  \      o.answer_coded_uuid AS diagnosis_two_uuid\n    FROM\n      observations o\n\
+  \    WHERE\n      o.question_uuid='76ca08a5-2128-4b53-afba-74227b015924'\n     \
+  \ AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs3 ON (\n    obs3.visit_uuid=current_v.visit_uuid\n\
+  \    AND obs3.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS started_on_medicine,\n\
+  \      o.answer_coded_uuid AS started_on_medicine_uuid\n    FROM\n      observations\
+  \ o\n    WHERE\n      o.question_uuid='805c3a0b-cd38-4ed6-b4f8-f3af0fc118ad'\n \
+  \     AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs4 ON (\n    obs4.visit_uuid=current_v.visit_uuid\n\
+  \    AND obs4.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_datetime AS follow_up_date\n\
+  \    FROM\n      observations o\n    WHERE\n      o.question_uuid='e9c145c1-f4e9-4c34-b237-da069939dc38'\n\
+  \      AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_datetime\n  ) obs5 ON (\n    obs5.visit_uuid=current_v.visit_uuid\n\
+  \    AND obs5.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN visits follow_up_v ON (current_v.patient_uuid\
+  \ = follow_up_v.patient_uuid AND follow_up_v.date_started > current_v.date_started\
+  \ AND follow_up_v.date_started < NOW() AND ( follow_up_v.date_started - obs5.follow_up_date\
+  \ <= INTERVAL '7 days'))\n  LEFT JOIN visits follow_up_v_30 ON (current_v.patient_uuid\
+  \ = follow_up_v_30.patient_uuid AND follow_up_v_30.date_started > current_v.date_started\
+  \ AND follow_up_v_30.date_started < NOW() AND ( follow_up_v_30.date_started - obs5.follow_up_date\
+  \ <= INTERVAL '30 days'))\nWHERE\n  -- NCD New Visit & Follow-up Visit\n  current_v.visit_type_uuid\
+  \ IN (\n    '5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab',\n    '54da8fbc-b92f-4251-b53a-feedc8e8c594'\n\
+  \  )\n  -- NCD Screening and NCD consultation\n  AND t4.encounter_type_uuid IN (\n\
+  \    '422b7e0c-b8f3-4748-8e60-d6684315f141',\n    'b870b6bb-9441-4664-9087-3d3477174213'\n\
+  \  )\n  AND current_v.visit_voided IS FALSE\n  AND t2.person_voided IS FALSE\n \
+  \ AND t2.patient_uuid IS NOT NULL\n  -- Aged 40 and above\n  AND DATE_PART ('year',\
+  \ age (current_v.date_started, t2.birthdate)) >= 40\nGROUP BY\n  t2.patient_uuid,\
+  \ current_v.visit_uuid"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: aee334cc-f803-4296-8aad-948f4560bc0a
+metrics:
+- metric_name: percentage_diag_dm_hbp_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799(%) \u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\
+    \u1798 \u1793\u17B7\u1784\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1791\
+    \u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u178A\u17C2\u179B\
+    \u1794\u17B6\u1793\u1798\u1780\u1791\u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\
+    \u17D2\u1799\u17B6\u1794\u17B6\u179B\u1794\u1793\u17D2\u178F\u1799\u17BA\u178F\
+    \u1796\u17C1\u179B\u1793\u17C5\u1780\u17D2\u1793\u17BB\u1784\u17A2\u17C6\u17A1\
+    \u17BB\u1784\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\
+    \ (Percentage of diabetes and hypertension patient with late follow-up treatment\
+    \ during the reporting period)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated\
+    \ = 1 AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n  \
+    \  ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diag_with_dm_treated_fulfilled_followup
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799 (%) \u17A2\u17D2\u1793\u1780\u1787\
+    \u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+    \u1798\u178A\u17C2\u179B\u1798\u1780\u1791\u1791\u17BD\u179B\u1780\u17B6\u179A\
+    \u178F\u17B6\u1798\u178A\u17B6\u1793\u200B   \u179F\u17BB\u1781\u1797\u17B6\u1796\
+    \u1793\u17C5\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\u1797\u17B6\u1796\
+    \u1794\u1793\u17D2\u178F\u178F\u17B6\u1798\u1780\u17B6\u179A\u178E\u17B6\u178F\
+    \u17CB\u1787\u17B6\u1791\u17C0\u1784\u1791\u17B6\u178F\u17CB  (Percentage of diabetes\
+    \ patient with regular follow-up at health centre)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated\
+    \ = 1 AND fulfilled_follow_up = 1 THEN patient_uuid \n    ELSE NULL \n  END\n\
+    )::decimal / NULLIF(COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_dm_with_hbp_dropout_90
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+    \u17C2\u1798 \u1793\u17B7\u1784\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\
+    \u1792\u1788\u17B6\u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1794\
+    \u17C4\u17C7\u1794\u1784\u17CB\u1785\u17C4\u179B\u1780\u17B6\u179A\u1790\u17C2\
+    \u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\
+    \u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
+    \u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\u17B6\u1792\u17B6\u179A\u178E\u17C8\
+    \u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\u17E2\
+    \ \u1781\u17C2 (Percentage of hypertensions and diabes patients dropped out from\
+    \ the public health facility in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN dm_and_hbp_dropout_90\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n\
+    \  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diagnosed_with_dm_and_hbp_and_treated
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\
+    \u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1793\u17B7\u1784\
+    \u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u178F\
+    \u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u1780\u17B6\
+    \u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\
+    \u1794\u17B6\u179B\u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\
+    \u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\u17B6\u1792\u17B6\
+    \u179A\u178E\u17C8\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\
+    \u179B\u17E1\u17E2 \u1781\u17C2 (Percentage of individuals diagnosed with hypertension\
+    \ and diabetes treated at the public health facility in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n\
+    \  CASE \n    WHEN is_diagnosed_with_dm_and_hbp = 1 THEN patient_uuid \n    ELSE\
+    \ NULL \n  END\n)\n, 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diag_dm_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799(%)\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\
+    \u178A\u17C2\u179B\u1794\u17B6\u1793\u1798\u1780\u1791\u1791\u17BD\u179B\u1780\
+    \u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1794\u1793\u17D2\u178F\
+    \u1799\u17BA\u178F\u1796\u17C1\u179B\u1793\u17C5\u1780\u17D2\u1793\u17BB\u1784\
+    \u17A2\u17C6\u17A1\u17BB\u1784\u1796\u17C1\u179B   \u179A\u17B6\u1799\u1780\u17B6\
+    \u179A\u178E\u17CD (Percentage of diabetes patients with late follow-up treatment\
+    \ during the reporting period)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated\
+    \ = 1 AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n  \
+    \  ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diag_with_hbp_treated_fulfilled_followup
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799 (%) \u17A2\u17D2\u1793\u1780\u1787\
+    \u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\
+    \u17B6\u1798 \u178A\u17C2\u179B\u1798\u1780\u1791\u1791\u17BD\u179B\u1780\u17B6\
+    \u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1794\u1793\u17D2\u178F\u1793\
+    \u17C5\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\u1797\u17B6\u1796\u178F\
+    \u17B6\u1798\u1780\u17B6\u179A\u178E\u17B6\u178F\u17CB\u1787\u17B6\u1791\u17C0\
+    \u1784\u1791\u17B6\u178F\u17CB (Percentage of hypertension patient with regular\
+    \ follow-up treatment at health centre)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated\
+    \ = 1 AND fulfilled_follow_up = 1 THEN patient_uuid \n    ELSE NULL \n  END\n\
+    )::decimal / NULLIF(COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_dm_dropout_90
+  verbose_name: " \u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+    \u17C2\u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1794\u17C4\u17C7\
+    \u1794\u1784\u17CB\u1785\u17C4\u179B\u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\
+    \u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1793\u17C5\
+    \u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\
+    \u17B7\u1794\u17B6\u179B\u179F\u17B6\u1792\u17B6\u179A\u178E\u17C8\u1780\u17D2\
+    \u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\u17C2\
+    \ (Percentage of diabetes patients dropped out from the public health facility\
+    \ in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN dm_dropout_90 = 1 THEN\
+    \ patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n \
+    \ CASE \n    WHEN diagnosed_with_dm_and_treated = 1 THEN patient_uuid \n    ELSE\
+    \ NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diagnosed_with_hbp_and_treated
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u17A2\u17D2\u1793\u1780\u1787\
+    \u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\
+    \u17B6\u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\
+    \u17BE\u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\
+    \u17D2\u1799\u17B6\u1794\u17B6\u179B\u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\
+    \u17B6\u1792\u17B6\u179A\u178E\u17C8\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\
+    \u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\u17C2 (Percentage of individuals diagnosed\
+    \ with hypertensions treated at the public health facility in the last 12 months)"
+  metric_type: null
+  expression: "\tCONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n\
+    \  CASE \n    WHEN is_diagnosed_with_hbp = 1 THEN patient_uuid \n    ELSE NULL\
+    \ \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diagnosed_with_dm_and_treated
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\
+    \u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u178F\u17D2\u179A\
+    \u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u1780\u17B6\u179A\u1790\
+    \u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+    \u179B\u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\
+    \u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\u17B6\u1792\u17B6\u179A\u178E\
+    \u17C8\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\
+    \u17E2 \u1781\u17C2 (Percentage of individuals diagnosed with diabetes treated\
+    \ at the public health facility in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n\
+    \  CASE \n    WHEN is_diagnosed_with_dm = 1 THEN patient_uuid \n    ELSE NULL\
+    \ \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_hbp_dropout_90
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\
+    \u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\
+    \u1788\u17B6\u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1794\u17C4\
+    \u17C7\u1794\u1784\u17CB\u1785\u17C4\u179B\u1780\u17B6\u179A\u1790\u17C2\u1791\
+    \u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1793\
+    \u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+    \u1797\u17B7\u1794\u17B6\u179B\u179F\u17B6\u1792\u17B6\u179A\u178E\u17C8\u1780\
+    \u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\
+    \u17C2 (Percentage of hypertensions patients dropped out from the public health\
+    \ facility in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN hbp_dropout_90 = 1\
+    \ THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n\
+    \  CASE \n    WHEN diagnosed_with_hbp_and_treated = 1 THEN patient_uuid \n   \
+    \ ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_diag_hbp_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799(%)\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\
+    \u1798\u178A\u17C2\u179B\u178A\u17C2\u179B\u1794\u17B6\u1793\u1798\u1780\u1791\
+    \u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\
+    \u1794\u1793\u17D2\u178F\u1799\u17BA\u178F\u1796\u17C1\u179B\u1793\u17C5\u1780\
+    \u17D2\u1793\u17BB\u1784\u17A2\u17C6\u17A1\u17BB\u1784\u1796\u17C1\u179B\u179A\
+    \u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD (Percentage of hypertension patients\
+    \ with late follow-up treatment during the reporting period)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated\
+    \ = 1 AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n  \
+    \  ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_patients_diagnosed_with_dm_and_hbp
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\
+    \u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784\
+    \u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u1780\
+    \u17D2\u1793\u17BB\u1784\u1785\u17C6\u178E\u17C4\u1798\u1794\u17D2\u179A\u1787\
+    \u17B6\u1787\u1793\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\u1799\u17BB\
+    \u1785\u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\u17C6\u17A1\u17BE\
+    \u1784\u1791\u17C5\u1794\u17B6\u1793\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\
+    \u17D2\u1799\u179A\u1780\u1798\u17BE\u179B \u1787\u17C6\u1784\u17BA\u179B\u17BE\
+    \u179F\u1788\u17B6\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+    \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1780\u17D2\u1793\u17BB\
+    \u1784\u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2 \u1781\u17C2 (Percentage\
+    \ of individuals diagnosed with hypertension and diabetes among people aged 40\
+    \ and above was screened for hypertension and diabetes in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_dm_and_hbp\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)\n::decimal / NULLIF(COUNT(DISTINCT\
+    \ patient_uuid), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_patients_diagnosed_with_dm
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\
+    \u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1780\u17D2\u1793\
+    \u17BB\u1784\u1785\u17C6\u178E\u17C4\u1798\u1794\u17D2\u179A\u1787\u17B6\u1787\
+    \u1793\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\u1799\u17BB\u1785\u17B6\
+    \u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\u17C6\u17A1\u17BE\u1784\u1791\
+    \u17C5\u1794\u17B6\u1793\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\
+    \u179A\u1780\u1798\u17BE\u179B \u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\
+    \u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 \u1793\u17B7\u1784\u1787\u17C6\
+    \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\
+    \u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2\
+    \ \u1781\u17C2 (Percentage of individuals diagnosed with diabetes among people\
+    \ aged 40 and above was screened for hypertension and diabetes in the last 12\
+    \ months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_dm\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\
+    \ patient_uuid), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: percentage_patients_diagnosed_with_hbp
+  verbose_name: "\u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u1794\u17BB\u1782\u17D2\
+    \u1782\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\
+    \u1792\u17D2\u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\
+    \u1786\u17D0\u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u179B\
+    \u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u1780\u17D2\
+    \u1793\u17BB\u1784\u1785\u17C6\u178E\u17C4\u1798\u1794\u17D2\u179A\u1787\u17B6\
+    \u1787\u1793\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\u1799\u17BB\u1785\
+    \u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\u17C6\u17A1\u17BE\u1784\
+    \u1791\u17C5\u1794\u17B6\u1793\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\
+    \u1799\u179A\u1780\u1798\u17BE\u179B \u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u1788\u17B6\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\
+    \u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1780\u17D2\u1793\u17BB\u1784\
+    \u179A\u1799\u17C8\u1796\u17C1\u179B \u17E1\u17E2\u1781\u17C2 (Percentage of individuals\
+    \ diagnosed with hypertension among people aged 40 and above was screened for\
+    \ hypertension and diabetes in the last 12 months)"
+  metric_type: null
+  expression: "CONCAT(ROUND((COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_hbp\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)::decimal / NULLIF(COUNT(DISTINCT\
+    \ patient_uuid), 0)) * 100, 2),'%')\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_patients_diagnosed_with_dm_and_hbp
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u1794\u17D2\u179A\u1787\u17B6\u1787\
+    \u1793\u1782\u17C4\u179B\u178A\u17C5\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\
+    \u17B6\u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\
+    \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\
+    \u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\u1783\
+    \u17BE\u1789\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+    \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784\u200B\
+    \ \u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u1780\
+    \u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\u17E2\u1781\
+    \u17C3 (   \t Number of individuals target population aged 40 and above  was diagnosed\
+    \ with diabetes and hypertension in the last 12 months)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_dm_and_hbp = 1\
+    \ THEN patient_uuid \n    ELSE NULL \n  END\n)\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diag_dm_hbp_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u179A\u17BB\u1794\u17A2\u17D2\
+    \u1793\u1780\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798   \u1793\u17B7\u1784\u17A2\u17D2\u1793\u1780\u1787\
+    \u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+    \u1798 \u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\u1793\u1785\u17BC\u179B\
+    \u1798\u1780\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\u1797\u17B6\u1796\
+    \u179B\u17BE\u179F\u1796\u17B8 \u17E3\u17E0\u1790\u17D2\u1784\u17C3 (Total number\
+    \ of diabetes and hypertension patients who have not shown up at the health centre\
+    \ over 30 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated\
+    \ = 1 AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n  \
+    \  ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diag_with_dm_treated_fulfilled_followup
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\
+    \ \u178A\u17C2\u179B\u1791\u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\
+    \u17B6\u1794\u17B6\u179B\u1794\u1793\u17D2\u178F\u1793\u17C5\u1798\u178E\u17D2\
+    \u178C\u179B\u179F\u17BB\u1781\u1797\u17B6\u1796\u179A\u1799\u17C8\u1796\u17C1\
+    \u179B\u1798\u17B7\u1793\u179B\u17BE\u179F\u1796\u17B8 \u17E7\u1790\u17D2\u1784\
+    \u17C3 \u1793\u17C3\u1780\u17B6\u179B\u1794\u179A\u17B7\u1785\u17D2\u1786\u17C1\
+    \u1791\u178F\u17B6\u1798\u178A\u17B6\u1793 (Number of diabetes patient receiving\
+    \ treatment in health centres no later than 7 days of follow up/appointment date)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated = 1\
+    \ AND fulfilled_follow_up = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_patients_diagnosed_with_hbp
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u1794\u17D2\u179A\u1787\u17B6\u1787\
+    \u1793\u1782\u17C4\u179B\u178A\u17C5\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\
+    \u17B6\u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\
+    \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\
+    \  \u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\u1783\
+    \u17BE\u1789\u1790\u17B6\u1798\u17B6\u1793\u179B\u17BE\u179F\u179F\u1798\u17D2\
+    \u1796\u17B6\u1792\u1788\u17B6\u1798\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\
+    \u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\u17C2\u1798\u17BB\u1793 (Number of\
+    \ individuals target population aged 40 and above  was diagnosed with hypertension\
+    \ in the last 12 months)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_hbp = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diag_dm_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u179A\u17BB\u1794\u17A2\u17D2\
+    \u1793\u1780\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798 \u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\u1793\
+    \u1798\u1780\u1791\u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\
+    \u1794\u17B6\u179B\u1793\u17C5\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\
+    \u1797\u17B6\u1796\u179B\u17BE\u179F\u1796\u17B8 \u17E3\u17E0\u1790\u17D2\u1784\
+    \u17C3 (Total number of diabetes patients who have not shown up at the health\
+    \ centre over 30 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated = 1\
+    \ AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n    ELSE\
+    \ NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diag_hbp_treated_no_showup_after_30d_of_app
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u179A\u17BB\u1794\u17A2\u17D2\
+    \u1793\u1780\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 \u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\
+    \u1793\u1785\u17BC\u179B\u1798\u1780\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\
+    \u1781\u1797\u17B6\u1796\u179A\u1799\u17C8\u1796\u17C1\u179B\u179B\u17BE\u179F\
+    \u1796\u17B8 \u17E3\u17E0\u1790\u17D2\u1784\u17C3 (Total number of hypertension\
+    \ patients who have not shown up at the HCs over 30 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated =\
+    \ 1 AND did_not_showup_30_days_after_appointment = 1 THEN patient_uuid \n    ELSE\
+    \ NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_patients_diagnosed_with_dm
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u1794\u17D2\u179A\u1787\u17B6\u1787\
+    \u1793\u1782\u17C4\u179B\u178A\u17C5\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\
+    \u17B6\u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\
+    \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\
+    \ \u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\u1783\
+    \u17BE\u1789\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+    \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1780\u17D2\u1793\u17BB\
+    \u1784\u179A\u1799\u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\u17C2 (Number of\
+    \ individuals target population aged 40 and above was diagnosed with diabetes\
+    \ in the last 12 months)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN is_diagnosed_with_dm = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diagnosed_with_dm_and_hbp_and_treated
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\
+    \u1793\u17B7\u1784\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\
+    \u17B6\u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\
+    \u17BE\u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\
+    \u17D2\u1799\u17B6\u1794\u17B6\u179B\u1793\u17C5 \u1798\u17BC\u179B\u178A\u17D2\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\
+    \u17B6\u1792\u17B6\u179A\u178E\u17C8\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\
+    \u17C8\u1796\u17C1\u179B\u17E1\u17E2 \u1781\u17C2 (Number of individuals hypertensions\
+    \ and diabetes patients receiving treatment at the public health facility in the\
+    \ last 12 months)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_hbp_and_treated\
+    \ = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diagnosed_with_dm_and_treated
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\
+    \u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u1780\
+    \u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\
+    \u17B6\u1794\u17B6\u179B\u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\
+    \u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B   \u179F\u17B6\u1792\
+    \u17B6\u179A\u178E\u17C8\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\
+    \u17C1\u179B\u17E1\u17E2 \u1781\u17C2\u1798\u17BB\u1793 (Number of individuals\
+    \ diabetes patient receiving treatment at the public health facility in the last\
+    \ 12 months)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_dm_and_treated = 1\
+    \ THEN patient_uuid \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diag_with_hbp_treated_fulfilled_followup
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\
+    \u1798 \u178A\u17C2\u179B\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793\u1780\u17B6\
+    \u179A\u178F\u17B6\u1798\u178A\u17B6\u1793 \u1793\u17B7\u1784\u1780\u17B6\u179A\
+    \u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1794\u1793\u17D2\u178F\u1793\u17C5\
+    \u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\u1797\u17B6\u1796\u1791\u17B6\
+    \u1793\u17CB\u1796\u17C1\u179B/\u178F\u17B6\u1798\u1780\u17B6\u179A\u178E\u17B6\
+    \u178F\u17CB (Number of individuals with hypertension receiving follow-up treatment\
+    \ in health centres on time/appointment date)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated =\
+    \ 1 AND fulfilled_follow_up = 1 THEN patient_uuid \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_dm_with_hbp_dropout_90
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+    \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1793\u17B7\u1784\u179B\
+    \u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\u178A\u17C2\
+    \u179B\u1798\u17B7\u1793\u1794\u17B6\u1793\u1798\u1780\u1792\u17D2\u179C\u17BE\
+    \u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\
+    \u1799\u17B6\u1794\u17B6\u179B\u1793\u17C5\u1798\u178E\u17D2\u178C\u179B\u179F\
+    \u17BB\u1781\u1797\u17B6\u1796\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\
+    \u1796\u17C1\u179B\u17E1\u17E2\u1781\u17C2 \u1799\u17C9\u17B6\u1784\u178F\u17B7\
+    \u1785\u17E1\u17E2\u1781\u17C2\u1785\u17B6\u1794\u17CB\u1796\u17B8\u1780\u17B6\
+    \u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\
+    \u1794\u17B6\u179B\u1785\u17BB\u1784\u1780\u17D2\u179A\u17C4\u1799\u1782\u17C1\
+    \ (Total number of hypertension and diabetes patients who have not shown up at\
+    \ the HCs over 90 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN dm_and_hbp_dropout_90 = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_hbp_dropout_90
+  verbose_name: " \u1785\u17C6\u1793\u17BD\u1793\u179F\u179A\u17BB\u1794\u17A2\u17D2\
+    \u1793\u1780\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 \u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\
+    \u1793\u1785\u17BC\u179B\u1798\u1780\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\
+    \u1781\u1797\u17B6\u1796\u179A\u1799\u17C8\u1796\u17C1\u179B\u179B\u17BE\u179F\
+    \u1796\u17B8 \u17E9\u17E0\u1790\u17D2\u1784\u17C3 (Total number of hypertension\
+    \ patients who have not shown up at the HCs over 90 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN hbp_dropout_90 = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_diagnosed_with_hbp_and_treated
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+    \u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\
+    \u1798\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\
+    \u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\u17B7\u1784\u1796\u17D2\
+    \u1799\u17B6\u1794\u17B6\u179B\u1793\u17C5\u1798\u17BC\u179B\u178A\u17D2\u178B\
+    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\u179F\u17B6\
+    \u1792\u17B6\u179A\u178E\u17C8\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\
+    \u1797\u17B6\u1796\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\u17C1\
+    \u179B\u17E1\u17E2 \u1781\u17C2 (Number of individuals hypertensions patients\
+    \ receiving treatment at the public health facility in the last 12 months) "
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN diagnosed_with_hbp_and_treated =\
+    \ 1 THEN patient_uuid \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_dm_dropout_90
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u179A\u17BB\u1794\u17A2\u17D2\
+    \u1793\u1780\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\
+    \u17D2\u17A2\u17C2\u1798 \u178A\u17C2\u179B\u1798\u17B7\u1793\u1794\u17B6\u1793\
+    \u1798\u1780\u1791\u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\
+    \u1794\u17B6\u179B\u1793\u17C5\u1798\u178E\u17D2\u178C\u179B\u179F\u17BB\u1781\
+    \u1797\u17B6\u1796\u179B\u17BE\u179F\u1796\u17B8\u17E9\u17E0\u1790\u17D2\u1784\
+    \u17C3 (Total number of diabetes patients who have not shown up at the HCs over\
+    \ 90 days)"
+  metric_type: null
+  expression: "COUNT(DISTINCT\n  CASE \n    WHEN dm_dropout_90 = 1 THEN patient_uuid\
+    \ \n    ELSE NULL \n  END\n)"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: dist_count_patient_screened
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u1794\u17D2\u179A\u1787\u17B6\u1787\
+    \u1793\u1782\u17C4\u179B\u178A\u17C5\u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\
+    \u17B6\u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8 40 \u1786\u17D2\u1793\u17B6\
+    \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\
+    \u1793\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\u1798\u17BE\u179B\
+    \u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+    \u17C2\u1798 \u1793\u17B7\u1784\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\
+    \u1792\u1788\u17B6\u1798\u1780\u17D2\u1793\u17BB\u1784\u179A\u1799\u17C8\u1796\
+    \u17C1\u179B \u17E1\u17E2 \u1781\u17C2 (Number of people aged 40 and above was\
+    \ screened for hypertension and diabetes in the last 12 months)"
+  metric_type: null
+  expression: COUNT(DISTINCT patient_uuid)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: dm_and_hbp_dropout_30
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_dropout_30
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_dropout_30
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_and_hbp_dropout_90
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_dropout_90
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_dropout_90
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: date_started
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cvd_score
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosed_with_dm_and_hbp_and_treated
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_diagnosed_with_dm_and_hbp
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosed_with_hbp_and_treated
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosed_with_dm_and_treated
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_diagnosed_with_hbp
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_diagnosed_with_dm
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: fulfilled_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: started_on_medicine
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_one
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: patient_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_two
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: encounter_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 42834407-4570-4111-8bf6-4f7080413333
