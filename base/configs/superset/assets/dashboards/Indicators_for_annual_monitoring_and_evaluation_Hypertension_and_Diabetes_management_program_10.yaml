@@ -1,0 +1,193 @@
+dashboard_title: Indicators for annual monitoring and evaluation Hypertension and
+  Diabetes management program
+description: null
+css: ''
+slug: null
+certified_by: null
+certification_details: null
+published: false
+uuid: 1c38c06f-0a18-48df-9bf7-82facc3ecc6e
+position:
+  CHART-explore-65-1:
+    children: []
+    id: CHART-explore-65-1
+    meta:
+      chartId: 22
+      height: 104
+      sliceName: M&E Annual Indicators for Hypertension and Diabetes management program
+      sliceNameOverride: "\u1780\u1798\u17D2\u1798\u179C\u17B7\u1792\u17B8\u1796\u17B7\
+        \u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\u17A0\u17B6\u1793\u17B7\u1797\u17D0\
+        \u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784\
+        \ \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 \u1793\u17B7\u1784\u1782\u17D2\
+        \u179A\u1794\u17CB\u1782\u17D2\u179A\u1784\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+        \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798\u1793\u17B7\u1784\u179B\
+        \u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 \u1793\u17B9\
+        \u1784\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u179C\u17B6\u179F\u17CB\
+        \u179C\u17C2\u1784\u178A\u17C4\u1799\u1794\u17D2\u179A\u17BE\u179F\u17BC\u1785\
+        \u1793\u17B6\u1780\u179A(indicators)\u1794\u17D2\u179A\u1785\u17B6\u17C6\u1786\
+        \u17D2\u1793\u17B6\u17C6\u178A\u17BC\u1785\u1781\u17B6\u1784\u1780\u17D2\u179A\
+        \u17C4\u1798\u17D6 (Screening for CVD Risk and Diabetes and Hypertension Management\
+        \ program will be measured using the following annual indicators)"
+      uuid: 9bf461f4-855c-40af-9299-fd37dde51778
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-t3pcetBBvm
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-t3pcetBBvm
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Indicators for annual monitoring and evaluation Hypertension and Diabetes
+        management program
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-t3pcetBBvm:
+    children:
+    - CHART-explore-65-1
+    id: ROW-t3pcetBBvm
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  color_scheme: ''
+  refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  chart_configuration: {}
+  native_filter_configuration:
+  - id: NATIVE_FILTER-Y0eNqUA-h
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_province
+      datasetUuid: aee334cc-f803-4296-8aad-948f4560bc0a
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 65
+    tabsInScope: []
+  - id: NATIVE_FILTER-ZvYlEwNch
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_district
+      datasetUuid: aee334cc-f803-4296-8aad-948f4560bc0a
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-Y0eNqUA-h
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 65
+    tabsInScope: []
+  - id: NATIVE_FILTER-WHKcu_Lp4
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_name
+      datasetUuid: aee334cc-f803-4296-8aad-948f4560bc0a
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-Y0eNqUA-h
+    - NATIVE_FILTER-ZvYlEwNch
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 65
+    tabsInScope: []
+  - id: NATIVE_FILTER_DIVIDER-4PaLOlqql
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
+      \u178E\u17CD (Reporting Period)"
+    description: ''
+  - id: NATIVE_FILTER-axbb_AgVV
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData:
+        time_range: Last year
+      filterState:
+        value: Last year
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: Defaults to the last 12 months
+version: 1.0.0
