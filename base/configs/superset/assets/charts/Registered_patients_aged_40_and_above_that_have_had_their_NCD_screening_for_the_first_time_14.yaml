@@ -74,29 +74,29 @@ params:
   - Drug Names
   percent_metrics: []
   adhoc_filters:
-  - expressionType: SIMPLE
-    subject: Visit Start date
-    operator: TEMPORAL_RANGE
+  - clause: WHERE
     comparator: No filter
-    clause: WHERE
-    sqlExpression: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_n5dad56ctk_yji7xby1r0a
     isExtra: false
     isNew: false
-    datasourceWarning: false
-    filterOptionName: filter_n5dad56ctk_yji7xby1r0a
-  - expressionType: SIMPLE
-    subject: indicator
-    operator: IN
-    operatorId: IN
+    operator: TEMPORAL_RANGE
+    sqlExpression: null
+    subject: Visit Start date
+  - clause: WHERE
     comparator:
     - 80-pecent-followup-with-hypertension-iabetes-and-medication
     - patients-aged-40-above-with-first-time ncd-screening
-    clause: WHERE
-    sqlExpression: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_skfq75qb4zi_azi1ldrrjvj
     isExtra: false
     isNew: false
-    datasourceWarning: false
-    filterOptionName: filter_skfq75qb4zi_azi1ldrrjvj
+    operator: IN
+    operatorId: IN
+    sqlExpression: null
+    subject: indicator
   order_by_cols: []
   row_limit: 1000
   server_page_length: 10
@@ -126,9 +126,10 @@ query_context: '{"datasource":{"id":9,"type":"table"},"force":false,"queries":[{
   Pressure","Diastolic Pressure","Pulse","Temperature","Random Blood Sugar","Fasting
   Blood Sugar","HbA1c","OGTT","Albumin","Ketones","Diagnosis 1","Diagnosis 2","Referral
   Facility","Has a Referral Letter","CVD Risk Score","Follow-Up For","Follow-Up Date","Started
-  on Medication","Drug Names"],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"Visit
-  Start date","operator":"TEMPORAL_RANGE","comparator":"No filter","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_n5dad56ctk_yji7xby1r0a"},{"expressionType":"SIMPLE","subject":"indicator","operator":"IN","operatorId":"IN","comparator":["80-pecent-followup-with-hypertension-iabetes-and-medication","patients-aged-40-above-with-first-time
-  ncd-screening"],"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_skfq75qb4zi_azi1ldrrjvj"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+  on Medication","Drug Names"],"percent_metrics":[],"adhoc_filters":[{"clause":"WHERE","comparator":"No
+  filter","datasourceWarning":false,"expressionType":"SIMPLE","filterOptionName":"filter_n5dad56ctk_yji7xby1r0a","isExtra":false,"isNew":false,"operator":"TEMPORAL_RANGE","sqlExpression":null,"subject":"Visit
+  Start date"},{"clause":"WHERE","comparator":["80-pecent-followup-with-hypertension-iabetes-and-medication","patients-aged-40-above-with-first-time
+  ncd-screening"],"datasourceWarning":false,"expressionType":"SIMPLE","filterOptionName":"filter_skfq75qb4zi_azi1ldrrjvj","isExtra":false,"isNew":false,"operator":"IN","operatorId":"IN","sqlExpression":null,"subject":"indicator"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: c7bd827c-daa4-48ab-986d-0cd07a139b9a
 version: 1.0.0
