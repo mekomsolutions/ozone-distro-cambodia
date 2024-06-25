@@ -28,8 +28,6 @@
 
     <!-- Classifier for the dependency report artifact -->
     <dependencyReportClassifier>dependencies</dependencyReportClassifier>
-
-    <analyticsQueriesVersion>1.1.0-SNAPSHOT</analyticsQueriesVersion>
   </properties>
 
   <modules>
@@ -156,7 +154,7 @@
 
         </executions>
       </plugin>
-      
+
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
