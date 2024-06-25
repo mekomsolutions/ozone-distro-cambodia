@@ -12,7 +12,7 @@ position:
     id: CHART-9thSsJSkeY
     meta:
       chartId: 14
-      height: 50
+      height: 89
       sliceName: Registered patients aged 40 and above that have had their NCD screening
         for the first time
       uuid: c7bd827c-daa4-48ab-986d-0cd07a139b9a
@@ -45,7 +45,7 @@ position:
     id: CHART-gSiI5FA9Eh
     meta:
       chartId: 6
-      height: 50
+      height: 102
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time
       uuid: 37c2b93f-2cdf-4bf7-9195-076c83eda4b4
@@ -62,10 +62,10 @@ position:
     id: CHART-l6yN9QRqOT
     meta:
       chartId: 13
-      height: 50
-      sliceName: Registered patients aged 40 and above and screened for the first
-        time with a follow-up date and diagnosed with Hypertension & Diabetes and
-        were given medication with at least a 4 weeks prescription
+      height: 89
+      sliceName: Registered patients aged 40 and above have had their NCD screening
+        for the first time with a follow-up date and diagnosed with Hypertension &
+        Diabetes and were given medication with at least a 4 weeks prescription
       uuid: 07b02091-ffa9-4d41-8c26-965416489fb3
       width: 6
     parents:
@@ -80,7 +80,7 @@ position:
     id: CHART-wE9z76bX9M
     meta:
       chartId: 5
-      height: 50
+      height: 102
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time and were VIA positive and referred
       uuid: a770204a-9220-4c7e-8ea0-4773b2bf8a62

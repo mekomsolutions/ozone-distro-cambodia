@@ -62,32 +62,31 @@ params:
   - Colposcopy
   - CC Treatment
   - CC Follow-up date
-  - Encounter date and time
   percent_metrics: []
   adhoc_filters:
-  - expressionType: SIMPLE
-    subject: Visit Start date
-    operator: TEMPORAL_RANGE
+  - clause: WHERE
     comparator: No filter
-    clause: WHERE
-    sqlExpression: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_7cvigde0ca_cgiov8yrc4w
     isExtra: false
     isNew: false
-    datasourceWarning: false
-    filterOptionName: filter_7cvigde0ca_cgiov8yrc4w
-  - expressionType: SIMPLE
-    subject: indicator
-    operator: IN
-    operatorId: IN
+    operator: TEMPORAL_RANGE
+    sqlExpression: null
+    subject: Visit Start date
+  - clause: WHERE
     comparator:
     - 80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred
     - women-aged-30-49-years-with-ccs-screening-first-time
-    clause: WHERE
-    sqlExpression: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_p2xjxqmjbl_ztolrl0r7ek
     isExtra: false
     isNew: false
-    datasourceWarning: false
-    filterOptionName: filter_p2xjxqmjbl_ztolrl0r7ek
+    operator: IN
+    operatorId: IN
+    sqlExpression: null
+    subject: indicator
   order_by_cols: []
   row_limit: 1000
   server_page_length: 10
@@ -106,7 +105,7 @@ query_context: '{"datasource":{"id":4,"type":"table"},"force":false,"queries":[{
   type","First Screening?","HPV Test","OpenMRS ID","Visit Type","Visibility of SCJ","VIA
   Test Result","Area of ectocervix","Cervical Biopsy","Pap Smear","Referral Facility","Number
   of Quadrants","CC Reason for Referral","Colposcopy","CC Treatment","CC Follow-up
-  date","Encounter date and time"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"4__table","viz_type":"table","slice_id":6,"query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"Encounter
+  date"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[]}],"form_data":{"datasource":"4__table","viz_type":"table","slice_id":6,"query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"Encounter
   date and time":true,"Visit End date":true,"Visit Start date":true,"Patient''s Birthdate":true},"all_columns":["Facility
   Name","Facility District","Facility Province","Patient''s Last name","Patient''s
   First name","Patient''s Gender","Patient''s Birthdate","Patient Address","Phone
@@ -114,8 +113,9 @@ query_context: '{"datasource":{"id":4,"type":"table"},"force":false,"queries":[{
   type","First Screening?","HPV Test","OpenMRS ID","Visit Type","Visibility of SCJ","VIA
   Test Result","Area of ectocervix","Cervical Biopsy","Pap Smear","Referral Facility","Number
   of Quadrants","CC Reason for Referral","Colposcopy","CC Treatment","CC Follow-up
-  date","Encounter date and time"],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"Visit
-  Start date","operator":"TEMPORAL_RANGE","comparator":"No filter","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_7cvigde0ca_cgiov8yrc4w"},{"expressionType":"SIMPLE","subject":"indicator","operator":"IN","operatorId":"IN","comparator":["80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred","women-aged-30-49-years-with-ccs-screening-first-time"],"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_p2xjxqmjbl_ztolrl0r7ek"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+  date"],"percent_metrics":[],"adhoc_filters":[{"clause":"WHERE","comparator":"No
+  filter","datasourceWarning":false,"expressionType":"SIMPLE","filterOptionName":"filter_7cvigde0ca_cgiov8yrc4w","isExtra":false,"isNew":false,"operator":"TEMPORAL_RANGE","sqlExpression":null,"subject":"Visit
+  Start date"},{"clause":"WHERE","comparator":["80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred","women-aged-30-49-years-with-ccs-screening-first-time"],"datasourceWarning":false,"expressionType":"SIMPLE","filterOptionName":"filter_p2xjxqmjbl_ztolrl0r7ek","isExtra":false,"isNew":false,"operator":"IN","operatorId":"IN","sqlExpression":null,"subject":"indicator"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","show_cell_bars":true,"color_pn":true,"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
 cache_timeout: null
 uuid: 37c2b93f-2cdf-4bf7-9195-076c83eda4b4
 version: 1.0.0
