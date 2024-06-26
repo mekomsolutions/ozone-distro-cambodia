@@ -49,16 +49,41 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 - Updated options for Menstrual History in CCS form.
 - Updated translation for 'ACE inhibitor' in NCD Consultation form.
 - Updated translation for 'Breast Cancer' in CCS form.
-- Updated translation for Abscesses in CCS form.
+- Updated translation for 'Abscesses' in CCS form.
 - Updated translation for 'Tele-Consultation with NCD unit' in NCD Screening form.
 - Renamed 'Insurance Type' to 'Payment type' in Start visit.
 - Updated translation for 'Have you been screened for Diabetes and Hypertension?' in NCD Screening form.
-- Updated translation for Weight in NCD Screening form.
+- Updated translation for 'Weight' in NCD Screening form.
 - Renamed 'Create New Patient' to 'Register New Patient' in the Patient Registration.
 - Renamed 'HbA1c' to 'HbA1c (optional)' in NCD Screening and NCD Consultation forms.
 - Swapped O3 React Form Engine with AMPATH Form Engine.
 - Created the Superset config folder and Maven sub-module.
 - Fixed gender values to lowercase.
+- Fine tuned the Superset configs packaging.
+- Added Report Dashboards.
+- Added changes caused by re-exporting dashboards using Superset 4.0.0
+- Added translations for Disbursement Report.
+- Added validation changes.
+- Added yearly NCD monitoring report.
+- Switched datasets' folder from PostgreSQL to Analytics.
+- Added CCS HC raw data report.
+- Added CCS report on RH Raw Data.
+- Added self-breast educated and examined women report.
+- Added CCS for women report.
+- Added CCS report on appointment status tracking.
+- Added Indicators for monitoring CCS management program report.
+- Added NCD RH EMR Report.
+- Added NCD HC EMR Report.
+- Added NCD HC Raw Data Report.
+- Added NCD RH Raw Data Report.
+- Used Analytics database provided by Ozone.
+- Updated CCS monitoring indicators query & include reporting period filter.
+- Copied over Ozone analytics queries.
+- Added drugs use dashboard, dataset, chart assets.
+- Added NCD report on yearly monitoring indicators.
+- Added public schema for datasets.
+- Amalgamated yearly report indicators for monitoring Hypertension, Diabetes.
+- Improved Disbursement Dashboard.
 
 
 ### Version 1.6.1
