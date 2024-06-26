@@ -32,7 +32,6 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 - Removed OCL packages and retired Cancer concept.
 - Updated Common Reports to version 1.4.2
 - Fixed Route translation.
-- Included HPV virus test results in Cancer section in CSS form.
 - Adjusted aggregator artifact ID and remove relativePath.
 - Explicitly specified the public repository in modules' pom.xml.
 - Disabled 'base' OpenMRS validation.
