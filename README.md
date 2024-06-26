@@ -43,7 +43,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 - Fixed validator config path.
 - Removed empty curly brackets from Cervical Cancer Screening form.
 - Updated translation for 'History of Cervical Cancer Screening' in CCS form.
-- Updated question under Cancer section in CSS form.
+- Updated 'What area of ectocervix does the acetowhite area occupy?' to 'White cell area of ​​the outer cervix' under Cancer section in CSS form.
 - Updated options for Menstrual History in CCS form.
 - Updated translation for 'ACE inhibitor' in NCD Consultation form.
 - Updated translation for 'Breast Cancer' in CCS form.
