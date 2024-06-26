@@ -29,13 +29,12 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 ### Version 1.7.0
 
 - Updated project structure to be compatible with Ozone alpha.10 and above.
-- Removed OCL packages and retire Cancer concept.
+- Removed OCL packages and retired Cancer concept.
 - Updated Common Reports to version 1.4.2
 - Fixed Route translation.
 - Included HPV virus test results in Cancer section in CSS form.
-- Updated project structure to be compatible with Ozone alpha.10 and above.
 - Adjusted aggregator artifact ID and remove relativePath.
-- Explicitly specify public repository in modules' pom.xml.
+- Explicitly specified the public repository in modules' pom.xml.
 - Disabled 'base' OpenMRS validation.
 - Validated on PR & self-rebuild upon dependency changes.
 - Compiled a dependency report for 'base' sub-module.
@@ -79,7 +78,7 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 - Used Analytics database provided by Ozone.
 - Updated CCS monitoring indicators query & include reporting period filter.
 - Copied over Ozone analytics queries.
-- Added drugs use dashboard, dataset, chart assets.
+- Added drugs used dashboard, dataset, chart assets.
 - Added NCD report on yearly monitoring indicators.
 - Added public schema for datasets.
 - Amalgamated yearly report indicators for monitoring Hypertension, Diabetes.
