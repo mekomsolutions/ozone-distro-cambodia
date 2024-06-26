@@ -1,0 +1,58 @@
+slice_name: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\u17D0\
+  \u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784 \u179F\
+  \u179A\u179F\u17C3\u1788\u17B6\u1798 (Follow up CVD risk factor) - cumulative"
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 6__table
+  viz_type: pivot_table_v2
+  granularity_sqla: date_started
+  time_grain_sqla: P1D
+  time_range: No filter
+  groupbyColumns:
+  - age_group
+  groupbyRows:
+  - cvd_score_groupings_follow_up
+  - gender
+  metrics:
+  - count per age group
+  metricsLayout: COLUMNS
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: cvd_score_groupings_follow_up
+    operator: IS NOT NULL
+    operatorId: IS_NOT_NULL
+    comparator: null
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_vz423eu0px_tjp5obmnir
+  row_limit: 10000
+  order_desc: true
+  aggregateFunction: Sum
+  rowTotals: true
+  colTotals: true
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 6
+  annotation_layers: []
+query_context: '{"datasource":{"id":6,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"date_started","filters":[{"col":"cvd_score_groupings_follow_up","op":"IS
+  NOT NULL"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["age_group","cvd_score_groupings_follow_up","gender"],"metrics":["count
+  per age group"],"orderby":[["count per age group",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"6__table","viz_type":"pivot_table_v2","granularity_sqla":"date_started","time_grain_sqla":"P1D","time_range":"No
+  filter","groupbyColumns":["age_group"],"groupbyRows":["cvd_score_groupings_follow_up","gender"],"metrics":["count
+  per age group"],"metricsLayout":"COLUMNS","adhoc_filters":[{"expressionType":"SIMPLE","subject":"cvd_score_groupings_follow_up","operator":"IS
+  NOT NULL","operatorId":"IS_NOT_NULL","comparator":null,"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_vz423eu0px_tjp5obmnir"}],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","rowTotals":true,"colTotals":true,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 9e92dce2-6041-4497-953a-b6a27d5160aa
+version: 1.0.0
+dataset_uuid: 6fa56ea7-aa49-46cd-8ae8-f8c5d141e0c9

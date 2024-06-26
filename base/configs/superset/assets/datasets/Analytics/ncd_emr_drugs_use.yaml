@@ -23,6 +23,8 @@ template_params: null
 filter_select_enabled: false
 fetch_values_predicate: null
 extra: null
+normalize_columns: false
+always_filter_main_dttm: false
 uuid: d728f593-99b5-402e-997f-fd71dbde1d75
 metrics:
 - metric_name: count distinct patient
@@ -31,6 +33,7 @@ metrics:
   expression: COUNT(patient_uuid)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -40,6 +43,7 @@ metrics:
   expression: SUM(quantity)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null
@@ -49,6 +53,7 @@ metrics:
   expression: count(*)
   description: null
   d3format: null
+  currency: null
   extra:
     warning_markdown: ''
   warning_text: null

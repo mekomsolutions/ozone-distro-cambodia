@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-K-4SQcOr5u
     meta:
-      chartId: 4
+      chartId: 46
       height: 42
       sliceName: NCD HIS New Cases From The Beginning
       uuid: edc6788b-ea27-457f-b3e7-1e272b7109ba
@@ -25,7 +25,7 @@ position:
     children: []
     id: CHART-explore-148-1
     meta:
-      chartId: 15
+      chartId: 5
       height: 50
       sliceName: NCD HIS Follow-up Cases Within Reporting Range
       uuid: e2896abd-821a-4aa8-8a19-c70c9eb18960
@@ -39,7 +39,7 @@ position:
     children: []
     id: CHART-explore-149-1
     meta:
-      chartId: 19
+      chartId: 33
       height: 50
       sliceName: NCD HIS Follow-up Cases From The Beginning
       uuid: 17f99ed6-713a-4436-9e7c-79639f96490c
@@ -53,7 +53,7 @@ position:
     children: []
     id: CHART-nSlyozQPY1
     meta:
-      chartId: 2
+      chartId: 42
       height: 42
       sliceName: NCD HIS New Cases Within Reporting Range
       uuid: b3599541-6658-4325-968b-82dd749af4ec
@@ -290,7 +290,7 @@ metadata:
       rootPath:
       - ROOT_ID
       excluded:
-      - 4
+      - 46
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
@@ -324,8 +324,8 @@ metadata:
       rootPath:
       - ROOT_ID
       excluded:
-      - 15
-      - 2
+      - 5
+      - 42
     type: NATIVE_FILTER
     description: ''
     chartsInScope:

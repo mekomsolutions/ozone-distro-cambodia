@@ -1,0 +1,259 @@
+slice_name: NCD Indicators
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 9__table
+  viz_type: pivot_table_v2
+  slice_id: 7
+  groupbyColumns: []
+  groupbyRows: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    Visit End date: true
+    Visit Start date: true
+    Follow-Up Date: true
+    Patient's Birthdate: true
+  metrics:
+  - expressionType: SQL
+    sqlExpression: COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time
+      ncd-screening' OR indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'
+      THEN "OpenMRS ID" END)
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: "\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\u178E\u17B6\u179F\u17CB\u1794\
+      \u17D2\u179A\u1787\u17B6\u1787\u1793\u1790\u17D2\u1798\u17B8\u1785\u17C6\u1793\
+      \u17BD\u1793\u17E5\u17E0\u1793\u17B6\u1780\u17CB\u1780\u17D2\u1793\u17BB\u1784\
+      \u17E1\u1781\u17C2 \u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\u1799\u17BB\
+      \u1785\u17B6\u1794\u17CB\u1796\u17B8\u17E4\u17E0\u1786\u17D2\u1793\u17B6\u17C6\
+      \u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1785\u17BB\u17C7\u1788\u17D2\
+      \u1798\u17C4\u17C7 \u1793\u17B7\u1784\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793\
+      \u179F\u17C1\u179C\u17B6\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\
+      \u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+      \u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\
+      \u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798  \u1793\u17B7\u1784\u1796\u17D2\
+      \u1799\u17B6\u1794\u17B6\u179B\u1787\u17B6\u179B\u17BE\u1780\u178A\u17C6\u1794\
+      \u17BC\u1784\u17D4  (At least 50 population aged 40 years+ registered and received\
+      \ the first screening and treatment services for diabetes and hypertension per\
+      \ month)"
+    optionName: metric_9ttlclpl5ts_chyyfmbkdlq
+  - expressionType: SQL
+    sqlExpression: "CASE \n    WHEN (COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+      \ THEN \"OpenMRS ID\" END) * 100.0 / NULLIF(COUNT(DISTINCT CASE WHEN indicator\
+      \ = 'patients-aged-40-above-with-first-time ncd-screening' THEN \"OpenMRS ID\"\
+      \ END) + COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+      \ THEN \"OpenMRS ID\" END), 0)) >= 80 \n    THEN 'Yes'\n    ELSE 'No'\nEND\n"
+    column: null
+    aggregate: null
+    datasourceWarning: false
+    hasCustomLabel: true
+    label: "\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\u178E\u17B6\u179F\u17CB 80\
+      \ \u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+      \u1784\u17BA\u178A\u17C2\u179B\u1798\u17B6\u1793\u1780\u17B6\u179A\u1792\u17D2\
+      \u179C\u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
+      \u1799\u1790\u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\
+      \u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784/\u17AC\u1787\
+      \u17C6\u1784\u17BA\u179B\u17BE\u179F\u1788\u17B6\u1798\u1794\u17B6\u1793\u1791\
+      \u1791\u17BD\u179B\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\
+      \u178F\u17D2\u179A\u17B9\u1798\u178F\u17D2\u179A\u17BC\u179C (\u17A7. \u1794\
+      \u17B6\u1793\u1791\u1791\u17BD\u179B\u1790\u17D2\u1793\u17B6\u17C6\u179F\u1798\
+      \u17D2\u179A\u17B6\u1794\u17CB\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\
+      \u17B6\u179B\u1787\u17B6\u1794\u17D2\u179A\u1785\u17B6\u17C6 \u1793\u17B7\u1784\
+      \u1794\u17D2\u179A\u1785\u17B6\u17C6\u1781\u17C2)\u17D4 \u17A2\u17D2\u1793\u1780\
+      \u1787\u17C6\u1784\u17BA\u1782\u17BD\u179A\u178F\u17C2\u178F\u17D2\u179A\u17BC\
+      \u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u178F\u17C1\u179F\u17D2\u178F\
+      \u1787\u17B6\u1791\u17C0\u1784\u1791\u17B6\u178F\u17CB\u178F\u17B6\u1798\u1780\
+      \u17B6\u179A\u178E\u17C2\u1793\u17B6\u17C6\u1793\u17C3\u1780\u17B6\u179A\u1796\
+      \u17D2\u1799\u17B6\u1794\u17B6\u179B\u17D4 \u17B1\u179F\u1790 (\u17B1\u179F\u1790\
+      \u179F\u17B6\u179A\u179C\u1793\u17D2\u178F ) \u179F\u1798\u17D2\u179A\u17B6\u1794\
+      \u17CB\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1782\u17BD\
+      \u179A\u178F\u17C2\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1795\u17D2\
+      \u178F\u179B\u17CB\u1787\u17BC\u1793\u178A\u17C4\u1799\u1798\u17B7\u1793\u1782\
+      \u17B7\u178F\u1790\u17D2\u179B\u17C3\u1794\u1793\u17D2\u1790\u17C2\u1798\u178A\
+      \u179B\u17CB\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA \u17A0\u17BE\u1799\
+      \u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\
+      \u17B7\u1794\u17B6\u179B\u1798\u17B7\u1793\u1782\u17BD\u179A\u17A2\u1793\u17BB\
+      \u1789\u17D2\u1789\u17B6\u178F\u17B1\u17D2\u1799\u17A2\u17D2\u1793\u1780\u1787\
+      \u17C6\u1784\u17BA\u1791\u17B7\u1789\u1790\u17D2\u1793\u17B6\u17C6)\u17D4 (At\
+      \ least 80 percent of patients with confirmed diagnosis as having diabetes and/or\
+      \ hypertension received proper treatment (i.e., received medicines for treatment\
+      \ regularly and on a monthly basis). The patients should be tested regularly\
+      \ according to the treatment guidelines. Drugs (essential drugs) for treatment\
+      \ should be provided without additional charge to the patients, and health facilities\
+      \ should not let patients purchase medicines))"
+    optionName: metric_dmznsk3y057_77lv31713b2
+  metricsLayout: ROWS
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: Visit Start date
+  row_limit: 1000
+  order_desc: true
+  aggregateFunction: Sum
+  transposePivot: true
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 1
+  annotation_layers: []
+query_context: "{\"datasource\":{\"id\":9,\"type\":\"table\"},\"force\":false,\"queries\"\
+  :[{\"filters\":[{\"col\":\"Visit Start date\",\"op\":\"TEMPORAL_RANGE\",\"val\"\
+  :\"No filter\"}],\"extras\":{\"time_grain_sqla\":\"P1D\",\"having\":\"\",\"where\"\
+  :\"\"},\"applied_time_extras\":{},\"columns\":[],\"metrics\":[{\"expressionType\"\
+  :\"SQL\",\"sqlExpression\":\"COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time\
+  \ ncd-screening' OR indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END)\",\"column\":null,\"aggregate\":null,\"datasourceWarning\"\
+  :false,\"hasCustomLabel\":true,\"label\":\"\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\
+  \u178E\u17B6\u179F\u17CB\u1794\u17D2\u179A\u1787\u17B6\u1787\u1793\u1790\u17D2\u1798\
+  \u17B8\u1785\u17C6\u1793\u17BD\u1793\u17E5\u17E0\u1793\u17B6\u1780\u17CB\u1780\u17D2\
+  \u1793\u17BB\u1784\u17E1\u1781\u17C2 \u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\
+  \u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8\u17E4\u17E0\u1786\u17D2\u1793\u17B6\
+  \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1785\u17BB\u17C7\u1788\u17D2\
+  \u1798\u17C4\u17C7 \u1793\u17B7\u1784\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793\u179F\
+  \u17C1\u179C\u17B6\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\u1787\u17C6\
+  \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\
+  \u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\
+  \u1792\u1788\u17B6\u1798  \u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+  \u179B\u1787\u17B6\u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784\u17D4  (At least\
+  \ 50 population aged 40 years+ registered and received the first screening and treatment\
+  \ services for diabetes and hypertension per month)\",\"optionName\":\"metric_9ttlclpl5ts_chyyfmbkdlq\"\
+  },{\"expressionType\":\"SQL\",\"sqlExpression\":\"CASE \\n    WHEN (COUNT(DISTINCT\
+  \ CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END) * 100.0 / NULLIF(COUNT(DISTINCT CASE WHEN indicator\
+  \ = 'patients-aged-40-above-with-first-time ncd-screening' THEN \\\"OpenMRS ID\\\
+  \" END) + COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END), 0)) >= 80 \\n    THEN 'Yes'\\n    ELSE 'No'\\nEND\\\
+  n\",\"column\":null,\"aggregate\":null,\"datasourceWarning\":false,\"hasCustomLabel\"\
+  :true,\"label\":\"\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\u178E\u17B6\u179F\u17CB\
+  \ 80 \u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+  \u1784\u17BA\u178A\u17C2\u179B\u1798\u17B6\u1793\u1780\u17B6\u179A\u1792\u17D2\u179C\
+  \u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\u1790\
+  \u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\
+  \u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784/\u17AC\u1787\u17C6\u1784\u17BA\
+  \u179B\u17BE\u179F\u1788\u17B6\u1798\u1794\u17B6\u1793\u1791\u1791\u17BD\u179B\u1780\
+  \u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u178F\u17D2\u179A\u17B9\u1798\
+  \u178F\u17D2\u179A\u17BC\u179C (\u17A7. \u1794\u17B6\u1793\u1791\u1791\u17BD\u179B\
+  \u1790\u17D2\u1793\u17B6\u17C6\u179F\u1798\u17D2\u179A\u17B6\u1794\u17CB\u1780\u17B6\
+  \u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1787\u17B6\u1794\u17D2\u179A\u1785\
+  \u17B6\u17C6 \u1793\u17B7\u1784\u1794\u17D2\u179A\u1785\u17B6\u17C6\u1781\u17C2\
+  )\u17D4 \u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1782\u17BD\u179A\u178F\
+  \u17C2\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u178F\
+  \u17C1\u179F\u17D2\u178F\u1787\u17B6\u1791\u17C0\u1784\u1791\u17B6\u178F\u17CB\u178F\
+  \u17B6\u1798\u1780\u17B6\u179A\u178E\u17C2\u1793\u17B6\u17C6\u1793\u17C3\u1780\u17B6\
+  \u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u17D4 \u17B1\u179F\u1790 (\u17B1\
+  \u179F\u1790\u179F\u17B6\u179A\u179C\u1793\u17D2\u178F ) \u179F\u1798\u17D2\u179A\
+  \u17B6\u1794\u17CB\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1782\
+  \u17BD\u179A\u178F\u17C2\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1795\u17D2\
+  \u178F\u179B\u17CB\u1787\u17BC\u1793\u178A\u17C4\u1799\u1798\u17B7\u1793\u1782\u17B7\
+  \u178F\u1790\u17D2\u179B\u17C3\u1794\u1793\u17D2\u1790\u17C2\u1798\u178A\u179B\u17CB\
+  \u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA \u17A0\u17BE\u1799\u1798\u17BC\u179B\
+  \u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\
+  \u1798\u17B7\u1793\u1782\u17BD\u179A\u17A2\u1793\u17BB\u1789\u17D2\u1789\u17B6\u178F\
+  \u17B1\u17D2\u1799\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1791\u17B7\u1789\
+  \u1790\u17D2\u1793\u17B6\u17C6)\u17D4 (At least 80 percent of patients with confirmed\
+  \ diagnosis as having diabetes and/or hypertension received proper treatment (i.e.,\
+  \ received medicines for treatment regularly and on a monthly basis). The patients\
+  \ should be tested regularly according to the treatment guidelines. Drugs (essential\
+  \ drugs) for treatment should be provided without additional charge to the patients,\
+  \ and health facilities should not let patients purchase medicines))\",\"optionName\"\
+  :\"metric_dmznsk3y057_77lv31713b2\"}],\"orderby\":[[{\"expressionType\":\"SQL\"\
+  ,\"sqlExpression\":\"COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time\
+  \ ncd-screening' OR indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END)\",\"column\":null,\"aggregate\":null,\"datasourceWarning\"\
+  :false,\"hasCustomLabel\":true,\"label\":\"\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\
+  \u178E\u17B6\u179F\u17CB\u1794\u17D2\u179A\u1787\u17B6\u1787\u1793\u1790\u17D2\u1798\
+  \u17B8\u1785\u17C6\u1793\u17BD\u1793\u17E5\u17E0\u1793\u17B6\u1780\u17CB\u1780\u17D2\
+  \u1793\u17BB\u1784\u17E1\u1781\u17C2 \u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\
+  \u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8\u17E4\u17E0\u1786\u17D2\u1793\u17B6\
+  \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1785\u17BB\u17C7\u1788\u17D2\
+  \u1798\u17C4\u17C7 \u1793\u17B7\u1784\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793\u179F\
+  \u17C1\u179C\u17B6\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\u1787\u17C6\
+  \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\
+  \u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\
+  \u1792\u1788\u17B6\u1798  \u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+  \u179B\u1787\u17B6\u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784\u17D4  (At least\
+  \ 50 population aged 40 years+ registered and received the first screening and treatment\
+  \ services for diabetes and hypertension per month)\",\"optionName\":\"metric_9ttlclpl5ts_chyyfmbkdlq\"\
+  },false]],\"annotation_layers\":[],\"row_limit\":1000,\"series_limit\":0,\"order_desc\"\
+  :true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"form_data\"\
+  :{\"datasource\":\"9__table\",\"viz_type\":\"pivot_table_v2\",\"slice_id\":7,\"\
+  groupbyColumns\":[],\"groupbyRows\":[],\"time_grain_sqla\":\"P1D\",\"temporal_columns_lookup\"\
+  :{\"Visit End date\":true,\"Visit Start date\":true,\"Follow-Up Date\":true,\"Patient's\
+  \ Birthdate\":true},\"metrics\":[{\"expressionType\":\"SQL\",\"sqlExpression\":\"\
+  COUNT(DISTINCT CASE WHEN indicator = 'patients-aged-40-above-with-first-time ncd-screening'\
+  \ OR indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication' THEN\
+  \ \\\"OpenMRS ID\\\" END)\",\"column\":null,\"aggregate\":null,\"datasourceWarning\"\
+  :false,\"hasCustomLabel\":true,\"label\":\"\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\
+  \u178E\u17B6\u179F\u17CB\u1794\u17D2\u179A\u1787\u17B6\u1787\u1793\u1790\u17D2\u1798\
+  \u17B8\u1785\u17C6\u1793\u17BD\u1793\u17E5\u17E0\u1793\u17B6\u1780\u17CB\u1780\u17D2\
+  \u1793\u17BB\u1784\u17E1\u1781\u17C2 \u178A\u17C2\u179B\u1798\u17B6\u1793\u17A2\u17B6\
+  \u1799\u17BB\u1785\u17B6\u1794\u17CB\u1796\u17B8\u17E4\u17E0\u1786\u17D2\u1793\u17B6\
+  \u17C6\u17A1\u17BE\u1784\u1791\u17C5\u1794\u17B6\u1793\u1785\u17BB\u17C7\u1788\u17D2\
+  \u1798\u17C4\u17C7 \u1793\u17B7\u1784\u1791\u1791\u17BD\u179B\u1794\u17B6\u1793\u179F\
+  \u17C1\u179C\u17B6\u1796\u17B7\u1793\u17B7\u178F\u17D2\u1799\u179A\u1780\u1787\u17C6\
+  \u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\
+  \u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\
+  \u1792\u1788\u17B6\u1798  \u1793\u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\
+  \u179B\u1787\u17B6\u179B\u17BE\u1780\u178A\u17C6\u1794\u17BC\u1784\u17D4  (At least\
+  \ 50 population aged 40 years+ registered and received the first screening and treatment\
+  \ services for diabetes and hypertension per month)\",\"optionName\":\"metric_9ttlclpl5ts_chyyfmbkdlq\"\
+  },{\"expressionType\":\"SQL\",\"sqlExpression\":\"CASE \\n    WHEN (COUNT(DISTINCT\
+  \ CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END) * 100.0 / NULLIF(COUNT(DISTINCT CASE WHEN indicator\
+  \ = 'patients-aged-40-above-with-first-time ncd-screening' THEN \\\"OpenMRS ID\\\
+  \" END) + COUNT(DISTINCT CASE WHEN indicator = '80-pecent-followup-with-hypertension-iabetes-and-medication'\
+  \ THEN \\\"OpenMRS ID\\\" END), 0)) >= 80 \\n    THEN 'Yes'\\n    ELSE 'No'\\nEND\\\
+  n\",\"column\":null,\"aggregate\":null,\"datasourceWarning\":false,\"hasCustomLabel\"\
+  :true,\"label\":\"\u1799\u17C9\u17B6\u1784\u17A0\u17C4\u1785\u178E\u17B6\u179F\u17CB\
+  \ 80 \u1797\u17B6\u1782\u179A\u1799\u1793\u17C3\u17A2\u17D2\u1793\u1780\u1787\u17C6\
+  \u1784\u17BA\u178A\u17C2\u179B\u1798\u17B6\u1793\u1780\u17B6\u179A\u1792\u17D2\u179C\
+  \u17BE\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\u1790\
+  \u17B6\u1798\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1780\u1793\u17C4\u1798\
+  \u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784/\u17AC\u1787\u17C6\u1784\u17BA\
+  \u179B\u17BE\u179F\u1788\u17B6\u1798\u1794\u17B6\u1793\u1791\u1791\u17BD\u179B\u1780\
+  \u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u178F\u17D2\u179A\u17B9\u1798\
+  \u178F\u17D2\u179A\u17BC\u179C (\u17A7. \u1794\u17B6\u1793\u1791\u1791\u17BD\u179B\
+  \u1790\u17D2\u1793\u17B6\u17C6\u179F\u1798\u17D2\u179A\u17B6\u1794\u17CB\u1780\u17B6\
+  \u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1787\u17B6\u1794\u17D2\u179A\u1785\
+  \u17B6\u17C6 \u1793\u17B7\u1784\u1794\u17D2\u179A\u1785\u17B6\u17C6\u1781\u17C2\
+  )\u17D4 \u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1782\u17BD\u179A\u178F\
+  \u17C2\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1792\u17D2\u179C\u17BE\u178F\
+  \u17C1\u179F\u17D2\u178F\u1787\u17B6\u1791\u17C0\u1784\u1791\u17B6\u178F\u17CB\u178F\
+  \u17B6\u1798\u1780\u17B6\u179A\u178E\u17C2\u1793\u17B6\u17C6\u1793\u17C3\u1780\u17B6\
+  \u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u17D4 \u17B1\u179F\u1790 (\u17B1\
+  \u179F\u1790\u179F\u17B6\u179A\u179C\u1793\u17D2\u178F ) \u179F\u1798\u17D2\u179A\
+  \u17B6\u1794\u17CB\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1782\
+  \u17BD\u179A\u178F\u17C2\u178F\u17D2\u179A\u17BC\u179C\u1794\u17B6\u1793\u1795\u17D2\
+  \u178F\u179B\u17CB\u1787\u17BC\u1793\u178A\u17C4\u1799\u1798\u17B7\u1793\u1782\u17B7\
+  \u178F\u1790\u17D2\u179B\u17C3\u1794\u1793\u17D2\u1790\u17C2\u1798\u178A\u179B\u17CB\
+  \u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA \u17A0\u17BE\u1799\u1798\u17BC\u179B\
+  \u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B\
+  \u1798\u17B7\u1793\u1782\u17BD\u179A\u17A2\u1793\u17BB\u1789\u17D2\u1789\u17B6\u178F\
+  \u17B1\u17D2\u1799\u17A2\u17D2\u1793\u1780\u1787\u17C6\u1784\u17BA\u1791\u17B7\u1789\
+  \u1790\u17D2\u1793\u17B6\u17C6)\u17D4 (At least 80 percent of patients with confirmed\
+  \ diagnosis as having diabetes and/or hypertension received proper treatment (i.e.,\
+  \ received medicines for treatment regularly and on a monthly basis). The patients\
+  \ should be tested regularly according to the treatment guidelines. Drugs (essential\
+  \ drugs) for treatment should be provided without additional charge to the patients,\
+  \ and health facilities should not let patients purchase medicines))\",\"optionName\"\
+  :\"metric_dmznsk3y057_77lv31713b2\"}],\"metricsLayout\":\"ROWS\",\"adhoc_filters\"\
+  :[{\"clause\":\"WHERE\",\"comparator\":\"No filter\",\"expressionType\":\"SIMPLE\"\
+  ,\"operator\":\"TEMPORAL_RANGE\",\"subject\":\"Visit Start date\"}],\"row_limit\"\
+  :1000,\"order_desc\":true,\"aggregateFunction\":\"Sum\",\"transposePivot\":true,\"\
+  valueFormat\":\"~g\",\"date_format\":\"smart_date\",\"rowOrder\":\"key_a_to_z\"\
+  ,\"colOrder\":\"key_a_to_z\",\"conditional_formatting\":[],\"extra_form_data\":{},\"\
+  dashboards\":[1],\"force\":false,\"result_format\":\"json\",\"result_type\":\"full\"\
+  },\"result_format\":\"json\",\"result_type\":\"full\"}"
+cache_timeout: null
+uuid: 802a00e7-0681-407f-bd7a-c55a4f4e466e
+version: 1.0.0
+dataset_uuid: 54c5a8fb-66f7-4279-8498-abebf5d65e7f

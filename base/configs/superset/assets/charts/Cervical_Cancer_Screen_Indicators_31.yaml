@@ -1,0 +1,71 @@
+slice_name: Cervical Cancer Screen Indicators
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 15__table
+  viz_type: pivot_table_v2
+  slice_id: 33
+  granularity_sqla: date_started
+  time_grain_sqla: P1D
+  time_range: No filter
+  groupbyColumns: []
+  groupbyRows: []
+  metrics:
+  - screen ccs
+  - percentage screen
+  - screen ccs positive
+  - percentage screen ccs positive
+  - screen ccs positive received treatment
+  - percentage screen ccs positive received treatment
+  metricsLayout: ROWS
+  adhoc_filters: []
+  row_limit: 10000
+  order_desc: true
+  aggregateFunction: Sum
+  transposePivot: false
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting:
+  - colorScheme: '#ACE1C4'
+    column: screen ccs
+    operator: None
+  - colorScheme: '#ACE1C4'
+    column: screen ccs positive
+    operator: None
+  - colorScheme: '#FDE380'
+    column: percentage screen ccs positive
+    operator: None
+  - colorScheme: '#FDE380'
+    column: screen ccs positive received treatment
+    operator: None
+  - colorScheme: '#ACE1C4'
+    column: screen ccs positive received treatment
+    operator: None
+  - colorScheme: '#FDE380'
+    column: percentage screen ccs positive received treatment
+    operator: None
+  extra_form_data: {}
+  dashboards:
+  - 3
+  annotation_layers: []
+query_context: '{"datasource":{"id":15,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"date_started","filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":["screen
+  ccs","percentage screen","screen ccs positive","percentage screen ccs positive","screen
+  ccs positive received treatment","percentage screen ccs positive received treatment"],"orderby":[["screen
+  ccs",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"15__table","viz_type":"pivot_table_v2","slice_id":33,"granularity_sqla":"date_started","time_grain_sqla":"P1D","time_range":"No
+  filter","groupbyColumns":[],"groupbyRows":[],"metrics":["screen ccs","percentage
+  screen","screen ccs positive","percentage screen ccs positive","screen ccs positive
+  received treatment","percentage screen ccs positive received treatment"],"metricsLayout":"ROWS","adhoc_filters":[],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","transposePivot":false,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[{"colorScheme":"#ACE1C4","column":"screen
+  ccs","operator":"None"},{"colorScheme":"#ACE1C4","column":"screen ccs positive","operator":"None"},{"colorScheme":"#FDE380","column":"percentage
+  screen ccs positive","operator":"None"},{"colorScheme":"#FDE380","column":"screen
+  ccs positive received treatment","operator":"None"},{"colorScheme":"#ACE1C4","column":"screen
+  ccs positive received treatment","operator":"None"},{"colorScheme":"#FDE380","column":"percentage
+  screen ccs positive received treatment","operator":"None"}],"extra_form_data":{},"dashboards":[3],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 283c79b5-3b29-4e3a-9f4d-03a8b9afe1d9
+version: 1.0.0
+dataset_uuid: 21edab6c-4a53-4161-9f2c-f9cd1f305b13

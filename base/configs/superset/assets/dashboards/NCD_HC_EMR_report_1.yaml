@@ -1,0 +1,1985 @@
+dashboard_title: NCD HC EMR report
+description: null
+css: ''
+slug: ncd-hc-emr-report
+certified_by: null
+certification_details: null
+published: true
+uuid: 0314b4b4-1837-450c-b573-0108943dbec0
+position:
+  CHART-KyPQi9RSjS:
+    children: []
+    id: CHART-KyPQi9RSjS
+    meta:
+      chartId: 71
+      height: 69
+      sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\
+        \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
+        \u1784 \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (Follow up CVD risk factor)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: a508c620-3168-4fb4-9ee3-92f7bb36a92e
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-zoBCIgFfYB
+    - ROW-7-icvuPZW_
+    type: CHART
+  CHART-explore-18-1:
+    children: []
+    id: CHART-explore-18-1
+    meta:
+      chartId: 66
+      height: 54
+      sliceName: "\u17A2\u17D2\u1793\u1780\u1791\u17D2\u179A\u1791\u1784\u17CB\u179F\
+        \u17BB\u1781\u1797\u17B6\u1796\u1797\u17BC\u1798\u17B7 \u179A\u1799\u17C8\u1796\
+        \u17C1\u179B\u178A\u17C2\u179B\u178F\u17D2\u179A\u17BC\u179C\u1787\u17D2\u179A\
+        \u17BE\u179F\u179A\u17BE\u179F (VHSG selected period)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: fcdead1b-d063-462f-80f7-3bebfe4ef55c
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-R0gpBrwwQo
+    - ROW-wwg-YupzB
+    type: CHART
+  CHART-explore-19-1:
+    children: []
+    id: CHART-explore-19-1
+    meta:
+      chartId: 72
+      height: 64
+      sliceName: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\
+        \u179A\u17B6\u1780\u17CB (Payment type)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 46e7d221-e119-48b7-829f-e1e5eb2c5b67
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-io837OTCW
+    - ROW-ArK_OgZ8E
+    type: CHART
+  CHART-explore-20-1:
+    children: []
+    id: CHART-explore-20-1
+    meta:
+      chartId: 67
+      height: 78
+      sliceName: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\
+        \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
+        \u1784 \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (CVD risk factor level)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 0ae383d3-1b95-41f3-b78a-4ac9b160bee2
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-9_2m5C8oB
+    - ROW-p6c_q9JNM
+    type: CHART
+  CHART-explore-21-1:
+    children: []
+    id: CHART-explore-21-1
+    meta:
+      chartId: 54
+      height: 39
+      sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+        \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 06787e7c-840b-469c-8e42-b9000f8d50aa
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-pcP09KpAD
+    - ROW-FKw8C0BGL
+    type: CHART
+  CHART-explore-22-1:
+    children: []
+    id: CHART-explore-22-1
+    meta:
+      chartId: 49
+      height: 43
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+        \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 41aaa8d4-2166-4b62-8415-c3509ead4aaa
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-XnkhQFKvv_
+    - ROW-xtN1SNCoV
+    type: CHART
+  CHART-explore-25-1:
+    children: []
+    id: CHART-explore-25-1
+    meta:
+      chartId: 70
+      height: 39
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 (DM Follow-up)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: e745bbfc-8292-443a-8ad2-892c020e8b3d
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-sQCz_04w59
+    - ROW-1B0vzZhfL
+    type: CHART
+  CHART-explore-34-1:
+    children: []
+    id: CHART-explore-34-1
+    meta:
+      chartId: 57
+      height: 54
+      sliceName: "\u17A2\u17D2\u1793\u1780\u1791\u17D2\u179A\u1791\u1784\u17CB\u179F\
+        \u17BB\u1781\u1797\u17B6\u1796\u1797\u17BC\u1798\u17B7 \u1796\u17B8\u1790\u17D2\
+        \u1784\u17C3\u1785\u17B6\u1794\u17CB\u1795\u17D2\u178F\u17BE\u1798\u179A\u17A0\
+        \u17BC\u178F\u178A\u179B\u17CB\u1790\u17D2\u1784\u17C3\u1785\u1794\u17CB\u1793\
+        \u17C3\u1780\u17B6\u179A\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (VHSG\
+        \ From the start to the end of the selected)"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: f0b92d7f-3030-4b9c-ba0b-288bffcce6d1
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-R0gpBrwwQo
+    - ROW-wwg-YupzB
+    type: CHART
+  CHART-explore-35-1:
+    children: []
+    id: CHART-explore-35-1
+    meta:
+      chartId: 59
+      height: 64
+      sliceName: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\
+        \u179A\u17B6\u1780\u17CB (Payment type from the start to the end of the selected)"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 37e46fe7-a11b-4529-9953-f5f4412f8fea
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-io837OTCW
+    - ROW-ArK_OgZ8E
+    type: CHART
+  CHART-explore-36-1:
+    children: []
+    id: CHART-explore-36-1
+    meta:
+      chartId: 52
+      height: 78
+      sliceName: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\
+        \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
+        \u1784 \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (CVD risk factor level)\
+        \ - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 88ad0424-53ee-4eef-9c1d-821a72833bd0
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-9_2m5C8oB
+    - ROW-p6c_q9JNM
+    type: CHART
+  CHART-explore-37-1:
+    children: []
+    id: CHART-explore-37-1
+    meta:
+      chartId: 55
+      height: 39
+      sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+        \u17B6\u1792\u1788\u17B6\u1798 (HBP) - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 388bb151-2871-4825-8740-58a18a5a74dc
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-pcP09KpAD
+    - ROW-FKw8C0BGL
+    type: CHART
+  CHART-explore-38-1:
+    children: []
+    id: CHART-explore-38-1
+    meta:
+      chartId: 69
+      height: 43
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+        \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP) - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 410417e0-3968-42b3-8934-db8bb38f8d35
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-XnkhQFKvv_
+    - ROW-xtN1SNCoV
+    type: CHART
+  CHART-explore-39-1:
+    children: []
+    id: CHART-explore-39-1
+    meta:
+      chartId: 56
+      height: 41
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 (DM)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 844249e1-801c-47af-9828-f35e89b1bf91
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-JOFPEZFAW
+    - ROW-buFzbN_56
+    type: CHART
+  CHART-explore-40-1:
+    children: []
+    id: CHART-explore-40-1
+    meta:
+      chartId: 60
+      height: 41
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 (DM) - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 4a29f29d-e943-4fa1-ace2-2cea02666d96
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-JOFPEZFAW
+    - ROW-buFzbN_56
+    type: CHART
+  CHART-explore-41-1:
+    children: []
+    id: CHART-explore-41-1
+    meta:
+      chartId: 51
+      height: 39
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 (DM Follow-up) - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 6512c70d-ad0f-4ae3-bca0-4aa236bc14bb
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-sQCz_04w59
+    - ROW-1B0vzZhfL
+    type: CHART
+  CHART-explore-42-1:
+    children: []
+    id: CHART-explore-42-1
+    meta:
+      chartId: 50
+      height: 42
+      sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+        \u17B6\u1792\u1788\u17B6\u1798 (HBP Follow-up)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: 30250f36-e5b9-4d8b-9248-48c50c0e6e28
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-2LT2K0nMK
+    - ROW-1MSGXSFk2
+    type: CHART
+  CHART-explore-43-1:
+    children: []
+    id: CHART-explore-43-1
+    meta:
+      chartId: 68
+      height: 41
+      sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+        \u17B6\u1792\u1788\u17B6\u1798 (HBP Follow-up) - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: b3b45ce7-ce7b-49ba-a644-eb641ceb597a
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-2LT2K0nMK
+    - ROW-1MSGXSFk2
+    type: CHART
+  CHART-explore-44-1:
+    children: []
+    id: CHART-explore-44-1
+    meta:
+      chartId: 64
+      height: 44
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+        \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP Follow-up)"
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: a710b433-804d-4843-b4a1-591f20ee0f64
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-XJJS4ijVq
+    - ROW-AEShWRGl-
+    type: CHART
+  CHART-explore-45-1:
+    children: []
+    id: CHART-explore-45-1
+    meta:
+      chartId: 65
+      height: 50
+      sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+        \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+        \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP Follow-up)\
+        \ - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 24b593a0-f6c0-4ea5-8778-f9bec36ffd19
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-XJJS4ijVq
+    - ROW-AEShWRGl-
+    type: CHART
+  CHART-explore-61-1:
+    children: []
+    id: CHART-explore-61-1
+    meta:
+      chartId: 61
+      height: 36
+      sliceName: Number of CCS Screening - Cumulative
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: de5915e1-b9aa-4a83-aa0f-a3b85b8f3403
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB--mZklkexa
+    - ROW-tRZOS4pi-
+    type: CHART
+  CHART-explore-62-1:
+    children: []
+    id: CHART-explore-62-1
+    meta:
+      chartId: 53
+      height: 36
+      sliceName: Number of CCS Screening
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: be3ea1c8-f0c0-4513-9576-720baca50cb3
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB--mZklkexa
+    - ROW-tRZOS4pi-
+    type: CHART
+  CHART-explore-63-1:
+    children: []
+    id: CHART-explore-63-1
+    meta:
+      chartId: 63
+      height: 54
+      sliceName: Dropout
+      sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
+        \u17B6\u1793\u1787\u17D2\u179A\u17BE\u179F\u179A\u17BE\u179F (The selected\
+        \ period)"
+      uuid: bb6a9f95-951c-4b31-b03d-a9c53fa34904
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-od4wsrTQX
+    - ROW-4umzUlQx9
+    type: CHART
+  CHART-explore-64-1:
+    children: []
+    id: CHART-explore-64-1
+    meta:
+      chartId: 62
+      height: 54
+      sliceName: Dropout - cumulative
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: d4eaf680-9d0f-4271-995f-737c41b1607a
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-od4wsrTQX
+    - ROW-4umzUlQx9
+    type: CHART
+  CHART-f3e66JQ-IW:
+    children: []
+    id: CHART-f3e66JQ-IW
+    meta:
+      chartId: 58
+      height: 69
+      sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\
+        \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
+        \u1784 \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (Follow up CVD risk factor)\
+        \ - cumulative"
+      sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
+        \u17C6\u178F\u17B6\u17C6\u1784\u1796\u17B8\u178A\u17BE\u1798\u1798\u1780 (Cumulative\
+        \ from the beginning)"
+      uuid: 9e92dce2-6041-4497-953a-b6a27d5160aa
+      width: 6
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-zoBCIgFfYB
+    - ROW-7-icvuPZW_
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  DIVIDER-OKka-nj4sZ:
+    children: []
+    id: DIVIDER-OKka-nj4sZ
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: DIVIDER
+  GRID_ID:
+    children:
+    - TABS-i19I_NKfun
+    - HEADER-95UgrDMIEC
+    - TABS-U-dXbZaCDh
+    - HEADER-4S7-dIRqk_
+    - TABS-K1lxPABCza
+    - TABS-t8HkMsMlC3
+    - DIVIDER-OKka-nj4sZ
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER-4S7-dIRqk_:
+    children: []
+    id: HEADER-4S7-dIRqk_
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u1787\u17C6\u1784\u17BA\u1791\u17B9\
+        \u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784\
+        \ \u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798\
+        \ (Follow-up DM & HBP)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: HEADER
+  HEADER-95UgrDMIEC:
+    children: []
+    id: HEADER-95UgrDMIEC
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\u1799\
+        \ (Diagnosis)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: HEADER
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: NCD HC EMR report
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-1B0vzZhfL:
+    children:
+    - CHART-explore-25-1
+    - CHART-explore-41-1
+    id: ROW-1B0vzZhfL
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-sQCz_04w59
+    type: ROW
+  ROW-1MSGXSFk2:
+    children:
+    - CHART-explore-42-1
+    - CHART-explore-43-1
+    id: ROW-1MSGXSFk2
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-2LT2K0nMK
+    type: ROW
+  ROW-4umzUlQx9:
+    children:
+    - CHART-explore-63-1
+    - CHART-explore-64-1
+    id: ROW-4umzUlQx9
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-od4wsrTQX
+    type: ROW
+  ROW-7-icvuPZW_:
+    children:
+    - CHART-KyPQi9RSjS
+    - CHART-f3e66JQ-IW
+    id: ROW-7-icvuPZW_
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    - TAB-zoBCIgFfYB
+    type: ROW
+  ROW-AEShWRGl-:
+    children:
+    - CHART-explore-44-1
+    - CHART-explore-45-1
+    id: ROW-AEShWRGl-
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    - TAB-XJJS4ijVq
+    type: ROW
+  ROW-ArK_OgZ8E:
+    children:
+    - CHART-explore-19-1
+    - CHART-explore-35-1
+    id: ROW-ArK_OgZ8E
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-io837OTCW
+    type: ROW
+  ROW-FKw8C0BGL:
+    children:
+    - CHART-explore-21-1
+    - CHART-explore-37-1
+    id: ROW-FKw8C0BGL
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-pcP09KpAD
+    type: ROW
+  ROW-buFzbN_56:
+    children:
+    - CHART-explore-39-1
+    - CHART-explore-40-1
+    id: ROW-buFzbN_56
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-JOFPEZFAW
+    type: ROW
+  ROW-p6c_q9JNM:
+    children:
+    - CHART-explore-20-1
+    - CHART-explore-36-1
+    id: ROW-p6c_q9JNM
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-9_2m5C8oB
+    type: ROW
+  ROW-tRZOS4pi-:
+    children:
+    - CHART-explore-62-1
+    - CHART-explore-61-1
+    id: ROW-tRZOS4pi-
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB--mZklkexa
+    type: ROW
+  ROW-wwg-YupzB:
+    children:
+    - CHART-explore-18-1
+    - CHART-explore-34-1
+    id: ROW-wwg-YupzB
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    - TAB-R0gpBrwwQo
+    type: ROW
+  ROW-xtN1SNCoV:
+    children:
+    - CHART-explore-22-1
+    - CHART-explore-38-1
+    id: ROW-xtN1SNCoV
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    - TAB-XnkhQFKvv_
+    type: ROW
+  TAB--mZklkexa:
+    children:
+    - ROW-tRZOS4pi-
+    id: TAB--mZklkexa
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u179F\u1780\u1798\u17D2\u1798\u1797\u17B6\u1796\u1796\u17B7\u1793\u17B7\
+        \u178F\u17D2\u1799 (Screening Activity)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    type: TAB
+  TAB-2LT2K0nMK:
+    children:
+    - ROW-1MSGXSFk2
+    id: TAB-2LT2K0nMK
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\
+        \u1792\u1788\u17B6\u1798 (HBP)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    type: TAB
+  TAB-9_2m5C8oB:
+    children:
+    - ROW-p6c_q9JNM
+    id: TAB-9_2m5C8oB
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\u17D0\
+        \u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784\
+        \ \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (CVD risk factor level)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    type: TAB
+  TAB-JOFPEZFAW:
+    children:
+    - ROW-buFzbN_56
+    id: TAB-JOFPEZFAW
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+        \u17C2\u1798 (DM)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    type: TAB
+  TAB-R0gpBrwwQo:
+    children:
+    - ROW-wwg-YupzB
+    id: TAB-R0gpBrwwQo
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u17A2\u17D2\u1793\u1780\u1791\u17D2\u179A\u1791\u1784\u17CB\u179F\u17BB\
+        \u1781\u1797\u17B6\u1796\u1797\u17BC\u1798\u17B7 (VHSG)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    type: TAB
+  TAB-XJJS4ijVq:
+    children:
+    - ROW-AEShWRGl-
+    id: TAB-XJJS4ijVq
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+        \u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\
+        \u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    type: TAB
+  TAB-XnkhQFKvv_:
+    children:
+    - ROW-xtN1SNCoV
+    id: TAB-XnkhQFKvv_
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+        \u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\
+        \u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    type: TAB
+  TAB-io837OTCW:
+    children:
+    - ROW-ArK_OgZ8E
+    id: TAB-io837OTCW
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\u179A\
+        \u17B6\u1780\u17CB (Payment type)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-i19I_NKfun
+    type: TAB
+  TAB-od4wsrTQX:
+    children:
+    - ROW-4umzUlQx9
+    id: TAB-od4wsrTQX
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u17A2\u17D2\u1793\u1780\u1794\u17C4\u17C7\u1794\u1784\u17CB (\u1799\u17C9\
+        \u17B6\u1784\u178F\u17B7\u1785\u17E9\u17E0\u1790\u17D2\u1784\u17C3 \u1785\u17B6\
+        \u1794\u17CB\u1796\u17B8\u1780\u17B6\u179A\u1790\u17C2\u1791\u17B6\u17C6\u1793\
+        \u17B7\u1784\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1785\u17BB\u1784\u1780\
+        \u17D2\u179A\u17C4\u1799) (Drop out (More than 90 days after the last follow-up))"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    type: TAB
+  TAB-pcP09KpAD:
+    children:
+    - ROW-FKw8C0BGL
+    id: TAB-pcP09KpAD
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\
+        \u1792\u1788\u17B6\u1798 (HBP)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-U-dXbZaCDh
+    type: TAB
+  TAB-sQCz_04w59:
+    children:
+    - ROW-1B0vzZhfL
+    id: TAB-sQCz_04w59
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+        \u17C2\u1798 (DM)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-K1lxPABCza
+    type: TAB
+  TAB-zoBCIgFfYB:
+    children:
+    - ROW-7-icvuPZW_
+    id: TAB-zoBCIgFfYB
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\u17D0\
+        \u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784\
+        \ \u179F\u179A\u179F\u17C3\u1788\u17B6\u1798 (Follow up CVD risk factor)"
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-t8HkMsMlC3
+    type: TAB
+  TABS-K1lxPABCza:
+    children:
+    - TAB-sQCz_04w59
+    - TAB-2LT2K0nMK
+    - TAB-XJJS4ijVq
+    id: TABS-K1lxPABCza
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+  TABS-U-dXbZaCDh:
+    children:
+    - TAB-JOFPEZFAW
+    - TAB-pcP09KpAD
+    - TAB-XnkhQFKvv_
+    id: TABS-U-dXbZaCDh
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+  TABS-i19I_NKfun:
+    children:
+    - TAB--mZklkexa
+    - TAB-R0gpBrwwQo
+    - TAB-io837OTCW
+    - TAB-9_2m5C8oB
+    id: TABS-i19I_NKfun
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+  TABS-t8HkMsMlC3:
+    children:
+    - TAB-zoBCIgFfYB
+    - TAB-od4wsrTQX
+    id: TABS-t8HkMsMlC3
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+metadata:
+  color_scheme: bnbColors
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  default_filters: '{}'
+  chart_configuration:
+    '49':
+      id: 49
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '50':
+      id: 50
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '51':
+      id: 51
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '52':
+      id: 52
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '53':
+      id: 53
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '54':
+      id: 54
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '55':
+      id: 55
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '56':
+      id: 56
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '57':
+      id: 57
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '58':
+      id: 58
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '59':
+      id: 59
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '60':
+      id: 60
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '61':
+      id: 61
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '62':
+      id: 62
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '63':
+      id: 63
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '64':
+      id: 64
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '65':
+      id: 65
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '66':
+      id: 66
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '67':
+      id: 67
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+    '68':
+      id: 68
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 69
+        - 70
+        - 71
+        - 72
+    '69':
+      id: 69
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 70
+        - 71
+        - 72
+    '70':
+      id: 70
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 71
+        - 72
+    '71':
+      id: 71
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 72
+    '72':
+      id: 72
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+  native_filter_configuration:
+  - id: NATIVE_FILTER-YemSl5IA_
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_province
+      datasetUuid: 6fa56ea7-aa49-46cd-8ae8-f8c5d141e0c9
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 25
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    tabsInScope:
+    - TAB-2LT2K0nMK
+    - TAB-9_2m5C8oB
+    - TAB-JOFPEZFAW
+    - TAB-R0gpBrwwQo
+    - TAB-XJJS4ijVq
+    - TAB-XnkhQFKvv_
+    - TAB-io837OTCW
+    - TAB-pcP09KpAD
+    - TAB-sQCz_04w59
+    - TAB-zoBCIgFfYB
+  - id: NATIVE_FILTER-IS1XclB_8
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_district
+      datasetUuid: 6fa56ea7-aa49-46cd-8ae8-f8c5d141e0c9
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-YemSl5IA_
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 25
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    tabsInScope:
+    - TAB-2LT2K0nMK
+    - TAB-9_2m5C8oB
+    - TAB-JOFPEZFAW
+    - TAB-R0gpBrwwQo
+    - TAB-XJJS4ijVq
+    - TAB-XnkhQFKvv_
+    - TAB-io837OTCW
+    - TAB-pcP09KpAD
+    - TAB-sQCz_04w59
+    - TAB-zoBCIgFfYB
+  - id: NATIVE_FILTER-MGvZPcFpt
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: health_facility_name
+      datasetUuid: 6fa56ea7-aa49-46cd-8ae8-f8c5d141e0c9
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-YemSl5IA_
+    - NATIVE_FILTER-IS1XclB_8
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 25
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 39
+    - 40
+    - 41
+    - 42
+    - 43
+    - 44
+    - 45
+    - 46
+    - 47
+    tabsInScope:
+    - TAB-2LT2K0nMK
+    - TAB-9_2m5C8oB
+    - TAB-JOFPEZFAW
+    - TAB-R0gpBrwwQo
+    - TAB-XJJS4ijVq
+    - TAB-XnkhQFKvv_
+    - TAB-io837OTCW
+    - TAB-pcP09KpAD
+    - TAB-sQCz_04w59
+    - TAB-zoBCIgFfYB
+  - id: NATIVE_FILTER_DIVIDER-P3gNMa5RR
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
+      \u178E\u17CD (Reporting Period)"
+    description: ''
+    chartsInScope: []
+    tabsInScope: []
+  - id: NATIVE_FILTER-xuWhB5b4k
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-R0gpBrwwQo
+      - TAB-io837OTCW
+      - TAB-9_2m5C8oB
+      - TAB-JOFPEZFAW
+      - TAB-pcP09KpAD
+      - TAB-XnkhQFKvv_
+      - TAB-sQCz_04w59
+      - TAB-2LT2K0nMK
+      - TAB-XJJS4ijVq
+      - TAB-zoBCIgFfYB
+      - TAB--mZklkexa
+      - TAB-od4wsrTQX
+      excluded:
+      - 57
+      - 59
+      - 52
+      - 55
+      - 69
+      - 60
+      - 51
+      - 68
+      - 65
+      - 61
+      - 58
+      - 62
+    type: NATIVE_FILTER
+    description: This filter applies to the left table.
+    chartsInScope:
+    - 18
+    - 19
+    - 20
+    - 21
+    - 22
+    - 25
+    - 39
+    - 42
+    - 44
+    - 46
+    tabsInScope:
+    - TAB-2LT2K0nMK
+    - TAB-9_2m5C8oB
+    - TAB-JOFPEZFAW
+    - TAB-R0gpBrwwQo
+    - TAB-XJJS4ijVq
+    - TAB-XnkhQFKvv_
+    - TAB-io837OTCW
+    - TAB-pcP09KpAD
+    - TAB-sQCz_04w59
+    - TAB-zoBCIgFfYB
+  - id: NATIVE_FILTER_DIVIDER-61cBGALq6
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u1780\u17C6\u17A1\u17BB\u1784\u1796\u17C1\u179B\u1794\u17D2\u179A\u1798\
+      \u17BC\u179B\u1795\u17D2\u178A\u17BB\u17C6 (Cumulative Period)"
+    description: ''
+    chartsInScope: []
+    tabsInScope: []
+  - id: NATIVE_FILTER-Uwzthn5Vs
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-R0gpBrwwQo
+      - TAB-io837OTCW
+      - TAB-9_2m5C8oB
+      - TAB-JOFPEZFAW
+      - TAB-pcP09KpAD
+      - TAB-XnkhQFKvv_
+      - TAB-sQCz_04w59
+      - TAB-2LT2K0nMK
+      - TAB-XJJS4ijVq
+      - TAB-zoBCIgFfYB
+      - TAB--mZklkexa
+      - TAB-od4wsrTQX
+      excluded:
+      - 71
+      - 66
+      - 72
+      - 67
+      - 54
+      - 49
+      - 70
+      - 56
+      - 50
+      - 64
+      - 53
+      - 63
+    type: NATIVE_FILTER
+    description: This applies to the right table. From the beginning to the end of
+      selected period.
+    chartsInScope:
+    - 34
+    - 35
+    - 36
+    - 37
+    - 38
+    - 40
+    - 41
+    - 43
+    - 45
+    - 47
+    tabsInScope:
+    - TAB-2LT2K0nMK
+    - TAB-9_2m5C8oB
+    - TAB-JOFPEZFAW
+    - TAB-R0gpBrwwQo
+    - TAB-XJJS4ijVq
+    - TAB-XnkhQFKvv_
+    - TAB-io837OTCW
+    - TAB-pcP09KpAD
+    - TAB-sQCz_04w59
+    - TAB-zoBCIgFfYB
+  shared_label_colors: {}
+  color_scheme_domain:
+  - '#29696B'
+  - '#5BCACE'
+  - '#F4B02A'
+  - '#F1826A'
+  - '#792EB2'
+  - '#C96EC6'
+  - '#921E50'
+  - '#B27700'
+  - '#9C3498'
+  - '#9C3498'
+  - '#E4679D'
+  - '#C32F0E'
+  - '#9D63CA'
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 49
+    - 50
+    - 51
+    - 52
+    - 53
+    - 54
+    - 55
+    - 56
+    - 57
+    - 58
+    - 59
+    - 60
+    - 61
+    - 62
+    - 63
+    - 64
+    - 65
+    - 66
+    - 67
+    - 68
+    - 69
+    - 70
+    - 71
+    - 72
+version: 1.0.0
