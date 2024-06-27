@@ -1,0 +1,957 @@
+table_name: NCD RH EMR Report
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT\n  MAX(t1.date_started) AS visit_date_started,\n  MAX(t3.postal_code)\
+  \ AS health_facility_code,\n  MAX(t3.name) AS health_facility_name,\n  MAX(t3.county_district)\
+  \ AS health_facility_district,\n  MAX(t3.state_province) AS health_facility_province,\n\
+  \  MAX(\n    DATE_PART ('year', age (t1.date_started, t2.birthdate))\n  ) AS age,\n\
+  \  MAX(t2.gender) AS gender,\n  MAX(t1.type) AS visit_type,\n  MAX(obs2.diagnosis_one)\
+  \ AS diagnosis_one,\n  MAX(obs3.diagnosis_two) AS diagnosis_two,\n  MAX(obs7.follow_up_date)\
+  \ AS follow_up_date,\n  -- Diagnosis\n  MAX(\n    CASE\n      WHEN (\n        (\n\
+  \          obs2.diagnosis_one_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n          OR obs3.diagnosis_two_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n        )\n      ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\
+  \u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 (DM)'\n    END\n  ) AS dm,\n  MAX(\n\
+  \    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   ) THEN '\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\
+  \u1792\u1788\u17B6\u1798 (HBP)'\n    END\n  ) AS hbp,\n  MAX(\n    CASE\n      WHEN\
+  \ (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n  \
+  \      OR obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n     \
+  \   OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n        OR\
+  \ obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n      )\n    \
+  \  AND (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\
+  \u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\
+  \u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)'\n    END\n  ) AS dm_with_hbp,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n   \
+  \   )\n      AND t1.visit_type_uuid='5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)'\n    END\n  ) AS t1d_new_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \        OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \   )\n      AND t1.visit_type_uuid='5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)'\n    END\n  ) AS t2d_new_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n\
+  \        OR obs3.diagnosis_two_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n   \
+  \   )\n      AND t1.visit_type_uuid='5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\u1796\u17C4\u17C7\
+  \ (GDM)'\n    END\n  ) AS gdm_new_visit,\n  MAX(\n    CASE\n      WHEN (\n     \
+  \   obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \      )\n      AND t1.visit_type_uuid='5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\u1792\
+  \u1788\u17B6\u1798 (HBP)'\n    END\n  ) AS hbp_new_visit,\n  MAX(\n    CASE\n  \
+  \    WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \     OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n      \
+  \  OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n      )\n\
+  \      AND (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND t1.visit_type_uuid='5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\
+  \u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)'\n    END\n  ) AS dm_with_hbp_new_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n   \
+  \   )\n      AND t1.visit_type_uuid='54da8fbc-b92f-4251-b53a-feedc8e8c594' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)'\n    END\n  ) AS t1d_follow_up_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \        OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \   )\n      AND t1.visit_type_uuid='54da8fbc-b92f-4251-b53a-feedc8e8c594' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)'\n    END\n  ) AS t2d_follow_up_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n\
+  \        OR obs3.diagnosis_two_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n   \
+  \   )\n      AND t1.visit_type_uuid='54da8fbc-b92f-4251-b53a-feedc8e8c594' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\u1796\u17C4\u17C7\
+  \ (GDM)'\n    END\n  ) AS gdm_follow_up_visit,\n  MAX(\n    CASE\n      WHEN (\n\
+  \        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n      \
+  \  OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n      )\n\
+  \      AND t1.visit_type_uuid='54da8fbc-b92f-4251-b53a-feedc8e8c594' THEN '\u1787\
+  \u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\
+  \u1798 (HBP)'\n    END\n  ) AS hbp_follow_up_visit,\n  MAX(\n    CASE\n      WHEN\
+  \ (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n  \
+  \      OR obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n     \
+  \   OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n        OR\
+  \ obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n      )\n    \
+  \  AND (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND t1.visit_type_uuid='54da8fbc-b92f-4251-b53a-feedc8e8c594' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\
+  \u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\u1798\u17D2\
+  \u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)'\n    END\n  ) AS dm_with_hbp_follow_up_visit,\n\
+  \  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n   \
+  \   )\n      AND (\n        CURRENT_DATE-obs7.follow_up_date>INTERVAL '90 days'\n\
+  \      ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+  \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)'\n    END\n\
+  \  ) AS t1d_loss_follow_up,\n  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \        OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \   )\n      AND (\n        CURRENT_DATE-obs7.follow_up_date>INTERVAL '90 days'\n\
+  \      ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+  \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)'\n    END\n\
+  \  ) AS t2d_loss_follow_up,\n  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n\
+  \        OR obs3.diagnosis_two_uuid='932d395c-d509-4d42-bac4-5a3281efe149'\n   \
+  \   )\n      AND (\n        CURRENT_DATE-obs7.follow_up_date>INTERVAL '90 days'\n\
+  \      ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+  \u17A2\u17C2\u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\u1796\
+  \u17C4\u17C7 (GDM)'\n    END\n  ) AS gdm_loss_follow_up,\n  MAX(\n    CASE\n   \
+  \   WHEN (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND (\n        CURRENT_DATE-obs7.follow_up_date>INTERVAL '90 days'\n\
+  \      ) THEN '\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+  \u17B6\u1792\u1788\u17B6\u1798 (HBP)'\n    END\n  ) AS hbp_loss_follow_up,\n  MAX(\n\
+  \    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \     OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n      \
+  \  OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n      )\n\
+  \      AND (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND (\n        CURRENT_DATE-obs7.follow_up_date>INTERVAL '90 days'\n\
+  \      ) THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+  \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\u179F\
+  \u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with HBP)'\n    END\n  ) AS\
+  \ dm_with_hbp_loss_follow_up,\n  -- Complications of DM & HBP\n  MAX(\n    CASE\n\
+  \      WHEN obs4.complications_uuid='0c61b26b-c242-4e36-94b6-97328586bee4' THEN\
+  \ '\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784  \u179F\u179A\u179F\
+  \u17C3\u1788\u17B6\u1798 (CVD)'\n      ELSE NULL\n    END\n  ) AS cvd,\n  MAX(\n\
+  \    CASE\n      WHEN obs4.complications_uuid='43c557a0-6e35-40e2-90f8-862a07377152'\
+  \ THEN '\u1787\u17C6\u1784\u17BA\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\u1792\
+  \u178F\u17C6\u179A\u1784\u1793\u17C4\u1798 (Nephropathy)'\n      ELSE NULL\n   \
+  \ END\n  ) AS nephropathy,\n  MAX(\n    CASE\n      WHEN obs4.complications_uuid='375325ae-dddf-480f-827a-1bfcf581c97b'\
+  \ THEN '\u1787\u17C6\u1784\u17BA\u1797\u17D2\u1793\u17C2\u1780 (Retinopathy)'\n\
+  \      ELSE NULL\n    END\n  ) AS retinopathy,\n  MAX(\n    CASE\n      WHEN obs5.left_foot_exam_uuid\
+  \ IN (\n        '81318009-e9fb-4b8a-9bf6-17082cefd19e',\n        'be0c7342-12da-48c1-a247-89379f80e18d',\n\
+  \        '4ff6c3ea-2be8-4aac-b371-faa3bb450255',\n        '8c001d6a-9525-4008-8d06-eebc713f5d8c'\n\
+  \      )\n      OR obs6.right_foot_exam_uuid IN (\n        '81318009-e9fb-4b8a-9bf6-17082cefd19e',\n\
+  \        'be0c7342-12da-48c1-a247-89379f80e18d',\n        '4ff6c3ea-2be8-4aac-b371-faa3bb450255',\n\
+  \        '8c001d6a-9525-4008-8d06-eebc713f5d8c'\n      ) THEN '\u1787\u17C6\u1784\
+  \u17BA\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\u1792\u1794\u17D2\u179A\u179F\u17B6\
+  \u1791 (Neuropathy)'\n      ELSE NULL\n    END\n  ) AS neuropathy,\n  -- Diagnosis\
+  \ + Dead\n  MAX(\n    CASE\n      WHEN (\n        (\n          obs2.diagnosis_one_uuid\
+  \ IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n\
+  \          )\n          OR obs3.diagnosis_two_uuid IN (\n            '105903f4-7b6d-496a-b613-37ab9d0f5450',\n\
+  \            '8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n          )\n        )\n  \
+  \    )\n      AND t2.dead IS TRUE THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\
+  \u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 (DM)'\n    END\n  ) AS dm_dead,\n  MAX(\n\
+  \    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND t2.dead IS TRUE THEN '\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+  \ \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (HBP)'\n    END\n  ) AS\
+  \ hbp_dead,\n  MAX(\n    CASE\n      WHEN (\n        obs2.diagnosis_one_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n\
+  \        OR obs2.diagnosis_one_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n   \
+  \     OR obs3.diagnosis_two_uuid='105903f4-7b6d-496a-b613-37ab9d0f5450'\n      \
+  \  OR obs3.diagnosis_two_uuid='8b26ecd3-8726-4c8e-b042-cbe71e44a863'\n      )\n\
+  \      AND (\n        obs2.diagnosis_one_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n\
+  \        OR obs3.diagnosis_two_uuid='3cd50188-26fe-102b-80cb-0017a47871b2'\n   \
+  \   )\n      AND t2.dead IS TRUE THEN '\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\
+  \u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\
+  \u179B\u17BE\u179F\u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM with\
+  \ HBP)'\n    END\n  ) AS dm_with_hbp_dead,\n  -- Age Group\n  MAX(\n    CASE\n \
+  \     WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate))<18 THEN '< 18\u1786\
+  \u17D2\u1793\u17B6\u17C6 (< 18 yrs)'\n      WHEN DATE_PART ('year', age (t1.date_started,\
+  \ t2.birthdate))>=18\n      AND DATE_PART ('year', age (t1.date_started, t2.birthdate))<=24\
+  \ THEN '18 to 24\u1786\u17D2\u1793\u17B6\u17C6 (18 to 24yrs)'\n      WHEN DATE_PART\
+  \ ('year', age (t1.date_started, t2.birthdate))>=25\n      AND DATE_PART ('year',\
+  \ age (t1.date_started, t2.birthdate))<=39 THEN '25 to 39\u1786\u17D2\u1793\u17B6\
+  \u17C6 (25 to 39yrs)'\n      WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate))>=40\n\
+  \      AND DATE_PART ('year', age (t1.date_started, t2.birthdate))<=69 THEN '40\
+  \ to 69\u1786\u17D2\u1793\u17B6\u17C6 (40 to 69yrs)'\n      WHEN DATE_PART ('year',\
+  \ age (t1.date_started, t2.birthdate))>=70 THEN '\u2265 70\u1786\u17D2\u1793\u17B6\
+  \u17C6 (\u2265 70yrs)'\n    END\n  ) AS age_group\nFROM\n  visits t1\n  LEFT JOIN\
+  \ patients t2 ON (t1.patient_uuid=t2.patient_uuid)\n  LEFT JOIN locations t3 ON\
+  \ (t1.location_uuid=t3.uuid)\n  LEFT JOIN encounters t4 ON (\n    t1.visit_uuid=t4.visit_uuid\n\
+  \    AND t4.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_numeric AS cvd_score\n\
+  \    FROM\n      observations o\n    WHERE\n      o.question_uuid='dff491e3-b14c-4b32-ab64-63b96966d72d'\n\
+  \      AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_numeric\n  ) obs1 ON (\n    obs1.visit_uuid=t1.visit_uuid\n    AND\
+  \ obs1.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS diagnosis_one,\n\
+  \      o.answer_coded_uuid AS diagnosis_one_uuid\n    FROM\n      observations o\n\
+  \    WHERE\n      o.question_uuid='45583478-f703-46e3-b63a-54b0a95c25f0'\n     \
+  \ AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs2 ON (\n    obs2.visit_uuid=t1.visit_uuid\n\
+  \    AND obs2.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS diagnosis_two,\n\
+  \      o.answer_coded_uuid AS diagnosis_two_uuid\n    FROM\n      observations o\n\
+  \    WHERE\n      o.question_uuid='76ca08a5-2128-4b53-afba-74227b015924'\n     \
+  \ AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs3 ON (\n    obs3.visit_uuid=t1.visit_uuid\n\
+  \    AND obs3.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS complications,\n\
+  \      o.answer_coded_uuid AS complications_uuid\n    FROM\n      observations o\n\
+  \    WHERE\n      o.question_uuid='3f36a039-eac3-46bd-8798-102c55639d49'\n     \
+  \ AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs4 ON (\n    obs4.visit_uuid=t1.visit_uuid\n\
+  \    AND obs4.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS left_foot_exam,\n\
+  \      o.answer_coded_uuid AS left_foot_exam_uuid\n    FROM\n      observations\
+  \ o\n    WHERE\n      o.question_uuid='dd16ec73-fa62-431b-bbd5-4e3a04d93cfc'\n \
+  \     AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs5 ON (\n    obs5.visit_uuid=t1.visit_uuid\n\
+  \    AND obs5.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_coded AS right_foot_exam,\n\
+  \      o.answer_coded_uuid AS right_foot_exam_uuid\n    FROM\n      observations\
+  \ o\n    WHERE\n      o.question_uuid='d6f32f81-6d85-49bb-b4c5-cef725bb7616'\n \
+  \     AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_coded,\n      o.answer_coded_uuid\n  ) obs6 ON (\n    obs6.visit_uuid=t1.visit_uuid\n\
+  \    AND obs6.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(o.date_created),\n\
+  \      o.encounter_uuid,\n      o.visit_uuid,\n      o.answer_datetime AS follow_up_date\n\
+  \    FROM\n      observations o\n    WHERE\n      o.question_uuid='e9c145c1-f4e9-4c34-b237-da069939dc38'\n\
+  \      AND o.obs_voided IS FALSE\n    GROUP BY\n      o.encounter_uuid,\n      o.visit_uuid,\n\
+  \      o.answer_datetime\n  ) obs7 ON (\n    obs7.visit_uuid=t1.visit_uuid\n   \
+  \ AND obs7.visit_uuid IS NOT NULL\n  )\nWHERE\n  -- NCD New Visit & Follow-up Visit\n\
+  \  t1.visit_type_uuid IN (\n    '5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab',\n    '54da8fbc-b92f-4251-b53a-feedc8e8c594'\n\
+  \  )\n  -- NCD Consultation\n  -- NCD Medical History f9fdbe63-12b4-479f-b8fd-dcbfde6aa944\n\
+  \  AND t4.encounter_type_uuid='b870b6bb-9441-4664-9087-3d3477174213'\n  AND t1.visit_voided\
+  \ IS FALSE\n  AND t2.person_voided IS FALSE\n  AND t2.patient_uuid IS NOT NULL\n\
+  \  -- Referral Hospital (RH)\n  AND t3.location_tags LIKE '%Referral Hospital%'\n\
+  GROUP BY\n  t1.visit_uuid"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 6f823383-6b22-4ea2-a2db-b4aea6019242
+metrics:
+- metric_name: count dm & hbp new visit
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM & HBP)"
+  metric_type: null
+  expression: COUNT((dm_with_hbp_new_visit))
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dm with hbp loss follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM & HBP)"
+  metric_type: null
+  expression: COUNT(dm_with_hbp_loss_follow_up)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dm + hbp follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM & HBP)"
+  metric_type: null
+  expression: COUNT(dm_with_hbp_follow_up_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dead dm with hbp
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM & HBP)"
+  metric_type: null
+  expression: COUNT(dm_with_hbp_dead)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dm with hbp
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
+    \u179F\u1798\u17D2\u1796\u17B6\u1792\u1788\u17B6\u1798 (DM & HBP)"
+  metric_type: null
+  expression: COUNT(dm_with_hbp)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t1d loss follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)"
+  metric_type: null
+  expression: COUNT(t1d_loss_follow_up)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t2d loss follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)"
+  metric_type: null
+  expression: COUNT(t2d_loss_follow_up)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count hbp loss follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+  metric_type: null
+  expression: COUNT(hbp_loss_follow_up)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count gdm loss follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\
+    \u1796\u17C4\u17C7 (GDM)"
+  metric_type: null
+  expression: COUNT(gdm_loss_follow_up)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t1d new visit
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)"
+  metric_type: null
+  expression: COUNT(t1d_new_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t2d new visit
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)"
+  metric_type: null
+  expression: COUNT(t2d_new_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count hbp new visit
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+  metric_type: null
+  expression: COUNT(hbp_new_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count gdm new visit
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\
+    \u1796\u17C4\u17C7 (GDM)"
+  metric_type: null
+  expression: COUNT(gdm_new_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t1d follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E1 (T1D)"
+  metric_type: null
+  expression: COUNT(t1d_follow_up_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count t2d follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1794\u17D2\u179A\u1797\u17C1\u1791\u17E2 (T2D)"
+  metric_type: null
+  expression: COUNT(t2d_follow_up_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count hbp follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+  metric_type: null
+  expression: COUNT(hbp_follow_up_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count gdm follow-up
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 \u1796\u17C1\u179B\u1798\u17B6\u1793\u1795\u17D2\u1791\u17C3\
+    \u1796\u17C4\u17C7 (GDM)"
+  metric_type: null
+  expression: COUNT(gdm_follow_up_visit)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dead hbp
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+  metric_type: null
+  expression: COUNT(hbp_dead)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count cvd
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\u1784  \u179F\
+    \u179A\u179F\u17C3\u1788\u17B6\u1798 (CVD)"
+  metric_type: null
+  expression: COUNT(cvd)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count hbp
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
+    \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
+  metric_type: null
+  expression: COUNT(hbp)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dead dm
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 (DM)"
+  metric_type: null
+  expression: COUNT(dm_dead)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count dm
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
+    \u17A2\u17C2\u1798 (DM)"
+  metric_type: null
+  expression: COUNT(dm)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count nephropathy
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\
+    \u1792\u178F\u17C6\u179A\u1784\u1793\u17C4\u1798 (Nephropathy)"
+  metric_type: null
+  expression: COUNT(nephropathy)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count neuropathy
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1794\u17D2\u179A\u1796\u17D0\u1793\u17D2\
+    \u1792\u1794\u17D2\u179A\u179F\u17B6\u1791 (Neuropathy)"
+  metric_type: null
+  expression: COUNT(neuropathy)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count retinopathy
+  verbose_name: "\u1787\u17C6\u1784\u17BA\u1797\u17D2\u1793\u17C2\u1780 (Retinopathy)"
+  metric_type: null
+  expression: COUNT(retinopathy)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count
+  verbose_name: Count
+  metric_type: null
+  expression: count(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: age_group
+  verbose_name: "\u1780\u17D2\u179A\u17BB\u1798\u17A2\u17B6\u1799\u17BB (Age Group)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: "\u1797\u17C1\u1791 (Gender)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t1d_follow_up_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t1d_loss_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t1d_new_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t2d_follow_up_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t2d_loss_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: t2d_new_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_date_started
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_with_hbp_follow_up_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_with_hbp_loss_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_with_hbp_new_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_with_hbp_dead
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_follow_up_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_loss_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gdm_follow_up_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gdm_loss_follow_up
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_with_hbp
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_new_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gdm_new_visit
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp_dead
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm_dead
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_one
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: diagnosis_two
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: visit_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: nephropathy
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: retinopathy
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: neuropathy
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: hbp
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cvd
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: dm
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

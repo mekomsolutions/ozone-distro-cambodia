@@ -91,20 +91,20 @@ sql: "SELECT\n    f_facility AS \"Facility Name\",\n    f_district AS \"Facility
   \ = '3f36a039-eac3-46bd-8798-102c55639d49' THEN obs.answer_coded ELSE NULL END)\
   \ AS \"obs_complications\",\n        STRING_AGG(DISTINCT drug_order.drug_name, ',\
   \ ') AS \"medications\",\n        MAX(CASE WHEN obs.question_uuid = 'dee2db0c-5a06-4b1e-8be6-0f327fe6158d'\
-  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_reason_for_referral\",\n       \
-  \ MAX(CASE WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2' THEN\
-  \ obs.answer_coded ELSE NULL END) AS \"obs_treatment_recommendations\",\n      \
-  \  MAX(CASE WHEN obs.question_uuid = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a' THEN\
-  \ obs.answer_coded ELSE NULL END) AS \"obs_facility\",\n        MAX(CASE WHEN obs.question_uuid\
-  \ = '2e27bbf9-d744-46a2-a7d4-cecd33c28b8a' THEN obs.answer_coded ELSE NULL END)\
-  \ AS \"obs_followup_for\",\n        MAX(CASE WHEN obs.question_uuid = 'e9c145c1-f4e9-4c34-b237-da069939dc38'\
-  \ THEN obs.answer_datetime ELSE NULL END) AS \"obs_followup_date\"\n    FROM patients\
-  \ pa\n    LEFT OUTER JOIN visits vi ON vi.visit_voided = false AND vi.patient_uuid\
-  \ = pa.patient_uuid AND vi.type IN ('NCD New Visit', 'NCD Follow-up Visit')\n  \
-  \  LEFT OUTER JOIN locations facility_address ON facility_address.uuid = vi.location_uuid\n\
-  \    LEFT OUTER JOIN observations obs ON obs.obs_voided = false AND obs.visit_uuid\
-  \ = vi.visit_uuid AND obs.question_uuid IN (\n        '5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
-  \ \n        '5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
+  \ THEN obs.answer_text ELSE NULL END) AS \"obs_reason_for_referral\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = '9f7c8739-3ea3-4f7f-8648-d6c36fef7be2' THEN obs.answer_coded\
+  \ ELSE NULL END) AS \"obs_treatment_recommendations\",\n        MAX(CASE WHEN obs.question_uuid\
+  \ = '758b9dd8-b6d0-4ac2-b245-0e7bffb4693a' THEN obs.answer_coded ELSE NULL END)\
+  \ AS \"obs_facility\",\n        MAX(CASE WHEN obs.question_uuid = '2e27bbf9-d744-46a2-a7d4-cecd33c28b8a'\
+  \ THEN obs.answer_coded ELSE NULL END) AS \"obs_followup_for\",\n        MAX(CASE\
+  \ WHEN obs.question_uuid = 'e9c145c1-f4e9-4c34-b237-da069939dc38' THEN obs.answer_datetime\
+  \ ELSE NULL END) AS \"obs_followup_date\"\n    FROM patients pa\n    LEFT OUTER\
+  \ JOIN visits vi ON vi.visit_voided = false AND vi.patient_uuid = pa.patient_uuid\
+  \ AND vi.type IN ('NCD New Visit', 'NCD Follow-up Visit')\n    LEFT OUTER JOIN locations\
+  \ facility_address ON facility_address.uuid = vi.location_uuid\n    LEFT OUTER JOIN\
+  \ observations obs ON obs.obs_voided = false AND obs.visit_uuid = vi.visit_uuid\
+  \ AND obs.question_uuid IN (\n        '5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n\
+  \        '5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
   \ \n        '5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        'a89c60c0-1350-11df-a1f1-0026b9348838',\
   \ \n        '5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\
   \ \n        '5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', \n        '5092AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',\

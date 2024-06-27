@@ -1,0 +1,385 @@
+table_name: Cervical Cancer Screening for Women
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: public
+sql: "SELECT\n  MAX(t1.date_started) AS date_started,\n  MAX(t3.postal_code) AS health_facility_code,\n\
+  \  MAX(t3.name) AS health_facility_name,\n  MAX(t3.state_province) AS health_facility_province,\n\
+  \  MAX(t3.county_district) AS health_facility_district,\n  MAX(t2.patient_uuid)\
+  \ AS patient_uuid,\n  MAX(\n    DATE_PART ('year', age (t1.date_started, t2.birthdate))\n\
+  \  ) AS age,\n  MAX(t2.gender) AS gender,\n  MAX(\n    SUBSTRING(\n      t1.visit_attributes\n\
+  \      FROM\n        'Referred from: ([^/]*)'\n    )\n  ) AS referred_from,\n  MAX(via.via_test)\
+  \ AS via_test,\n  MAX(via_res.via_test_result) AS via_test_result,\n  MAX(\n   \
+  \ CASE\n      WHEN via.via_test IS NOT NULL THEN 1\n      ELSE 0\n    END\n  ) AS\
+  \ has_via_test,\n  -- VIA Test Results Groupings\n  MAX(\n    CASE\n      WHEN via_res.via_test_result_uuid='703AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN 'VIA (+)'\n      WHEN via_res.via_test_result_uuid='664AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'\
+  \ THEN 'VIA (-)'\n      WHEN via_res.via_test_result_uuid='da15c40f-e24b-4771-9986-d3ce5ca56b94'\
+  \ THEN 'Unclear Result'\n      WHEN via_res.via_test_result_uuid='7d469a03-a56b-4c51-a421-0e5787556630'\
+  \ THEN 'Suspected Cancer'\n      ELSE 'N/A'\n    END\n  ) AS via_test_result_grouping,\n\
+  \  -- Referred from: Groupings\n  MAX(\n    CASE\n      WHEN (\n        t1.visit_attributes\
+  \ LIKE '%Referred from: Other%'\n        OR t1.visit_attributes LIKE '%Referred\
+  \ from: Health Centre%'\n        OR t1.visit_attributes LIKE '%Referred from: VHSG\
+  \ (village health support group)%'\n      ) THEN '\u1794\u1789\u17D2\u1787\u17BC\
+  \u1793\u1798\u1780\u1796\u17B8 VHSG/HC \u1793\u17B7\u1784\u1795\u17D2\u179F\u17C1\
+  \u1784\u17D7 (VHSG/Health Care/Other)'\n      WHEN t1.visit_attributes LIKE '%Referred\
+  \ from: Self presented%' THEN '\u1798\u1780\u1781\u17D2\u179B\u17BD\u1793\u17AF\u1784\
+  \ (Self-Presented)'\n      ELSE 'N/A'\n    END\n  ) AS referred_from_grouping,\n\
+  \  MAX(obs4.treated) AS treated,\n  MAX(\n    CASE\n      WHEN obs4.treated IS NOT\
+  \ NULL THEN 1\n      ELSE 0\n    END\n  ) AS is_treated,\n  -- Age Group\n  MAX(\n\
+  \    CASE\n      WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate))<30\
+  \ THEN '<30'\n      WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate))>=30\n\
+  \      AND DATE_PART ('year', age (t1.date_started, t2.birthdate))<50 THEN '30-49'\n\
+  \      WHEN DATE_PART ('year', age (t1.date_started, t2.birthdate))>=50 THEN '>50'\n\
+  \    END\n  ) AS age_group,\n  MAX(obs5.cervical_cancer_referred) AS cervical_cancer_referred,\n\
+  \  MAX(obs6.breast_cancer_referred) AS breast_cancer_referred,\n  MAX(\n    CASE\n\
+  \      WHEN (\n        obs5.cervical_cancer_referred IS NOT NULL\n        OR obs6.breast_cancer_referred\
+  \ IS NOT NULL\n      ) THEN 1\n      ELSE 0\n    END\n  ) AS referred\nFROM\n  visits\
+  \ t1\n  LEFT JOIN patients t2 ON (t1.patient_uuid=t2.patient_uuid)\n  LEFT JOIN\
+  \ locations t3 ON (t1.location_uuid=t3.uuid)\n  LEFT JOIN (\n    SELECT\n      MAX(date_created)\
+  \ AS date_created,\n      encounter_uuid,\n      visit_uuid,\n      answer_coded\
+  \ AS via_test\n    FROM\n      observations\n    WHERE\n      question_uuid IN ('d2ec630a-a223-492a-89f2-597266b36571')\n\
+  \      AND obs_voided IS FALSE\n    GROUP BY\n      encounter_uuid,\n      visit_uuid,\n\
+  \      question_uuid,\n      via_test\n  ) via ON (\n    via.visit_uuid=t1.visit_uuid\n\
+  \    AND via.visit_uuid IS NOT NULL\n  )\n  LEFT JOIN (\n    SELECT\n      MAX(date_created)\
+  \ AS date_created,\n      encounter_uuid,\n      answer_coded AS via_test_result,\n\
+  \      answer_coded_uuid AS via_test_result_uuid\n    FROM\n      observations\n\
+  \    WHERE\n      question_uuid IN ('27912a31-4b1e-40d4-a3a0-947e0eb2e588')\n  \
+  \    AND obs_voided IS FALSE\n    GROUP BY\n      encounter_uuid,\n      question_uuid,\n\
+  \      via_test_result,\n      via_test_result_uuid\n  ) via_res ON (\n    via_res.encounter_uuid=via.encounter_uuid\n\
+  \    AND via_res.encounter_uuid IS NOT NULL\n  )\n  -- Treatment Options\n  LEFT\
+  \ JOIN (\n    SELECT\n      MAX(date_created) AS date_created,\n      encounter_uuid,\n\
+  \      visit_uuid,\n      answer_coded AS treated\n    FROM\n      observations\n\
+  \    WHERE\n      question_uuid IN ('1ca7d712-f7d7-4e09-8184-048bc4173902')\n  \
+  \    AND obs_voided IS FALSE\n    GROUP BY\n      encounter_uuid,\n      visit_uuid,\n\
+  \      question_uuid,\n      treated\n  ) obs4 ON (\n    obs4.visit_uuid=t1.visit_uuid\n\
+  \    AND obs4.visit_uuid IS NOT NULL\n    AND t1.visit_uuid IS NOT NULL\n  )\n \
+  \ -- Cervical Referred\n  LEFT JOIN (\n    SELECT\n      MAX(date_created) AS date_created,\n\
+  \      encounter_uuid,\n      visit_uuid,\n      answer_coded AS cervical_cancer_referred,\n\
+  \      answer_coded_uuid AS cervical_cancer_referred_uuid\n    FROM\n      observations\n\
+  \    WHERE\n      -- Cervical Cancer reason for referral\n      question_uuid IN\
+  \ ('c158e3b2-edf9-4e0e-9e95-d36de1a51527')\n      AND obs_voided IS FALSE\n    GROUP\
+  \ BY\n      encounter_uuid,\n      visit_uuid,\n      question_uuid,\n      cervical_cancer_referred,\n\
+  \      cervical_cancer_referred_uuid\n  ) obs5 ON (\n    obs5.visit_uuid=t1.visit_uuid\n\
+  \    AND t1.visit_uuid IS NOT NULL\n  )\n  -- Breast Referred\n  LEFT JOIN (\n \
+  \   SELECT\n      MAX(date_created) AS date_created,\n      encounter_uuid,\n  \
+  \    visit_uuid,\n      answer_coded AS breast_cancer_referred,\n      answer_coded_uuid\
+  \ AS breast_cancer_referred_uuid\n    FROM\n      observations\n    WHERE\n    \
+  \  -- Breast Cancer reason for referral\n      question_uuid IN ('e676ab7f-13b0-4251-84fd-9874c80133b5')\n\
+  \      AND obs_voided IS FALSE\n    GROUP BY\n      encounter_uuid,\n      visit_uuid,\n\
+  \      question_uuid,\n      breast_cancer_referred,\n      breast_cancer_referred_uuid\n\
+  \  ) obs6 ON (\n    obs6.visit_uuid=t1.visit_uuid\n    AND t1.visit_uuid IS NOT\
+  \ NULL\n  )\nWHERE\n  -- Cervical Cancer New Visit & Cervical Cancer Follow-up Visit\n\
+  \  t1.visit_type_uuid IN (\n    'cad25c07-4657-4167-8b57-8ea1a3830e9b',\n    'd2bf1776-671d-4e0f-a850-f7fef7aa4044'\n\
+  \  )\n  AND t1.visit_voided IS FALSE\n  AND t2.person_voided IS FALSE\n  AND t2.patient_uuid\
+  \ IS NOT NULL\n  AND t2.gender='F'\nGROUP BY\n  t2.patient_uuid"
+params: null
+template_params: null
+filter_select_enabled: false
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 105ff668-0cd3-4674-82d2-bcecc6813280
+metrics:
+- metric_name: count has via test result
+  verbose_name: "\u1785\u17C6\u1793\u17BD\u1793\u179F\u17D2\u178F\u17D2\u179A\u17B8\
+    \u1794\u17B6\u1793 \u1792\u17D2\u179C\u17BE\u178F\u17C1\u179F\u17D2\u178F VIA\
+    \ (# of women with VIA tested)"
+  metric_type: null
+  expression: SUM(has_via_test)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count per via test result
+  verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B\u178F\u17C1\u179F\u17D2\u178F\
+    \ VIA (VIA Result)"
+  metric_type: null
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count per visit type
+  verbose_name: "\u1780\u17B6\u179A\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\
+    \u1799 (Visit Type)"
+  metric_type: null
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: sum referred
+  verbose_name: "\u1794\u1789\u17D2\u1787\u17BC\u1793 (Referred)"
+  metric_type: null
+  expression: SUM(referred)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: sum treated
+  verbose_name: "\u1794\u17B6\u1793\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B (Treated)"
+  metric_type: null
+  expression: SUM(is_treated)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: referred_from_grouping
+  verbose_name: "\u1780\u17B6\u179A\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\
+    \u1799 (Visit Type)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: Referred from
+  python_date_format: null
+  extra: {}
+- column_name: age_group
+  verbose_name: "\u17A2\u17B6\u1799\u17BB\u179F\u17D2\u178F\u17D2\u179A\u17B8 (\u1786\
+    \u17D2\u1793\u17B6\u17C6) (Age (Years))"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result_grouping
+  verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B\u178F\u17C1\u179F\u17D2\u178F\
+    \ VIA (VIA Result)"
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: date_started
+  verbose_name: null
+  is_dttm: true
+  is_active: null
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: age
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: FLOAT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: has_via_test
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: is_treated
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referred
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_name
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referred_from
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: treated
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
+  verbose_name: null
+  is_dttm: false
+  is_active: null
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: breast_cancer_referred
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: cervical_cancer_referred
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: patient_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 4e5f4045-a62d-4964-b719-58229a60e7fe

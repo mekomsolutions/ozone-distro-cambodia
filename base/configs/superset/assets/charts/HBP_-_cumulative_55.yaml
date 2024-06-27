@@ -1,0 +1,56 @@
+slice_name: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\u17B6\
+  \u1792\u1788\u17B6\u1798 (HBP) - cumulative"
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 6__table
+  viz_type: pivot_table_v2
+  granularity_sqla: date_started
+  time_grain_sqla: P1D
+  time_range: No filter
+  groupbyColumns:
+  - age_group
+  groupbyRows:
+  - hbp
+  - gender
+  metrics:
+  - count per age group
+  metricsLayout: COLUMNS
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: hbp
+    operator: IS NOT NULL
+    operatorId: IS_NOT_NULL
+    comparator: null
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_5wexojq9z37_0i0466tn4bbj
+  row_limit: 10000
+  order_desc: true
+  aggregateFunction: Sum
+  rowTotals: true
+  colTotals: true
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 6
+  annotation_layers: []
+query_context: '{"datasource":{"id":6,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"date_started","filters":[{"col":"hbp","op":"IS NOT NULL"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["age_group","hbp","gender"],"metrics":["count
+  per age group"],"orderby":[["count per age group",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"6__table","viz_type":"pivot_table_v2","granularity_sqla":"date_started","time_grain_sqla":"P1D","time_range":"No
+  filter","groupbyColumns":["age_group"],"groupbyRows":["hbp","gender"],"metrics":["count
+  per age group"],"metricsLayout":"COLUMNS","adhoc_filters":[{"expressionType":"SIMPLE","subject":"hbp","operator":"IS
+  NOT NULL","operatorId":"IS_NOT_NULL","comparator":null,"clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_5wexojq9z37_0i0466tn4bbj"}],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","rowTotals":true,"colTotals":true,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[6],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 388bb151-2871-4825-8740-58a18a5a74dc
+version: 1.0.0
+dataset_uuid: 6fa56ea7-aa49-46cd-8ae8-f8c5d141e0c9

@@ -1,0 +1,43 @@
+slice_name: "\u1780\u17B6\u179A\u1782\u17D2\u179A\u1794\u17CB\u1782\u17D2\u179A\u1784\
+  \ (Management)"
+description: null
+certified_by: null
+certification_details: null
+viz_type: pivot_table_v2
+params:
+  datasource: 2__table
+  viz_type: pivot_table_v2
+  slice_id: 7
+  granularity_sqla: date_started
+  time_range: No filter
+  groupbyColumns: []
+  groupbyRows:
+  - age_group
+  metrics:
+  - count per treated
+  - sum referred
+  metricsLayout: COLUMNS
+  adhoc_filters: []
+  row_limit: 10000
+  order_desc: true
+  aggregateFunction: Sum
+  colTotals: true
+  transposePivot: false
+  valueFormat: ~g
+  date_format: smart_date
+  rowOrder: key_a_to_z
+  colOrder: key_a_to_z
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 2
+  annotation_layers: []
+query_context: '{"datasource":{"id":2,"type":"table"},"force":false,"queries":[{"time_range":"No
+  filter","granularity":"date_started","filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["age_group"],"metrics":["count
+  per treated","sum referred"],"orderby":[["count per treated",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"2__table","viz_type":"pivot_table_v2","slice_id":7,"granularity_sqla":"date_started","time_range":"No
+  filter","groupbyColumns":[],"groupbyRows":["age_group"],"metrics":["count per treated","sum
+  referred"],"metricsLayout":"COLUMNS","adhoc_filters":[],"row_limit":10000,"order_desc":true,"aggregateFunction":"Sum","colTotals":true,"transposePivot":false,"valueFormat":"~g","date_format":"smart_date","rowOrder":"key_a_to_z","colOrder":"key_a_to_z","conditional_formatting":[],"extra_form_data":{},"dashboards":[2],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 8263131a-e7cf-414a-a89d-e742a454f032
+version: 1.0.0
+dataset_uuid: ae55d2c5-1889-45e0-899e-a54beba3e234

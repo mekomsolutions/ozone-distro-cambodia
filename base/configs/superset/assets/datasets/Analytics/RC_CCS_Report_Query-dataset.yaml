@@ -67,40 +67,40 @@ sql: "SELECT\n    CASE \n        WHEN identifiers ~ '.*OpenMRS ID: (.*?)(,|$).*'
   \        SELECT obs2.visit_uuid, MAX(date_created), obs2.answer_coded, obs2.encounter_uuid\n\
   \        FROM observations obs2\n        WHERE obs2.obs_voided = false AND obs2.question_uuid\
   \ = '27912a31-4b1e-40d4-a3a0-947e0eb2e588'\n        GROUP BY obs2.visit_uuid, obs2.question_uuid,\
-  \ obs2.answer_coded, obs2.encounter_uuid\n    ) AS obs_via_test_result on obs_via_test_result.encounter_uuid\
-  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs3.visit_uuid,\
-  \ MAX(date_created), obs3.answer_coded, obs3.encounter_uuid\n        FROM observations\
-  \ obs3\n        WHERE obs3.obs_voided = false AND obs3.question_uuid = '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f'\n\
+  \ obs2.answer_coded, obs2.encounter_uuid\n    ) AS obs_via_test_result on obs_via_test_result.visit_uuid\
+  \ = vi.visit_uuid\n    LEFT OUTER JOIN (\n        SELECT obs3.visit_uuid, MAX(date_created),\
+  \ obs3.answer_coded, obs3.encounter_uuid\n        FROM observations obs3\n     \
+  \   WHERE obs3.obs_voided = false AND obs3.question_uuid = '0dd61510-1ddd-49e8-838b-b4ec7fdaf95f'\n\
   \        GROUP BY obs3.visit_uuid, obs3.question_uuid, obs3.answer_coded, obs3.encounter_uuid\n\
-  \    ) AS obs_number_of_quadrants  on obs_number_of_quadrants.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    ) AS obs_number_of_quadrants  on obs_number_of_quadrants.visit_uuid = vi.visit_uuid\n\
   \    LEFT OUTER JOIN (\n        SELECT obs4.visit_uuid, MAX(date_created), obs4.answer_coded,\
   \ obs4.encounter_uuid\n        FROM observations obs4\n        WHERE obs4.obs_voided\
   \ = false AND obs4.question_uuid = 'a84a070a-172f-43f7-96f3-67574d42ba1b'\n    \
   \    GROUP BY obs4.visit_uuid, obs4.question_uuid, obs4.answer_coded, obs4.encounter_uuid\n\
-  \    ) AS obs_acetowhite  on obs_acetowhite.encounter_uuid = obs_scj.encounter_uuid\n\
-  \    LEFT OUTER JOIN (\n        SELECT obs5.visit_uuid, MAX(date_created), obs5.answer_coded,\
+  \    ) AS obs_acetowhite  on obs_acetowhite.visit_uuid = vi.visit_uuid\n    LEFT\
+  \ OUTER JOIN (\n        SELECT obs5.visit_uuid, MAX(date_created), obs5.answer_coded,\
   \ obs5.encounter_uuid\n        FROM observations obs5\n        WHERE obs5.obs_voided\
   \ = false AND obs5.question_uuid = 'b643325d-0d63-4ba0-9c0d-e1c0a1c9f3ce'\n    \
   \    GROUP BY obs5.visit_uuid, obs5.question_uuid, obs5.answer_coded, obs5.encounter_uuid\n\
-  \    ) AS obs_hpv_test  on obs_hpv_test.encounter_uuid = obs_scj.encounter_uuid\n\
-  \    LEFT OUTER JOIN (\n        SELECT obs6.visit_uuid, MAX(date_created), obs6.answer_coded,\
+  \    ) AS obs_hpv_test  on obs_hpv_test.visit_uuid = vi.visit_uuid\n    LEFT OUTER\
+  \ JOIN (\n        SELECT obs6.visit_uuid, MAX(date_created), obs6.answer_coded,\
   \ obs6.encounter_uuid\n        FROM observations obs6\n        WHERE obs6.obs_voided\
   \ = false AND obs6.question_uuid = '5f27683c-e4ab-4a10-922d-e34bbb560884'\n    \
   \    GROUP BY obs6.visit_uuid, obs6.question_uuid, obs6.answer_coded, obs6.encounter_uuid\n\
-  \    ) AS obs_hpv_type  on obs_hpv_type.encounter_uuid = obs_scj.encounter_uuid\n\
-  \    LEFT OUTER JOIN (\n        SELECT obs7.visit_uuid, MAX(obs7.date_created),\
-  \ obs7.answer_coded, obs7.encounter_uuid, obs_other_treatment.answer_text\n    \
-  \    FROM observations obs7\n        LEFT OUTER JOIN observations obs_other_treatment\
-  \ ON obs_other_treatment.obs_voided = false AND obs7.encounter_uuid = obs_other_treatment.encounter_uuid\
-  \ AND obs_other_treatment.question_uuid = 'e6d18ff5-9d52-4e47-b2b2-762d9aa30604'\n\
-  \        WHERE obs7.obs_voided = false AND obs7.question_uuid = '1ca7d712-f7d7-4e09-8184-048bc4173902'\n\
-  \        GROUP BY obs7.visit_uuid, obs7.question_uuid, obs7.answer_coded, obs7.encounter_uuid,\
-  \ obs_other_treatment.answer_text\n    ) AS obs_cervical_treatment  on obs_cervical_treatment.encounter_uuid\
-  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs8.visit_uuid,\
-  \ MAX(date_created), obs8.answer_coded, obs8.encounter_uuid\n        FROM observations\
-  \ obs8\n        WHERE obs8.obs_voided = false AND obs8.question_uuid = 'c208aa27-9790-4dbf-84eb-2ffc321a1230'\n\
+  \    ) AS obs_hpv_type  on obs_hpv_type.visit_uuid = vi.visit_uuid\n    LEFT OUTER\
+  \ JOIN (\n        SELECT obs7.visit_uuid, MAX(obs7.date_created), obs7.answer_coded,\
+  \ obs7.encounter_uuid, obs_other_treatment.answer_text\n        FROM observations\
+  \ obs7\n        LEFT OUTER JOIN observations obs_other_treatment ON obs_other_treatment.obs_voided\
+  \ = false AND obs7.encounter_uuid = obs_other_treatment.encounter_uuid AND obs_other_treatment.question_uuid\
+  \ = 'e6d18ff5-9d52-4e47-b2b2-762d9aa30604'\n        WHERE obs7.obs_voided = false\
+  \ AND obs7.question_uuid = '1ca7d712-f7d7-4e09-8184-048bc4173902'\n        GROUP\
+  \ BY obs7.visit_uuid, obs7.question_uuid, obs7.answer_coded, obs7.encounter_uuid,\
+  \ obs_other_treatment.answer_text\n    ) AS obs_cervical_treatment  on obs_cervical_treatment.visit_uuid\
+  \ = vi.visit_uuid\n    LEFT OUTER JOIN (\n        SELECT obs8.visit_uuid, MAX(date_created),\
+  \ obs8.answer_coded, obs8.encounter_uuid\n        FROM observations obs8\n     \
+  \   WHERE obs8.obs_voided = false AND obs8.question_uuid = 'c208aa27-9790-4dbf-84eb-2ffc321a1230'\n\
   \        GROUP BY obs8.visit_uuid, obs8.question_uuid, obs8.answer_coded, obs8.encounter_uuid\n\
-  \    ) AS obs_self_breast_exam  ON obs_self_breast_exam.encounter_uuid = obs_scj.encounter_uuid\n\
+  \    ) AS obs_self_breast_exam  ON obs_self_breast_exam.visit_uuid = vi.visit_uuid\n\
   \    LEFT OUTER JOIN (\n        SELECT obs9.visit_uuid, MAX(obs9.date_created),\
   \ obs9.answer_coded, obs9.encounter_uuid, obs_other_result.answer_text\n       \
   \ FROM observations obs9\n        LEFT OUTER JOIN observations obs_other_result\
@@ -108,14 +108,14 @@ sql: "SELECT\n    CASE \n        WHEN identifiers ~ '.*OpenMRS ID: (.*?)(,|$).*'
   \ AND obs_other_result.question_uuid = 'f984b718-d674-40c4-9ac4-8d22963e1933'\n\
   \        WHERE obs9.obs_voided = false AND obs9.question_uuid = 'd1fd20ef-6363-4065-98d6-f36b8f1dc27e'\n\
   \        GROUP BY obs9.visit_uuid, obs9.question_uuid, obs9.answer_coded, obs9.encounter_uuid,\
-  \ obs_other_result.answer_text\n    ) AS obs_breast_exam_result  on obs_breast_exam_result.encounter_uuid\
-  \ = obs_scj.encounter_uuid\n    LEFT OUTER JOIN (\n        SELECT obs10.visit_uuid,\
-  \ MAX(date_created), obs10.answer_coded, obs10.encounter_uuid\n        FROM observations\
-  \ obs10\n        WHERE obs10.obs_voided = false AND obs10.question_uuid = 'ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12'\n\
+  \ obs_other_result.answer_text\n    ) AS obs_breast_exam_result  on obs_breast_exam_result.visit_uuid\
+  \ = vi.visit_uuid\n    LEFT OUTER JOIN (\n        SELECT obs10.visit_uuid, MAX(date_created),\
+  \ obs10.answer_coded, obs10.encounter_uuid\n        FROM observations obs10\n  \
+  \      WHERE obs10.obs_voided = false AND obs10.question_uuid = 'ed4d2e2f-1ebf-4ab6-b4ee-6dc6d24fca12'\n\
   \        GROUP BY obs10.visit_uuid, obs10.question_uuid, obs10.answer_coded, obs10.encounter_uuid\n\
-  \    ) AS obs_breast_cancer_treatment  ON obs_breast_cancer_treatment.encounter_uuid\
-  \ = obs_scj.encounter_uuid\n) AS patient_info \nWHERE patient_info.visit_type IN\
-  \ ('Cervical Cancer New Visit', 'Cervical Cancer Follow-up Visit') AND patient_info.l_tags\
+  \    ) AS obs_breast_cancer_treatment  ON obs_breast_cancer_treatment.visit_uuid\
+  \ = vi.visit_uuid\n) AS patient_info \nWHERE patient_info.visit_type IN ('Cervical\
+  \ Cancer New Visit', 'Cervical Cancer Follow-up Visit') AND patient_info.l_tags\
   \ LIKE '%Referral Hospital%'"
 params: null
 template_params: null
