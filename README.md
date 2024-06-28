@@ -28,6 +28,9 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ### Version 1.7.0
 
+- Added version 1.1.0 of the Ozone Analytics Queries dependency.
+- Upgraded Ozone distro to 1.0.0-alpha.11.
+- Updated Locations to correctly load their Country, Province, District and Postal code attributes and location tags.
 - Updated project structure to be compatible with Ozone alpha.10 and above.
 - Removed OCL packages and retired Cancer concept.
 - Updated Common Reports to version 1.4.2
