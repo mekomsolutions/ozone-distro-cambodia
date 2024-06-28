@@ -200,13 +200,13 @@ sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client
   \      ) AS ssn,\n      SUBSTRING(\n        identifiers\n        FROM\n        \
   \  'Passport No: ([^,]*)'\n      ) AS passport_no,\n      COALESCE(\n        REGEXP_REPLACE\
   \ (\n          REGEXP_REPLACE (\n            identifiers,\n            '(?:OpenMRS\
-  \ ID|National ID|IDPoor|PMRS ID|COVID vaccination ID): [^,]*,?\\s?',\n         \
-  \   '',\n            'g'\n          ),\n          '^, |, $',\n          ''\n   \
-  \     ),\n        NULL\n      ) AS other_identifiers,\n      -- Addresses\n    \
-  \  address_country AS country,\n      address_state_province AS province,\n    \
-  \  address_county_district AS district,\n      address_city AS commune,\n      address_1\
-  \ AS village,\n      -- Attributes\n      SUBSTRING(\n        attributes\n     \
-  \   FROM\n          'Occupation: ([^/]*)'\n      ) AS occupation,\n      SUBSTRING(\n\
+  \ ID|National ID|IDPoor|PMRS ID|NSSF|SSN|COVID vaccination ID): [^,]*,?\\s?',\n\
+  \            '',\n            'g'\n          ),\n          '^, |, $',\n        \
+  \  ''\n        ),\n        NULL\n      ) AS other_identifiers,\n      -- Addresses\n\
+  \      address_country AS country,\n      address_state_province AS province,\n\
+  \      address_county_district AS district,\n      address_city AS commune,\n  \
+  \    address_1 AS village,\n      -- Attributes\n      SUBSTRING(\n        attributes\n\
+  \        FROM\n          'Occupation: ([^/]*)'\n      ) AS occupation,\n      SUBSTRING(\n\
   \        attributes\n        FROM\n          'Place of Birth: ([^/]*)'\n      )\
   \ AS place_of_birth,\n      SUBSTRING(\n        attributes\n        FROM\n     \
   \     'Ethnicity: ([^/]*)'\n      ) AS ethnicity,\n      SUBSTRING(\n        attributes\n\
