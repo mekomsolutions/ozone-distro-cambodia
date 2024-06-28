@@ -26,6 +26,8 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.8.0
+
 ### Version 1.7.0
 
 - Added version 1.1.0 of the Ozone Analytics Queries dependency.
