@@ -73,6 +73,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 13
+  annotation_layers: []
 query_context: '{"datasource":{"id":13,"type":"table"},"force":false,"queries":[{"filters":[{"col":"indicator","op":"==","val":"80-percent-women-aged-30-49-years-with-ccs-screening-first-time-via-positive-referred"},{"col":"Visit
   Start date","op":"TEMPORAL_RANGE","val":"No filter"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
   Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s

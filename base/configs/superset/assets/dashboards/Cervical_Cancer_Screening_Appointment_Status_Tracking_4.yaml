@@ -1,31 +1,31 @@
-dashboard_title: Cervical Cancer Screening RH Raw Data
-description: null
+dashboard_title: Cervical Cancer Screening Appointment Status Tracking
+description: A dashboard showing the appointment status tracking of cervical cancer
+  screening patients.
 css: ''
-slug: ccs-rh-raw-data
+slug: ccs-appointment-status-tracking
 certified_by: null
 certification_details: null
 published: true
-uuid: 80f09cd1-7f95-4e68-8633-39f50bd5b4be
+uuid: bd5d5e2c-eb3e-482f-979a-db65e89ac760
 position:
-  CHART-explore-31-1:
+  CHART-explore-17-1:
     children: []
-    id: CHART-explore-31-1
+    id: CHART-explore-17-1
     meta:
-      chartId: 45
-      height: 102
-      sliceName: Cervical Cancer Screening RH Raw Data
-      sliceNameOverride: Cervical Cancer Screening RH Raw Data
-      uuid: bd742ed6-04eb-4a99-bdee-fd11809efa9d
+      chartId: 59
+      height: 100
+      sliceName: Appointment status tracking
+      uuid: 127c71e6-af8a-4d9a-ba10-c56e534d9956
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-FBkhnGsLdw
+    - ROW-001cuASlG3
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-FBkhnGsLdw
+    - ROW-001cuASlG3
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -33,17 +33,17 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: Cervical Cancer Screening RH Raw Data
+      text: CCS Appointment Status Tracking
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-FBkhnGsLdw:
+  ROW-001cuASlG3:
     children:
-    - CHART-explore-31-1
-    id: ROW-FBkhnGsLdw
+    - CHART-explore-17-1
+    id: ROW-001cuASlG3
     meta:
       '0': ROOT_ID
       background: BACKGROUND_TRANSPARENT
@@ -61,19 +61,19 @@ metadata:
   default_filters: '{}'
   chart_configuration: {}
   native_filter_configuration:
-  - id: NATIVE_FILTER-PD0hPBsQB
+  - id: NATIVE_FILTER-EumcJiApY
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
-      searchAllOptions: true
+      searchAllOptions: false
       inverseSelection: false
     name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
     filterType: filter_select
     targets:
     - column:
-        name: visit_province
-      datasetUuid: 2a5e581b-ad24-4018-8c33-4a5b33b3eb02
+        name: hf_province
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -86,28 +86,28 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 31
+    - 17
     tabsInScope: []
-  - id: NATIVE_FILTER-hDeXIpbUX
+  - id: NATIVE_FILTER-uTQNiHhdj
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
-      searchAllOptions: true
+      searchAllOptions: false
       inverseSelection: false
     name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
       \u17D2\u178F\u17B7 (District)"
     filterType: filter_select
     targets:
     - column:
-        name: visit_district
-      datasetUuid: 2a5e581b-ad24-4018-8c33-4a5b33b3eb02
+        name: hf_district
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
     cascadeParentIds:
-    - NATIVE_FILTER-PD0hPBsQB
+    - NATIVE_FILTER-EumcJiApY
     scope:
       rootPath:
       - ROOT_ID
@@ -115,9 +115,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 31
+    - 17
     tabsInScope: []
-  - id: NATIVE_FILTER-wYk1RROkY
+  - id: NATIVE_FILTER-78Q-prkY0
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -129,15 +129,15 @@ metadata:
     filterType: filter_select
     targets:
     - column:
-        name: visit_hf_name
-      datasetUuid: 2a5e581b-ad24-4018-8c33-4a5b33b3eb02
+        name: hf_name
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
     cascadeParentIds:
-    - NATIVE_FILTER-PD0hPBsQB
-    - NATIVE_FILTER-hDeXIpbUX
+    - NATIVE_FILTER-EumcJiApY
+    - NATIVE_FILTER-uTQNiHhdj
     scope:
       rootPath:
       - ROOT_ID
@@ -145,39 +145,7 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 31
-    tabsInScope: []
-  - id: NATIVE_FILTER_DIVIDER-VgQCSoq11
-    type: DIVIDER
-    scope:
-      rootPath:
-      - ROOT_ID
-      excluded: []
-    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
-      \u178E\u17CD (Reporting Period)"
-    description: ''
-    chartsInScope: []
-    tabsInScope: []
-  - id: NATIVE_FILTER-lERYHXfKD
-    controlValues:
-      enableEmptyFilter: false
-    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
-    filterType: filter_time
-    targets:
-    - {}
-    defaultDataMask:
-      extraFormData: {}
-      filterState: {}
-      ownState: {}
-    cascadeParentIds: []
-    scope:
-      rootPath:
-      - ROOT_ID
-      excluded: []
-    type: NATIVE_FILTER
-    description: ''
-    chartsInScope:
-    - 31
+    - 17
     tabsInScope: []
   shared_label_colors: {}
   color_scheme_domain: []

@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-QbQ4qr8Gxx
     meta:
-      chartId: 41
+      chartId: 26
       height: 90
       sliceName: RH CSS Report
       uuid: e04a169b-60d4-4514-8820-8a6b386dfa82
@@ -59,7 +59,12 @@ metadata:
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
-  chart_configuration: {}
+  chart_configuration:
+    '26':
+      id: 26
+      crossFilters:
+        scope: global
+        chartsInScope: []
   native_filter_configuration:
   - id: NATIVE_FILTER-ldOxNBmPY
     controlValues:
@@ -107,7 +112,8 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-ldOxNBmPY
     scope:
       rootPath:
       - ROOT_ID
@@ -115,7 +121,7 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 26
     tabsInScope: []
   - id: NATIVE_FILTER-tGAL-IKjl
     controlValues:
@@ -136,7 +142,9 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-ldOxNBmPY
+    - NATIVE_FILTER-CC9nN5FHx
     scope:
       rootPath:
       - ROOT_ID
@@ -144,7 +152,7 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 137
+    - 26
     tabsInScope: []
   - id: NATIVE_FILTER-HQ1PU0hJg
     controlValues:
@@ -169,4 +177,11 @@ metadata:
     chartsInScope:
     - 137
     tabsInScope: []
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 26
 version: 1.0.0

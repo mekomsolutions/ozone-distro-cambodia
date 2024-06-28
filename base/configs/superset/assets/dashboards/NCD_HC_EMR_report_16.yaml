@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-KyPQi9RSjS
     meta:
-      chartId: 71
+      chartId: 62
       height: 69
       sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\
         \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
@@ -32,7 +32,7 @@ position:
     children: []
     id: CHART-explore-18-1
     meta:
-      chartId: 66
+      chartId: 68
       height: 54
       sliceName: "\u17A2\u17D2\u1793\u1780\u1791\u17D2\u179A\u1791\u1784\u17CB\u179F\
         \u17BB\u1781\u1797\u17B6\u1796\u1797\u17BC\u1798\u17B7 \u179A\u1799\u17C8\u1796\
@@ -54,7 +54,7 @@ position:
     children: []
     id: CHART-explore-19-1
     meta:
-      chartId: 72
+      chartId: 24
       height: 64
       sliceName: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\
         \u179A\u17B6\u1780\u17CB (Payment type)"
@@ -74,7 +74,7 @@ position:
     children: []
     id: CHART-explore-20-1
     meta:
-      chartId: 67
+      chartId: 60
       height: 78
       sliceName: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\
         \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
@@ -95,7 +95,7 @@ position:
     children: []
     id: CHART-explore-21-1
     meta:
-      chartId: 54
+      chartId: 8
       height: 39
       sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
         \u17B6\u1792\u1788\u17B6\u1798 (HBP)"
@@ -115,7 +115,7 @@ position:
     children: []
     id: CHART-explore-22-1
     meta:
-      chartId: 49
+      chartId: 34
       height: 43
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
@@ -136,7 +136,7 @@ position:
     children: []
     id: CHART-explore-25-1
     meta:
-      chartId: 70
+      chartId: 15
       height: 39
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 (DM Follow-up)"
@@ -156,7 +156,7 @@ position:
     children: []
     id: CHART-explore-34-1
     meta:
-      chartId: 57
+      chartId: 6
       height: 54
       sliceName: "\u17A2\u17D2\u1793\u1780\u1791\u17D2\u179A\u1791\u1784\u17CB\u179F\
         \u17BB\u1781\u1797\u17B6\u1796\u1797\u17BC\u1798\u17B7 \u1796\u17B8\u1790\u17D2\
@@ -180,7 +180,7 @@ position:
     children: []
     id: CHART-explore-35-1
     meta:
-      chartId: 59
+      chartId: 14
       height: 64
       sliceName: "\u1794\u17D2\u179A\u1797\u17C1\u1791\u1794\u1784\u17CB\u1794\u17D2\
         \u179A\u17B6\u1780\u17CB (Payment type from the start to the end of the selected)"
@@ -200,7 +200,7 @@ position:
     children: []
     id: CHART-explore-36-1
     meta:
-      chartId: 52
+      chartId: 50
       height: 78
       sliceName: "\u1780\u1798\u17D2\u179A\u17B7\u178F\u17A0\u17B6\u1793\u17B7\u1797\
         \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
@@ -222,7 +222,7 @@ position:
     children: []
     id: CHART-explore-37-1
     meta:
-      chartId: 55
+      chartId: 23
       height: 39
       sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
         \u17B6\u1792\u1788\u17B6\u1798 (HBP) - cumulative"
@@ -242,7 +242,7 @@ position:
     children: []
     id: CHART-explore-38-1
     meta:
-      chartId: 69
+      chartId: 42
       height: 43
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
@@ -263,7 +263,7 @@ position:
     children: []
     id: CHART-explore-39-1
     meta:
-      chartId: 56
+      chartId: 35
       height: 41
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 (DM)"
@@ -283,7 +283,7 @@ position:
     children: []
     id: CHART-explore-40-1
     meta:
-      chartId: 60
+      chartId: 11
       height: 41
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 (DM) - cumulative"
@@ -303,7 +303,7 @@ position:
     children: []
     id: CHART-explore-41-1
     meta:
-      chartId: 51
+      chartId: 44
       height: 39
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 (DM Follow-up) - cumulative"
@@ -323,7 +323,7 @@ position:
     children: []
     id: CHART-explore-42-1
     meta:
-      chartId: 50
+      chartId: 33
       height: 42
       sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
         \u17B6\u1792\u1788\u17B6\u1798 (HBP Follow-up)"
@@ -343,7 +343,7 @@ position:
     children: []
     id: CHART-explore-43-1
     meta:
-      chartId: 68
+      chartId: 12
       height: 41
       sliceName: "\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F \u179F\u1798\u17D2\u1796\
         \u17B6\u1792\u1788\u17B6\u1798 (HBP Follow-up) - cumulative"
@@ -363,7 +363,7 @@ position:
     children: []
     id: CHART-explore-44-1
     meta:
-      chartId: 64
+      chartId: 51
       height: 44
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
@@ -384,7 +384,7 @@ position:
     children: []
     id: CHART-explore-45-1
     meta:
-      chartId: 65
+      chartId: 54
       height: 50
       sliceName: "\u1787\u17C6\u1784\u17BA\u1791\u17B9\u1793\u17C4\u1798\u1795\u17D2\
         \u17A2\u17C2\u1798 \u1793\u17B7\u1784\u1787\u17C6\u1784\u17BA\u179B\u17BE\u179F\
@@ -406,7 +406,7 @@ position:
     children: []
     id: CHART-explore-61-1
     meta:
-      chartId: 61
+      chartId: 56
       height: 36
       sliceName: Number of CCS Screening - Cumulative
       sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
@@ -425,7 +425,7 @@ position:
     children: []
     id: CHART-explore-62-1
     meta:
-      chartId: 53
+      chartId: 71
       height: 36
       sliceName: Number of CCS Screening
       sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
@@ -444,7 +444,7 @@ position:
     children: []
     id: CHART-explore-63-1
     meta:
-      chartId: 63
+      chartId: 57
       height: 54
       sliceName: Dropout
       sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
@@ -463,7 +463,7 @@ position:
     children: []
     id: CHART-explore-64-1
     meta:
-      chartId: 62
+      chartId: 7
       height: 54
       sliceName: Dropout - cumulative
       sliceNameOverride: "\u1794\u17D2\u179A\u1798\u17BC\u179B\u1795\u17D2\u178F\u17BB\
@@ -482,7 +482,7 @@ position:
     children: []
     id: CHART-f3e66JQ-IW
     meta:
-      chartId: 58
+      chartId: 17
       height: 69
       sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793\u17A0\u17B6\u1793\u17B7\u1797\
         \u17D0\u1799\u1793\u17C3\u1787\u17C6\u1784\u17BA\u1794\u17C1\u17C7\u178A\u17BC\
@@ -1826,18 +1826,18 @@ metadata:
       - TAB--mZklkexa
       - TAB-od4wsrTQX
       excluded:
-      - 57
-      - 59
-      - 52
-      - 55
-      - 69
-      - 60
-      - 51
-      - 68
-      - 65
-      - 61
-      - 58
-      - 62
+      - 6
+      - 14
+      - 50
+      - 23
+      - 42
+      - 11
+      - 44
+      - 12
+      - 54
+      - 56
+      - 17
+      - 7
     type: NATIVE_FILTER
     description: This filter applies to the left table.
     chartsInScope:
@@ -1900,18 +1900,18 @@ metadata:
       - TAB--mZklkexa
       - TAB-od4wsrTQX
       excluded:
+      - 62
+      - 68
+      - 24
+      - 60
+      - 8
+      - 34
+      - 15
+      - 35
+      - 33
+      - 51
       - 71
-      - 66
-      - 72
-      - 67
-      - 54
-      - 49
-      - 70
-      - 56
-      - 50
-      - 64
-      - 53
-      - 63
+      - 57
     type: NATIVE_FILTER
     description: This applies to the right table. From the beginning to the end of
       selected period.

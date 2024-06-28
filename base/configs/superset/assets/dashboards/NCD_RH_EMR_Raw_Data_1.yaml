@@ -1,30 +1,30 @@
-dashboard_title: NCD HC EMR Raw Data
+dashboard_title: NCD RH EMR Raw Data
 description: null
 css: ''
 slug: null
 certified_by: null
 certification_details: null
 published: true
-uuid: f4a7d507-915c-4b9b-b4d6-fafccff2d8c3
+uuid: 9e577f81-c944-4f84-a73b-728fd3ac4fec
 position:
-  CHART-explore-49-1:
+  CHART-explore-48-1:
     children: []
-    id: CHART-explore-49-1
+    id: CHART-explore-48-1
     meta:
-      chartId: 11
-      height: 105
-      sliceName: NCD HC EMR Raw Data
-      uuid: 43fdf069-6fb1-436f-bfbb-43cd28a650d4
+      chartId: 38
+      height: 103
+      sliceName: NCD RH EMR Raw Data
+      uuid: 52bda91a-f96f-4984-aaa6-d96ac6e50497
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-xbgfSH53z
+    - ROW-GVUEMPrxv6
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-xbgfSH53z
+    - ROW-GVUEMPrxv6
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -32,17 +32,17 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: NCD HC EMR Raw Data
+      text: NCD RH EMR Raw Data
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-xbgfSH53z:
+  ROW-GVUEMPrxv6:
     children:
-    - CHART-explore-49-1
-    id: ROW-xbgfSH53z
+    - CHART-explore-48-1
+    id: ROW-GVUEMPrxv6
     meta:
       '0': ROOT_ID
       background: BACKGROUND_TRANSPARENT
@@ -62,19 +62,19 @@ metadata:
   default_filters: '{}'
   chart_configuration: {}
   native_filter_configuration:
-  - id: NATIVE_FILTER-5fqJvkq3x
+  - id: NATIVE_FILTER-Yb21QMiDs
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
-      searchAllOptions: true
+      searchAllOptions: false
       inverseSelection: false
     name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
     filterType: filter_select
     targets:
     - column:
         name: visit_province
-      datasetUuid: 6ce6fc9b-68dd-41b9-bc50-488d1285923e
+      datasetUuid: 8480636a-399d-438b-a307-a2a1d160ed05
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -87,9 +87,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 49
+    - 48
     tabsInScope: []
-  - id: NATIVE_FILTER-ylmpHydXL
+  - id: NATIVE_FILTER-MpRnJBI0D
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -102,13 +102,13 @@ metadata:
     targets:
     - column:
         name: visit_district
-      datasetUuid: 6ce6fc9b-68dd-41b9-bc50-488d1285923e
+      datasetUuid: 8480636a-399d-438b-a307-a2a1d160ed05
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
     cascadeParentIds:
-    - NATIVE_FILTER-5fqJvkq3x
+    - NATIVE_FILTER-Yb21QMiDs
     scope:
       rootPath:
       - ROOT_ID
@@ -116,9 +116,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 49
+    - 48
     tabsInScope: []
-  - id: NATIVE_FILTER-yvy-SL7is
+  - id: NATIVE_FILTER-UIUhzYcSc
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -131,14 +131,14 @@ metadata:
     targets:
     - column:
         name: hf_name
-      datasetUuid: 6ce6fc9b-68dd-41b9-bc50-488d1285923e
+      datasetUuid: 8480636a-399d-438b-a307-a2a1d160ed05
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
     cascadeParentIds:
-    - NATIVE_FILTER-5fqJvkq3x
-    - NATIVE_FILTER-ylmpHydXL
+    - NATIVE_FILTER-Yb21QMiDs
+    - NATIVE_FILTER-MpRnJBI0D
     scope:
       rootPath:
       - ROOT_ID
@@ -146,9 +146,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 49
+    - 48
     tabsInScope: []
-  - id: NATIVE_FILTER_DIVIDER-JQ_ZV_eGz
+  - id: NATIVE_FILTER_DIVIDER-1556E-tD3
     type: DIVIDER
     scope:
       rootPath:
@@ -157,7 +157,7 @@ metadata:
     title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
       \u178E\u17CD (Reporting Period)"
     description: ''
-  - id: NATIVE_FILTER-WcwyNteZj
+  - id: NATIVE_FILTER-HelaaDiLC
     controlValues:
       enableEmptyFilter: false
     name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"

@@ -124,6 +124,7 @@ params:
   extra_form_data: {}
   dashboards:
   - 13
+  annotation_layers: []
 query_context: '{"datasource":{"id":26,"type":"table"},"force":false,"queries":[{"filters":[{"col":"Visit
   Start date","op":"TEMPORAL_RANGE","val":"No filter"},{"col":"indicator","op":"==","val":"80-pecent-followup-with-hypertension-iabetes-and-medication"}],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["Facility
   Name","Facility District","Facility Province","OpenMRS ID","Patient''s First name","Patient''s

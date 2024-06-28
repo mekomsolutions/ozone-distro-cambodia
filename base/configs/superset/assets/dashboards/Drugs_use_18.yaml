@@ -1,30 +1,32 @@
-dashboard_title: NCD Referral Status Report Dashboard
+dashboard_title: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\
+  \u179A\u17BE (Drugs use)"
 description: null
 css: ''
 slug: null
 certified_by: null
 certification_details: null
 published: true
-uuid: 8c5cf31e-629b-41f2-8ec8-5cd6229f1499
+uuid: 63accbb1-bac7-4f32-94ae-943e4521e18d
 position:
-  CHART-VYBstwY1_B:
+  CHART-gfnDjBja_j:
     children: []
-    id: CHART-VYBstwY1_B
+    id: CHART-gfnDjBja_j
     meta:
-      chartId: 2
-      height: 81
-      sliceName: NCD Referral Status Report
-      uuid: 9cf83bb1-cc39-4c8a-89fa-3291f726b69a
-      width: 12
+      chartId: 9
+      height: 111
+      sliceName: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\
+        \u179A\u17BE (Drug Use)"
+      uuid: 979e89f3-4a04-4333-a91a-f2d10b17cd6b
+      width: 7
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-Si9ZuvRil
+    - ROW-W--1eFnYmI
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-Si9ZuvRil
+    - ROW-W--1eFnYmI
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -32,17 +34,18 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: NCD Referral Status Report Dashboard
+      text: "\u17B1\u179F\u1790\u178A\u17C2\u179B\u1794\u17B6\u1793\u1794\u17D2\u179A\
+        \u17BE (Drugs use)"
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-Si9ZuvRil:
+  ROW-W--1eFnYmI:
     children:
-    - CHART-VYBstwY1_B
-    id: ROW-Si9ZuvRil
+    - CHART-gfnDjBja_j
+    id: ROW-W--1eFnYmI
     meta:
       background: BACKGROUND_TRANSPARENT
     parents:
@@ -52,29 +55,28 @@ position:
 metadata:
   color_scheme: ''
   refresh_frequency: 0
+  shared_label_colors: {}
+  color_scheme_domain: []
   expanded_slices: {}
   label_colors: {}
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
   chart_configuration: {}
-  shared_label_colors: {}
-  color_scheme_domain: []
   native_filter_configuration:
-  - id: NATIVE_FILTER-7J3bpaW7m
+  - id: NATIVE_FILTER-rl5sVOsxi
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
       searchAllOptions: true
       inverseSelection: false
-    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\u17B7\
-      \u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+    name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility Province
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+        name: health_facility_province
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -87,9 +89,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 66
     tabsInScope: []
-  - id: NATIVE_FILTER-oSWGxjyfb
+  - id: NATIVE_FILTER-p6DPqaTV-
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
@@ -97,17 +99,18 @@ metadata:
       searchAllOptions: true
       inverseSelection: false
     name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
-      \u17D2\u178F\u17B7 (Operational District)"
+      \u17D2\u178F\u17B7 (District)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility District
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+        name: health_facility_district
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-rl5sVOsxi
     scope:
       rootPath:
       - ROOT_ID
@@ -115,43 +118,48 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 140
+    - 66
     tabsInScope: []
-  - id: NATIVE_FILTER-WHn4E3Und
+  - id: NATIVE_FILTER-P1wBhu7bt
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
       searchAllOptions: true
       inverseSelection: false
-    name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\u1780\
-      \u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
-      \u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility Name
-      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+        name: health_facility_name
+      datasetUuid: d728f593-99b5-402e-997f-fd71dbde1d75
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-rl5sVOsxi
+    - NATIVE_FILTER-p6DPqaTV-
     scope:
       rootPath:
       - ROOT_ID
       excluded: []
     type: NATIVE_FILTER
     description: ''
-    chartsInScope:
-    - 140
-    tabsInScope: []
-  - id: NATIVE_FILTER-47jI6h7SU
+  - id: NATIVE_FILTER_DIVIDER-ZZYhkwKAe
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
+      \u178E\u17CD (Reporting Period)"
+    description: ''
+  - id: NATIVE_FILTER-NSyyBr1X7
     controlValues:
       enableEmptyFilter: false
-    name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
-      \u17C6\u1796\u17B8\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\
-      \ (Reporting Time Range)"
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
     filterType: filter_time
     targets:
     - {}
@@ -166,7 +174,4 @@ metadata:
       excluded: []
     type: NATIVE_FILTER
     description: ''
-    chartsInScope:
-    - 140
-    tabsInScope: []
 version: 1.0.0
