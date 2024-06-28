@@ -217,7 +217,7 @@ sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client
   \        FROM\n          'SSN: ([^,]*)'\n      ) AS ssn,\n      SUBSTRING(\n   \
   \     identifiers\n        FROM\n          'Passport No: ([^,]*)'\n      ) AS passport_no,\n\
   \      COALESCE(\n        REGEXP_REPLACE (\n          REGEXP_REPLACE (\n       \
-  \     identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|PMRS ID|COVID\
+  \     identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|PMRS ID|NSSF|SSN|COVID\
   \ vaccination ID): [^,]*,?\\s?',\n            '',\n            'g'\n          ),\n\
   \          '^, |, $',\n          ''\n        ),\n        NULL\n      ) AS other_identifiers,\n\
   \      -- Addresses\n      address_country AS country,\n      address_state_province\

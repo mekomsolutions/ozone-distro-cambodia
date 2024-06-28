@@ -240,28 +240,28 @@ sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client
   \        FROM\n          'SSN: ([^,]*)'\n      ) AS ssn,\n      SUBSTRING(\n   \
   \     identifiers\n        FROM\n          'Passport No: ([^,]*)'\n      ) AS passport_no,\n\
   \      COALESCE(\n        REGEXP_REPLACE (\n          REGEXP_REPLACE (\n       \
-  \     identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|PMRS ID|COVID\
-  \ vaccination ID): [^,]*,?\\s?',\n            '',\n            'g'\n          ),\n\
-  \          '^, |, $',\n          ''\n        ),\n        NULL\n      ) AS other_identifiers,\n\
-  \      -- Addresses\n      address_country AS country,\n      address_state_province\
-  \ AS province,\n      address_county_district AS district,\n      address_city AS\
-  \ commune,\n      address_1 AS village,\n      -- Attributes\n      SUBSTRING(\n\
-  \        attributes\n        FROM\n          'Occupation: ([^/]*)'\n      ) AS occupation,\n\
-  \      SUBSTRING(\n        attributes\n        FROM\n          'Place of Birth:\
-  \ ([^/]*)'\n      ) AS place_of_birth,\n      SUBSTRING(\n        attributes\n \
-  \       FROM\n          'Ethnicity: ([^/]*)'\n      ) AS ethnicity,\n      SUBSTRING(\n\
-  \        attributes\n        FROM\n          'Marital Status: ([^/]*)'\n      )\
-  \ AS marital_status,\n      SUBSTRING(\n        attributes\n        FROM\n     \
-  \     'Education: ([^/]*)'\n      ) AS education,\n      SUBSTRING(\n        attributes\n\
-  \        FROM\n          'Telephone Number: ([^/]*)'\n      ) AS phone_number\n\
-  \    FROM\n      patients\n    WHERE\n      person_voided IS FALSE\n  ) p ON (p.patient_uuid=v.patient_uuid)\n\
-  WHERE\n  o.obs_voided IS FALSE\n  AND v.visit_voided IS FALSE\n  AND v.visit_type_uuid\
-  \ IN (\n    '5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab',\n    '54da8fbc-b92f-4251-b53a-feedc8e8c594'\n\
-  \  )\n  -- NCD Consultation, Medication History and Orders Encounter Types\n  AND\
-  \ e.encounter_type_uuid IN (\n    'f9fdbe63-12b4-479f-b8fd-dcbfde6aa944',\n    'b870b6bb-9441-4664-9087-3d3477174213',\n\
-  \    '39da3525-afe4-45ff-8977-c53b7b359158'\n  ) -- 422b7e0c-b8f3-4748-8e60-d6684315f141\n\
-  \  -- Referral Hospital (RH)\n  AND l.location_tags ILIKE '%Referral Hospital%'\n\
-  GROUP BY\n  v.visit_uuid,\n  p.patient_uuid"
+  \     identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|NSSF|SSN|PMRS\
+  \ ID|COVID vaccination ID): [^,]*,?\\s?',\n            '',\n            'g'\n  \
+  \        ),\n          '^, |, $',\n          ''\n        ),\n        NULL\n    \
+  \  ) AS other_identifiers,\n      -- Addresses\n      address_country AS country,\n\
+  \      address_state_province AS province,\n      address_county_district AS district,\n\
+  \      address_city AS commune,\n      address_1 AS village,\n      -- Attributes\n\
+  \      SUBSTRING(\n        attributes\n        FROM\n          'Occupation: ([^/]*)'\n\
+  \      ) AS occupation,\n      SUBSTRING(\n        attributes\n        FROM\n  \
+  \        'Place of Birth: ([^/]*)'\n      ) AS place_of_birth,\n      SUBSTRING(\n\
+  \        attributes\n        FROM\n          'Ethnicity: ([^/]*)'\n      ) AS ethnicity,\n\
+  \      SUBSTRING(\n        attributes\n        FROM\n          'Marital Status:\
+  \ ([^/]*)'\n      ) AS marital_status,\n      SUBSTRING(\n        attributes\n \
+  \       FROM\n          'Education: ([^/]*)'\n      ) AS education,\n      SUBSTRING(\n\
+  \        attributes\n        FROM\n          'Telephone Number: ([^/]*)'\n     \
+  \ ) AS phone_number\n    FROM\n      patients\n    WHERE\n      person_voided IS\
+  \ FALSE\n  ) p ON (p.patient_uuid=v.patient_uuid)\nWHERE\n  o.obs_voided IS FALSE\n\
+  \  AND v.visit_voided IS FALSE\n  AND v.visit_type_uuid IN (\n    '5f4975a7-1af8-4a0b-9bbb-c4cfc22f2aab',\n\
+  \    '54da8fbc-b92f-4251-b53a-feedc8e8c594'\n  )\n  -- NCD Consultation, Medication\
+  \ History and Orders Encounter Types\n  AND e.encounter_type_uuid IN (\n    'f9fdbe63-12b4-479f-b8fd-dcbfde6aa944',\n\
+  \    'b870b6bb-9441-4664-9087-3d3477174213',\n    '39da3525-afe4-45ff-8977-c53b7b359158'\n\
+  \  ) -- 422b7e0c-b8f3-4748-8e60-d6684315f141\n  -- Referral Hospital (RH)\n  AND\
+  \ l.location_tags ILIKE '%Referral Hospital%'\nGROUP BY\n  v.visit_uuid,\n  p.patient_uuid"
 params: null
 template_params: null
 filter_select_enabled: false
