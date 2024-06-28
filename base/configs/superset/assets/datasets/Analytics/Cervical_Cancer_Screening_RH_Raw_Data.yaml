@@ -200,9 +200,9 @@ sql: "SELECT\n  MAX(p.openmrs_id) AS client_id,\n  MAX(p.patient_name) AS client
   \     SUBSTRING(\n        identifiers\n        FROM\n          'Passport No: ([^,]*)'\n\
   \      ) AS passport_no,\n      COALESCE(\n        REGEXP_REPLACE (\n          REGEXP_REPLACE\
   \ (\n            identifiers,\n            '(?:OpenMRS ID|National ID|IDPoor|PMRS\
-  \ ID|COVID vaccination ID): [^,]*,?\\s?',\n            '',\n            'g'\n  \
-  \        ),\n          '^, |, $',\n          ''\n        ),\n        NULL\n    \
-  \  ) AS other_identifiers,\n      -- Addresses\n      address_country AS country,\n\
+  \ ID|NSSF|SSN|COVID vaccination ID): [^,]*,?\\s?',\n            '',\n          \
+  \  'g'\n          ),\n          '^, |, $',\n          ''\n        ),\n        NULL\n\
+  \      ) AS other_identifiers,\n      -- Addresses\n      address_country AS country,\n\
   \      address_state_province AS province,\n      address_county_district AS district,\n\
   \      address_city AS commune,\n      address_1 AS village,\n      -- Attributes\n\
   \      SUBSTRING(\n        attributes\n        FROM\n          'Occupation: ([^/]*)'\n\
@@ -850,7 +850,7 @@ columns:
   extra: {}
 - column_name: rf_hf_code
   verbose_name: "\u179B\u17C1\u1781\u1780\u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\
-    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (*Referral\
+    \u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Referral\
     \ HF's Code)"
   is_dttm: false
   is_active: true
@@ -864,8 +864,8 @@ columns:
   extra: {}
 - column_name: rf_hf_name
   verbose_name: "\u1788\u17D2\u1798\u17C4\u17C7\u1798\u17BC\u179B\u178A\u17D2\u178B\
-    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (*Referral\
-    \ HF's Name)"
+    \u17B6\u1793\u179F\u17BB\u1781\u17B6\u1797\u17B7\u1794\u17B6\u179B (Referral HF's\
+    \ Name)"
   is_dttm: false
   is_active: true
   type: STRING
@@ -1059,36 +1059,23 @@ columns:
   description: null
   python_date_format: null
   extra: {}
-- column_name: rf_hf_province
-  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F/\u1780\u17D2\u179A\u17BB\u1784 (*Referral\
-    \ Province/City)"
-  is_dttm: false
-  is_active: true
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: ''
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: rf_hf_district
-  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
-    \u178F\u17D2\u178F\u17B7 (*Referral OD)"
-  is_dttm: false
-  is_active: true
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: ''
-  description: null
-  python_date_format: null
-  extra: {}
 - column_name: hiv_treatment
   verbose_name: "\u1780\u17B6\u179A\u1796\u17D2\u1799\u17B6\u1794\u17B6\u179B\u1798\
     \u17C1\u179A\u17C4\u1782\u17A2\u17C1\u178A\u179F\u17CD/\u1787\u17C6\u1784\u17BA\
     \u17A2\u17C1\u178A\u179F\u17CD (HIV/AIDS treatment)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_province
+  verbose_name: "\u1781\u17C1\u178F\u17D2\u178F/\u1780\u17D2\u179A\u17BB\u1784 (Referral\
+    \ Province/City)"
   is_dttm: false
   is_active: true
   type: STRING
@@ -1181,6 +1168,19 @@ columns:
 - column_name: id_poor
   verbose_name: "\u179B\u17C1\u1781\u1794\u178E\u17D2\u178E\u1780\u17D2\u179A\u17B8\
     \u1780\u17D2\u179A (ID Poor)"
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: rf_hf_district
+  verbose_name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\
+    \u178F\u17D2\u178F\u17B7 (Referral OD)"
   is_dttm: false
   is_active: true
   type: STRING

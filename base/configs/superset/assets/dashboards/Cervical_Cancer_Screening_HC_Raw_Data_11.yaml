@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-explore-32-1
     meta:
-      chartId: 6
+      chartId: 16
       height: 101
       sliceName: HC Raw Data
       sliceNameOverride: Cervical Cancer Screening HC Raw Data
@@ -59,7 +59,12 @@ metadata:
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
-  chart_configuration: {}
+  chart_configuration:
+    '16':
+      id: 16
+      crossFilters:
+        scope: global
+        chartsInScope: []
   native_filter_configuration:
   - id: NATIVE_FILTER-yG0sftpoN
     controlValues:
@@ -67,71 +72,12 @@ metadata:
       defaultToFirstItem: false
       multiSelect: true
       searchAllOptions: true
-      inverseSelection: true
+      inverseSelection: false
     name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
     filterType: filter_select
     targets:
     - column:
         name: visit_province
-      datasetUuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
-    defaultDataMask:
-      extraFormData: {}
-      filterState: {}
-      ownState: {}
-    cascadeParentIds:
-    - NATIVE_FILTER-OhmPrHMDt
-    - NATIVE_FILTER-afAlHXca9
-    scope:
-      rootPath:
-      - ROOT_ID
-      excluded: []
-    type: NATIVE_FILTER
-    description: ''
-    chartsInScope:
-    - 32
-    tabsInScope: []
-  - id: NATIVE_FILTER-afAlHXca9
-    controlValues:
-      enableEmptyFilter: false
-      defaultToFirstItem: false
-      multiSelect: true
-      searchAllOptions: true
-      inverseSelection: true
-    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
-      \u17D2\u178F\u17B7 (District)"
-    filterType: filter_select
-    targets:
-    - column:
-        name: visit_district
-      datasetUuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
-    defaultDataMask:
-      extraFormData: {}
-      filterState: {}
-      ownState: {}
-    cascadeParentIds:
-    - NATIVE_FILTER-OhmPrHMDt
-    scope:
-      rootPath:
-      - ROOT_ID
-      excluded: []
-    type: NATIVE_FILTER
-    description: ''
-    chartsInScope:
-    - 32
-    tabsInScope: []
-  - id: NATIVE_FILTER-OhmPrHMDt
-    controlValues:
-      enableEmptyFilter: false
-      defaultToFirstItem: false
-      multiSelect: true
-      searchAllOptions: true
-      inverseSelection: true
-    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
-      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
-    filterType: filter_select
-    targets:
-    - column:
-        name: visit_hf_name
       datasetUuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
     defaultDataMask:
       extraFormData: {}
@@ -145,7 +91,66 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 32
+    - 16
+    tabsInScope: []
+  - id: NATIVE_FILTER-afAlHXca9
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: visit_district
+      datasetUuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-yG0sftpoN
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 16
+    tabsInScope: []
+  - id: NATIVE_FILTER-OhmPrHMDt
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: visit_hf_name
+      datasetUuid: 5457e2a2-5943-4b14-8a0e-878c7ba4bc8f
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-yG0sftpoN
+    - NATIVE_FILTER-afAlHXca9
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 16
     tabsInScope: []
   - id: NATIVE_FILTER_DIVIDER-Wgo1hNZdF
     type: DIVIDER
@@ -181,4 +186,11 @@ metadata:
     tabsInScope: []
   shared_label_colors: {}
   color_scheme_domain: []
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 16
 version: 1.0.0

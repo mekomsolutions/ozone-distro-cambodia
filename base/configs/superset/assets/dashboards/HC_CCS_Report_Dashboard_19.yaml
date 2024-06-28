@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-explore-133-1
     meta:
-      chartId: 7
+      chartId: 66
       height: 73
       sliceName: HC CCS Report
       uuid: 5aaa773a-3be3-4fed-b221-a1f3c395cc8b
@@ -27,7 +27,7 @@ position:
     children: []
     id: CHART-explore-134-1
     meta:
-      chartId: 43
+      chartId: 2
       height: 77
       sliceName: CCS Distribution of visits per Province
       uuid: dd5925be-e474-4104-97d9-0a2ef4a34290
@@ -43,7 +43,7 @@ position:
     children: []
     id: CHART-explore-135-1
     meta:
-      chartId: 3
+      chartId: 30
       height: 82
       sliceName: CCS Monthly total count of visits grouped by district
       uuid: 6d8cee3a-64cc-4a2e-af31-7f5b4fefc90b
@@ -167,7 +167,28 @@ metadata:
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
-  chart_configuration: {}
+  chart_configuration:
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 30
+        - 66
+    '30':
+      id: 30
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 66
+    '66':
+      id: 66
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 30
   native_filter_configuration:
   - id: NATIVE_FILTER-AlqiTBOmI
     controlValues:
@@ -195,9 +216,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 133
-    - 134
-    - 135
+    - 2
+    - 30
+    - 66
     tabsInScope:
     - TAB-4A9mAKKVi
     - TAB-nhk86jsT8
@@ -220,7 +241,8 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-AlqiTBOmI
     scope:
       rootPath:
       - ROOT_ID
@@ -228,9 +250,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 133
-    - 134
-    - 135
+    - 2
+    - 30
+    - 66
     tabsInScope:
     - TAB-4A9mAKKVi
     - TAB-nhk86jsT8
@@ -254,7 +276,9 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-AlqiTBOmI
+    - NATIVE_FILTER-CbHxVrxZT
     scope:
       rootPath:
       - ROOT_ID
@@ -262,9 +286,9 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 133
-    - 134
-    - 135
+    - 2
+    - 30
+    - 66
     tabsInScope:
     - TAB-4A9mAKKVi
     - TAB-nhk86jsT8
@@ -355,4 +379,13 @@ metadata:
     "\u17A2\u1784\u17D2\u1782\u179A\u1787\u17D0\u1799 / Angkor Chey": '#5AC189'
     "\u17A2\u1793\u17D2\u179B\u1784\u17CB\u179C\u17C2\u1784 / Anlong Veng": '#FF7F44'
   color_scheme_domain: []
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 2
+    - 30
+    - 66
 version: 1.0.0

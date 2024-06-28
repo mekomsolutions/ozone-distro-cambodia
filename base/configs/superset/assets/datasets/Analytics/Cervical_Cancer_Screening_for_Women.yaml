@@ -142,7 +142,7 @@ columns:
   verbose_name: "\u1780\u17B6\u179A\u1798\u1780\u1796\u17B7\u1793\u17B7\u178F\u17D2\
     \u1799 (Visit Type)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -168,7 +168,7 @@ columns:
   verbose_name: "\u179B\u1791\u17D2\u1792\u1795\u179B\u178F\u17C1\u179F\u17D2\u178F\
     \ VIA (VIA Result)"
   is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -180,7 +180,7 @@ columns:
 - column_name: date_started
   verbose_name: null
   is_dttm: true
-  is_active: null
+  is_active: true
   type: DATETIME
   advanced_data_type: null
   groupby: true
@@ -192,7 +192,7 @@ columns:
 - column_name: age
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: FLOAT
   advanced_data_type: null
   groupby: true
@@ -204,7 +204,7 @@ columns:
 - column_name: has_via_test
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -216,7 +216,7 @@ columns:
 - column_name: is_treated
   verbose_name: null
   is_dttm: false
-  is_active: null
+  is_active: true
   type: INTEGER
   advanced_data_type: null
   groupby: true
@@ -240,103 +240,7 @@ columns:
 - column_name: health_facility_name
   verbose_name: null
   is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: health_facility_code
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: health_facility_district
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: health_facility_province
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: via_test_result
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: via_test
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: referred_from
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: treated
-  verbose_name: null
-  is_dttm: false
-  is_active: null
-  type: STRING
-  advanced_data_type: null
-  groupby: true
-  filterable: true
-  expression: null
-  description: null
-  python_date_format: null
-  extra: {}
-- column_name: gender
-  verbose_name: null
-  is_dttm: false
-  is_active: null
+  is_active: true
   type: STRING
   advanced_data_type: null
   groupby: true
@@ -369,7 +273,103 @@ columns:
   description: null
   python_date_format: null
   extra: {}
+- column_name: health_facility_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_district
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: health_facility_province
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test_result
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
 - column_name: patient_uuid
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: via_test
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: referred_from
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: treated
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: gender
   verbose_name: null
   is_dttm: false
   is_active: true

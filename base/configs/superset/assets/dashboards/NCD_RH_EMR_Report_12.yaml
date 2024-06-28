@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-explore-29-1
     meta:
-      chartId: 23
+      chartId: 39
       height: 57
       sliceName: "\u1785\u17BB\u17C7\u1794\u1789\u17D2\u1787\u17B8\u1780\u17B6\u179A\
         \ (Register)"
@@ -29,7 +29,7 @@ position:
     children: []
     id: CHART-explore-50-1
     meta:
-      chartId: 12
+      chartId: 27
       height: 66
       sliceName: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1787\u17C6\u1784\u17BA\
         \u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u179B\u17BE\
@@ -49,7 +49,7 @@ position:
     children: []
     id: CHART-explore-51-1
     meta:
-      chartId: 22
+      chartId: 55
       height: 57
       sliceName: "\u1785\u17BB\u17C7\u1794\u1789\u17D2\u1787\u17B8\u1780\u17B6\u179A\
         \ (Register) - cumulative"
@@ -67,7 +67,7 @@ position:
     children: []
     id: CHART-explore-52-1
     meta:
-      chartId: 21
+      chartId: 63
       height: 77
       sliceName: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
         \u1799 (Diagnosis)"
@@ -85,7 +85,7 @@ position:
     children: []
     id: CHART-explore-53-1
     meta:
-      chartId: 19
+      chartId: 32
       height: 77
       sliceName: "\u179A\u17C4\u1782\u179C\u17B7\u1793\u17B7\u1785\u17D2\u1786\u17D0\
         \u1799 (Diagnosis) - cumulative"
@@ -103,7 +103,7 @@ position:
     children: []
     id: CHART-explore-54-1
     meta:
-      chartId: 15
+      chartId: 69
       height: 66
       sliceName: "\u1795\u179B\u179B\u17C6\u1794\u17B6\u1780\u1787\u17C6\u1784\u17BA\
         \u1791\u17B9\u1780\u1793\u17C4\u1798\u1795\u17D2\u17A2\u17C2\u1798 \u179B\u17BE\
@@ -123,7 +123,7 @@ position:
     children: []
     id: CHART-explore-55-1
     meta:
-      chartId: 14
+      chartId: 43
       height: 77
       sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793 (Follow-up) NCD EMR Report"
       sliceNameOverride: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u178A\u17C2\u179B\u1794\
@@ -140,7 +140,7 @@ position:
     children: []
     id: CHART-explore-56-1
     meta:
-      chartId: 17
+      chartId: 5
       height: 77
       sliceName: "\u178F\u17B6\u1798\u178A\u17B6\u1793 (Follow-up) NCD EMR Report\
         \ - Cumulative"
@@ -158,7 +158,7 @@ position:
     children: []
     id: CHART-explore-57-1
     meta:
-      chartId: 20
+      chartId: 70
       height: 76
       sliceName: "\u1794\u17C4\u17C7\u1794\u1784\u17CB\u1780\u17B6\u179A\u178F\u17B6\
         \u1798\u178A\u17B6\u1793 (Loss Follow-up) NCD EMR Report - Cumulative"
@@ -176,7 +176,7 @@ position:
     children: []
     id: CHART-explore-58-1
     meta:
-      chartId: 13
+      chartId: 10
       height: 76
       sliceName: "\u1794\u17C4\u17C7\u1794\u1784\u17CB\u1780\u17B6\u179A\u178F\u17B6\
         \u1798\u178A\u17B6\u1793 (Loss Follow-up) NCD EMR Report"
@@ -194,7 +194,7 @@ position:
     children: []
     id: CHART-explore-59-1
     meta:
-      chartId: 18
+      chartId: 3
       height: 57
       sliceName: "\u1780\u17B6\u179A\u179F\u17D2\u179B\u17B6\u1794\u17CB (Death) NCD\
         \ EMR Report"
@@ -212,7 +212,7 @@ position:
     children: []
     id: CHART-explore-60-1
     meta:
-      chartId: 16
+      chartId: 53
       height: 57
       sliceName: "\u1780\u17B6\u179A\u179F\u17D2\u179B\u17B6\u1794\u17CB (Death) NCD\
         \ EMR Report - Cumulative"
@@ -574,12 +574,12 @@ metadata:
       rootPath:
       - ROOT_ID
       excluded:
-      - 22
-      - 19
-      - 15
-      - 17
-      - 20
-      - 16
+      - 55
+      - 32
+      - 69
+      - 5
+      - 70
+      - 53
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
@@ -617,12 +617,12 @@ metadata:
       rootPath:
       - ROOT_ID
       excluded:
-      - 23
-      - 12
-      - 21
-      - 14
-      - 13
-      - 18
+      - 39
+      - 27
+      - 63
+      - 43
+      - 10
+      - 3
     type: NATIVE_FILTER
     description: ''
     chartsInScope:

@@ -1,0 +1,187 @@
+dashboard_title: NCD Referral Status Report Dashboard
+description: null
+css: ''
+slug: null
+certified_by: null
+certification_details: null
+published: true
+uuid: 8c5cf31e-629b-41f2-8ec8-5cd6229f1499
+position:
+  CHART-VYBstwY1_B:
+    children: []
+    id: CHART-VYBstwY1_B
+    meta:
+      chartId: 37
+      height: 81
+      sliceName: NCD Referral Status Report
+      uuid: 9cf83bb1-cc39-4c8a-89fa-3291f726b69a
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Si9ZuvRil
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-Si9ZuvRil
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: NCD Referral Status Report Dashboard
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-Si9ZuvRil:
+    children:
+    - CHART-VYBstwY1_B
+    id: ROW-Si9ZuvRil
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: false
+  default_filters: '{}'
+  chart_configuration:
+    '37':
+      id: 37
+      crossFilters:
+        scope: global
+        chartsInScope: []
+  shared_label_colors: {}
+  color_scheme_domain: []
+  native_filter_configuration:
+  - id: NATIVE_FILTER-7J3bpaW7m
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\u17B7\
+      \u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility Province
+      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 140
+    tabsInScope: []
+  - id: NATIVE_FILTER-oSWGxjyfb
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
+      \u17D2\u178F\u17B7 (Operational District)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility District
+      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-7J3bpaW7m
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 37
+    tabsInScope: []
+  - id: NATIVE_FILTER-WHn4E3Und
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: true
+      inverseSelection: false
+    name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\u1780\
+      \u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
+      \u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+    filterType: filter_select
+    targets:
+    - column:
+        name: Facility Name
+      datasetUuid: e7351329-6fdc-4bb7-9aaa-66cab8efeeb1
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds:
+    - NATIVE_FILTER-7J3bpaW7m
+    - NATIVE_FILTER-oSWGxjyfb
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 37
+    tabsInScope: []
+  - id: NATIVE_FILTER-47jI6h7SU
+    controlValues:
+      enableEmptyFilter: false
+    name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
+      \u17C6\u1796\u17B8\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\
+      \ (Reporting Time Range)"
+    filterType: filter_time
+    targets:
+    - {}
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 140
+    tabsInScope: []
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 37
+version: 1.0.0

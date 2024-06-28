@@ -11,7 +11,7 @@ position:
     children: []
     id: CHART-9thSsJSkeY
     meta:
-      chartId: 1
+      chartId: 49
       height: 84
       sliceName: Registered patients aged 40 and above that have had their NCD screening
         for the first time
@@ -28,7 +28,7 @@ position:
     children: []
     id: CHART-auU0qpYADt
     meta:
-      chartId: 8
+      chartId: 28
       height: 42
       sliceName: CCS Indicators
       uuid: ee7add1c-c8aa-4984-9db7-3fa3f726f15c
@@ -44,7 +44,7 @@ position:
     children: []
     id: CHART-gSiI5FA9Eh
     meta:
-      chartId: 48
+      chartId: 58
       height: 82
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time
@@ -61,7 +61,7 @@ position:
     children: []
     id: CHART-l6yN9QRqOT
     meta:
-      chartId: 4
+      chartId: 41
       height: 84
       sliceName: Registered patients aged 40 and above have had their NCD screening
         for the first time with a follow-up date and diagnosed with Hypertension &
@@ -79,7 +79,7 @@ position:
     children: []
     id: CHART-wE9z76bX9M
     meta:
-      chartId: 47
+      chartId: 19
       height: 82
       sliceName: Registered women aged 30 to 49 years that have had their CCS screening
         for the first time and were VIA positive and referred
@@ -96,7 +96,7 @@ position:
     children: []
     id: CHART-wj7DkIY-Pb
     meta:
-      chartId: 26
+      chartId: 21
       height: 40
       sliceName: NCD Indicators
       uuid: 802a00e7-0681-407f-bd7a-c55a4f4e466e
@@ -244,66 +244,66 @@ metadata:
   cross_filters_enabled: false
   default_filters: '{}'
   chart_configuration:
-    '1':
-      id: 1
+    '19':
+      id: 19
       crossFilters:
         scope: global
         chartsInScope:
-        - 4
-        - 8
-        - 26
-        - 47
-        - 48
-    '4':
-      id: 4
+        - 21
+        - 28
+        - 41
+        - 49
+        - 58
+    '21':
+      id: 21
       crossFilters:
         scope: global
         chartsInScope:
-        - 1
-        - 8
-        - 26
-        - 47
-        - 48
-    '8':
-      id: 8
+        - 19
+        - 28
+        - 41
+        - 49
+        - 58
+    '28':
+      id: 28
       crossFilters:
         scope: global
         chartsInScope:
-        - 1
-        - 4
-        - 26
-        - 47
-        - 48
-    '26':
-      id: 26
+        - 19
+        - 21
+        - 41
+        - 49
+        - 58
+    '41':
+      id: 41
       crossFilters:
         scope: global
         chartsInScope:
-        - 1
-        - 4
-        - 8
-        - 47
-        - 48
-    '47':
-      id: 47
+        - 19
+        - 21
+        - 28
+        - 49
+        - 58
+    '49':
+      id: 49
       crossFilters:
         scope: global
         chartsInScope:
-        - 1
-        - 4
-        - 8
-        - 26
-        - 48
-    '48':
-      id: 48
+        - 19
+        - 21
+        - 28
+        - 41
+        - 58
+    '58':
+      id: 58
       crossFilters:
         scope: global
         chartsInScope:
-        - 1
-        - 4
-        - 8
-        - 26
-        - 47
+        - 19
+        - 21
+        - 28
+        - 41
+        - 49
   native_filter_configuration:
   - id: NATIVE_FILTER-pBRxyNbMB
     controlValues:
@@ -359,7 +359,8 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-pBRxyNbMB
     scope:
       rootPath:
       - ROOT_ID
@@ -367,12 +368,16 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 151
-    - 152
-    - 153
+    - 19
+    - 21
+    - 28
+    - 41
+    - 49
+    - 58
     tabsInScope:
     - TAB-MFLXG67ZDQ
     - TAB-Pf9SVE-52F
+    - TAB-zmiZPQAMiF
   - id: NATIVE_FILTER-segLnb0Vx
     controlValues:
       enableEmptyFilter: false
@@ -392,7 +397,9 @@ metadata:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-pBRxyNbMB
+    - NATIVE_FILTER-lEYFRZdtt
     scope:
       rootPath:
       - ROOT_ID
@@ -400,12 +407,16 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 151
-    - 152
-    - 153
+    - 19
+    - 21
+    - 28
+    - 41
+    - 49
+    - 58
     tabsInScope:
     - TAB-MFLXG67ZDQ
     - TAB-Pf9SVE-52F
+    - TAB-zmiZPQAMiF
   - id: NATIVE_FILTER-R6N9v3yG4
     controlValues:
       enableEmptyFilter: false
@@ -439,10 +450,10 @@ metadata:
       - ROOT_ID
       excluded: []
     chartsInScope:
-    - 1
-    - 4
-    - 8
-    - 26
-    - 47
-    - 48
+    - 19
+    - 21
+    - 28
+    - 41
+    - 49
+    - 58
 version: 1.0.0

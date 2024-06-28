@@ -1,30 +1,31 @@
-dashboard_title: HC NCD OPD Register Report Dashboard
-description: null
+dashboard_title: Cervical Cancer Screening Appointment Status Tracking
+description: A dashboard showing the appointment status tracking of cervical cancer
+  screening patients.
 css: ''
-slug: null
-certified_by: ''
-certification_details: ''
+slug: ccs-appointment-status-tracking
+certified_by: null
+certification_details: null
 published: true
-uuid: 5ad1d328-14a9-4063-bc27-ee40546d7581
+uuid: bd5d5e2c-eb3e-482f-979a-db65e89ac760
 position:
-  CHART-Ab9xXvvBoP:
+  CHART-explore-17-1:
     children: []
-    id: CHART-Ab9xXvvBoP
+    id: CHART-explore-17-1
     meta:
-      chartId: 44
-      height: 76
-      sliceName: HC NCD OPD Register Report
-      uuid: 21650553-f9e7-4249-a0b2-088c1aaca1ea
+      chartId: 59
+      height: 100
+      sliceName: Appointment status tracking
+      uuid: 127c71e6-af8a-4d9a-ba10-c56e534d9956
       width: 12
     parents:
     - ROOT_ID
     - GRID_ID
-    - ROW-XCnHAguP-V
+    - ROW-001cuASlG3
     type: CHART
   DASHBOARD_VERSION_KEY: v2
   GRID_ID:
     children:
-    - ROW-XCnHAguP-V
+    - ROW-001cuASlG3
     id: GRID_ID
     parents:
     - ROOT_ID
@@ -32,18 +33,19 @@ position:
   HEADER_ID:
     id: HEADER_ID
     meta:
-      text: HC NCD OPD Register Report Dashboard
+      text: CCS Appointment Status Tracking
     type: HEADER
   ROOT_ID:
     children:
     - GRID_ID
     id: ROOT_ID
     type: ROOT
-  ROW-XCnHAguP-V:
+  ROW-001cuASlG3:
     children:
-    - CHART-Ab9xXvvBoP
-    id: ROW-XCnHAguP-V
+    - CHART-explore-17-1
+    id: ROW-001cuASlG3
     meta:
+      '0': ROOT_ID
       background: BACKGROUND_TRANSPARENT
     parents:
     - ROOT_ID
@@ -52,34 +54,31 @@ position:
 metadata:
   color_scheme: ''
   refresh_frequency: 0
-  shared_label_colors: {}
-  color_scheme_domain: []
   expanded_slices: {}
   label_colors: {}
   timed_refresh_immune_slices: []
   cross_filters_enabled: false
   default_filters: '{}'
   chart_configuration:
-    '44':
-      id: 44
+    '59':
+      id: 59
       crossFilters:
         scope: global
         chartsInScope: []
   native_filter_configuration:
-  - id: NATIVE_FILTER-aWX-Gl58W
+  - id: NATIVE_FILTER-EumcJiApY
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
-      searchAllOptions: true
+      searchAllOptions: false
       inverseSelection: false
-    name: "\u1798\u1793\u17D2\u1791\u17B8\u179A\u179F\u17BB\u1781\u17B6\u1797\u17B7\
-      \u1794\u17B6\u179B\u1781\u17C1\u178F\u17D2\u178F (Provincial Health Department)"
+    name: "\u1781\u17C1\u178F\u17D2\u178F (Province)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility Province
-      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
+        name: hf_province
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
@@ -92,27 +91,28 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 142
+    - 59
     tabsInScope: []
-  - id: NATIVE_FILTER-Msdpr8SxL
+  - id: NATIVE_FILTER-uTQNiHhdj
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
-      searchAllOptions: true
+      searchAllOptions: false
       inverseSelection: false
     name: "\u179F\u17D2\u179A\u17BB\u1780\u1794\u17D2\u179A\u178F\u17B7\u1794\u178F\
-      \u17D2\u178F\u17B7 (Operational District)"
+      \u17D2\u178F\u17B7 (District)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility District
-      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
+        name: hf_district
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-EumcJiApY
     scope:
       rootPath:
       - ROOT_ID
@@ -120,28 +120,29 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 142
+    - 17
     tabsInScope: []
-  - id: NATIVE_FILTER-pJ6UTB2-p
+  - id: NATIVE_FILTER-78Q-prkY0
     controlValues:
       enableEmptyFilter: false
       defaultToFirstItem: false
       multiSelect: true
       searchAllOptions: true
       inverseSelection: false
-    name: "\u1788\u17D2\u1798\u17C4\u17C7\u1793\u17B7\u1784\u179B\u17C1\u1781\u1780\
-      \u17BC\u178A\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\
-      \u17B6\u1797\u17B7\u1794\u17B6\u179B (Health Facility's Name)"
+    name: "\u1798\u17BC\u179B\u178A\u17D2\u178B\u17B6\u1793\u179F\u17BB\u1781\u17B6\
+      \u1797\u17B7\u1794\u17B6\u179B (Health Facility)"
     filterType: filter_select
     targets:
     - column:
-        name: Facility Name
-      datasetUuid: 262d446a-2c07-4b3b-8ab0-a792b242dea4
+        name: hf_name
+      datasetUuid: 5279e6d6-998b-4e05-9a47-811df81cd533
     defaultDataMask:
       extraFormData: {}
       filterState: {}
       ownState: {}
-    cascadeParentIds: []
+    cascadeParentIds:
+    - NATIVE_FILTER-EumcJiApY
+    - NATIVE_FILTER-uTQNiHhdj
     scope:
       rootPath:
       - ROOT_ID
@@ -149,14 +150,21 @@ metadata:
     type: NATIVE_FILTER
     description: ''
     chartsInScope:
-    - 142
+    - 17
     tabsInScope: []
-  - id: NATIVE_FILTER-a7uk2DuoT
+  - id: NATIVE_FILTER_DIVIDER-1ughKpvv4
+    type: DIVIDER
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    title: "\u179A\u1799\u17C8\u1796\u17C1\u179B\u179A\u17B6\u1799\u1780\u17B6\u179A\
+      \u178E\u17CD (Reporting Period)"
+    description: ''
+  - id: NATIVE_FILTER-fk1fEAut9
     controlValues:
       enableEmptyFilter: false
-    name: "\u1780\u17B6\u179A\u179A\u17B6\u1799\u1780\u17B6\u179A\u178E\u17CD\u17A2\
-      \u17C6\u1796\u17B8\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6\
-      \ (Reporting Time Range)"
+    name: "\u1787\u17BD\u179A\u1796\u17C1\u179B\u179C\u17C1\u179B\u17B6 (Time Range)"
     filterType: filter_time
     targets:
     - {}
@@ -171,14 +179,13 @@ metadata:
       excluded: []
     type: NATIVE_FILTER
     description: ''
-    chartsInScope:
-    - 142
-    tabsInScope: []
+  shared_label_colors: {}
+  color_scheme_domain: []
   global_chart_configuration:
     scope:
       rootPath:
       - ROOT_ID
       excluded: []
     chartsInScope:
-    - 44
+    - 59
 version: 1.0.0
