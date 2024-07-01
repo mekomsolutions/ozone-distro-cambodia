@@ -1,0 +1,52 @@
+services:
+  create-backup-folder:
+    image: busybox:latest
+    command: ["sh", "-c", "mkdir -p /mnt/$$BACKUP_FOLDER"]
+    environment:
+      BACKUP_FOLDER: ${BACKUP_FOLDER}
+    volumes:
+      - "${BACKUP_PATH:-backup-path}:/mnt"
+  #
+  # MySQL backups
+  #
+  openmrs-db-backup:
+    image: mekomsolutions/mysql_backup:48d0823
+    depends_on:
+      create-backup-folder:
+        condition: service_completed_successfully
+    environment:
+      DB_HOST: 172.17.0.1
+      DB_NAME: openmrs
+      DB_USERNAME: ${OPENMRS_DB_USER}
+      DB_PASSWORD: ${OPENMRS_DB_PASSWORD}
+      BACKUP_PATH: "/opt/backup/${BACKUP_FOLDER}"
+    networks:
+      ozone:
+        aliases:
+          - openmrs-db-backup
+    volumes:
+      - "${BACKUP_PATH:-backup-path}:/opt/backup/"
+  #
+  # OpenMRS Initializer backups
+  #    
+  openmrs-checksum-backup:
+    image: mekomsolutions/filestore_backup:48d0823
+    depends_on:
+      create-backup-folder:
+        condition: service_completed_successfully
+    environment:
+      FILESTORE_PATH: /mnt/openmrs_config_checksum
+      BACKUP_PATH: "/opt/backup/${BACKUP_FOLDER}"
+      FILENAME: openmrs-checksum
+    volumes:
+      - "${BACKUP_PATH:-backup-path}:/opt/backup/"
+      - "${OPENMRS_CONFIG_CHECKSUMS_PATH:-openmrs-config-checksums}:/mnt/openmrs_config_checksum"
+
+volumes:
+  backup-path: ~
+  odoo-filestore: ~
+  odoo-checksums: ~
+  openmrs-config-checksums: ~
+
+networks:
+  ozone:
