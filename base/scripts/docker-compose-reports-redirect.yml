@@ -1,5 +1,5 @@
 #
-# This file is needed for KH to redirect /reports to a separate Superset set instance running with and AWS domain name 
+# Needed to redirect <domain>/reports to a separate Superset instance accessible via AWS domain name 
 #
 services:
   frontend:
