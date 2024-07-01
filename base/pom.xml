@@ -152,7 +152,7 @@
             </configuration>
           </execution>
           <execution>
-            <!-- Copy over the Override file to add reports redirect label -->
+            <!-- Copy over the reports redirect and backup files-->
             <id>Copy docker-compose-reports-redirect.yml</id>
             <phase>process-resources</phase>
             <goals>
@@ -168,28 +168,6 @@
                   <directory>${project.basedir}/scripts</directory>
                   <includes>
                     <include>docker-compose-reports-redirect.yml</include>
-                  </includes>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <!-- Copy over back up Docker Compose file-->
-            <id>Copy backup.docker-compose.yml</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>
-                ${project.build.directory}/${project.artifactId}-${project.version}/run/docker/
-              </outputDirectory>
-              <overwrite>true</overwrite>
-              <resources>
-                <resource>
-                  <directory>${project.basedir}/scripts</directory>
-                  <includes>
                     <include>backup.docker-compose.yml</include>
                   </includes>
                   <filtering>true</filtering>
