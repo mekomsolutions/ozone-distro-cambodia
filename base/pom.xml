@@ -152,7 +152,7 @@
             </configuration>
           </execution>
           <execution>
-            <!-- Copy over the Docker Compose override file -->
+            <!-- Copy over the Override file to add reports redirect label -->
             <id>Copy docker-compose-reports-redirect.yml</id>
             <phase>process-resources</phase>
             <goals>
@@ -175,7 +175,7 @@
             </configuration>
           </execution>
           <execution>
-            <!-- Copy over the Docker Compose override file -->
+            <!-- Copy over back up Docker Compose file-->
             <id>Copy backup.docker-compose.yml</id>
             <phase>process-resources</phase>
             <goals>
