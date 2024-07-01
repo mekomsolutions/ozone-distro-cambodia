@@ -5,7 +5,7 @@
   <artifactId>ozone-cambodia-aggregator</artifactId>
   <name>Ozone Cambodia Aggregator</name>
   <description>Aggregator project for the Ozone distribution for Cambodia</description>
-  <version>1.8.0-SNAPSHOT</version>
+  <version>1.7.1</version>
   <packaging>pom</packaging>
 
   <organization>
