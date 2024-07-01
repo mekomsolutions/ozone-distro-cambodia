@@ -1,0 +1,8 @@
+services:
+  frontend:
+    labels:
+      traefik.http.routers.reports.rule: "Host(`${O3_HOSTNAME}`) && PathPrefix(`/reports`)"  
+      traefik.http.routers.reports.entrypoints: "websecure"
+      traefik.http.routers.reports.middlewares: reports-redirectregex
+      traefik.http.middlewares.reports-redirectregex.redirectregex.regex: https://${O3_HOSTNAME}/reports
+      traefik.http.middlewares.reports-redirectregex.redirectregex.replacement: https://${SUPERSET_HOSTNAME}
