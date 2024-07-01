@@ -6,12 +6,12 @@
   <parent>
     <groupId>com.ozonehis</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-alpha.11</version>
     <relativePath></relativePath>
   </parent>
 
   <artifactId>ozone-cambodia-prod</artifactId>
-  <version>1.8.0-SNAPSHOT</version>
+  <version>1.7.2</version>
   <description>Ozone distribution for Cambodia - with production dependencies</description>
   <name>Ozone Cambodia Prod</name>
   <packaging>pom</packaging>
@@ -24,7 +24,7 @@
     <!-- Override the Ozone coordinates to point Ozone Cambodia -->
     <ozone.artifactId>ozone-cambodia</ozone.artifactId>
     <ozone.groupId>com.ozonehis</ozone.groupId>
-    <ozone.version>1.8.0-SNAPSHOT</ozone.version>
+    <ozone.version>1.7.2</ozone.version>
 
     <!-- Classifier for the dependency report artifact -->
     <dependencyReportClassifier>dependencies</dependencyReportClassifier>
@@ -35,7 +35,7 @@
       <groupId>com.ozonehis</groupId>
       <artifactId>ozone-config-cambodia0</artifactId>
       <type>zip</type>
-      <version>${ozone.version}</version>
+      <version>1.7.0</version>
     </dependency>
   </dependencies>
 
