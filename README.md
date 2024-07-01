@@ -26,6 +26,8 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
+### Version 1.8.0
+
 ### Version 1.7.2
 
 - Add reports redirect and back up docker compose files
