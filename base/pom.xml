@@ -248,16 +248,9 @@
     See Slack conversation:
   https://mekomsolutions.slack.com/archives/G421UNF5L/p1715787009629219?thread_ts=1715774419.673979&cid=G421UNF5L
   -->
-  <!-- <profiles>
+  <profiles>
     <profile>
       <id>validator</id>
-      <activation>
-        <jdk>1.8</jdk>
-        <property>
-          <name>env.CI</name>
-          <value>true</value>
-        </property>
-      </activation>
       <build>
         <plugins>
             <plugin>
@@ -300,5 +293,5 @@
         </plugins>
       </build>
     </profile>
-  </profiles> -->
+  </profiles>
 </project>
