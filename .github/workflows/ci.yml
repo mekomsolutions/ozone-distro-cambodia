@@ -9,15 +9,24 @@ on:
     types: [published]
 
 jobs:
-  validate:
+  validate-pr:
+    if: ${{ github.event_name == 'pull_request' }}
     uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-build-test.yml@main
     with:
       java-version: "8"
       maven-phase: "install"
-      maven-args:
-        ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' ? '-P prod -DskipTests': '' }}
-      use-secrets:
-        ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' ? true: false }}
+    secrets:
+      NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
+      NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
+
+  validate:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-build-test.yml@main
+    with:
+      java-version: "8"
+      maven-phase: "install"
+      maven-args: "-P prod -DskipTests"
+      use-secrets: true
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
