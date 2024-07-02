@@ -14,8 +14,10 @@ jobs:
     with:
       java-version: "8"
       maven-phase: "install"
-      maven-args: "-P prod" # Remove -Pvalidator to temporarily bypass validation
-      use-secrets: true
+      maven-args:
+        ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' ? '-P prod -DskipTests': '' }}
+      use-secrets:
+        ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' ? true: false }}
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
@@ -26,7 +28,7 @@ jobs:
     uses: mekomsolutions/shared-github-workflow/.github/workflows/maven-publish.yml@main
     with:
       java-version: "8"
-      maven-args: "-P prod -DskipTests=true"
+      maven-args: "-P prod -DskipTests"
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
