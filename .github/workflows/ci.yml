@@ -15,8 +15,8 @@ jobs:
     with:
       java-version: "8"
       maven-phase: "install"
-      maven-args: "-P validator -DskipTests"
-    secrets: # We don't the secrets here. we make them not required.
+      maven-args: "-P validator"
+    secrets: # We don't need secrets here. we should make them not required.
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.MEKOM_NEXUS_PASSWORD }}
 
@@ -26,7 +26,7 @@ jobs:
     with:
       java-version: "8"
       maven-phase: "install"
-      maven-args: "-P prod -DskipTests"
+      maven-args: "-P prod"
       use-secrets: true
     secrets:
       NEXUS_USERNAME: ${{ secrets.MEKOM_NEXUS_USERNAME }}
