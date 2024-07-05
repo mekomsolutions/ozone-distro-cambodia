@@ -28,9 +28,13 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ### Version 1.8.0
 
+### Version 1.7.3
+
+- Upgraded @openmrs/esm-form-entry-app to v8.0.0
+
 ### Version 1.7.2
 
-- Add reports redirect and back up docker compose files
+- Added reports redirect and back up docker compose files
 
 ### Version 1.7.1
 
