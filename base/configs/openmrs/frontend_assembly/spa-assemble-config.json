@@ -1,6 +1,6 @@
 {
     "frontendModules": {
-        "@openmrs/esm-form-entry-app": "7.1.0"
+        "@openmrs/esm-form-entry-app": "8.0.0"
     },
     "__comment": "We exclude the React Form Engine app in favor of the Angular Form Engine.",
     "frontendModuleExcludes": [
