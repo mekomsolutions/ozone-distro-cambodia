@@ -175,6 +175,30 @@
               </resources>
             </configuration>
           </execution>
+
+          <!-- Override the Groovy script provided by Ozone to allow overriding the App Shell version -->
+          <execution>
+            <id>Override OpenMRS frontend build Groovy script</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <overwrite>true</overwrite>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/scripts</directory>
+                  <includes>
+                    <include>
+                      openmrs/frontend_assembly/build-openmrs-frontend.groovy
+                    </include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+
         </executions>
       </plugin>
 
