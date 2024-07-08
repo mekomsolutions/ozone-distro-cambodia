@@ -68,6 +68,7 @@
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-resources-plugin</artifactId>
       <executions>
+        <!-- Override the Groovy script provided by Ozone to allow overriding the App Shell version -->
         <execution>
           <id>Override OpenMRS frontend build Groovy script</id>
           <phase>process-resources</phase>
