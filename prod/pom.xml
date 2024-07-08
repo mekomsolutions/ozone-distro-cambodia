@@ -69,7 +69,7 @@
       <artifactId>maven-resources-plugin</artifactId>
       <executions>
         <execution>
-          <id>Override build OpenMRS Frontend Script</id>
+          <id>Override OpenMRS frontend build Groovy script</id>
           <phase>process-resources</phase>
           <goals>
             <goal>copy-resources</goal>
