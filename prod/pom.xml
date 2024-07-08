@@ -63,6 +63,35 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <executions>
+        <execution>
+          <id>Override build OpenMRS Frontend Script</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${project.build.directory}</outputDirectory>
+            <overwrite>true</overwrite>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/../base/scripts</directory>
+                <includes>
+                  <include>
+                    openmrs/frontend_assembly/build-openmrs-frontend.groovy
+                  </include>
+                </includes>
+              </resource>
+            </resources>
+          </configuration>
+        </execution>
+      </executions>
+      </plugin>
+
       <!-- Compile a dependency report -->
       <plugin>
         <groupId>net.mekomsolutions.maven.plugin</groupId>
