@@ -1,4 +1,50 @@
 {
+  "core": {
+    "Translation overrides": {
+      "km": {
+        "address1": "អាសយដ្ឋានជួរទី១",
+        "address2": "អសយដ្ឋានជួរទី ពីរ",
+        "city": "ទីក្រុង",
+        "cityVillage": "ទីក្រុង",
+        "country": "ប្រទេស",
+        "countyDistrict": "ស្រុក/ខ័ណ្ឌ",
+        "postalCode": "លេខកូដតំបន់",
+        "state": "រដ្ឋ",
+        "stateProvince": "រដ្ឋ",
+        "closeAllOpenedWorkspaces": "បោះបង់ការផ្លាស់ប្តូរនៅក្នុងកន្លែងធ្វើការ {{count}}",
+        "closingAllWorkspacesPromptBody": "មានការផ្លាស់ប្តូរដែលមិនបានរក្សាទុកនៅក្នុងកន្លែងធ្វើការខាងក្រោម។ តើ​អ្នក​ចង់​បោះបង់​ការ​ផ្លាស់​ប្តូ​រ​នៅ​ក្នុង​កន្លែង​ធ្វើការ​ដូច​ខាង​ក្រោម​? {{workspaceNames}}",
+        "closingAllWorkspacesPromptTitle": "អ្នកមានការផ្លាស់ប្តូរដែលមិនបានរក្សាទុក",
+        "discard": "បោះបង់",
+        "hide": "លាក់មិនឱ្យមើលឃើញ",
+        "maximize": "អតិបរមា",
+        "minimize": "បង្រួមអប្បបរមា",
+        "openAnyway": "បើកតាមមធ្យោបាយណាក៏ដោយ",
+        "unsavedChangesInOpenedWorkspace": "អ្នកមានការផ្លាស់ប្ដូរដែលមិនបានរក្សាទុកនៅក្នុងកន្លែងធ្វើការដែលបានបើក។ តើអ្នកចង់បោះបង់ការផ្លាស់ប្ដូរទាំងនេះទេ?",
+        "unsavedChangesInWorkspace": "មានការផ្លាស់ប្តូរដែលមិនបានរក្សាទុកនៅក្នុង {{workspaceName}}។ សូមរក្សាទុកពួកវាមុនពេលបើកកន្លែងធ្វើការផ្សេងទៀត។",
+        "unsavedChangesTitleText": "ការផ្លាស់ប្តូរដែលមិនបានរក្សាទុក",
+        "workspaceHeader": "បឋមកថាកន្លែងធ្វើការ",
+        "actions": "ជ្រើសរើសមុខងារ",
+        "address": "អាស័យដ្ឋាន",
+        "cancel": "បោះបង់",
+        "change": "ផ្លាស់ប្តូរ",
+        "close": "បិទ",
+        "confirm": "បញ្ជាក់",
+        "contactDetails": "ព័ត៌មានលម្អិតទំនាក់ទំនង",
+        "error": "មានកំហុស",
+        "errorCopy": "សូមអធ្យាស្រ័យ មានបញ្ហាក្នុងការបង្ហាញព័ត៌មាននេះ។ អ្នកអាចព្យាយាមទាញទំព័រនេះម្តងទៀត ឬទាក់ទងអ្នកគ្រប់គ្រងប្រព័ន្ធទិន្នន័យ ហើយស្រង់លេខកូដដែលមិនដំណើរការមុខងារខាងលើ។",
+        "female": "ស្រី",
+        "hideDetails": "លាក់ព័ត៌មានលម្អិត",
+        "loading": "កំពុងផ្ទុក...",
+        "male": "ប្រុស",
+        "other": "ផ្សេងៗ",
+        "patientLists": "បញ្ជីអ្នកជំងឺ",
+        "relationships": "ទំនាក់ទំនង",
+        "seeMoreLists": "មើលបញ្ជី {{count}} ទៀត",
+        "showDetails": "បង្ហាញលម្អិត",
+        "unknown": "មិនដឹង"
+      }
+    }
+  },
   "@openmrs/esm-patient-registration-app": {
     "sections": ["demographics", "contact", "additionalInformation"],
     "fieldConfigurations": {
