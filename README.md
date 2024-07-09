@@ -26,7 +26,11 @@ A large part Ozone Kh's roadmap is managed publicly to promote transparency and 
 
 ## Release Notes
 
-### Version 1.8.0
+### Version 1.7.4
+
+- Updated UI translations
+- Upgraded esm-core to v5.6.1-pre.1915
+- Upgraded Ozone analytics queries to 1.2.0
 
 ### Version 1.7.3
 
