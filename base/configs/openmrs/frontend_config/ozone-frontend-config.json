@@ -8,6 +8,7 @@
         "cityVillage": "ទីក្រុង",
         "country": "ប្រទេស",
         "countyDistrict": "ស្រុក/ខ័ណ្ឌ",
+        "district": "ស្រុក/ខ័ណ្ឌ",
         "postalCode": "លេខកូដតំបន់",
         "state": "រដ្ឋ",
         "stateProvince": "រដ្ឋ",
@@ -351,7 +352,8 @@
         "city": "ភូមិ",
         "Country": "ប្រទេស",
         "state": "ខេត្ត",
-        "district": "ស្រុក/ខ័ណ្ឌ"
+        "district": "ស្រុក/ខ័ណ្ឌ",
+        "activeVisit": "ការពិនិត្យជំងឺសកម្ម"
       }
     }
   },
