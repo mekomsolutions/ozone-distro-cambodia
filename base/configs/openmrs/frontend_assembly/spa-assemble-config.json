@@ -1,5 +1,5 @@
 {
-    "coreVersion": "5.6.1-pre.1857",
+    "coreVersion": "5.6.1-pre.1915",
     "frontendModules": {
         "@openmrs/esm-form-entry-app": "8.0.0"
     },
