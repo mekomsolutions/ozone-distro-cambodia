@@ -6,12 +6,12 @@
   <parent>
     <groupId>com.ozonehis</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>1.0.0-alpha.11</version>
+    <version>1.0.0-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
 
   <artifactId>ozone-cambodia</artifactId>
-  <version>1.7.4</version>
+  <version>1.8.0-SNAPSHOT</version>
   <name>Ozone Cambodia</name>
   <description>Ozone distribution for Cambodia</description>
   <packaging>pom</packaging>
