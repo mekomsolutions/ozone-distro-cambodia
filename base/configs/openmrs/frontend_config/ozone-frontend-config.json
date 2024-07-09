@@ -358,7 +358,7 @@
   "@openmrs/esm-home-app": {
     "Translation overrides": {
       "km": {
-        "Home": "ទំព័រដើម"
+        "home": "ទំព័រដើម"
       }
     },
     "extensionSlots": {
