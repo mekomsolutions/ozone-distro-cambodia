@@ -35,7 +35,6 @@
   </modules>
 
   <dependencies>
-
     <!-- Ozone Cambodia Superset configs sub-module -->
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -44,6 +43,7 @@
       <type>zip</type>
     </dependency>
 
+    <!-- Ozone Analytics Queries -->
     <dependency>
       <groupId>com.ozonehis</groupId>
       <artifactId>${analyticQueriesArtifactId}</artifactId>
@@ -199,6 +199,28 @@
             </configuration>
           </execution>
 
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>Switch Ozone Analytics Queries to locale 'km'</id>
+            <phase>generate-resources</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <target>
+                    <replaceregexp flags="g">
+                        <regexp pattern="'en'"/>
+                        <substitution expression="'km'"/>
+                        <fileset dir="${project.build.directory}/${project.artifactId}-${project.version}/distro/configs/analytics" includes="**/*.sql"/>
+                    </replaceregexp>
+                </target>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 
