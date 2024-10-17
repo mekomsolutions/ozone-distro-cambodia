@@ -204,7 +204,7 @@
       }
     },
     "logo": {
-      "src": "ozone/emr_logo_small_not_bold.png",
+      "src": "configs/emr_logo_small_not_bold.png",
       "alt": "emr-logo"
     },
     "Display conditions": {
@@ -387,13 +387,13 @@
   },
   "@openmrs/esm-login-app": {
     "logo": {
-      "src": "ozone/emr_logo_color.png",
+      "src": "configs/emr_logo_color.png",
       "alt": "emr-logo"
     }
   },
   "@openmrs/esm-primary-navigation-app": {
     "logo": {
-      "src": "ozone/emr_logo_small_not_bold.png",
+      "src": "configs/emr_logo_small_not_bold.png",
       "alt": "emr-logo"
     },
     "Translation overrides": {
